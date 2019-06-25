@@ -1,0 +1,13 @@
+title: Основы Angular
+arrange:
+    - components.md
+    - modules.md
+    - load-app.md
+    - styles-templates.md
+    - binding.md
+    - work-components.md
+    - components-relations.md
+    - bind-events-child.md
+    - lifecicle.md
+    - template-vars.md
+    - modules-relations.md

@@ -1,0 +1,17 @@
+{
+	"printWidth": 9999,
+	"useTabs": true,
+	"tabWidth": 4,
+	"semi": false,
+	"singleQuote": true,
+	"overrides": [
+		{
+			"files": "*.md",
+			"options": {
+				"parser": "markdown",
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		}
+	]
+}

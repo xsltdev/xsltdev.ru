@@ -1,0 +1,38 @@
+site_name: Справочники
+theme:
+    name: 'material'
+    palette:
+        primary: 'green'
+        accent: 'green'
+    language: 'ru'
+    feature:
+        tabs: true
+
+repo_name: 'bndby/xsltdev'
+repo_url: 'https://github.com/bndby/xsltdev'
+
+extra:
+    social:
+        - type: 'github'
+          link: 'https://github.com/bndby'
+        - type: 'twitter'
+          link: 'https://twitter.com/squidfunk'
+        - type: 'linkedin'
+          link: 'https://www.linkedin.com/in/bndby/'
+    manifest: 'manifest.webmanifest'
+
+# google_analytics:
+#   - 'UA-XXXXXXXX-X'
+#   - 'auto'
+
+markdown_extensions:
+    - admonition
+    - codehilite:
+          guess_lang: false
+          linenums: true
+    - toc:
+          permalink: true
+
+plugins:
+    - search
+    - awesome-pages

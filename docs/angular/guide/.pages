@@ -1,0 +1,10 @@
+title: Руководство Angular 8
+arrange:
+    - intro
+    - basic
+    - directives
+    - services
+    - forms
+    - network
+    - route
+    - pipes
