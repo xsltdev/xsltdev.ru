@@ -1,2 +1,2 @@
-python-3.5
+python-3
 pip-9.0.1
