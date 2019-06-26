@@ -1,21 +1,6 @@
----
-layout: default
-title: Установка и компиляция из командной строки
-nav_order: 2
-parent: Введение в TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Установка и компиляция из командной строки
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Чтобы начать работать с TypeScript, установим необходимый инструментарий. Установить TypeScript можно двумя способами: через пакетный менеджер NPM или как плагин к Visual Studio
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Установка через NPM
 

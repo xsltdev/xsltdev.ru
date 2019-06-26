@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-template-rows
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-template-rows
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-template-rows`** определяет строки сетки с помощью списка значений разделённого пробелами. Значения представляют из себя размер трека, а пробелы между ними представляют линии сетки.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

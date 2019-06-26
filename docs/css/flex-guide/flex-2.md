@@ -1,21 +1,6 @@
----
-layout: default
-title: Направление flex-direction
-nav_order: 2
-parent: Руководство Flex
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Направление flex-direction
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Flex-элементы во flex-контейнере могут иметь определенное направление, а именно они могут располагаться в виде строк или в виде столбцов.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Для управления направлением элементов CSS3 предоставляет свойство `flex-direction`. Оно определяет направление элементов и может принимать следующие значения:
 

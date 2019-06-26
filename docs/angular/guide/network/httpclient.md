@@ -1,19 +1,4 @@
----
-layout: default
-title: HttpClient и отправка запросов
-nav_order: 1
-nav_exclude: true
-parent: Взаимодействие с сервером
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # HttpClient и отправка запросов
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Для взаимодействия с сервером и отправки запросов по протоколу http применяется класс `HttpClient`. Этот класс определяет ряд методов для отправки различного рода запросов: `GET`, `POST`, `PUT`, `DELETE`. Данный класс построен поверх стандартного объекта в JavaScript - `XMLHttpRequest`.
 

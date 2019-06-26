@@ -1,21 +1,6 @@
----
-layout: default
-title: Что такое Grid Layout. Grid Container
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Что такое Grid Layout. Grid Container
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Grid Layout представляет специальный модуль CSS3, который позволяет позиционировать элементы в виде сетки или таблицы. Как и Flexbox, Grid Layout представляет гибкий подход к компоновке элементов, только если flexbox размещает вложенные элементы в одном направлении - по горизонтали в виде столбиков или по вертикали в виде строк, то Grid позиционирует элементы сразу в двух направлениях - в виде строк и столбцов, образуя тем самым таблицу.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Полностью спецификацию модуля Grid Layout можно посмотреть на странице [www.w3.org/TR/css-grid-1/](https://metanit.com/web/html5/www.w3.org/TR/css-grid-1/).
 

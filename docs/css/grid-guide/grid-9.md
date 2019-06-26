@@ -1,19 +1,4 @@
----
-layout: default
-title: Именованные grid-линии
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Именованные grid-линии
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 В Grid Layout мы можем дать наименование каждой линии грида, присвоив ей какое-либо имя в квадратных скобках и затем, используя это имя, позиционировать элементы. Например, определим следующую веб-страницу:
 

@@ -1,22 +1,8 @@
----
-layout: default
-title: flex-wrap
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-wrap
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`flex-wrap`** указывает, следует ли флексам располагаться в одну строку или можно занять несколько строк.
 
 Если перенос строк допускается, то свойство также позволяет контролировать направление, в котором выкладываются строки.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 
@@ -109,7 +95,7 @@ padding: 20px;
 background: #f0f0f0;
 border-radius: 5px;
 margin: 1rem;
-text-align: center; 
+text-align: center;
 }
 </style>
 <ul class="flex-container">

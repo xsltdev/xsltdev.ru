@@ -1,0 +1,6 @@
+title: Pipes
+arrange:
+    - pipes.md
+    - create-pipes.md
+    - pure-pipes.md
+    - asyncpipe.md

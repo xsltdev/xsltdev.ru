@@ -1,20 +1,6 @@
----
-layout: default
-title: display
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # display
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`display`**, которое определяет, как элемент должен быть показан в документе.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

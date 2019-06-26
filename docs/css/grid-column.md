@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-column
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-column
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-column`** -- это сокращение для [`grid-column-start`](/css/grid-column-start/) + [`grid-column-end`](/css/grid-column-end/)
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

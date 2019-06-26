@@ -1,21 +1,6 @@
----
-layout: default
-title: flex-wrap
-nav_order: 3
-parent: Руководство Flex
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-wrap
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство flex-wrap определяет, будет ли flex-контейнер несколько рядов элементов (строк или столбцов) в случае если его размеры недостаточны, чтобы вместить в один ряд все элементы.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Это свойство может принимать следующие значения:
 

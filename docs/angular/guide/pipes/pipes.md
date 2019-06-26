@@ -1,19 +1,4 @@
----
-layout: default
-title: Работа с pipes
-nav_order: 1
-nav_exclude: true
-parent: Pipes
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Работа с pipes
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 **`Pipes`** представляют специальные инструменты, которые позволяют форматировать отображаемые значения. Например, нам надо вывести определенную дату:
 

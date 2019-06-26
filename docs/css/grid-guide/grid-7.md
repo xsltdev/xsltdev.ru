@@ -1,19 +1,4 @@
----
-layout: default
-title: Наложение элементов
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Наложение элементов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Манипулируя положением элементов мы легко можем осуществить их наложение, создать своего рода слои из элементов. Например, определим следующий грид:
 

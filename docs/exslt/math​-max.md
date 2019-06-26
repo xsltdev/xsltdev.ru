@@ -1,17 +1,4 @@
----
-layout: default
-title: math​:max
-nav_order:
-parent: EXSLT
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # math​:max()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Поддержка браузерами:
 

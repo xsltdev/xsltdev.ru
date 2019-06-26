@@ -1,19 +1,4 @@
----
-layout: default
-title: Параметры строки запроса
-nav_order: 4
-nav_exclude: true
-parent: Маршрутизация
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Параметры строки запроса
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Кроме параметров маршрута в запросе могут передаваться параметры строки запроса. Например, в запросе `http://localhost:3000/item?product=phone&price=200` часть `product=phone&price=200` будет представлять параметры запроса - `product` и `price`. Такие параметры помещаются в конце адреса после вопросительного знака и разделяются амперсандом.
 

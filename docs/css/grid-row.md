@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-row
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-row
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-row`** сокращение для [`grid-row-start`](/css/grid-row-start/) и [`grid-row-end`](/css/grid-row-end/)
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

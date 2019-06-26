@@ -1,17 +1,4 @@
----
-layout: default
-title: set​:trailing
-nav_order:
-parent: EXSLT
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # set​:trailing()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Поддержка браузерами:
 

@@ -1,21 +1,6 @@
----
-layout: default
-title: Настройки компиляции
-nav_order: 4
-parent: Введение в TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Настройки компиляции
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 При компиляции файлов TypeScript из командной строки компилятор позволяет установить ряд конфигурационных настроек.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Для установки нам доступна куча различных настроек, полный список которых можно найти на странице [Параметры компиляции в TypeScript](http://www.typescriptlang.org/docs/handbook/compiler-options.html). Рассмотрим лишь основные из них.
 

@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-auto-rows
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
-# @grid-auto-rows
-{: .no_toc }
-<!-- prettier-ignore-end -->
+# grid-auto-rows
 
 Свойство **`grid-auto-rows`** определяет размер любых автоматически созданных треков (иначе говоря, неявных треков). Неявные треки создаются при явном позиционировании столбцов и строк (через [`grid-template-rows`](/css/grid-template-rows/)/[`grid-template-columns`](/css/grid-template-columns/)), которые находятся за пределами заданной сетки.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

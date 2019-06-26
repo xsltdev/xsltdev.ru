@@ -1,19 +1,4 @@
----
-layout: default
-title: Выравнивание строк и столбцов. align-content
-nav_order: 7
-parent: Руководство Flex
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Выравнивание строк и столбцов. align-content
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Свойство [`align-content`](../align-content.md) управляет выравниванием рядов (строк и столбцов) во flex-контейнере и поэтому применяется, если свойство [`flex-wrap`](../flex-wrap.md) имеет значение `wrap` или `wrap-reverse`. Свойство `align-content` может иметь следующие значения:
 

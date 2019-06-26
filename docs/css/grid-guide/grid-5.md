@@ -1,19 +1,4 @@
----
-layout: default
-title: Отступы между столбцами и строками
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Отступы между столбцами и строками
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Для создания отступов между столбцами и строками применяются свойства `grid-column-gap` и `grid-row-gap` соответственно.
 

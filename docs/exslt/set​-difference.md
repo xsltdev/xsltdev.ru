@@ -1,17 +1,4 @@
----
-layout: default
-title: set​:difference
-nav_order:
-parent: EXSLT
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # set​:difference()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Поддержка браузерами:
 

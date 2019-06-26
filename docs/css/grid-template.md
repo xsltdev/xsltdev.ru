@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-template
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-template
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-template`** -- сокращение для [`grid-template-rows`](/css/grid-template-rows/), [`grid-template-columns`](/css/grid-template-columns/), и [`grid-template-areas`](/css/grid-template-areas/).
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

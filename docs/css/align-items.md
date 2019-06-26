@@ -1,20 +1,6 @@
----
-layout: default
-title: align-items
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # align-items
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`align-items`** выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

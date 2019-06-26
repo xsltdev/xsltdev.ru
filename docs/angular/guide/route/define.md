@@ -1,19 +1,4 @@
----
-layout: default
-title: Определение маршрутов
-nav_order: 1
-nav_exclude: true
-parent: Маршрутизация
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Определение маршрутов
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Маршрутизация позволяет сопоставлять запросы к приложению с определенными ресурсами внутри приложения.
 

@@ -1,19 +1,4 @@
----
-layout: default
-title: Размеры строк и столбцов
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Размеры строк и столбцов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Фиксированные размеры
 

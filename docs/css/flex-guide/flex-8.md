@@ -1,19 +1,4 @@
----
-layout: default
-title: Управление элементами. flex-basis, flex-shrink и flex-grow
-nav_order:
-parent: Руководство Flex
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Управление элементами. flex-basis, flex-shrink и flex-grow
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Кроме свойств, устанавливающих выравнивание элементов относительно границ flex-контейнера, есть еще три свойства, которые позволяют управлять элементами:
 

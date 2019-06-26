@@ -1,0 +1,7 @@
+title: Введение в TypeScript
+arrange:
+    - about-ts.md
+    - install.md
+    - first-app.md
+    - compile.md
+    - config.md

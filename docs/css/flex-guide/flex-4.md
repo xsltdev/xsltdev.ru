@@ -1,23 +1,8 @@
----
-layout: default
-title: flex-flow. Порядок элементов
-nav_order: 4
-parent: Руководство Flex
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-flow. Порядок элементов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## flex-flow
 
-Свойство [`flex-flow`](../flex-flew.md) позволяет установить значения сразу для обоих свойств [`flex-direction`](../flex-direction.md) и [`flex-wrap`](../flex-wrap.md). Оно имеет следующий формальный синтаксис:
+Свойство [`flex-flow`](../flex-flow.md) позволяет установить значения сразу для обоих свойств [`flex-direction`](../flex-direction.md) и [`flex-wrap`](../flex-wrap.md). Оно имеет следующий формальный синтаксис:
 
 ```css
 flex-flow: [flex-direction] [flex-wrap];

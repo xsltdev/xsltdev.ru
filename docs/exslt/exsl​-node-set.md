@@ -1,17 +1,4 @@
----
-layout: default
-title: exsl​:node-set
-nav_order:
-parent: EXSLT
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # exsl​:node-set()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 **`exsl:node-set()`** возвращает набор узлов из фрагмента результирующего дерева. Это позволяет обрабатывать XML, созданный в переменной, в несколько этапов.
 

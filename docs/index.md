@@ -6,8 +6,8 @@
 
 - [HTML](html/index.md) &mdash; справочник элементов HTML
 - [CSS](css/index.md) &mdash; справочник свойств CSS
-- [Справочник Typescript](ts-handbook/index.md) &mdash; справочник по языку Typescript
-- [Руководство Typescript](ts-guide/index.md) &mdash; руководство по языку Typescript
+- [Справочник Typescript](typescript/handbook/index.md) &mdash; справочник по языку Typescript
+- [Руководство Typescript](typescript/guide/index.md) &mdash; руководство по языку Typescript
 
 ## Фреймворки
 

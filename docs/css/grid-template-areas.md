@@ -1,22 +1,8 @@
----
-layout: default
-title: grid-template-areas
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-template-areas
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-template-areas`** определяет шаблон сетки ссылаясь на имена областей, которые заданы с помощью свойства [`grid-area`](/css/grid-area/).
 
 Повторение названия области приводит к тому, что содержимое охватывает эти ячейки. Точка означает пустую ячейку. Сам синтаксис предоставляет визуализацию структуры сетки.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

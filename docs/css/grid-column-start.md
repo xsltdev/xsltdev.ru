@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-column-start
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-column-start
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-column-start`** определяет местоположение в сетке ссылаясь на конкретные линии. `grid-column-start` / `grid-row-start` — это линия с которой начинается элемент.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

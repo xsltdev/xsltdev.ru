@@ -1,22 +1,8 @@
----
-layout: default
-title: '@keyframes'
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # @keyframes
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Правило **`@keyframes`** управляет промежуточными шагами в последовательности анимации CSS, определяя стили для ключевых кадров последовательности анимации.
 
 Это дает больший контроль над промежуточными этапами анимационной последовательности, чем [переходы](/css/transition/).
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

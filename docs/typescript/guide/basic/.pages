@@ -1,0 +1,7 @@
+title: Основы TypeScript
+arrange:
+    - let-const.md
+    - types.md
+    - types-2.md
+    - funcs.md
+    - funcs-2.md

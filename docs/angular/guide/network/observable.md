@@ -1,19 +1,4 @@
----
-layout: default
-title: Объект Observable и библиотека RxJS
-nav_order: 2
-nav_exclude: true
-parent: Взаимодействие с сервером
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Объект Observable и библиотека RxJS
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Методы класса `HttpClient` после выполнения запроса возвращают объект `Observable<any>`, который определен в библиотеке RxJS ("Reactive Extensions"). Она не является непосредственно частью Angular, однако широко используется особенно при взаимодействии с сервером по http. Эта библиотека реализует паттерн "асинхронный наблюдатель" (asynchronous observable). Так, выполнение запроса к серверу с помощью класса `HttpClient` выполняются в асинхронном режиме.
 

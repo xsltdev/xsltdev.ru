@@ -1,19 +1,4 @@
----
-layout: default
-title: Файл конфигурации tsconfig.json
-nav_order: 5
-parent: Введение в TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Файл конфигурации tsconfig.json
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 С помощью файла `tsconfig.json` можно настроить проект TypeScript. В частности, этот файл выполняет следующие задачи:
 

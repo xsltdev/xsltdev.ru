@@ -20,6 +20,8 @@ extra:
         - type: 'linkedin'
           link: 'https://www.linkedin.com/in/bndby/'
     manifest: 'manifest.webmanifest'
+    search:
+        language: 'en, de, ru'
 
 # google_analytics:
 #   - 'UA-XXXXXXXX-X'

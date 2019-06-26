@@ -277,6 +277,7 @@
 {: .col-14 }
 -->
 
+<!--
 <details markdown="1" class="abstract">
 <summary>Анимации</summary>
 
@@ -292,6 +293,7 @@
 - [animation-timing-function](animation-timing-function.md)
 
 </details>
+-->
 
 <!--
 ## Трансформации

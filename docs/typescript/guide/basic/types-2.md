@@ -1,19 +1,4 @@
----
-layout: default
-title: Работа с типами данных
-nav_order: 3
-parent: Основы TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Работа с типами данных
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Объединения
 

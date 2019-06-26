@@ -1,19 +1,4 @@
----
-layout: default
-title: POST-запросы
-nav_order: 5
-nav_exclude: true
-parent: Взаимодействие с сервером
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # POST-запросы
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Кроме GET-запросов Angular позволяет отправлять остальные типы запросов: `POST`, `PUT`, `DELETE`. Рассмотрим, как выполнять POST-запросы.
 

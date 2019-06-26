@@ -1,21 +1,6 @@
----
-layout: default
-title: Переменные и константы
-nav_order: 1
-parent: Основы TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Переменные и константы
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Для хранения данных в программе в TypeScript, как и во многих языках программирования используются переменные.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Для определения переменных, как в JavaScript, можно использовать ключевое слово `var`:
 

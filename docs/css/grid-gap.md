@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-gap
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-gap
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-gap`** - это сокращение для [`grid-row-gap`](/css/grid-row-gap/) и [`grid-column-gap`](/css/grid-column-gap/).
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

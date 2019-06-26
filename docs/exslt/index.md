@@ -1,15 +1,4 @@
----
-layout: default
-title: EXSLT
-nav_order: 140
-has_children: true
-has_toc: false
-permalink: /exslt/
----
-
 # EXSLT
-
-<!-- prettier-ignore-start -->
 
 Справочник по функциям EXSLT на русском языке
 
@@ -37,6 +26,3 @@ permalink: /exslt/
 - [str​:concat](str-concat.md)
 - [str​:split](str-split.md)
 - [str​:tokenize](str​-tokenize.md)
-{: .col-14 }
-
-<!-- prettier-ignore-end -->

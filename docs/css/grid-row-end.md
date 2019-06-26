@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-row-end
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-row-end
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-row-end`** определяет местоположение в сетке ссылаясь на конкретные линии. `grid-column-end` / `grid-row-end` — это линия на которой элемент заканчивается.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

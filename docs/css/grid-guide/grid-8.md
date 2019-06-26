@@ -1,19 +1,4 @@
----
-layout: default
-title: Направление и порядок элементов
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Направление и порядок элементов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Свойство grid-auto-flow
 

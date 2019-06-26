@@ -1,17 +1,4 @@
----
-layout: default
-title: set​:has-same-node
-nav_order:
-parent: EXSLT
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # set​:has-same-node()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Поддержка браузерами:
 

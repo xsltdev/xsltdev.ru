@@ -1,20 +1,6 @@
----
-layout: default
-title: flex-flow
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-flow
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`flex-flow`** является сокращённым свойством для отдельных свойств [`flex-direction`](/css/flex-direction/) и [`flex-wrap`](/css/flex-wrap/).
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

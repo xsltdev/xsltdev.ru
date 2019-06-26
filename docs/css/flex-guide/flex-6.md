@@ -1,19 +1,4 @@
----
-layout: default
-title: Выравнивание элементов. align-items и align-self
-nav_order: 6
-parent: Руководство Flex
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Выравнивание элементов. align-items и align-self
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Свойство align-items
 

@@ -1,21 +1,6 @@
----
-layout: default
-title: Типы данных
-nav_order: 2
-parent: Основы TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Типы данных
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 TypeScript является строго типизированным языком, и каждая переменная и константа в нем имеет определенный тип. При этом в отличие от javascript мы не можем динамически изменить ранее указанный тип переменной.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 В TypeScript имеются следующие базовые типы:
 

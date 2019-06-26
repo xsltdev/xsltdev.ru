@@ -1,19 +1,4 @@
----
-layout: default
-title: Функция repeat и свойство grid
-nav_order:
-parent: Руководство Grid
-grand_parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # Функция repeat и свойство grid
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Повторение строк и столбцов
 

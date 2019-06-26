@@ -1,15 +1,4 @@
----
-layout: default
-title: Что такое TypeScript
-nav_order: 1
-parent: Введение в TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Что такое TypeScript
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 **TypeScript** представляет язык программирования на основе **JavaScript**.
 

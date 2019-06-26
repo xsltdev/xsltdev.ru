@@ -1,19 +1,4 @@
----
-layout: default
-title: Модуль FormsModule и директива NgModel
-nav_order: 1
-nav_exclude: true
-parent: Работа с формами
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Модуль FormsModule и директива NgModel
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Для взаимодействия с пользователем в веб-приложениях, как правило применяются формы. В Angular прежде чем использовать формы в компонентах, нам надо импортировать в главном модуле `AppModule` модуль `FormsModule`, который позволяет работать с формами:
 

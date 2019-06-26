@@ -1,21 +1,6 @@
----
-layout: default
-title: Первое приложение на TypeScript в Visual Studio
-nav_order: 3
-parent: Введение в TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Первое приложение на TypeScript в Visual Studio
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Среда разработки Visual Studio имеет встроенные возможности по созданию проектов с использованием TypeScript. Итак, создадим первое приложение на TypeScript в Visual Studio 2017. При создании нового проекта нужно выбрать в левом меню TypeScript.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Здесь нам доступны по умолчанию несколько шаблонов проектов:
 

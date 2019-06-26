@@ -1,22 +1,8 @@
----
-layout: default
-title: flex-basis
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-basis
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`flex-basis`** определяет основу флекса, которая является начальным размером элемента.
 
 Похоже на свойства [`width`](/css/width/) и [`height`](/css/height/), к которым добавляется содержимое элемента.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

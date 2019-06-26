@@ -1,19 +1,4 @@
----
-layout: default
-title: Pure и Impure Pipes
-nav_order: 3
-nav_exclude: true
-parent: Pipes
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Pure и Impure Pipes
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Pipes бывают двух типов: `pure` (не допускающие изменений) и `impure` (допускающие изменений). Различие между этими двумя типами заключается в реагировании на изменение значений, которые передаются в `pipe`.
 

@@ -1,19 +1,4 @@
----
-layout: default
-title: Создание своих pipes
-nav_order: 2
-nav_exclude: true
-parent: Pipes
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Создание своих pipes
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Если нам потребуется некоторая предобработка при выводе данных, мы можем для этой цели написать свои собственные `pipes`. К примеру, нам надо выводить факториал определенного числа. Для этого добавим в проект новый файл `factorial.pipe.ts`:
 

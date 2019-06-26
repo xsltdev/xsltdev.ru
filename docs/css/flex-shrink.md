@@ -1,20 +1,6 @@
----
-layout: default
-title: flex-shrink
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-shrink
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`flex-shrink`** устанавливает коэффициент сжатия флексов в контейнере и задаёт, насколько элемент будет уменьшаться по отношению к другим флексам, чтобы разместить все элементы в одну строку.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 
@@ -106,7 +92,7 @@ flex-shrink: 2;
 </style>
 <div class="flex-container">
 <div class="flex-item flex1"><img src="aquaria.jpg" alt=""></div>
-<div class="flex-item flex2">Понравились готовые инсталляции, некоторые 
-даже без рыбок смотрятся так, что хочется фотографию на рабочий 
+<div class="flex-item flex2">Понравились готовые инсталляции, некоторые
+даже без рыбок смотрятся так, что хочется фотографию на рабочий
 стол поставить и любоваться.</div>
 </div>

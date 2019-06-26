@@ -1,19 +1,4 @@
----
-layout: default
-title: Reactive Forms
-nav_order: 5
-nav_exclude: true
-parent: Работа с формами
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Reactive Forms
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 В прошлых темах был описан подход `Template-Driven`, который концентрировался вокруг шаблона компонента: для работы с формой и ее элементами в шаблоне компонента к элементам html применялись директивы `NgModel` и `NgForm`, правила валидации задавались в тегах элементов с помощью атрибутов `required` и `pattern`. Но есть альтернативный подход - использование реактивных форм (Reactive Forms). Рассмотрим, в чем он заключается.
 

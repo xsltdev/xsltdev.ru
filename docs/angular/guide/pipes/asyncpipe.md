@@ -1,19 +1,4 @@
----
-layout: default
-title: AsyncPipe
-nav_order: 4
-nav_exclude: true
-parent: Pipes
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # AsyncPipe
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Одним из встроенных классов, который в отличие от других `pipes` уже по умолчанию представляет тип `impure`. `AsyncPipe` позволяет получить результат асинхронной операции.
 

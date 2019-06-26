@@ -1,20 +1,6 @@
----
-layout: default
-title: grid-row-gap
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # grid-row-gap
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`grid-row-gap`** определяет размер ширины линий. Вы можете думать об этом, как о настройке ширины отступов между строками.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

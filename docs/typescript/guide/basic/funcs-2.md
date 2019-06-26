@@ -1,19 +1,4 @@
----
-layout: default
-title: Тип функции и стрелочные функции
-nav_order: 5
-parent: Основы TypeScript
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Тип функции и стрелочные функции
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Тип функции
 

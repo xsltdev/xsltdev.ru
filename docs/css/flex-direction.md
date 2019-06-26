@@ -1,22 +1,8 @@
----
-layout: default
-title: flex-direction
-nav_order:
-parent: CSS
----
-
-<!-- prettier-ignore-start -->
 # flex-direction
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Свойство **`flex-direction`** задаёт направление основных осей в контейнере и тем самым определяет положение флексов в контейнере.
 
 На само направление также влияет значение атрибута `dir` у контейнера.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

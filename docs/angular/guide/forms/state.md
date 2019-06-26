@@ -1,19 +1,4 @@
----
-layout: default
-title: Состояние модели и валидация
-nav_order: 3
-nav_exclude: true
-parent: Работа с формами
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Состояние модели и валидация
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 ## Состояние модели
 
