@@ -1,19 +1,8 @@
----
-layout: default
-title: CSS
-nav_order: 110
-has_children: true
-has_toc: false
-permalink: /css/
----
+# Свойства CSS
 
-# CSS
-
-<!-- prettier-ignore-start -->
-Справочник CSS
+Справочник свойств CSS
 
 - [!important](important.md)
-{: .col-14 }
 
 <!--
 ## Псевдоклассы
@@ -100,12 +89,11 @@ permalink: /css/
 -->
 
 - [display](display.md)
-{: .col-14 }
 
-## Grid
+<details markdown="1" class="abstract">
+<summary>Grid</summary>
 
-- [Руководство по Grid Layout](grid-guide/index.md)
-{: .col-14 }
+Руководство по [Grid Layout](grid-guide/index.md)
 
 - [grid](grid.md)
 - [grid-area](grid-area.md)
@@ -125,12 +113,13 @@ permalink: /css/
 - [grid-template-areas](grid-template-areas.md)
 - [grid-template-columns](grid-template-columns.md)
 - [grid-template-rows](grid-template-rows.md)
-{: .col-14 }
 
-## Flex
+</details>
 
-- [Руководство по Flexbox](flex-guide/index.md)
-{: .col-14 }
+<details markdown="1" class="abstract">
+<summary>Flex</summary>
+
+Руководство по [Flexbox](flex-guide/index.md)
 
 - [flex](flex.md)
 - [flex-basis](flex-basis.md)
@@ -140,7 +129,8 @@ permalink: /css/
 - [flex-shrink](flex-shrink.md)
 - [flex-wrap](flex-wrap.md)
 - [order](order.md)
-{: .col-14 }
+
+</details>
 
 <!--
 ## Выравнивание
@@ -287,9 +277,10 @@ permalink: /css/
 {: .col-14 }
 -->
 
-## Анимации
+<details markdown="1" class="abstract">
+<summary>Анимации</summary>
 
-<!--
+- [@keyframes](@keyframes.md)
 - [animation](animation.md)
 - [animation-delay](animation-delay.md)
 - [animation-direction](animation-direction.md)
@@ -299,11 +290,8 @@ permalink: /css/
 - [animation-name](animation-name.md)
 - [animation-play-state](animation-play-state.md)
 - [animation-timing-function](animation-timing-function.md)
-{: .col-14 }
--->
 
-- [@keyframes](@keyframes.md)
-{: .col-14 }
+</details>
 
 <!--
 ## Трансформации

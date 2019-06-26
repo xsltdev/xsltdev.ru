@@ -1,4 +1,5 @@
 title: CSS
 arrange:
+    - index.md
     - flex-guide
     - grid-guide

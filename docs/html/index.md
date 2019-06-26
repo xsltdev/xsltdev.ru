@@ -1,14 +1,18 @@
-# Оглавление
+# Теги HTML
 
 Справочник по тегам HTML на русском языке. В справочнике приведены только актуальные для HTML теги и атрибуты, устаревшие и нерекомендуемые теги и атрибуты не описываются.
 
-## Основные элементы
+<details markdown="1" class="abstract">
+<summary>Основные элементы</summary>
 
 - [`<html>`](html.md) &mdash; корневой элемент HTML-документа
 - [`<head>`](head.md) &mdash; общая информация о документе
 - [`<body>`](body.md) &mdash; контент документа
 
-## Метаданные документа
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Метаданные документа</summary>
 
 - [`<base>`](base.md) &mdash; базовый адрес
 - [`<link>`](link.md) &mdash; внешние ресурсы и ссылки
@@ -16,7 +20,10 @@
 - [`<style>`](style.md) &mdash; стили
 - [`<title>`](title.md) &mdash; заголовок документа
 
-## Секционирование содержания
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Секционирование содержания</summary>
 
 - [`<address>`](address.md) &mdash; контактные данные
 - [`<article>`](article.md) &mdash; часть документа, страницы или сайта
@@ -28,7 +35,10 @@
 - [`<nav>`](nav.md) &mdash; навигация
 - [`<section>`](section.md) &mdash; автономная секция
 
-## Текстовое содержание
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Текстовое содержание</summary>
 
 - [`<blockquote>`](blockquote.md) &mdash; цитата
 - [`<dd>`](dd.md) &mdash; значение определения
@@ -44,7 +54,10 @@
 - [`<pre>`](pre.md) &mdash; форматированный текст
 - [`<ul>`](ul.md) &mdash; маркированный список
 
-## Встроенные текстовые семантики
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Встроенные текстовые семантики</summary>
 
 - [`<a>`](a.md) &mdash; ссылка
 - [`<abbr>`](abbr.md) &mdash; аббревиатура
@@ -76,7 +89,10 @@
 - [`<var>`](var.md) &mdash; разметка переменной
 - [`<wbr>`](wbr.md) &mdash; возможный перенос строки
 
-## Изображения и мультимедиа
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Изображения и мультимедиа</summary>
 
 - [`<area>`](area.md) &mdash; область на карте ссылок
 - [`<audio>`](audio.md) &mdash; аудио-файл
@@ -92,13 +108,19 @@
 - [`<picture>`](picture.md) &mdash; изображение
 - [`<source>`](source.md) &mdash; медиа-ресурс
 
-## Скрипты
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Скрипты</summary>
 
 - [`<canvas>`](canvas.md) &mdash; область для программного рисования
 - [`<noscript>`](noscript.md) &mdash; контент, выводимый при отключенных скриптах
 - [`<script>`](script.md) &mdash; скрипт
 
-## Таблицы
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Таблицы</summary>
 
 - [`<caption>`](caption.md) &mdash; заголовок таблицы
 - [`<col>`](col.md) &mdash; колонка таблицы
@@ -111,7 +133,10 @@
 - [`<thead>`](thead.md) &mdash; шапка таблицы
 - [`<tr>`](tr.md) &mdash; строка таблицы
 
-## Формы
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Формы</summary>
 
 - [`<button>`](button.md) &mdash; кнопка
 - [`<datalist>`](datalist.md) &mdash; набор опций
@@ -128,13 +153,21 @@
 - [`<select>`](select.md) &mdash; выпадающий список
 - [`<textarea>`](textarea.md) &mdash; ввод многострочного текста
 
-## Интерактивные элементы
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Интерактивные элементы</summary>
 
 - [`<details>`](details.md) &mdash; разворачивающийся элемент
 - [`<dialog>`](dialog.md) &mdash; диалоговое окно
 - [`<summary>`](summary.md) &mdash; заголовок в разворачивающемся элементе
 
-## Веб-компоненты
+</details>
+
+<details markdown="1" class="abstract">
+<summary>Веб-компоненты</summary>
 
 - [`<slot>`](slot.md) &mdash; именованный слот
 - [`<template>`](template.md) &mdash; шаблон веб-компонента
+
+</details>
