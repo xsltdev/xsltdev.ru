@@ -1,19 +1,4 @@
----
-layout: default
-title: Структурные директивы
-nav_order: 5
-nav_exclude: true
-parent: Директивы
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Структурные директивы ngIf, ngFor, ngSwitch
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Структурные директивы изменяют структуру DOM с помощью добавления или удаления html-элементов. Рассмотрим три структурных директивы: `ngIf`, `ngSwitch` и `ngFor`.
 

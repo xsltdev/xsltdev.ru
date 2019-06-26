@@ -1,19 +1,4 @@
----
-layout: default
-title: Создание структурных директив
-nav_order: 6
-nav_exclude: true
-parent: Директивы
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Создание структурных директив
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Создадим простейшую структурную директиву. Добавим в папку `src/app` новый файл `while.directive.ts`:
 

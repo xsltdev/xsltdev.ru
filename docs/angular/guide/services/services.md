@@ -1,19 +1,4 @@
----
-layout: default
-title: Сервисы
-nav_order: 1
-nav_exclude: true
-parent: Сервисы
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Сервисы
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Сервисы в Angular представляют довольно широкий спектр классов, которые выполняют некоторые специфические задачи, например, логгирование, работу с данными и т. д.
 

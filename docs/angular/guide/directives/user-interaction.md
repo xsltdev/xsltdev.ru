@@ -1,19 +1,4 @@
----
-layout: default
-title: Взаимодействие с пользователем
-nav_order: 3
-nav_exclude: true
-parent: Директивы
-grand_parent: Руководство Angular 7
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # Взаимодействие с пользователем, @HostListener и @HostBinding
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Кроме простой установки значений атрибутивная директива может взаимодействовать с пользователем. Для этого применяется декоратор `@HostListener`.
 

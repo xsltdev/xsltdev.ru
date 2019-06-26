@@ -12,6 +12,14 @@
 				"useTabs": false,
 				"tabWidth": 2
 			}
+		},
+		{
+			"files": ".pages",
+			"options": {
+				"parser": "markdown",
+				"useTabs": false,
+				"tabWidth": 4
+			}
 		}
 	]
 }
