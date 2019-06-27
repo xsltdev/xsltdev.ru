@@ -46,3 +46,6 @@ plugins:
 
 extra_javascript:
     - 'https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js'
+
+extra_css:
+    - '/assets/css/style.css'
