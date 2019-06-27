@@ -1,20 +1,6 @@
----
-layout: default
-title: number
-nav_order: 23
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # number()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`number`** явным образом конвертирует свой аргумент в числовой тип. Если аргумент не указан, функции передается множество узлов, состоящее из единственного контекстного узла.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

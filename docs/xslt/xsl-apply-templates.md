@@ -1,22 +1,8 @@
----
-layout: default
-title: xsl:apply-templates
-nav_order: 2
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:apply-templates
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:apply-templates`** применяет шаблонные правила к узлам, которые возвращаются выражением, указанным в атрибуте `select`.
 
 Если атрибут `select` опущен, то `xsl:apply-templates` применяет шаблонные правила ко всем дочерним узлам текущего узла.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

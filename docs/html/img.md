@@ -1,17 +1,4 @@
----
-layout: default
-title: img
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;img&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<img>`** _(от англ. **im**a**g**e -- изображение)_ предназначен для отображения на веб-странице изображений в графическом формате GIF, JPEG, SVG или PNG.
 

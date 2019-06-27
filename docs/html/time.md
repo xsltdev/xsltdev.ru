@@ -1,17 +1,4 @@
----
-layout: default
-title: time
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;time&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<time>`** _(от англ. **time** -- время)_ помечает текст внутри элемента как дату, время или оба значения.
 
@@ -20,8 +7,7 @@ parent: HTML
 ## Синтаксис
 
 ```html
-<time>дата и время</time>
-<time datetime="<дата и время>">текст</time>
+<time>дата и время</time> <time datetime="<дата и время>">текст</time>
 ```
 
 Закрывающий тег обязателен.

@@ -1,17 +1,4 @@
----
-layout: default
-title: figure
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;figure&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<figure>`** _(от англ. **figure** - рисунок)_ используется для группирования любых элементов, например, изображений и подписей к ним.
 

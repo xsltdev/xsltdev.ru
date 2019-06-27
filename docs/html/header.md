@@ -1,17 +1,4 @@
----
-layout: default
-title: header
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;header&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<header>`** _(от англ. **header** -- заголовок)_ задаёт «шапку» сайта или раздела, в которой обычно располагается заголовок.
 

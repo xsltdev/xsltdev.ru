@@ -1,17 +1,4 @@
----
-layout: default
-title: form
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;form&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<form>`** _(от англ. **form** - форма)_ устанавливает форму на веб-странице.
 

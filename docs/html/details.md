@@ -1,17 +1,4 @@
----
-layout: default
-title: details
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;details&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<details>`** _(от англ. **details** - детали)_ используется для хранения информации, которую можно скрыть или показать по требованию пользователя. По умолчанию содержимое элемента не отображается, для изменения статуса применяется атрибут `open`.
 

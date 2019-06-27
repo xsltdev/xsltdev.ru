@@ -1,17 +1,4 @@
----
-layout: default
-title: figcaption
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;figcaption&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<figcaption>`** _(от англ. **fig**ure **caption** - подпись к рисунку)_ содержит описание для элемента [`<figure>`](/html/figure/).
 

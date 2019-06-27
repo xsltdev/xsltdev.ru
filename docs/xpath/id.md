@@ -1,22 +1,8 @@
----
-layout: default
-title: id
-nav_order: 14
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # id()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`id`** позволяет обращаться к элементам по значениями их уникальных атрибутов.
 
 Частично поддерживается браузером Mozilla Firefox.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

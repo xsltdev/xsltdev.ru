@@ -1,17 +1,4 @@
----
-layout: default
-title: kbd
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;kbd&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<kbd>`** _(от англ. **k**ey**b**oar**d** -- клавиатура)_ используется для обозначения текста, который набирается на клавиатуре или для названия клавиш.
 

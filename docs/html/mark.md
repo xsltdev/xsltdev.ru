@@ -1,17 +1,4 @@
----
-layout: default
-title: mark
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;mark&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<mark>`** _(от англ. **mark** - отметка)_ помечает текст как выделенный.
 

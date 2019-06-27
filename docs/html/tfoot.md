@@ -1,17 +1,4 @@
----
-layout: default
-title: tfoot
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;tfoot&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<tfoot>`** _(от англ. **t**able **foot** -- подвал таблицы)_ предназначен для хранения одной или нескольких строк, которые представлены внизу таблицы.
 

@@ -1,20 +1,6 @@
----
-layout: default
-title: string-length
-nav_order: 28
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # string-length()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`string-length`** возвращает число символов строкового аргумента. Если аргумент опущен, `string-length` возвращает длину строкового представления контекстного узла.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

@@ -1,20 +1,6 @@
----
-layout: default
-title: count
-nav_order: 5
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # count()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`count`** возвращает число узлов в наборе узлов.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

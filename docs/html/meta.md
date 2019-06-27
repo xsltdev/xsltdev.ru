@@ -1,17 +1,4 @@
----
-layout: default
-title: meta
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;meta&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<meta>`** _(от англ. **meta** information -- мета информация)_ определяет данные (они называются ещё метатеги), которые используются для хранения информации, предназначенной для браузеров и поисковых систем.
 

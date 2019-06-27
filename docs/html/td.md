@@ -1,17 +1,4 @@
----
-layout: default
-title: td
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;td&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<td>`** _(от англ. **t**able **d**ata -- данные таблицы)_ предназначен для создания одной ячейки таблицы.
 

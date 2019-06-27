@@ -1,17 +1,4 @@
----
-layout: default
-title: video
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;video&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<video>`** _(от англ. **video** -- видео)_ добавляет, воспроизводит и управляет настройками видеоролика на веб-странице.
 

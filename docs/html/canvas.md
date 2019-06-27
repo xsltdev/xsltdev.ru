@@ -1,17 +1,4 @@
----
-layout: default
-title: canvas
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;canvas&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<canvas>`** _(от англ. **canvas** - холст)_ создаёт область, в которой при помощи JavaScript можно рисовать разные объекты, выводить изображения, трансформировать их и менять свойства.
 

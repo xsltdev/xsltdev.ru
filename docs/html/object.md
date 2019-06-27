@@ -1,17 +1,4 @@
----
-layout: default
-title: object
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;object&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<object>`** _(от англ. **object** -- объект)_ сообщает браузеру, как загружать и отображать объекты, которые исходно браузер не понимает.
 

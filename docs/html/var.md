@@ -1,17 +1,4 @@
----
-layout: default
-title: var
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;var&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<var>`** _(от англ. **var**iable -- переменная)_ используется для выделения переменных из компьютерных программ.
 

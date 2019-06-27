@@ -1,17 +1,4 @@
----
-layout: default
-title: ol
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;ol&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<ol>`** _(от англ. **o**rdered **l**ist -- упорядоченный список)_ устанавливает нумерованный (упорядоченный) список.
 

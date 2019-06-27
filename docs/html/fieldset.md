@@ -1,17 +1,4 @@
----
-layout: default
-title: fieldset
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;fieldset&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<fieldset>`** _(от англ. **field** **set** - набор полей)_ предназначен для группирования элементов формы.
 

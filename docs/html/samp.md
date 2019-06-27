@@ -1,17 +1,4 @@
----
-layout: default
-title: samp
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;samp&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<samp>`** _(от англ. **samp**le -- пример)_ используется для отображения текста, который является результатом вывода компьютерной программы или скрипта.
 

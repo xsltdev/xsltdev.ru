@@ -1,17 +1,4 @@
----
-layout: default
-title: li
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;li&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<li>`** _(от англ. **l**ist **i**tem -- пункт списка)_ определяет отдельный пункт списка. Внешний элемент [`<ul>`](/html/ul/) или [`<ol>`](/html/ol/) устанавливает тип списка — маркированный или нумерованный.
 

@@ -1,20 +1,6 @@
----
-layout: default
-title: name
-nav_order: 19
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # name()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`name`** возвратит имя вида `QName`, которое будет соответствовать расширенному имени первого в порядке просмотра документа узла переданного ей множества.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

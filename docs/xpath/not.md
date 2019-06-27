@@ -1,20 +1,6 @@
----
-layout: default
-title: not
-nav_order: 22
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # not()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`not`** выполняет логическое отрицание.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

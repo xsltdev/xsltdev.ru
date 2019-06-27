@@ -1,22 +1,8 @@
----
-layout: default
-title: element-available
-nav_order: 8
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # element-available()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`element-available`** служит для проверки доступности в преобразовании того или иного элемента.
 
 Строковый параметр `element-available` задает расширенное имя элемента; функция возвращает `true`, если элемент с таким именем доступен, `false` — если нет.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

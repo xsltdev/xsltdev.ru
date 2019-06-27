@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:variable
-nav_order: 33
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:variable
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Для объявления переменных в XSLT служит элемент **`xsl:variable`**, который может как присутствовать в теле шаблона, так и быть элементом верхнего уровня.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

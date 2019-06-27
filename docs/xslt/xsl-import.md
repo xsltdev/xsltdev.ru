@@ -1,30 +1,16 @@
----
-layout: default
-title: xsl:import
-nav_order: 15
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:import
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Импорт преобразований, который обеспечивается элементом **`xsl:import`** является одним из способов использования внешних модулей в XSLT.
 
 Импорт преобразований более сложен, чем их простое [включение](/xslt/xsl-include/) — последовательность импорта модулей может влиять на то, как будет выполняться преобразование. Равно как и в случае с [`xsl:include`](/xslt/xsl-include/), условное импортирование преобразований не разрешено.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 
 ### XSLT 1.0, XSLT 2.0 и XSLT 3.0
 
 ```xml
-    <xsl:import
-        href = "URI" />
+<xsl:import
+	href = "URI" />
 ```
 
 Атрибуты:

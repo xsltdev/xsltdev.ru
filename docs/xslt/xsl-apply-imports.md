@@ -1,36 +1,22 @@
----
-layout: default
-title: xsl:apply-imports
-nav_order: 1
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:apply-imports
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:apply-imports`** используется в шаблонах для применения правил, которые были импортированы во внешних модулях, но переопределены шаблонами основного преобразования.
 
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
+!!! info "Синтаксис"
 
-## Синтаксис
+    XSLT 1.0
 
-### XSLT 1.0
+    ```xml
+    <xsl:apply-imports />
+    ```
 
-```xml
-<xsl:apply-imports />
-```
+    XSLT 2.0 и XSLT 3.0
 
-### XSLT 2.0 и XSLT 3.0
-
-```xml
-<xsl:apply-imports>
-    <!-- Контент: несколько элементов xsl:with-param -->
-</xsl:apply-imports>
-```
+    ```xml
+    <xsl:apply-imports>
+    	<!-- Контент: несколько элементов xsl:with-param -->
+    </xsl:apply-imports>
+    ```
 
 ## Описание и примеры
 
@@ -44,17 +30,19 @@ parent: XSLT
 
 ```xml
 <xsl:template match="example">
-    <pre><xsl:apply-templates/></pre>
+    <pre>
+		<xsl:apply-templates />
+	</pre>
 </xsl:template>
 ```
 
 Другой стиль может импортировать `doc.xsl` и поменять обработку элементов `example` следующим образом:
 
 ```xml
-<xsl:import href="doc.xsl"/>
+<xsl:import href="doc.xsl" />
 <xsl:template match="example">
     <div style="border: solid red">
-        <xsl:apply-imports/>
+        <xsl:apply-imports />
     </div>
 </xsl:template>
 ```

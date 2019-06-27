@@ -1,17 +1,4 @@
----
-layout: default
-title: param
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;param&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<param>`** _(от англ. **param**eter -- параметр)_ предназначен для передачи значений параметров Java-апплетам или объектам веб-страницы, созданным с помощью элементов `<applet>` или [`<object>`](/html/object/).
 

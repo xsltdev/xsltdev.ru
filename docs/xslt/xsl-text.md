@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:text
-nav_order: 30
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:text
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:text`** служит для того, чтобы создавать в выходящем документе текстовые узлы.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

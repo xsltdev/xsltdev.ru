@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:output
-nav_order: 22
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:output
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент верхнего уровня **`xsl:output`** позволяет указывать, каким образом должно быть выведено результирующее дерево.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

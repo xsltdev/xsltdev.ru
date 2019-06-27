@@ -1,17 +1,4 @@
----
-layout: default
-title: strong
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;strong&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<strong>`** _(от англ. **strong** -- сильный)_ предназначен для выделения важного текста.
 

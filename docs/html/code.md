@@ -1,17 +1,4 @@
----
-layout: default
-title: code
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;code&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<code>`** _(от англ. **code** - код)_ предназначен для отображения одной или нескольких строк текста, который представляет собой программный код.
 

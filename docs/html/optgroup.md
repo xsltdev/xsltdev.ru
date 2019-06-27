@@ -1,17 +1,4 @@
----
-layout: default
-title: optgroup
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;optgroup&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<optgroup>`** _(от англ. **opt**ion **group** -- группа параметров)_ представляет собой контейнер, внутри которого располагаются элементы [`<option>`](/html/option/), объединённые в одну группу.
 

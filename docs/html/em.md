@@ -1,17 +1,4 @@
----
-layout: default
-title: em
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;em&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<em>`** _(от англ. **em**phasis - акцентирование)_ предназначен для акцентирования текста. Браузеры отображают такой текст курсивным начертанием.
 

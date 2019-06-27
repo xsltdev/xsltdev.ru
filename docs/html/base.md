@@ -1,17 +1,4 @@
----
-layout: default
-title: base
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;base&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<base>`** _(от англ. **base** - основа)_ определен внутри контейнера [`<head>`](/html/head/) и инструктирует браузер относительно полного базового адреса текущего документа.
 

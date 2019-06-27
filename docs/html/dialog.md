@@ -1,17 +1,4 @@
----
-layout: default
-title: dialog
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;dialog&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<dialog>`** _(от англ. **dialog** - диалог)_ задает диалоговое окно, в котором можно выводить сообщение или форму, например, для входа на сайт.
 

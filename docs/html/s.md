@@ -1,17 +1,4 @@
----
-layout: default
-title: s
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;s&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<s>`** _(от англ. **s**trikethrough -- зачеркнутый)_ используется для содержимого, которое уже не является точным или актуальным.
 

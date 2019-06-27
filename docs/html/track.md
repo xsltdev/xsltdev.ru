@@ -1,17 +1,4 @@
----
-layout: default
-title: track
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;track&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<track>`** _(от англ. **track** -- след, дорожка)_ позволяет авторам указать текстовую дорожку для медийных элементов [`<audio>`](/html/audio/) и [`<video>`](/html/video/).
 

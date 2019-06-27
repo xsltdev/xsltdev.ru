@@ -1,17 +1,4 @@
----
-layout: default
-title: p
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;p&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<p>`** _(от англ. **p**aragraph -- параграф)_ определяет текстовый абзац.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: button
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;button&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<button>`** _(от англ. **button** -- кнопка)_ создаёт на веб-странице кнопки и по своему действию напоминает результат, получаемый с помощью [`<input>`](/html/input/) (с атрибутом `type="button | reset | submit"`).
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: u
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;u&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<u>`** _(от англ. **u**nderline -- подчеркнутый)_ используется для разметки текста, который должен отличаться стилистически от обычного текста.
 

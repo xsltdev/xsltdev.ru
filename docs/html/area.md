@@ -1,17 +1,4 @@
----
-layout: default
-title: area
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;area&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<area>`** _(от англ. **area** - область)_ определяет активные области изображения, которые являются ссылками.
 
@@ -50,7 +37,9 @@ parent: HTML
 
 **Синтаксис**
 
-    <area alt="<текст>">
+```html
+<area alt="<текст>" />
+```
 
 **Значения**
 
@@ -68,7 +57,9 @@ parent: HTML
 
 **Синтаксис**
 
-    <area coords="<координата 1>, <координата 2>, <координата 3>, ...">
+```html
+<area coords="<координата 1>, <координата 2>, <координата 3>, ..." />
+```
 
 **Значения**
 
@@ -96,7 +87,9 @@ parent: HTML
 
 **Синтаксис**
 
-    <area href="<адрес>">
+```html
+<area href="<адрес>" />
+```
 
 **Значения**
 
@@ -112,9 +105,11 @@ parent: HTML
 
 **Синтаксис**
 
-    <map>
-        <area href="<адрес>" hreflang="<язык>">
-    </map>
+```html
+<map>
+  <area href="<адрес>" hreflang="<язык>" />
+</map>
+```
 
 **Значения**
 
@@ -130,7 +125,9 @@ parent: HTML
 
 **Синтаксис**
 
-    <area shape="circle | default | poly | rect">
+```html
+<area shape="circle | default | poly | rect" />
+```
 
 **Значения**
 
@@ -149,7 +146,9 @@ parent: HTML
 
 **Синтаксис**
 
-    <area target="<значение>">
+```html
+<area target="<значение>" />
+```
 
 **Значения**
 
@@ -170,7 +169,9 @@ parent: HTML
 
 **Синтаксис**
 
-    <area href="<адрес>" type="<MIME-тип>">
+```html
+<area href="<адрес>" type="<MIME-тип>" />
+```
 
 **Значения**
 

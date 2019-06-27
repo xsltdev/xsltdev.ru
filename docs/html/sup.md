@@ -1,17 +1,4 @@
----
-layout: default
-title: sup
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;sup&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<sup>`** _(от англ. **sup**erscript -- надстрочный индекс)_ отображает шрифт в виде верхнего индекса. Шрифт при этом отображается выше базовой линии текста и уменьшенного размера.
 

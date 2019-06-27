@@ -1,20 +1,6 @@
----
-layout: default
-title: translate
-nav_order: 34
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # translate()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`translate`** производит замену символов первого своего строкового аргумента, которые присутствуют во втором аргументе на соответствующие символы третьего аргумента.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

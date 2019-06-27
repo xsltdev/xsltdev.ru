@@ -1,17 +1,4 @@
----
-layout: default
-title: rt
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;rt&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<rt>`** добавляет аннотацию сверху или снизу от текста, заключенного в контейнер [`<ruby>`](/html/ruby/). Сама аннотация выводится уменьшенным шрифтом.
 

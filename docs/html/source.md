@@ -1,17 +1,4 @@
----
-layout: default
-title: source
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;source&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<source>`** _(от англ. **source** -- источник)_ вставляет звуковой или видеофайл для элементов [`<audio>`](/html/audio/) и [`<video>`](/html/video/). Обобщённо такие файлы называются медийными. Также применяется для добавления изображений в контейнере [`<picture>`](/html/picture/)
 

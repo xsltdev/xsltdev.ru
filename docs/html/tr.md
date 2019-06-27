@@ -1,17 +1,4 @@
----
-layout: default
-title: tr
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;tr&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<tr>`** _(от англ. **t**able **r**ow -- строка таблицы)_ служит контейнером для создания строки таблицы.
 

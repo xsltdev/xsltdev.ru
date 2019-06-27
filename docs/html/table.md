@@ -1,17 +1,4 @@
----
-layout: default
-title: table
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;table&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<table>`** _(от англ. **table** -- таблица)_ служит контейнером для элементов, определяющих содержимое таблицы.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: section
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;section&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<section>`** _(от англ. **section** -- раздел)_ задаёт раздел документа, может применяться для блока новостей, контактной информации, глав текста, вкладок в диалоговом окне и др.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: body
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;body&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<body>`** _(от англ. **body** - тело)_ предназначен для хранения содержимого веб-страницы (контента), отображаемого в окне браузера.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: nav
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;nav&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<nav>`** _(от англ. **nav**igation -- навигация)_ задаёт навигацию по сайту.
 

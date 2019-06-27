@@ -1,17 +1,4 @@
----
-layout: default
-title: ins
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;ins&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<ins>`** _(от англ. **ins**ert -- вставка)_ предназначен для выделения текста, который был добавлен в новую версию документа.
 

@@ -1,20 +1,6 @@
----
-layout: default
-title: normalize-space
-nav_order: 21
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # normalize-space()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`normalize-space`** производит со своим строковым аргументом так называемую нормализацию пробельного пространства.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

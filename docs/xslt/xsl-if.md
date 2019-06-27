@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:if
-nav_order: 14
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:if
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Инструкция **`xsl:if`** позволяет создавать простые условия типа "если-то".
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

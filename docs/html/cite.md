@@ -1,17 +1,4 @@
----
-layout: default
-title: cite
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;cite&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<cite>`** _(от англ. **cite** - цитировать)_ представляет название произведения (книги, статьи, поэмы, сценария, фильма, песни, оперы, игры и др.).
 

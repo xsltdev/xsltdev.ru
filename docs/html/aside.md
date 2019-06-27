@@ -1,17 +1,4 @@
----
-layout: default
-title: aside
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;aside&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<aside>`** _(от англ. **aside** - в стороне)_ определяет раздел страницы, который имеет косвенное отношение к содержимому страницы и может быть рассмотрен отдельно от этого содержимого.
 

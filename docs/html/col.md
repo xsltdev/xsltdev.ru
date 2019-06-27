@@ -1,17 +1,4 @@
----
-layout: default
-title: col
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;col&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<col>`** _(от англ. **col**umn - столбец, колонка)_ задаёт ширину и другие характеристики одной или нескольких колонок таблицы.
 

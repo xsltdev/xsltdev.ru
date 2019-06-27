@@ -1,17 +1,4 @@
----
-layout: default
-title: tbody
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;tbody&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<tbody>`** _(от англ. **t**able **body** -- тело таблицы)_ предназначен для хранения одной или нескольких строк таблицы.
 

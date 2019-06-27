@@ -1,22 +1,8 @@
----
-layout: default
-title: xsl:call-template
-nav_order: 5
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:call-template
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:call-template`** вызывает шаблон по имени, он содержит обязательный атрибут `name`, идентифицирующий шаблон, который должен быть вызван.
 
 В отличие от [`xsl:apply-templates`](/xslt/xsl-apply-templates/), `xsl:call-template` не меняет текущий узел и текущий набор узлов.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

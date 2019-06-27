@@ -1,17 +1,4 @@
----
-layout: default
-title: colgroup
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;colgroup&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<colgroup>`** _(от англ. **group** of **col**umns - группа колонок)_ предназначен для задания ширины и стиля одной или нескольких колонок таблицы.
 

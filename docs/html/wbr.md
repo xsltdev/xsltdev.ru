@@ -1,17 +1,4 @@
----
-layout: default
-title: wbr
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;wbr&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<wbr>`** _(от англ. **w**ord **br**eak -- разрыв слова)_ указывает браузеру место, где допускается делать перенос строки в тексте, если этого требует ширина родительского элемента.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: footer
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;footer&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<footer>`** _(от англ. **footer** - нижний колонтитул)_ задаёт «подвал» сайта или раздела, в нём может располагаться имя автора, дата документа, контактная и правовая информация.
 

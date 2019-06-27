@@ -1,20 +1,6 @@
----
-layout: default
-title: string
-nav_order: 27
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # string()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`string`** преобразует свой аргумент к строковому типу явным образом. Если аргумент опущен, функции передается множество узлов, состоящее из единственного контекстного узла.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

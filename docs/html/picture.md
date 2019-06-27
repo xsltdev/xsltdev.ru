@@ -1,17 +1,4 @@
----
-layout: default
-title: picture
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;picture&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<picture>`** _(от англ. **picture** -- картина, изображение)_ представляет собой контейнер для хранения нескольких элементов [`<source>`](/html/source/), которые поддерживают элемент [`<img>`](/html/img/).
 

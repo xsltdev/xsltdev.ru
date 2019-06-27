@@ -1,17 +1,4 @@
----
-layout: default
-title: thead
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;thead&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<thead>`** _(от англ. **t**able **head** -- голова, верх таблицы)_ предназначен для хранения одной или нескольких строк, которые представлены вверху таблицы.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title:
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<summary>`** _(от англ. **summary** -- резюме, сводка)_ указывает заголовок для [`<details>`](/html/details/), по которому можно щёлкать для разворачивания/сворачивания информации.
 

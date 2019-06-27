@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:element
-nav_order: 11
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:element
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 XSLT предоставляет возможность создавать узлы элементов при помощи элемента **`xsl:element`**.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

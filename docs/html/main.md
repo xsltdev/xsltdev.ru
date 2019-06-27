@@ -1,17 +1,4 @@
----
-layout: default
-title: main
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;main&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<main>`** _(от англ. **main** -- основной)_ предназначен для основного содержимого документа.
 

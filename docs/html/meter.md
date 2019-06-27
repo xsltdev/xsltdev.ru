@@ -1,17 +1,4 @@
----
-layout: default
-title: meter
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;meter&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<meter>`** _(от англ. **meter** -- счетчик, измеритель)_ используется для вывода значения в некотором известном диапазоне.
 

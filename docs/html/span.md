@@ -1,17 +1,4 @@
----
-layout: default
-title: span
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;span&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<span>`** _(от англ. **span** -- интервал)_ предназначен для выделения отдельных строк, символов или других строчных элементов для дальнейшего изменения их оформления с помощью стилей.
 

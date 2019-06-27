@@ -1,17 +1,4 @@
----
-layout: default
-title: slot
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;slot&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 HTML элемент **`<slot>`** является частью набора технологии Web Components, является заполнителем внутри веб компонента, который можно заполнить собственной разметкой, которая позволяет создавать отдельные деревья DOM и представлять их вместе.
 

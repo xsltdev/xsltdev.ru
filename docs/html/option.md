@@ -1,17 +1,4 @@
----
-layout: default
-title: option
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;option&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<option>`** _(от англ. **option** -- пункт, параметр, опция)_ определяет отдельные пункты списка, создаваемого с помощью контейнера [`<select>`](/html/select/).
 

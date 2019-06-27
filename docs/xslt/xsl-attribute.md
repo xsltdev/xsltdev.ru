@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:attribute
-nav_order: 3
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:attribute
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:attribute`** служит для создания узлов атрибутов в выходном документе.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

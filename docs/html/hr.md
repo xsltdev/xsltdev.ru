@@ -1,17 +1,4 @@
----
-layout: default
-title: hr
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;hr&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<hr>`** _(от англ. **h**orisontal **r**ule -- горизонтальная черта)_ рисует горизонтальную линию, которая по своему виду зависит от используемых параметров, а также браузера.
 

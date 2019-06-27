@@ -1,17 +1,4 @@
----
-layout: default
-title: textarea
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;textarea&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<textarea>`** _(от англ. **text** **area** -- область текста)_ представляет собой элемент формы для создания области, в которую можно вводить несколько строк текста.
 

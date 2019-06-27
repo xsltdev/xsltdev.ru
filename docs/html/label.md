@@ -1,17 +1,4 @@
----
-layout: default
-title: label
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;label&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<label>`** _(от англ. **label** -- метка, ярлык)_ устанавливает связь между определённой меткой, в качестве которой обычно выступает текст, и элементом формы ([`<input>`](/html/input/), [`<select>`](/html/select/), [`<textarea>`](/html/textarea/)).
 

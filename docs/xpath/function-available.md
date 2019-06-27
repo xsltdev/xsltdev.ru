@@ -1,20 +1,6 @@
----
-layout: default
-title: function-available
-nav_order: 12
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # function-available()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`function-available`** принимает на вход строку, представляющую имя функции и возвращает `true`, если эта функция может быть вызвана и `false` — если нет.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

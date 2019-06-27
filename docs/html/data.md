@@ -1,17 +1,4 @@
----
-layout: default
-title: data
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;data&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<data>`** _(от англ. **data** - данные)_ представляет содержимое в машиночитаемом виде, предназначенное для внешних автоматизированных систем или скриптов на самом сайте.
 

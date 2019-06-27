@@ -1,17 +1,4 @@
----
-layout: default
-title: select
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;select&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<select>`** _(от англ. **select** -- выбрать)_ позволяет создать элемент интерфейса в виде раскрывающегося списка, а также список с одним или множественным выбором.
 

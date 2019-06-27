@@ -1,22 +1,8 @@
----
-layout: default
-title: xsl:stylesheet
-nav_order: 28
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:stylesheet
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Корневым элементом XSLT-документа всегда является элемент **`xsl:stylesheet`** или его синоним [`xsl:transform`](/xslt/xsl-transform/).
 
 Эти элементы полностью идентичны и различаются лишь именами.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

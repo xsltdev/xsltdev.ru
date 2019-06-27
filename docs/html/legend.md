@@ -1,17 +1,4 @@
----
-layout: default
-title: legend
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;legend&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<legend>`** _(от англ. **legend** -- легенда, надпись)_ применяется для создания заголовка группы элементов формы, которая определяется с помощью [`<fieldset>`](/html/fieldset/).
 

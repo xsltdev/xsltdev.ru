@@ -1,17 +1,4 @@
----
-layout: default
-title: bdi
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;bdi&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<bdi>`** _(от англ. **b**i**d**irectional **i**solation - элемент двунаправленной изоляции)_ указывает фрагмент текста, который должен быть изолирован от изменения направления вывода текста.
 

@@ -1,22 +1,8 @@
----
-layout: default
-title: false
-nav_order: 9
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # false()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`false`** возвращает тождественную "ложь".
 
 В XPath нет констант и, тем более, логических констант, определяющих "истину" и "ложь", как в других языках. Функции [`true`](/xpath/true/) и `false` восполняют эту нехватку.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

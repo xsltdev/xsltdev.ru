@@ -1,20 +1,6 @@
----
-layout: default
-title: position
-nav_order: 24
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # position()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`position`** возвращает позицию контекста — число, показывающее порядковый номер контекстного узла в обрабатываемом множестве.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

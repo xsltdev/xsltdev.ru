@@ -1,17 +1,4 @@
----
-layout: default
-title: script
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;script&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<script>`** _(от англ. **script** -- скрипт, сценарий)_ предназначен для описания скриптов, может содержать ссылку на программу или её текст на определённом языке.
 

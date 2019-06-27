@@ -1,17 +1,4 @@
----
-layout: default
-title: datalist
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;datalist&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<datalist>`** _(от англ. **list** of **data** - список данных)_ создаёт список вариантов, которые можно выбирать при наборе в текстовом поле. Изначально этот список скрыт и становится доступным при получении полем фокуса или при наборе текста.
 

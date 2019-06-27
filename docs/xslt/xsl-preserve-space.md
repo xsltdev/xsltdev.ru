@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:preserve-space
-nav_order: 24
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:preserve-space
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:preserve-space`** сохраняет текстовые узлы, состоящие только из пробельных символов, которые содержатся в элементах, указанных в атрибуте `elements`.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

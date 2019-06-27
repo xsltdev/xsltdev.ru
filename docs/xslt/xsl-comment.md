@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:comment
-nav_order: 7
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:comment
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:comment`** используется для создания в конечном дереве узла комментариев. Содержимое элемента `xsl:comment` является шаблоном для строкового значения данного узла комментария.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: progress
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;progress&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<progress>`** _(от англ. **progress** -- прогрес)_ используется для отображения прогресса завершённости задачи.
 

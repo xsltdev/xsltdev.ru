@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:copy-of
-nav_order: 9
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:copy-of
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Использование элемента **`xsl:copy-of`** полностью аналогично использованию элемента [`xsl:value-of`](/xslt/xsl-value-of/) за тем исключением, что `xsl:copy-of` при выводе значения выражения преобразует его к строке не во всех случаях.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

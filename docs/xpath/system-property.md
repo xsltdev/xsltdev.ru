@@ -1,22 +1,8 @@
----
-layout: default
-title: system-property
-nav_order: 33
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # system-property()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`system-property`** возвращает значение свойства, которое определяется ее строковым параметром.
 
 Аргумент этой функции должен представлять расширенное имя системного свойства. Если процессор не поддерживает свойство с таким именем, функция должна вернуть пустую строку.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

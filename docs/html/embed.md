@@ -1,17 +1,4 @@
----
-layout: default
-title: emded
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;embed&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<embed>`** _(от англ. **embed** - встраивать)_ используется для загрузки и отображения объектов (например, видеофайлов, флэш-роликов, некоторых звуковых файлов и т. д.), которые исходно браузер не понимает.
 

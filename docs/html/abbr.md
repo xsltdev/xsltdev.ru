@@ -1,17 +1,4 @@
----
-layout: default
-title: abbr
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;abbr&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<abbr>`** _(от англ. **abbr**eviation - аббревиатура)_ указывает, что последовательность символов является аббревиатурой.
 

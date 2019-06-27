@@ -1,17 +1,4 @@
----
-layout: default
-title: map
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;map&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<map>`** _(от англ. **map** -- карта)_ служит контейнером для элементов [`<area>`](/html/area/), которые определяют активные области для карт-изображений.
 

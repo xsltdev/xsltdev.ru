@@ -1,20 +1,6 @@
----
-layout: default
-title: substring-before
-nav_order: 31
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # substring-before()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`substring-before`** принимает на вход два строковых аргумента. Эта функция находит в первой строке вторую и возвращает подстроку, которая ей предшествует. Если вторая строка не содержится в первой, функция вернет пустую строку.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

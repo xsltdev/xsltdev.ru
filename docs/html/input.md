@@ -1,17 +1,4 @@
----
-layout: default
-title: input
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;input&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<input>`** _(от англ. **input** -- вход)_ является одним из разносторонних элементов формы и позволяет создавать разные части интерфейса и обеспечивать взаимодействие с пользователем.
 
@@ -162,8 +149,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="radio" checked />
-<input type="checkbox" checked />
+<input type="radio" checked /> <input type="checkbox" checked />
 ```
 
 **Значения**
@@ -181,8 +167,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="text" dirname="<строка>" />
-<input type="search" dirname="<строка>" />
+<input type="text" dirname="<строка>" /> <input type="search" dirname="<строка>" />
 ```
 
 **Значения**
@@ -377,8 +362,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="text" maxlength="<число>" />
-<input type="password" maxlength="<число>" />
+<input type="text" maxlength="<число>" /> <input type="password" maxlength="<число>" />
 ```
 
 **Значения**
@@ -418,8 +402,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="text" minlength="<число>" />
-<input type="password" minlength="<число>" />
+<input type="text" minlength="<число>" /> <input type="password" minlength="<число>" />
 ```
 
 **Значения**
@@ -437,8 +420,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="file" multiple />
-<input type="email" multiple />
+<input type="file" multiple /> <input type="email" multiple />
 ```
 
 **Значения**
@@ -545,8 +527,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="text" readonly />
-<input type="password" readonly />
+<input type="text" readonly /> <input type="password" readonly />
 ```
 
 **Значения**
@@ -582,8 +563,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="text" size="<число>" />
-<input type="password" size="<число>" />
+<input type="text" size="<число>" /> <input type="password" size="<число>" />
 ```
 
 **Значения**
@@ -619,8 +599,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<input type="number" step="<число>" />
-<input type="range" step="<число>" />
+<input type="number" step="<число>" /> <input type="range" step="<число>" />
 ```
 
 **Значения**

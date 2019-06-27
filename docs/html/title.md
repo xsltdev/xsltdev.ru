@@ -1,17 +1,4 @@
----
-layout: default
-title: title
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;title&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<title>`** _(от англ. **title** -- заголовок)_ определяет заголовок документа.
 

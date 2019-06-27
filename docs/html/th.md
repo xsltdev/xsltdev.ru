@@ -1,17 +1,4 @@
----
-layout: default
-title: th
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;th&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<th>`** _(от англ. **t**able **h**eading -- заголовок таблицы)_ предназначен для создания одной ячейки таблицы, которая обозначается как заголовочная.
 

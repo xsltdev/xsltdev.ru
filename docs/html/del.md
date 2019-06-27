@@ -1,17 +1,4 @@
----
-layout: default
-title: del
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;del&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<del>`** _(от англ. **del**ete - удалить)_ используется для выделения текста, который был удалён в новой версии документа.
 

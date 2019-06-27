@@ -1,17 +1,4 @@
----
-layout: default
-title: style
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;style&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<style>`** _(от англ. **style** -- стиль)_ применяется для определения стилей элементов веб-страницы.
 
@@ -69,7 +56,7 @@ parent: HTML
 
 ```html
 <style type="text/css">
-  ...
+  ...;
 </style>
 ```
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: output
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;output&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<output>`** _(от англ. **output** -- вывод)_ определяет область, в которую выводится информация, преимущественно с помощью скриптов.
 

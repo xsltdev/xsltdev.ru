@@ -1,17 +1,4 @@
----
-layout: default
-title: audio
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;audio&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<audio>`** _(от англ. **audio** - звук, аудио)_ добавляет, воспроизводит и управляет настройками аудиозаписи на веб-странице. Путь к файлу задаётся через атрибут `src` или вложенный элемент [`<source>`](/html/source/).
 

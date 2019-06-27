@@ -1,20 +1,6 @@
----
-layout: default
-title: document
-nav_order: 7
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # document()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`document`** позволяет обращаться к внешним документам по их URI.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

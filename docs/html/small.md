@@ -1,17 +1,4 @@
----
-layout: default
-title: small
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;small&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<small>`** _(от англ. **small** -- маленький)_ используется для сносок и комментариев, написанных обычно мелким текстом. К ним могут относиться предостережения, информация о лицензии, авторских правах и др.
 

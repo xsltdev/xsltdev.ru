@@ -1,20 +1,6 @@
----
-layout: default
-title: sum
-nav_order: 32
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # sum()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`sum`** суммирует значения узлов из переданного ей множества. Строковые значения узлов сначала преобразуются в числа, а затем все полученные числа складываются.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: blockquote
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;blockquote&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<blockquote>`** _(от англ. **block** **quot**ation - блок цитата)_ указывает на то, что заключенный в нем текст является развернутой цитатой. URI на источник цитаты можно указать в атрибуте `cite`, тогда как текстовое представление источника может быть задано элементом [`<cite>`](/html/cite/).
 

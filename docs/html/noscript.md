@@ -1,17 +1,4 @@
----
-layout: default
-title: noscript
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;noscript&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<noscript>`** _(от англ. **no** **script** -- без скриптов)_ показывает своё содержимое, если браузер не поддерживает работу со скриптами или их поддержка отключена пользователем.
 

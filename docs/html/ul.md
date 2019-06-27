@@ -1,17 +1,4 @@
----
-layout: default
-title: ul
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;ul&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<ul>`** _(от англ. **u**nordered **l**ist -- неупорядоченный список)_ устанавливает маркированный (неупорядоченный) список.
 

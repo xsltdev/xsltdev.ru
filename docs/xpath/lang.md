@@ -1,20 +1,6 @@
----
-layout: default
-title: lang
-nav_order: 16
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # lang()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`lang`** возвратит "истину", если идентификатор языка, который передан ей в виде строкового параметра, соответствует языковому контексту контекстного узла.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

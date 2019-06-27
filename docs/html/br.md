@@ -1,17 +1,4 @@
----
-layout: default
-title: br
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;br&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<br>`** _(от англ. **br**eak - разрыв)_ устанавливает перевод строки в том месте, где он находится.
 

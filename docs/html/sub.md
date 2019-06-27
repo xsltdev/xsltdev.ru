@@ -1,17 +1,4 @@
----
-layout: default
-title: sub
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;sub&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<sub>`** _(от англ. **sub**script -- подстрочный индекс)_ отображает шрифт в виде нижнего индекса. Текст при этом располагается ниже базовой линии остальных символов строки и уменьшенного размера.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: q
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;q&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<q>`** _(от англ. **q**uote -- цитата)_ используется для выделения в тексте цитат.
 

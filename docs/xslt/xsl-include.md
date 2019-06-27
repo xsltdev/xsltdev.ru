@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:include
-nav_order: 16
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:include
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Включение внешнего преобразования является включением в прямом смысле этого слова: преобразование, включающее внешний модуль, ведет себя так, как если бы на месте элемента **`xsl:include`** было содержимое этого внешнего модуля.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

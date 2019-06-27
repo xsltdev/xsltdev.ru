@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:otherwise
-nav_order: 21
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:otherwise
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 При обработке [`xsl:choose`](/xslt/xsl-choose/) процессор поочередно вычисляет выражения, содержащиеся в атрибутах `test` элементов [`xsl:when`](/xslt/xsl-when/), приводит их к булевому типу и выполняет содержимое первого (и только первого) элемента, тестовое выражение которого будет равно `true`. В случае если ни одно из тестовых выражений не обратилось в "истину" и в `xsl:choose` присутствует **`xsl:otherwise`**, процессор выполнит содержимое этого элемента.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

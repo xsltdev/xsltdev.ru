@@ -1,17 +1,4 @@
----
-layout: default
-title: dt
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;dt&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<dt>`** _(от англ. **d**efinition **t**erm - определение термина)_ задает собственно сам термин и входит в тройку элементов `<dl>`, `<dt>`, `<dd>`, предназначенных для создания списка описаний.
 

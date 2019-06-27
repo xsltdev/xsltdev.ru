@@ -1,17 +1,4 @@
----
-layout: default
-title: html
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;html&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<html>`** _(от англ. **H**yper**T**ext **M**arkup **L**anguage — «язык гипертекстовой разметки»)_ является контейнером, который заключает в себе всё содержимое веб-страницы, включая элементы [`<head>`](/html/head/) и [`<body>`](/html/body/).
 

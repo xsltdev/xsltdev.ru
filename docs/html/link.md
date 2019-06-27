@@ -1,17 +1,4 @@
----
-layout: default
-title: link
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;link&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<link>`** _(от англ. **link** -- ссылка, связь)_ устанавливает связь с внешним документом вроде файла со стилями или со шрифтами.
 
@@ -112,8 +99,7 @@ parent: HTML
 **Синтаксис**
 
 ```html
-<link rel="icon" sizes="<ширина>X<высота>" />
-<link rel="icon" sizes="<ширина1>X<высота1> <ширина2>X<высота2>* | any" />
+<link rel="icon" sizes="<ширина>X<высота>" /> <link rel="icon" sizes="<ширина1>X<высота1> <ширина2>X<высота2>* | any" />
 ```
 
 **Значения**

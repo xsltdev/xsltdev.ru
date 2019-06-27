@@ -1,17 +1,4 @@
----
-layout: default
-title: article
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;article&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<article>`** _(от англ. **article** - статья)_ задаёт содержание сайта вроде новости, статьи, записи блога, форума и др.
 

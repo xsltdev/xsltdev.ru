@@ -1,17 +1,4 @@
----
-layout: default
-title: caption
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;caption&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<caption>`** _(от англ. **caption** - заголовок, подпись)_ предназначен для создания заголовка к таблице и может размещаться только внутри контейнера [`<table>`](/html/table/), причём сразу после открывающего тега.
 

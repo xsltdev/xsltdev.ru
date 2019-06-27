@@ -1,20 +1,6 @@
----
-layout: default
-title: xsl:value-of
-nav_order: 32
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:value-of
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Элемент **`xsl:value-of`** служит для вычисления значений выражений.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: b
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;b&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<b>`** _(от англ. **b**old - жирный)_ задаёт жирное начертание шрифта. Допустимо использовать этот элемент совместно с другими, которые определяют начертание текста.
 

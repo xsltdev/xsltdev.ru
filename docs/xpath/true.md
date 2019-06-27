@@ -1,20 +1,6 @@
----
-layout: default
-title: true
-nav_order: 35
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # true()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`true`** возвращает тождественную "истину".
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

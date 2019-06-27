@@ -1,10 +1,3 @@
----
-layout: default
-title: a
-nav_order:
-parent: HTML
----
-
 # &lt;a&gt;
 
 Тег **`<a>`** _(от англ. **a**nchor - якорь, ссылка)_ предназначен для создания ссылок.

@@ -1,17 +1,4 @@
----
-layout: default
-title: dd
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;dd&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<dd>`** _(от англ. **d**efinition **d**escription - описание термина)_ задает описание термина и входит в тройку элементов `<dl>`, `<dt>`, `<dd>`, предназначенных для создания списка описаний.
 

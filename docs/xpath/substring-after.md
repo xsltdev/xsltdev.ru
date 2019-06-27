@@ -1,20 +1,6 @@
----
-layout: default
-title: substring-after
-nav_order: 30
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # substring-after()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`substring-after`** возвращает строку, которая следует за первым вхождением второго аргумента. Если вторая строка не содержится в первой, функция вернет пустую строку.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

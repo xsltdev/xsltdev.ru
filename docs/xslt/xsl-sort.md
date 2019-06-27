@@ -1,22 +1,8 @@
----
-layout: default
-title: xsl:sort
-nav_order: 26
-parent: XSLT
----
-
-<!-- prettier-ignore-start -->
 # xsl:sort
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 При преобразовании документа элементами [`xsl:for-each`](/xslt/xsl-for-each/) и [`xsl:apply-templates`](/xslt/xsl-apply-templates/), выбранные узлы по умолчанию обрабатываются в порядке просмотра документа, который зависит от выражения, использованного в атрибуте `select` этих элементов. XSLT позволяет изменять этот порядок посредством использования механизма сортировки.
 
 Элементы `xsl:for-each` и `xsl:apply-templates` могут содержать один или несколько элементов **`xsl:sort`**, которые позволяют предварительно сортировать обрабатываемое множество узлов.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

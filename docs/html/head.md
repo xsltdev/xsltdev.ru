@@ -1,17 +1,4 @@
----
-layout: default
-title: head
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;head&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<head>`** _(от англ. **head** -- голова)_ предназначен для хранения других элементов, цель которых — помочь браузеру в работе с данными.
 

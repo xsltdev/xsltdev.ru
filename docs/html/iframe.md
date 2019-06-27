@@ -1,17 +1,4 @@
----
-layout: default
-title: iframe
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;iframe&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<iframe>`** _(от англ. **i**nline **frame** -- встроенная рамка)_ создаёт встроенный фрейм, который находится внутри обычного документа, он позволяет загружать в область заданных размеров любые другие независимые документы.
 

@@ -1,20 +1,6 @@
----
-layout: default
-title: current
-nav_order: 6
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # current()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`current`** возвращает текущий узел преобразования.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

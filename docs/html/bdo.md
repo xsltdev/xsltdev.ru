@@ -1,17 +1,4 @@
----
-layout: default
-title: bdo
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;bdo&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<bdo>`** _(от англ. **b**i**d**irectional **o**verride - элемент двунаправленного переопределения)_ устанавливает направление вывода текста и преимущественно предназначен для использования с языками, где чтение происходит справа налево.
 

@@ -1,17 +1,4 @@
----
-layout: default
-title: rtc
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;rtc&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<rtc>`** _(от англ. **r**uby **t**ext **c**ontainer)_ обозначает текстовый контейнер внутри [`<ruby>`](/html/ruby/). В основном применяется в качестве описательной части или аннотации для иероглифов.
 

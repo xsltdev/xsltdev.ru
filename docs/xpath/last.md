@@ -1,20 +1,6 @@
----
-layout: default
-title: last
-nav_order: 17
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # last()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`last`** возвращает текущий размер контекста — число, которое показывает, сколько узлов находится в обрабатываемом в данный момент множестве.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

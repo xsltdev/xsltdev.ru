@@ -1,17 +1,4 @@
----
-layout: default
-title: rp
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;rp&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<rp>`** используется для вывода текста в браузерах, которые не поддерживают элемент [`<ruby>`](/html/ruby/).
 

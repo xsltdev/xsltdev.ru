@@ -1,17 +1,4 @@
----
-layout: default
-title: template
-nav_order:
-parent: HTML
----
-
-<!-- prettier-ignore-start -->
-1. TOC
-{:toc}
-
 # &lt;template&gt;
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Тег **`<template>`** _(от англ. **template** -- шаблон)_ представляет собой механизм для хранения содержимого на стороне клиента, которое не отображается в процессе загрузки страницы, но впоследствии может быть заполнено с помощью JavaScript.
 
