@@ -43,3 +43,6 @@ markdown_extensions:
 plugins:
     - search
     - awesome-pages
+
+extra_javascript:
+    - 'https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js'
