@@ -27,3 +27,9 @@
 Весь контент сайта доступен на [github](https://github.com/bndby/xsltdev.ru/), коммиты приветствуются, баги присылайте в [телегу](https://t.me/bndby).
 
 **Старая версия сайта** доступна по адресу [old.xsltdev.ru](https://old.xsltdev.ru/).
+
+Полезные ссылки
+
+- [MkDocs](https://mkdocs.org)
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+- [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
