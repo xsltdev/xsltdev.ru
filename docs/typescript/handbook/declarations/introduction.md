@@ -1,19 +1,4 @@
----
-layout: default
-title: Введение
-nav_order: 1
-grand_parent: Справочник Typescript
-parent: Декларации Typescript
----
-
-<!-- prettier-ignore-start -->
 # Введение
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Это руководство предназначено для обучения написанию высококачественных файлов объявлений для TypeScript.
 

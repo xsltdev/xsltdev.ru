@@ -1,0 +1,6 @@
+title: Декораторы
+arrange:
+    - decor-classes.md
+    - decor-method.md
+    - decor-props.md
+    - fabric-decor.md

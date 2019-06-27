@@ -1,20 +1,6 @@
----
-layout: default
-title: Символы
-nav_order: 11
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Символы
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 В ECMAScript 2015 введен тип `symbol` (символ) — примитивный тип данных, такой же, как `number` и `string`.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Введение
 

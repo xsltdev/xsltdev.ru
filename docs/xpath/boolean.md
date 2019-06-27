@@ -1,20 +1,6 @@
----
-layout: default
-title: boolean
-nav_order: 1
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # boolean()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`boolean`** преобразует переданный ей объект в булевый тип.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

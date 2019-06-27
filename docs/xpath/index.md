@@ -1,15 +1,4 @@
----
-layout: default
-title: XPath
-nav_order: 130
-has_children: true
-has_toc: false
-permalink: /xpath/
----
-
-# XPath
-
-<!-- prettier-ignore-start -->
+# XPath: Оглавление
 
 Справочник по функциям XPath на русском языке
 
@@ -51,6 +40,3 @@ permalink: /xpath/
 - [translate](translate.md)
 - [true](true.md)
 - [unparsed-entity-uri](unparsed-entity-uri.md)
-{: .col-14 }
-
-<!-- prettier-ignore-end -->

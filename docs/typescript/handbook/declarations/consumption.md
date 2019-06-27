@@ -1,19 +1,4 @@
----
-layout: default
-title: Использование и распространение
-nav_order: 7
-grand_parent: Справочник Typescript
-parent: Декларации Typescript
----
-
-<!-- prettier-ignore-start -->
 # Использование и распространение
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 В TypeScript версии 2.0 стало значительно проще находить, получать и использовать файлы объявлений.
 Данный раздел подробно описывает, как все это делается.

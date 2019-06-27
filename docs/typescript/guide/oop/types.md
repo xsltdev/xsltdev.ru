@@ -1,19 +1,4 @@
----
-layout: default
-title: Преобразование типов
-nav_order: 6
-parent: Объектно-ориентированное программирование
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Преобразование типов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Поскольку объекты `Employee` в то же время являются и объектами `User`, то при определении объектов мы можем написать так:
 

@@ -1,18 +1,4 @@
----
-layout: default
-title: Перечисления (Enums)
-nav_order: 7
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Перечисления (Enums)
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Перечисления
 

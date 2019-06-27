@@ -1,18 +1,4 @@
----
-layout: default
-title: Базовые типы
-nav_order: 1
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Базовые типы
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Введение
 

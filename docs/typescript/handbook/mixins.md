@@ -1,18 +1,4 @@
----
-layout: default
-title: Примеси (Mixins)
-nav_order: 20
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Примеси (Mixins)
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Введение
 

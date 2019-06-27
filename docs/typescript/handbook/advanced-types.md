@@ -1,18 +1,4 @@
----
-layout: default
-title: Продвинутые типы
-nav_order: 10
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Продвинутые типы
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Тип объединение
 

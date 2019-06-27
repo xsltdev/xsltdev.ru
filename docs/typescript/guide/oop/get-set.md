@@ -1,19 +1,4 @@
----
-layout: default
-title: Методы доступа и readonly-свойства
-nav_order: 3
-parent: Объектно-ориентированное программирование
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Методы доступа и readonly-свойства
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Методы доступа
 

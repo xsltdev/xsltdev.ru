@@ -1,19 +1,4 @@
----
-layout: default
-title: Декораторы свойств и методов доступа
-nav_order: 3
-parent: Декораторы
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Декораторы свойств и методов доступа
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Декораторы свойств
 

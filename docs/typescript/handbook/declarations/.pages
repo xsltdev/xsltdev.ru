@@ -1,0 +1,9 @@
+title: Декларации Typescript
+arrange:
+    - introduction.md
+    - library-structures.md
+    - by-example.md
+    - do-dont.md
+    - deep-dive.md
+    - publishing.md
+    - consumption.md

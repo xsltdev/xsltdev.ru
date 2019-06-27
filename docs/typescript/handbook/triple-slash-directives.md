@@ -1,18 +1,4 @@
----
-layout: default
-title: Директивы тройного слэша
-nav_order: 21
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Директивы тройного слэша
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Директивы с тремя наклонными чертами (triple-slash directives) являются однострочными комментариями, включающими в себя единственный тэг XML.
 Содержимое комментария используется в качестве директив компилятору.

@@ -1,18 +1,4 @@
----
-layout: default
-title: Вывод типов
-nav_order: 8
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Вывод типов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Введение
 

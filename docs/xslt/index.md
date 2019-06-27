@@ -1,15 +1,5 @@
----
-layout: default
-title: XSLT
-nav_order: 120
-has_children: true
-has_toc: false
-permalink: /xslt/
----
+# XSLT: Оглавление
 
-# XSLT
-
-<!-- prettier-ignore-start -->
 Справочник по элементам XSLT на русском языке.
 
 [Язык преобразований XSL 1.0 (XSLT 1.0)](https://xsltdev.ru/tr/xslt10/) &mdash; Перевод рекомендации W3C на русский язык
@@ -49,6 +39,3 @@ permalink: /xslt/
 - [xsl:variable](xsl-variable.md)
 - [xsl:when](xsl-when.md)
 - [xsl:with-param](xsl-with-param.md)
-{: .col-14 }
-
-<!-- prettier-ignore-end -->

@@ -1,0 +1,10 @@
+title: Объектно-ориентированное программирование
+arrange:
+    - classes.md
+    - modificators.md
+    - get-set.md
+    - extends.md
+    - interface.md
+    - types.md
+    - any.md
+    - mixins.md

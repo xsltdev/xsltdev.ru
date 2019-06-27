@@ -1,4 +1,4 @@
-# Свойства CSS
+# CSS: Оглавление
 
 Справочник свойств CSS
 
@@ -93,7 +93,7 @@
 <details markdown="1" class="abstract">
 <summary>Grid</summary>
 
-Руководство по [Grid Layout](grid-guide/index.md)
+Руководство по [Grid Layout](grid-guide/grid-1.md)
 
 - [grid](grid.md)
 - [grid-area](grid-area.md)
@@ -119,7 +119,7 @@
 <details markdown="1" class="abstract">
 <summary>Flex</summary>
 
-Руководство по [Flexbox](flex-guide/index.md)
+Руководство по [Flexbox](flex-guide/flex-1.md)
 
 - [flex](flex.md)
 - [flex-basis](flex-basis.md)

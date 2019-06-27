@@ -1,18 +1,4 @@
----
-layout: default
-title: Пространства имен и модули
-nav_order: 15
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Пространства имен и модули
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 > **Замечание по поводу терминологии:**
 > Важно отметить, что в TypeScript 1.5 изменилась номенклатура.

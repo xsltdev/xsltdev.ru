@@ -1,19 +1,4 @@
----
-layout: default
-title: Интерфейсы
-nav_order: 5
-parent: Объектно-ориентированное программирование
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Интерфейсы
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Интерфейсы объектов
 

@@ -1,22 +1,8 @@
----
-layout: default
-title: Итераторы и генераторы
-nav_order: 12
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Итераторы и генераторы
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Итерируемые элементы
 
-Итерируемым является такой объект, который содержит реализацию свойства [`Symbol.iterator`](Symbols.html#symboliterator).
+Итерируемым является такой объект, который содержит реализацию свойства [`Symbol.iterator`](symbols.md).
 Некоторые встроенный типы, такие как `Array`, `Map`, `Set`, `String`, `Int32Array`, `Uint32Array` и т.д., содержат уже реализованное свойство `Symbol.iterator`.
 Взятая от объекта функция `Symbol.iterator` должна возвратить список значений для организации цикла.
 

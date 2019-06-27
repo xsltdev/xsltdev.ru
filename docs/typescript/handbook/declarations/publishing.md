@@ -1,19 +1,4 @@
----
-layout: default
-title: Публикация
-nav_order: 6
-grand_parent: Справочник Typescript
-parent: Декларации Typescript
----
-
-<!-- prettier-ignore-start -->
 # Публикация
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 Теперь, когда вы, следуя шагам из этого руководства, создали файл объявлений, пришло время опубликовать его в npm.
 Есть два основных пути для этого:

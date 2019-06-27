@@ -1,19 +1,4 @@
----
-layout: default
-title: Структуры библиотек
-nav_order: 2
-grand_parent: Справочник Typescript
-parent: Декларации Typescript
----
-
-<!-- prettier-ignore-start -->
 # Структуры библиотек
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Обзор
 

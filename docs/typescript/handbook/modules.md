@@ -1,18 +1,4 @@
----
-layout: default
-title: Модули
-nav_order: 13
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Модули
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 > **Замечание по поводу терминологии:**
 > Важно отметить, что в TypeScript 1.5 изменилась номенклатура.

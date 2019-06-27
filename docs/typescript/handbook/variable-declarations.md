@@ -1,18 +1,4 @@
----
-layout: default
-title: Объявление переменных
-nav_order: 2
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Объявление переменных
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 `let` и `const` - относительно новые типы объявления переменных в JavaScript.
 Как мы упомянули ранее, `let` похож на `var`в некотором смысле, но позволяет пользователям избежать некоторые из общих ошибок, с которыми сталкиваются в JavaScript.

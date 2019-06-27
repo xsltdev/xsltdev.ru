@@ -1,19 +1,4 @@
----
-layout: default
-title: Как надо и как нет
-nav_order: 4
-grand_parent: Справочник Typescript
-parent: Декларации Typescript
----
-
-<!-- prettier-ignore-start -->
 # Как надо и как нет
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Основные типы
 

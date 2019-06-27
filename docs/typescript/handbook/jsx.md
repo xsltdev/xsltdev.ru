@@ -1,18 +1,4 @@
----
-layout: default
-title: JSX
-nav_order: 18
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # JSX
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Введение
 
@@ -39,7 +25,7 @@ TypeScript имеет два JSX режима: `preserve` и `react`.
 | `preserve` | `<div />` | `<div />`                    | `.jsx`                    |
 | `react`    | `<div />` | `React.createElement("div")` | `.js`                     |
 
-Вы можете указать режим либо с помощью флага командной строки `--jsx`, либо в соответствующей опции в вашем файле [tsconfig.json](./tsconfig.json.html).
+Вы можете указать режим либо с помощью флага командной строки `--jsx`, либо в соответствующей опции в вашем файле `tsconfig.json`.
 
 > _Замечание: Идентификатор `React` жёстко прописан в коде, поэтому необходимо сделать React доступным с заглавной буквы R._
 

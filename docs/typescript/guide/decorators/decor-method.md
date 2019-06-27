@@ -1,19 +1,4 @@
----
-layout: default
-title: Декораторы методов и их параметров
-nav_order: 2
-parent: Декораторы
-grand_parent: Руководство по Typescript
----
-
-<!-- prettier-ignore-start -->
 # Декораторы методов и их параметров
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Декоратор метода
 

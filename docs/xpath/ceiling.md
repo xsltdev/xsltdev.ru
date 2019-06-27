@@ -1,20 +1,6 @@
----
-layout: default
-title: ceiling
-nav_order: 2
-parent: XPath
----
-
-<!-- prettier-ignore-start -->
 # ceiling()
-{: .no_toc }
-<!-- prettier-ignore-end -->
 
 Функция **`ceiling`** возвращает наименьшее число (ближайшее в отрицательной бесконечности), которое не меньше значения представленного аргумента и является целым.
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Синтаксис
 

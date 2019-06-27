@@ -1,18 +1,4 @@
----
-layout: default
-title: Совместимость типов
-nav_order: 9
-parent: Справочник Typescript
----
-
-<!-- prettier-ignore-start -->
 # Совместимость типов
-{: .no_toc }
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore -->
-1. TOC
-{:toc}
 
 ## Введение
 
