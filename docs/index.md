@@ -12,7 +12,7 @@
 ## Фреймворки
 
 - [Angular 2+](angular/guide/intro/start.md) &mdash; руководство по фреймворку Angular 2+
-- [React](react/index.md) &mdash; руководство по фреймворку React
+- [React](react/handbook/tutorial.md) &mdash; руководство по фреймворку React
 
 ## XML технологии
 
