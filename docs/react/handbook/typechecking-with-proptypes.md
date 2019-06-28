@@ -1,43 +1,35 @@
----
-id: typechecking-with-proptypes
-title: Проверка типов с помощью PropTypes
-permalink: docs/typechecking-with-proptypes.html
-redirect_from:
-  - "docs/react-api.html#typechecking-with-proptypes"
----
+# Проверка типов с помощью PropTypes
 
 > Примечание:
 >
 > С версии React 15.5 `React.PropTypes` были вынесены в отдельный пакет. Так что используйте [библиотеку `prop-types`](https://www.npmjs.com/package/prop-types).
 >
-> Вы можете использовать [codemod-скрипт](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes), чтобы провести замену в коде на использование этой библиотеки.
+> Вы можете использовать [codemod-скрипт](https://ru.reactjs.org/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes), чтобы провести замену в коде на использование этой библиотеки.
 
 По мере роста вашего приложения вы можете отловить много ошибок с помощью проверки типов. Для этого можно использовать расширения JavaScript вроде [Flow](https://flow.org/) и [TypeScript](https://www.typescriptlang.org/). Но, даже если вы ими не пользуетесь, React предоставляет встроенные возможности для проверки типов. Для запуска этой проверки на пропсах компонента вам нужно использовать специальное свойство `propTypes`:
 
 ```javascript
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 class Greeting extends React.Component {
   render() {
-    return (
-      <h1>Привет, {this.props.name}</h1>
-    );
+    return <h1>Привет, {this.props.name}</h1>
   }
 }
 
 Greeting.propTypes = {
   name: PropTypes.string
-};
+}
 ```
 
 `PropTypes` предоставляет ряд валидаторов, которые могут использоваться для проверки, что получаемые данные корректны. В примере мы использовали `PropTypes.string`. Когда какой-то проп имеет некорректное значение, в консоли будет выведено предупреждение. По соображениям производительности `propTypes` проверяются только в режиме разработки.
 
-### PropTypes {#proptypes}
+## PropTypes {#proptypes}
 
 Пример использования возможных валидаторов:
 
 ```javascript
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 MyComponent.propTypes = {
   // Можно объявить проп на соответствие определённому JS-типу.
@@ -67,11 +59,7 @@ MyComponent.propTypes = {
   optionalEnum: PropTypes.oneOf(['News', 'Photos']),
 
   // Объект, одного из нескольких типов
-  optionalUnion: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.instanceOf(Message)
-  ]),
+  optionalUnion: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Message)]),
 
   // Массив объектов конкретного типа
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
@@ -95,14 +83,11 @@ MyComponent.propTypes = {
 
   // Можно добавить собственный валидатор.
   // Он должен возвращать объект `Error` при ошибке валидации.
-  // Не используйте `console.warn` или `throw` 
+  // Не используйте `console.warn` или `throw`
   // - это не будет работать внутри `oneOfType`
   customProp: function(props, propName, componentName) {
     if (!/matchme/.test(props[propName])) {
-      return new Error(
-        'Проп `' + propName + '` компонента' +
-        ' `' + componentName + '` имеет неправильное значение'
-      );
+      return new Error('Проп `' + propName + '` компонента' + ' `' + componentName + '` имеет неправильное значение')
     }
   },
 
@@ -110,67 +95,55 @@ MyComponent.propTypes = {
   // Он должен возвращать объект Error при ошибке валидации.
   // Валидатор будет вызван для каждого элемента в массиве
   // или для каждого свойства объекта.
-  // Первые два параметра валидатора 
+  // Первые два параметра валидатора
   // - это массив или объект и ключ текущего элемента
   customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
     if (!/matchme/.test(propValue[key])) {
-      return new Error(
-        'Проп `' + propFullName + '` компонента' +
-        ' `' + componentName + '` имеет неправильное значение'
-      );
+      return new Error('Проп `' + propFullName + '` компонента' + ' `' + componentName + '` имеет неправильное значение')
     }
   })
-};
+}
 ```
 
-### Ограничение на один дочерний компонент {#requiring-single-child}
+## Ограничение на один дочерний компонент {#requiring-single-child}
 
 С помощью `PropTypes.element` вы можете указать, что в качестве дочернего может быть передан только один элемент.
 
 ```javascript
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 class MyComponent extends React.Component {
   render() {
     // Это должен быть ровно один элемент.
     // Иначе вы увидите предупреждение
-    const children = this.props.children;
-    return (
-      <div>
-        {children}
-      </div>
-    );
+    const children = this.props.children
+    return <div>{children}</div>
   }
 }
 
 MyComponent.propTypes = {
   children: PropTypes.element.isRequired
-};
+}
 ```
 
-### Значения пропсов по умолчанию {#default-prop-values}
+# Значения пропсов по умолчанию {#default-prop-values}
 
 Вы можете задать значения по умолчанию для ваших `props` с помощью специального свойства `defaultProps`:
 
 ```javascript
 class Greeting extends React.Component {
   render() {
-    return (
-      <h1>Привет, {this.props.name}</h1>
-    );
+    return <h1>Привет, {this.props.name}</h1>
   }
 }
 
 // Задание значений по умолчанию для пропсов:
 Greeting.defaultProps = {
   name: 'Незнакомец'
-};
+}
 
 // Отрендерит "Привет, Незнакомец":
-ReactDOM.render(
-  <Greeting />,
-  document.getElementById('example')
-);
+ReactDOM.render(<Greeting />, document.getElementById('example'))
 ```
 
 Если вы используете один из Babel-плагинов по преобразованию кода, вроде [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/), то можете объявить `defaultProps` как статическое свойство класса (для компонента-наследника от `React.Component`). Этот синтаксис ещё не утверждён, так что для его работы в браузере нужна компиляция. Подробнее смотрите в [предложении о полях класса](https://github.com/tc39/proposal-class-fields).
@@ -182,9 +155,7 @@ class Greeting extends React.Component {
   }
 
   render() {
-    return (
-      <div>Привет, {this.props.name}</div>
-    )
+    return <div>Привет, {this.props.name}</div>
   }
 }
 ```

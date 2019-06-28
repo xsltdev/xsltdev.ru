@@ -1,8 +1,4 @@
----
-id: integrating-with-other-libraries
-title: Взаимодействие со сторонними библиотеками
-permalink: docs/integrating-with-other-libraries.html
----
+# Взаимодействие со сторонними библиотеками
 
 React может использоваться в любом веб-приложении. Он может быть встроен в другие приложения, и, с некоторыми оговорками, другие приложения могут встраиваться в React. Это руководство рассматривает некоторые общие случаи, с упором на интеграцию с [jQuery](https://jquery.com/) и [Backbone](https://backbonejs.org). Те же подходы могут использоваться для интеграции компонентов с любым существующим кодом.
 
@@ -18,34 +14,34 @@ React не знает про изменения DOM, которые сделан
 
 Для демонстрации давайте набросаем обёртку вокруг обобщённого jQuery-плагина.
 
-Мы установим [реф](/docs/refs-and-the-dom.html) на корневой DOM-элемент. Внутри `componentDidMount` мы получим ссылку на этот реф и передадим её в jQuery-плагин.
+Мы установим [реф](refs-and-the-dom.md) на корневой DOM-элемент. Внутри `componentDidMount` мы получим ссылку на этот реф и передадим её в jQuery-плагин.
 
-Чтобы React не взаимодействовал с DOM после монтирования, вернём пустой `<div />` из метода `render()`. Элемент `<div />` не имеет ни свойств, ни дочерних компонентов, так что для React нет никаких причин его обновлять. Это даёт jQuery полную свободу управления этой частью DOM: 
+Чтобы React не взаимодействовал с DOM после монтирования, вернём пустой `<div />` из метода `render()`. Элемент `<div />` не имеет ни свойств, ни дочерних компонентов, так что для React нет никаких причин его обновлять. Это даёт jQuery полную свободу управления этой частью DOM:
 
 ```js{3,4,8,12}
 class SomePlugin extends React.Component {
   componentDidMount() {
-    this.$el = $(this.el);
-    this.$el.somePlugin();
+    this.$el = $(this.el)
+    this.$el.somePlugin()
   }
 
   componentWillUnmount() {
-    this.$el.somePlugin('destroy');
+    this.$el.somePlugin('destroy')
   }
 
   render() {
-    return <div ref={el => this.el = el} />;
+    return <div ref={el => (this.el = el)} />
   }
 }
 ```
 
-Заметьте, что мы объявили два [метода жизненного цикла](/docs/react-component.html#the-component-lifecycle) — как `componentDidMount`, так и `componentWillUnmount`. Многие jQuery-плагины добавляют обработчики событий DOM, поэтому важно удалять их внутри `componentWillUnmount`. Если плагин не предоставляет метод для очистки, то, возможно, вам придётся написать свой. Помните об удалении обработчиков событий, добавленных плагином, чтобы избежать утечек памяти.
+Заметьте, что мы объявили два [метода жизненного цикла](react-component.md#the-component-lifecycle) — как `componentDidMount`, так и `componentWillUnmount`. Многие jQuery-плагины добавляют обработчики событий DOM, поэтому важно удалять их внутри `componentWillUnmount`. Если плагин не предоставляет метод для очистки, то, возможно, вам придётся написать свой. Помните об удалении обработчиков событий, добавленных плагином, чтобы избежать утечек памяти.
 
 ### Интеграция с jQuery-плагином Chosen {#integrating-with-jquery-chosen-plugin}
 
 Теперь рассмотрим конкретный пример. Давайте напишем минимальную обёртку для плагина [Chosen](https://harvesthq.github.io/chosen/), который работает с элементами `<select>`.
 
->**Примечание:**
+> **Примечание:**
 >
 > То, что следующий способ работает, совсем не значит, что это оптимальное решение для React-приложений. Мы советуем пользоваться React-компонентами, когда это возможно. Они являются самым простым способом повторно использовать код в React-приложении, и часто дают больший контроль над своим поведением и внешним видом.
 
@@ -63,11 +59,11 @@ function Example() {
       <option>шоколад</option>
       <option>клубника</option>
     </Chosen>
-  );
+  )
 }
 ```
 
-Для простоты мы будем реализовывать [неуправляемый компонент](/docs/uncontrolled-components.html).
+Для простоты мы будем реализовывать [неуправляемый компонент](uncontrolled-components.md).
 
 Сначала создадим пустой компонент, с методом `render()`, который возвращает `<select>`, обёрнутый в `<div>`:
 
@@ -76,11 +72,11 @@ class Chosen extends React.Component {
   render() {
     return (
       <div>
-        <select className="Chosen-select" ref={el => this.el = el}>
+        <select className="Chosen-select" ref={el => (this.el = el)}>
           {this.props.children}
         </select>
       </div>
-    );
+    )
   }
 }
 ```
@@ -152,36 +148,36 @@ componentDidUpdate(prevProps) {
 ```js
 class Chosen extends React.Component {
   componentDidMount() {
-    this.$el = $(this.el);
-    this.$el.chosen();
+    this.$el = $(this.el)
+    this.$el.chosen()
 
-    this.handleChange = this.handleChange.bind(this);
-    this.$el.on('change', this.handleChange);
+    this.handleChange = this.handleChange.bind(this)
+    this.$el.on('change', this.handleChange)
   }
-  
+
   componentDidUpdate(prevProps) {
     if (prevProps.children !== this.props.children) {
-      this.$el.trigger("chosen:updated");
+      this.$el.trigger('chosen:updated')
     }
   }
 
   componentWillUnmount() {
-    this.$el.off('change', this.handleChange);
-    this.$el.chosen('destroy');
+    this.$el.off('change', this.handleChange)
+    this.$el.chosen('destroy')
   }
-  
+
   handleChange(e) {
-    this.props.onChange(e.target.value);
+    this.props.onChange(e.target.value)
   }
 
   render() {
     return (
       <div>
-        <select className="Chosen-select" ref={el => this.el = el}>
+        <select className="Chosen-select" ref={el => (this.el = el)}>
           {this.props.children}
         </select>
       </div>
-    );
+    )
   }
 }
 ```
@@ -190,7 +186,7 @@ class Chosen extends React.Component {
 
 ## Интеграция с другими визуальными библиотеками {#integrating-with-other-view-libraries}
 
-Благодаря гибкости [`ReactDOM.render()`](/docs/react-dom.html#render) React может встраиваться в другие приложения.
+Благодаря гибкости [`ReactDOM.render()`](react-dom.md#render) React может встраиваться в другие приложения.
 
 Хотя обычно React используют для загрузки в DOM одного корневого компонента, `ReactDOM.render()` может быть вызван несколько раз для независимых частей UI. Это могут быть как отдельные кнопки, так и большие приложения.
 
@@ -203,48 +199,41 @@ class Chosen extends React.Component {
 Итак, есть текущая реализация на jQuery...
 
 ```js
-$('#container').html('<button id="btn">Сказать «Привет»</button>');
+$('#container').html('<button id="btn">Сказать «Привет»</button>')
 $('#btn').click(function() {
-  alert('Привет!');
-});
+  alert('Привет!')
+})
 ```
 
 ...может быть переписана в React-компонент:
 
 ```js
 function Button() {
-  return <button id="btn">Сказать «Привет»</button>;
+  return <button id="btn">Сказать «Привет»</button>
 }
 
-ReactDOM.render(
-  <Button />,
-  document.getElementById('container'),
-  function() {
-    $('#btn').click(function() {
-      alert('Привет!');
-    });
-  }
-);
+ReactDOM.render(<Button />, document.getElementById('container'), function() {
+  $('#btn').click(function() {
+    alert('Привет!')
+  })
+})
 ```
 
-А дальше вы можете начать переносить логику внутрь компонента и использовать остальные React-подходы. Например, в компонентах лучше не полагаться на идентификаторы, потому что один и тот же компонент может быть отрендерен несколько раз. Вместо этого мы используем [событийную систему React](/docs/handling-events.html) и зарегистрируем обработчик непосредственно на React-элементе `<button>`:
+А дальше вы можете начать переносить логику внутрь компонента и использовать остальные React-подходы. Например, в компонентах лучше не полагаться на идентификаторы, потому что один и тот же компонент может быть отрендерен несколько раз. Вместо этого мы используем [событийную систему React](handling-events.md) и зарегистрируем обработчик непосредственно на React-элементе `<button>`:
 
 ```js{2,6,9}
 function Button(props) {
-  return <button onClick={props.onClick}>Сказать «Привет»</button>;
+  return <button onClick={props.onClick}>Сказать «Привет»</button>
 }
 
 function HelloButton() {
   function handleClick() {
-    alert('Привет!');
+    alert('Привет!')
   }
-  return <Button onClick={handleClick} />;
+  return <Button onClick={handleClick} />
 }
 
-ReactDOM.render(
-  <HelloButton />,
-  document.getElementById('container')
-);
+ReactDOM.render(<HelloButton />, document.getElementById('container'))
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/RVKbvW?editors=1010)
@@ -255,84 +244,84 @@ ReactDOM.render(
 
 Представления в [Backbone](https://backbonejs.org/) обычно используют HTML-строки или функции, создающие строковые шаблоны для создания DOM-элементов. Этот механизм также может быть заменён рендерингом React-компонентов.
 
-Ниже мы создадим Backbone-представление `ParagraphView`. Оно переопределит метод `render()` (из `Backbone.View`) для рендеринга React-компонента `<Paragraph>` в DOM-элемент, предоставляемый Backbone (`this.el`). Также мы воспользуемся [`ReactDOM.render()`](/docs/react-dom.html#render):
+Ниже мы создадим Backbone-представление `ParagraphView`. Оно переопределит метод `render()` (из `Backbone.View`) для рендеринга React-компонента `<Paragraph>` в DOM-элемент, предоставляемый Backbone (`this.el`). Также мы воспользуемся [`ReactDOM.render()`](react-dom.md#render):
 
 ```js{1,5,8,12}
 function Paragraph(props) {
-  return <p>{props.text}</p>;
+  return <p>{props.text}</p>
 }
 
 const ParagraphView = Backbone.View.extend({
   render() {
-    const text = this.model.get('text');
-    ReactDOM.render(<Paragraph text={text} />, this.el);
-    return this;
+    const text = this.model.get('text')
+    ReactDOM.render(<Paragraph text={text} />, this.el)
+    return this
   },
   remove() {
-    ReactDOM.unmountComponentAtNode(this.el);
-    Backbone.View.prototype.remove.call(this);
+    ReactDOM.unmountComponentAtNode(this.el)
+    Backbone.View.prototype.remove.call(this)
   }
-});
+})
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/gWgOYL?editors=0010)
 
 Стоит отметить вызов `ReactDOM.unmountComponentAtNode()` в методе `remove`. Он нужен для того, чтобы React отключил обработчики событий и другие ресурсы, связанные с деревом компонентов при удалении.
 
-Когда компонент удаляется из дерева React *изнутри*, очистка производится автоматически, но поскольку мы удаляем сущность из дерева вручную, то обязаны вызвать этот метод.
+Когда компонент удаляется из дерева React _изнутри_, очистка производится автоматически, но поскольку мы удаляем сущность из дерева вручную, то обязаны вызвать этот метод.
 
 ## Интеграция со слоем моделей {#integrating-with-model-layers}
 
-Обычно рекомендуется использовать однонаправленный поток данных, вроде [состояния React](/docs/lifting-state-up.html), [Flux](https://facebook.github.io/flux/) или [Redux](https://redux.js.org/). Но React-компоненты могут также использовать слой данных из других библиотек и фреймворков.
+Обычно рекомендуется использовать однонаправленный поток данных, вроде [состояния React](lifting-state-up.md), [Flux](https://facebook.github.io/flux/) или [Redux](https://redux.js.org/). Но React-компоненты могут также использовать слой данных из других библиотек и фреймворков.
 
 ### Использование моделей Backbone в React-компонентах {#using-backbone-models-in-react-components}
 
 Самый простой способ использовать модели и коллекции [Backbone](https://backbonejs.org) из React-компонентов — это обработка различных событий и ручное обновление компонентов.
 
-Компоненты, отвечающие за рендеринг моделей, будут обрабатывать событие `'change'`, а компоненты, отвечающие за рендеринг коллекций, будут обрабатывать события `'add'` и `'remove'`. В обоих случаях для отображения новых данных нужно вызвать [`this.forceUpdate()`](/docs/react-component.html#forceupdate).
+Компоненты, отвечающие за рендеринг моделей, будут обрабатывать событие `'change'`, а компоненты, отвечающие за рендеринг коллекций, будут обрабатывать события `'add'` и `'remove'`. В обоих случаях для отображения новых данных нужно вызвать [`this.forceUpdate()`](react-component.md#forceupdate).
 
 В следующем примере компонент `list` рендерит Backbone-коллекцию, используя компонент `Item` для рендеринга отдельных элементов.
 
 ```js{1,7-9,12,16,24,30-32,35,39,46}
 class Item extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange() {
-    this.forceUpdate();
+    this.forceUpdate()
   }
 
   componentDidMount() {
-    this.props.model.on('change', this.handleChange);
+    this.props.model.on('change', this.handleChange)
   }
 
   componentWillUnmount() {
-    this.props.model.off('change', this.handleChange);
+    this.props.model.off('change', this.handleChange)
   }
 
   render() {
-    return <li>{this.props.model.get('text')}</li>;
+    return <li>{this.props.model.get('text')}</li>
   }
 }
 
 class List extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange() {
-    this.forceUpdate();
+    this.forceUpdate()
   }
 
   componentDidMount() {
-    this.props.collection.on('add', 'remove', this.handleChange);
+    this.props.collection.on('add', 'remove', this.handleChange)
   }
 
   componentWillUnmount() {
-    this.props.collection.off('add', 'remove', this.handleChange);
+    this.props.collection.off('add', 'remove', this.handleChange)
   }
 
   render() {
@@ -342,18 +331,18 @@ class List extends React.Component {
           <Item key={model.cid} model={model} />
         ))}
       </ul>
-    );
+    )
   }
 }
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/GmrREm?editors=0010)
 
-### Вынос данных из моделей  Backbone {#extracting-data-from-backbone-models}
+### Вынос данных из моделей Backbone {#extracting-data-from-backbone-models}
 
 Подход, показанный выше, требует, чтобы ваши React-компоненты знали о наличии моделей и коллекций Backbone. Если у вас в планах есть переход на другое решение для управления данными, вы, возможно, захотите максимально уменьшить связь с Backbone.
 
-Один из подходов — когда при каждом изменении модели, вы извлекаете её атрибуты в виде простых данных и храните всю логику в одном месте. Следующий [компонент высшего порядка](/docs/higher-order-components.html) извлекает все атрибуты Backbone-модели в `state`, передавая данные в оборачиваемый компонент.
+Один из подходов — когда при каждом изменении модели, вы извлекаете её атрибуты в виде простых данных и храните всю логику в одном месте. Следующий [компонент высшего порядка](higher-order-components.md) извлекает все атрибуты Backbone-модели в `state`, передавая данные в оборачиваемый компонент.
 
 При этом подходе только компоненты высшего порядка будут знать о Backbone-моделях, а большая часть компонентов в приложении не будет завязана на Backbone.
 
@@ -365,35 +354,35 @@ class List extends React.Component {
 function connectToBackboneModel(WrappedComponent) {
   return class BackboneComponent extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = Object.assign({}, props.model.attributes);
-      this.handleChange = this.handleChange.bind(this);
+      super(props)
+      this.state = Object.assign({}, props.model.attributes)
+      this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount() {
-      this.props.model.on('change', this.handleChange);
+      this.props.model.on('change', this.handleChange)
     }
 
     componentWillReceiveProps(nextProps) {
-      this.setState(Object.assign({}, nextProps.model.attributes));
+      this.setState(Object.assign({}, nextProps.model.attributes))
       if (nextProps.model !== this.props.model) {
-        this.props.model.off('change', this.handleChange);
-        nextProps.model.on('change', this.handleChange);
+        this.props.model.off('change', this.handleChange)
+        nextProps.model.on('change', this.handleChange)
       }
     }
 
     componentWillUnmount() {
-      this.props.model.off('change', this.handleChange);
+      this.props.model.off('change', this.handleChange)
     }
 
     handleChange(model) {
-      this.setState(model.changedAttributes());
+      this.setState(model.changedAttributes())
     }
 
     render() {
-      const propsExceptModel = Object.assign({}, this.props);
-      delete propsExceptModel.model;
-      return <WrappedComponent {...propsExceptModel} {...this.state} />;
+      const propsExceptModel = Object.assign({}, this.props)
+      delete propsExceptModel.model
+      return <WrappedComponent {...propsExceptModel} {...this.state} />
     }
   }
 }
@@ -409,29 +398,21 @@ function NameInput(props) {
       <br />
       Моё имя - {props.firstName}.
     </p>
-  );
+  )
 }
 
-const BackboneNameInput = connectToBackboneModel(NameInput);
+const BackboneNameInput = connectToBackboneModel(NameInput)
 
 function Example(props) {
   function handleChange(e) {
-    props.model.set('firstName', e.target.value);
+    props.model.set('firstName', e.target.value)
   }
 
-  return (
-    <BackboneNameInput
-      model={props.model}
-      handleChange={handleChange}
-    />
-  );
+  return <BackboneNameInput model={props.model} handleChange={handleChange} />
 }
 
-const model = new Backbone.Model({ firstName: 'Фродо' });
-ReactDOM.render(
-  <Example model={model} />,
-  document.getElementById('root')
-);
+const model = new Backbone.Model({ firstName: 'Фродо' })
+ReactDOM.render(<Example model={model} />, document.getElementById('root'))
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/PmWwwa?editors=0010)

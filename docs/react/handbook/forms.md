@@ -1,13 +1,4 @@
----
-id: forms
-title: Формы
-permalink: docs/forms.html
-prev: lists-and-keys.html
-next: lifting-state-up.html
-redirect_from:
-  - "tips/controlled-input-null-value.html"
-  - "docs/forms-zh-CN.html"
----
+# Формы
 
 В React HTML-элементы формы ведут себя несколько отлично от остальных DOM-элементов, так как у элементов формы изначально есть внутреннее состояние. К примеру, в эту HTML-форму можно ввести имя:
 
@@ -25,7 +16,7 @@ redirect_from:
 
 ## Управляемые компоненты {#controlled-components}
 
-В HTML элементы формы, такие как `<input>`, `<textarea>` и `<select>`, обычно сами управляют своим состоянием и обновляют его когда пользователь вводит данные. В React мутабельное состояние обычно содержится в свойстве компонентов `state` и обновляется только через вызов [`setState()`](/docs/react-component.html#setstate)
+В HTML элементы формы, такие как `<input>`, `<textarea>` и `<select>`, обычно сами управляют своим состоянием и обновляют его когда пользователь вводит данные. В React мутабельное состояние обычно содержится в свойстве компонентов `state` и обновляется только через вызов [`setState()`](react-component.md#setstate)
 
 Мы можем скомбинировать оба подхода и сделать состояние React-компонента "единственным источником правды". Тогда React-компонент будет рендерить форму и контролировать её поведение в ответ на пользовательский ввод. Значение элемента формы input в этом случае будет контролировать React, а сам элемент будет называться управляемый компонент».
 
@@ -34,20 +25,20 @@ redirect_from:
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {value: ''};
+    super(props)
+    this.state = { value: '' }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value })
   }
 
   handleSubmit(event) {
-    alert('Отправленное имя: ' + this.state.value);
-    event.preventDefault();
+    alert('Отправленное имя: ' + this.state.value)
+    event.preventDefault()
   }
 
   render() {
@@ -59,12 +50,10 @@ class NameForm extends React.Component {
         </label>
         <input type="submit" value="Отправить" />
       </form>
-    );
+    )
   }
 }
 ```
-
-[**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
 Мы установили атрибут `value` для поля ввода, и теперь в нём всегда будет отображаться значение `this.state.value`. Состояние React-компонента стало «источником истины». А так как каждое нажатие клавиши вызывает `handleChange`, который обновляет состояние React-компонента, значение в поле будет обновляться по мере того, как пользователь печатает.
 
@@ -86,27 +75,27 @@ HTML-элемент `<textarea>` в качестве текста отображ
 </textarea>
 ```
 
-В React `<textarea>` использует атрибут `value`. Таким образом, форму с `<textarea>` можно написать почти тем же способом, что и форму с однострочным `<input>`: 
+В React `<textarea>` использует атрибут `value`. Таким образом, форму с `<textarea>` можно написать почти тем же способом, что и форму с однострочным `<input>`:
 
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       value: 'Будьте любезны, напишите сочинение о вашем любимом DOM-элементе.'
-    };
+    }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value })
   }
 
   handleSubmit(event) {
-    alert('Сочинение отправлено: ' + this.state.value);
-    event.preventDefault();
+    alert('Сочинение отправлено: ' + this.state.value)
+    event.preventDefault()
   }
 
   render() {
@@ -118,7 +107,7 @@ class EssayForm extends React.Component {
         </label>
         <input type="submit" value="Отправить" />
       </form>
-    );
+    )
   }
 }
 ```
@@ -143,20 +132,20 @@ class EssayForm extends React.Component {
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {value: 'coconut'};
+    super(props)
+    this.state = { value: 'coconut' }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value })
   }
 
   handleSubmit(event) {
-    alert('Ваш любимый вкус: ' + this.state.value);
-    event.preventDefault();
+    alert('Ваш любимый вкус: ' + this.state.value)
+    event.preventDefault()
   }
 
   render() {
@@ -173,12 +162,10 @@ class FlavorForm extends React.Component {
         </label>
         <input type="submit" value="Отправить" />
       </form>
-    );
+    )
   }
 }
 ```
-
-[**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
 Подводя итог, `<input type="text">`, `<textarea>`, и `<select>` работают очень похоже. Все они принимают атрибут `value`, который можно использовать, чтобы реализовать управляемый компонент.
 
@@ -186,9 +173,9 @@ class FlavorForm extends React.Component {
 >
 > В атрибут `value` можно передать массив, что позволит выбрать несколько опций в теге `select`:
 >
->```js
-><select multiple={true} value={['Б', 'В']}>
->```
+> ```js
+> <select multiple={true} value={['Б', 'В']}>
+> ```
 
 ## Загрузка файла {#the-file-input-tag}
 
@@ -198,7 +185,7 @@ class FlavorForm extends React.Component {
 <input type="file" />
 ```
 
-Так как значение такого элемента доступно только для чтения, это **неуправляемый** React-компонент. Мы расскажем про этот и другие неуправляемые компоненты [далее в документации](/docs/uncontrolled-components.html#the-file-input-tag).
+Так как значение такого элемента доступно только для чтения, это **неуправляемый** React-компонент. Мы расскажем про этот и другие неуправляемые компоненты [далее в документации](uncontrolled-components.md#the-file-input-tag).
 
 ## Обработка нескольких элементов input {#handling-multiple-inputs}
 
@@ -209,23 +196,23 @@ class FlavorForm extends React.Component {
 ```javascript{15,18,28,37}
 class Reservation extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isGoing: true,
       numberOfGuests: 2
-    };
+    }
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
 
     this.setState({
       [name]: value
-    });
+    })
   }
 
   render() {
@@ -233,64 +220,54 @@ class Reservation extends React.Component {
       <form>
         <label>
           Пойду:
-          <input
-            name="isGoing"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} />
+          <input name="isGoing" type="checkbox" checked={this.state.isGoing} onChange={this.handleInputChange} />
         </label>
         <br />
         <label>
           Количество гостей:
-          <input
-            name="numberOfGuests"
-            type="number"
-            value={this.state.numberOfGuests}
-            onChange={this.handleInputChange} />
+          <input name="numberOfGuests" type="number" value={this.state.numberOfGuests} onChange={this.handleInputChange} />
         </label>
       </form>
-    );
+    )
   }
 }
 ```
-
-[**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
 Обратите внимание, что мы используем [вычисляемые имена свойств](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer#%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2), чтобы обновить значение в `state` через ключ, который соответствует атрибуту name элемента input:
 
 ```js{2}
 this.setState({
   [name]: value
-});
+})
 ```
 
 Идентичный ES5-код:
 
 ```js{2}
-var partialState = {};
-partialState[name] = value;
-this.setState(partialState);
+var partialState = {}
+partialState[name] = value
+this.setState(partialState)
 ```
 
-Кроме того, `setState()` автоматически производит [слияние части состояния с текущим состоянием](/docs/state-and-lifecycle.html#state-updates-are-merged), то есть нам нужно передать в него только ту часть `state`, которую хотим изменить.
+Кроме того, `setState()` автоматически производит [слияние части состояния с текущим состоянием](state-and-lifecycle.md#state-updates-are-merged), то есть нам нужно передать в него только ту часть `state`, которую хотим изменить.
 
 ## Значение null управляемого компонента {#controlled-input-null-value}
 
-Если установить [управляемому компоненту](/docs/forms.html#controlled-components) проп `value`, то пользователь не сможет изменить его значение без вашего желания. Если вы установили `value`, а поле ввода по-прежнему можно редактировать, то, возможно, вы случайно задали `value`, равный `undefined` или `null`.
+Если установить [управляемому компоненту](forms.md#controlled-components) проп `value`, то пользователь не сможет изменить его значение без вашего желания. Если вы установили `value`, а поле ввода по-прежнему можно редактировать, то, возможно, вы случайно задали `value`, равный `undefined` или `null`.
 
 Код ниже это демонстрирует. (Изначально заблокированный `input` становится редактируемым после небольшой задержки.)
 
 ```javascript
-ReactDOM.render(<input value="Привет" />, mountNode);
+ReactDOM.render(<input value="Привет" />, mountNode)
 
 setTimeout(function() {
-  ReactDOM.render(<input value={null} />, mountNode);
-}, 1000);
+  ReactDOM.render(<input value={null} />, mountNode)
+}, 1000)
 ```
 
 ## Альтернативы управляемым компонентам {#alternatives-to-controlled-components}
 
-Использование управляемых компонентов иногда может быть утомительным. Приходится писать обработчик события для каждого варианта изменения ваших данных и проводить всё состояние формы через компонент React. Это может особенно раздражать, если вы переносите существующую кодовую базу в React, или когда работаете над интеграцией React-приложения с другой библиотекой. В такой ситуации могут пригодиться [неуправляемые компоненты](/docs/uncontrolled-components.html) — альтернативная техника реализации ввода данных в форму.
+Использование управляемых компонентов иногда может быть утомительным. Приходится писать обработчик события для каждого варианта изменения ваших данных и проводить всё состояние формы через компонент React. Это может особенно раздражать, если вы переносите существующую кодовую базу в React, или когда работаете над интеграцией React-приложения с другой библиотекой. В такой ситуации могут пригодиться [неуправляемые компоненты](uncontrolled-components.md) — альтернативная техника реализации ввода данных в форму.
 
 ## Полноценные решения {#fully-fledged-solutions}
 

@@ -1,35 +1,24 @@
----
-id: refs-and-the-dom
-title: Рефы и DOM
-redirect_from:
-  - "docs/working-with-the-browser.html"
-  - "docs/more-about-refs.html"
-  - "docs/more-about-refs-ko-KR.html"
-  - "docs/more-about-refs-zh-CN.html"
-  - "tips/expose-component-functions.html"
-  - "tips/children-undefined.html"
-permalink: docs/refs-and-the-dom.html
----
+# Рефы и DOM
 
 Рефы дают возможность получить доступ к DOM-узлам или React-элементам, созданным в рендер-методе.
 
-В обычном потоке данных React родительские компоненты могут взаимодействовать с дочерними только через [пропсы](/docs/components-and-props.html). Чтобы модифицировать потомка, вы должны заново отрендерить его с новыми пропсами. Тем не менее, могут возникать ситуации, когда вам требуется императивно изменить дочерний элемент, обойдя обычный поток данных. Подлежащий изменениям дочерний элемент может быть как React-компонентом, так и DOM-элементом. React предоставляет лазейку для обоих случаев.
+В обычном потоке данных React родительские компоненты могут взаимодействовать с дочерними только через [пропсы](components-and-props.md). Чтобы модифицировать потомка, вы должны заново отрендерить его с новыми пропсами. Тем не менее, могут возникать ситуации, когда вам требуется императивно изменить дочерний элемент, обойдя обычный поток данных. Подлежащий изменениям дочерний элемент может быть как React-компонентом, так и DOM-элементом. React предоставляет лазейку для обоих случаев.
 
-### Когда использовать рефы {#when-to-use-refs}
+## Когда использовать рефы {#when-to-use-refs}
 
 Ситуации, в которых использования рефов является оправданным:
 
-* Управление фокусом, выделение текста или воспроизведение медиа.
-* Императивный вызов анимаций.
-* Интеграция со сторонними DOM-библиотеками.
+- Управление фокусом, выделение текста или воспроизведение медиа.
+- Императивный вызов анимаций.
+- Интеграция со сторонними DOM-библиотеками.
 
 Избегайте использования рефов в ситуациях, когда задачу можно решить декларативным способом.
 
 Например, вместо того чтобы определять методы `open()` и `close()` в компоненте `Dialog`, лучше передавать ему проп `isOpen`.
 
-### Не злоупотребляйте рефами {#dont-overuse-refs}
+## Не злоупотребляйте рефами {#dont-overuse-refs}
 
-Возможно, с первого взгляда вам показалось, что рефы применяются, когда нужно решить какую-то задачу в вашем приложении «во что бы то ни стало». Если у вас сложилось такое впечатление, сделайте паузу и обдумайте, где должно храниться конкретное состояние в иерархии компонентов. Часто становится очевидно, что правильным местом для хранения состояния является верхний уровень в иерархии. Подробнее об этом -- в главе [Подъём состояния](/docs/lifting-state-up.html).
+Возможно, с первого взгляда вам показалось, что рефы применяются, когда нужно решить какую-то задачу в вашем приложении «во что бы то ни стало». Если у вас сложилось такое впечатление, сделайте паузу и обдумайте, где должно храниться конкретное состояние в иерархии компонентов. Часто становится очевидно, что правильным местом для хранения состояния является верхний уровень в иерархии. Подробнее об этом -- в главе [Подъём состояния](lifting-state-up.md).
 
 > Примечание
 >
@@ -42,11 +31,11 @@ permalink: docs/refs-and-the-dom.html
 ```javascript{4,7}
 class MyComponent extends React.Component {
   constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
+    super(props)
+    this.myRef = React.createRef()
   }
   render() {
-    return <div ref={this.myRef} />;
+    return <div ref={this.myRef} />
   }
 }
 ```
@@ -56,7 +45,7 @@ class MyComponent extends React.Component {
 Когда реф передаётся элементу в методе `render`, ссылка на данный узел доступна через свойство рефа `current`.
 
 ```javascript
-const node = this.myRef.current;
+const node = this.myRef.current
 ```
 
 Значение рефа отличается в зависимости от типа узла:
@@ -74,16 +63,16 @@ const node = this.myRef.current;
 ```javascript{5,12,22}
 class CustomTextInput extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     // создадим реф в поле `textInput` для хранения DOM-элемента
-    this.textInput = React.createRef();
-    this.focusTextInput = this.focusTextInput.bind(this);
+    this.textInput = React.createRef()
+    this.focusTextInput = this.focusTextInput.bind(this)
   }
 
   focusTextInput() {
     // Установим фокус на текстовое поле с помощью чистого DOM API
     // Примечание: обращаемся к "current", чтобы получить DOM-узел
-    this.textInput.current.focus();
+    this.textInput.current.focus()
   }
 
   render() {
@@ -91,16 +80,10 @@ class CustomTextInput extends React.Component {
     // с `textInput` созданным в конструкторе
     return (
       <div>
-        <input
-          type="text"
-          ref={this.textInput} />
-        <input
-          type="button"
-          value="Фокус на текстовом поле"
-          onClick={this.focusTextInput}
-        />
+        <input type="text" ref={this.textInput} />
+        <input type="button" value="Фокус на текстовом поле" onClick={this.focusTextInput} />
       </div>
-    );
+    )
   }
 }
 ```
@@ -114,18 +97,16 @@ React присвоит DOM-элемент свойству `current` при мо
 ```javascript{4,8,13}
 class AutoFocusTextInput extends React.Component {
   constructor(props) {
-    super(props);
-    this.textInput = React.createRef();
+    super(props)
+    this.textInput = React.createRef()
   }
 
   componentDidMount() {
-    this.textInput.current.focusTextInput();
+    this.textInput.current.focusTextInput()
   }
 
   render() {
-    return (
-      <CustomTextInput ref={this.textInput} />
-    );
+    return <CustomTextInput ref={this.textInput} />
   }
 }
 ```
@@ -144,19 +125,17 @@ class CustomTextInput extends React.Component {
 
 ```javascript{1,8,13}
 function MyFunctionComponent() {
-  return <input />;
+  return <input />
 }
 
 class Parent extends React.Component {
   constructor(props) {
-    super(props);
-    this.textInput = React.createRef();
+    super(props)
+    this.textInput = React.createRef()
   }
   render() {
     // Данный код *не будет* работать!
-    return (
-      <MyFunctionComponent ref={this.textInput} />
-    );
+    return <MyFunctionComponent ref={this.textInput} />
   }
 }
 ```
@@ -167,26 +146,20 @@ class Parent extends React.Component {
 
 ```javascript{2,3,6,13}
 function CustomTextInput(props) {
-  // переменная textInput должна быть объявлена на верхнем уровне, 
+  // переменная textInput должна быть объявлена на верхнем уровне,
   // чтобы реф мог иметь к ней доступ
-  let textInput = React.createRef();
+  let textInput = React.createRef()
 
   function handleClick() {
-    textInput.current.focus();
+    textInput.current.focus()
   }
 
   return (
     <div>
-      <input
-        type="text"
-        ref={textInput} />
-      <input
-        type="button"
-        value="Фокус на поле для ввода текста"
-        onClick={handleClick}
-      />
+      <input type="text" ref={textInput} />
+      <input type="button" value="Фокус на поле для ввода текста" onClick={handleClick} />
     </div>
-  );
+  )
 }
 ```
 
@@ -196,11 +169,11 @@ function CustomTextInput(props) {
 
 Несмотря на то, что можно было бы [добавить реф к дочернему компоненту](#adding-a-ref-to-a-class-component), такое решение не является идеальным, т.к. вы получите экземпляр компонента вместо DOM-узла. Кроме того, это не сработает с функциональными компонентами.
 
-Если вы работаете с React 16.3 или новее, мы рекомендуем использовать [перенаправление рефов](/docs/forwarding-refs.html) для таких случаев. **Перенаправление рефов позволяет компонентам осуществлять передачу рефа любого дочернего компонента как своего собственного**. Вы можете найти детальные примеры того, как передать дочерний DOM-узел родительскому компоненту [в документации по перенаправлению рефов](/docs/forwarding-refs.html#forwarding-refs-to-dom-components).
+Если вы работаете с React 16.3 или новее, мы рекомендуем использовать [перенаправление рефов](forwarding-refs.md) для таких случаев. **Перенаправление рефов позволяет компонентам осуществлять передачу рефа любого дочернего компонента как своего собственного**. Вы можете найти детальные примеры того, как передать дочерний DOM-узел родительскому компоненту [в документации по перенаправлению рефов](forwarding-refs.md#forwarding-refs-to-dom-components).
 
 Если вы используете React версии 16.2 или ниже, или если вам нужно решение более гибкое, чем перенаправление рефов, вы можете использовать [данный альтернативный подход](https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509) и явно передавать реф как проп с другим именем.
 
-По возможности, мы советуем избегать передачи DOM-узлов, но это может быть полезной лазейкой. Заметим, что данный подход требует добавления кода в дочерний компонент. Если у вас нет никакого контроля над реализацией дочернего компонента, последним вариантом является использование [`findDOMNode()`](/docs/react-dom.html#finddomnode), но такое решение не рекомендуется и не поддерживается в [`StrictMode`](/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage).
+По возможности, мы советуем избегать передачи DOM-узлов, но это может быть полезной лазейкой. Заметим, что данный подход требует добавления кода в дочерний компонент. Если у вас нет никакого контроля над реализацией дочернего компонента, последним вариантом является использование [`findDOMNode()`](react-dom.md#finddomnode), но такое решение не рекомендуется и не поддерживается в [`StrictMode`](strict-mode.md#warning-about-deprecated-finddomnode-usage).
 
 ### Колбэк-рефы {#callback-refs}
 
@@ -213,23 +186,23 @@ function CustomTextInput(props) {
 ```javascript{5,7-9,11-14,19,29,34}
 class CustomTextInput extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.textInput = null;
+    this.textInput = null
 
     this.setTextInputRef = element => {
-      this.textInput = element;
-    };
+      this.textInput = element
+    }
 
     this.focusTextInput = () => {
       // Устанавливаем фокус на текстовом поле ввода с помощью чистого DOM API
-      if (this.textInput) this.textInput.focus();
-    };
+      if (this.textInput) this.textInput.focus()
+    }
   }
 
   componentDidMount() {
     // устанавливаем фокус на input при монтировании
-    this.focusTextInput();
+    this.focusTextInput()
   }
 
   render() {
@@ -237,24 +210,17 @@ class CustomTextInput extends React.Component {
     // поля текстового ввода в поле экземпляра (например, this.textInput).
     return (
       <div>
-        <input
-          type="text"
-          ref={this.setTextInputRef}
-        />
-        <input
-          type="button"
-          value="Focus the text input"
-          onClick={this.focusTextInput}
-        />
+        <input type="text" ref={this.setTextInputRef} />
+        <input type="button" value="Focus the text input" onClick={this.focusTextInput} />
       </div>
-    );
+    )
   }
 }
 ```
 
 React вызовет `ref` колбэк с DOM-элементом при монтировании компонента, а также вызовет его со значением `null` при размонтировании. Рефы будут хранить актуальное значение перед вызовом методов `componentDidMount` или `componentDidUpdate`.
 
-Вы можете передавать колбэк-рефы между компонентами точно так же, как и объектные рефы, созданные через  `React.createRef()`.
+Вы можете передавать колбэк-рефы между компонентами точно так же, как и объектные рефы, созданные через `React.createRef()`.
 
 ```javascript{4,13}
 function CustomTextInput(props) {
@@ -262,16 +228,12 @@ function CustomTextInput(props) {
     <div>
       <input ref={props.inputRef} />
     </div>
-  );
+  )
 }
 
 class Parent extends React.Component {
   render() {
-    return (
-      <CustomTextInput
-        inputRef={el => this.inputElement = el}
-      />
-    );
+    return <CustomTextInput inputRef={el => (this.inputElement = el)} />
   }
 }
 ```
@@ -280,7 +242,7 @@ class Parent extends React.Component {
 
 ### Устаревший API: строковые рефы {#legacy-api-string-refs}
 
-Если вы уже работали с React ранее, возможно вы знакомы с более старым API, в котором атрибут `ref` является строкой, например`"textInput"`, а DOM-узел доступен в `this.refs.textInput`. Мы не советуем пользоваться таким решением, т.к. у строковых рефов есть [некоторые недостатки](https://github.com/facebook/react/pull/8333#issuecomment-271648615), они являются устаревшими и **будут удалены в одном из будущих релизах**. 
+Если вы уже работали с React ранее, возможно вы знакомы с более старым API, в котором атрибут `ref` является строкой, например`"textInput"`, а DOM-узел доступен в `this.refs.textInput`. Мы не советуем пользоваться таким решением, т.к. у строковых рефов есть [некоторые недостатки](https://github.com/facebook/react/pull/8333#issuecomment-271648615), они являются устаревшими и **будут удалены в одном из будущих релизах**.
 
 > Примечание
 >
@@ -289,4 +251,3 @@ class Parent extends React.Component {
 ### Предостережения насчёт колбэк-рефов {#caveats-with-callback-refs}
 
 Если `ref` колбэк определён как встроенная функция, колбэк будет вызван дважды во время обновлений: первый раз со значением `null`, а затем снова с DOM-элементом. Это связано с тем, что с каждым рендером создаётся новый экземпляр функции, поэтому React должен очистить старый реф и задать новый. Такого поведения можно избежать, если колбэк в `ref` будет определён с привязанным к классу контекстом, но, заметим, что это не будет играть роли в большинстве случаев.
-

@@ -1,8 +1,4 @@
----
-id: react-without-jsx
-title: React без JSX
-permalink: docs/react-without-jsx.html
----
+# React без JSX
 
 JSX не является обязательным для работы с React. React можно использовать без JSX. Это особенно удобно, когда вы не хотите настраивать транспиляцию в процессе сборки.
 
@@ -10,18 +6,14 @@ JSX не является обязательным для работы с React.
 
 Например, вот код с JSX:
 
-
 ```js
 class Hello extends React.Component {
   render() {
-    return <div>Привет, {this.props.toWhat}</div>;
+    return <div>Привет, {this.props.toWhat}</div>
   }
 }
 
-ReactDOM.render(
-  <Hello toWhat="мир" />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Hello toWhat="мир" />, document.getElementById('root'))
 ```
 
 Он может быть превращён в код без JSX:
@@ -29,29 +21,21 @@ ReactDOM.render(
 ```js
 class Hello extends React.Component {
   render() {
-    return React.createElement('div', null, `Привет, ${this.props.toWhat}`);
+    return React.createElement('div', null, `Привет, ${this.props.toWhat}`)
   }
 }
 
-ReactDOM.render(
-  React.createElement(Hello, {toWhat: 'мир'}, null),
-  document.getElementById('root')
-);
+ReactDOM.render(React.createElement(Hello, { toWhat: 'мир' }, null), document.getElementById('root'))
 ```
-
-Если вас интересуют другие примеры того, как JSX превращается в JavaScript, вы можете попробовать [онлайн-компилятор Babel](babel://jsx-simple-example).
 
 Компонент может быть представлен в виде строки, класса-наследника от `React.Component` или обычной функции в случае компонента без состояния.
 
 Если вас утомляет печатать `React.createElement`, то распространённой практикой является создать сокращение:
 
 ```js
-const e = React.createElement;
+const e = React.createElement
 
-ReactDOM.render(
-  e('div', null, 'Привет, мир!'),
-  document.getElementById('root')
-);
+ReactDOM.render(e('div', null, 'Привет, мир!'), document.getElementById('root'))
 ```
 
 Если вы примените эту сокращённую форму для `React.createElement`, то использование React без JSX станет почти таким же удобным, как вы привыкли.

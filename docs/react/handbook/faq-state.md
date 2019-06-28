@@ -1,30 +1,25 @@
----
-id: faq-state
-title: Состояние компонента
-permalink: docs/faq-state.html
-layout: docs
-category: FAQ
----
+# Состояние компонента
 
-### Что делает `setState`? {#what-does-setstate-do}
+## Что делает `setState`? {#what-does-setstate-do}
 
 Метод `setState()` следит за изменением состояния (`state`) компонента. `state` — это объект. Когда состояние меняется, компонент рендерится повторно.
 
-### Какая разница между `state` и `props`? {#what-is-the-difference-between-state-and-props}
+## Какая разница между `state` и `props`? {#what-is-the-difference-between-state-and-props}
 
-[`props`](/docs/components-and-props.html) (намеренно сокращённо от англ. «properties» — свойства) и [`state`](/docs/state-and-lifecycle.html) — это обычные JavaScript-объекты. Несмотря на то, что оба содержат информацию, которая влияет на то, что увидим после рендера, есть существенное различие: `props` передаётся *в* компонент (служат как параметры функции), в то время как `state` находится *внутри* компонента (по аналогии с переменными, которые объявлены внутри функции).
+[`props`](components-and-props.md) (намеренно сокращённо от англ. «properties» — свойства) и [`state`](state-and-lifecycle.md) — это обычные JavaScript-объекты. Несмотря на то, что оба содержат информацию, которая влияет на то, что увидим после рендера, есть существенное различие: `props` передаётся _в_ компонент (служат как параметры функции), в то время как `state` находится _внутри_ компонента (по аналогии с переменными, которые объявлены внутри функции).
 
 Несколько полезных ресурсов для дальнейшего изучения, в каких случаях использовать `props`, а в каких — `state`:
-* [Props vs. State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
-* [ReactJS: Props vs State](https://lucybain.com/blog/2016/react-state-vs-pros/)
 
-### Почему `setState` даёт неверное значение? {#why-is-setstate-giving-me-the-wrong-value}
+- [Props vs. State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+- [ReactJS: Props vs State](https://lucybain.com/blog/2016/react-state-vs-pros/)
 
-В React как `this.props`, так и `this.state` представляют значения, которые *уже были отрендерены*, например, то, что видите на экране.
+## Почему `setState` даёт неверное значение? {#why-is-setstate-giving-me-the-wrong-value}
+
+В React как `this.props`, так и `this.state` представляют значения, которые _уже были отрендерены_, например, то, что видите на экране.
 
 Вызовы `setState` являются асинхронными, поэтому не стоит рассчитывать, что `this.state` отобразит новое значение мгновенно после вызова `setState`. Необходимо добавить функцию, которая сработает только после обновления состояния, если нужно получить новое значение, основанное на текущем состоянии (ниже подробный пример).
 
-Пример кода, который *не* будет работать так, как ожидаем:
+Пример кода, который _не_ будет работать так, как ожидаем:
 
 ```jsx
 incrementCount() {
@@ -49,11 +44,11 @@ handleSomething() {
 
 Далее перейдём к исправлению указанной проблемы.
 
-### Как обновить состояние значениями, которые зависят от текущего состояния? {#how-do-i-update-state-with-values-that-depend-on-the-current-state}
+## Как обновить состояние значениями, которые зависят от текущего состояния? {#how-do-i-update-state-with-values-that-depend-on-the-current-state}
 
 Нужно добавить функцию вместо объекта к `setState`, которая будет срабатывать только на самой последней версии состояния (пример ниже).
 
-### В чём разница между добавлением объекта или функции к `setState`? {#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate}
+## В чём разница между добавлением объекта или функции к `setState`? {#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate}
 
 Добавление функции даёт вам доступ к текущему состоянию внутри самой функции. Так как `setState` вызовы «сгруппированы», это помогает связать изменения и гарантирует, что они будут выполняться друг за другом, а не конфликтовать.
 
@@ -76,9 +71,9 @@ handleSomething() {
 }
 ```
 
-[Прочитать больше про setState](/docs/react-component.html#setstate)
+[Прочитать больше про setState](react-component.md#setstate)
 
-### Когда `setState` работает асинхронно? {#when-is-setstate-asynchronous}
+## Когда `setState` работает асинхронно? {#when-is-setstate-asynchronous}
 
 В настоящее время `setState` работает асинхронно внутри обработчиков событий.
 
@@ -86,7 +81,7 @@ handleSomething() {
 
 Но не стоит полностью полагаться на такое поведение. В будущих версиях React будет использовать отложенные обновления состояния по умолчанию не только в обработчиках событий.
 
-### Почему React не обновляет `this.state` синхронно? {#why-doesnt-react-update-thisstate-synchronously}
+## Почему React не обновляет `this.state` синхронно? {#why-doesnt-react-update-thisstate-synchronously}
 
 Как говорилось ранее, React намеренно «ждёт» пока все компоненты вызовут `setState()` в своих обработчиках событий прежде чем начать повторный рендер. Это избавляет от ненужных повторных рендеров.
 
@@ -99,7 +94,7 @@ handleSomething() {
 
 Этот [GitHub-комментарий](https://github.com/facebook/react/issues/11527#issuecomment-360199710) рассматривает конкретные примеры, которые помогут глубже изучить этот вопрос.
 
-### Стоит ли использовать такие библиотеки, как Redux или MobX? {#should-i-use-a-state-management-library-like-redux-or-mobx}
+## Стоит ли использовать такие библиотеки, как Redux или MobX? {#should-i-use-a-state-management-library-like-redux-or-mobx}
 
 [Возможно.](https://redux.js.org/faq/general#when-should-i-use-redux)
 
