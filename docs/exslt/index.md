@@ -1,12 +1,12 @@
+---
+title: Оглавление
+---
+
 # EXSLT: Оглавление
 
-Справочник по функциям EXSLT на русском языке
+Справочник по функциям EXSLT на русском языке.
 
 **EXSLT** (Extensions to Extensible Stylesheet Language Transformations) — общественная инициатива по созданию расширений для XSLT, придающих бо́льшую функциональность языку трансформаций.
-
-&mdash; [Официальный сайт сообщества](http://www.exslt.org/)
-
-&mdash; [Раздел об EXSLT в Центре разработчиков Mozilla](https://developer.mozilla.org/en-US/docs/Web/EXSLT)
 
 - [exsl​:object-type](exsl-object-type.md)
 - [exsl​:node-set](exsl​-node-set.md)
@@ -26,3 +26,8 @@
 - [str​:concat](str​-concat.md)
 - [str​:split](str​-split.md)
 - [str​:tokenize](str​-tokenize.md)
+
+Ссылки:
+
+- [Официальный сайт сообщества](http://www.exslt.org/)
+- [Раздел об EXSLT в Центре разработчиков Mozilla](https://developer.mozilla.org/en-US/docs/Web/EXSLT)

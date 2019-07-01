@@ -26,9 +26,9 @@ extra:
     search:
         language: 'en, ru'
 
-# google_analytics:
-#   - 'UA-XXXXXXXX-X'
-#   - 'auto'
+google_analytics:
+    - 'UA-34215161-1'
+    - 'auto'
 
 markdown_extensions:
     - admonition
