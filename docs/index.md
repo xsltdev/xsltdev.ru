@@ -6,12 +6,11 @@
 
 - [HTML](html/index.md) &mdash; справочник элементов HTML
 - [CSS](css/index.md) &mdash; справочник свойств CSS
-- [Справочник Typescript](typescript/handbook/basic-types.md) &mdash; справочник по языку Typescript
-- [Руководство Typescript](typescript/guide/intro/about-ts.md) &mdash; руководство по языку Typescript
+- [Руководства Typescript](typescript/index.md) &mdash; руководства по языку Typescript
 
 ## Фреймворки
 
-- [Angular 2+](angular/guide/intro/start.md) &mdash; руководство по фреймворку Angular 2+
+- [Angular 2+](angular/index.md) &mdash; руководство по фреймворку Angular 2+
 - [React](react/index.md) &mdash; руководства по фреймворку React
 
 ## XML технологии
