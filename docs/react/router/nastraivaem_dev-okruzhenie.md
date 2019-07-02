@@ -267,87 +267,206 @@ module.exports = merge(production, common);
 
 В данном конфиге меня заинтересовали последние строчки. Посмотрите как происходят присваивания в переменную `TARGET`.
 
-Если мы запускаем npm start - наш финальный конфиг будет равен текущему конфигу (webpack/common.config + webpack/dev.config)\*.
+Если мы запускаем `npm start` - наш финальный конфиг будет равен текущему конфигу `(webpack/common.config + webpack/dev.config)`. Под "+" подразумевается "мерж" (слияние) с помощью webpack-merge
 
-- под "+" подразумевается "мерж" (слияние) с помощью webpack-merge\*
-  Если же мы запустим npm build (у нас нет этого скрипта сейчас), то запустится сборка, которая возьмет текущий конфиг и "смержит" его с production конфигом.
-  Ниже приведен код dev и prod конфигов. Если интересно - посмотрите различия.
-  Версия для "разработки".
-  webpack/dev.config.js
-  const webpack = require('webpack');
-  const ExtractTextPlugin = require('extract-text-webpack-plugin');
+Если же мы запустим `npm build` (у нас нет этого скрипта сейчас), то запустится сборка, которая возьмет текущий конфиг и "смержит" его с `production` конфигом.
+
+Ниже приведен код `dev` и `prod` конфигов. Если интересно - посмотрите различия.
+
+Версия для "разработки".
+
+_webpack/dev.config.js_
+
+```js
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-devtool: 'cheap-module-eval-source-map',
-entry: [
-'bootstrap-loader',
-'webpack-hot-middleware/client',
-'./src/index',
-],
-output: {
-publicPath: '/dist/',
-},
+  devtool: 'cheap-module-eval-source-map',
+  entry: ['bootstrap-loader', 'webpack-hot-middleware/client', './src/index'],
+  output: {
+    publicPath: '/dist/'
+  },
 
-module: {
-loaders: [{
-test: /\.scss\$/,
-loader: 'style!css?localIdentName=[path][name]--[local]!postcss-loader!sass',
-}],
-},
+  module: {
+    loaders: [
+      {
+        test: /\.scss\$/,
+        loader: 'style!css?localIdentName=[path][name]--[local]!postcss-loader!sass'
+      }
+    ]
+  },
 
-plugins: [
-new webpack.DefinePlugin({
-'process.env': {
-NODE_ENV: '"development"',
-},
-__DEVELOPMENT__: true,
-}),
-new ExtractTextPlugin('bundle.css'),
-new webpack.optimize.OccurenceOrderPlugin(),
-new webpack.HotModuleReplacementPlugin(),
-new webpack.NoErrorsPlugin(),
-new webpack.ProvidePlugin({
-jQuery: 'jquery',
-}),
-],
-};
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"development"'
+      },
+      __DEVELOPMENT__: true
+    }),
+    new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery'
+    })
+  ]
+}
+```
+
 Версия для "продакшен".
-webpack/prod.config.js
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+_webpack/prod.config.js_
+
+```js
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-devtool: 'source-map',
+  devtool: 'source-map',
 
-entry: ['bootstrap-loader/extractStyles'],
+  entry: ['bootstrap-loader/extractStyles'],
 
-output: {
-publicPath: 'dist/',
-},
+  output: {
+    publicPath: 'dist/'
+  },
 
-module: {
-loaders: [{
-test: /\.scss$/,
-loader: 'style!css!postcss-loader!sass',
-}],
-},
+  module: {
+    loaders: [
+      {
+        test: /\.scss$/,
+        loader: 'style!css!postcss-loader!sass'
+      }
+    ]
+  },
 
-plugins: [
-new webpack.DefinePlugin({
-'process.env': {
-NODE_ENV: '"production"',
-},
-__DEVELOPMENT__: false,
-}),
-new ExtractTextPlugin('bundle.css'),
-new webpack.optimize.DedupePlugin(),
-new webpack.optimize.OccurenceOrderPlugin(),
-new webpack.optimize.UglifyJsPlugin({
-compress: {
-warnings: false,
-},
-}),
-],
-};
-Зачем это в данном туториале? Я посчитал, что раз вы решили прочесть "ручную" настройку - вам будет интересно посмотреть на вариант сборки с использованием dev/prod версий. Если я прав - посмотрите как устроена секция scripts здесь.
-Ок, немного разобрались. Давайте установим зависимости: npm install
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      },
+      __DEVELOPMENT__: false
+    }),
+    new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
+}
+```
+
+Зачем это в данном туториале? Я посчитал, что раз вы решили прочесть "ручную" настройку - вам будет интересно посмотреть на вариант сборки с использованием `dev/prod` версий. Если я прав - посмотрите как устроена секция `scripts` [здесь](https://github.com/anorudes/redux-easy-boilerplate/blob/master/package.json#L5).
+
+Ок, немного разобрались. Давайте установим зависимости: `npm install`
+
+Создадим конфигурационные файлы для babel и ESLint:
+
+_.babelrc_
+
+```json
+{
+  "presets": ["react", "es2015", "stage-0"],
+  "plugins": [],
+  "env": {
+    "start": {
+      "presets": ["react-hmre"]
+    }
+  }
+}
+```
+
+_.eslintrc_
+
+```json
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-debugger": 0,
+    "no-console": 0,
+    "new-cap": 0,
+    "strict": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "eol-last": 0,
+    "quotes": [2, "single"],
+    "jsx-quotes": [1, "prefer-single"],
+    "react/jsx-no-undef": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  }
+}
+```
+
+Не забывайте про правило [jsx-quotes](http://eslint.org/docs/rules/jsx-quotes). Если вы предпочитаете использовать двойные кавычки, то оно должно выглядеть так:
+
+```json
+jsx-quotes: [1, "prefer-double"]
+```
+
+Список всех правил можно посмотреть на официальном сайте линтера.
+
+Напомню, обозначения цифр:
+
+- `0` - правило отключено
+- `1` - правило включено, если нарушение выявлено - выведет `warning`
+- `2` - правило включено, если нарушение выявлено - выведет `error`
+
+Создадим `index.html`, точку входа для скриптов (`index.js`), а так же компонент `<App />`.
+
+_index.html_
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Router [RU]Tutorial</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
+```
+
+_src/index.js_
+
+```js
+import 'babel-polyfill'
+import React from 'react'
+import { render } from 'react-dom'
+import App from './containers/App'
+
+render(<App />, document.getElementById('root'))
+src / containers / App.js
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  render() {
+    return <div className="container">Привет из App!</div>
+  }
+}
+```
+
+Ракета готова к запуску? На старт, внимание... `npm install`.
+
+Проверьте, `npm start` (каждая первая сборка webpack после его остановки занимает продолжительное время (~6 секунд), последующие "пересборки" значительно быстрее)
+
+Откройте браузер (обратите внимание так же и на css, должен примениться bootstrap-стиль к классу `.container`)
+
+![Скриншот](dev_env_work.jpg)
+
+Итого: мы настроили рабочее окружение.
+
+[Исходный код](https://github.com/maxfarseer/react-router-ru-tutorial/tree/setupd_dev_env) на данный момент.
