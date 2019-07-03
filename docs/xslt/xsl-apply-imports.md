@@ -2,21 +2,21 @@
 
 Элемент **`xsl:apply-imports`** используется в шаблонах для применения правил, которые были импортированы во внешних модулях, но переопределены шаблонами основного преобразования.
 
-!!! info "Синтаксис"
+## Синтаксис
 
-    XSLT 1.0
+### XSLT 1.0
 
-    ```xml
-    <xsl:apply-imports />
-    ```
+```xml
+<xsl:apply-imports />
+```
 
-    XSLT 2.0 и XSLT 3.0
+# XSLT 2.0 и XSLT 3.0
 
-    ```xml
-    <xsl:apply-imports>
-    	<!-- Контент: несколько элементов xsl:with-param -->
-    </xsl:apply-imports>
-    ```
+```xml
+<xsl:apply-imports>
+    <!-- Контент: несколько элементов xsl:with-param -->
+</xsl:apply-imports>
+```
 
 ## Описание и примеры
 
