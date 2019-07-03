@@ -1,10 +1,4 @@
----
-id: web-components
-title: Веб-компоненты
-permalink: docs/web-components.html
-redirect_from:
-  - "docs/webcomponents.html"
----
+# Веб-компоненты
 
 React и [веб-компоненты](https://developer.mozilla.org/ru/docs/Web/Web_Components) созданы для решения самых разных задач. Веб-компоненты обеспечивают надёжную инкапсуляцию для повторно используемых компонентов, в то время как React предоставляет декларативную библиотеку для синхронизации данных c DOM. Две цели дополняют друг друга. Как разработчик, вы можете использовать React в своих веб-компонентах, или использовать веб-компоненты в React, или и то, и другое.
 
@@ -15,7 +9,11 @@ React и [веб-компоненты](https://developer.mozilla.org/ru/docs/Web
 ```javascript
 class HelloMessage extends React.Component {
   render() {
-    return <div>Привет, <x-search>{this.props.name}</x-search>!</div>;
+    return (
+      <div>
+        Привет, <x-search>{this.props.name}</x-search>!
+      </div>
+    )
   }
 }
 ```
@@ -36,7 +34,7 @@ function BrickFlipbox() {
       <div>Передняя сторона</div>
       <div>Обратная сторона</div>
     </brick-flipbox>
-  );
+  )
 }
 ```
 
@@ -45,18 +43,18 @@ function BrickFlipbox() {
 ```javascript
 class XSearch extends HTMLElement {
   connectedCallback() {
-    const mountPoint = document.createElement('span');
-    this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
+    const mountPoint = document.createElement('span')
+    this.attachShadow({ mode: 'open' }).appendChild(mountPoint)
 
-    const name = this.getAttribute('name');
-    const url = 'https://www.google.com/search?q=' + encodeURIComponent(name);
-    ReactDOM.render(<a href={url}>{name}</a>, mountPoint);
+    const name = this.getAttribute('name')
+    const url = 'https://www.google.com/search?q=' + encodeURIComponent(name)
+    ReactDOM.render(<a href={url}>{name}</a>, mountPoint)
   }
 }
-customElements.define('x-search', XSearch);
+customElements.define('x-search', XSearch)
 ```
 
->Примечание:
+> Примечание:
 >
->Данный код **не будет** работать, если вы преобразуете классы с помощью Babel. Взгляните на [ишью](https://github.com/w3c/webcomponents/issues/587) с обсуждением.
->Добавьте шим [custom-elements-es5-adapter](https://github.com/webcomponents/webcomponentsjs#custom-elements-es5-adapterjs) перед загрузкой веб-компонентов, чтобы решить эту проблему.
+> Данный код **не будет** работать, если вы преобразуете классы с помощью Babel. Взгляните на [ишью](https://github.com/w3c/webcomponents/issues/587) с обсуждением.
+> Добавьте шим [custom-elements-es5-adapter](https://github.com/webcomponents/webcomponentsjs#custom-elements-es5-adapterjs) перед загрузкой веб-компонентов, чтобы решить эту проблему.

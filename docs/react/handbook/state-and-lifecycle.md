@@ -1,16 +1,8 @@
----
-id: state-and-lifecycle
-title: Состояние и жизненный цикл
-permalink: docs/state-and-lifecycle.html
-redirect_from:
-  - "docs/interactivity-and-dynamic-uis.html"
-prev: components-and-props.html
-next: handling-events.html
----
+# Состояние и жизненный цикл
 
-На этой странице представлены понятия «состояние» (state) и «жизненный цикл» (lifecycle) React-компонентов. Подробный [справочник API компонентов находится по этой ссылке](/docs/react-component.html).
+На этой странице представлены понятия «состояние» (state) и «жизненный цикл» (lifecycle) React-компонентов. Подробный [справочник API компонентов находится по этой ссылке](react-component.md).
 
-В качестве примера рассмотрим идущие часы из [предыдущего раздела](/docs/rendering-elements.html#updating-the-rendered-element). В главе [Рендеринг элементов](/docs/rendering-elements.html#rendering-an-element-into-the-dom) мы научились обновлять UI только одним способом — вызовом `ReactDOM.render()`:
+В качестве примера рассмотрим идущие часы из [предыдущего раздела](rendering-elements.md#updating-the-rendered-element). В главе [Рендеринг элементов](rendering-elements.md#rendering-an-element-into-the-dom) мы научились обновлять UI только одним способом — вызовом `ReactDOM.render()`:
 
 ```js{8-11}
 function tick() {
@@ -19,14 +11,11 @@ function tick() {
       <h1>Привет, мир!</h1>
       <h2>Сейчас {new Date().toLocaleTimeString()}.</h2>
     </div>
-  );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  )
+  ReactDOM.render(element, document.getElementById('root'))
 }
 
-setInterval(tick, 1000);
+setInterval(tick, 1000)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
@@ -42,17 +31,14 @@ function Clock(props) {
       <h1>Привет, мир!</h1>
       <h2>Сейчас {props.date.toLocaleTimeString()}.</h2>
     </div>
-  );
+  )
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  ReactDOM.render(<Clock date={new Date()} />, document.getElementById('root'))
 }
 
-setInterval(tick, 1000);
+setInterval(tick, 1000)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
@@ -62,10 +48,7 @@ setInterval(tick, 1000);
 В идеале мы бы хотели реализовать `Clock` таким образом, чтобы компонент сам себя обновлял:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Clock />, document.getElementById('root'))
 ```
 
 Для этого добавим так называемое «состояние» (state) в компонент `Clock`.
@@ -94,7 +77,7 @@ class Clock extends React.Component {
         <h1>Привет, мир!</h1>
         <h2>Сейчас {this.props.date.toLocaleTimeString()}.</h2>
       </div>
-    );
+    )
   }
 }
 ```
@@ -109,7 +92,7 @@ class Clock extends React.Component {
 
 Переместим `date` из пропсов в состояние в три этапа:
 
-1) Заменим `this.props.date` на `this.state.date` в методе `render()`:
+1. Заменим `this.props.date` на `this.state.date` в методе `render()`:
 
 ```js{6}
 class Clock extends React.Component {
@@ -119,18 +102,18 @@ class Clock extends React.Component {
         <h1>Привет, мир!</h1>
         <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
       </div>
-    );
+    )
   }
 }
 ```
 
-2) Добавим [конструктор класса](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes#Constructor), в котором укажем начальное состояние в переменной `this.state`:
+2. Добавим [конструктор класса](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes#Constructor), в котором укажем начальное состояние в переменной `this.state`:
 
 ```js{4}
 class Clock extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
+    super(props)
+    this.state = { date: new Date() }
   }
 
   render() {
@@ -139,13 +122,12 @@ class Clock extends React.Component {
         <h1>Привет, мир!</h1>
         <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
       </div>
-    );
+    )
   }
 }
 ```
 
 Обратите внимание, что мы передаём `props` базовому (родительскому) конструктору:
-
 
 ```js{2}
   constructor(props) {
@@ -156,13 +138,10 @@ class Clock extends React.Component {
 
 Классовые компоненты всегда должны вызывать базовый конструктор с аргументом `props`.
 
-3) Удалим проп `date` из элемента `<Clock />`:
+3. Удалим проп `date` из элемента `<Clock />`:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Clock />, document.getElementById('root'))
 ```
 
 Позже мы вернём код таймера обратно и на этот раз поместим его в сам компонент.
@@ -172,8 +151,8 @@ ReactDOM.render(
 ```js{2-5,11,18}
 class Clock extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
+    super(props)
+    this.state = { date: new Date() }
   }
 
   render() {
@@ -182,14 +161,11 @@ class Clock extends React.Component {
         <h1>Привет, мир!</h1>
         <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
       </div>
-    );
+    )
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Clock />, document.getElementById('root'))
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -209,17 +185,13 @@ ReactDOM.render(
 ```js{7-9,11-13}
 class Clock extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
+    super(props)
+    this.state = { date: new Date() }
   }
 
-  componentDidMount() {
+  componentDidMount() {}
 
-  }
-
-  componentWillUnmount() {
-
-  }
+  componentWillUnmount() {}
 
   render() {
     return (
@@ -227,7 +199,7 @@ class Clock extends React.Component {
         <h1>Привет, мир!</h1>
         <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
       </div>
-    );
+    )
   }
 }
 ```
@@ -264,25 +236,22 @@ class Clock extends React.Component {
 ```js{18-22}
 class Clock extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
+    super(props)
+    this.state = { date: new Date() }
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+    this.timerID = setInterval(() => this.tick(), 1000)
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.timerID)
   }
 
   tick() {
     this.setState({
       date: new Date()
-    });
+    })
   }
 
   render() {
@@ -291,14 +260,11 @@ class Clock extends React.Component {
         <h1>Привет, мир!</h1>
         <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
       </div>
-    );
+    )
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Clock />, document.getElementById('root'))
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -307,15 +273,15 @@ ReactDOM.render(
 
 Давайте рассмотрим наше решение и разберём порядок, в котором вызываются методы:
 
-1) Когда мы передаём `<Clock />` в `ReactDOM.render()`, React вызывает конструктор компонента. `Clock` должен отображать текущее время, поэтому мы задаём начальное состояние `this.state` объектом с текущим временем.
+1. Когда мы передаём `<Clock />` в `ReactDOM.render()`, React вызывает конструктор компонента. `Clock` должен отображать текущее время, поэтому мы задаём начальное состояние `this.state` объектом с текущим временем.
 
-2) React вызывает метод `render()` компонента `Clock`. Таким образом React узнаёт, что отобразить на экране. Далее, React обновляет DOM так, чтобы он соответствовал выводу рендера `Clock`.
+2. React вызывает метод `render()` компонента `Clock`. Таким образом React узнаёт, что отобразить на экране. Далее, React обновляет DOM так, чтобы он соответствовал выводу рендера `Clock`.
 
-3) Как только вывод рендера `Clock` вставлен в DOM, React вызывает метод жизненного цикла `componentDidMount()`. Внутри него компонент `Clock` указывает браузеру установить таймер, который будет вызывать `tick()` раз в секунду.
+3. Как только вывод рендера `Clock` вставлен в DOM, React вызывает метод жизненного цикла `componentDidMount()`. Внутри него компонент `Clock` указывает браузеру установить таймер, который будет вызывать `tick()` раз в секунду.
 
-4) Таймер вызывает `tick()` ежесекундно. Внутри `tick()` мы просим React обновить состояние компонента, вызывая `setState()` с текущим временем. React реагирует на изменение состояния и снова запускает `render()`. На этот раз `this.state.date` в методе `render()` содержит новое значение, поэтому React заменит DOM. Таким образом компонент `Clock` каждую секунду обновляет UI.
+4. Таймер вызывает `tick()` ежесекундно. Внутри `tick()` мы просим React обновить состояние компонента, вызывая `setState()` с текущим временем. React реагирует на изменение состояния и снова запускает `render()`. На этот раз `this.state.date` в методе `render()` содержит новое значение, поэтому React заменит DOM. Таким образом компонент `Clock` каждую секунду обновляет UI.
 
-5) Если компонент `Clock` когда-либо удалится из DOM, React вызовет метод жизненного цикла `componentWillUnmount()` и сбросит таймер.
+5. Если компонент `Clock` когда-либо удалится из DOM, React вызовет метод жизненного цикла `componentWillUnmount()` и сбросит таймер.
 
 ## Как правильно использовать состояние {#using-state-correctly}
 
@@ -327,14 +293,14 @@ ReactDOM.render(
 
 ```js
 // Неправильно
-this.state.comment = 'Привет';
+this.state.comment = 'Привет'
 ```
 
 Вместо этого используйте `setState()`:
 
 ```js
 // Правильно
-this.setState({comment: 'Привет'});
+this.setState({ comment: 'Привет' })
 ```
 
 Конструктор — это единственное место, где вы можете присвоить значение `this.state` напрямую.
@@ -350,8 +316,8 @@ React может сгруппировать несколько вызовов `s
 ```js
 // Неправильно
 this.setState({
-  counter: this.state.counter + this.props.increment,
-});
+  counter: this.state.counter + this.props.increment
+})
 ```
 
 Правильно будет использовать второй вариант вызова `setState()`, который принимает функцию, а не объект. Эта функция получит предыдущее состояние в качестве первого аргумента и значения пропсов непосредственно во время обновления в качестве второго аргумента:
@@ -360,7 +326,7 @@ this.setState({
 // Правильно
 this.setState((state, props) => ({
   counter: state.counter + props.increment
-}));
+}))
 ```
 
 В данном примере мы использовали [стрелочную функцию](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions), но можно использовать и обычные функции:
@@ -370,8 +336,8 @@ this.setState((state, props) => ({
 this.setState(function(state, props) {
   return {
     counter: state.counter + props.increment
-  };
-});
+  }
+})
 ```
 
 ### Обновления состояния объединяются {#state-updates-are-merged}
@@ -412,7 +378,7 @@ this.setState(function(state, props) {
 
 ## Однонаправленный поток данных {#the-data-flows-down}
 
-В иерархии компонентов, ни родительский, ни дочерние компоненты не знают, задано ли состояние другого компонента. Также не важно, как был создан определённый компонент — с помощью функции или класса. 
+В иерархии компонентов, ни родительский, ни дочерние компоненты не знают, задано ли состояние другого компонента. Также не важно, как был создан определённый компонент — с помощью функции или класса.
 
 Состояние часто называют «локальным», «внутренним» или инкапсулированным. Оно доступно только для самого компонента и скрыто от других.
 
@@ -432,7 +398,7 @@ this.setState(function(state, props) {
 
 ```js
 function FormattedDate(props) {
-  return <h2>Сейчас {props.date.toLocaleTimeString()}.</h2>;
+  return <h2>Сейчас {props.date.toLocaleTimeString()}.</h2>
 }
 ```
 
@@ -452,13 +418,10 @@ function App() {
       <Clock />
       <Clock />
     </div>
-  );
+  )
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)

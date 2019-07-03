@@ -1,15 +1,11 @@
----
-id: higher-order-components
-title: Компоненты высшего порядка
-permalink: docs/higher-order-components.html
----
+# Компоненты высшего порядка
 
 Компонент высшего порядка (Higher-Order Component, HOC) -- это один из продвинутых способов для повторного использования логики. HOC не являются частью API React, но часто применяются из-за композиционной природы компонентов.
 
 Говоря просто, **компонент высшего порядка -- это функция, которая принимает компонент и возвращает новый компонент.**
 
 ```js
-const EnhancedComponent = higherOrderComponent(WrappedComponent);
+const EnhancedComponent = higherOrderComponent(WrappedComponent)
 ```
 
 Если обычный компонент преобразует пропсы в UI, то компонент высшего порядка преобразует компонент в другой компонент.
@@ -22,7 +18,7 @@ HOC часто встречаются в сторонних библиотека
 
 > **Примечание**
 >
-> В прошлом мы рекомендовали примеси для реализации сквозной функциональности, но со временем выяснилось, что от них больше вреда, чем пользы. [Узнайте](/blog/2016/07/13/mixins-considered-harmful.html), почему мы решили убрать примеси и как переписать старые компоненты.
+> В прошлом мы рекомендовали примеси для реализации сквозной функциональности, но со временем выяснилось, что от них больше вреда, чем пользы. [Узнайте](https://ru.reactjs.org/blog/2016/07/13/mixins-considered-harmful.html), почему мы решили убрать примеси и как переписать старые компоненты.
 
 Традиционные компоненты подразумевают многократное использование, но не позволяют с лёгкостью решить некоторые проблемы.
 
@@ -31,39 +27,39 @@ HOC часто встречаются в сторонних библиотека
 ```js
 class CommentList extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
     this.state = {
       // "DataSource" -- произвольный глобальный источник данных
       comments: DataSource.getComments()
-    };
+    }
   }
 
   componentDidMount() {
     // Подписаться на оповещения
-    DataSource.addChangeListener(this.handleChange);
+    DataSource.addChangeListener(this.handleChange)
   }
 
   componentWillUnmount() {
     // Отписаться от оповещений
-    DataSource.removeChangeListener(this.handleChange);
+    DataSource.removeChangeListener(this.handleChange)
   }
 
   handleChange() {
     // Сохранить комментарии из внешнего источника в локальном состоянии
     this.setState({
       comments: DataSource.getComments()
-    });
+    })
   }
 
   render() {
     return (
       <div>
-        {this.state.comments.map((comment) => (
+        {this.state.comments.map(comment => (
           <Comment comment={comment} key={comment.id} />
         ))}
       </div>
-    );
+    )
   }
 }
 ```
@@ -73,29 +69,29 @@ class CommentList extends React.Component {
 ```js
 class BlogPost extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
     this.state = {
       blogPost: DataSource.getBlogPost(props.id)
-    };
+    }
   }
 
   componentDidMount() {
-    DataSource.addChangeListener(this.handleChange);
+    DataSource.addChangeListener(this.handleChange)
   }
 
   componentWillUnmount() {
-    DataSource.removeChangeListener(this.handleChange);
+    DataSource.removeChangeListener(this.handleChange)
   }
 
   handleChange() {
     this.setState({
       blogPost: DataSource.getBlogPost(this.props.id)
-    });
+    })
   }
 
   render() {
-    return <TextBlock text={this.state.blogPost} />;
+    return <TextBlock text={this.state.blogPost} />
   }
 }
 ```
@@ -106,20 +102,14 @@ class BlogPost extends React.Component {
 - Оба меняют внутреннее состояние при изменении `DataSource`.
 - Оба отписываются от `DataSource` при размонтировании.
 
-Можете представить, что в больших приложениях связка «подписаться на `DataSource`, затем вызвать `setState`» повторяется очень часто. Было бы здорово абстрагировать эту функциональность и использовать её в других компонентах. 
+Можете представить, что в больших приложениях связка «подписаться на `DataSource`, затем вызвать `setState`» повторяется очень часто. Было бы здорово абстрагировать эту функциональность и использовать её в других компонентах.
 
 Давайте реализуем функцию `withSubscription` -- она будет создавать компоненты и подписывать их на обновления `DataSource` (наподобие `CommentList` и `BlogPost`). Функция будет принимать оборачиваемый компонент и через пропсы передавать ему новые данные:
 
 ```js
-const CommentListWithSubscription = withSubscription(
-  CommentList,
-  (DataSource) => DataSource.getComments()
-);
+const CommentListWithSubscription = withSubscription(CommentList, DataSource => DataSource.getComments())
 
-const BlogPostWithSubscription = withSubscription(
-  BlogPost,
-  (DataSource, props) => DataSource.getBlogPost(props.id)
-);
+const BlogPostWithSubscription = withSubscription(BlogPost, (DataSource, props) => DataSource.getBlogPost(props.id))
 ```
 
 Первый параметр -- это оборачиваемый компонент. Второй -- функция, которая извлекает нужные нам данные, она получает `DataSource` и текущие пропсы.
@@ -132,38 +122,38 @@ function withSubscription(WrappedComponent, selectData) {
   // ...и возвращает другой компонент...
   return class extends React.Component {
     constructor(props) {
-      super(props);
-      this.handleChange = this.handleChange.bind(this);
+      super(props)
+      this.handleChange = this.handleChange.bind(this)
       this.state = {
         data: selectData(DataSource, props)
-      };
+      }
     }
 
     componentDidMount() {
       // ...который подписывается на оповещения...
-      DataSource.addChangeListener(this.handleChange);
+      DataSource.addChangeListener(this.handleChange)
     }
 
     componentWillUnmount() {
-      DataSource.removeChangeListener(this.handleChange);
+      DataSource.removeChangeListener(this.handleChange)
     }
 
     handleChange() {
       this.setState({
         data: selectData(DataSource, this.props)
-      });
+      })
     }
 
     render() {
       // ... и рендерит оборачиваемый компонент со свежими данными!
       // Обратите внимание, что мы передаём остальные пропсы
-      return <WrappedComponent data={this.state.data} {...this.props} />;
+      return <WrappedComponent data={this.state.data} {...this.props} />
     }
-  };
+  }
 }
 ```
 
-Заметьте, что HOC ничего не меняет и не наследует поведение оборачиваемого компонента, вместо этого HOC *оборачивает* оригинальный компонент в контейнер посредством *композиции*. HOC является чистой функцией без побочных эффектов.
+Заметьте, что HOC ничего не меняет и не наследует поведение оборачиваемого компонента, вместо этого HOC _оборачивает_ оригинальный компонент в контейнер посредством _композиции_. HOC является чистой функцией без побочных эффектов.
 
 Вот и всё! Оборачиваемый компонент получает все пропсы, переданные контейнеру, а также проп `data`. Для HOC не важно, как будут использоваться данные, а оборачиваемому компоненту не важно, откуда они берутся.
 
@@ -178,18 +168,18 @@ function withSubscription(WrappedComponent, selectData) {
 ```js
 function logProps(InputComponent) {
   InputComponent.prototype.componentWillReceiveProps = function(nextProps) {
-    console.log('Текущие пропсы: ', this.props);
-    console.log('Следующие пропсы: ', nextProps);
-  };
+    console.log('Текущие пропсы: ', this.props)
+    console.log('Следующие пропсы: ', nextProps)
+  }
   // Если мы возвращаем оборачиваемый компонент, значит, наверняка мы его изменили
-  return InputComponent;
+  return InputComponent
 }
 
 // EnhancedComponent будет печатать в консоль при каждом изменении пропсов
-const EnhancedComponent = logProps(InputComponent);
+const EnhancedComponent = logProps(InputComponent)
 ```
 
-В приведённом выше примере мы не можем повторно использовать `InputComponent` отдельно от `EnhancedComponent`. Важнее то, что если мы захотим обернуть `EnhancedComponent` в другой HOC, который *тоже* меняет `componentWillReceiveProps`, то мы сотрём функциональность заданную первым HOC! Более того, `EnhancedComponent` не работает с функциональными компонентами, потому что у них отсутствуют методы жизненного цикла.
+В приведённом выше примере мы не можем повторно использовать `InputComponent` отдельно от `EnhancedComponent`. Важнее то, что если мы захотим обернуть `EnhancedComponent` в другой HOC, который _тоже_ меняет `componentWillReceiveProps`, то мы сотрём функциональность заданную первым HOC! Более того, `EnhancedComponent` не работает с функциональными компонентами, потому что у них отсутствуют методы жизненного цикла.
 
 Мутирующие HOC являются хрупкой абстракцией, они конфликтуют с другими HOC, мы не сможем просто применять их без того, чтобы знать что именно они меняют.
 
@@ -199,12 +189,12 @@ const EnhancedComponent = logProps(InputComponent);
 function logProps(WrappedComponent) {
   return class extends React.Component {
     componentWillReceiveProps(nextProps) {
-      console.log('Текущие пропсы: ', this.props);
-      console.log('Следующие пропсы: ', nextProps);
+      console.log('Текущие пропсы: ', this.props)
+      console.log('Следующие пропсы: ', nextProps)
     }
     render() {
       // Оборачиваем компонент в контейнер без мутаций. Супер!
-      return <WrappedComponent {...this.props} />;
+      return <WrappedComponent {...this.props} />
     }
   }
 }
@@ -245,31 +235,38 @@ render() {
 Не все HOC выглядят одинаково. Некоторые принимают всего лишь один аргумент -- оборачиваемый компонент:
 
 ```js
-const NavbarWithRouter = withRouter(Navbar);
+const NavbarWithRouter = withRouter(Navbar)
 ```
 
 Обычно HOC принимают несколько аргументов. В данном примере из Relay, мы используем объект конфигурации с описанием данных для компонента:
 
 ```js
-const CommentWithRelay = Relay.createContainer(Comment, config);
+const CommentWithRelay = Relay.createContainer(Comment, config)
 ```
 
 Самый распространённый способ вызова HOC выглядит так:
 
 ```js
 // `connect` из React Redux
-const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
+const ConnectedComment = connect(
+  commentSelector,
+  commentActions
+)(CommentList)
 ```
 
-*Удивлены?* Давайте разберём эту строку по частям.
+_Удивлены?_ Давайте разберём эту строку по частям.
 
 ```js
 // Вызов функции connect возвращает другую функцию
-const enhance = connect(commentListSelector, commentListActions);
+const enhance = connect(
+  commentListSelector,
+  commentListActions
+)
 
 // Эта функция и есть HOC. Она возвращает компонент, подключённый к хранилищу Redux
-const ConnectedComment = enhance(CommentList);
+const ConnectedComment = enhance(CommentList)
 ```
+
 Другими словами, `connect` -- это функция высшего порядка, которая возвращает компонент высшего порядка!
 
 Такая форма может показаться запутанной и ненужной, но есть и преимущества. Вызов `connect` возвращает HOC с подписью `Component => Component`. Функции с одинаковым типом результата и единственного аргумента легко совмещаются в композиции.
@@ -300,13 +297,15 @@ const EnhancedComponent = enhance(WrappedComponent)
 
 ```js
 function withSubscription(WrappedComponent) {
-  class WithSubscription extends React.Component {/* ... */}
-  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`;
-  return WithSubscription;
+  class WithSubscription extends React.Component {
+    /* ... */
+  }
+  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`
+  return WithSubscription
 }
 
 function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
 }
 ```
 
@@ -344,9 +343,11 @@ render() {
 
 ```js
 // Определим статический метод
-WrappedComponent.staticMethod = function() {/*...*/}
+WrappedComponent.staticMethod = function() {
+  /*...*/
+}
 // Теперь применим HOC
-const EnhancedComponent = enhance(WrappedComponent);
+const EnhancedComponent = enhance(WrappedComponent)
 
 // У расширенного компонента нет статических методов
 typeof EnhancedComponent.staticMethod === 'undefined' // true
@@ -356,21 +357,25 @@ typeof EnhancedComponent.staticMethod === 'undefined' // true
 
 ```js
 function enhance(WrappedComponent) {
-  class Enhance extends React.Component {/*...*/}
+  class Enhance extends React.Component {
+    /*...*/
+  }
   // Мы должны точно знать какие методы копировать :(
-  Enhance.staticMethod = WrappedComponent.staticMethod;
-  return Enhance;
+  Enhance.staticMethod = WrappedComponent.staticMethod
+  return Enhance
 }
 ```
 
 К сожалению, вы должны точно знать какие методы копировать. Вы можете воспользоваться [hoist-non-react-statics](https://github.com/mridgway/hoist-non-react-statics), чтобы автоматически скопировать не связанные с React статические методы:
 
 ```js
-import hoistNonReactStatic from 'hoist-non-react-statics';
+import hoistNonReactStatic from 'hoist-non-react-statics'
 function enhance(WrappedComponent) {
-  class Enhance extends React.Component {/*...*/}
-  hoistNonReactStatic(Enhance, WrappedComponent);
-  return Enhance;
+  class Enhance extends React.Component {
+    /*...*/
+  }
+  hoistNonReactStatic(Enhance, WrappedComponent)
+  return Enhance
 }
 ```
 
@@ -378,18 +383,18 @@ function enhance(WrappedComponent) {
 
 ```js
 // Вместо...
-MyComponent.someFunction = someFunction;
-export default MyComponent;
+MyComponent.someFunction = someFunction
+export default MyComponent
 
 // ...отдельно экспортируйте метод...
-export { someFunction };
+export { someFunction }
 
 // ...в модуле-потребителе мы можем использовать оба экспорта
-import MyComponent, { someFunction } from './MyComponent.js';
+import MyComponent, { someFunction } from './MyComponent.js'
 ```
 
 ### Рефы не передаются {#refs-arent-passed-through}
 
 По соглашению компоненты высшего порядка передают оборачиваемому компоненту все пропсы, кроме рефов. `ref` на самом деле не проп, как, например, `key`, и поэтому иначе обрабатывается React. Реф элемента, созданного компонентом из HOC, будет указывать на экземпляр ближайшего в иерархии контейнера, а не на оборачиваемый компонент.
 
-Вы можете решить эту проблему с помощью API-метода `React.forwardRef` (добавлен в React 16.3). [Узнать подробнее в главе Перенаправление рефов](/docs/forwarding-refs.html).
+Вы можете решить эту проблему с помощью API-метода `React.forwardRef` (добавлен в React 16.3). [Узнать подробнее в главе Перенаправление рефов](forwarding-refs.md).

@@ -1,8 +1,4 @@
----
-id: error-boundaries
-title: Предохранители
-permalink: docs/error-boundaries.html
----
+# Предохранители
 
 Ранее ошибки JavaScript внутри компонентов портили внутреннее состояние React и заставляли его [выдавать](https://github.com/facebook/react/issues/4026) [таинственные](https://github.com/facebook/react/issues/6895) [сообщения об ошибках](https://github.com/facebook/react/issues/8579) во время следующего рендера. Эти сообщения всегда вызывались ошибками, расположенными где-то выше в коде приложения, но React не предоставлял способа адекватно обрабатывать их в компонентах и не мог обработать их самостоятельно.
 
@@ -16,37 +12,37 @@ permalink: docs/error-boundaries.html
 >
 > Предохранители **не** поймают ошибки в:
 >
-> * обработчиках событий ([подробнее](#how-about-event-handlers));
-> * асинхронном коде (например колбэках из `setTimeout` или `requestAnimationFrame`);
-> * серверном рендеринге (Server-side rendering);
-> * самом предохранителе (а не в его дочерних компонентах).
+> - обработчиках событий ([подробнее](#how-about-event-handlers));
+> - асинхронном коде (например колбэках из `setTimeout` или `requestAnimationFrame`);
+> - серверном рендеринге (Server-side rendering);
+> - самом предохранителе (а не в его дочерних компонентах).
 
-Классовый компонент является предохранителем, если он включает хотя бы один из следующих методов жизненного цикла: [`static getDerivedStateFromError()`](/docs/react-component.html#static-getderivedstatefromerror) или [`componentDidCatch()`](/docs/react-component.html#componentdidcatch). Используйте `static getDerivedStateFromError()` при рендеринге запасного UI в случае отлова ошибки. Используйте `componentDidCatch()` при написании кода для журналирования информации об отловленной ошибке.
+Классовый компонент является предохранителем, если он включает хотя бы один из следующих методов жизненного цикла: [`static getDerivedStateFromError()`](react-component.md#static-getderivedstatefromerror) или [`componentDidCatch()`](react-component.md#componentdidcatch). Используйте `static getDerivedStateFromError()` при рендеринге запасного UI в случае отлова ошибки. Используйте `componentDidCatch()` при написании кода для журналирования информации об отловленной ошибке.
 
 ```js{7-10,12-15,18-21}
 class ErrorBoundary extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { hasError: false };
+    super(props)
+    this.state = { hasError: false }
   }
 
   static getDerivedStateFromError(error) {
     // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
-    return { hasError: true };
+    return { hasError: true }
   }
 
   componentDidCatch(error, info) {
     // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-    logErrorToMyService(error, info);
+    logErrorToMyService(error, info)
   }
 
   render() {
     if (this.state.hasError) {
       // Можно отрендерить запасной UI произвольного вида
-      return <h1>Что-то пошло не так.</h1>;
+      return <h1>Что-то пошло не так.</h1>
     }
 
-    return this.props.children; 
+    return this.props.children
   }
 }
 ```
@@ -65,7 +61,7 @@ class ErrorBoundary extends React.Component {
 
 ## Живой пример {#live-demo}
 
-Посмотрите [пример объявления и использования предохранителя](https://codepen.io/gaearon/pen/wqvxGa?editors=0010) в [React 16](/blog/2017/09/26/react-v16.0.html).
+Посмотрите [пример объявления и использования предохранителя](https://codepen.io/gaearon/pen/wqvxGa?editors=0010) в React 16.
 
 ## Где размещать предохранители {#where-to-place-error-boundaries}
 
@@ -87,17 +83,17 @@ class ErrorBoundary extends React.Component {
 
 В режиме разработки React 16 выводит на консоль сообщения обо всех ошибках, возникших при рендеринге, даже если они никак не сказались на работе приложения. Помимо сообщения об ошибке и стека JavaScript, React 16 также выводит и стек вызовов компонентов. Теперь вы в точности можете видеть в каком именно месте дерева компонентов случилось страшное:
 
-<img src="../images/docs/error-boundaries-stack-trace.png" style="max-width:100%" alt="Ошибка, отловленная предохранителем">
+![Ошибка, отловленная предохранителем](error-boundaries-stack-trace.png)
 
 Кроме этого, в стеке вызовов компонентов выводятся имена файлов и номера строк. Такое поведение по умолчанию настроено в проектах, созданных при помощи [Create React App](https://github.com/facebookincubator/create-react-app):
 
-<img src="../images/docs/error-boundaries-stack-trace-line-numbers.png" style="max-width:100%" alt="Ошибка, отловленная предохранителем c номерами строк">
+![Ошибка, отловленная предохранителем c номерами строк](error-boundaries-stack-trace-line-numbers.png)
 
 Если вы не пользуетесь Create React App, вы можете вручную добавить к вашей конфигурации Babel [вот этот плагин](https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source). Обратите внимание, что он предназначен исключительно для режима разработки и **должен быть отключён в продакшен**.
 
 > Примечание
 >
-> Имена компонентов, выводимые в их стеке вызовов, определяются свойством [`Function.name`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/name). Если ваше приложение поддерживает более старые браузеры и устройства, которые могут ещё не предоставлять его нативно (например, IE 11), рассмотрите возможность включения полифилла `Function.name` в бандл вашего приложения, например [`function.name-polyfill`](https://github.com/JamesMGreene/Function.name). В качестве альтернативы, вы можете явным образом задать проп [`displayName`](/docs/react-component.html#displayname) в каждом из ваших компонентов.
+> Имена компонентов, выводимые в их стеке вызовов, определяются свойством [`Function.name`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/name). Если ваше приложение поддерживает более старые браузеры и устройства, которые могут ещё не предоставлять его нативно (например, IE 11), рассмотрите возможность включения полифилла `Function.name` в бандл вашего приложения, например [`function.name-polyfill`](https://github.com/JamesMGreene/Function.name). В качестве альтернативы, вы можете явным образом задать проп [`displayName`](react-component.md#displayname) в каждом из ваших компонентов.
 
 ## А как насчёт try/catch? {#how-about-trycatch}
 
@@ -105,13 +101,13 @@ class ErrorBoundary extends React.Component {
 
 ```js
 try {
-  showButton();
+  showButton()
 } catch (error) {
   // ...
 }
 ```
 
-В то время, как компоненты React являются декларативными, указывая *что* должно быть отрендерено:
+В то время, как компоненты React являются декларативными, указывая _что_ должно быть отрендерено:
 
 ```js
 <Button />
@@ -130,16 +126,16 @@ React не нуждается в предохранителях, чтобы ко
 ```js{9-13,17-20}
 class MyComponent extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { error: null };
-    this.handleClick = this.handleClick.bind(this);
+    super(props)
+    this.state = { error: null }
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
     try {
       // Делаем что-то, что сгенерирует ошибку
     } catch (error) {
-      this.setState({ error });
+      this.setState({ error })
     }
   }
 

@@ -1,17 +1,9 @@
----
-id: handling-events
-title: Обработка событий
-permalink: docs/handling-events.html
-prev: state-and-lifecycle.html
-next: conditional-rendering.html
-redirect_from:
-  - "docs/events-ko-KR.html"
----
+# Обработка событий
 
 Обработка событий в React-элементах очень похожа на обработку событий в DOM-элементах. Но есть несколько синтаксических отличий:
 
-* События в React именуются в стиле camelCase вместо нижнего регистра.
-* С JSX вы передаёте функцию как обработчик события вместо строки.
+- События в React именуются в стиле camelCase вместо нижнего регистра.
+- С JSX вы передаёте функцию как обработчик события вместо строки.
 
 Например, в HTML:
 
@@ -24,9 +16,7 @@ redirect_from:
 В React немного иначе:
 
 ```js{1}
-<button onClick={activateLasers}>
-  Активировать лазеры
-</button>
+<button onClick={activateLasers}>Активировать лазеры</button>
 ```
 
 Ещё одно отличие — в React нельзя предотвратить обработчик события по умолчанию, вернув `false`. Нужно явно вызвать `preventDefault`. Например, в обычном HTML, чтобы отменить выполнение встроенного обработчика события у ссылки, которое открывает новую страницу, можно написать:
@@ -42,19 +32,19 @@ redirect_from:
 ```js{2-5,8}
 function ActionLink() {
   function handleClick(e) {
-    e.preventDefault();
-    console.log('По ссылке кликнули.');
+    e.preventDefault()
+    console.log('По ссылке кликнули.')
   }
 
   return (
     <a href="#" onClick={handleClick}>
       Нажми на меня
     </a>
-  );
+  )
 }
 ```
 
-В приведённом выше коде `e` — это синтетическое событие. React определяет синтетические события в соответствии со [спецификацией W3C](https://www.w3.org/TR/DOM-Level-3-Events/), поэтому не волнуйтесь о кроссбраузерности. Посмотрите [руководство о `SyntheticEvent`](/docs/events.html), чтобы узнать о них больше.
+В приведённом выше коде `e` — это синтетическое событие. React определяет синтетические события в соответствии со [спецификацией W3C](https://www.w3.org/TR/DOM-Level-3-Events/), поэтому не волнуйтесь о кроссбраузерности. Посмотрите [руководство о `SyntheticEvent`](events.md), чтобы узнать о них больше.
 
 При использовании React обычно не нужно вызывать `addEventListener`, чтобы добавить обработчики в DOM-элемент после его создания. Вместо этого добавьте обработчик сразу после того, как элемент отрендерился.
 
@@ -63,32 +53,25 @@ function ActionLink() {
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+    super(props)
+    this.state = { isToggleOn: true }
 
     // Эта привязка обязательна для работы `this` в колбэке.
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
-    }));
+    }))
   }
 
   render() {
-    return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'Включено' : 'Выключено'}
-      </button>
-    );
+    return <button onClick={this.handleClick}>{this.state.isToggleOn ? 'Включено' : 'Выключено'}</button>
   }
 }
 
-ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Toggle />, document.getElementById('root'))
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
@@ -104,15 +87,11 @@ class LoggingButton extends React.Component {
   // Такой синтаксис гарантирует, что `this` привязан к handleClick.
   // Предупреждение: это экспериментальный синтаксис
   handleClick = () => {
-    console.log('значение this:', this);
+    console.log('значение this:', this)
   }
 
   render() {
-    return (
-      <button onClick={this.handleClick}>
-        Нажми на меня
-      </button>
-    );
+    return <button onClick={this.handleClick}>Нажми на меня</button>
   }
 }
 ```
@@ -124,16 +103,12 @@ class LoggingButton extends React.Component {
 ```js{7-9}
 class LoggingButton extends React.Component {
   handleClick() {
-    console.log('значение this:', this);
+    console.log('значение this:', this)
   }
 
   render() {
     // Такой синтаксис гарантирует, что `this` привязан к handleClick.
-    return (
-      <button onClick={(e) => this.handleClick(e)}>
-        Нажми на меня
-      </button>
-    );
+    return <button onClick={e => this.handleClick(e)}>Нажми на меня</button>
   }
 }
 ```
