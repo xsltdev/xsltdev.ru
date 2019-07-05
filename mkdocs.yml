@@ -4,8 +4,8 @@ site_description: Справочники web-разработчика
 site_author: Бондаренко Юрий
 copyright: (С) 2012-2019, Справочники web-разработчика
 
-repo_name: 'Репозиторий сайта'
-repo_url: 'https://github.com/bndby/xsltdev'
+#repo_name: 'Репозиторий сайта'
+#repo_url: 'https://github.com/bndby/xsltdev'
 
 theme:
     name: 'material'
@@ -13,16 +13,16 @@ theme:
         primary: 'green'
         accent: 'green'
     language: 'ru'
-    favicon: 'assets/images/favicon.ico'
+    #    favicon: 'assets/images/favicon.ico'
     feature:
         tabs: true
 
 extra:
-    social:
-        - type: 'github'
-          link: 'https://github.com/bndby'
-        - type: 'linkedin'
-          link: 'https://www.linkedin.com/in/bndby/'
+    #    social:
+    #        - type: 'github'
+    #          link: 'https://github.com/bndby'
+    #        - type: 'linkedin'
+    #          link: 'https://www.linkedin.com/in/bndby/'
     search:
         language: 'en, ru'
 
@@ -46,6 +46,5 @@ plugins:
 
 extra_javascript:
     - 'https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js'
-
-extra_css:
-    - '/assets/css/style.css'
+#extra_css:
+#    - '/assets/css/style.css'
