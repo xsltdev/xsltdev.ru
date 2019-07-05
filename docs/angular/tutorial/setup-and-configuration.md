@@ -1,5 +1,7 @@
 # Установка и конфигурация
 
+Источник: [webdraftt.com](https://webdraftt.com/tutorial/setup-and-configuration)
+
 Для начала работы установите на свой компьютер [node.js](https://nodejs.org/en/) не ниже 8 версии.
 
 Далее установите глобально в системе `@angular/cli`:
