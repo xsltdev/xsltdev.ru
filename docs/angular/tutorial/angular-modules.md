@@ -34,15 +34,15 @@ Angular приложение имеет модульную архитектур�
 Только корневой модуль может определять свойство `bootstrap` и импортировать `BrowserModule`.
 
 ```ts
-    @NgModule({
-     declarations: [AppComponent],
-     imports: [
-       BrowserModule,
-       ...
-     ],
-     bootstrap: [AppComponent]
-    })
-    export class AppModule{}
+@NgModule({
+	declarations: [AppComponent],
+	imports: [
+	BrowserModule,
+	...
+	],
+	bootstrap: [AppComponent]
+})
+export class AppModule{}
 ```
 
 Функциональный Angular модуль реализует логически связанную совокупность компонентов, директив или фильтров (например, модули библиотеки `@angular/material`).
@@ -50,18 +50,18 @@ Angular приложение имеет модульную архитектур�
 Практически всегда для модулей этого типа определяется свойство `exports`.
 
 ```ts
-    @NgModule({
-     ...
-     exports: [
-       AccountsComponent,
-       CreditsComponent,
-       DepositsComponent,
+@NgModule({
+	...
+	exports: [
+	AccountsComponent,
+	CreditsComponent,
+	DepositsComponent,
 
-       CreditsFilterDirective
-     ],
-     ...
-    })
-    export class AppModule{}
+	CreditsFilterDirective
+	],
+	...
+})
+export class AppModule{}
 ```
 
 Модуль маршрутизации нужен для определения иерархии маршрутов.
@@ -104,13 +104,13 @@ export class SharedModule {}
 ```
 
 ```ts
-    @NgModule({
-      imports: [
-        ...
-        CoreModule.forRoot(),
-        SharedModule
-      ],
+@NgModule({
+	imports: [
+	...
+	CoreModule.forRoot(),
+	SharedModule
+	],
 
-      ...
-    })
+	...
+})
 ```

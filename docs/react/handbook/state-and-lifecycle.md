@@ -1,10 +1,10 @@
 # Состояние и жизненный цикл
 
-На этой странице представлены понятия «состояние» (state) и «жизненный цикл» (lifecycle) React-компонентов. Подробный [справочник API компонентов находится по этой ссылке](react-component.md).
+На этой странице представлены понятия «состояние» (state) и «жизненный цикл» (lifecycle) React-компонентов.
 
 В качестве примера рассмотрим идущие часы из [предыдущего раздела](rendering-elements.md#updating-the-rendered-element). В главе [Рендеринг элементов](rendering-elements.md#rendering-an-element-into-the-dom) мы научились обновлять UI только одним способом — вызовом `ReactDOM.render()`:
 
-```js{8-11}
+```js {8-11}
 function tick() {
   const element = (
     <div>
@@ -24,7 +24,7 @@ setInterval(tick, 1000)
 
 Для начала, извлечём компонент, показывающий время:
 
-```js{3-6,12}
+```js {3-6,12}
 function Clock(props) {
   return (
     <div>
@@ -47,7 +47,7 @@ setInterval(tick, 1000)
 
 В идеале мы бы хотели реализовать `Clock` таким образом, чтобы компонент сам себя обновлял:
 
-```js{2}
+```js {2}
 ReactDOM.render(<Clock />, document.getElementById('root'))
 ```
 
@@ -92,9 +92,9 @@ class Clock extends React.Component {
 
 Переместим `date` из пропсов в состояние в три этапа:
 
-1. Заменим `this.props.date` на `this.state.date` в методе `render()`:
+1.&nbsp;Заменим `this.props.date` на `this.state.date` в методе `render()`:
 
-```js{6}
+```js {6}
 class Clock extends React.Component {
   render() {
     return (
@@ -107,9 +107,9 @@ class Clock extends React.Component {
 }
 ```
 
-2. Добавим [конструктор класса](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes#Constructor), в котором укажем начальное состояние в переменной `this.state`:
+2.&nbsp;Добавим [конструктор класса](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes#Constructor), в котором укажем начальное состояние в переменной `this.state`:
 
-```js{4}
+```js {4}
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -129,7 +129,7 @@ class Clock extends React.Component {
 
 Обратите внимание, что мы передаём `props` базовому (родительскому) конструктору:
 
-```js{2}
+```js {2}
   constructor(props) {
     super(props);
     this.state = {date: new Date()};
@@ -138,9 +138,9 @@ class Clock extends React.Component {
 
 Классовые компоненты всегда должны вызывать базовый конструктор с аргументом `props`.
 
-3. Удалим проп `date` из элемента `<Clock />`:
+3.&nbsp;Удалим проп `date` из элемента `<Clock />`:
 
-```js{2}
+```js {2}
 ReactDOM.render(<Clock />, document.getElementById('root'))
 ```
 
@@ -148,7 +148,7 @@ ReactDOM.render(<Clock />, document.getElementById('root'))
 
 Результат выглядит следующим образом:
 
-```js{2-5,11,18}
+```js {2-5,11,18}
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -182,7 +182,7 @@ ReactDOM.render(<Clock />, document.getElementById('root'))
 
 Объявим специальные методы, которые компонент будет вызывать при монтировании и размонтировании:
 
-```js{7-9,11-13}
+```js {7-9,11-13}
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -208,7 +208,7 @@ class Clock extends React.Component {
 
 Метод `componentDidMount()` запускается после того, как компонент отрендерился в DOM — здесь мы и установим таймер:
 
-```js{2-5}
+```js {2-5}
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
@@ -223,7 +223,7 @@ class Clock extends React.Component {
 
 Теперь нам осталось сбросить таймер в методе жизненного цикла `componentWillUnmount()`:
 
-```js{2}
+```js {2}
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
@@ -233,7 +233,7 @@ class Clock extends React.Component {
 
 `this.setState()` планирует обновление внутреннего состояния компонента:
 
-```js{18-22}
+```js {18-22}
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -346,7 +346,7 @@ this.setState(function(state, props) {
 
 Например, состояние может состоять из нескольких независимых полей:
 
-```js{4,5}
+```js {4,5}
   constructor(props) {
     super(props);
     this.state = {
@@ -358,7 +358,7 @@ this.setState(function(state, props) {
 
 Их можно обновлять по отдельности с помощью отдельных вызовов `setState()`:
 
-```js{4,10}
+```js {4,10}
   componentDidMount() {
     fetchPosts().then(response => {
       this.setState({
@@ -410,7 +410,7 @@ function FormattedDate(props) {
 
 Чтобы показать, что все компоненты действительно изолированы, создадим компонент `App`, который рендерит три компонента `<Clock>`:
 
-```js{4-6}
+```js {4-6}
 function App() {
   return (
     <div>

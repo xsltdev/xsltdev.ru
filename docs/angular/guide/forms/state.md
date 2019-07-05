@@ -168,7 +168,3 @@ export class AppComponent {
   <input class="form-control" type="email" name="email" [(ngModel)]="user.email" #email="ngModel" required email />
 </div>
 ```
-
-## Ссылки
-
-- [Состояние модели и валидация](https://metanit.com/web/angular2/5.3.php)

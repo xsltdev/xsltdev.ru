@@ -225,7 +225,3 @@ export class AppComponent implements OnInit {
 В данном случае мы хотим получить массив объектов `User`. Но напрямую данные из `users.json` не соответствуют массиву. Массив в файле определен по ключу `userList`. Поэтому, используя данный ключ, мы достаем нужные данные из ответа сервера: `this.users=data["userList"]`.
 
 ![Скриншот приложения](httpclient-4.png)
-
-## Ссылки
-
-- [HttpClient и отправка запросов](https://metanit.com/web/angular2/6.1.php)

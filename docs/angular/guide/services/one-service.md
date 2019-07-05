@@ -152,7 +152,3 @@ export class DataComponent implements OnInit {
 После этого оба объекта DataComponent будут использовать один и тот же сервис DataService. Поэтому добавление объекта в одном компоненте автоматически отразится и на другом:
 
 ![Скриншот](one-service-3.png)
-
-## Ссылки
-
-- [Один сервис для всех компонентов](https://metanit.com/web/angular2/4.3.php)

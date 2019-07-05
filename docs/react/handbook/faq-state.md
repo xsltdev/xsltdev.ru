@@ -71,8 +71,6 @@ handleSomething() {
 }
 ```
 
-[Прочитать больше про setState](react-component.md#setstate)
-
 ## Когда `setState` работает асинхронно? {#when-is-setstate-asynchronous}
 
 В настоящее время `setState` работает асинхронно внутри обработчиков событий.

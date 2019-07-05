@@ -131,7 +131,3 @@ import { HttpClientModule } from '@angular/common/http'
 })
 export class AppModule {}
 ```
-
-## Ссылки
-
-- [AsyncPipe](https://metanit.com/web/angular2/8.4.php)

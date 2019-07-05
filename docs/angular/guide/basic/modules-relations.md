@@ -81,7 +81,3 @@ export class AppComponent {}
 ```
 
 ![Взаимодействие между модулями](modules-relations-2.png)
-
-## Ссылки
-
-- [Взаимодействие между модулями](https://metanit.com/web/angular2/2.11.php)

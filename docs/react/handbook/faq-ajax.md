@@ -6,7 +6,7 @@
 
 ## Где в жизненном цикле компонента лучше делать запрос? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-Вы можете сделать AJAX-запрос в [`componentDidMount`](react-component.md#mounting). Когда вы получите данные, вызовите `setState`, чтобы передать их компоненту.
+Вы можете сделать AJAX-запрос в `componentDidMount`. Когда вы получите данные, вызовите `setState`, чтобы передать их компоненту.
 
 ## Пример: Устанавливаем состояние из AJAX-запроса {#example-using-ajax-results-to-set-local-state}
 

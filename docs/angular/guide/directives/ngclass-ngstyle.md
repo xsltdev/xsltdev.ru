@@ -146,7 +146,3 @@ export class AppComponent {
 ```html
 <div [style.display]="visibility==true?'block':'none'"></div>
 ```
-
-## Ссылки
-
-- [ngClass и ngStyle](https://metanit.com/web/angular2/3.1.php)

@@ -106,7 +106,3 @@ export class AppComponent {
 ![Скриншот](pure-pipes-2.png)
 
 Когда добавляется новый элемент, класс `JoinPipe` заново начинает обрабатывать массив. Поэтому `pipe` применяется ко всем элементам.
-
-## Ссылки
-
-- [Pure и Impure Pipes](https://metanit.com/web/angular2/8.3.php)

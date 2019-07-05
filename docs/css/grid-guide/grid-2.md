@@ -142,7 +142,3 @@ grid-template-columns: 8em 7em 8em;
 ![Grid Layout](grid-2-3.png)
 
 И поскольку ячеек грида больше, чем элементов, то последняя строка оказывается пустой.
-
-## Ссылки
-
-- [Строки и столбцы](https://metanit.com/web/html5/13.2.php)

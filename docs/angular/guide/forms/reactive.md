@@ -368,7 +368,3 @@ export class AppComponent {
 ```
 
 Результат работы компонента будет аналогичным предыдущему.
-
-## Ссылки
-
-- [Reactive Forms](https://metanit.com/web/angular2/5.5.php)

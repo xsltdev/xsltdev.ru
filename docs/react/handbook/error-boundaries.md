@@ -17,9 +17,9 @@
 > - серверном рендеринге (Server-side rendering);
 > - самом предохранителе (а не в его дочерних компонентах).
 
-Классовый компонент является предохранителем, если он включает хотя бы один из следующих методов жизненного цикла: [`static getDerivedStateFromError()`](react-component.md#static-getderivedstatefromerror) или [`componentDidCatch()`](react-component.md#componentdidcatch). Используйте `static getDerivedStateFromError()` при рендеринге запасного UI в случае отлова ошибки. Используйте `componentDidCatch()` при написании кода для журналирования информации об отловленной ошибке.
+Классовый компонент является предохранителем, если он включает хотя бы один из следующих методов жизненного цикла: `static getDerivedStateFromError()` или `componentDidCatch()`. Используйте `static getDerivedStateFromError()` при рендеринге запасного UI в случае отлова ошибки. Используйте `componentDidCatch()` при написании кода для журналирования информации об отловленной ошибке.
 
-```js{7-10,12-15,18-21}
+```js
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
@@ -93,7 +93,7 @@ class ErrorBoundary extends React.Component {
 
 > Примечание
 >
-> Имена компонентов, выводимые в их стеке вызовов, определяются свойством [`Function.name`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/name). Если ваше приложение поддерживает более старые браузеры и устройства, которые могут ещё не предоставлять его нативно (например, IE 11), рассмотрите возможность включения полифилла `Function.name` в бандл вашего приложения, например [`function.name-polyfill`](https://github.com/JamesMGreene/Function.name). В качестве альтернативы, вы можете явным образом задать проп [`displayName`](react-component.md#displayname) в каждом из ваших компонентов.
+> Имена компонентов, выводимые в их стеке вызовов, определяются свойством [`Function.name`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/name). Если ваше приложение поддерживает более старые браузеры и устройства, которые могут ещё не предоставлять его нативно (например, IE 11), рассмотрите возможность включения полифилла `Function.name` в бандл вашего приложения, например [`function.name-polyfill`](https://github.com/JamesMGreene/Function.name). В качестве альтернативы, вы можете явным образом задать проп `displayName` в каждом из ваших компонентов.
 
 ## А как насчёт try/catch? {#how-about-trycatch}
 
@@ -123,7 +123,7 @@ React не нуждается в предохранителях, чтобы ко
 
 Чтобы отловить ошибку в обработчике событий, пользуйтесь обычной JavaScript-конструкцией `try` / `catch`:
 
-```js{9-13,17-20}
+```js {9-13,17-20}
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)

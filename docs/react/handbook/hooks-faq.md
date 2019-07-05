@@ -4,15 +4,6 @@ _Хуки_ — нововведение в React 16.8, которое позво
 
 На этой странице вы найдёте ответы на популярные вопросы о [хуках](hooks-overview.md).
 
-<!--
-  if you ever need to regenerate this, this snippet in the devtools console might help:
-
-  $$('.anchor').map(a =>
-    `${' '.repeat(2 * +a.parentNode.nodeName.slice(1))}` +
-    `[${a.parentNode.textContent}](${a.getAttribute('href')})`
-  ).join('\n')
--->
-
 - [Внедрение хуков](#adoption-strategy)
   - [В какой версии React появились хуки?](#which-versions-of-react-include-hooks)
   - [Нужно ли переписать все мои классовые компоненты?](#do-i-need-to-rewrite-all-my-class-components)
@@ -130,9 +121,9 @@ function Example() {
 }
 ```
 
-Мы будем тестировать этот компонент с помощью React DOM. Чтобы убедиться, что поведение совпадает с тем, что случится в браузере, мы обернём код рендера и обновления в вызов [`ReactTestUtils.act()`](test-utils.md#act):
+Мы будем тестировать этот компонент с помощью React DOM. Чтобы убедиться, что поведение совпадает с тем, что случится в браузере, мы обернём код рендера и обновления в вызов `ReactTestUtils.act()`:
 
-```js{3,20-22,29-31}
+```js {3,20-22,29-31}
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { act } from 'react-dom/test-utils'
@@ -213,7 +204,7 @@ it('can render and update a counter', () => {
 
 Вы можете использовать его внутри `useEffect`:
 
-```js{2,8}
+```js {2,8}
 function Timer() {
   const intervalRef = useRef()
 
@@ -233,7 +224,7 @@ function Timer() {
 
 Для объявления интервала нам не понадобится реф (`id` может быть локальным относительно эффекта). Но это будет полезно, если потребуется сбросить интервал из обработчика события:
 
-```js{3}
+```js {3}
 // ...
 function handleCancelClick() {
   clearInterval(intervalRef.current)
@@ -256,7 +247,7 @@ function Box() {
 
 Допустим, мы хотим написать некоторую логику, которая будет изменять значения `left` и `top`, когда пользователь двигает курсор мышки. Обратите внимание, что мы обязаны объединить эти поля с предыдущим объектом состояния вручную:
 
-```js{4,5}
+```js {4,5}
 // ...
 useEffect(() => {
   function handleWindowMouseMove(e) {
@@ -276,7 +267,7 @@ useEffect(() => {
 
 Например, мы можем разделить состояние нашего компонента на объекты `position` и `size`, что поможет всегда изменять только `position`, без необходимости волноваться об объединении:
 
-```js{2,7}
+```js {2,7}
 function Box() {
   const [position, setPosition] = useState({ left: 0, top: 0 });
   const [size, setSize] = useState({ width: 100, height: 100 });
@@ -290,7 +281,7 @@ function Box() {
 
 В разделении состояния на независимые переменные есть ещё одно преимущество. Это поможет легко вынести некоторую логику в отдельный хук в будущем, например:
 
-```js{2,7}
+```js {2,7}
 function Box() {
   const position = useWindowPosition()
   const [size, setSize] = useState({ width: 100, height: 100 })
@@ -318,7 +309,7 @@ function useWindowPosition() {
 
 Сейчас, вы можете сделать это вручную, [используя реф](#is-there-something-like-instance-variables):
 
-```js{6,8}
+```js {6,8}
 function Counter() {
   const [count, setCount] = useState(0)
 
@@ -338,7 +329,7 @@ function Counter() {
 
 Это может показаться усложнённым, но вы можете вынести эту логику в отдельный хук:
 
-```js{3,7}
+```js {3,7}
 function Counter() {
   const [count, setCount] = useState(0)
   const prevCount = usePrevious(count)
@@ -360,7 +351,7 @@ function usePrevious(value) {
 
 Обратите внимание, как это будет работать для пропсов, состояния или любого другого вычисляемого значения.
 
-```js{5}
+```js {5}
 function Counter() {
   const [count, setCount] = useState(0);
 
@@ -455,7 +446,7 @@ function handleClick() {
 
 Для определения положения или размера DOM-узла можно использовать [колбэк-реф](refs-and-the-dom.md#callback-refs). React будет вызывать этот колбэк всякий раз, когда реф привязывается к другому узлу. Вот [небольшая демонстрация](https://codesandbox.io/s/l7m0v5x4v9):
 
-```js{4-8,12}
+```js {4-8,12}
 function MeasureExample() {
   const [height, setHeight] = useState(0)
 
@@ -480,7 +471,7 @@ function MeasureExample() {
 
 При желании вы можете [извлечь эту логику](https://codesandbox.io/s/m5o42082xy) в повторно используемый хук:
 
-```js{2}
+```js {2}
 function MeasureExample() {
   const [rect, ref] = useClientRect()
   return (
@@ -516,7 +507,7 @@ function useClientRect() {
 
 Вообще говоря, это небезопасно.
 
-```js{3,8}
+```js {3,8}
 function Example({ someProp }) {
   function doSomething() {
     console.log(someProp)
@@ -530,7 +521,7 @@ function Example({ someProp }) {
 
 Сложно помнить, какие пропсы и состояние используются функцией определённой вне эффекта. Именно поэтому, **лучше объявлять функции нужные эффекту _внутри_ него**. Тогда легче увидеть, от каких значений из области видимости компонента зависит эффект:
 
-```js{4,8}
+```js {4,8}
 function Example({ someProp }) {
   useEffect(() => {
     function doSomething() {
@@ -544,7 +535,7 @@ function Example({ someProp }) {
 
 Если после такого изменения мы видим, что никакие значения из области видимости компонента не используются, то можно безопасно указать `[]`:
 
-```js{7-8}
+```js {7-8}
 useEffect(() => {
   function doSomething() {
     console.log('Привет')
@@ -567,7 +558,7 @@ useEffect(() => {
 
 Безопасно опускать в списке **только** те функции, которые не используют ни сами, ни через функции, которые они вызывают, пропсы, состояние или их производные. Так, в следующем примере показан баг:
 
-```js{5,12}
+```js {5,12}
 function ProductPage({ productId }) {
   const [product, setProduct] = useState(null)
 
@@ -586,7 +577,7 @@ function ProductPage({ productId }) {
 
 **Рекомендовано исправлять такой код, перемещая функцию _внутрь_ вашего эффекта**. Это помогает замечать, какие пропсы и состояние используются вашим эффектом, и убедиться, что они перечислены в списке зависимостей:
 
-```js{5-10,13}
+```js {5-10,13}
 function ProductPage({ productId }) {
   const [product, setProduct] = useState(null)
 
@@ -606,7 +597,7 @@ function ProductPage({ productId }) {
 
 Это также позволяет обрабатывать ответы, пришедшие не в порядке запросов, с помощью локальной переменной внутри эффекта:
 
-```js{2,6,8}
+```js {2,6,8}
 useEffect(() => {
   let ignore = false
   async function fetchProduct() {
@@ -632,7 +623,7 @@ useEffect(() => {
 - Если функция, которую вы вызываете, является чистым вычислением и её безопасно вызывать во время рендера, вы можете **вызвать её снаружи эффекта, а не внутри**, и сделать эффект зависящим от результата этого вызова, а не от самой функции.
 - В крайнем случае можете **добавить саму функцию в список зависимостей эффекта, но _обернув её определение_** в хук [`useCallback`](hooks-reference.md#usecallback). Тогда функция будет оставаться неизменной, до тех пор, пока не изменятся её зависимости:
 
-```js{2-5,13}
+```js {2-5,13}
 function ProductPage({ productId }) {
   // ✅ Оборачиваем в useCallback, чтобы избежать изменений при каждом рендере
   const fetchProduct = useCallback(() => {
@@ -656,7 +647,7 @@ function ProductDetails({ fetchProduct })
 
 Бывают случаи, когда эффект может зависеть от состояния, которое очень часто изменяется. У вас может возникнуть желание не включать это состояние в список зависимостей хука, но это как правило приводит к багам:
 
-```js{6,9}
+```js {6,9}
 function Counter() {
   const [count, setCount] = useState(0)
 
@@ -673,7 +664,7 @@ function Counter() {
 
 Если переписать список зависимостей как `[count]`, то баг будет устранён, но это приведёт к сбрасыванию интервала при каждом изменении. Такое поведение может быть нежелательно. Чтобы исправить это, мы можем применить [форму функционального обновления хука `setState`](hooks-reference.md#functional-updates), которая позволяет указать, _как_ должно меняться состояние, не ссылаясь явно на _текущее_ состояние:
 
-```js{6,9}
+```js {6,9}
 function Counter() {
   const [count, setCount] = useState(0)
 
@@ -694,7 +685,7 @@ function Counter() {
 
 В крайнем случае если вы хотите реализовать что-то наподобие `this` в классах, вы можете [использовать реф](hooks-faq.md#is-there-something-like-instance-variables), чтобы хранить в нём изменяемую переменную. Тогда можно писать и читать из него. Например:
 
-```js{2-6,10-11,16}
+```js {2-6,10-11,16}
 function Example(props) {
   // Сохраняем свежайшие значения пропсов в ref
   let latestProps = useRef(props)
@@ -834,7 +825,7 @@ function Image(props) {
 
 - Хук [`useCallback`](hooks-reference.md#usecallback) позволяет сохранять ту же самую ссылку на колбэк между повторными рендерами, поэтому `shouldComponentUpdate` продолжит корректную работу:
 
-  ```js{2}
+  ```js {2}
   // Не создастся заново, пока `a` или `b` не изменятся
   const memoizedCallback = useCallback(() => {
     doSomething(a, b)
@@ -851,7 +842,7 @@ function Image(props) {
 
 В качестве альтернативы для больших деревьев компонентов мы рекомендуем передавать вниз функцию `dispatch` из хука [`useReducer`](hooks-reference.md#usereducer) через контекст:
 
-```js{4,5}
+```js {4,5}
 const TodosDispatch = React.createContext(null)
 
 function TodosApp() {
@@ -868,7 +859,7 @@ function TodosApp() {
 
 Любой дочерний компонент в дереве внутри `TodosApp` может использовать функцию `dispatch`, чтобы передать объекты-действия в `TodosApp`:
 
-```js{2,3}
+```js {2,3}
 function DeepChild(props) {
   // Если мы хотим выполнить действие, мы можем получить dispatch из контекста.
   const dispatch = useContext(TodosDispatch)
@@ -895,7 +886,7 @@ function DeepChild(props) {
 
 В некоторых редких случаях, вам может понадобится закешировать колбэк с помощью хука [`useCallback`](hooks-reference.md#usecallback), но кеширование не будет работать хорошо, потому что внутренняя функция будет пересоздаваться слишком часто. Если функция, которую вы кешируете, является обработчиком событий и не используется во время рендера, вы можете использовать [реф в качестве свойства экземпляра](#is-there-something-like-instance-variables), и вручную сохранить туда последнее значение:
 
-```js{6,10}
+```js {6,10}
 function Form() {
   const [text, updateText] = useState('')
   const textRef = useRef()
@@ -920,7 +911,7 @@ function Form() {
 
 Это довольно запутанный подход, но он показывает, что вы можете сделать эту хитрую оптимизацию, если это вам действительно необходимо. В любом случае, советуем вынести эту логику в отдельный хук:
 
-```js{4,16}
+```js {4,16}
 function Form() {
   const [text, updateText] = useState('')
   // Будет закешировано, даже если значение `text` изменится:

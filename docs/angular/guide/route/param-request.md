@@ -65,7 +65,3 @@ export class AppComponent {}
 Для передачи параметров к ссылке применяется директива `queryParams`, которая принимает javascript-объект.
 
 ![Скриншот](param-request-1.png)
-
-## Ссылки
-
-- [Параметры строки запроса](https://metanit.com/web/angular2/7.4.php)

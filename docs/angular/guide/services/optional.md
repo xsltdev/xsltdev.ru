@@ -98,7 +98,3 @@ constructor(@Optional() private logService: LogService){}
 ```ts
 if (this.logService) this.logService.write('операция получения данных')
 ```
-
-## Ссылки
-
-- [Опциональные сервисы](https://metanit.com/web/angular2/4.4.php)

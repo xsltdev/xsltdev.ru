@@ -127,7 +127,3 @@ export class DataComponent {
   }
 }
 ```
-
-## Ссылки
-
-- [Иерархия сервисов](https://metanit.com/web/angular2/4.5.php)

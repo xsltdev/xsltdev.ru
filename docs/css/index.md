@@ -93,7 +93,7 @@
 <details markdown="1" class="abstract">
 <summary>Grid</summary>
 
-Руководство по [Grid Layout](grid-guide/grid-1.md)
+Руководство по [Grid Layout](grid-guide/grid-1.md) _(Источник: [metanit.com](https://metanit.com/web/html5/13.1.php))_
 
 - [grid](grid.md)
 - [grid-area](grid-area.md)
@@ -119,7 +119,7 @@
 <details markdown="1" class="abstract">
 <summary>Flex</summary>
 
-Руководство по [Flexbox](flex-guide/flex-1.md)
+Руководство по [Flexbox](flex-guide/flex-1.md) _(Источник: [metanit.com](https://metanit.com/web/html5/12.1.php))_
 
 - [flex](flex.md)
 - [flex-basis](flex-basis.md)

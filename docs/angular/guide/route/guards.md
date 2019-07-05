@@ -243,7 +243,3 @@ providers: [ AboutGuard, ExitAboutGuard],
 И теперь при попытки ухода с компонента `AboutComponent` (если `saved == false`), мы увидим диалоговое окно для подтверждения перехода:
 
 ![Скриншот](guards-3.png)
-
-## Ссылки
-
-- [Guards](https://metanit.com/web/angular2/7.7.php)

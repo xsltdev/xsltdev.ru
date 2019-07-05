@@ -4,7 +4,7 @@ _Хуки_ — нововведение в React 16.8, которое позво
 
 _Хук эффекта_ даёт вам возможность выполнять побочные эффекты в функциональном компоненте:
 
-```js{1,6-10}
+```js {1,6-10}
 import React, { useState, useEffect } from 'react'
 
 function Example() {
@@ -45,7 +45,7 @@ function Example() {
 
 Вот почему в классах React мы размещаем побочные эффекты внутрь `componentDidMount` и `componentDidUpdate`. Возвращаясь к нашему примеру, здесь представлен счётчик, реализованный с помощью классового React-компонента. Он обновляет заголовок документа сразу же после того, как React вносит изменения в DOM:
 
-```js{9-15}
+```js {9-15}
 class Example extends React.Component {
   constructor(props) {
     super(props)
@@ -83,7 +83,7 @@ class Example extends React.Component {
 
 Мы уже рассматривали этот пример немного ранее, но давайте разберём его более подробно:
 
-```js{1,6-8}
+```js {1,6-8}
 import React, { useState, useEffect } from 'react'
 
 function Example() {
@@ -137,7 +137,7 @@ function Example() {
 
 В React-классе, вы, как правило, оформили бы подписку в `componentDidMount` и отменили бы её в `componentWillUnmount`. Например, предположим, что у нас есть некий модуль `ChatAPI`, с помощью которого мы можем подписаться на статус друга в сети. Вот как мы бы подписались и отобразили бы статус, используя класс:
 
-```js{8-26}
+```js {8-26}
 class FriendStatus extends React.Component {
   constructor(props) {
     super(props)
@@ -180,7 +180,7 @@ class FriendStatus extends React.Component {
 
 Вы должно быть подумали, что нам потребуется отдельный эффект для выполнения сброса. Так как код для оформления и отмены подписки тесно связан с `useEffect`, мы решили объединить их. Если ваш эффект возвращает функцию, React выполнит её только тогда, когда наступит время сбросить эффект.
 
-```js{6-16}
+```js {6-16}
 import React, { useState, useEffect } from 'react'
 
 function FriendStatus(props) {
@@ -293,7 +293,7 @@ class FriendStatusWithCounter extends React.Component {
 
 Как же можно решить эту проблему с помощью хуков? Точно так же, как [вы можете использовать хук _состояния_ более одного раза](hooks-state.md#tip-using-multiple-state-variables), вы можете использовать и несколько эффектов. Это даёт нам возможность разделять разную несвязанную между собой логику между разными эффектами.
 
-```js{3,8}
+```js {3,8}
 function FriendStatusWithCounter(props) {
   const [count, setCount] = useState(0)
   useEffect(() => {
@@ -343,7 +343,7 @@ function FriendStatusWithCounter(props) {
 
 В классовом компоненте нам бы пришлось добавить `componentDidUpdate`, чтобы решить эту задачу:
 
-```js{8-19}
+```js {8-19}
   componentDidMount() {
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
@@ -424,7 +424,7 @@ componentDidUpdate(prevProps, prevState) {
 
 Эту логику приходится использовать довольно часто, поэтому мы решили встроить её в API хука `useEffect`. Вы можете сделать так, чтобы React _пропускал_ вызов эффекта, если определённые значения остались без изменений между последующими рендерами. Чтобы сделать это, передайте массив в `useEffect` вторым необязательным аргументом.
 
-```js{3}
+```js {3}
 useEffect(() => {
   document.title = `Вы нажали ${count} раз`
 }, [count]) // Перезапускать эффект только если count поменялся
@@ -436,7 +436,7 @@ useEffect(() => {
 
 Это также работает для эффектов с этапом сброса:
 
-```js{10}
+```js {10}
 useEffect(() => {
   function handleStatusChange(status) {
     setIsOnline(status.isOnline)

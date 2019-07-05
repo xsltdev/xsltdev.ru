@@ -160,7 +160,3 @@ grid-template-rows: [row1start] 1fr [row1end] 10px [row2start] 1fr [row2end];
 ```
 
 ![Именованные grid-линии](grid-9-2.png)
-
-## Ссылки
-
-- [Именованные grid-линии](https://metanit.com/web/html5/13.9.php)

@@ -113,7 +113,7 @@ class AutoFocusTextInput extends React.Component {
 
 Обратите внимание, что это сработает только в том случае, если `CustomTextInput` объявлен как классовый компонент:
 
-```js{1}
+```js {1}
 class CustomTextInput extends React.Component {
   // ...
 }

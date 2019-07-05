@@ -183,7 +183,3 @@ export class AppComponent {
   message = 'Hello World!'
 }
 ```
-
-## Ссылки
-
-- [Работа с pipes](https://metanit.com/web/angular2/8.1.php)

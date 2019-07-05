@@ -60,7 +60,3 @@ export class AppModule {}
     providers:    [ ]
 })
 ```
-
-## Ссылки
-
-- [Модули](https://metanit.com/web/angular2/2.2.php)

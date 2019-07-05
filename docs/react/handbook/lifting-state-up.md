@@ -6,7 +6,7 @@
 
 Мы начнём с компонента под названием `BoilingVerdict`. Он принимает температуру по шкале Цельсия в качестве пропа `celsius` и выводит, достаточна ли температура для кипения воды:
 
-```js{3,5}
+```js {3,5}
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return <p>Вода закипит.</p>
@@ -19,7 +19,7 @@ function BoilingVerdict(props) {
 
 Кроме того, он рендерит `BoilingVerdict` для текущего значения поля ввода.
 
-```js{5,9,13,17-21}
+```js {5,9,13,17-21}
 class Calculator extends React.Component {
   constructor(props) {
     super(props)
@@ -52,7 +52,7 @@ class Calculator extends React.Component {
 
 Мы можем начать с извлечения компонента `TemperatureInput` из `Calculator`. Добавим в него новый проп `scale`, значением которого может быть либо `"c"` или `"f"`:
 
-```js{1-4,19,22}
+```js {1-4,19,22}
 const scaleNames = {
   c: 'Цельсия',
   f: 'Фаренгейта'
@@ -84,7 +84,7 @@ class TemperatureInput extends React.Component {
 
 Теперь можем изменить `Calculator` для рендера двух отдельных полей ввода температуры:
 
-```js{5,6}
+```js {5,6}
 class Calculator extends React.Component {
   render() {
     return (
@@ -139,7 +139,7 @@ function tryConvert(temperature, convert) {
 
 В настоящее время оба компонента `TemperatureInput` независимо хранят свои значения каждое в собственном локальном состоянии:
 
-```js{5,9,13}
+```js {5,9,13}
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
@@ -166,7 +166,7 @@ class TemperatureInput extends React.Component {
 
 Во-первых, мы заменим `this.state.temperature` на `this.props.temperature` в компоненте `TemperatureInput`. Пока давайте представим, что `this.props.temperature` уже существует, хотя нам нужно будет передать его из `Calculator` в будущем:
 
-```js{3}
+```js {3}
   render() {
     // Ранее было так: const temperature = this.state.temperature;
     const temperature = this.props.temperature;
@@ -179,7 +179,7 @@ class TemperatureInput extends React.Component {
 
 Теперь, когда `TemperatureInput` хочет обновить свою температуру, он вызывает `this.props.onTemperatureChange`:
 
-```js{3}
+```js {3}
   handleChange(e) {
     // Ранее было так: this.setState({temperature: e.target.value});
     this.props.onTemperatureChange(e.target.value);
@@ -194,7 +194,7 @@ class TemperatureInput extends React.Component {
 
 Прежде чем изменить `Calculator`, давайте вспомним, что поменялось в компоненте `TemperatureInput`. Мы удалили из него внутреннее состояние, и вместо `this.state.temperature` теперь используем `this.props.temperature`. Вместо вызова `this.setState()`, когда мы хотим изменить состояние, теперь вызываем `this.props.onTemperatureChange()`, который получен от компонента `Calculator`:
 
-```js{8,12}
+```js {8,12}
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props)
@@ -244,7 +244,7 @@ class TemperatureInput extends React.Component {
 
 Поля ввода остаются синхронизированными, поскольку их значения вычисляются из одного и того же состояния:
 
-```js{6,10,14,18-21,27-28,31-32,34}
+```js {6,10,14,18-21,27-28,31-32,34}
 class Calculator extends React.Component {
   constructor(props) {
     super(props)

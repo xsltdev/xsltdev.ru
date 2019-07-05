@@ -106,7 +106,3 @@ export class AppComponent implements OnInit {
 И при выполнении операций с данными в консоли браузера мы сможем увидеть работу сервиса `LogService`.
 
 ![Скриншот приложения](injections-1.png)
-
-## Ссылки
-
-- [Внедрение сервиса в другой сервис](https://metanit.com/web/angular2/4.2.php)

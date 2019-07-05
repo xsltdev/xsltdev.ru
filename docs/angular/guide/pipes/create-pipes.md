@@ -132,7 +132,3 @@ export class AppModule {}
 Результат работы:
 
 ![Скриншот](create-pipes-2.png)
-
-## Ссылки
-
-- [Создание своих pipes](https://metanit.com/web/angular2/8.2.php)

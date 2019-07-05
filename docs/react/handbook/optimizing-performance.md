@@ -234,7 +234,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 Если вы знаете ситуации, в которых ваш компонент не нуждается в обновлении, вы можете вернуть `false` из `shouldComponentUpdate`, чтобы пропустить весь процесс рендеринга, включая вызов `render()` и так далее ниже по иерархии.
 
-В большинстве случаев вместо того, чтобы писать `shouldComponentUpdate()` вручную, вы можете наследоваться от [`React.PureComponent`](react-api.md#reactpurecomponent). Это эквивалентно реализации `shouldComponentUpdate()` с поверхностным сравнением текущих и предыдущих пропсов и состояния.
+В большинстве случаев вместо того, чтобы писать `shouldComponentUpdate()` вручную, вы можете наследоваться от `React.PureComponent`. Это эквивалентно реализации `shouldComponentUpdate()` с поверхностным сравнением текущих и предыдущих пропсов и состояния.
 
 ## shouldComponentUpdate в действии {#shouldcomponentupdate-in-action}
 

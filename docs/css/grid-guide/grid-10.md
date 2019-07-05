@@ -173,7 +173,3 @@ grid-template-columns: 10px repeat(3, [column] 1fr [colgutter] 10px);
 ```
 
 ![Именованные grid-линии и функция repeat](grid-10-2.png)
-
-## Ссылки
-
-- [Именованные grid-линии и функция repeat](https://metanit.com/web/html5/13.10.php)

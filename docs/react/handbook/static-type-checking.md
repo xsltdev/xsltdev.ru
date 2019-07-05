@@ -34,7 +34,7 @@ npm install --save-dev flow-bin
 
 Далее нужно добавить `flow` в секцию `"scripts"` файла `package.json`:
 
-```js{4}
+```js {4}
 {
   // ...
   "scripts": {
@@ -89,7 +89,7 @@ npm install --save-dev babel-preset-flow
 
 Затем добавьте установленный пресет `flow` в свою [конфигурацию Babel](https://babeljs.io/docs/usage/babelrc/). Например так, если вы используете конфигурационный файл `.babelrc`:
 
-```js{3}
+```js {3}
 {
   "presets": [
     "flow",
@@ -193,7 +193,7 @@ npm install --save-dev typescript
 
 Ура! Вы установили последнюю версию TypeScript. Теперь в вашем распоряжении новая команда — `tsc`. Но прежде, чем праздновать, давайте добавим соответствующий скрипт в файл `package.json`:
 
-```js{4}
+```js {4}
 {
   // ...
   "scripts": {
@@ -235,7 +235,7 @@ npx tsc --init
 
 - Затем, укажем компилятору откуда ему брать исходные файлы и куда сохранять скомпилированный код.
 
-```js{6,7}
+```js {6,7}
 // tsconfig.json
 
 {

@@ -165,7 +165,3 @@
 ```
 
 ![flex-wrap](flex-3-3.png)
-
-## Ссылки
-
-- [flex-wrap](https://metanit.com/web/html5/12.3.php)

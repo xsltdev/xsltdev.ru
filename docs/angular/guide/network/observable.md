@@ -128,7 +128,3 @@ export class AppComponent implements OnInit {
   }
 }
 ```
-
-## Ссылки
-
-- [Объект Observable и библиотека RxJS](https://metanit.com/web/angular2/6.2.php)

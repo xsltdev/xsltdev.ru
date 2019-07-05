@@ -4,7 +4,7 @@ _Хуки_ — нововведение в React 16.8, которое позво
 
 На [странице введения в хуки](hooks-intro.md) мы познакомились с ними на этом примере:
 
-```js{4-5}
+```js {4-5}
 import React, { useState } from 'react'
 
 function Example() {
@@ -80,7 +80,7 @@ function Example(props) {
 
 Наш новый пример начинается с того, что импортирует хук `useState` из React:
 
-```js{1}
+```js {1}
 import React, { useState } from 'react'
 
 function Example() {
@@ -100,7 +100,7 @@ function Example() {
 
 Допустим, мы хотим инициализировать в классе состояние `count` значением `0`. Для этого в его конструкторе присваиваем `this.state` объект `{ count: 0 }`:
 
-```js{4-6}
+```js {4-6}
 class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -112,7 +112,7 @@ class Example extends React.Component {
 
 В функциональном компоненте нам недоступен `this`, поэтому мы не можем задать или считать состояние через `this.state`. Вместо этого мы вызываем хук `useState` напрямую изнутри нашего компонента.
 
-```js{4,5}
+```js {4,5}
 import React, { useState } from 'react';
 
 function Example() {
@@ -128,7 +128,7 @@ function Example() {
 
 Теперь мы знаем, что делает `useState`, и пример должен быть ясен:
 
-```js{4,5}
+```js {4,5}
 import React, { useState } from 'react';
 
 function Example() {
@@ -162,13 +162,13 @@ function Example() {
 
 В классе мы вызываем `this.setState()`, когда надо обновить состояние `count`:
 
-```js{1}
+```js {1}
 <button onClick={() => this.setState({ count: this.state.count + 1 })}>Нажми на меня</button>
 ```
 
 В функции нам не нужен `this`, потому что `setCount` и `count` уже доступны как переменные:
 
-```js{1}
+```js {1}
 <button onClick={() => setCount(count + 1)}>Нажми на меня</button>
 ```
 
@@ -176,7 +176,7 @@ function Example() {
 
 Давайте **построчно пробежимся по тому, что мы выучили** и проверим наши знания:
 
-```js{1,4,9}
+```js {1,4,9}
  1:  import React, { useState } from 'react';
  2:
  3:  function Example() {

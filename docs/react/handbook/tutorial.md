@@ -147,7 +147,7 @@ class ShoppingList extends React.Component {
 return React.createElement('div', { className: 'shopping-list' }, React.createElement('h1' /* ... h1 children ... */), React.createElement('ul' /* ... ul children ... */))
 ```
 
-Если вам интересно, то `createElement()` более подробно описан в [справочнике API](react-api.md#createelement), однако, мы не будем им пользоваться в этом введении. Вместо этого мы продолжим использовать JSX.
+Если вам интересно, то `createElement()` более подробно описан в справочнике API, однако, мы не будем им пользоваться в этом введении. Вместо этого мы продолжим использовать JSX.
 
 JSX обладает всей мощью JavaScript. В JSX вы можете использовать _любые_ JavaScript-выражения внутри фигурных скобок. Каждый React-элемент является JavaScript-объектом, который можно сохранить в переменную или использовать внутри программы.
 
@@ -173,7 +173,7 @@ JSX обладает всей мощью JavaScript. В JSX вы можете и
 
 Настоятельно рекомендуем набирать код самостоятельно, а не копировать его и вставлять. Это упрощает понимание и развивает мышечную память.
 
-```js{3}
+```js {3}
 class Board extends React.Component {
   renderSquare(i) {
     return <Square value={i} />;
@@ -182,7 +182,7 @@ class Board extends React.Component {
 
 Изменим метод `render` внутри Square, заменив `{/* TODO */}` на `{this.props.value}`:
 
-```js{5}
+```js {5}
 class Square extends React.Component {
   render() {
     return <button className="square">{this.props.value}</button>
@@ -874,7 +874,7 @@ class Board extends React.Component {
 
 Поскольку компонент Game теперь рендерит статус игры, мы можем убрать соответствующий код из метода `render` внутри Board. После изменений метод `render` компонента Board выглядит так:
 
-```js{1-4}
+```js {1-4}
   render() {
     return (
       <div>
@@ -1039,7 +1039,7 @@ const doubled = numbers.map(x => x * 2) // [2, 4, 6]
 
 В методе `render` компонента Game мы можем добавить ключ следующим образом `<li key={move}>` и предупреждения от React об отсутствующих ключах должны пропасть:
 
-```js{6}
+```js {6}
 const moves = history.map((step, move) => {
   const desc = move ? 'Перейти к ходу #' + move : 'К началу игры'
   return (
@@ -1056,7 +1056,7 @@ const moves = history.map((step, move) => {
 
 Сначала добавим `stepNumber: 0` в начальное состояние Game внутри `constructor`:
 
-```js{8}
+```js {8}
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -1151,4 +1151,4 @@ class Game extends React.Component {
 5. Когда кто-то выигрывает, подсветите три клетки, которые привели к победе.
 6. Когда победителя нет, покажите сообщение о том, что игра окончилась вничью.
 
-В этом вводном руководстве мы затронули концепции React, включая элементы, компоненты, пропсы и состояние. Для более детального ознакомления с каждой из этих тем обратитесь к [остальной документации](hello-world.md). Чтобы узнать больше про объявление компонентов изучите [Документацию по API `React.Component`](react-component.md).
+В этом вводном руководстве мы затронули концепции React, включая элементы, компоненты, пропсы и состояние. Для более детального ознакомления с каждой из этих тем обратитесь к [остальной документации](hello-world.md). Чтобы узнать больше про объявление компонентов изучите Документацию по API `React.Component`.

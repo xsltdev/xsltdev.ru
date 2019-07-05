@@ -158,7 +158,3 @@ grid-area: row-start / column-start / row-end / column-end;
 ```
 
 ![Позиционирование элементов](grid-6-5.png)
-
-## Ссылки
-
-- [Позиционирование элементов](https://metanit.com/web/html5/13.6.php)

@@ -6,7 +6,7 @@ _Хуки_ — нововведение в React 16.8, которое позво
 
 В разделе [использование хука эффекта](hooks-effect.md#example-using-hooks-1) мы увидели компонент из приложения чата, в котором отображается сообщение о том, находится ли наш друг в сети:
 
-```js{4-15}
+```js {4-15}
 import React, { useState, useEffect } from 'react'
 
 function FriendStatus(props) {
@@ -32,7 +32,7 @@ function FriendStatus(props) {
 
 Теперь предположим, что в приложении чата также есть список контактов, и мы хотим отображать зелёным цветом имена пользователей, которые сейчас в сети. Мы могли бы просто скопировать и вставить приведённую выше логику в наш компонент `FriendListItem`, но это не самый лучший вариант:
 
-```js{4-15}
+```js {4-15}
 import React, { useState, useEffect } from 'react'
 
 function FriendListItem(props) {
@@ -63,7 +63,7 @@ function FriendListItem(props) {
 
 **Пользовательский хук -- это JavaScript-функция, имя которой начинается с «use», и которая может вызывать другие хуки.** Например, функция `useFriendStatus` ниже -- это наш первый пользовательский хук:
 
-```js{3}
+```js {3}
 import React, { useState, useEffect } from 'react'
 
 function useFriendStatus(friendID) {
@@ -108,7 +108,7 @@ function useFriendStatus(friendID) {
 
 Теперь, когда мы извлекли эту логику в хук `useFriendStatus`, мы можем его использовать:
 
-```js{2}
+```js {2}
 function FriendStatus(props) {
   const isOnline = useFriendStatus(props.friend.id)
 
@@ -119,7 +119,7 @@ function FriendStatus(props) {
 }
 ```
 
-```js{2}
+```js {2}
 function FriendListItem(props) {
   const isOnline = useFriendStatus(props.friend.id)
 
@@ -141,7 +141,7 @@ function FriendListItem(props) {
 
 Продемонстрируем это, используя другой компонент из нашего гипотетического примера чата. Это средство выбора получателей сообщений чата, которое показывает, находится ли выбранный в данный момент друг в сети:
 
-```js{8-9,13}
+```js {8-9,13}
 const friendList = [{ id: 1, name: 'Татьяна' }, { id: 2, name: 'Алла' }, { id: 3, name: 'Лиля' }]
 
 function ChatRecipientPicker() {
@@ -219,7 +219,7 @@ function useReducer(reducer, initialState) {
 
 Теперь мы можем использовать его в нашем компоненте и с помощью редюсера управлять его состоянием:
 
-```js{2}
+```js {2}
 function Todos() {
   const [todos, dispatch] = useReducer(todosReducer, [])
 

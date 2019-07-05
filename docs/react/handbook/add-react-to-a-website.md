@@ -69,7 +69,7 @@
 
 Добавьте ещё 2 строки в конец файла `like_button.js`, после **[стартового кода](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**:
 
-```js{3,4}
+```js {3,4}
 // ... стартовый код ...
 
 const domContainer = document.querySelector('#like_button_container')

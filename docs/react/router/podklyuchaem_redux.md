@@ -1,9 +1,9 @@
 # Подключаем redux
 
-Если вы не знакомы с redux, вам поможет [этот туториал](../redux/intro.md)
-
+```
 npm i --save redux react-redux
 npm i --save-dev redux-logger redux-thunk
+```
 
 (вы всегда можете проверить версии в `package.json`, если что-то вдруг перестало работать. "Мир реакт" активно развивается)
 

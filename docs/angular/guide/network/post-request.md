@@ -195,7 +195,3 @@ export class HttpService {
   }
 }
 ```
-
-## Ссылки
-
-- [POST-запросы](https://metanit.com/web/angular2/6.5.php)

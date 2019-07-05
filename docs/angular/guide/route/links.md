@@ -122,7 +122,3 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {}
 ```
-
-## Ссылки
-
-- [Создание ссылок](https://metanit.com/web/angular2/7.2.php)

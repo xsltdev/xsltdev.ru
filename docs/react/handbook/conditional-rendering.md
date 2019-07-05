@@ -101,7 +101,7 @@ ReactDOM.render(<LoginControl />, document.getElementById('root'))
 
 Вы можете [внедрить любое выражение в JSX](introducing-jsx.md#embedding-expressions-in-jsx), заключив его в фигурные скобки. Это правило распространяется и на логический оператор `&&` языка JavaScript, которым можно удобно вставить элемент в зависимости от условия:
 
-```js{6-10}
+```js {6-10}
 function Mailbox(props) {
   const unreadMessages = props.unreadMessages
   return (
@@ -139,7 +139,7 @@ render() {
 
 Этот метод можно использовать и с выражениями покрупнее, но это может сделать код менее очевидным:
 
-```js{5,7,9}
+```js {5,7,9}
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (

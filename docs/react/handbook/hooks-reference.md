@@ -236,7 +236,7 @@ function Counter() {
 
 Существует два разных способа инициализации состояния `useReducer`. Вы можете выбрать любой из них в зависимости от ситуации. Самый простой способ -- передать начальное состояние в качестве второго аргумента:
 
-```js{3}
+```js {3}
 const [state, dispatch] = useReducer(reducer, { count: initialCount })
 ```
 
@@ -250,7 +250,7 @@ const [state, dispatch] = useReducer(reducer, { count: initialCount })
 
 Это позволяет извлечь логику для расчёта начального состояния за пределы редюсера. Это также удобно для сброса состояния позже в ответ на действие:
 
-```js{1-3,11-12,19,24}
+```js {1-3,11-12,19,24}
 function init(initialCount) {
   return { count: initialCount }
 }
@@ -412,7 +412,7 @@ useDebugValue(value)
 
 Например, рассмотрим пользовательский хук `useFriendStatus`, описанный в разделе [«Создание собственных хуков»](hooks-custom.md):
 
-```js{6-8}
+```js {6-8}
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null)
 

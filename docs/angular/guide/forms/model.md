@@ -96,7 +96,3 @@ onTitleChange(){
 ```
 
 Код метода `onTitleChange()` остается тем же, что и выше.
-
-## Ссылки
-
-- [Получение и изменение модели](https://metanit.com/web/angular2/5.2.php)

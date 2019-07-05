@@ -94,7 +94,3 @@ export class AppComponent {}
 ```html
 <p [bold]="'28px'" [defaultSize]="'14px'">Hello Angular 2</p>
 ```
-
-## Ссылки
-
-- [Получение параметров в директивах](https://metanit.com/web/angular2/3.4.php)

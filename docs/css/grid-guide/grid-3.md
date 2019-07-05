@@ -77,7 +77,3 @@ grid: grid-template-rows / grid-template-columns;
   grid: repeat(4, 5em) / repeat(3, 8em);
 }
 ```
-
-## Ссылки
-
-- [Функция repeat и свойство grid](https://metanit.com/web/html5/13.3.php)

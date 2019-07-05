@@ -128,7 +128,3 @@ export class AppComponent {}
 ![Скриншот](child-route-2.png)
 
 ![Скриншот](child-route-3.png)
-
-## Ссылки
-
-- [Дочерние маршруты](https://metanit.com/web/angular2/7.6.php)
