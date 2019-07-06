@@ -4,8 +4,8 @@ site_description: Справочники web-разработчика
 site_author: Бондаренко Юрий
 copyright: (С) 2012-2019, Справочники web-разработчика
 
-#repo_name: 'Репозиторий сайта'
-#repo_url: 'https://github.com/bndby/xsltdev'
+repo_name: 'Репозиторий справочника'
+repo_url: 'https://github.com/bndby/xsltdev'
 
 theme:
     name: 'material'
