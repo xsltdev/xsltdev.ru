@@ -12,39 +12,63 @@
 
 !!! abstract "Метаданные документа"
 
-    - [`<base>`](base.md) &mdash; базовый адрес
-    - [`<link>`](link.md) &mdash; внешние ресурсы и ссылки
-    - [`<meta>`](meta.md) &mdash; метатеги
-    - [`<style>`](style.md) &mdash; стили
-    - [`<title>`](title.md) &mdash; заголовок документа
+    [`<base>`](base.md) &mdash; базовый адрес
+
+    [`<link>`](link.md) &mdash; внешние ресурсы и ссылки
+
+    [`<meta>`](meta.md) &mdash; метатеги
+
+    [`<style>`](style.md) &mdash; стили
+
+    [`<title>`](title.md) &mdash; заголовок документа
 
 !!! abstract "Секционирование содержания"
 
-    - [`<address>`](address.md) &mdash; контактные данные
-    - [`<article>`](article.md) &mdash; часть документа, страницы или сайта
-    - [`<aside>`](aside.md) &mdash; косвенный контент
-    - [`<footer>`](footer.md) &mdash; футер, колонтитул
-    - [`<header>`](header.md) &mdash; шапка
-    - [`<h1>`](h1.md), [`<h2>`](h2.md), [`<h3>`](h3.md), [`<h4>`](h4.md), [`<h5>`](h5.md), [`<h6>`](h6.md) &mdash; заголовки
-    - [`<main>`](main.md) &mdash; основной контент
-    - [`<nav>`](nav.md) &mdash; навигация
-    - [`<section>`](section.md) &mdash; автономная секция
+    [`<address>`](address.md) &mdash; контактные данные
+
+    [`<article>`](article.md) &mdash; часть документа, страницы или сайта
+
+    [`<aside>`](aside.md) &mdash; косвенный контент
+
+    [`<footer>`](footer.md) &mdash; футер, колонтитул
+
+    [`<header>`](header.md) &mdash; шапка
+
+    [`<h1>`](h1.md), [`<h2>`](h2.md), [`<h3>`](h3.md), [`<h4>`](h4.md), [`<h5>`](h5.md), [`<h6>`](h6.md) &mdash; заголовки
+
+    [`<main>`](main.md) &mdash; основной контент
+
+    [`<nav>`](nav.md) &mdash; навигация
+
+    [`<section>`](section.md) &mdash; автономная секция
 
 !!! abstract "Текстовое содержание"
 
-    - [`<blockquote>`](blockquote.md) &mdash; цитата
-    - [`<dd>`](dd.md) &mdash; значение определения
-    - [`<div>`](div.md) &mdash; блочный элемент
-    - [`<dl>`](dl.md) &mdash; список определений
-    - [`<dt>`](dt.md) &mdash; определение
-    - [`<figcaption>`](figcaption.md) &mdash; заголовок иллюстрации
-    - [`<figure>`](figure.md) &mdash; иллюстрация
-    - [`<hr>`](hr.md) &mdash; разделительная линия
-    - [`<li>`](li.md) &mdash; элемент списка
-    - [`<ol>`](ol.md) &mdash; нумерованный список
-    - [`<p>`](p.md) &mdash; абзац
-    - [`<pre>`](pre.md) &mdash; форматированный текст
-    - [`<ul>`](ul.md) &mdash; маркированный список
+    [`<blockquote>`](blockquote.md) &mdash; цитата
+
+    [`<dd>`](dd.md) &mdash; значение определения
+
+    [`<div>`](div.md) &mdash; блочный элемент
+
+    [`<dl>`](dl.md) &mdash; список определений
+
+    [`<dt>`](dt.md) &mdash; определение
+
+    [`<figcaption>`](figcaption.md) &mdash; заголовок иллюстрации
+
+    [`<figure>`](figure.md) &mdash; иллюстрация
+
+    [`<hr>`](hr.md) &mdash; разделительная линия
+
+    [`<li>`](li.md) &mdash; элемент списка
+
+    [`<ol>`](ol.md) &mdash; нумерованный список
+
+    [`<p>`](p.md) &mdash; абзац
+
+    [`<pre>`](pre.md) &mdash; форматированный текст
+
+    [`<ul>`](ul.md) &mdash; маркированный список
 
 !!! abstract "Встроенные текстовые семантики"
 
