@@ -10,11 +10,11 @@ React использует несколько умных подходов для
 
 Если вы не уверены в том, что процесс сборки настроен правильно, вы можете проверить это, установив [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi). Если вы посетите сайт, работающий на React в продакшен-режиме, иконка будет с чёрным фоном:
 
-<img src="../images/docs/devtools-prod.png" style="max-width:100%" alt="React DevTools on a website with production version of React">
+![React DevTools on a website with production version of React](devtools-prod.png)
 
 Если вы посетите сайт с React в режиме разработки, у иконки будет красный фон:
 
-<img src="../images/docs/devtools-dev.png" style="max-width:100%" alt="React DevTools on a website with development version of React">
+![React DevTools on a website with development version of React](devtools-dev.png)
 
 Как правило, режим разработки используется во время работы над приложением, а продакшен-режим при деплое приложения для пользователей.
 
@@ -214,13 +214,13 @@ React создаёт и поддерживает внутреннее предс
 
 В консоли разработчика выберите параметр **Highlight Updates** на вкладке **React**:
 
-<center><img src="../images/blog/devtools-highlight-updates.png" style="max-width:100%; margin-top:10px;" alt="Как включить подсветку обновлений" /></center>
+![Как включить подсветку обновлений](devtools-highlight-updates.png)
 
 Взаимодействуя со своей страницей, вы должны увидеть, что вокруг любых компонентов, которые были повторно отрендерены появляются цветные границы. Это позволит вам выявлять лишний повторный рендеринг. Вы можете узнать больше о возможностях инструментов разработки React из [этого поста](https://blog.logrocket.com/make-react-fast-again-part-3-highlighting-component-updates-6119e45e6833) в блоге [Бена Эдельштейна (Ben Edelstein)](https://blog.logrocket.com/@edelstein).
 
 Рассмотрим такой пример:
 
-<center><img src="../images/blog/highlight-updates-example.gif" style="max-width:100%; margin-top:20px;" alt="Пример как инструменты разработчика React подсвечивают обновления" /></center>
+![Пример как инструменты разработчика React подсвечивают обновления](highlight-updates-example.gif)
 
 Обратите внимание, что когда мы вводим вторую задачу, первая также мигает на экране при каждом нажатии клавиши. Это означает, что она ререндерится вместе с полем ввода. Иногда это называют "бесполезным" рендерингом. Мы знаем, что в этом нет необходимости, так как содержимое первой задачи не изменилось, но React этого не знает.
 
