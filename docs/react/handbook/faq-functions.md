@@ -4,7 +4,7 @@
 
 Передавайте обработчики событий и другие функции через пропсы дочерним компонентам:
 
-```jsx
+```js
 <button onClick={this.handleClick}>
 ```
 
@@ -16,7 +16,7 @@
 
 ### Привязка в конструкторе (ES2015) {#bind-in-constructor-es2015}
 
-```jsx
+```js
 class Foo extends Component {
   constructor(props) {
     super(props)
@@ -33,7 +33,7 @@ class Foo extends Component {
 
 ### Привязка в свойствах класса (предложение-кандидат) {#class-properties-stage-3-proposal}
 
-```jsx
+```js
 class Foo extends Component {
   // Примечание: данный синтаксис находится на стадии разработки и ещё не стандартизирован.
   handleClick = () => {
@@ -47,7 +47,7 @@ class Foo extends Component {
 
 ### Привязка в методе render() {#bind-in-render}
 
-```jsx
+```js
 class Foo extends Component {
   handleClick() {
     console.log('По кнопке кликнули')
@@ -64,7 +64,7 @@ class Foo extends Component {
 
 ### Стрелочная функция в render() {#arrow-function-in-render}
 
-```jsx
+```js
 class Foo extends Component {
   handleClick() {
     console.log('По кнопке кликнули')
@@ -108,7 +108,7 @@ method()
 
 Убедитесь, что вы не _вызываете функцию_, когда передаёте её компоненту:
 
-```jsx
+```js
 render() {
   // Неправильно: вместо ссылки была вызвана функция handleClick!
   return <button onClick={this.handleClick()}>Нажми на меня</button>
@@ -117,7 +117,7 @@ render() {
 
 Вместо этого _передайте саму функцию_ (без скобок):
 
-```jsx
+```js
 render() {
   // Правильно: handleClick передаётся как ссылка!
   return <button onClick={this.handleClick}>Нажми на меня</button>
@@ -128,19 +128,19 @@ render() {
 
 Чтобы передать параметры обработчику событий, оберните его в стрелочную функцию:
 
-```jsx
+```js
 <button onClick={() => this.handleClick(id)} />
 ```
 
 Это действие равносильно использованию `.bind`:
 
-```jsx
+```js
 <button onClick={this.handleClick.bind(this, id)} />
 ```
 
 ### Пример: Передача параметров с использованием стрелочных функций {#example-passing-params-using-arrow-functions}
 
-```jsx
+```js
 const A = 65 // ASCII-код символа
 
 class Alphabet extends React.Component {
@@ -176,7 +176,7 @@ class Alphabet extends React.Component {
 
 В качестве альтернативного подхода вы можете использовать DOM API, чтобы хранить необходимые для обработчиков событий данные. Рассмотрите этот подход, если вам нужно оптимизировать большое количество элементов или использовать дерево визуализации, полагающееся на компонент React.PureComponent для проверки на равенство.
 
-```jsx
+```js
 const A = 65 // ASCII-код символа
 
 class Alphabet extends React.Component {
@@ -230,7 +230,7 @@ class Alphabet extends React.Component {
 
 Троттлинг предотвращает повторный вызов функции в заданный период времени. Этот метод был задействован в примере ниже, чтобы не допустить вызов обработчика "click" чаще чем раз в секунду.
 
-```jsx
+```js
 import throttle from 'lodash.throttle'
 
 class LoadMoreButton extends React.Component {
@@ -258,7 +258,7 @@ class LoadMoreButton extends React.Component {
 
 Дебаунсинг гарантирует, что функция не будет выполняться до тех пор, пока не пройдёт определённое количество времени с момента её последнего вызова. Этот метод пригодится, если вам нужно провести ресурсоёмкий расчёт в ответ на событие, которое может быстро повториться (например, прокрутка страницы или нажатие клавиш). В примере ниже для ввода текста используется задержка в 250 мс.
 
-```jsx
+```js
 import debounce from 'lodash.debounce'
 
 class Searchbox extends React.Component {
@@ -297,7 +297,7 @@ class Searchbox extends React.Component {
 >
 > Использование этой техники захватит только последнее опубликованное значение в кадре. Пример работы данной оптимизации вы можете увидеть на [`MDN`](https://developer.mozilla.org/ru/docs/Web/Events/scroll)
 
-```jsx
+```js
 import rafSchedule from 'raf-schd'
 
 class ScrollListener extends React.Component {
