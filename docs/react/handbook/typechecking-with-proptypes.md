@@ -126,7 +126,7 @@ MyComponent.propTypes = {
 }
 ```
 
-# Значения пропсов по умолчанию {#default-prop-values}
+## Значения пропсов по умолчанию {#default-prop-values}
 
 Вы можете задать значения по умолчанию для ваших `props` с помощью специального свойства `defaultProps`:
 
