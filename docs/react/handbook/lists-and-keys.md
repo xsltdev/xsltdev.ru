@@ -4,7 +4,7 @@
 
 В коде ниже мы используем функцию [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), чтобы удвоить значения в массиве `numbers`. Мы присваиваем массив, возвращаемый из `map()`, переменной `doubled`, и выводим её в консоль:
 
-```javascript{2}
+```javascript
 const numbers = [1, 2, 3, 4, 5]
 const doubled = numbers.map(number => number * 2)
 console.log(doubled)
@@ -20,14 +20,14 @@ console.log(doubled)
 
 К примеру, пройдём по массиву `numbers`, используя функцию JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), и вернём элемент `<li>` в каждой итерации. Получившийся массив элементов сохраним в `listItems`:
 
-```javascript{2-4}
+```javascript
 const numbers = [1, 2, 3, 4, 5]
 const listItems = numbers.map(number => <li>{number}</li>)
 ```
 
 Теперь мы включим массив `listItems` внутрь элемента `<ul>` и [отрендерим его в DOM](rendering-elements.md#rendering-an-element-into-the-dom):
 
-```javascript{2}
+```javascript
 ReactDOM.render(<ul>{listItems}</ul>, document.getElementById('root'))
 ```
 
@@ -41,7 +41,7 @@ ReactDOM.render(<ul>{listItems}</ul>, document.getElementById('root'))
 
 Мы можем отрефакторить предыдущий пример с использованием компонента, который принимает массив `numbers` и выводит список элементов.
 
-```javascript{3-5,7,13}
+```javascript
 function NumberList(props) {
   const numbers = props.numbers
   const listItems = numbers.map(number => <li>{number}</li>)
@@ -56,7 +56,7 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 
 Чтобы исправить проблему с неуказанными ключами, добавим каждому элементу в списке атрибут `key`.
 
-```javascript{4}
+```javascript
 function NumberList(props) {
   const numbers = props.numbers
   const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
@@ -73,20 +73,20 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 
 Ключи помогают React определять, какие элементы были изменены, добавлены или удалены. Их необходимо указывать, чтобы React мог сопоставлять элементы массива с течением времени:
 
-```js {3}
+```js
 const numbers = [1, 2, 3, 4, 5]
 const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
 ```
 
 Лучший способ выбрать ключ – это использовать строку, которая будет явно отличать элемент списка от его соседей. Чаще всего вы будете использовать ID из ваших данных как ключи:
 
-```js {2}
+```js
 const todoItems = todos.map(todo => <li key={todo.id}>{todo.text}</li>)
 ```
 
 Когда у вас нет заданных ID для списка, то в крайнем случае можно использовать индекс элемента как ключ:
 
-```js {2,3}
+```js
 const todoItems = todos.map((todo, index) => (
   // Делайте так, только если у элементов массива нет заданного ID
   <li key={index}>{todo.text}</li>
@@ -105,7 +105,7 @@ const todoItems = todos.map((todo, index) => (
 
 **Пример неправильного использования ключей**
 
-```javascript{4,5,14,15}
+```javascript
 function ListItem(props) {
   const value = props.value
   return (
@@ -129,7 +129,7 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 
 **Пример правильного использования ключей**
 
-```javascript{2,3,9,10}
+```javascript
 function ListItem(props) {
   // Правильно! Не нужно определять здесь ключ:
   return <li>{props.value}</li>
@@ -156,7 +156,7 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 
 Ключи внутри массива должны быть уникальными только среди своих соседних элементов. Им не нужно быть уникальными глобально. Можно использовать один и тот же ключ в двух разных массивах.
 
-```js {2,5,11,12,19,21}
+```js
 function Blog(props) {
   const sidebar = (
     <ul>
@@ -188,7 +188,7 @@ ReactDOM.render(<Blog posts={posts} />, document.getElementById('root'))
 
 Ключи служат подсказками для React, но они никогда не передаются в ваши компоненты. Если в компоненте нужно то же самое значение, то передайте его явно через проп с другим именем:
 
-```js {3,4}
+```js
 const content = posts.map(post => <Post key={post.id} id={post.id} title={post.title} />)
 ```
 
@@ -198,7 +198,7 @@ const content = posts.map(post => <Post key={post.id} id={post.id} title={post.t
 
 В примерах выше мы отдельно определяли переменную `listItems` и вставляли её в JSX:
 
-```js {3-6}
+```js
 function NumberList(props) {
   const numbers = props.numbers
   const listItems = numbers.map(number => <ListItem key={number.toString()} value={number} />)
@@ -208,7 +208,7 @@ function NumberList(props) {
 
 JSX позволяет [встроить любое выражение](introducing-jsx.md#embedding-expressions-in-jsx) в фигурные скобки, так что мы можем включить результат выполнения `map()`:
 
-```js {5-8}
+```js
 function NumberList(props) {
   const numbers = props.numbers
   return (
