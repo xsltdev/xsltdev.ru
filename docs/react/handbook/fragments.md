@@ -20,7 +20,7 @@ render() {
 
 Возврат списка дочерних элементов из компонента – распространённая практика. Рассмотрим пример на React:
 
-```jsx
+```js
 class Table extends React.Component {
   render() {
     return (
@@ -36,7 +36,7 @@ class Table extends React.Component {
 
 `<Columns />` должен вернуть несколько элементов `<td>`, чтобы HTML получился валидным. Если использовать div как родительский элемент внутри метода `render()` компонента `<Columns />`, то HTML окажется невалидным.
 
-```jsx
+```js
 class Columns extends React.Component {
   render() {
     return (
@@ -51,7 +51,7 @@ class Columns extends React.Component {
 
 Результатом вывода `<Table />` будет:
 
-```jsx
+```js
 <table>
   <tr>
     <div>
@@ -66,7 +66,7 @@ class Columns extends React.Component {
 
 ## Использование {#usage}
 
-```jsx{4,7}
+```js
 class Columns extends React.Component {
   render() {
     return (
@@ -81,7 +81,7 @@ class Columns extends React.Component {
 
 Результатом будет правильный вывод `<Table />`:
 
-```jsx
+```js
 <table>
   <tr>
     <td>Привет</td>
@@ -94,7 +94,7 @@ class Columns extends React.Component {
 
 Существует сокращённая запись объявления фрагментов. Она выглядит как пустые теги:
 
-```jsx{4,7}
+```js
 class Columns extends React.Component {
   render() {
     return (
@@ -115,7 +115,7 @@ class Columns extends React.Component {
 
 Фрагменты, объявленные с помощью `<React.Fragment>`, могут иметь ключи. Например, их можно использовать при создании списка определений, преобразовав коллекцию в массив фрагментов.
 
-```jsx
+```js
 function Glossary(props) {
   return (
     <dl>
