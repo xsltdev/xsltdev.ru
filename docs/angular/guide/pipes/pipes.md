@@ -8,8 +8,8 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>Без форматирования: &#123;{ myDate }}</div>
-    <div>С форматированием: &#123;{ myDate | date }}</div>
+    <div>Без форматирования: {{ myDate }}</div>
+    <div>С форматированием: {{ myDate | date }}</div>
   `
 })
 export class AppComponent {
@@ -41,10 +41,10 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ welcome | uppercase }}</div>
-    <div>&#123;{ welcome | lowercase }}</div>
-    <div>&#123;{ persentage | percent }}</div>
-    <div>&#123;{ persentage | currency }}</div>
+    <div>{{ welcome | uppercase }}</div>
+    <div>{{ welcome | lowercase }}</div>
+    <div>{{ persentage | percent }}</div>
+    <div>{{ persentage | currency }}</div>
   `
 })
 export class AppComponent {
@@ -65,8 +65,8 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ welcome | slice: 3 }}</div>
-    <div>&#123;{ welcome | slice: 6:11 }}</div>
+    <div>{{ welcome | slice: 3 }}</div>
+    <div>{{ welcome | slice: 6:11 }}</div>
   `
 })
 export class AppComponent {
@@ -88,7 +88,7 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ myDate | date: 'dd/MM/yyyy' }}</div>
+    <div>{{ myDate | date: 'dd/MM/yyyy' }}</div>
   `
 })
 export class AppComponent {
@@ -101,7 +101,7 @@ export class AppComponent {
 `DecimalPipe` в качестве параметра принимает формат числа в виде шаблона:
 
 ```
-&#123;{ value | number [ : digitsInfo [ : locale ] ] }}
+{{ value | number [ : digitsInfo [ : locale ] ] }}
 ```
 
 - `value`: само выводимое значение
@@ -117,8 +117,8 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ pi | number: '2.1-2' }}</div>
-    <div>&#123;{ pi | number: '3.5-5' }}</div>
+    <div>{{ pi | number: '2.1-2' }}</div>
+    <div>{{ pi | number: '3.5-5' }}</div>
   `
 })
 export class AppComponent {
@@ -133,7 +133,7 @@ export class AppComponent {
 `CurrencyPipe` может принимать ряд параметров:
 
 ```
-&#123;{ value | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }}
+{{ value | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }}
 ```
 
 - `value`: выводимая сумма
@@ -152,11 +152,11 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ money | currency: 'RUB':'code' }}</div>
-    <div>&#123;{ money | currency: 'RUB':'symbol-narrow' }}</div>
-    <div>&#123;{ money | currency: 'RUB':'symbol':'1.1-1' }}</div>
-    <div>&#123;{ money | currency: 'RUB':'symbol-narrow':'1.1-1':'ru-RU' }}</div>
-    <div>&#123;{ money | currency: 'RUB':'тока седня по цене ' }}</div>
+    <div>{{ money | currency: 'RUB':'code' }}</div>
+    <div>{{ money | currency: 'RUB':'symbol-narrow' }}</div>
+    <div>{{ money | currency: 'RUB':'symbol':'1.1-1' }}</div>
+    <div>{{ money | currency: 'RUB':'symbol-narrow':'1.1-1':'ru-RU' }}</div>
+    <div>{{ money | currency: 'RUB':'тока седня по цене ' }}</div>
   `
 })
 export class AppComponent {
@@ -176,7 +176,7 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ message | slice: 6:11 | uppercase }}</div>
+    <div>{{ message | slice: 6:11 | uppercase }}</div>
   `
 })
 export class AppComponent {
