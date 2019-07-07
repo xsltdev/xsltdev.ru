@@ -22,7 +22,7 @@
 
 Допустим, мы хотим, чтобы предыдущий пример выводил в консоль имя, когда мы отправляем форму. Тогда можно написать форму в виде управляемого компонента:
 
-```javascript{4,10-12,24}
+```javascript
 class NameForm extends React.Component {
   constructor(props) {
     super(props)
@@ -59,7 +59,7 @@ class NameForm extends React.Component {
 
 В управляемом компоненте с каждой мутацией состояния связана функция-обработчик. Благодаря этому валидация или изменение введённого значения становится простой задачей. Например, если мы хотим, чтобы имя обязательно было набрано заглавными буквами, можно написать такой `handleChange`:
 
-```javascript{2}
+```javascript
 handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
@@ -77,7 +77,7 @@ HTML-элемент `<textarea>` в качестве текста отображ
 
 В React `<textarea>` использует атрибут `value`. Таким образом, форму с `<textarea>` можно написать почти тем же способом, что и форму с однострочным `<input>`:
 
-```javascript{4-6,12-14,26}
+```javascript
 class EssayForm extends React.Component {
   constructor(props) {
     super(props)
@@ -129,7 +129,7 @@ class EssayForm extends React.Component {
 
 Пункт списка «Кокос» выбран по умолчанию из-за установленного атрибута `selected`. React вместо этого атрибута использует `value` в корневом теге `select`. В управляемом компоненте так удобнее, потому что обновлять значение нужно только в одном месте (`state`). Пример:
 
-```javascript{4,10-12,24}
+```javascript
 class FlavorForm extends React.Component {
   constructor(props) {
     super(props)
@@ -193,7 +193,7 @@ class FlavorForm extends React.Component {
 
 Пример:
 
-```javascript{15,18,28,37}
+```javascript
 class Reservation extends React.Component {
   constructor(props) {
     super(props)
@@ -235,7 +235,7 @@ class Reservation extends React.Component {
 
 Обратите внимание, что мы используем [вычисляемые имена свойств](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer#%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2), чтобы обновить значение в `state` через ключ, который соответствует атрибуту name элемента input:
 
-```js {2}
+```js
 this.setState({
   [name]: value
 })
@@ -243,7 +243,7 @@ this.setState({
 
 Идентичный ES5-код:
 
-```js {2}
+```js
 var partialState = {}
 partialState[name] = value
 this.setState(partialState)
