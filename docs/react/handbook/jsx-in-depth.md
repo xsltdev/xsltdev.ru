@@ -38,7 +38,7 @@ React.createElement('div', { className: 'sidebar' }, null)
 
 К примеру, в данном коде оба импорта являются необходимыми, даже если на `React` и `CustomButton` нет прямых ссылок из JavaScript:
 
-```js {1,2,5}
+```js
 import React from 'react'
 import CustomButton from './CustomButton'
 
@@ -54,7 +54,7 @@ function WarningButton() {
 
 Вы также можете ссылаться на React-компонент, используя запись через точку. Это удобно, если у вас есть модуль, который экспортирует много React-компонентов. К примеру, если `MyComponents.DatePicker` является компонентом, то вы можете обратиться к нему напрямую, используя запись через точку:
 
-```js {10}
+```js
 import React from 'react'
 
 const MyComponents = {
@@ -76,7 +76,7 @@ function BlueDatePicker() {
 
 К примеру, этот код будет работать не так, как ожидается:
 
-```js {3,4,10,11}
+```js
 import React from 'react'
 
 // Неправильно! Это компонент и он должен быть записан с заглавной буквы:
@@ -94,7 +94,7 @@ function HelloWorld() {
 
 Для того, чтобы исправить это, мы переименуем `hello` в `Hello` и станем использовать `<Hello />`, когда будем ссылаться на него:
 
-```js {3,4,10,11}
+```js
 import React from 'react'
 
 // Правильно! Это компонент и он должен быть записан с заглавной буквы:
@@ -114,7 +114,7 @@ function HelloWorld() {
 
 В качестве типа React-элемента нельзя использовать выражение. Если вы хотите использовать выражение, чтобы указать тип элемента, присвойте его в переменную, начинающуюся с заглавной буквы. Это подходит для рендера компонентов в зависимости от ваших пропсов:
 
-```js {10,11}
+```js
 import React from 'react';
 import { PhotoStory, VideoStory } from './stories';
 
@@ -131,7 +131,7 @@ function Story(props) {
 
 Чтобы исправить это, мы присвоим тип в переменную, начинающуюся с заглавной буквы:
 
-```js {10-12}
+```js
 import React from 'react'
 import { PhotoStory, VideoStory } from './stories'
 
@@ -163,7 +163,7 @@ function Story(props) {
 
 Оператор `if` и цикл `for` не являются выражениями в JavaScript, поэтому их нельзя непосредственно использовать в JSX. Вместо этого, вы можете окружить ими JSX-код. К примеру:
 
-```js {3-7}
+```js
 function NumberDescriber(props) {
   let description
   if (props.number % 2 == 0) {
@@ -217,7 +217,7 @@ function NumberDescriber(props) {
 
 Если у вас уже есть пропсы внутри объекта `props` и вы хотите передать их в JSX, вы можете использовать оператор расширения `...`. Эти два компонента эквивалентны:
 
-```js {7}
+```js
 function App1() {
   return <Greeting firstName="Иван" lastName="Иванов" />
 }
@@ -230,7 +230,7 @@ function App2() {
 
 Вы так же можете выбрать конкретные пропсы, которые ваш компонент будет использовать, передавая все остальные пропсы с помощью оператора расширения.
 
-```js {2}
+```js
 const Button = props => {
   const { kind, ...other } = props
   const className = kind === 'primary' ? 'PrimaryButton' : 'SecondaryButton'
@@ -340,7 +340,7 @@ render() {
 
 Часто это бывает полезно при рендере списка JSX-выражений произвольной длины. Например, эта запись рендерит HTML-список:
 
-```js {2,9}
+```js
 function Item(props) {
   return <li>{props.message}</li>
 }
@@ -359,7 +359,7 @@ function TodoList() {
 
 JavaScript-выражения могут быть использованы вместе с другими типами дочерних компонентов. Они могут рассматриваться как альтернатива шаблонным строкам:
 
-```js {2}
+```js
 function Hello(props) {
   return <div>Привет, {props.addressee}!</div>
 }
@@ -369,7 +369,7 @@ function Hello(props) {
 
 Обычно JavaScript-выражения, вставленные в JSX, будут приведены к строке, React-элементу или списку из всего этого. Тем не менее, `props.children` работает так же, как и любой другой проп, поэтому в него можно передавать любые типы данных, а не только те, которые React знает как рендерить. К примеру, если у вас есть пользовательский компонент, можно было бы передать колбэк в `props.children`:
 
-```js {4,13}
+```js
 // Вызывает колбэк numTimes раз для создания повторяющего компонента
 function Repeat(props) {
   let items = []
@@ -406,7 +406,7 @@ function ListOfTenThings() {
 
 Этот подход может быть полезным для рендера по условию. Вот пример, где JSX рендерит `<Header />`, если `showHeader` равняется `true`:
 
-```js {2}
+```js
 <div>
   {showHeader && <Header />}
   <Content />
@@ -415,18 +415,18 @@ function ListOfTenThings() {
 
 Есть один нюанс в том, что React будет рендерить [«ложные» (falsy) значения](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), такие как число `0`. Код ниже ведёт себя не так, как вы могли ожидать, так как `0` будет отображён, если массив `props.messages` пуст:
 
-```js {2}
+```js
 <div>{props.messages.length && <MessageList messages={props.messages} />}</div>
 ```
 
 Чтобы исправить это, убедитесь что выражение перед оператором `&&` всегда является boolean:
 
-```js {2}
+```js
 <div>{props.messages.length > 0 && <MessageList messages={props.messages} />}</div>
 ```
 
 И наоборот, если вы хотите, чтобы такие значения как `false`, `true`, `null` или `undefined` отрисовались, то сначала вы должны [преобразовать их в строку](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#Example:_String_conversion):
 
-```js {2}
+```js
 <div>Моя переменная JavaScript - {String(myVariable)}.</div>
 ```
