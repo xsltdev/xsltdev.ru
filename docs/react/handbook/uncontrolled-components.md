@@ -6,7 +6,7 @@
 
 Вот так, к примеру, обработчик неуправляемого компонента может получить имя от элемента `input`:
 
-```javascript{5,9,18}
+```javascript
 class NameForm extends React.Component {
   constructor(props) {
     super(props)
@@ -43,7 +43,7 @@ class NameForm extends React.Component {
 
 На этапе рендеринга атрибут `value` полей ввода переопределяет значение в DOM. С неуправляемым компонентом зачастую нужно, чтобы React определил первоначальное значение, но впоследствии ничего не делал с ним. В этом случае необходимо определить атрибут `defaultValue` вместо `value`.
 
-```javascript{7}
+```javascript
 render() {
   return (
     <form onSubmit={this.handleSubmit}>
