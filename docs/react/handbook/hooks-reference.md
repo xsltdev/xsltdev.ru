@@ -21,7 +21,7 @@ _Хуки_ — нововведение в React 16.8, которое позво
 
 ## Основные хуки {#basic-hooks}
 
-### `useState` {#usestate}
+### useState {#usestate}
 
 ```js
 const [state, setState] = useState(initialState)
@@ -93,7 +93,7 @@ const [state, setState] = useState(() => {
 
 Обратите внимание, что для React всё ещё может быть необходим повторный рендер этого компонента. Это не должно быть проблемой, потому что React не будет сильно «углубляться» в дерево. Если вы делаете дорогостоящие вычисления во время рендеринга, вы можете оптимизировать их с помощью `useMemo`.
 
-### `useEffect` {#useeffect}
+### useEffect {#useeffect}
 
 ```js
 useEffect(didUpdate)
@@ -162,7 +162,7 @@ useEffect(() => {
 
 Массив зависимостей не передаётся в качестве аргументов функции эффекта. Концептуально, однако, это то, что они представляют: каждое значение, на которое ссылается функция эффекта, должно также появиться в массиве зависимостей. В будущем достаточно продвинутый компилятор сможет создать этот массив автоматически.
 
-### `useContext` {#usecontext}
+### useContext {#usecontext}
 
 ```js
 const value = useContext(MyContext)
@@ -190,7 +190,7 @@ const value = useContext(MyContext)
 
 Следующие хуки являются вариантами базовых из предыдущего раздела или необходимы только для конкретных крайних случаев. Их не требуется основательно изучать заранее.
 
-### `useReducer` {#usereducer}
+### useReducer {#usereducer}
 
 ```js
 const [state, dispatch] = useReducer(reducer, initialArg, init)
@@ -236,7 +236,7 @@ function Counter() {
 
 Существует два разных способа инициализации состояния `useReducer`. Вы можете выбрать любой из них в зависимости от ситуации. Самый простой способ -- передать начальное состояние в качестве второго аргумента:
 
-```js {3}
+```js
 const [state, dispatch] = useReducer(reducer, { count: initialCount })
 ```
 
@@ -250,7 +250,7 @@ const [state, dispatch] = useReducer(reducer, { count: initialCount })
 
 Это позволяет извлечь логику для расчёта начального состояния за пределы редюсера. Это также удобно для сброса состояния позже в ответ на действие:
 
-```js {1-3,11-12,19,24}
+```js
 function init(initialCount) {
   return { count: initialCount }
 }
@@ -281,13 +281,13 @@ function Counter({ initialCount }) {
 }
 ```
 
-#### Досрочное прекращение `dispatch` {#bailing-out-of-a-dispatch}
+#### Досрочное прекращение dispatch {#bailing-out-of-a-dispatch}
 
 Если вы вернёте то же значение из редюсера хука, что и текущее состояние, React выйдет без перерисовки дочерних элементов или запуска эффектов. (React использует [алгоритм сравнения Object.is](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
 
 Обратите внимание, что для React всё ещё может быть необходим повторный рендер этого компонента. Это не должно быть проблемой, потому что React не будет сильно «углубляться» в дерево. Если вы делаете дорогостоящие вычисления во время рендеринга, вы можете оптимизировать их с помощью `useMemo`.
 
-### `useCallback` {#usecallback}
+### useCallback {#usecallback}
 
 ```js
 const memoizedCallback = useCallback(() => {
@@ -307,7 +307,7 @@ const memoizedCallback = useCallback(() => {
 >
 > Мы рекомендуем использовать правило [`exhaustive-deps`](https://github.com/facebook/react/issues/14920), входящее в наш пакет правил линтера [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation). Оно предупреждает, когда зависимости указаны неправильно и предлагает исправление.
 
-### `useMemo` {#usememo}
+### useMemo {#usememo}
 
 ```js
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
@@ -388,7 +388,7 @@ FancyInput = forwardRef(FancyInput);
 
 В этом примере родительский компонент, который отображает `<FancyInput ref={fancyInputRef} />`, сможет вызывать `fancyInputRef.current.focus()`.
 
-### `useLayoutEffect` {#uselayouteffect}
+### useLayoutEffect {#uselayouteffect}
 
 Сигнатура идентична `useEffect`, но этот хук запускается синхронно после всех изменений DOM. Используйте его для чтения макета из DOM и синхронного повторного рендеринга. Обновления, запланированные внутри `useLayoutEffect`, будут полностью применены синхронно перед тем, как браузер получит шанс осуществить отрисовку.
 
@@ -402,7 +402,7 @@ FancyInput = forwardRef(FancyInput);
 >
 > Чтобы исключить компонент, который нуждается в эффектах макета из HTML-кода, полученного в результате серверного рендеринга, выполните его рендер по условию `showChild && <Child />` и отложите отображение с помощью `useEffect(() => { setShowChild(true); }, [])``. Таким образом, пользовательский интерфейс не будет выглядеть некорректно перед гидратацией.
 
-### `useDebugValue` {#usedebugvalue}
+### useDebugValue {#usedebugvalue}
 
 ```js
 useDebugValue(value)
@@ -412,7 +412,7 @@ useDebugValue(value)
 
 Например, рассмотрим пользовательский хук `useFriendStatus`, описанный в разделе [«Создание собственных хуков»](hooks-custom.md):
 
-```js {6-8}
+```js
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null)
 
