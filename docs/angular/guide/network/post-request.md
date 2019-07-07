@@ -39,7 +39,7 @@ else
 
 Если применяется ASP.NET WEB API, можно определить следующий контроллер:
 
-```asp
+```c#
 using System.Web.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
