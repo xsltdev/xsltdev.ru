@@ -10,7 +10,7 @@ React имеет мощную модель композиции, поэтому 
 
 Для таких компонентов мы рекомендуем использовать специальный проп `children`, который передаст дочерние элементы сразу на вывод:
 
-```js {4}
+```js
 function FancyBorder(props) {
   return <div className={'FancyBorder FancyBorder-' + props.color}>{props.children}</div>
 }
@@ -18,7 +18,7 @@ function FancyBorder(props) {
 
 Это позволит передать компоненту произвольные дочерние элементы, вложив их в JSX:
 
-```js {4-9}
+```js
 function WelcomeDialog() {
   return (
     <FancyBorder color="blue">
@@ -33,7 +33,7 @@ function WelcomeDialog() {
 
 Иногда в компоненте необходимо иметь несколько мест для вставки. В таком случае можно придумать свой формат, а не использовать `children`:
 
-```js {5,8,18,21}
+```js
 function SplitPane(props) {
   return (
     <div className="SplitPane">
@@ -56,7 +56,7 @@ function App() {
 
 В React это можно сделать через композицию, где «частный» вариант компонента рендерит более «общий» и настраивает его с помощью пропсов:
 
-```js {5,8,16-18}
+```js
 function Dialog(props) {
   return (
     <FancyBorder color="blue">
@@ -73,7 +73,7 @@ function WelcomeDialog() {
 
 Композиция хорошо работает и для компонентов, определённых через классы:
 
-```js {10,27-31}
+```js
 function Dialog(props) {
   return (
     <FancyBorder color="blue">

@@ -48,11 +48,10 @@ const element = <Welcome name="Алиса" />
 
 Например, этот компонент выведет «Привет, Алиса» на страницу:
 
-```js {1,5}
+```js
 function Welcome(props) {
   return <h1>Привет, {props.name}</h1>
 }
-
 const element = <Welcome name="Алиса" />
 ReactDOM.render(element, document.getElementById('root'))
 ```
@@ -76,11 +75,10 @@ ReactDOM.render(element, document.getElementById('root'))
 
 Например, компонент `App` может отрендерить компонент `Welcome` несколько раз:
 
-```js {8-10}
+```js
 function Welcome(props) {
   return <h1>Привет, {props.name}</h1>
 }
-
 function App() {
   return (
     <div>
@@ -90,7 +88,6 @@ function App() {
     </div>
   )
 }
-
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
@@ -123,7 +120,7 @@ function Comment(props) {
 
 Для начала извлечём `Avatar`:
 
-```js {3-6}
+```js
 function Avatar(props) {
   return <img className="Avatar" src={props.user.avatarUrl} alt={props.user.name} />
 }
@@ -135,7 +132,7 @@ function Avatar(props) {
 
 Теперь можно немножко упростить наш `Comment`:
 
-```js {5}
+```js
 function Comment(props) {
   return (
     <div className="Comment">
@@ -152,7 +149,7 @@ function Comment(props) {
 
 Следующим шагом извлечём компонент `UserInfo`, который рендерит `Avatar` рядом с именем пользователя:
 
-```js {3-8}
+```js
 function UserInfo(props) {
   return (
     <div className="UserInfo">
@@ -165,7 +162,7 @@ function UserInfo(props) {
 
 Это позволит ещё сильнее упростить `Comment`:
 
-```js {4}
+```js
 function Comment(props) {
   return (
     <div className="Comment">

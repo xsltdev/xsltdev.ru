@@ -102,9 +102,9 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>&#123;{ phones | join }}</div>
-    <div>&#123;{ phones | join: 1 }}</div>
-    <div>&#123;{ phones | join: 1:3 }}</div>
+    <div>{{ phones | join }}</div>
+    <div>{{ phones | join: 1 }}</div>
+    <div>{{ phones | join: 1:3 }}</div>
   `
 })
 export class AppComponent {

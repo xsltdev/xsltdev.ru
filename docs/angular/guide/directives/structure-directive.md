@@ -101,7 +101,7 @@ export class AppComponent {
 
 ```html
 <div>
-  <p *ngFor="let item of items; let i = index">&#123;{i+1}}.{{item}}</p>
+  <p *ngFor="let item of items; let i = index">{{i+1}}.{{item}}</p>
 </div>
 ```
 
@@ -168,9 +168,9 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <div [ngSwitch]="count">
-      <ng-template *ngSwitchCase="1">&#123;{ count * 10 }}</ng-template>
-      <ng-template *ngSwitchCase="2">&#123;{ count * 100 }}</ng-template>
-      <ng-template ngSwitchDefault>&#123;{ count * 1000 }}</ng-template>
+      <ng-template *ngSwitchCase="1">{{ count * 10 }}</ng-template>
+      <ng-template *ngSwitchCase="2">{{ count * 100 }}</ng-template>
+      <ng-template ngSwitchDefault>{{ count * 1000 }}</ng-template>
     </div>
   `
 })

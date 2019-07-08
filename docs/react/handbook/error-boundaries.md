@@ -123,7 +123,7 @@ React не нуждается в предохранителях, чтобы ко
 
 Чтобы отловить ошибку в обработчике событий, пользуйтесь обычной JavaScript-конструкцией `try` / `catch`:
 
-```js {9-13,17-20}
+```js
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)

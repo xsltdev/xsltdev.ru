@@ -58,7 +58,7 @@
 
 Также можно добавить компоненту DOM-узел как обёртку и прикрепить реф непосредственно к этой обёртке.
 
-```javascript{4,7}
+```javascript
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)

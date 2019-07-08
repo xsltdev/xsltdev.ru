@@ -15,7 +15,7 @@
 
 В React немного иначе:
 
-```js {1}
+```js
 <button onClick={activateLasers}>Активировать лазеры</button>
 ```
 
@@ -29,7 +29,7 @@
 
 В React это будет выглядеть так:
 
-```js {2-5,8}
+```js
 function ActionLink() {
   function handleClick(e) {
     e.preventDefault()
@@ -50,7 +50,7 @@ function ActionLink() {
 
 В компоненте, определённом с помощью [ES6-класса](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes), в качестве обработчика события обычно выступает один из методов класса. Например, этот компонент `Toggle` рендерит кнопку, которая позволяет пользователю переключать состояния между «Включено» и «Выключено»:
 
-```js {6,7,10-14,18}
+```js
 class Toggle extends React.Component {
   constructor(props) {
     super(props)
@@ -82,7 +82,7 @@ ReactDOM.render(<Toggle />, document.getElementById('root'))
 
 Если вам не по душе `bind`, существует два других способа. Если вы пользуетесь экспериментальным [синтаксисом общедоступных полей классов](https://babeljs.io/docs/plugins/transform-class-properties/), вы можете использовать его, чтобы правильно привязать колбэки:
 
-```js {2-6}
+```js
 class LoggingButton extends React.Component {
   // Такой синтаксис гарантирует, что `this` привязан к handleClick.
   // Предупреждение: это экспериментальный синтаксис
@@ -100,7 +100,7 @@ class LoggingButton extends React.Component {
 
 Если вы не пользуетесь синтаксисом полей, можете попробовать [стрелочные функции](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions) в колбэке:
 
-```js {7-9}
+```js
 class LoggingButton extends React.Component {
   handleClick() {
     console.log('значение this:', this)

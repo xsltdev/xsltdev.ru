@@ -100,7 +100,7 @@ function Page(props) {
 
 ## API {#api}
 
-### `React.createContext` {#reactcreatecontext}
+### React.createContext {#reactcreatecontext}
 
 ```js
 const MyContext = React.createContext(defaultValue)
@@ -110,7 +110,7 @@ const MyContext = React.createContext(defaultValue)
 
 Аргумент `defaultValue` используется **только** в том случае, если для компонента нет подходящего `Provider` выше в дереве. Это может быть полезно для тестирования компонентов в изоляции без необходимости оборачивать их. Обратите внимание: если передать `undefined` как значение `Provider`, компоненты, использующие этот контекст, не будут использовать `defaultValue`.
 
-### `Context.Provider` {#contextprovider}
+### Context.Provider {#contextprovider}
 
 ```js
 <MyContext.Provider value={/* некоторое значение */}>
@@ -128,7 +128,7 @@ const MyContext = React.createContext(defaultValue)
 >
 > Способ, по которому определяются изменения, может вызвать проблемы при передаче объекта в `value`: смотрите [Предостережения](#caveats).
 
-### `Class.contextType` {#classcontexttype}
+### Class.contextType {#classcontexttype}
 
 ```js
 class MyClass extends React.Component {
@@ -170,7 +170,7 @@ class MyClass extends React.Component {
 }
 ```
 
-### `Context.Consumer` {#contextconsumer}
+### Context.Consumer {#contextconsumer}
 
 ```js
 <MyContext.Consumer>

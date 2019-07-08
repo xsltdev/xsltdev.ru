@@ -51,16 +51,15 @@
 
 Это не является обязательным и не требуется этим вводным руководством!
 
-<br>
-
-<details>
+<details markdown="1">
 
 <summary><b>Опционально: Инструкции для написания кода в вашем любимом редакторе</b></summary>
 
 Эти настройки потребуют больше работы, но позволят продолжить разработку с использованием вашего любимого редактора. Вот что нужно сделать:
 
-1. Убедиться, что у вас установлена последняя версия [Node.js](https://nodejs.org/en/).
-2. Выполнить [инструкции по установке Create React App](create-a-new-react-app.md#create-react-app) для создания нового проекта.
+1.&nbsp;Убедиться, что у вас установлена последняя версия [Node.js](https://nodejs.org/en/).
+
+2.&nbsp;Выполнить [инструкции по установке Create React App](create-a-new-react-app.md#create-react-app) для создания нового проекта.
 
 ```bash
 npx create-react-app my-app
@@ -173,7 +172,7 @@ JSX обладает всей мощью JavaScript. В JSX вы можете и
 
 Настоятельно рекомендуем набирать код самостоятельно, а не копировать его и вставлять. Это упрощает понимание и развивает мышечную память.
 
-```js {3}
+```js
 class Board extends React.Component {
   renderSquare(i) {
     return <Square value={i} />;
@@ -182,7 +181,7 @@ class Board extends React.Component {
 
 Изменим метод `render` внутри Square, заменив `{/* TODO */}` на `{this.props.value}`:
 
-```js {5}
+```js
 class Square extends React.Component {
   render() {
     return <button className="square">{this.props.value}</button>
@@ -208,7 +207,7 @@ class Square extends React.Component {
 Попробуем при клике на компонент Square ставить «X».
 Вначале изменим тег кнопки, который возвращается из метода `render()` компонента Square:
 
-```javascript{4}
+```javascript
 class Square extends React.Component {
   render() {
     return (
@@ -252,7 +251,7 @@ class Square extends React.Component {
 
 Сперва добавим конструктор к классу, чтобы инициализировать состояние:
 
-```javascript{2-7}
+```javascript
 class Square extends React.Component {
   constructor(props) {
     super(props)
@@ -283,7 +282,7 @@ class Square extends React.Component {
 
 После этих изменений тег `<button>`, возвращаемый из метода `render` компонента Square, будет выглядеть так:
 
-```javascript{12-13,15}
+```javascript
 class Square extends React.Component {
   constructor(props) {
     super(props)
@@ -341,7 +340,7 @@ class Square extends React.Component {
 
 Добавим конструктор к компоненту Board и установим начальное состояние в виде массива из 9 элементов, заполненного значениями null. Эти 9 элементов соответствуют 9 квадратам:
 
-```javascript{2-7}
+```javascript
 class Board extends React.Component {
   constructor(props) {
     super(props);
@@ -373,7 +372,7 @@ class Board extends React.Component {
 
 Мы снова воспользуемся механизмом передачи пропсов. Изменим Board, чтобы передать каждому Square его текущее значение (`'X'`, `'O'` или `null`). Мы уже определили массив `squares` в конструкторе Board. Давайте изменим метод `renderSquare`, чтобы читать данные из этого массива:
 
-```javascript{2}
+```javascript
   renderSquare(i) {
     return <Square value={this.state.squares[i]} />;
   }
@@ -387,7 +386,7 @@ class Board extends React.Component {
 
 Вместо этого, давайте передадим из Board в Square функцию, и будем её вызывать из Square, когда по тому кликнули. Изменим метод `renderSquare` в Board-компоненте на:
 
-```javascript{5}
+```javascript
   renderSquare(i) {
     return (
       <Square
@@ -410,7 +409,7 @@ class Board extends React.Component {
 
 После этих изменений компонент Square выглядит так:
 
-```javascript{1,2,6,8}
+```javascript
 class Square extends React.Component {
   render() {
     return (
@@ -436,7 +435,7 @@ class Square extends React.Component {
 
 При клике на Square мы должны получить ошибку, потому что метод `handleClick` ещё не определён. Давайте добавим его в класс Board:
 
-```javascript{9-13}
+```javascript
 class Board extends React.Component {
   constructor(props) {
     super(props)
@@ -566,7 +565,7 @@ function Square(props) {
 
 По-умолчанию установим первый ход за «X». Мы можем сделать это, изменяя начальное состояние внутри конструктора Board:
 
-```javascript{6}
+```javascript
 class Board extends React.Component {
   constructor(props) {
     super(props);
@@ -579,7 +578,7 @@ class Board extends React.Component {
 
 Каждый раз, когда игрок делает ход, `xIsNext` (булево значение) будет инвертироваться, чтобы обозначить, какой игрок ходит следующим, а состояние игры будет сохраняться. Мы обновим метод `handleClick` класса Board, для инверсии значения `xIsNext`:
 
-```javascript{3,6}
+```javascript
   handleClick(i) {
     const squares = this.state.squares.slice();
     squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -594,7 +593,7 @@ class Board extends React.Component {
 
 Давайте также изменим текст «status» в методе `render` класса Board так, чтобы он отображал какой игрок ходит следующим:
 
-```javascript{2}
+```javascript
   render() {
     const status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O');
 
@@ -604,7 +603,7 @@ class Board extends React.Component {
 
 После этих изменений наш Board-компонент должен выглядеть так:
 
-```javascript{6,11-16,29}
+```javascript
 class Board extends React.Component {
   constructor(props) {
     super(props)
@@ -677,7 +676,7 @@ function calculateWinner(squares) {
 
 Будем вызывать `calculateWinner(squares)` внутри метода `render` класса Board, чтобы проверять, выиграл ли игрок. Если у нас есть победитель, мы покажем сообщение «Выиграл X» или «Выиграл O». Заменим объявление `status` в `render` следующим кодом:
 
-```javascript{2-8}
+```javascript
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
@@ -693,7 +692,7 @@ function calculateWinner(squares) {
 
 Теперь мы можем изменить метод `handleClick` класса Board для выхода из функции и игнорировании клика, если кто-то уже победил или если поле полностью заполнено:
 
-```javascript{3-5}
+```javascript
   handleClick(i) {
     const squares = this.state.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
@@ -751,7 +750,7 @@ history = [
 
 Для начала зададим начальное состояние компонента Game внутри конструктора:
 
-```javascript{2-10}
+```javascript
 class Game extends React.Component {
   constructor(props) {
     super(props)
@@ -789,7 +788,7 @@ class Game extends React.Component {
 
 Теперь компонент Board должен выглядеть вот так:
 
-```javascript{17,18}
+```javascript
 class Board extends React.Component {
   handleClick(i) {
     const squares = this.state.squares.slice()
@@ -842,7 +841,7 @@ class Board extends React.Component {
 
 Давайте обновим метод `render` компонента Game, чтобы использовать последнюю запись из истории для определения и отображения статуса игры:
 
-```javascript{2-11,16-19,22}
+```javascript
   render() {
     const history = this.state.history;
     const current = history[history.length - 1];
@@ -874,7 +873,7 @@ class Board extends React.Component {
 
 Поскольку компонент Game теперь рендерит статус игры, мы можем убрать соответствующий код из метода `render` внутри Board. После изменений метод `render` компонента Board выглядит так:
 
-```js {1-4}
+```js
   render() {
     return (
       <div>
@@ -900,7 +899,7 @@ class Board extends React.Component {
 
 Наконец, нужно перенести метод `handleClick` из компонента Board в компонент Game. Мы также должны изменить `handleClick`, потому что состояние компонента Game имеет другую структуру. В методе `handleClick` компонента Game мы добавим новые записи истории в `history`.
 
-```javascript{2-4,10-12}
+```javascript
   handleClick(i) {
     const history = this.state.history;
     const current = history[history.length - 1];
@@ -943,7 +942,7 @@ const doubled = numbers.map(x => x * 2) // [2, 4, 6]
 
 Давайте применим `map` к `history` внутри метода `render` Game-компонента:
 
-```javascript{6-15,34}
+```javascript
   render() {
     const history = this.state.history;
     const current = history[history.length - 1];
@@ -1039,7 +1038,7 @@ const doubled = numbers.map(x => x * 2) // [2, 4, 6]
 
 В методе `render` компонента Game мы можем добавить ключ следующим образом `<li key={move}>` и предупреждения от React об отсутствующих ключах должны пропасть:
 
-```js {6}
+```js
 const moves = history.map((step, move) => {
   const desc = move ? 'Перейти к ходу #' + move : 'К началу игры'
   return (
@@ -1056,7 +1055,7 @@ const moves = history.map((step, move) => {
 
 Сначала добавим `stepNumber: 0` в начальное состояние Game внутри `constructor`:
 
-```js {8}
+```js
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -1072,7 +1071,7 @@ class Game extends React.Component {
 
 Далее, мы определим метод `jumpTo` в компоненте Game для обновления `stepNumber`. Мы также установим `xIsNext` в `true`, если номер хода, на который мы меняем `stepNumber`, чётный:
 
-```javascript{5-10}
+```javascript
   handleClick(i) {
     // Этот метод не изменялся
   }
@@ -1095,7 +1094,7 @@ class Game extends React.Component {
 
 Мы также заменим чтение `this.state.history` на `this.state.history.slice(0, this.state.stepNumber + 1)`. Это гарантирует, что если мы «вернёмся назад», а затем сделаем новый шаг из этой точки, мы удалим всю «будущую» историю, которая перестала быть актуальной.
 
-```javascript{2,13}
+```javascript
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
@@ -1116,7 +1115,7 @@ class Game extends React.Component {
 
 Наконец, мы изменим метод `render` для Game, чтобы вместо рендера последнего хода он рендерил ход, соответствующий `stepNumber`:
 
-```javascript{3}
+```javascript
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];

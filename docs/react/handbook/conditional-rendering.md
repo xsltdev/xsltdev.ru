@@ -18,7 +18,7 @@ function GuestGreeting(props) {
 
 Можно создать компонент `Greeting`, который отражает один из этих компонентов в зависимости от того, на сайте пользователь или нет:
 
-```javascript{3-7,11,12}
+```javascript
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn
   if (isLoggedIn) {
@@ -56,7 +56,7 @@ function LogoutButton(props) {
 
 Он будет рендерить либо `<LoginButton />`, либо `<LogoutButton />` в зависимости от текущего состояния. А ещё он будет всегда рендерить `<Greeting />` из предыдущего примера.
 
-```javascript{20-25,29,30}
+```javascript
 class LoginControl extends React.Component {
   constructor(props) {
     super(props)
@@ -101,7 +101,7 @@ ReactDOM.render(<LoginControl />, document.getElementById('root'))
 
 Вы можете [внедрить любое выражение в JSX](introducing-jsx.md#embedding-expressions-in-jsx), заключив его в фигурные скобки. Это правило распространяется и на логический оператор `&&` языка JavaScript, которым можно удобно вставить элемент в зависимости от условия:
 
-```js {6-10}
+```js
 function Mailbox(props) {
   const unreadMessages = props.unreadMessages
   return (
@@ -126,7 +126,7 @@ ReactDOM.render(<Mailbox unreadMessages={messages} />, document.getElementById('
 
 Вот как этот метод можно использовать, чтобы отрендерить кусочек текста.
 
-```javascript{5}
+```javascript
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
@@ -139,7 +139,7 @@ render() {
 
 Этот метод можно использовать и с выражениями покрупнее, но это может сделать код менее очевидным:
 
-```js {5,7,9}
+```js
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
@@ -162,7 +162,7 @@ render() {
 
 Например, будет ли содержимое `<WarningBanner />` отрендерено, зависит от значения пропа под именем `warn`. Если значение `false`, компонент ничего не рендерит:
 
-```javascript{2-4,29}
+```javascript
 function WarningBanner(props) {
   if (!props.warn) {
     return null
