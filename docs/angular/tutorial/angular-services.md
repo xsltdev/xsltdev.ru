@@ -38,23 +38,23 @@ Angular сервисы могут быть определены на уровн�
 Уровень приложения.
 
 ```ts
-    @Injectable({providedIn: 'root'})
+@Injectable({providedIn: 'root'})
 ```
 
 Уровень модуля.
 
 ```ts
-    @Injectable({providedIn: AccountsModule})
+@Injectable({providedIn: AccountsModule})
 ```
 
 Уровень компонента.
 
 ```ts
-    @Component({
-      selector: 'accounts-list',
-      providers: [AccountsHttpService],
-      template: `<div>My accounts</div>`
-    })
+@Component({
+  selector: 'accounts-list',
+  providers: [AccountsHttpService],
+  template: `<div>My accounts</div>`
+})
 ```
 
 Определенный для компонента Angular сервис всегда будет создаваться по-новому и будет доступен только для этого компонента.
