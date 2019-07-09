@@ -33,6 +33,7 @@ arrange:
     - angular-change-detection.md
     - angular-library.md
     - service-workers.md
+    - web-workers.md
     - angular-universal.md
     - angular-deployment.md
     - possible-errors.md
