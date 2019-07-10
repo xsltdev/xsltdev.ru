@@ -1,0 +1,12 @@
+title: NgRx
+arrange:
+    - about.md
+    - actions.md
+    - reducers.md
+    - store.md
+    - selectors.md
+    - effects.md
+    - router-store.md
+    - meta-reducers.md
+    - entity-state.md
+    - code-structure.md

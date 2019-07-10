@@ -3,3 +3,4 @@ arrange:
     - index.md
     - guide
     - tutorial
+    - ngrx
