@@ -6,7 +6,7 @@
 
 - [HTML](html/index.md) &mdash; справочник элементов HTML
 - [CSS](css/index.md) &mdash; справочник свойств CSS
-- [Руководства Typescript](typescript/index.md) &mdash; руководства по языку Typescript
+- [Typescript](typescript/index.md) &mdash; руководства по языку Typescript
 
 ## Фреймворки
 
@@ -28,3 +28,17 @@
 - [MkDocs](https://www.mkdocs.org)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
+
+<!--
+Планы
+
+- CSS
+- [RxJs](https://webdraftt.com/tutorial/rxjs)
+- [Node.js](https://metanit.com/web/nodejs/)
+- [LESS](https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/content/)
+- [Документация jQuery](https://jquery-docs.ru/)
+- Книга [Изучаем jQuery](https://metanit.com/web/jquery/)
+- [Руководство Javascript](https://metanit.com/web/javascript/)
+- [WebGL](https://metanit.com/web/webgl/1.1.php)
+
+-->
