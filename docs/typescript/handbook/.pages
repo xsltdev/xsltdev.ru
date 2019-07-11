@@ -1,6 +1,5 @@
 title: Справочник Typescript
 arrange:
-    - declarations
     - basic-types.md
     - variable-declarations.md
     - interfaces.md

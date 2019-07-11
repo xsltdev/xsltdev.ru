@@ -244,7 +244,7 @@ ReactDOM.render(<HelloButton />, document.getElementById('container'))
 
 Представления в [Backbone](https://backbonejs.org/) обычно используют HTML-строки или функции, создающие строковые шаблоны для создания DOM-элементов. Этот механизм также может быть заменён рендерингом React-компонентов.
 
-Ниже мы создадим Backbone-представление `ParagraphView`. Оно переопределит метод `render()` (из `Backbone.View`) для рендеринга React-компонента `<Paragraph>` в DOM-элемент, предоставляемый Backbone (`this.el`). Также мы воспользуемся [`ReactDOM.render()`](react-dom.md#render):
+Ниже мы создадим Backbone-представление `ParagraphView`. Оно переопределит метод `render()` (из `Backbone.View`) для рендеринга React-компонента `<Paragraph>` в DOM-элемент, предоставляемый Backbone (`this.el`). Также мы воспользуемся `ReactDOM.render()`:
 
 ```js
 function Paragraph(props) {
