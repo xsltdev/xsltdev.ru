@@ -253,12 +253,12 @@ app.listen(port, host, function() {
 _views/main.pug_
 
 ```pug
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        h1 #{title}
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    h1 #{title}
 ```
 
 В Node.js Pug представления имеют расширение `.pug` и подобно шаблонизатору Handlebars генерируются с помощью метода объекта ответа `render()`, принимающего первым параметром имя шаблона, а вторым - данные для этого шаблона в виде объекта.
@@ -266,7 +266,7 @@ _views/main.pug_
 Шаблонизатор использует крайне необычный подход к построению представления. Каждая строка в файле полностью описывает одни HTML-элемента. Сначала идет имя тега, затем через пробел - его значение. Для использования в значении тега (или его атрибута) внешних данных, применяется механизм интерполяции. Так, свойство переданного объекта, значение которого необходимо использовать, заключается в `#{` и `}`.
 
 ```pug
-    h1 #{title}
+h1 #{title}
 ```
 
 !!! note ""
@@ -282,9 +282,9 @@ _views/main.pug_
 Вложенность тегов HTML в Node.js Pug шаблоне реализуется через отступ табуляции относительно родителя, причем эта вложенность соблюдается в файле и визуально. Для компиляции HTML-кода в одну строку без соблюдения визуальной иерархии используйте следующую запись.
 
 ```pug
-    p: span
+p: span
 
-    //Результат: '<p><span></span></p>'
+//Результат: '<p><span></span></p>'
 ```
 
 Гибкость работы с Node.js Pug обеспечивается рядом специальных инструментов и конструкций.
@@ -294,14 +294,14 @@ _views/main.pug_
 Внутри самого представления возможно определение переменных, которые могут использоваться только в пределах текущего шаблона.
 
 ```pug
-    -var title = 'New greetings from Pug'
+-var title = 'New greetings from Pug'
 
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        h1 #{title}
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    h1 #{title}
 ```
 
 ### Условия Pug
@@ -320,17 +320,17 @@ app.get('/', (req, res) => {
 ```
 
 ```pug
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        h1 #{title}
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    h1 #{title}
 
-        if content
-          p #{content}
-        else
-          p No content
+    if content
+      p #{content}
+    else
+      p No content
 ```
 
 Пример со `switch`.
@@ -345,18 +345,18 @@ app.get('/', (req, res) => {
 ```
 
 ```pug
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        case type
-          when 'h1'
-            h1 #{title}
-          when 'h2'
-            h2 #{title}
-          when 'h3'
-            h3 #{title}
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    case type
+      when 'h1'
+        h1 #{title}
+      when 'h2'
+        h2 #{title}
+      when 'h3'
+        h3 #{title}
 ```
 
 ### Циклы Pug
@@ -364,14 +364,14 @@ app.get('/', (req, res) => {
 Отображение массива данных или вывод какой-либо части шаблона заданное количество раз осуществляется с помощью конструкций `each` и `while`.
 
 ```pug
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        ol
-          each vl, index in ['One', 'Two', 'Three']
-            li #{vl} (#{index})
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    ol
+      each vl, index in ['One', 'Two', 'Three']
+        li #{vl} (#{index})
 ```
 
 ### Переиспользование шаблонов
@@ -381,20 +381,20 @@ app.get('/', (req, res) => {
 _views/index.pug_
 
 ```pug
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        include includes/_list.pug
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    include includes/_list.pug
 ```
 
 _`views/includes/_list.pug`_
 
 ```pug
-    ol
-      each vl, index in ['One', 'Two', 'Three']
-        li #{vl} (#{index})
+ol
+  each vl, index in ['One', 'Two', 'Three']
+    li #{vl} (#{index})
 ```
 
 !!! note ""
@@ -416,47 +416,45 @@ app.get('/', (req, res) => {
 _views/index.pug_
 
 ```pug
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        block nav
-          ul
-            li Home
-            li About
-            li Contacts
-        block content
-        block footer
-```
-
-_views/home.pug_
-
-```pug
-    extends index.pug
-
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
     block nav
       ul
         li Home
         li About
         li Contacts
-      block content
-        div Content text
-      block footer
-        footer Footer information
+    block content
+    block footer
+```
+
+_views/home.pug_
+
+```pug
+extends index.pug
+block nav
+  ul
+    li Home
+    li About
+    li Contacts
+  block content
+    div Content text
+  block footer
+    footer Footer information
 ```
 
 Также Node.js Pug позволяет “расширять” значение по умолчанию, а не заменять его. Для этого имеются операторы `append` и `prepend`, которые добавляют указанное содержимое после или до значения, заданного по умолчанию.
 
 ```pug
-    extends index.pug
-
-    block prepend nav
-      a: img(src="/assets/images/logo.svg" alt="Logo")
-    block content
-      div Content text
-    block footer
-      footer Footer information
+extends index.pug
+block prepend nav
+  a: img(src="/assets/images/logo.svg" alt="Logo")
+block content
+  div Content text
+block footer
+  footer Footer information
 ```
 
 ### Миксины
@@ -466,20 +464,19 @@ _views/home.pug_
 _`views/mixins/_button.pug`_
 
 ```pug
-    mixin button(label, cssClass)
-      button(class =cssClass) #{label}
+mixin button(label, cssClass)
+  button(class =cssClass) #{label}
 ```
 
 _views/index.pug_
 
 ```pug
-    include mixins/_button.pug
-
-    html(lang="en")
-      head
-        title Node js Pug
-        meta(charset="utf-8")
-      body
-        +button('Cancel', 'red')
-        +button('Send')
+include mixins/_button.pug
+html(lang="en")
+  head
+    title Node js Pug
+    meta(charset="utf-8")
+  body
+    +button('Cancel', 'red')
+    +button('Send')
 ```

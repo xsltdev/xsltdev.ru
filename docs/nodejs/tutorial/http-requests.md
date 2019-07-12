@@ -133,4 +133,4 @@ request(
 )
 ```
 
-Если вам удобнее работать с объектами `Promise` или вы хотите использовать конструкцию `async/await`, тогда в таком случае лучше использовать модуль [request-promise](request-promise.md).
+Если вам удобнее работать с объектами `Promise` или вы хотите использовать конструкцию `async/await`, тогда в таком случае лучше использовать модуль [request-promise](https://www.npmjs.com/package/request-promise).
