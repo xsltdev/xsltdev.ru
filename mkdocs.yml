@@ -8,7 +8,9 @@ repo_name: 'Репозиторий справочника'
 repo_url: 'https://github.com/bndby/xsltdev'
 
 theme:
-    name: 'material'
+    # name: 'material'
+    name: null
+    custom_dir: 'theme/material'
     palette:
         primary: 'green'
         accent: 'green'
@@ -16,6 +18,11 @@ theme:
     #    favicon: 'assets/images/favicon.ico'
     feature:
         tabs: true
+    font:
+        text: 'Roboto'
+        code: 'Roboto Mono'
+    logo:
+        icon: 'code'
 
 extra:
     #    social:

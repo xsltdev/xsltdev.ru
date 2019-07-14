@@ -1,3 +1,7 @@
+---
+next_page: null
+---
+
 # Справочники
 
 Разделы [CSS](css/index.md) и [EXSLT](exslt/index.md) пока перенесены не полностью.
