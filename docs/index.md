@@ -41,7 +41,6 @@ next_page: null
 Планы
 
 - CSS
-- [RxJs](https://webdraftt.com/tutorial/rxjs)
 - [Node.js](https://metanit.com/web/nodejs/)
 - [LESS](https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/content/)
 - [Документация jQuery](https://jquery-docs.ru/)

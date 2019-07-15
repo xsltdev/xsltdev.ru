@@ -132,8 +132,8 @@
 
 </details>
 
-<!--
-## Выравнивание
+<details markdown="1" class="abstract">
+<summary>Выравнивание</summary>
 
 - [justify-content](justify-content.md)
 - [align-content](align-content.md)
@@ -147,7 +147,10 @@
 - [row-gap](row-gap.md)
 - [column-gap](column-gap.md)
 - [gap](gap.md)
-{: .col-14 }
+
+</details>
+
+<!--
 
 ## Позиционирование
 
@@ -159,7 +162,7 @@
 - [right](right.md)
 - [top](top.md)
 - [z-index](z-index.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Блоки
 
@@ -169,7 +172,7 @@
 - [max-width](max-width.md)
 - [min-height](min-height.md)
 - [min-width](min-width.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [margin](margin.md)
 - [margin-bottom](margin-bottom.md)
@@ -177,27 +180,27 @@
 - [margin-right](margin-right.md)
 - [margin-top](margin-top.md)
 - [margin-trim](margin-trim.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [padding](padding.md)
 - [padding-bottom](padding-bottom.md)
 - [padding-left](padding-left.md)
 - [padding-right](padding-right.md)
 - [padding-top](padding-top.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [overflow](overflow.md)
 - [overflow-x](overflow-x.md)
 - [overflow-y](overflow-y.md)
 - [visibility](visibility.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Формы
 
 - [shape-image-threshold](shape-image-threshold.md)
 - [shape-margin](shape-margin.md)
 - [shape-outside](shape-outside.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Фоны и границы
 
@@ -212,7 +215,7 @@
 - [background-position-y](background-position-y.md)
 - [background-repeat](background-repeat.md)
 - [background-size](background-size.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [border](border.md)
 - [border-bottom](border-bottom.md)
@@ -247,7 +250,7 @@
 - [border-top-width](border-top-width.md)
 - [border-width](border-width.md)
 - [box-shadow](box-shadow.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Интерфейс
 
@@ -263,7 +266,7 @@
 - [resize](resize.md)
 - [text-overflow](text-overflow.md)
 - [user-select](user-select.md)
-{: .col-14 }
+  {: .col-14 }
 
 ---
 
@@ -274,8 +277,8 @@
 - [transition-duration](transition-duration.md)
 - [transition-property](transition-property.md)
 - [transition-timing-function](transition-timing-function.md)
-{: .col-14 }
--->
+  {: .col-14 }
+  -->
 
 <!--
 <details markdown="1" class="abstract">

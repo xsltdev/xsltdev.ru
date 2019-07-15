@@ -48,9 +48,9 @@ align-content: unset;
 
 Применяется к: К флекс-контейнеру
 
-<table class="uk-table">
+<table>
 <thead>
-<tr><th>Значение</th><th>Положение</th><th>Описание</th></tr>
+<tr class="header"><th>Значение</th><th>Положение</th><th>Описание</th></tr>
 </thead>
 <tbody>
 <tr><td><code>flex-start</code></td><td><img src="/css/flex-start.png" alt="flex-start" /></td><td>Строки располагаются в начале поперечной оси. Каждая следующая строка идёт вровень с предыдущей.</td></tr>
