@@ -51,9 +51,9 @@ export class DepositsService {}
 Альтернативный вариант.
 
 ```ts
-    @NgModule({
-      providers: [DepositsService]
-    })
+@NgModule({
+	providers: [DepositsService]
+})
 ```
 
 В последнем примере `DepositsService` - это injection token, по которому injector идентифицирует запрашиваемый сервис. Обращение к сервисам внутри приложения происходит именно по их injection token.
@@ -61,9 +61,9 @@ export class DepositsService {}
 Также в качестве элемента массива свойства Angular providers можно передать объект конфигурации сервиса.
 
 ```ts
-    @NgModule({
-      providers: [{provide: DepositsService, useClass: DepositsService}]
-    })
+@NgModule({
+	providers: [{provide: DepositsService, useClass: DepositsService}]
+})
 ```
 
 Последние два примера полностью идентичны друг другу.
@@ -88,9 +88,9 @@ providers: [{ provide: DepositsService, useClass: OtherService }]
 _user.service.ts_
 
 ```ts
-    constructor(private lastAuth: Date){
-      this.user.lastAuth = lastAuth;
-    }
+constructor(private lastAuth: Date){
+	this.user.lastAuth = lastAuth;
+}
 ```
 
 _user-factory.service.ts_

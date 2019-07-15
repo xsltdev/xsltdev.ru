@@ -1,0 +1,9 @@
+title: RxJS
+arrange:
+    - about.md
+    - observable.md
+    - subject.md
+    - multicasted-observable.md
+    - scheduler.md
+    - operators-and-pipe.md
+    - custom-operators.md
