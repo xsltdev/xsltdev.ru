@@ -35,7 +35,7 @@ place-content: unset;
 
 ## Значения
 
-Значение по-умолчанию: ``
+Значение по-умолчанию: `normal`
 
 Применяется к: флекс-элементам
 
@@ -91,3 +91,8 @@ div > div {
   <div class="large"></div>
 </div>
 ```
+
+## См. также
+
+- [align-content](align-content.md)
+- [justify-content](justify-content.md)

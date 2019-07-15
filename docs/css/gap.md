@@ -129,3 +129,8 @@ CSS
   background-color: lime;
 }
 ```
+
+## См. также
+
+- [row-gap](row-gap.md)
+- [column-gap](column-gap.md)

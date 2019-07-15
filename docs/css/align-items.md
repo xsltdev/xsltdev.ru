@@ -35,9 +35,9 @@ align-items: unset;
 
 ## Значения
 
-<table class="data">
+<table>
 <thead>
-<tr><th>Значение</th><th>Положение</th><th>Описание</th></tr>
+<tr class="header"><th>Значение</th><th>Положение</th><th>Описание</th></tr>
 </thead>
 <tbody>
 <tr><td>flex-start</td><td><img src="/css/flex-start_1.png" alt="flex-start" /></td><td>Флексы выравниваются в начале поперечной оси контейнера.</td></tr>
@@ -111,3 +111,7 @@ align-items: unset;
 ### Примечание
 
 Safari до версии 9 поддерживает свойство `-webkit-align-items`.
+
+## См. также
+
+- [align-self](align-self.md)
