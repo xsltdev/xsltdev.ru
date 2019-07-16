@@ -108,7 +108,7 @@
 </ops>
 ```
 
-```XSLT tab=ops.xsl
+```xslt tab="ops.xsl"
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="1.0">
@@ -124,7 +124,7 @@
 </xsl:stylesheet>
 ```
 
-```XSLT tab=arith.xsl
+```xslt tab="arith.xsl"
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="1.0">
@@ -142,7 +142,7 @@
 </xsl:stylesheet>
 ```
 
-```XSLT tab=str.xsl
+```xslt tab="str.xsl"
 <?xml version="1.0"?>
   <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                   version="1.0">
