@@ -4,18 +4,8 @@
 
 ## Синтаксис
 
-### XSLT 1.0
-
 ```xml
 <xsl:apply-imports />
-```
-
-# XSLT 2.0 и XSLT 3.0
-
-```xml
-<xsl:apply-imports>
-    <!-- Контент: несколько элементов xsl:with-param -->
-</xsl:apply-imports>
 ```
 
 ## Описание и примеры
@@ -95,6 +85,90 @@
 ```
 
 В XSLT 2.0 элемент `<xsl:apply-imports>` может содержать нуль или более элементов [`<xsl:with-param>`](/xslt/xsl-with-param/) для передачи параметров импортированному шаблону. Лишние параметры, передаваемые импортируемому шаблону, игнорируются. Но если импортированному шаблону не передается обязательный параметр, процессор XSLT выдает ошибку.
+
+### Пример 3
+
+```XML tab=
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ops.xsl"?>
+<ops>
+  <desc>Some binary operations</desc>
+  <op name="add" symbol="+">
+    <operand>1</operand>
+    <operand>2</operand>
+  </op>
+  <op name="sub" symbol="-">
+    <operand>1</operand>
+    <operand>2</operand>
+  </op>
+  <op name="mul" symbol="*">
+    <operand>1</operand>
+    <operand>2</operand>
+  </op>
+</ops>
+```
+
+```XSLT tab=ops.xsl
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="1.0">
+  <xsl:import href="arith.xsl"/>
+  <xsl:import href="str.xsl"/>
+  <xsl:template match="op">
+    <xsl:value-of select="operand[1]"/>
+    <xsl:value-of select="@symbol"/>
+    <xsl:value-of select="operand[2]"/>
+    = <xsl:apply-imports/>
+    <br/>
+  </xsl:template>
+</xsl:stylesheet>
+```
+
+```XSLT tab=arith.xsl
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="1.0">
+  <xsl:template match="op[@symbol='+']">
+    <xsl:value-of select="sum(operand)"/> (from arith.xsl)
+  </xsl:template>
+  <xsl:template match="op[@symbol='-']">
+    <xsl:value-of select="number(operand[1])-number(operand[2])"/>
+   (from arith.xsl)
+  </xsl:template>
+  <xsl:template match="op[@symbol='*']">
+    <xsl:value-of select="number(operand[1])*number(operand[2])"/>
+    (from arith.xsl)
+  </xsl:template>
+</xsl:stylesheet>
+```
+
+```XSLT tab=str.xsl
+<?xml version="1.0"?>
+  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                  version="1.0">
+  <xsl:template match="desc">
+    <DIV><xsl:value-of select="."/></DIV>
+  </xsl:template>
+  <xsl:template match="op[@name='add']">
+    <xsl:value-of select="operand[1]"/>
+    <xsl:value-of select="operand[2]"/> (from str.xsl)
+  </xsl:template>
+  <xsl:template match="op[@name='mul']">
+    <xsl:value-of select="operand[2]"/>
+    <xsl:value-of select="operand[1]"/> (from str.xsl)
+  </xsl:template>
+</xsl:stylesheet>
+```
+
+```Output tab=
+Some binary operations
+
+1+2 = 12 (from str.xsl)
+
+1-2 = -1 (from arith.xsl)
+
+1*2 = 21 (from str.xsl)
+```
 
 ## См. также
 
