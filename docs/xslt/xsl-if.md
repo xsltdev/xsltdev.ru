@@ -1,5 +1,5 @@
 ---
-description: Инструкция xsl:if позволяет создавать простые условия типа "если-то".
+description: Инструкция xsl:if позволяет создавать простые условия типа если-то.
 ---
 
 # xsl:if
@@ -80,6 +80,41 @@ description: Инструкция xsl:if позволяет создавать �
 Примечание: в данном преобразовании использовался метод вывода "`html`".
 
 К сожалению, элемент `xsl:if` в XSLT не может реализовать конструкцию `if-then-else` (англ. если-то-иначе). Условные выражения такого вида реализуются при помощи элементов [`xsl:choose`](/xslt/xsl-choose/), [`xsl:when`](/xslt/xsl-when/) и [`xsl:otherwise`](/xslt/xsl-otherwise/).
+
+### Пример 2
+
+```XML tab=
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="ifcomma.xsl" ?>
+<namelist>
+	<name>Albert</name>
+	<name>Terrance</name>
+	<name>Will</name>
+	<name>Sylvia</name>
+	<name>Timothy</name>
+	<name>Gordon</name>
+	<name>James</name>
+	<name>Robert</name>
+	<name>Dan</name>
+	<name>Sasha</name>
+</namelist>
+```
+
+```XSLT tab=
+<?xml version='1.0'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+
+<xsl:template match="namelist/name">
+	<xsl:apply-templates/>
+	<xsl:if test="position()!=last()">, </xsl:if>
+</xsl:template>
+
+</xsl:stylesheet>
+```
+
+```Output tab=
+<?xml version="1.0" encoding="UTF-16"?>Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
+```
 
 ## См. также
 
