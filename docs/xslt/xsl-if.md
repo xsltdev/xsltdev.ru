@@ -181,7 +181,7 @@ Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
 <xsl:template match="/">
 <html>
 <body>
-<table border="1" cellpadding="2" cellspacing="0" width="50%">
+<table border="1">
 <xsl:apply-templates/>
 </table>
 </body>
@@ -203,7 +203,7 @@ Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
 ```Output tab=
 <html>
 <body>
-<table border="1" cellpadding="2" cellspacing="0" width="50%">
+<table border="1">
 <tr>Car</tr>
 <tr bgcolor="yellow">Pen</tr>
 <tr>LP Record</tr>
