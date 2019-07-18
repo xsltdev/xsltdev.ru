@@ -6,8 +6,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0, XSLT 2.0 и XSLT 3.0
-
 ```xml
 <xsl:apply-templates
   select = "выражение"
@@ -18,8 +16,11 @@
 
 Атрибуты:
 
-- `select` — _необязательный_ атрибут, выражение вычисляет набор узлов к которым применяются преобразования. Если атрибут не задан — преобразования применяются ко всем потомкам текущего узла, включая текстовые.
-- `mode` — _необязательный_ атрибут, указывает имя режима преобразования.
+`select`
+: _необязательный_ атрибут, выражение вычисляет набор узлов к которым применяются преобразования. Если атрибут не задан — преобразования применяются ко всем потомкам текущего узла, включая текстовые.
+
+`mode`
+: _необязательный_ атрибут, указывает имя режима преобразования.
 
 ## Описание и примеры
 
@@ -166,6 +167,129 @@
 
 Начиная с шаблона `match="/"`, наша таблица стилей генерирует выходной документ вызовами разных шаблонов с тремя режимами `mode`. Три режима форматируют одну и ту же информацию тремя разными способами. В итоге таблица стилей создает тот же документ HTML, что и предыдущая таблица стилей.
 
+### Пример 6
+
+```xml tab=
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="applyt.xsl" ?>
+<customers>
+   <customer>
+      <name>John Smith</name>
+      <address>123 Oak St.</address>
+      <state>WA</state>
+      <phone>(206) 123-4567</phone>
+   </customer>
+   <customer>
+      <name>Zack Zwyker</name>
+      <address>368 Elm St.</address>
+      <state>WA</state>
+      <phone>(206) 423-4537</phone>
+   </customer>
+   <customer>
+      <name>Albert Aikens</name>
+      <address>368 Elm St.</address>
+      <state>WA</state>
+      <phone>(206) 423-4537</phone>
+   </customer>
+   <customer>
+      <name>Albert Gandy</name>
+      <address>6984 4th St.</address>
+      <state>WA</state>
+      <phone>(206) 433-4547</phone>
+   </customer>
+   <customer>
+      <name>Peter Furst</name>
+      <address>456 Pine Av.</address>
+      <state>CA</state>
+      <phone>(209) 765-4321</phone>
+   </customer>
+   <customer>
+      <name>Dan Russell</name>
+      <address>9876 Main St.</address>
+      <state>PA</state>
+      <phone>(323) 321-7654</phone>
+   </customer>
+</customers>
+```
+
+```xslt tab=
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+
+<xsl:template match="/">
+   <HTML>
+      <BODY>
+         <TABLE border="1" cellspacing="0" cellpadding="2">
+            <xsl:apply-templates select="customers/customer">
+               <xsl:sort select="state"/>
+               <xsl:sort select="name"/>
+            </xsl:apply-templates>
+         </TABLE>
+      </BODY>
+   </HTML>
+</xsl:template>
+
+<xsl:template match="customer">
+   <TR>
+      <xsl:apply-templates select="name" />
+      <xsl:apply-templates select="address" />
+      <xsl:apply-templates select="state" />
+      <xsl:apply-templates select="phone" />
+      <xsl:apply-templates select="phone" mode="accountNumber"/>
+   </TR>
+</xsl:template>
+
+<xsl:template match="name">
+   <TD STYLE="font-size:14pt font-family:serif">
+      <xsl:apply-templates />
+   </TD>
+</xsl:template>
+
+<xsl:template match="address">
+   <TD> <xsl:apply-templates /> </TD>
+</xsl:template>
+
+<xsl:template match="state">
+   <TD> <xsl:apply-templates /> </TD>
+</xsl:template>
+
+<xsl:template match="phone">
+   <TD> <xsl:apply-templates /> </TD>
+</xsl:template>
+
+<xsl:template match="phone" mode="accountNumber">
+   <TD STYLE="font-style:italic">
+      1-<xsl:value-of select="."/>-001
+   </TD>
+</xsl:template>
+
+</xsl:stylesheet>
+```
+
+```html tab="Output"
+<html>
+  <body>
+    <table border="1" cellspacing="0" cellpadding="2">
+      <tr>
+        <td style="font-size:14pt; font-family:serif">Peter Furst</td>
+        <td>456 Pine Av.</td>
+        <td>CA</td>
+        <td>(209) 765-4321</td>
+        <td style="font-style:italic">
+          1-(209) 765-4321-001
+        </td>
+      </tr>
+      <tr>
+        <td style="font-size:14pt; font-family:serif">Dan Russell</td>
+        <td>9876 Main St.</td>
+        ...
+      </tr>
+    </table>
+  </body>
+</html>
+```
+
 ## См. также
 
 - [`xsl:call-template`](/xslt/xsl-call-template/) -- вызывает шаблон по имени.
@@ -176,4 +300,4 @@
 ## Ссылки
 
 - [`xsl:apply-templates`](https://developer.mozilla.org/en/XSLT/apply-templates) на MDN
-- [`xsl:apply-templates`](https://msdn.microsoft.com/en-us/library/ms256184.aspx) на MSDN
+- [`xsl:apply-templates`](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256184(v=vs.100)>) на MSDN
