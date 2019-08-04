@@ -6,8 +6,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0, XSLT 2.0 и XSLT 3.0
-
 ```xml
 <xsl:choose>
     <!-- Содержимое: (xsl:when+, xsl:otherwise?) -->
@@ -43,6 +41,62 @@
         </fo:list-item-body>
     </fo:list-item>
 </xsl:template>
+```
+
+### Пример 2
+
+```xml tab=
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="refchoose.xsl" ?>
+<orders>
+   <order>
+      <lineitem/>
+      <lineitem/>
+      <total>9</total>
+   </order>
+   <order>
+      <lineitem/>
+      <lineitem/>
+      <total>19</total>
+   </order>
+   <order>
+      <lineitem/>
+      <lineitem/>
+      <total>29</total>
+   </order>
+</orders>
+```
+
+```xslt tab=
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+
+<xsl:template match="order">
+   <xsl:choose>
+      <xsl:when test="total &lt; 10">
+         (small)
+      </xsl:when>
+      <xsl:when test="total &lt; 20">
+         (medium)
+      </xsl:when>
+      <xsl:otherwise>
+         (large)
+      </xsl:otherwise>
+   </xsl:choose>
+   <xsl:apply-templates />
+   <BR/>
+</xsl:template>
+
+</xsl:stylesheet>
+```
+
+```xml tab="Output"
+(small) 9
+
+(medium) 19
+
+(large) 29
 ```
 
 ## См. также

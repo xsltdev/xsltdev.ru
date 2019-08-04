@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0 и 2.0
-
 ```xml
 <xsl:attribute-set
 	name = "имя"
@@ -16,27 +14,11 @@
 
 Атрибуты:
 
-- **`name`** — **обязательный** атрибут, задает имя набора атрибутов.
-- `use-attribute-sets` — _необязательный_ атрибут, задает перечень названий наборов атрибутов через пробел.
+**`name`**
+: **обязательный** атрибут, задает имя набора атрибутов.
 
-### XSLT 3.0
-
-```xml
-<xsl:attribute-set
-	name = "eqname"
-	use-attribute-sets = "eqnames"
-	visibility = "public | private | final | abstract"
-	streamable = "boolean" >
-	<!-- Содержимое: xsl:attribute* -->
-</xsl:attribute-set>
-```
-
-Атрибуты:
-
-- **`name`** — **обязательный** атрибут
-- `use-attribute-sets` — _необязательный_ атрибут
-- `visibility` — _необязательный_ атрибут
-- `streamable` — _необязательный_ атрибут
+`use-attribute-sets`
+: _необязательный_ атрибут, задает перечень названий наборов атрибутов через пробел.
 
 ## Описание и примеры
 
@@ -158,6 +140,57 @@
 <xsl:element name="element" use-attribute-sets="elements">
 	<xsl:apply-templates select="*" />
 </xsl:element>
+```
+
+### Пример 3
+
+```xml tab=
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="attrset.xsl" ?>
+<book>
+   <chapter>
+      <heading>The First Heading</heading>
+   </chapter>
+   <chapter>
+      <heading>The Next Heading</heading>
+   </chapter>
+</book>
+```
+
+```xslt tab=
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+      xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<xsl:template match="chapter/heading">
+  <fo:block quadding="start" xsl:use-attribute-sets="title-style">
+    <xsl:apply-templates/>
+  </fo:block>
+</xsl:template>
+
+<xsl:attribute-set name="title-style">
+  <xsl:attribute name="font-size">12pt</xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
+</xsl:attribute-set>
+
+</xsl:stylesheet>
+```
+
+```xml tab="Output"
+<?xml version="1.0"?>
+<fo:block font-size="12pt"
+          font-weight="bold"
+          quadding="start"
+          xmlns:fo="http://www.w3.org/1999/XSL/Format">
+The First Heading
+</fo:block>
+<fo:block font-size="12pt"
+          font-weight="bold"
+          quadding="start"
+          xmlns:fo="http://www.w3.org/1999/XSL/Format">
+The Next Heading
+</fo:block>
 ```
 
 ## См. также

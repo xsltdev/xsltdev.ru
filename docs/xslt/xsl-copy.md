@@ -6,8 +6,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0
-
 ```xml
 <xsl:copy
     use-attribute-sets = "наборы атрибутов">
@@ -17,43 +15,8 @@
 
 Атрибуты:
 
-- `use-attribute-sets` — _необязательный_ атрибут, задает именованные [наборы атрибутов](/xslt/xsl-attribute-set/).
-
-### XSLT 2.0
-
-```xml
-<xsl:copy
-    copy-namespaces = "yes | no"
-    inherit-namespaces = "yes | no"
-    use-attribute-sets = "qnames"
-    type = "qname"
-    validation = "strict | lax | preserve | strip">
-    <!-- Content: sequence-constructor -->
-</xsl:copy>
-```
-
-Атрибуты:
-
-- `use-attribute-sets` — _необязательный_ атрибут, перечисляет один или несколько наборов атрибутов, которые должны использоваться элементом. Если вы задаете более одного набора, разделите их имена символами-пропусками. За дополнительной информацией обращайтесь к описанию элемента [`<xsl:attribute-set>`](/xslt/xsl-attribute-set/).
-- `copy-namespaces` — _необязательный_ атрибут, определяет, должны ли копироваться пространства имен. Применяется только при копировании узлов элементов. Допустимые значения: `yes` (используется по умолчанию) и `no`.
-- `inherit-namespaces` — _необязательный_ атрибут, определяет, должны ли элемент и его дочерние элементы наследовать текущие узлы пространств имен. Допустимые значения: `yes` (используется по умолчанию) и `no`.
-- `type` — _необязательный_ атрибут, определяет тип данных копируемого элемента. Им может быть любой из встроенных типов данных или же тип данных, определенный в схеме (при использовании схемосовместимого процессора XSLT 2.0). Атрибуты `type` и `validation` являются взаимоисключающими.
-- `validation` — _необязательный_ атрибут, определяет способ проверки значения нового атрибута. Атрибут `validation` имеет четыре допустимых значения: `strict`, `lax`, `preserve` и `strip`. Атрибут `validation="strict"` означает, что процессор XSLT должен искать во всех объявленных схемах глобальное объявление атрибута или элемента (`<xs:attribute>` или `<xs:element>`) с таким же именем, как у копируемого узла. Если процессору не удается найти подходящее объявление, происходит фатальная ошибка. Если же процессор находит объявление узла, он проверяет по нему значение копируемого узла. Значение `validation="lax"` работает аналогично `validation="strict"`, но если процессору не удается найти объявление копируемого узла ни в одной из объявленных схем, ошибка не происходит. В этом случае элемент имеет обозначение типа `xs:untyped`. Эффект значения `validation="preserve"` зависит от типа копируемого узла. Если копируемый узел является атрибутом, его обозначение типа сохраняется. Для узлов элементов скопированный узел имеет обозначение типа `xs:anyType`. Обозначения типов всех узлов, содержащихся в копируемом элементе, сохраняются. Проверка по схеме не производится. Значение `validation="strip"` заменяет обозначения типа копируемых узлов атрибутов и элементов на `xs:untypedAtomic` и `xs:untyped` соответственно. У всех узлов атрибутов и элементов, содержащихся в копируемом узле, обозначения типов заменяются на `xs:untypedAtomic` и `xs:untyped` соответственно. Атрибуты `validation` и `type` являются взаимоисключающими.
-
-### XSLT 3.0
-
-```xml
-<xsl:copy
-    select = "expression"
-    copy-namespaces = "boolean"
-    inherit-namespaces = "boolean"
-    use-attribute-sets = "eqnames"
-    type = "eqname"
-    validation = "strict | lax | preserve | strip"
-    on-empty = "expression" >
-    <!-- Content: sequence-constructor -->
-</xsl:copy>
-```
+`use-attribute-sets`
+: _необязательный_ атрибут, задает именованные [наборы атрибутов](/xslt/xsl-attribute-set/).
 
 ## Описание и примеры
 
@@ -150,6 +113,70 @@
 ```
 
 если необходимо скопировать атрибут `xml:lang`.
+
+### Пример 4
+
+```xml tab=
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="identityxfm.xsl"?>
+<catalog>
+    <book id="bk101">
+        <author>Gambardella, Matthew</author>
+        <title>XML Developer's Guide</title>
+        <genre>Computer</genre>
+        <price>44.95</price>
+        <publish_date>2000-10-01</publish_date>
+        <description>An in-depth look at creating applications with
+ XML.</description>
+    </book>
+    <book id="bk102">
+        <author>Ralls, Kim</author>
+        <title>Midnight Rain</title>
+        <genre>Fantasy</genre>
+        <price>5.95</price>
+        <publish_date>2000-12-16</publish_date>
+        <description>A former architect battles corporate zombies,
+ an evil sorceress, and her own childhood to become queen of the
+ world.</description>
+    </book>
+    <book id="bk103">
+        <author>Corets, Eva</author>
+        <title>Maeve Ascendant</title>
+        <genre>Fantasy</genre>
+        <price>5.95</price>
+        <publish_date>2000-11-17</publish_date>
+        <description>After the collapse of a nanotechnology society
+ in England, the young survivors lay the foundation for a new
+society.</description>
+    </book>
+</catalog>
+```
+
+```xslt tab=
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+
+  <xsl:template match="/ | @* | node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+</xsl:stylesheet>
+```
+
+```xml tab="Output"
+<?xml version="1.0"?><?xml-stylesheet type="text/xsl"
+href="identityxfm.xsl"?><catalog><book id="bk101"><author>Gambardella,
+Matthew</author><title>XML Developer's
+Guide</title><genre>Computer</genre><price>44.95</price><publish_date>2000
+-10-01</publish_date><description>An in-depth look at creating
+applications with
+XML.</description></book><book id="bk102">
+...
+</book></catalog>
+```
 
 ## См. также
 

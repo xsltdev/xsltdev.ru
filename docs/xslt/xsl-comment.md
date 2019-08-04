@@ -4,26 +4,11 @@
 
 ## Синтаксис
 
-### XSLT 1.0
-
 ```xml
 <xsl:comment>
     <!-- Содержимое: template -->
 </xsl:comment>
 ```
-
-### XSLT 2.0 и XSLT 3.0
-
-```xml
-<xsl:comment
-    select = "выражение">
-    <!-- Содержимое: sequence-constructor -->
-</xsl:comment>
-```
-
-Атрибуты:
-
-- `select` — _необязательный_ элемент, выражение XPath, генерирующее содержимое комментария. Если атрибут отсутствует, вместо него используется содержимое элемента `<xsl:comment>`. Если атрибут `select` отсутствует, а элемент `<xsl:comment>` пуст, генерируется пустой комментарий. Если элемент содержит атрибут `select` и одновременно имеет содержимое, происходит фатальная ошибка.
 
 ## Описание и примеры
 
@@ -31,7 +16,7 @@
 
 Если результат обработки содержимого `xsl:comment` содержит строку `--` или заканчивается символом `-`, фиксируется ошибка. XSLT процессор может сигнализировать о такой ошибке. Если он этого не делает, он должен сам обработать ошибку, поставив пробел после всех символов `-`, за которыми следует либо другой символ `-`, либо конец строки.
 
-### Пример
+### Пример 1
 
 Код
 
@@ -71,6 +56,44 @@
 ```
 
 Размещение двух косых черт в последней строке создает комментарий JavaScript. В этом случае интерпретатор JavaScript проигнорирует знак `-->` в конце комментария.
+
+### Пример 2
+
+```xml tab=
+<?xml version ="1.0"?>
+<?xml-stylesheet type="text/xsl" href="news.xsl"?>
+<news>
+<story1>Here is the top news story.</story1>
+    <story2> Here is the next news story.</story2>
+</news>
+```
+
+```xslt tab=
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+
+<xsl:template match="/">
+<HTML>
+<BODY>
+<xsl:comment>insert top news story</xsl:comment>
+<P>
+<xsl:value-of select="//story1"/>
+</P>
+</BODY>
+</HTML>
+</xsl:template>
+</xsl:stylesheet>
+```
+
+```html tab=
+<html>
+  <body>
+    <!--insert top news story-->
+    <p>Here is the top news story.</p>
+  </body>
+</html>
+```
 
 ## Ссылки
 

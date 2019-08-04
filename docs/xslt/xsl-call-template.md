@@ -6,8 +6,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0, XSLT 2.0 и XSLT 3.0
-
 ```xml
 <xsl:call-template
     name = "имя">
@@ -17,23 +15,20 @@
 
 Атрибуты:
 
-- **`name`** — **обязательный** атрибут, задает имя шаблона, который вызывается этой инструкцией. Атрибут `name` при вызове обязан иметь фиксированное значение.
+**`name`**
+: **обязательный** атрибут, задает имя шаблона, который вызывается этой инструкцией. Атрибут `name` при вызове обязан иметь фиксированное значение.
 
 ## Описание и примеры
 
 ### Пример 1
 
-Входящий документ:
-
-```xml
+```xml tab=
 <content>
     Just a few words...
 </content>
 ```
 
-Преобразование:
-
-```xml
+```xslt tab=
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template match="/">
@@ -57,9 +52,7 @@
 </xsl:stylesheet>
 ```
 
-Выходящий документ:
-
-```xml
+```xml tab="Output"
 <html>
     <head>
         <meta name="keywords" content="XSLT, XPath, XML">
@@ -120,11 +113,157 @@
 </xsl:template>
 ```
 
-В XSLT 2.0 правила передачи параметров шаблонам слегка изменились:
+### Пример 3
 
-- В XSLT 1.0 шаблону можно было передать любое количество параметров; лишние параметры (т. е. параметры, не определенные в вызываемом шаблоне) игнорировались. В XSLT 2.0 это приводит к фатальной ошибке.
-- В XSLT 2.0 элемент [`<xsl:param>`](/xslt/xsl-param/) поддерживает атрибут `required`. Вызов шаблона без передачи значений всех обязательных параметров приводит к фатальной ошибке.
-- В XSLT 2.0 появилась концепция туннельных параметров.
+```xml tab=
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="topic.xsl"?>
+<topic name="My_topic"
+       title="My Topic">
+  <meta>
+    <owner>
+      <name>Jane</name>
+      <email>jane@topicfactory.com</email>
+      <since></since>
+    </owner>
+    <history>
+      <created-by>
+        <name>John</name>
+        <email>john@topicfactory.com</email>
+        <date>Nov 5, 2001</date>
+      </created-by>
+      <modifiers>
+      </modifiers>
+    </history>
+    <keyword></keyword>
+    <refs></refs>
+  </meta>
+
+  <para name="para1" title="First Paragraph">
+    The first para has both name and title.
+  </para>
+  <para title="Second Paragraph">
+     the second para has a title but no name.
+  </para>
+
+  <para>
+    Third para has neither name nor title.
+  </para>
+</topic>
+```
+
+```xslt tab="topic.xsl"
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:import href="ui.xsl"/>
+  <xsl:param name="editable" select="true"/>
+
+  <xsl:template match="/topic">
+    <xsl:if test="@title">
+      <xsl:call-template name="topic_title">
+         <xsl:with-param name="editable" select="$editable"/>
+         <xsl:with-param name="value" select="@title"/>
+      </xsl:call-template>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <!-- Don't display meta information. -->
+  <xsl:template match="meta"/>
+
+  <xsl:template match="para">
+    <P>
+    <xsl:if test="@title">
+      <xsl:call-template name="para_title">
+         <xsl:with-param name="value" select="@title"/>
+         <xsl:with-param name="editable" select="$editable"/>
+      </xsl:call-template>
+    </xsl:if>
+    <xsl:apply-templates/>
+    </P>
+  </xsl:template>
+
+  <xsl:template match="text()">
+    <xsl:call-template name="text">
+      <xsl:with-param name="value">
+        <xsl:value-of select="."/>
+      </xsl:with-param>
+      <xsl:with-param name="editable">true</xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+
+</xsl:stylesheet>
+```
+
+```xslt tab="ui.xsl"
+<xsl:stylesheet version="1.0"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:template name="topic_title">
+    <xsl:param name="editable"/>
+    <xsl:param name="value"/>
+    <H2>
+      <xsl:attribute name="CONTENTEDITABLE">
+         <xsl:value-of select="$editable"/>
+      </xsl:attribute>
+      <xsl:value-of select="$value"/>
+    </H2>
+  </xsl:template>
+
+  <xsl:template name="para_title">
+    <xsl:param name="value"/>
+    <xsl:param name="editable"/>
+    <DIV STYLE="font-size:16;
+                font-family:Arial;
+                font-weight:bold;
+                font-style:italic"
+         CONTENTEDITABLE="{$editable}">
+      <xsl:value-of select="$value"/>
+    </DIV>
+  </xsl:template>
+
+  <xsl:template name="text">
+    <xsl:param name="value"/>
+    <xsl:param name="editable"/>
+    <SPAN CONTENTEDITABLE="{$editable}">
+      <xsl:value-of select="$value"/>
+    </SPAN>
+  </xsl:template>
+
+
+</xsl:stylesheet>
+```
+
+```html tab="Output"
+<H2 CONTENTEDITABLE="true">My Topic</H2>
+<P>
+   <DIV STYLE="font-size:16;
+               font-family:Arial;
+               font-weight:bold;
+               font-style:italic"
+        CONTENTEDITABLE="true">First Paragraph<DIV>
+   <SPAN CONTENTEDITABLE="true">
+     The first para has both name and title.
+   </SPAN>
+</P>
+<P>
+   <DIV STYLE="font-size:16;
+               font-family:Arial;
+               font-weight:bold;
+               font-style:italic"
+        CONTENTEDITABLE="true">Second Paragraph<DIV>
+   <SPAN CONTENTEDITABLE="true">
+     The second para has a title but no name.
+   </SPAN>
+</P>
+<P>
+   <SPAN CONTENTEDITABLE="true">
+     The third para has neither name nor title.
+   </SPAN>
+</P>
+```
 
 ## См. также
 
