@@ -1,13 +1,15 @@
 ---
 title: Оглавление
+description: Справочник по элементам XSLT 1.0 на русском языке
 ---
 
 # XSLT: Оглавление
 
 Справочник по элементам XSLT на русском языке.
 
-[Язык преобразований XSL 1.0 (XSLT 1.0)](https://xsltdev.ru/tr/xslt10/) &mdash; Перевод рекомендации W3C на русский язык
+[Язык преобразований XSL 1.0 (XSLT 1.0)](tr.md) &mdash; Перевод рекомендации W3C на русский язык
 
+<div style="columns: 10rem" markdown="1">
 - [xsl:apply-imports](xsl-apply-imports.md)
 - [xsl:apply-templates](xsl-apply-templates.md)
 - [xsl:attribute](xsl-attribute.md)
@@ -43,3 +45,4 @@ title: Оглавление
 - [xsl:variable](xsl-variable.md)
 - [xsl:when](xsl-when.md)
 - [xsl:with-param](xsl-with-param.md)
+</div>
