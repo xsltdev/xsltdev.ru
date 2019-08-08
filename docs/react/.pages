@@ -3,4 +3,5 @@ arrange:
     - index.md
     - handbook
     - router
+    - redux
     - graphql

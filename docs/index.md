@@ -41,7 +41,6 @@ next_page: null
 Планы
 
 - CSS
-- [GraphQL](https://github.com/nepster-web/GraphQL-ru)
 
 - [Node.js](https://metanit.com/web/nodejs/)
 - [LESS](https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/content/)
@@ -49,6 +48,5 @@ next_page: null
 - Книга [Изучаем jQuery](https://metanit.com/web/jquery/)
 - [Руководство Javascript](https://metanit.com/web/javascript/)
 - [WebGL](https://metanit.com/web/webgl/1.1.php)
-
 
 -->
