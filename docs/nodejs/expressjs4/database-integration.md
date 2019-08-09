@@ -6,7 +6,8 @@
 
 ## Cassandra
 
-**Модуль**: [cassandra-driver](https://github.com/datastax/nodejs-driver) -
+**Модуль**: [cassandra-driver](https://github.com/datastax/nodejs-driver)
+
 **Установка**
 
 ```
@@ -27,7 +28,8 @@ client.execute('select key from system.local', function(err, result) {
 
 ## CouchDB
 
-**Модуль**: [nano](https://github.com/dscape/nano) -
+**Модуль**: [nano](https://github.com/dscape/nano)
+
 **Установка**
 
 ```
@@ -56,7 +58,8 @@ books.list(function(err, body){
 
 ## LevelDB
 
-**Модуль**: [levelup](https://github.com/rvagg/node-levelup) -
+**Модуль**: [levelup](https://github.com/rvagg/node-levelup)
+
 **Установка**
 
 ```
@@ -82,7 +85,8 @@ db.put('name', 'LevelUP', function (err) {
 
 ## MySQL
 
-**Модуль**: [mysql](https://github.com/felixge/node-mysql/) -
+**Модуль**: [mysql](https://github.com/felixge/node-mysql/)
+
 **Установка**
 
 ```
@@ -111,7 +115,8 @@ connection.end();
 
 ## MongoDB
 
-**Модуль**: [mongodb](https://github.com/mongodb/node-mongodb-native) -
+**Модуль**: [mongodb](https://github.com/mongodb/node-mongodb-native)
+
 **Установка**
 
 ```
@@ -140,7 +145,8 @@ MongoClient.connect('mongodb://localhost:27017/animals', function(err, db) {
 
 ## Neo4j
 
-**Модуль**: [apoc](https://github.com/hacksparrow/apoc) -
+**Модуль**: [apoc](https://github.com/hacksparrow/apoc)
+
 **Установка**
 
 ```
@@ -164,7 +170,8 @@ apoc.query('match (n) return n').exec().then(
 
 ## PostgreSQL
 
-**Модуль**: [pg-promise](https://github.com/vitaly-t/pg-promise) -
+**Модуль**: [pg-promise](https://github.com/vitaly-t/pg-promise)
+
 **Установка**
 
 ```
@@ -188,7 +195,8 @@ db.one("SELECT $1 AS value", 123)
 
 ## Redis
 
-**Модуль**: [redis](https://github.com/mranney/node_redis) -
+**Модуль**: [redis](https://github.com/mranney/node_redis)
+
 **Установка**
 
 ```
@@ -222,7 +230,8 @@ client.hkeys('hash key', function (err, replies) {
 
 ## SQLite
 
-**Модуль**: [sqlite3](https://github.com/mapbox/node-sqlite3) -
+**Модуль**: [sqlite3](https://github.com/mapbox/node-sqlite3)
+
 **Установка**
 
 ```
@@ -256,7 +265,8 @@ db.close();
 
 ## ElasticSearch
 
-**Модуль**: [elasticsearch](https://github.com/elastic/elasticsearch-js) -
+**Модуль**: [elasticsearch](https://github.com/elastic/elasticsearch-js)
+
 **Установка**
 
 ```
