@@ -1,10 +1,3 @@
----
-layout: page
-title: Сообщество Express
-menu: resources
-lang: ru
----
-
 # Сообщество
 
 ## Список рассылки
