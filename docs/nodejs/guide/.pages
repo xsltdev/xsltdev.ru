@@ -9,3 +9,5 @@ arrange:
     - npm.md
     - nodemon.md
     - async.md
+    - files.md
+    
