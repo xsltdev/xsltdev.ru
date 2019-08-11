@@ -5,18 +5,15 @@ Node.js предоставляет специальный объект `global`,
 Для примера создадим следующий модуль `greeting.js`:
 
 ```js
-let currentDate = new Date();
- 
-global.date = currentDate;
- 
-module.exports.getMessage = function(){
-    let hour = currentDate.getHours();
-    if(hour >16)
-        return "Добрый вечер, " + global.name;
-    else if(hour >10)
-        return "Добрый день, " + name;
-    else
-        return "Доброе утро, " + name;
+let currentDate = new Date()
+
+global.date = currentDate
+
+module.exports.getMessage = function() {
+  let hour = currentDate.getHours()
+  if (hour > 16) return 'Добрый вечер, ' + global.name
+  else if (hour > 10) return 'Добрый день, ' + name
+  else return 'Доброе утро, ' + name
 }
 ```
 
@@ -27,12 +24,12 @@ module.exports.getMessage = function(){
 Определим следующий файл приложения `app.js`:
 
 ```js
-const greeting = require("./greeting");
- 
-global.name = "Eugene";
- 
-global.console.log(date);
-console.log(greeting.getMessage());
+const greeting = require('./greeting')
+
+global.name = 'Eugene'
+
+global.console.log(date)
+console.log(greeting.getMessage())
 ```
 
 Здесь устанавливаем глобальную переменную `name`, которую мы получаем в модуле `greeting.js`. И также выводим на консоль глобальную переменную `date`. Причем все глобальные функции и объекты, например, `console`, также доступны внутри `global`, поэтому мы можем написать и `global.console.log()`, и просто `console.log()`.

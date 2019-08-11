@@ -32,17 +32,16 @@ npm install express
 
 ```js
 // получаем модуль Express
-const express = require("express");
+const express = require('express')
 // создаем приложение
-const app = express();
- 
+const app = express()
+
 // устанавливаем обработчик для маршрута "/"
-app.get("/", function(request, response){
- 
-    response.end("Hello from Express!");
-});
+app.get('/', function(request, response) {
+  response.end('Hello from Express!')
+})
 // начинаем прослушивание подключений на 3000 порту
-app.listen(3000);
+app.listen(3000)
 ```
 
 Первая строка получает установленный модуль `express`, а вторая создает объект приложения.
@@ -156,11 +155,11 @@ npm uninstall express --save
 NPM позволяет определять в файле `package.json` команды, которые выполняют определенные действия. Например, определим следующий файл `app.js`:
 
 ```js
-let name = process.argv[2];
-let age = process.argv[3];
- 
-console.log("name: " + name);
-console.log("age: " + age);
+let name = process.argv[2]
+let age = process.argv[3]
+
+console.log('name: ' + name)
+console.log('age: ' + age)
 ```
 
 В данном случае мы получаем переданные при запуске приложению параметры.
@@ -171,9 +170,9 @@ console.log("age: " + age);
 {
   "name": "modulesapp",
   "version": "1.0.0",
-  "scripts" : {
-    "start" : "node app.js",
-    "dev" : "node app.js Tom 26"
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js Tom 26"
   }
 }
 ```

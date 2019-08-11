@@ -19,7 +19,7 @@ next_page: null
 
 ## Бэкенд
 
-- [Node.js](nodejs/tutorial/about.md) &mdash; руководства по Node.js
+- [Node.js](nodejs/index.md) &mdash; руководства по Node.js
 
 ## XML технологии
 

@@ -5,15 +5,15 @@
 Например, допустим в файле приложения `app.js` у нас расположен следующий код:
 
 ```js
-function displaySync(data){
-    console.log(data);
+function displaySync(data) {
+  console.log(data)
 }
- 
-console.log("Начало работы программы");
- 
-displaySync("Обработка данных...");
- 
-console.log("Завершение работы программы");
+
+console.log('Начало работы программы')
+
+displaySync('Обработка данных...')
+
+console.log('Завершение работы программы')
 ```
 
 Это стандартный синхронный код, все вызовы здесь выполняются последовательно, что мы можем увидеть, если мы запустим приложение:
@@ -23,26 +23,24 @@ console.log("Завершение работы программы");
 Для рассмотрения асинхронности изменим код файла `app.js` следующим образом:
 
 ```js
-function display(data, callback){
- 
-    // с помощью случайного числа определяем ошибку
-    var randInt = Math.random() * (10 - 1) + 1;
-    var err = randInt>5? new Error("Ошибка выполнения. randInt больше 5"): null;
-     
-    setTimeout(function(){
-        callback(err, data);
-    }, 0);
+function display(data, callback) {
+  // с помощью случайного числа определяем ошибку
+  var randInt = Math.random() * (10 - 1) + 1
+  var err = randInt > 5 ? new Error('Ошибка выполнения. randInt больше 5') : null
+
+  setTimeout(function() {
+    callback(err, data)
+  }, 0)
 }
- 
-console.log("Начало работы программы");
- 
-display("Обработка данных...", function (err, data){
- 
-    if(err) throw err;
-    console.log(data);
-});
- 
-console.log("Завершение работы программы");
+
+console.log('Начало работы программы')
+
+display('Обработка данных...', function(err, data) {
+  if (err) throw err
+  console.log(data)
+})
+
+console.log('Завершение работы программы')
 ```
 
 В начале также определяется функция `display`, но теперь кроме данных в качестве второго параметра она принимает функцию обратного вызова, которая и обрабатывает данные.
@@ -56,11 +54,10 @@ console.log("Завершение работы программы");
 При вызове функции `display` в нее передается функция, которая в случае отсутствия ошибок просто выводит данные на консоль:
 
 ```js
-display("Обработка данных...", function (err, data){
- 
-    if(err) throw err;
-    console.log(data);
-});
+display('Обработка данных...', function(err, data) {
+  if (err) throw err
+  console.log(data)
+})
 ```
 
 Теперь если мы запустим приложение, то увидим, следующую картину:
@@ -74,24 +71,24 @@ display("Обработка данных...", function (err, data){
 Рассмотрим пример с двумя асинхронными вызовами:
 
 ```js
-function displaySync(callback){
-    callback();
+function displaySync(callback) {
+  callback()
 }
- 
-console.log("Начало работы программы");
- 
-setTimeout(function(){
-         
-        console.log("timeout 500");
-}, 500);
- 
-setTimeout(function(){
-         
-        console.log("timeout 100");
-}, 100);
- 
-displaySync(function(){console.log("without timeout")});
-console.log("Завершение работы программы");
+
+console.log('Начало работы программы')
+
+setTimeout(function() {
+  console.log('timeout 500')
+}, 500)
+
+setTimeout(function() {
+  console.log('timeout 100')
+}, 100)
+
+displaySync(function() {
+  console.log('without timeout')
+})
+console.log('Завершение работы программы')
 ```
 
 Результат выполнения:
