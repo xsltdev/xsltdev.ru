@@ -36,3 +36,7 @@ arrange:
     - express-pug.md
     - express-pug-layout.md
     - express-api.md
+    - mocha.md
+    - assert.md
+    - supertest.md
+    - describe.md
