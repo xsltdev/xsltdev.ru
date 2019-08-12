@@ -28,3 +28,11 @@ arrange:
     - express-route-param.md
     - express-router.md
     - express-json.md
+    - express-handlebars.md
+    - express-handlebars-partial.md
+    - express-handlebars-layout.md
+    - express-handlebars-helper.md
+    - express-ejs.md
+    - express-pug.md
+    - express-pug-layout.md
+    - express-api.md
