@@ -66,7 +66,8 @@
           palette.primary | replace(" ", "-") | lower
         ) %}
         <meta name="theme-color" content="{{ primary }}">
-      {% endif %}
+	  {% endif %}
+	  <link rel="stylesheet" href="{{ 'assets/stylesheets/styles.css?20190814' | url }}">
     {% endblock %}
     {% block libs %}
       <script src="{{ 'assets/javascripts/modernizr.74668098.js' | url }}"></script>

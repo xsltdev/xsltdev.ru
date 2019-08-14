@@ -2,7 +2,9 @@
 
 Справочник свойств CSS
 
-- [!important](important.md)
+## Модификаторы
+
+[!important](important.md)
 
 <!--
 ## Псевдоклассы
@@ -88,13 +90,11 @@
 ---
 -->
 
-- [display](display.md)
+## Grid
 
-<details markdown="1" class="abstract">
-<summary>Grid</summary>
+**Руководство по [Grid Layout](grid-guide/grid-1.md)**
 
-Руководство по [Grid Layout](grid-guide/grid-1.md) _(Источник: [metanit.com](https://metanit.com/web/html5/13.1.php))_
-
+<div class="col3" markdown="1">
 - [grid](grid.md)
 - [grid-area](grid-area.md)
 - [grid-auto-columns](grid-auto-columns.md)
@@ -113,14 +113,13 @@
 - [grid-template-areas](grid-template-areas.md)
 - [grid-template-columns](grid-template-columns.md)
 - [grid-template-rows](grid-template-rows.md)
+</div>
 
-</details>
+## Flex
 
-<details markdown="1" class="abstract">
-<summary>Flex</summary>
+**Руководство по [Flexbox](flex-guide/flex-1.md)**
 
-Руководство по [Flexbox](flex-guide/flex-1.md) _(Источник: [metanit.com](https://metanit.com/web/html5/12.1.php))_
-
+<div class="col3" markdown="1">
 - [flex](flex.md)
 - [flex-basis](flex-basis.md)
 - [flex-direction](flex-direction.md)
@@ -129,12 +128,11 @@
 - [flex-shrink](flex-shrink.md)
 - [flex-wrap](flex-wrap.md)
 - [order](order.md)
+</div>
 
-</details>
+## Выравнивание
 
-<details markdown="1" class="abstract">
-<summary>Выравнивание</summary>
-
+<div class="col3" markdown="1">
 - [justify-content](justify-content.md)
 - [align-content](align-content.md)
 - [place-content](place-content.md)
@@ -147,60 +145,58 @@
 - [row-gap](row-gap.md)
 - [column-gap](column-gap.md)
 - [gap](gap.md)
-
-</details>
-
-<!--
+</div>
 
 ## Позиционирование
 
+<div class="col3" markdown="1">
 - [bottom](bottom.md)
 - [clear](clear.md)
+- [display](display.md)
 - [float](float.md)
 - [left](left.md)
 - [position](position.md)
 - [right](right.md)
 - [top](top.md)
 - [z-index](z-index.md)
-  {: .col-14 }
+</div>
 
 ## Блоки
 
+<div class="col3" markdown="1">
 - [height](height.md)
 - [width](width.md)
 - [max-height](max-height.md)
 - [max-width](max-width.md)
 - [min-height](min-height.md)
 - [min-width](min-width.md)
-  {: .col-14 }
+</div>
 
+<div class="col3" markdown="1">
 - [margin](margin.md)
 - [margin-bottom](margin-bottom.md)
 - [margin-left](margin-left.md)
 - [margin-right](margin-right.md)
 - [margin-top](margin-top.md)
 - [margin-trim](margin-trim.md)
-  {: .col-14 }
+</div>
 
+<div class="col3" markdown="1">
 - [padding](padding.md)
 - [padding-bottom](padding-bottom.md)
 - [padding-left](padding-left.md)
 - [padding-right](padding-right.md)
 - [padding-top](padding-top.md)
-  {: .col-14 }
+</div>
 
+<div class="col3" markdown="1">
 - [overflow](overflow.md)
 - [overflow-x](overflow-x.md)
 - [overflow-y](overflow-y.md)
 - [visibility](visibility.md)
-  {: .col-14 }
+</div>
 
-## Формы
-
-- [shape-image-threshold](shape-image-threshold.md)
-- [shape-margin](shape-margin.md)
-- [shape-outside](shape-outside.md)
-  {: .col-14 }
+<!--
 
 ## Фоны и границы
 
@@ -530,6 +526,13 @@
 - [mask-size](.md)
 - [mask-type](.md)
 {: .col-14 }
+
+## Фигуры
+
+- [shape-image-threshold](shape-image-threshold.md)
+- [shape-margin](shape-margin.md)
+- [shape-outside](shape-outside.md)
+  {: .col-14 }
 
 ## Фрагментация
 

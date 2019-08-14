@@ -1,0 +1,38 @@
+/*
+	COLUMNS
+*/
+.md-typeset .col2 {
+	margin-bottom: 1rem;
+}
+
+.md-typeset .col2 ul {
+	columns: 14rem;
+}
+
+.md-typeset .col3 {
+	margin-bottom: 1rem;
+}
+
+.md-typeset .col3 ul {
+	columns: 10rem;
+}
+
+.md-typeset .col2 ul,
+.md-typeset .col3 ul {
+	margin-top: 0;
+	list-style: none;
+	padding: 0;
+	margin-left: 0;
+}
+
+.md-typeset .col2 ul li,
+.md-typeset .col3 ul li {
+	margin-left: 0;
+}
+
+/*
+	HEADERS
+*/
+h2 {
+	border-bottom: 3px solid #f6f6f6;
+}
