@@ -196,10 +196,9 @@
 - [visibility](visibility.md)
 </div>
 
-<!--
+## Фон и границы
 
-## Фоны и границы
-
+<div class="col3" markdown="1">
 - [background](background.md)
 - [background-attachment](background-attachment.md)
 - [background-clip](background-clip.md)
@@ -211,7 +210,9 @@
 - [background-position-y](background-position-y.md)
 - [background-repeat](background-repeat.md)
 - [background-size](background-size.md)
-  {: .col-14 }
+</div>
+
+<!--
 
 - [border](border.md)
 - [border-bottom](border-bottom.md)
