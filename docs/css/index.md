@@ -212,8 +212,7 @@
 - [background-size](background-size.md)
 </div>
 
-<!--
-
+<div class="col3" markdown="1">
 - [border](border.md)
 - [border-bottom](border-bottom.md)
 - [border-bottom-color](border-bottom-color.md)
@@ -247,7 +246,9 @@
 - [border-top-width](border-top-width.md)
 - [border-width](border-width.md)
 - [box-shadow](box-shadow.md)
-  {: .col-14 }
+</div>
+
+<!--
 
 ## Интерфейс
 
