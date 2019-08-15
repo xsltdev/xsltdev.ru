@@ -2,235 +2,217 @@
 
 Справочник по тегам HTML на русском языке.
 
-!!! abstract "Основные элементы"
+## Основные элементы
 
-    [`<html>`](html.md) &mdash; корневой элемент HTML-документа
+<div class="col4" markdown="1">
+- [`<html>`](html.md)
+- [`<head>`](head.md)
+- [`<body>`](body.md)
+</div>
 
-    [`<head>`](head.md) &mdash; общая информация о документе
-    
-    [`<body>`](body.md) &mdash; контент документа
+## Метаданные документа
 
-!!! abstract "Метаданные документа"
+<div class="col4" markdown="1">
+- [`<base>`](base.md)
+- [`<link>`](link.md)
+- [`<meta>`](meta.md)
+- [`<style>`](style.md)
+- [`<title>`](title.md)
+</div>
 
-    [`<base>`](base.md) &mdash; базовый адрес
+## Секции и заголовки
 
-    [`<link>`](link.md) &mdash; внешние ресурсы и ссылки
+<div class="col4" markdown="1">
+- [`<address>`](address.md)
+- [`<article>`](article.md)
+- [`<aside>`](aside.md)
+- [`<footer>`](footer.md)
+- [`<header>`](header.md)
+- [`<h1>`](h1.md)
+- [`<h2>`](h2.md)
+- [`<h3>`](h3.md)
+- [`<h4>`](h4.md)
+- [`<h5>`](h5.md)
+- [`<h6>`](h6.md)
+- `<hgroup>`
+- [`<main>`](main.md)
+- [`<nav>`](nav.md)
+- [`<section>`](section.md)
+</div>
 
-    [`<meta>`](meta.md) &mdash; метатеги
+## Текстовые блоки
 
-    [`<style>`](style.md) &mdash; стили
+<div class="col4" markdown="1">
+- [`<blockquote>`](blockquote.md)
+- [`<dd>`](dd.md)
+- `<dir>`
+- [`<div>`](div.md)
+- [`<dl>`](dl.md)
+- [`<dt>`](dt.md)
+- [`<hr>`](hr.md)
+- [`<li>`](li.md)
+- [`<ol>`](ol.md)
+- [`<p>`](p.md)
+- [`<pre>`](pre.md)
+- [`<ul>`](ul.md)
+</div>
 
-    [`<title>`](title.md) &mdash; заголовок документа
+## Текстовые элементы
 
-!!! abstract "Секционирование содержания"
+<div class="col4" markdown="1">
+- [`<a>`](a.md)
+- [`<abbr>`](abbr.md)
+- [`<b>`](b.md)
+- [`<bdi>`](bdi.md)
+- [`<bdo>`](bdo.md)
+- [`<br>`](br.md)
+- [`<cite>`](cite.md)
+- [`<code>`](code.md)
+- [`<data>`](data.md)
+- [`<del>`](del.md)
+- [`<dfn>`](dfn.md)
+- [`<em>`](em.md)
+- [`<i>`](i.md)
+- [`<ins>`](ins.md)
+- [`<kbd>`](kbd.md)
+- [`<mark>`](mark.md)
+- [`<q>`](q.md)
+- [`<ruby>`](ruby.md)
+- [`<rtc>`](rtc.md)
+- [`<rb>`](rb.md)
+- [`<rp>`](rp.md)
+- [`<rt>`](rt.md)
+- [`<s>`](s.md)
+- [`<samp>`](samp.md)
+- [`<small>`](small.md)
+- [`<span>`](span.md)
+- [`<strong>`](strong.md)
+- [`<sub>`](sub.md)
+- [`<sup>`](sup.md)
+- [`<time>`](time.md)
+- `<tt>`
+- [`<u>`](u.md)
+- [`<var>`](var.md)
+- [`<wbr>`](wbr.md)
+</div>
 
-    [`<address>`](address.md) &mdash; контактные данные
+## Изображения и мультимедиа
 
-    [`<article>`](article.md) &mdash; часть документа, страницы или сайта
+<div class="col4" markdown="1">
+- `<applet>`
+- [`<area>`](area.md)
+- [`<audio>`](audio.md)
+- [`<img>`](img.md)
+- [`<figcaption>`](figcaption.md)
+- [`<figure>`](figure.md)
+- [`<map>`](map.md)
+- [`<track>`](track.md)
+- [`<video>`](video.md)
+- [`<embed>`](embed.md)
+- [`<iframe>`](iframe.md)
+- `<noembed>`
+- [`<object>`](object.md)
+- [`<param>`](param.md)
+- [`<picture>`](picture.md)
+- [`<source>`](source.md)
+</div>
 
-    [`<aside>`](aside.md) &mdash; косвенный контент
+## Скрипты
 
-    [`<footer>`](footer.md) &mdash; футер, колонтитул
+<div class="col4" markdown="1">
+- [`<canvas>`](canvas.md)
+- [`<noscript>`](noscript.md)
+- [`<script>`](script.md)
+</div>
 
-    [`<header>`](header.md) &mdash; шапка
+## Таблицы
 
-    [`<h1>`](h1.md), [`<h2>`](h2.md), [`<h3>`](h3.md), [`<h4>`](h4.md), [`<h5>`](h5.md), [`<h6>`](h6.md) &mdash; заголовки
+<div class="col4" markdown="1">
+- [`<caption>`](caption.md)
+- [`<col>`](col.md)
+- [`<colgroup>`](colgroup.md)
+- [`<table>`](table.md)
+- [`<tbody>`](tbody.md)
+- [`<td>`](td.md)
+- [`<tfoot>`](tfoot.md)
+- [`<th>`](th.md)
+- [`<thead>`](thead.md)
+- [`<tr>`](tr.md)
+</div>
 
-    [`<main>`](main.md) &mdash; основной контент
+## Формы
 
-    [`<nav>`](nav.md) &mdash; навигация
+<div class="col4" markdown="1">
+- [`<button>`](button.md)
+- [`<datalist>`](datalist.md)
+- [`<fieldset>`](fieldset.md)
+- [`<form>`](form.md)
+- [`<input>`](input.md)
+- [`<label>`](label.md)
+- [`<legend>`](legend.md)
+- [`<meter>`](meter.md)
+- [`<optgroup>`](optgroup.md)
+- [`<option>`](option.md)
+- [`<output>`](output.md)
+- [`<progress>`](progress.md)
+- [`<select>`](select.md)
+- [`<textarea>`](textarea.md)
+</div>
 
-    [`<section>`](section.md) &mdash; автономная секция
+## Интерактивные элементы
 
-!!! abstract "Текстовое содержание"
+<div class="col4" markdown="1">
+- [`<details>`](details.md)
+- [`<dialog>`](dialog.md)
+- `<menu>`
+- `<menuitem>`
+- [`<summary>`](summary.md)
+</div>
 
-    [`<blockquote>`](blockquote.md) &mdash; цитата
+## Веб-компоненты
 
-    [`<dd>`](dd.md) &mdash; значение определения
+<div class="col4" markdown="1">
+- `<content>`
+- `<element>`
+- `<shadow>`
+- [`<slot>`](slot.md)
+- [`<template>`](template.md)
+</div>
 
-    [`<div>`](div.md) &mdash; блочный элемент
+## Устаревшие элементы
 
-    [`<dl>`](dl.md) &mdash; список определений
+<div class="col4" markdown="1">
+- `<acronym>`
+- `<applet>`
+- `<basefont>`
+- `<bgsound>`
+- `<big>`
+- `<blink>`
+- `<center>`
+- `<command>`
+- `<content>`
+- `<dir>`
+- `<element>`
+- `<font>`
+- `<frame>`
+- `<frameset>`
+- `<image>`
+- `<isindex>`
+- `<keygen>`
+- `<listing>`
+- `<marquee>`
+- `<menuitem>`
+- `<multicol>`
+- `<nextid>`
+- `<nobr>`
+- `<noembed>`
+- `<noframes>`
+- `<plaintext>`
+- `<shadow>`
+- `<spacer>`
+- `<strike>`
+- `<tt>`
+- `<xmp>`
+</div>
 
-    [`<dt>`](dt.md) &mdash; определение
-
-    [`<figcaption>`](figcaption.md) &mdash; заголовок иллюстрации
-
-    [`<figure>`](figure.md) &mdash; иллюстрация
-
-    [`<hr>`](hr.md) &mdash; разделительная линия
-
-    [`<li>`](li.md) &mdash; элемент списка
-
-    [`<ol>`](ol.md) &mdash; нумерованный список
-
-    [`<p>`](p.md) &mdash; абзац
-
-    [`<pre>`](pre.md) &mdash; форматированный текст
-
-    [`<ul>`](ul.md) &mdash; маркированный список
-
-!!! abstract "Встроенные текстовые семантики"
-
-    [`<a>`](a.md) &mdash; ссылка
-    
-    [`<abbr>`](abbr.md) &mdash; аббревиатура
-    
-    [`<b>`](b.md) &mdash; жирное выделение
-    
-    [`<bdi>`](bdi.md) &mdash; семантическая изоляция направления текста
-    
-    [`<bdo>`](bdo.md) &mdash; семантическое переопределение направления текста
-    
-    [`<br>`](br.md) &mdash; перенос строки
-    
-    [`<cite>`](cite.md) &mdash; источник цитаты
-    
-    [`<code>`](code.md) &mdash; программный код
-    
-    [`<data>`](data.md) &mdash; данные
-    
-    [`<del>`](del.md) &mdash; удаленный контент
-    
-    [`<dfn>`](dfn.md) &mdash; определение
-    
-    [`<em>`](em.md) &mdash; логический курсив
-    
-    [`<i>`](i.md) &mdash; курсивное выделение
-    
-    [`<ins>`](ins.md) &mdash; добавленный контент
-    
-    [`<kbd>`](kbd.md) &mdash; разметка клавиатурных команд
-    
-    [`<mark>`](mark.md) &mdash; контекстное выделение
-    
-    [`<q>`](q.md) &mdash; цитата
-    
-    [`<ruby>`](ruby.md), [`<rtc>`](rtc.md), [`<rb>`](rb.md), [`<rp>`](rp.md), [`<rt>`](rt.md) &mdash; текстовые аннотации
-    
-    [`<s>`](s.md) &mdash; зачеркнутый текст
-    
-    [`<samp>`](samp.md) &mdash; разметка вывода программы
-    
-    [`<small>`](small.md) &mdash; уменьшенный текст
-    
-    [`<span>`](span.md) &mdash; инлайновый элемент
-    
-    [`<strong>`](strong.md) &mdash; логическое жирное выделение
-    
-    [`<sub>`](sub.md) &mdash; нижний индекс
-    
-    [`<sup>`](sup.md) &mdash; верхний индекс
-    
-    [`<time>`](time.md) &mdash; дата и время
-    
-    [`<u>`](u.md) &mdash; подчеркнутый текст
-    
-    [`<var>`](var.md) &mdash; разметка переменной
-    
-    [`<wbr>`](wbr.md) &mdash; возможный перенос строки
-
-!!! abstract "Изображения и мультимедиа"
-
-    [`<area>`](area.md) &mdash; область на карте ссылок
-    
-    [`<audio>`](audio.md) &mdash; аудио-файл
-    
-    [`<img>`](img.md) &mdash; изображение
-    
-    [`<map>`](map.md) &mdash; карта ссылок
-    
-    [`<source>`](source.md) &mdash; медиа-ресурс
-    
-    [`<track>`](track.md) &mdash; текстовые субтитры
-    
-    [`<video>`](video.md) &mdash; видео
-    
-    [`<embed>`](embed.md) &mdash; встроенный контент
-    
-    [`<iframe>`](iframe.md) &mdash; внешний документ
-    
-    [`<object>`](object.md) &mdash; встроенный контент
-    
-    [`<param>`](param.md) &mdash; передаваемый параметр в `<object>`
-    
-    [`<picture>`](picture.md) &mdash; изображение
-    
-    [`<source>`](source.md) &mdash; медиа-ресурс
-
-!!! abstract "Скрипты"
-
-    [`<canvas>`](canvas.md) &mdash; область для программного рисования
-    
-    [`<noscript>`](noscript.md) &mdash; контент, выводимый при отключенных скриптах
-    
-    [`<script>`](script.md) &mdash; скрипт
-
-!!! abstract "Таблицы"
-
-    
-    [`<caption>`](caption.md) &mdash; заголовок таблицы
-    
-    [`<col>`](col.md) &mdash; колонка таблицы
-    
-    [`<colgroup>`](colgroup.md) &mdash; группа колонок
-    
-    [`<table>`](table.md) &mdash; таблица
-    
-    [`<tbody>`](tbody.md) &mdash; тело таблицы
-    
-    [`<td>`](td.md) &mdash; ячейка
-    
-    [`<tfoot>`](tfoot.md) &mdash; футер таблицы
-    
-    [`<th>`](th.md) &mdash; заголовочная ячейка
-    
-    [`<thead>`](thead.md) &mdash; шапка таблицы
-    
-    [`<tr>`](tr.md) &mdash; строка таблицы
-
-!!! abstract "Формы"
-
-    [`<button>`](button.md) &mdash; кнопка
-    
-    [`<datalist>`](datalist.md) &mdash; набор опций
-    
-    [`<fieldset>`](fieldset.md) &mdash; группа элементов формы
-    
-    [`<form>`](form.md) &mdash; форма
-    
-    [`<input>`](input.md) &mdash; элемент ввода
-    
-    [`<label>`](label.md) &mdash; метка элемента ввода
-    
-    [`<legend>`](legend.md) &mdash; заголовок группы элементов
-    
-    [`<meter>`](meter.md) &mdash; вывод переменных числовых диапазонов
-    
-    [`<optgroup>`](optgroup.md) &mdash; группа опций
-    
-    [`<option>`](option.md) &mdash; опция
-    
-    [`<output>`](output.md) &mdash; область вывода
-    
-    [`<progress>`](progress.md) &mdash; прогресс-бар
-    
-    [`<select>`](select.md) &mdash; выпадающий список
-    
-    [`<textarea>`](textarea.md) &mdash; ввод многострочного текста
-
-!!! abstract "Интерактивные элементы"
-
-    [`<details>`](details.md) &mdash; разворачивающийся элемент
-    
-    [`<dialog>`](dialog.md) &mdash; диалоговое окно
-    
-    [`<summary>`](summary.md) &mdash; заголовок в разворачивающемся элементе
-
-!!! abstract "Веб-компоненты"
-
-    [`<slot>`](slot.md) &mdash; именованный слот
-    
-    [`<template>`](template.md) &mdash; шаблон веб-компонента
-
-В справочнике приведены только актуальные для HTML теги и атрибуты, устаревшие и нерекомендуемые теги и атрибуты не описываются.
+---
