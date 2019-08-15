@@ -1,8 +1,8 @@
-site_name: Справочники
+site_name: Справочник
 site_url: https://xsltdev.ru/
-site_description: Справочники web-разработчика
+site_description: Справочник web-разработчика с примерами кода - HTML, CSS, Javascript, Typescript, Angular, React, Node.js, XSLT, XPath
 site_author: Бондаренко Юрий
-copyright: (С) 2012-2019, Справочники web-разработчика
+copyright: (С) 2012-2019, Справочник web-разработчика с примерами кода
 
 repo_name: 'Репозиторий справочника'
 repo_url: 'https://github.com/bndby/xsltdev'
