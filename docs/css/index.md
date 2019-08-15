@@ -248,11 +248,10 @@
 - [box-shadow](box-shadow.md)
 </div>
 
-<!--
-
 ## Интерфейс
 
-- [appearance](appearance.md)
+<div class="col3" markdown="1">
+- appearance
 - [box-sizing](box-sizing.md)
 - [caret-color](caret-color.md)
 - [cursor](cursor.md)
@@ -264,9 +263,9 @@
 - [resize](resize.md)
 - [text-overflow](text-overflow.md)
 - [user-select](user-select.md)
-  {: .col-14 }
+</div>
 
----
+<!--
 
 ## Переходы
 
