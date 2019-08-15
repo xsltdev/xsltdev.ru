@@ -265,17 +265,15 @@
 - [user-select](user-select.md)
 </div>
 
-<!--
-
 ## Переходы
 
+<div class="col3" markdown="1">
 - [transition](transition.md)
 - [transition-delay](transition-delay.md)
 - [transition-duration](transition-duration.md)
 - [transition-property](transition-property.md)
 - [transition-timing-function](transition-timing-function.md)
-  {: .col-14 }
-  -->
+</div>
 
 <!--
 <details markdown="1" class="abstract">

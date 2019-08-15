@@ -36,3 +36,10 @@
 h2 {
 	border-bottom: 3px solid #f6f6f6;
 }
+
+/*
+	Lists
+*/
+.md-typeset dd {
+    margin: 0.4em 0 1.2em 1.875em;
+}
