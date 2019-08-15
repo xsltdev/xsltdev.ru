@@ -326,57 +326,58 @@ title: Оглавление
 - [word-spacing](word-spacing.md)
 </div>
 
-<!--
-
 ## Оформление текста
 
-- [letter-spacing](.md)
-- [text-align](.md)
-- [text-decoration](.md)
-- [text-decoration-color](.md)
-- [text-decoration-line](.md)
-- [text-decoration-style](.md)
-- [text-emphasis](.md)
-- [text-emphasis-color](.md)
-- [text-emphasis-position](.md)
-- [text-emphasis-style](.md)
-- [text-indent](.md)
-- [text-rendering](.md)
-- [text-shadow](.md)
-- [text-underline-position](.md)
-- [text-transform](.md)
-- [white-space](.md)
-- [word-spacing](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [letter-spacing](letter-spacing.md)
+- [text-decoration](text-decoration.md)
+- `text-decoration-color`
+- `text-decoration-line`
+- `text-decoration-style`
+- `text-emphasis`
+- `text-emphasis-color`
+- `text-emphasis-position`
+- `text-emphasis-style`
+- [text-indent](text-indent.md)
+- `text-rendering`
+- [text-shadow](text-shadow.md)
+- `text-underline-position`
+- [text-transform](text-transform.md)
+- [white-space](white-space.md)
+- [word-spacing](word-spacing.md)
+</div>
 
 ## Шрифт
 
-- [font](.md)
-- [font-family](.md)
-- [font-feature-settings](.md)
-- [font-kerning](.md)
-- [font-language-override](.md)
-- [font-optical-sizing](.md)
-- [font-size](.md)
-- [font-size-adjust](.md)
-- [font-stretch](.md)
-- [font-style](.md)
-- [font-synthesis](.md)
-- [font-variant](.md)
-- [font-variant-alternates](.md)
-- [font-variant-caps](.md)
-- [font-variant-east-asian](.md)
-- [font-variant-ligatures](.md)
-- [font-variant-numeric](.md)
-- [font-variant-position](.md)
-- [font-variation-settings](.md)
-- [font-weight](.md)
-- [line-height](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [font](font.md)
+- [font-family](font-family.md)
+- [font-feature-settings](font-feature-settings.md)
+- [font-kerning](font-kerning.md)
+- `font-language-override`
+- `font-optical-sizing`
+- [font-size](font-size.md)
+- [font-size-adjust](font-size-adjust.md)
+- [font-stretch](font-stretch.md)
+- [font-style](font-style.md)
+- `font-synthesis`
+- [font-variant](font-variant.md)
+- `font-variant-alternates`
+- `font-variant-caps`
+- `font-variant-east-asian`
+- `font-variant-ligatures`
+- `font-variant-numeric`
+- `font-variant-position`
+- `font-variation-settings`
+- [font-weight](font-weight.md)
+- [line-height](line-height.md)
+</div>
 
-- [@font-face](.md)
-- [font-family](.md)
-- [font-feature-settings](.md)
+<!--
+
+- [@font-face](@font-face.md)
+- [font-family](font-family.md)
+- [font-feature-settings](font-feature-settings.md)
 - [font-style](.md)
 - [font-variant](.md)
 - [font-weight](.md)
@@ -384,14 +385,18 @@ title: Оглавление
 - [src](.md)
 - [unicode-range](.md)
 - [@font-feature-values](.md)
-  {: .col-14 }
+
+-->
 
 ## Цвет
 
-- [color](.md)
-- [color-adjust](.md)
-- [opacity](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [color](color.md)
+- `color-adjust`
+- [opacity](opacity.md)
+</div>
+
+<!--
 
 ## Режимы письма
 
