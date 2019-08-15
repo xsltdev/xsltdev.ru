@@ -48,9 +48,9 @@
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
-        <title>{{ page.meta.title }} - {{ page.ancestors | first | attr("title") }} - {{ config.site_name }}</title>
+        <title>{{ page.meta.title }} | {{ page.ancestors | first | attr("title") }} | {{ config.site_name }}</title>
       {% elif page and page.title and not page.is_homepage %}
-        <title>{{ page.title }} - {{ page.ancestors | first | attr("title") }} - {{ config.site_name }}</title>
+        <title>{{ page.title }} | {{ page.ancestors | first | attr("title") }} (Примеры)</title>
       {% else %}
         <title>{{ config.site_name }}</title>
       {% endif %}
