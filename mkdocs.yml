@@ -46,6 +46,7 @@ markdown_extensions:
           permalink: true
     - pymdownx.extra
     - pymdownx.details
+    - pymdownx.emoji
 
 plugins:
     - search

@@ -36,6 +36,7 @@ next_page: null
 - [MkDocs](https://www.mkdocs.org)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
+- [Emoji](https://www.joypixels.com/emoji#all)
 
 <!--
 Планы

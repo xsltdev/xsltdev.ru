@@ -279,10 +279,9 @@ title: Оглавление
 - [transition-timing-function](transition-timing-function.md)
 </div>
 
-<!--
-<details markdown="1" class="abstract">
-<summary>Анимации</summary>
+## Анимации
 
+<div class="col3" markdown="1">
 - [@keyframes](@keyframes.md)
 - [animation](animation.md)
 - [animation-delay](animation-delay.md)
@@ -293,42 +292,41 @@ title: Оглавление
 - [animation-name](animation-name.md)
 - [animation-play-state](animation-play-state.md)
 - [animation-timing-function](animation-timing-function.md)
+</div>
 
-</details>
--->
-
-<!--
 ## Трансформации
 
-- [backface-visibility](.md)
-- [perspective](.md)
-- [perspective-origin](.md)
-- [transform](.md)
-- [transform-box](.md)
-- [transform-origin](.md)
-- [transform-style](.md)
-{: .col-14 }
-
----
+<div class="col3" markdown="1">
+- [backface-visibility](backface-visibility.md)
+- `perspective`
+- `perspective-origin`
+- [transform](transform.md)
+- `transform-box`
+- [transform-origin](transform-origin.md)
+- [transform-style](transform-style.md)
+</div>
 
 ## Текст
 
-- [hanging-punctuation](.md)
-- [hyphens](.md)
-- [letter-spacing](.md)
-- [line-break](.md)
-- [overflow-wrap](.md)
-- [tab-size](.md)
-- [text-align](.md)
-- [text-align-last](.md)
-- [text-indent](.md)
-- [text-justify](.md)
-- [text-size-adjust](.md)
-- [text-transform](.md)
-- [white-space](.md)
-- [word-break](.md)
-- [word-spacing](.md)
-{: .col-14 }
+<div class="col3" markdown="1">
+- `hanging-punctuation`
+- [hyphens](hyphens.md)
+- [letter-spacing](letter-spacing.md)
+- `line-break`
+- `overflow-wrap`
+- `tab-size`
+- [text-align](text-align.md)
+- [text-align-last](text-align-last.md)
+- [text-indent](text-indent.md)
+- `text-justify`
+- `text-size-adjust`
+- [text-transform](text-transform.md)
+- [white-space](white-space.md)
+- [word-break](word-break.md)
+- [word-spacing](word-spacing.md)
+</div>
+
+<!--
 
 ## Оформление текста
 
@@ -349,7 +347,7 @@ title: Оглавление
 - [text-transform](.md)
 - [white-space](.md)
 - [word-spacing](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Шрифт
 
@@ -374,7 +372,7 @@ title: Оглавление
 - [font-variation-settings](.md)
 - [font-weight](.md)
 - [line-height](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [@font-face](.md)
 - [font-family](.md)
@@ -386,14 +384,14 @@ title: Оглавление
 - [src](.md)
 - [unicode-range](.md)
 - [@font-feature-values](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Цвет
 
 - [color](.md)
 - [color-adjust](.md)
 - [opacity](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Режимы письма
 
@@ -403,7 +401,7 @@ title: Оглавление
 - [text-orientation](.md)
 - [unicode-bidi](.md)
 - [writing-mode](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Изображения
 
@@ -412,9 +410,9 @@ title: Оглавление
 - [image-resolution](.md)
 - [object-fit](.md)
 - [object-position](.md)
-{: .col-14 }
+  {: .col-14 }
 
-- [linear-gradient()](linear-gradient().md)
+- [linear-gradient()](<linear-gradient().md>)
 - [radial-gradient()](.md)
 - [repeating-linear-gradient()](.md)
 - [repeating-radial-gradient()](.md)
@@ -424,20 +422,20 @@ title: Оглавление
 - [element()](.md)
 - [image()](.md)
 - [cross-fade()](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Фильтры
 
 - [backdrop-filter](.md)
 - [filter](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Композиция и смешивание
 
 - [background-blend-mode](.md)
 - [isolation](.md)
 - [mix-blend-mode](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Списки и Счетчики
 
@@ -447,7 +445,7 @@ title: Оглавление
 - [list-style-type](.md)
 - [list-style-position](.md)
 - [list-style](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [@counter-style](.md)
 - [system](.md)
@@ -459,13 +457,13 @@ title: Оглавление
 - [pad](.md)
 - [speak-as](.md)
 - [fallback](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Генерируемый контент
 
 - [content](.md)
 - [quotes](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Колонки
 
@@ -479,7 +477,7 @@ title: Оглавление
 - [column-span](.md)
 - [column-width](.md)
 - [columns](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Таблицы
 
@@ -489,23 +487,23 @@ title: Оглавление
 - [empty-cells](.md)
 - [table-layout](.md)
 - [vertical-align](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Страницы
 
 - [page-break-after](.md)
 - [page-break-before](.md)
 - [page-break-inside](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [@page](@page.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [:blank](.md)
 - [:first](.md)
 - [:left](.md)
 - [:right](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Маски
 
@@ -528,7 +526,7 @@ title: Оглавление
 - [mask-repeat](.md)
 - [mask-size](.md)
 - [mask-type](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Фигуры
 
@@ -545,14 +543,14 @@ title: Оглавление
 - [break-inside](.md)
 - [orphans](.md)
 - [widows](.md)
-{: .col-14 }
+  {: .col-14 }
 
 ## Pointer Events
 
 - [pointer-events](pointer-events.md)
 - [touch-action](touch-action.md)
 - [scroll-behavior](scroll-behavior.md)
-{: .col-14 }
+  {: .col-14 }
 
 ---
 
@@ -564,7 +562,7 @@ title: Оглавление
 - [max-inline-size](.md)
 - [min-block-size](.md)
 - [min-inline-size](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [border-block](.md)
 - [border-block-color](.md)
@@ -597,7 +595,7 @@ title: Оглавление
 - [border-end-end-radius](.md)
 - [border-style (logical keyword)](.md)
 - [border-width (logical keyword)](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [margin (logical keyword)](.md)
 - [margin-block](.md)
@@ -606,11 +604,11 @@ title: Оглавление
 - [margin-inline](.md)
 - [margin-inline-end](.md)
 - [margin-inline-start](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [overflow-block](.md)
 - [overflow-inline](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [padding (logical keyword)](.md)
 - [padding-block](.md)
@@ -619,7 +617,7 @@ title: Оглавление
 - [padding-inline](.md)
 - [padding-inline-end](.md)
 - [padding-inline-start](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [clear (inline-end and inline-start keywords)](.md)
 - [float (inline-end and inline-start keywords)](.md)
@@ -630,12 +628,12 @@ title: Оглавление
 - [inset-inline](.md)
 - [inset-inline-end](.md)
 - [inset-inline-start](.md)
-{: .col-14 }
+  {: .col-14 }
 
 - [caption-side (inline-end and inline-start keywords)](.md)
 - [resize (block and inline keywords)](.md)
 - [text-align (end and start keywords)](.md)
-{: .col-14 }
--->
+  {: .col-14 }
+  -->
 
 <!-- prettier-ignore-end -->

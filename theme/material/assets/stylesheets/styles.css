@@ -47,3 +47,13 @@ h2 {
 .md-typeset dd {
     margin: 0.4em 0 1.2em 1.875em;
 }
+
+/*
+	Links with CODE
+*/
+.md-typeset a>code {
+    padding: .07353em 0;
+    border-radius: .1rem;
+    background-color: hsla(0,0%,92.5%,.5);
+	box-shadow: 0.29412em 0 0 hsla(0,0%,92.5%,.5), -0.29412em 0 0 hsla(0,0%,92.5%,.5);
+}

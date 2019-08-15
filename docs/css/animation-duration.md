@@ -1,0 +1,92 @@
+# animation-duration
+
+Свойство **`animation-duration`** задаёт время в секундах или миллисекундах, сколько должен длиться один цикл анимации. По умолчанию значение равно `0s`, это означает, что никакой анимации нет.
+
+Можно указать несколько значений, перечисляя их через запятую. Отрицательные значения и значения без указания единиц времени (`s` или `ms`) недопустимы и будут игнорироваться.
+
+## Синтаксис
+
+```css
+/* Single animation */
+animation-duration: 6s;
+animation-duration: 120ms;
+
+/* Multiple animations */
+animation-duration: 1.64s, 15.22s;
+animation-duration: 10s, 35s, 230ms;
+```
+
+## Значения
+
+Время.
+
+Значение по-умолчанию:
+
+```css
+animation-duration: 0s;
+```
+
+Применяется к: Ко всем элементам, к псевдоэлементам `::before` и `::after`
+
+## Спецификации
+
+- [CSS Animations](http://dev.w3.org/csswg/css-animations/#animation-duration)
+
+## Поддержка браузерами
+
+<p class="ciu_embed" data-feature="css-animation" data-periods="future_1,current,past_1,past_2">
+  <a href="http://caniuse.com/#feat=css-animation">Can I Use css-animation?</a> Data on support for the css-animation feature across the major browsers from caniuse.com.
+</p>
+
+## Описание и примеры
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>animation-duration</title>
+    <style>
+      .warn {
+        background: #fc0;
+        padding: 10px;
+      }
+      .fadeInLeft {
+        -webkit-animation-name: fadeInLeft;
+        -webkit-animation-duration: 1s;
+        animation-name: fadeInLeft;
+        animation-duration: 1s;
+      }
+      @-webkit-keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-2000px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-2000px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warn fadeInLeft">Вы не учли, что скалярное поле необходимо и достаточно!</div>
+  </body>
+</html>
+```
+
+### Примечание
+
+- Chrome, Safari и Android поддерживают свойство `-webkit-animation-duration`.
+- Opera до версии 12.10 поддерживает свойство `-o-animation-duration`.
+- Firefox до версии 16 поддерживает свойство `-moz-animation-duration`.
