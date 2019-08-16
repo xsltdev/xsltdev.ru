@@ -469,26 +469,31 @@ title: Оглавление
 - [speak-as](.md)
 - [fallback](.md)
   {: .col-14 }
+-->
 
 ## Генерируемый контент
 
-- [content](.md)
-- [quotes](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [content](content.md)
+- [quotes](quotes.md)
+</div>
 
 ## Колонки
 
-- [column-count](.md)
-- [column-fill](.md)
-- [column-gap](.md)
-- [column-rule](.md)
-- [column-rule-color](.md)
-- [column-rule-style](.md)
-- [column-rule-width](.md)
-- [column-span](.md)
-- [column-width](.md)
-- [columns](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [column-count](column-count.md)
+- [column-fill](column-fill.md)
+- [column-gap](column-gap.md)
+- [column-rule](column-rule.md)
+- [column-rule-color](column-rule-color.md)
+- [column-rule-style](column-rule-style.md)
+- [column-rule-width](column-rule-width.md)
+- [column-span](column-span.md)
+- [column-width](column-width.md)
+- [columns](columns.md)
+</div>
+
+<!--
 
 ## Таблицы
 

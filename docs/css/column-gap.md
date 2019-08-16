@@ -27,15 +27,17 @@ column-gap: unset;
 
 Применяется к: колонкам, флексам, гридам
 
-- `<размер>` - Значение ширины межколоночного интервала в единицах CSS (например, пикселах).
-- `normal` - Межколоночный интервал устанавливается браузером.
+`<размер>`
+: Значение ширины межколоночного интервала в единицах CSS (например, пикселах).
+
+`normal`
+: Межколоночный интервал устанавливается браузером.
 
 ## Спецификации
 
 - [CSS Box Alignment Module Level 3](https://drafts.csswg.org/css-align-3/#column-row-gap)
 - [CSS Grid Layout](https://drafts.csswg.org/css-grid/#gutters)
-
-* [CSS Multi-column Layout Module](https://drafts.csswg.org/css-multicol-1/#column-gap)
+- [CSS Multi-column Layout Module](https://drafts.csswg.org/css-multicol-1/#column-gap)
 
 ### Примечания
 
@@ -53,9 +55,7 @@ Safari, Chrome и Аndroid поддерживают свойство `-webkit-co
 
 ### Flex
 
-HTML
-
-```html
+```html tab="HTML"
 <div id="flexbox">
   <div></div>
   <div></div>
@@ -63,9 +63,7 @@ HTML
 </div>
 ```
 
-CSS
-
-```css
+```css tab="CSS"
 #flexbox {
   display: flex;
   height: 100px;
@@ -81,9 +79,7 @@ CSS
 
 ### Grid
 
-HTML
-
-```html
+```html tab="HTML"
 <div id="grid">
   <div></div>
   <div></div>
@@ -91,9 +87,7 @@ HTML
 </div>
 ```
 
-CSS
-
-```css
+```css tab="CSS"
 #grid {
   display: grid;
   height: 100px;
@@ -110,17 +104,13 @@ CSS
 
 ### Колонки
 
-HTML
-
-```html
+```html tab="HTML"
 <p class="content-box">
   This is some multi-column text with a 40px column gap created with the CSS `column-gap` property. Don't you think that's fun and exciting? I sure do!
 </p>
 ```
 
-CSS
-
-```css
+```css tab="CSS"
 .content-box {
   column-count: 3;
   column-gap: 40px;
