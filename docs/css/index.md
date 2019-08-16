@@ -396,26 +396,28 @@ title: Оглавление
 - [opacity](opacity.md)
 </div>
 
-<!--
-
 ## Режимы письма
 
-- [direction](.md)
-- [glyph-orientation-horizontal](.md)
-- [text-combine-upright](.md)
-- [text-orientation](.md)
-- [unicode-bidi](.md)
-- [writing-mode](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [direction](direction.md)
+- `glyph-orientation-horizontal`
+- `text-combine-upright`
+- `text-orientation`
+- [unicode-bidi](unicode-bidi.md)
+- `writing-mode`
+</div>
 
 ## Изображения
 
-- [image-orientation](.md)
-- [image-rendering](.md)
-- [image-resolution](.md)
-- [object-fit](.md)
-- [object-position](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- `image-orientation`
+- [image-rendering](image-rendering.md)
+- `image-resolution`
+- [object-fit](object-fit.md)
+- `object-position`
+</div>
+
+<!--
 
 - [linear-gradient()](<linear-gradient().md>)
 - [radial-gradient()](.md)
