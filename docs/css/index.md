@@ -493,24 +493,26 @@ title: Оглавление
 - [columns](columns.md)
 </div>
 
-<!--
-
 ## Таблицы
 
-- [border-collapse](.md)
-- [border-spacing](.md)
-- [caption-side](.md)
-- [empty-cells](.md)
-- [table-layout](.md)
-- [vertical-align](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [border-collapse](border-collapse.md)
+- [border-spacing](border-spacing.md)
+- [caption-side](caption-side.md)
+- [empty-cells](empty-cells.md)
+- [table-layout](table-layout.md)
+- [vertical-align](vertical-align.md)
+</div>
 
 ## Страницы
 
-- [page-break-after](.md)
-- [page-break-before](.md)
-- [page-break-inside](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [page-break-after](page-break-after.md)
+- [page-break-before](page-break-before.md)
+- [page-break-inside](page-break-inside.md)
+</div>
+
+<!--
 
 - [@page](@page.md)
   {: .col-14 }
