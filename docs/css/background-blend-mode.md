@@ -1,43 +1,38 @@
-# mix-blend-mode
+# background-blend-mode
 
-Свойство **`mix-blend-mode`** опреляет режим смешивания цветов выбранного элемента с низлежащими слоями.
+Свойство **`background-blend-mode`** описывает то, как фоновое изображение элемента должно накладываться на фоны других элементов.
 
 ## Синтаксис
 
 ```css
-/* Ключевые слова */
-mix-blend-mode: normal;
-mix-blend-mode: multiply;
-mix-blend-mode: screen;
-mix-blend-mode: overlay;
-mix-blend-mode: darken;
-mix-blend-mode: lighten;
-mix-blend-mode: color-dodge;
-mix-blend-mode: color-burn;
-mix-blend-mode: hard-light;
-mix-blend-mode: soft-light;
-mix-blend-mode: difference;
-mix-blend-mode: exclusion;
-mix-blend-mode: hue;
-mix-blend-mode: saturation;
-mix-blend-mode: color;
-mix-blend-mode: luminosity;
+background-blend-mode: normal; /* Одно значение */
+background-blend-mode: darken, luminosity; /* Два значение, по одному на каждый фон */
 
-/* Глобальные значения */
-mix-blend-mode: initial;
-mix-blend-mode: inherit;
-mix-blend-mode: unset;
+background-blend-mode: initial;
+background-blend-mode: inherit;
+background-blend-mode: unset;
 ```
-
-Значение по умолчанию: `normal`
 
 ## Значения
 
-- `blend-mode` -- Собственно режим смешивания. Может быть задано несколько значений через запятую.
+`blend-mode`
+: Собственно режим смешивания. Может быть задано несколько значений через запятую.
 
-## Спецификация
+Значение по-умолчанию:
 
-- [Compositing and Blending Level 1](https://drafts.fxtf.org/compositing-1/#mix-blend-mode)
+```css
+background-blend-mode: normal;
+```
+
+## Спецификации
+
+- [Compositing and Blending Level 1](https://drafts.fxtf.org/compositing-1/#background-blend-mode)
+
+## Поддержка браузерами
+
+<p class="ciu_embed" data-feature="css-backgroundblendmode" data-periods="future_1,current,past_1,past_2">
+  <a href="http://caniuse.com/#feat=css-backgroundblendmode">Can I Use css-backgroundblendmode?</a> Data on support for the css-backgroundblendmode feature across the major browsers from caniuse.com.
+</p>
 
 ## Описание и примеры
 
@@ -140,23 +135,3 @@ mix-blend-mode: unset;
 ![Luminosity blend mode](blend-mode-luminosity.png)
 
 Конечный цвет имеет яркость верхнего цвета, используя оттенок и насыщенность нижнего цвета. Этот режим смешивания эквивалентен `color`, но при этом слои меняются местами.
-
-### Пример
-
-```html tab="HTML"
-<svg>
-  <circle cx="40" cy="40" r="40" fill="cyan" />
-  <circle cx="80" cy="40" r="40" fill="magenta" />
-  <circle cx="60" cy="80" r="40" fill="yellow" />
-</svg>
-```
-
-```css tab="CSS"
-circle {
-  mix-blend-mode: multiply;
-}
-```
-
-Результат:
-
-![Пример использования свойства mix-blend-mode](mix-blend-mode.png)

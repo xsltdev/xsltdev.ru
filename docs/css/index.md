@@ -417,42 +417,46 @@ title: Оглавление
 - `object-position`
 </div>
 
-<!--
-
-- [linear-gradient()](<linear-gradient().md>)
-- [radial-gradient()](.md)
-- [repeating-linear-gradient()](.md)
-- [repeating-radial-gradient()](.md)
-- [conic-gradient()](.md)
-- [repeating-conic-gradient()](.md)
-- [url()](.md)
-- [element()](.md)
-- [image()](.md)
-- [cross-fade()](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- `linear-gradient()`
+- `radial-gradient()`
+- `repeating-linear-gradient()`
+- `repeating-radial-gradient()`
+- `conic-gradient()`
+- `repeating-conic-gradient()`
+- `url()`
+- `element()`
+- `image()`
+- `cross-fade()`
+</div>
 
 ## Фильтры
 
-- [backdrop-filter](.md)
-- [filter](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- `backdrop-filter`
+- [filter](filter.md)
+</div>
 
 ## Композиция и смешивание
 
-- [background-blend-mode](.md)
-- [isolation](.md)
-- [mix-blend-mode](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [background-blend-mode](background-blend-mode.md)
+- [isolation](isolation.md)
+- [mix-blend-mode](mix-blend-mode.md)
+</div>
 
 ## Списки и Счетчики
 
-- [counter-increment](.md)
-- [counter-reset](.md)
-- [list-style-image](.md)
-- [list-style-type](.md)
-- [list-style-position](.md)
-- [list-style](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [counter-increment](counter-increment.md)
+- [counter-reset](counter-reset.md)
+- [list-style-image](list-style-image.md)
+- [list-style-type](list-style-type.md)
+- [list-style-position](list-style-position.md)
+- [list-style](list-style.md)
+</div>
+
+<!--
 
 - [@counter-style](.md)
 - [system](.md)
