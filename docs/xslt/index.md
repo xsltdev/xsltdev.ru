@@ -9,7 +9,7 @@ description: Справочник по элементам XSLT 1.0 на русс
 
 [Язык преобразований XSL 1.0 (XSLT 1.0)](tr.md) &mdash; Перевод рекомендации W3C на русский язык
 
-<div style="columns: 10rem" markdown="1">
+<div class="col3" markdown="1">
 - [xsl:apply-imports](xsl-apply-imports.md)
 - [xsl:apply-templates](xsl-apply-templates.md)
 - [xsl:attribute](xsl-attribute.md)

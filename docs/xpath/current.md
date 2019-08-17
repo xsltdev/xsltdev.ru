@@ -44,9 +44,7 @@ node-set current()
 
 ### Пример
 
-XML File (current.xml)
-
-```xml
+```xml tab="XML"
 <?xml version='1.0' ?>
 <?xml-stylesheet type="text/xsl" href="current.xsl" ?>
 <nodes>
@@ -58,9 +56,7 @@ XML File (current.xml)
 </nodes>
 ```
 
-XSLT File (current.xsl)
-
-```xml
+```xslt tab="XSLT"
 <?xml version='1.0' ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -81,9 +77,7 @@ XSLT File (current.xsl)
 </xsl:stylesheet>
 ```
 
-Результат
-
-```xml
+```xml tab="Result"
 <?xml version="1.0" encoding="UTF-16"?>
 <blockquote>
     <blockquote>first</blockquote>

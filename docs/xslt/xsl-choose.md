@@ -1,6 +1,6 @@
 # xsl:choose
 
-Элемент **`xsl:choose`** содержит один или несколько элементов [`xsl:when`](/xslt/xsl-when/) и необязательный элемент [`xsl:otherwise`](/xslt/xsl-otherwise/).
+Элемент **`xsl:choose`** содержит один или несколько элементов [`xsl:when`](xsl-when.md) и необязательный элемент [`xsl:otherwise`](xsl-otherwise.md).
 
 При обработке `xsl:choose` процессор поочередно вычисляет выражения, содержащиеся в атрибутах `test` элементов `xsl:when`, приводит их к булевому типу и выполняет содержимое первого (и только первого) элемента, тестовое выражение которого будет равно `true`. В случае если ни одно из тестовых выражений не обратилось в "истину" и в `xsl:choose` присутствует `xsl:otherwise`, процессор выполнит содержимое этого элемента.
 
@@ -101,9 +101,9 @@
 
 ## См. также
 
-- [`xsl:when`](/xslt/xsl-when/)
-- [`xsl:otherwise`](/xslt/xsl-otherwise/)
-- [`xsl:if`](/xslt/xsl-if/)
+- [`xsl:when`](xsl-when.md)
+- [`xsl:otherwise`](xsl-otherwise.md)
+- [`xsl:if`](xsl-if.md)
 
 ## Ссылки
 

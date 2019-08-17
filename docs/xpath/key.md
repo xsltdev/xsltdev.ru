@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XPath 1.0
-
 ```
 node-set key( string, object )
 ```
@@ -22,7 +20,7 @@ node-set key( string, object )
 
 ### См. также
 
-- [Элемент xsl:key](/xslt/xsl-key/)
+- [Элемент xsl:key](../xslt/xsl-key.md)
 
 ## Ссылки
 

@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0, XSLT 2.0 и XSLT 3.0
-
 ```xml
 <xsl:when
     test = "выражение">
@@ -15,7 +13,8 @@
 
 Атрибуты:
 
-- **`test`** — **обязательный** атрибут, от результата которого зависит, выполнится ли шаблон внутри элемента `xsl:when`
+**`test`**
+: **обязательный** атрибут, от результата которого зависит, выполнится ли шаблон внутри элемента `xsl:when`
 
 ## Описание и примеры
 
@@ -50,9 +49,9 @@
 
 ## См. также
 
-- [`xsl:choose`](/xslt/xsl-choose/)
-- [`xsl:otherwise`](/xslt/xsl-otherwise/)
-- [`xsl:if`](/xslt/xsl-if/)
+- [`xsl:choose`](xsl-choose.md)
+- [`xsl:otherwise`](xsl-otherwise.md)
+- [`xsl:if`](xsl-if.md)
 
 ## Ссылки
 
