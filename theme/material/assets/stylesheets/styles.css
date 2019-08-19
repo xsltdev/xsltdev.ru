@@ -48,6 +48,10 @@ h2 {
     margin: 0.4em 0 1.2em 1.875em;
 }
 
+.md-nav__list .md-nav__list {
+	font-size: 94%;
+}
+
 /*
 	Links with CODE
 */
@@ -56,4 +60,11 @@ h2 {
     border-radius: .1rem;
     background-color: hsla(0,0%,92.5%,.5);
 	box-shadow: 0.29412em 0 0 hsla(0,0%,92.5%,.5), -0.29412em 0 0 hsla(0,0%,92.5%,.5);
+}
+
+/*
+	NAV
+*/
+.md-nav__title {
+	font-size: 130%;
 }
