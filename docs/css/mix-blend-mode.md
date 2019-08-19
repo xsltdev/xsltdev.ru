@@ -29,11 +29,16 @@ mix-blend-mode: inherit;
 mix-blend-mode: unset;
 ```
 
-Значение по умолчанию: `normal`
+Значение по умолчанию:
+
+```css
+mix-blend-mode: normal;
+```
 
 ## Значения
 
-- `blend-mode` -- Собственно режим смешивания. Может быть задано несколько значений через запятую.
+`blend-mode`
+: Собственно режим смешивания. Может быть задано несколько значений через запятую.
 
 ## Спецификация
 
@@ -160,3 +165,11 @@ circle {
 Результат:
 
 ![Пример использования свойства mix-blend-mode](mix-blend-mode.png)
+
+## См. также
+
+- [`background-blend-mode`](background-blend-mode.md)
+
+## Ссылки
+
+- [`mix-blend-mode`](https://developer.mozilla.org/ru/docs/Web/CSS/mix-blend-mode) на MDN
