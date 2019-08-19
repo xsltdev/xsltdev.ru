@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XPath 1.0
-
 ```
 node-set document( object, node-set? )
 ```

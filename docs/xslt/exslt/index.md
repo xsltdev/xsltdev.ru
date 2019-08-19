@@ -8,6 +8,7 @@ title: Оглавление
 
 **EXSLT** (Extensions to Extensible Stylesheet Language Transformations) — общественная инициатива по созданию расширений для XSLT, придающих бо́льшую функциональность языку трансформаций.
 
+<div class="col3" markdown="1">
 - [exsl​:object-type](exsl-object-type.md)
 - [exsl​:node-set](exsl​-node-set.md)
 - [math​:highest](math​-highest.md)
@@ -26,6 +27,7 @@ title: Оглавление
 - [str​:concat](str​-concat.md)
 - [str​:split](str​-split.md)
 - [str​:tokenize](str​-tokenize.md)
+</div>
 
 Ссылки:
 

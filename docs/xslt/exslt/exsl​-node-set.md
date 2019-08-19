@@ -20,7 +20,7 @@ exsl:node-set(object)
 
 ## Примеры
 
-```xml
+```xml tab="XML"
 <doc>
 	<one />
 	<two />
@@ -29,7 +29,7 @@ exsl:node-set(object)
 </doc>
 ```
 
-```xml
+```xslt tab="XSLT"
 <!--  Test exslt:node-set applied to a result tree fragment  -->
 <xsl:variable name="tree">
 	<a>
@@ -47,7 +47,7 @@ exsl:node-set(object)
 </xsl:template>
 ```
 
-```xml
+```xml tab="Result"
 <out xmlns:exslt="http://exslt.org/common">5</out>
 ```
 

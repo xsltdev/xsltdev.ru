@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XPath 1.0
-
 ```xml
 number round( number )
 ```

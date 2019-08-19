@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XSLT 1.0
-
 ```xml
 <xsl:variable
     name = "qname"
@@ -16,32 +14,11 @@
 
 Атрибуты:
 
-- **`name`** — **обязательный** атрибут, задает имя переменной
-- `select` — _необязательный_ атрибут, выражение
+**`name`**
+: **обязательный** атрибут, задает имя переменной
 
-### XSLT 2.0
-
-```xml
-<xsl:variable
-    name = qname
-    select? = expression
-    as? = sequence-type>
-    <!-- Content: sequence-constructor -->
-</xsl:variable>
-```
-
-### XSLT 3.0
-
-```xml
-<xsl:variable
-    name = eqname
-    select? = expression
-    as? = sequence-type
-    static? = boolean
-    visibility? = "public" | "private" | "final" | "abstract" >
-    <!-- Content: sequence-constructor -->
-</xsl:variable>
-```
+`select`
+: _необязательный_ атрибут, выражение
 
 ## Описание и примеры
 
@@ -523,7 +500,7 @@ document('http://www.xmlhost.com/docs/а.xml')/page/request/param
 
 и так далее.
 
-Для того чтобы при обращении к внешнему документу не использовать каждый раз функцию [`document`](/xpath/document/), можно объявить переменную, которая будет содержать корневой узел этого документа, например:
+Для того чтобы при обращении к внешнему документу не использовать каждый раз функцию [`document`](../xpath/document.md), можно объявить переменную, которая будет содержать корневой узел этого документа, например:
 
 ```xml
 <xsl:variable
@@ -539,7 +516,7 @@ document('http://www.xmlhost.com/docs/а.xml')/page/request/param
 
 ## См. также
 
-- [xsl:param](/xslt/xsl-param/)
+- [xsl:param](xsl-param.md)
 
 ## Ссылки
 

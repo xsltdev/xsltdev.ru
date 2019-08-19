@@ -4,17 +4,8 @@
 
 ## Синтаксис
 
-### XPath 1.0
-
 ```
 string string( object? )
-```
-
-### XPath 2.0
-
-```
-fn:string() as xs:string
-fn:string($arg as item()?) as xs:string
 ```
 
 ## Описание и примеры
@@ -52,7 +43,7 @@ string(number('.50000')) = 0.5
 string(number(00500.)) = 500
 ```
 
-Для строкового форматирования чисел рекомендуется использовать функцию XPath [`format-number`](/xpath/format-number/) совместно с элементом [`xsl:decimal-format`](/xslt/xsl-decimal-format/).
+Для строкового форматирования чисел рекомендуется использовать функцию XPath [`format-number`](format-number.md) совместно с элементом [`xsl:decimal-format`](../xslt/xsl-decimal-format.md).
 
 ## Ссылки
 

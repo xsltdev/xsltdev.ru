@@ -4,8 +4,6 @@
 
 ## Синтаксис
 
-### XPath 1.0
-
 ```
 number count( node-set )
 ```

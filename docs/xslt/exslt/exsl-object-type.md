@@ -25,11 +25,11 @@ exsl:object-type(object)
 
 ## Пример
 
-```xml
+```xml tab="XML"
 <doc />
 ```
 
-```xml
+```xslt tab="XSLT"
 <!--  Test exslt:object-type  -->
 <xsl:variable name="tree">
 	<a>
@@ -67,7 +67,7 @@ exsl:object-type(object)
 </xsl:template>
 ```
 
-```xml
+```xml tab="Result"
 <out xmlns:exslt="http://exslt.org/common">:
 	string;
 	number;

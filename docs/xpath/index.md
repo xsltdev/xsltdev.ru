@@ -8,6 +8,7 @@ title: Оглавление
 
 [Язык запросов XML Path (XPath) версия 1.0](https://xsltdev.ru/tr/xpath10/) &mdash; Перевод рекомендации W3C на русский язык
 
+<div class="col3" markdown="1">
 - [boolean](boolean.md)
 - [ceiling](ceiling.md)
 - [concat](concat.md)
@@ -44,3 +45,4 @@ title: Оглавление
 - [translate](translate.md)
 - [true](true.md)
 - [unparsed-entity-uri](unparsed-entity-uri.md)
+</div>

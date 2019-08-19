@@ -14,7 +14,7 @@ math:highest(nodeSet)
 
 Функциональный подход:
 
-```xml
+```xml tab="XML"
 <values>
 	<value id="one">7</value>
 	<value id="two">11</value>
@@ -23,7 +23,7 @@ math:highest(nodeSet)
 </values>
 ```
 
-```xml
+```xslt tab="XSLT"
 <xsl:template match="values">
 	<result>
 		<xsl:text>Highest: </xsl:text>
@@ -32,13 +32,13 @@ math:highest(nodeSet)
 </xsl:template>
 ```
 
-```xml
+```xml tab="Result"
 <result>Highest: two</result>
 ```
 
 Шаблонный подход
 
-```xml
+```xml tab="XML"
 <values>
 	<value id="one">7</value>
 	<value id="two">11</value>
@@ -47,7 +47,7 @@ math:highest(nodeSet)
 </values>
 ```
 
-```xml
+```xslt tab="XSLT"
 <xsl:template match="values">
 	<result>
 		<xsl:text>Highest: </xsl:text>
@@ -58,7 +58,7 @@ math:highest(nodeSet)
 </xsl:template>
 ```
 
-```xml
+```xml tab="Result"
 <result>Highest: two</result>
 ```
 

@@ -493,24 +493,26 @@ title: Оглавление
 - [columns](columns.md)
 </div>
 
-<!--
-
 ## Таблицы
 
-- [border-collapse](.md)
-- [border-spacing](.md)
-- [caption-side](.md)
-- [empty-cells](.md)
-- [table-layout](.md)
-- [vertical-align](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [border-collapse](border-collapse.md)
+- [border-spacing](border-spacing.md)
+- [caption-side](caption-side.md)
+- [empty-cells](empty-cells.md)
+- [table-layout](table-layout.md)
+- [vertical-align](vertical-align.md)
+</div>
 
 ## Страницы
 
-- [page-break-after](.md)
-- [page-break-before](.md)
-- [page-break-inside](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [page-break-after](page-break-after.md)
+- [page-break-before](page-break-before.md)
+- [page-break-inside](page-break-inside.md)
+</div>
+
+<!--
 
 - [@page](@page.md)
   {: .col-14 }
@@ -521,52 +523,60 @@ title: Оглавление
 - [:right](.md)
   {: .col-14 }
 
+-->
+
 ## Маски
 
-- [clip-path](.md)
-- [clip-rule](.md)
-- [mask](.md)
-- [mask-border](.md)
-- [mask-border-mode](.md)
-- [mask-border-outset](.md)
-- [mask-border-repeat](.md)
-- [mask-border-slice](.md)
-- [mask-border-source](.md)
-- [mask-border-width](.md)
-- [mask-clip](.md)
-- [mask-composite](.md)
-- [mask-image](.md)
-- [mask-mode](.md)
-- [mask-origin](.md)
-- [mask-position](.md)
-- [mask-repeat](.md)
-- [mask-size](.md)
-- [mask-type](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [clip-path](clip-path.md)
+- `clip-rule`
+- [mask](mask.md)
+- `mask-border`
+- `mask-border-mode`
+- `mask-border-outset`
+- `mask-border-repeat`
+- `mask-border-slice`
+- `mask-border-source`
+- `mask-border-width`
+- [mask-clip](mask-clip.md)
+- [mask-composite](mask-composite.md)
+- [mask-image](mask-image.md)
+- `mask-mode`
+- `mask-origin`
+- `mask-position`
+- `mask-repeat`
+- `mask-size`
+- `mask-type`
+</div>
 
 ## Фигуры
 
-- [shape-image-threshold](shape-image-threshold.md)
-- [shape-margin](shape-margin.md)
-- [shape-outside](shape-outside.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- `shape-image-threshold`
+- `shape-margin`
+- `shape-outside`
+</div>
 
 ## Фрагментация
 
-- [box-decoration-break](.md)
-- [break-after](.md)
-- [break-before](.md)
-- [break-inside](.md)
-- [orphans](.md)
-- [widows](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- `box-decoration-break`
+- `break-after`
+- `break-before`
+- `break-inside`
+- [orphans](orphans.md)
+- [widows](widows.md)
+</div>
 
 ## Pointer Events
 
+<div class="col3" markdown="1">
 - [pointer-events](pointer-events.md)
-- [touch-action](touch-action.md)
-- [scroll-behavior](scroll-behavior.md)
-  {: .col-14 }
+- `touch-action`
+- `scroll-behavior`
+</div>
+
+<!--
 
 ---
 

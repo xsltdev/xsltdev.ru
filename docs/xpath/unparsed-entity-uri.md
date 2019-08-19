@@ -6,8 +6,6 @@
 
 ## Синтаксис
 
-### XPath 1.0
-
 ```
 string unparsed-entity-uri( string )
 ```

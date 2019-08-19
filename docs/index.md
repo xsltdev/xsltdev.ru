@@ -25,18 +25,21 @@ next_page: null
 
 - [XSLT](xslt/index.md) &mdash; справочник элементов XSLT
 - [XPath](xpath/index.md) &mdash; справочник функций XPath
-- [EXSLT](exslt/index.md) &mdash; справочник функций EXSLT
 
 ---
-
-**Старая версия сайта** доступна по адресу [old.xsltdev.ru](https://old.xsltdev.ru/).
-
+<small markdown="1">
 Полезные ссылки
+
+<div class="col4" markdown="1">
 
 - [MkDocs](https://www.mkdocs.org)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
 - [Emoji](https://www.joypixels.com/emoji#all)
+
+</div>
+
+</small>
 
 <!--
 Планы
