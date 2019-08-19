@@ -74,25 +74,25 @@ title: Оглавление
 - [:visited](pseudo-class-visited.md)
 - [:where()](pseudo-class-where.md)
 {: .col-14 }
+-->
 
 ## Псевдоэлементы
 
+<div class="col3" markdown="1">
 - [::after](pseudo-element-after.md)
-- [::backdrop](pseudo-element-backdrop.md)
+- `::backdrop`
 - [::before](pseudo-element-before.md)
-- [::cue](pseudo-element-cue.md)
+- `::cue`
 - [::first-letter](pseudo-element-first-letter.md)
 - [::first-line](pseudo-element-first-line.md)
-- [::grammar-error](pseudo-element-grammar-error.md)
-- [::marker](pseudo-element-marker.md)
-- [::placeholder](pseudo-element-placeholder.md)
-- [::selection](pseudo-element-selection.md)
-- [::slotted()](pseudo-element-slotted.md)
-- [::spelling-error](pseudo-element-spelling-error.md)
-{: .col-14 }
-
----
--->
+- `::grammar-error`
+- `::marker`
+- `::part()`
+- `::placeholder`
+- `::selection`
+- `::slotted()`
+- `::spelling-error`
+</div>
 
 ## Grid
 
