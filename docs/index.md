@@ -1,10 +1,4 @@
----
-next_page: null
----
-
 # Справочники
-
-Разделы [CSS](css/index.md) и [EXSLT](exslt/index.md) пока перенесены не полностью.
 
 ## Фронтенд
 
@@ -27,6 +21,7 @@ next_page: null
 - [XPath](xpath/index.md) &mdash; справочник функций XPath
 
 ---
+
 <small markdown="1">
 Полезные ссылки
 

@@ -113,10 +113,6 @@ Document has no root HTML element:
 Processing terminated using xsl:message
 ```
 
-## См. также
-
-- [`xsl:function`](xsl-function.md) -- определяет функцию.
-
 ## Ссылки
 
 - [`xsl:message`](https://developer.mozilla.org/en-US/docs/Web/XSLT/import) на MDN
