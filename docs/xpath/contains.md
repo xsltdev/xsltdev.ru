@@ -5,10 +5,16 @@
 ## Синтаксис
 
 ```
-boolean contains( string, string )
+boolean contains( haystack, needle )
 ```
 
-## Описание и примеры
+`haystack`
+: Строка по которой ищем
+
+`needle`
+: Строка, которую нужно найти
+
+## Пример
 
 ```
 contains('address@host.com', '@') ? true
