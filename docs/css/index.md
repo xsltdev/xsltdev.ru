@@ -79,12 +79,12 @@ title: Оглавление
 ## Псевдоэлементы
 
 <div class="col3" markdown="1">
-- [::after](pseudo-element-after.md)
+- [::after](::after.md)
 - `::backdrop`
-- [::before](pseudo-element-before.md)
+- [::before](::before.md)
 - `::cue`
-- [::first-letter](pseudo-element-first-letter.md)
-- [::first-line](pseudo-element-first-line.md)
+- [::first-letter](::first-letter.md)
+- [::first-line](::first-line.md)
 - `::grammar-error`
 - `::marker`
 - `::part()`

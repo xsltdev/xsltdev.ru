@@ -96,7 +96,7 @@ span[data-descr]:hover::after {
 
 ## См. также
 
-- [`::before`](pseudo-element-before.md)
+- [`::before`](::before.md)
 - [`content`](content.md)
 
 ## Ссылки
