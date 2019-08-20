@@ -13,8 +13,8 @@ title: Оглавление
 <!--
 ## Псевдоклассы
 
-- [:active](pseudo-class-active.md)
-- [:any-link](pseudo-class-any-link.md)
+- [:active](:active.md)
+- [:any-link](:any-link.md)
 - [:blank](pseudo-class-blank.md)
 - [:checked](pseudo-class-checked.md)
 - [:current](pseudo-class-current.md)
@@ -283,6 +283,9 @@ title: Оглавление
 
 <div class="col3" markdown="1">
 - [@keyframes](@keyframes.md)
+</div>
+
+<div class="col3" markdown="1">
 - [animation](animation.md)
 - [animation-delay](animation-delay.md)
 - [animation-direction](animation-direction.md)
@@ -350,6 +353,10 @@ title: Оглавление
 ## Шрифт
 
 <div class="col3" markdown="1">
+- [@font-face](@font-face.md)
+</div>
+
+<div class="col3" markdown="1">
 - [font](font.md)
 - [font-family](font-family.md)
 - [font-feature-settings](font-feature-settings.md)
@@ -375,7 +382,7 @@ title: Оглавление
 
 <!--
 
-- [@font-face](@font-face.md)
+-
 - [font-family](font-family.md)
 - [font-feature-settings](font-feature-settings.md)
 - [font-style](.md)
