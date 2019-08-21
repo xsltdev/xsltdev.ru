@@ -13,15 +13,15 @@ title: Оглавление
 </div>
 
 <div class="col3" markdown="1">
-- `@charset`
-- `@import`
-- `@namespace`
-- `@media`
+- [@charset](@charset.md)
+- [@import](@import.md)
+- [@namespace](@namespace.md)
+- [@media](@media.md)
 - `@supports`
 - `@document`
 - `@page`
-- `@font-face`
-- `@keyframes`
+- [@font-face](@font-face.md)
+- [@keyframes](@keyframes.md)
 - `@viewport`
 - `@counter-style`
 - `@font-feature-values`
