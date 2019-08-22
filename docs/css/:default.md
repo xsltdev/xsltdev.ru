@@ -2,7 +2,7 @@
 
 Псевдокласс **`:default`** определяет элемент формы, установленный изначально при загрузке страницы.
 
-Этот псевдокласс может использоваться для [`<button>`](button.md), [`<input type="checkbox">`](input.md), [`<input type="radio">`](input.md) и [`<option>`](option.md).
+Этот псевдокласс может использоваться для [`<button>`](../html/button.md), [`<input type="checkbox">`](../html/input.md), [`<input type="radio">`](../html/input.md) и [`<option>`](../html/option.md).
 
 ## Синтаксис
 

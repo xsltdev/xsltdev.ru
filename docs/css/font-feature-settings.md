@@ -42,7 +42,7 @@ font-feature-settings: unset;
 font-feature-settings: normal;
 ```
 
-Применяется к: ко всем элементам, включая [`::first-letter`](pseudo-element-first-letter.md) и [`::first-line`](pseudo-element-first-line.md).
+Применяется к: ко всем элементам, включая [`::first-letter`](::first-letter.md) и [`::first-line`](::first-line.md).
 
 ## Спецификации
 

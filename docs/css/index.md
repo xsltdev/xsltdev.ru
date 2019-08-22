@@ -6,75 +6,97 @@ title: Оглавление
 
 Справочник свойств CSS
 
-## Модификаторы
+## @-правила и модификаторы
 
-[!important](important.md)
+<div class="col3" markdown="1">
+- [!important](important.md)
+</div>
 
-<!--
+<div class="col3" markdown="1">
+- [@charset](@charset.md)
+- [@import](@import.md)
+- [@namespace](@namespace.md)
+- [@media](@media.md)
+- `@supports`
+- `@document`
+- `@page`
+- [@font-face](@font-face.md)
+- [@keyframes](@keyframes.md)
+- `@viewport`
+- `@counter-style`
+- `@font-feature-values`
+  - `@swash`
+  - `@ornaments`
+  - `@annotation`
+  - `@stylistic`
+  - `@styleset`
+  - `@character-variant`
+</div>
+
 ## Псевдоклассы
 
+<div class="col3" markdown="1">
 - [:active](:active.md)
 - [:any-link](:any-link.md)
-- [:blank](pseudo-class-blank.md)
+- `:blank`
 - [:checked](:checked.md)
-- [:current](pseudo-class-current.md)
+- `:current`
 - [:default](:default.md)
-- [:defined](pseudo-class-defined.md)
-- [:dir()](pseudo-class-dir.md)
+- `:defined`
+- `:dir()`
 - [:disabled](:disabled.md)
-- [:drop](pseudo-class-drop.md)
+- :drop
 - [:empty](:empty.md)
 - [:enabled](:enabled.md)
 - [:first](:first.md)
 - [:first-child](:first-child.md)
 - [:first-of-type](:first-of-type.md)
 - [:focus](:focus.md)
-- [:focus-visible](pseudo-class-focus-visible.md)
-- [:focus-within](pseudo-class-focus-within.md)
+- :focus-visible
+- :focus-within
 - [:fullscreen](:fullscreen.md)
-- [:future](pseudo-class-future.md)
-- [:has()](pseudo-class-has.md)
-- [:host](pseudo-class-host.md)
-- [:host()](pseudo-class-host.md)
-- [:host-context()](pseudo-class-host-context.md)
+- :future
+- :has()
+- :host
+- :host()
+- :host-context()
 - [:hover](:hover.md)
 - [:indeterminate](:indeterminate.md)
 - [:in-range](:in-range.md)
-- [:invalid](pseudo-class-invalid.md)
-- [:is()](pseudo-class-is.md)
-- [:lang()](pseudo-class-lang.md)
-- [:last-child](pseudo-class-last-child.md)
-- [:last-of-type](pseudo-class-last-of-type.md)
-- [:left](pseudo-class-left.md)
-- [:link](pseudo-class-link.md)
-- [:local-link](pseudo-class-local-link.md)
-- [:not()](pseudo-class-not.md)
-- [:nth-child()](pseudo-class-nth-child.md)
-- [:nth-col()](pseudo-class-nth-col.md)
-- [:nth-last-child()](pseudo-class-nth-last-child.md)
-- [:nth-last-col()](pseudo-class-nth-last-col.md)
-- [:nth-last-of-type()](pseudo-class-nth-last-of-type.md)
-- [:nth-of-type()](pseudo-class-nth-of-type.md)
-- [:only-child](pseudo-class-only-child.md)
-- [:only-of-type](pseudo-class-only-of-type.md)
-- [:optional](pseudo-class-optional.md)
-- [:out-of-range](pseudo-class-out-of-range.md)
-- [:past](pseudo-class-past.md)
-- [:placeholder-shown](pseudo-class-placeholder-shown.md)
-- [:read-only](pseudo-class-read-only.md)
-- [:read-write](pseudo-class-read-write.md)
-- [:required](pseudo-class-required.md)
-- [:right](pseudo-class-right.md)
-- [:root](pseudo-class-root.md)
-- [:scope](pseudo-class-scope.md)
-- [:target](pseudo-class-target.md)
-- [:target-within](pseudo-class-target-within.md)
-- [:user-invalid](pseudo-class-user-invalid.md)
-- [:valid](pseudo-class-valid.md)
-- [:visited](pseudo-class-visited.md)
-- [:where()](pseudo-class-where.md)
-{: .col-14 }
--->
+- [:invalid](:invalid.md)
+- :is()
+- [:lang()](:lang().md)
+- [:last-child](:last-child.md)
+- [:last-of-type](:last-of-type.md)
+- [:left](:left.md)
+- [:link](:link.md)
+- :local-link
+- :not()
+- :nth-child()
+- :nth-col()
+- :nth-last-child()
+- :nth-last-col()
+- :nth-last-of-type()
+- :nth-of-type()
+- :only-child
+- :only-of-type
+- :optional
+- :out-of-range
+- :past
+- :placeholder-shown
+- :read-only
+- :read-write
+- :required
+- :right
+- :root
+- :scope
+- :target
+- :target-within
+- :user-invalid
+- :valid
+- :visited
+- :where()
+</div>
 
 ## Псевдоэлементы
 
@@ -269,17 +291,7 @@ title: Оглавление
 - [user-select](user-select.md)
 </div>
 
-## Переходы
-
-<div class="col3" markdown="1">
-- [transition](transition.md)
-- [transition-delay](transition-delay.md)
-- [transition-duration](transition-duration.md)
-- [transition-property](transition-property.md)
-- [transition-timing-function](transition-timing-function.md)
-</div>
-
-## Анимации
+## Переходы и Анимации
 
 <div class="col3" markdown="1">
 - [@keyframes](@keyframes.md)
@@ -295,6 +307,14 @@ title: Оглавление
 - [animation-name](animation-name.md)
 - [animation-play-state](animation-play-state.md)
 - [animation-timing-function](animation-timing-function.md)
+</div>
+
+<div class="col3" markdown="1">
+- [transition](transition.md)
+- [transition-delay](transition-delay.md)
+- [transition-duration](transition-duration.md)
+- [transition-property](transition-property.md)
+- [transition-timing-function](transition-timing-function.md)
 </div>
 
 ## Трансформации
@@ -329,8 +349,6 @@ title: Оглавление
 - [word-spacing](word-spacing.md)
 </div>
 
-## Оформление текста
-
 <div class="col3" markdown="1">
 - [letter-spacing](letter-spacing.md)
 - [text-decoration](text-decoration.md)
@@ -350,7 +368,7 @@ title: Оглавление
 - [word-spacing](word-spacing.md)
 </div>
 
-## Шрифт
+## Шрифт и Цвет
 
 <div class="col3" markdown="1">
 - [@font-face](@font-face.md)
@@ -380,23 +398,6 @@ title: Оглавление
 - [line-height](line-height.md)
 </div>
 
-<!--
-
--
-- [font-family](font-family.md)
-- [font-feature-settings](font-feature-settings.md)
-- [font-style](.md)
-- [font-variant](.md)
-- [font-weight](.md)
-- [font-stretch](.md)
-- [src](.md)
-- [unicode-range](.md)
-- [@font-feature-values](.md)
-
--->
-
-## Цвет
-
 <div class="col3" markdown="1">
 - [color](color.md)
 - `color-adjust`
@@ -414,7 +415,7 @@ title: Оглавление
 - `writing-mode`
 </div>
 
-## Изображения
+## Изображения, фильтры, композиция
 
 <div class="col3" markdown="1">
 - `image-orientation`
@@ -437,14 +438,10 @@ title: Оглавление
 - `cross-fade()`
 </div>
 
-## Фильтры
-
 <div class="col3" markdown="1">
 - `backdrop-filter`
 - [filter](filter.md)
 </div>
-
-## Композиция и смешивание
 
 <div class="col3" markdown="1">
 - [background-blend-mode](background-blend-mode.md)
@@ -452,7 +449,7 @@ title: Оглавление
 - [mix-blend-mode](mix-blend-mode.md)
 </div>
 
-## Списки и Счетчики
+## Списки, счетчики, генерируемый контент
 
 <div class="col3" markdown="1">
 - [counter-increment](counter-increment.md)
@@ -478,14 +475,12 @@ title: Оглавление
   {: .col-14 }
 -->
 
-## Генерируемый контент
-
 <div class="col3" markdown="1">
 - [content](content.md)
 - [quotes](quotes.md)
 </div>
 
-## Колонки
+## Колонки и таблицы
 
 <div class="col3" markdown="1">
 - [column-count](column-count.md)
@@ -499,8 +494,6 @@ title: Оглавление
 - [column-width](column-width.md)
 - [columns](columns.md)
 </div>
-
-## Таблицы
 
 <div class="col3" markdown="1">
 - [border-collapse](border-collapse.md)
@@ -532,7 +525,7 @@ title: Оглавление
 
 -->
 
-## Маски
+## Маски и фигуры
 
 <div class="col3" markdown="1">
 - [clip-path](clip-path.md)
@@ -555,8 +548,6 @@ title: Оглавление
 - `mask-size`
 - `mask-type`
 </div>
-
-## Фигуры
 
 <div class="col3" markdown="1">
 - `shape-image-threshold`
