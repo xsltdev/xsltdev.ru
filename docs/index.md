@@ -2,18 +2,78 @@
 
 ## Фронтенд
 
-- [HTML](html/index.md) &mdash; справочник элементов HTML
-- [CSS](css/index.md) &mdash; справочник свойств CSS
-- [Typescript](typescript/index.md) &mdash; руководства по языку Typescript
+<table class="layout" markdown="1">
+<tr>
+<th>
+![HTML](html.svg){: style="height:60px;width:60px"}
+</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>
+![CSS](css.svg){: style="height:60px;width:60px"}
+</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>
+![Typescript](ts.svg){: style="height:60px;width:60px"}
+</th>
+</tr>
+<tr>
+<th>
+[HTML](html/index.md)<br />
+<small>Справочник элементов</small>
+</th>
+<th></th>
+<th>
+[CSS](css/index.md)<br />
+<small>Справочник свойств</small>
+</th>
+<th></th>
+<th>
+[Typescript](typescript/index.md)<br />
+<small>Руководства по языку</small>
+</th>
+</tr>
+</table>
 
 ## Фреймворки
 
-- [Angular 2+](angular/index.md) &mdash; руководства по фреймворку Angular 2+
-- [React](react/index.md) &mdash; руководства по фреймворку React
+<table class="layout" markdown="1">
+<tr>
+<th>
+![Angular 2+](angular.svg){: style="height:60px;width:60px"}
+</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>
+![React](react.svg){: style="height:60px;width:60px"}
+</th>
+</tr>
+<tr>
+<th>
+[Angular 2+](angular/index.md)<br />
+<small>Руководства по фреймворку</small>
+</th>
+<th></th>
+<th>
+[React](react/index.md)<br />
+<small>Руководства по фреймворку</small>
+</th>
+</tr>
+</table>
 
 ## Бэкенд
 
-- [Node.js](nodejs/index.md) &mdash; руководства по Node.js
+<table class="layout" markdown="1">
+<tr>
+<th>
+![Node.js](nodejs.svg){: style="height:60px;width:60px"}
+</th>
+</tr>
+<tr>
+<th>
+[Node.js](nodejs/index.md)<br />
+<small>Руководства</small>
+</th>
+</tr>
+</table>
 
 ## XML технологии
 
