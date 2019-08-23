@@ -17,9 +17,9 @@ title: Оглавление
 - [@import](@import.md)
 - [@namespace](@namespace.md)
 - [@media](@media.md)
-- `@supports`
-- `@document`
-- `@page`
+- [@supports](@supports.md)
+- [@document](@document.md)
+- [@page](@page.md)
 - [@font-face](@font-face.md)
 - [@keyframes](@keyframes.md)
 - `@viewport`
