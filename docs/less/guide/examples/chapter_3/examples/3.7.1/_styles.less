@@ -1,0 +1,13 @@
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
+
+.class {
+  background-color: #000;
+
+  .screen(768px, 1200px, {
+    background-color: #fff;
+  });
+}

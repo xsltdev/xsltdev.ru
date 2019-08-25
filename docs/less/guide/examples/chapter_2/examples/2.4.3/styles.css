@@ -1,0 +1,8 @@
+.global-header,
+.global-navigation {
+  background-color: #fff;
+  color: #000;
+}
+.global-navigation {
+  border: 1px solid #ddd;
+}

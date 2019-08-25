@@ -1,0 +1,9 @@
+.transition(@function: ease, @duration: .3s, @property: all) {
+  transition-timing-function: @function;
+  transition-duration: @duration;
+  transition-property: @property;
+}
+
+.link {
+  .transition(@duration: 1s);
+}

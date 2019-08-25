@@ -1,0 +1,27 @@
+ul,
+li {
+  border-top: 2px dotted #366;
+}
+ul + ul,
+ul + li,
+li + ul,
+li + li {
+  border-top: 0;
+}
+/*
+ * Test
+ */
+ul,
+li {
+  border-top: 2px dotted #366;
+}
+ul + ul + ul,
+ul + ul + li,
+ul + li + ul,
+ul + li + li,
+li + ul + ul,
+li + ul + li,
+li + li + ul,
+li + li + li {
+  border-top: 0;
+}

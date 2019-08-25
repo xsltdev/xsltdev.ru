@@ -1,0 +1,15 @@
+.global-header {
+  background-color: #fff;
+  
+  .area {
+    text-align: center;
+  }
+}
+
+.global-header:hover {
+  background-color: #000;
+}
+
+.global-footer {
+  &:extend(.global-header all);
+}

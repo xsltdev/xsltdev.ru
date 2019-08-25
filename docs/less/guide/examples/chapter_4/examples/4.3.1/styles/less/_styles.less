@@ -1,0 +1,9 @@
+@logo-path: "../../images/avatar.jpg";
+
+.logo {
+  @logo-width: image-width(@logo-path);
+  @logo-height: image-height(@logo-path);
+  @logo-size: image-size(@logo-path);
+
+  content: "@{logo-size} [@{logo-width} x @{logo-height}]";
+}

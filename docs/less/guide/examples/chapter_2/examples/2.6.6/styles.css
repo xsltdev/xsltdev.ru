@@ -1,0 +1,30 @@
+/*
+ * No options
+ */
+.yahoo {
+  color: #400191;
+}
+.canonium {
+  color: #53599a;
+}
+/*
+ * (once)
+ */
+.yandex {
+  color: #ffcc00;
+}
+.canonium {
+  color: #53599a;
+}
+/*
+ * (multiple)
+ */
+.duckduckgo {
+  color: #de5833;
+}
+.canonium {
+  color: #53599a;
+}
+.duckduckgo {
+  color: #de5833;
+}

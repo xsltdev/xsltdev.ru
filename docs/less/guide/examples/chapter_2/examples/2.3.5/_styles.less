@@ -1,0 +1,19 @@
+.header {
+  .item {
+    & + & {
+      color: red;
+    }
+
+    & & {
+      color: green;
+    }
+
+    && {
+      color: blue;
+    }
+
+    &, &-box {
+      color: yellow;
+    }
+  }
+}

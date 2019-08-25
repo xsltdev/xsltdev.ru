@@ -1,0 +1,33 @@
+// Настройки
+@column-name: col;
+@column-count: 4;
+@column-prefix: xs, sm, md, lg;
+
+// Генератор селекторов
+.generate-class(@indexCount, @indexPrefix: 1) when (@indexPrefix =< length(@column-prefix)) {
+
+  // Получаем элемент списка
+  @prefix: extract(@column-prefix, @indexPrefix);
+
+  // Формируем селектор
+  .@{column-name}-@{prefix}-@{indexCount} {
+    width: @indexCount * (100% / @column-count);
+  }
+
+  // Порождаем следующую итерацию
+  .generate-class(@indexCount, @indexPrefix + 1);
+}
+
+// Генератор сетки
+.make-grid(@indexCount: 1) when (@indexCount =< @column-count) {
+
+  // Вызываем генератор селекторов
+  .generate-class(@indexCount);
+
+  // Порождаем следующую итерацию
+  .make-grid(@indexCount + 1);
+
+}
+
+// Вызываем генератор сетки
+.make-grid();

@@ -1,0 +1,41 @@
+// Контейнер для галереи
+.gallery-slider {
+  background-color: #bdc3c7;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+// Список изображений
+.gallery-list {
+  &:extend(.clearfix all);
+  
+  li {
+    @media (min-width: 540px) {
+      width: 50%;
+      float: left;
+    }
+      
+    @media (min-width: 768px) {
+      width: 33.33333%;
+    }
+      
+    @media (min-width: 992px) {
+      width: 20%;
+    }
+  }
+    
+  a {
+    display: block;
+    margin: 10px;
+      
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
+  }
+    
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

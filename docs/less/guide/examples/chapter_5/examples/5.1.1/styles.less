@@ -1,0 +1,11 @@
+.padding(@t: none, @r: none, @b: none, @l: none) {
+  & when not (@t = none) { padding+_: @t; }
+  & when not (@r = none) { padding+_: @r; }
+  & when not (@b = none) { padding+_: @b; }
+  & when not (@l = none) { padding+_: @l; }
+}
+
+.test-one   { .padding(10px) }
+.test-two   { .padding(10px, 5px) }
+.test-three { .padding(10px, 5px, 15px) }
+.test-four  { .padding(10px, 5px, 15px, 20px) }

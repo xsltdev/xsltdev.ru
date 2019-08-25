@@ -1,0 +1,11 @@
+@variable: global;
+@detached-ruleset: {
+  // will use global variable, because it is accessible
+  // from detached-ruleset definition
+  variable: @variable; 
+};
+
+selector {
+  @detached-ruleset();
+  @variable: value; // variable defined in caller - will be ignored
+}

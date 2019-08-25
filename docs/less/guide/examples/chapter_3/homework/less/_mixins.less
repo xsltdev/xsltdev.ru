@@ -1,0 +1,18 @@
+// Изменение оформления кнопки
+.button-style(@_bg, @_color, @_hover-bg, @_hover-color) {
+  background-color: @_bg;
+  color: @_color;
+  
+  &:focus,
+  &:hover,
+  &.active {
+    background-color: @_hover-bg;
+    color: @_hover-color;
+  }
+}
+
+// Изменение размеров кнопки
+.button-size(@_font, @_padding) {
+  font-size: @_font;
+  padding: @_padding;
+}
