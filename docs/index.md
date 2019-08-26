@@ -13,7 +13,7 @@
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th>
-![Typescript](ts.svg){: style="height:60px;width:60px"}
+![LESS](less.svg){: style="height:60px;width:60px"}
 </th>
 </tr>
 <tr>
@@ -28,8 +28,22 @@
 </th>
 <th></th>
 <th>
+[LESS](less/index.md)<br />
+<small>Руководства</small>
+</th>
+</tr>
+</table>
+
+<table class="layout" markdown="1">
+<tr>
+<th>
+![Typescript](ts.svg){: style="height:60px;width:60px"}
+</th>
+</tr>
+<tr>
+<th>
 [Typescript](typescript/index.md)<br />
-<small>Руководства по языку</small>
+<small>Руководства</small>
 </th>
 </tr>
 </table>
