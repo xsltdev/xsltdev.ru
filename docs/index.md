@@ -2,18 +2,18 @@
 
 ## Фронтенд
 
-<table class="layout" markdown="1">
+<table class="layout" markdown="1" width="100%">
 <tr>
-<th>
+<th width="30%">
 ![HTML](html.svg){: style="height:60px;width:60px"}
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>
+<th width="30%">
 ![CSS](css.svg){: style="height:60px;width:60px"}
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>
-![LESS](less.svg){: style="height:60px;width:60px"}
+<th width="30%">
+![LESS](less.svg){: style="height:25px;width:60px"}
 </th>
 </tr>
 <tr>
@@ -34,31 +34,41 @@
 </tr>
 </table>
 
-<table class="layout" markdown="1">
+<table class="layout" markdown="1" width="100%">
 <tr>
-<th>
+<th width="30%">
 ![Typescript](ts.svg){: style="height:60px;width:60px"}
 </th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th width="30%"></th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th width="30%"></th>
 </tr>
 <tr>
 <th>
 [Typescript](typescript/index.md)<br />
 <small>Руководства</small>
 </th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </table>
 
 ## Фреймворки
 
-<table class="layout" markdown="1">
+<table class="layout" markdown="1" width="100%">
 <tr>
-<th>
+<th width="30%">
 ![Angular 2+](angular.svg){: style="height:60px;width:60px"}
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>
+<th width="30%">
 ![React](react.svg){: style="height:60px;width:60px"}
 </th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th width="30%"></th>
 </tr>
 <tr>
 <th>
@@ -70,6 +80,8 @@
 [React](react/index.md)<br />
 <small>Руководства по фреймворку</small>
 </th>
+<th></th>
+<th></th>
 </tr>
 </table>
 
@@ -77,15 +89,23 @@
 
 <table class="layout" markdown="1">
 <tr>
-<th>
+<th width="30%">
 ![Node.js](nodejs.svg){: style="height:60px;width:60px"}
 </th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th width="30%"></th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th width="30%"></th>
 </tr>
 <tr>
 <th>
 [Node.js](nodejs/index.md)<br />
 <small>Руководства</small>
 </th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </table>
 
