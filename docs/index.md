@@ -13,7 +13,7 @@
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%">
-![LESS](less.svg){: style="height:25px;width:60px"}
+![LESS](less.svg){: style="height:30px;width:70px"}
 </th>
 </tr>
 <tr>
@@ -87,7 +87,7 @@
 
 ## Бэкенд
 
-<table class="layout" markdown="1">
+<table class="layout" markdown="1" width="100%">
 <tr>
 <th width="30%">
 ![Node.js](nodejs.svg){: style="height:60px;width:60px"}
@@ -136,7 +136,6 @@
 - CSS
 
 - [Node.js](https://metanit.com/web/nodejs/)
-- [LESS](https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/content/)
 - [Документация jQuery](https://jquery-docs.ru/)
 - Книга [Изучаем jQuery](https://metanit.com/web/jquery/)
 - [Руководство Javascript](https://metanit.com/web/javascript/)
