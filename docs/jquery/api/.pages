@@ -1,0 +1,13 @@
+title: Документация API jQuery
+hide: false
+arrange:
+    - index.md
+    - selectors.md
+    - events.md
+    - dom.md
+    - traversing.md
+    - utilities.md
+    - effects.md
+    - ajax.md
+    - callbacks.md
+    - deferred.md

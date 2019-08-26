@@ -119,14 +119,10 @@
 <small markdown="1">
 Полезные ссылки
 
-<div class="col4" markdown="1">
-
 - [MkDocs](https://www.mkdocs.org)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
 - [Emoji](https://www.joypixels.com/emoji#all)
-
-</div>
 
 </small>
 
@@ -134,10 +130,10 @@
 Планы
 
 - CSS
-
-- [Node.js](https://metanit.com/web/nodejs/)
 - [Документация jQuery](https://jquery-docs.ru/)
 - Книга [Изучаем jQuery](https://metanit.com/web/jquery/)
+- https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/
+
 - [Руководство Javascript](https://metanit.com/web/javascript/)
 - [WebGL](https://metanit.com/web/webgl/1.1.php)
 

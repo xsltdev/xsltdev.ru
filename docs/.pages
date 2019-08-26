@@ -6,6 +6,7 @@ arrange:
     - typescript
     - angular
     - react
+    - jquery
     - nodejs
     - xslt
     - xpath
