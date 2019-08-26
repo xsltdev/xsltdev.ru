@@ -4,25 +4,25 @@
 
 Прежде чем вы перейдёте к чтению, я бы хотел рассказать о нескольких основных правилах:
 
-- У вас установлен [Node.js](https://nodejs.org/).
+- У вас установлен [Node.js](../../nodejs/index.md).
 - Вы умеете пользоваться пакетным менеджером [npm](https://www.npmjs.com/).
 - Вы имеете представление о работе с консолью.
 - Вы хорошо знаете HTML (HTML5), CSS3 и как-нибудь разбираетесь в JavaScript.
 
 ---
 
-- introduction.md
-- audience.md
+- [Предисловие](introduction.md)
+- [Целевая аудитория](audience.md)
 
 ## Глава 1. Основы
 
 Прежде чем начинать использовать технологии, хорошо было бы понять, что они из себя представляют и зачем вообще могут пригодиться. В этой главе я расскажу о том, что такое препроцессор и CSS-препроцессор, приведу несколько популярных проектов в этой области и постараюсь передать их суть. Наконец, вы узнаете о препроцессоре Less, о котором и написана эта книга.
 
-- preprocessors.md
-- css-reprocessors.md
-- verge-less-css.md
-- compiling-and-debugging.md
-- usage-plugins.md
+- [Препроцессоры](preprocessors.md)
+- [CSS-препроцессоры](css-reprocessors.md)
+- [Грань между Less и CSS](verge-less-css.md)
+- [Компиляция](compiling-and-debugging.md)
+- [Использование плагинов](usage-plugins.md)
 
 ## Глава 2. Работа с селекторами, медиа-запросами и файлами
 
@@ -30,13 +30,13 @@
 
 В этой главе я расскажу о комментариях, вложенных селекторах, работе с файлами, группировке селекторов и многих других интересных вещах.
 
-- comments.md
-- nested-rules.md
-- parent-selectors.md
-- grouping-selectors.md
-- media-queries.md
-- import-styles.md
-- homework-2.md
+- [Комментарии](comments.md)
+- [Вложенные правила](nested-rules.md)
+- [Ссылка на родителя селектора](parent-selectors.md)
+- [Группировка селекторов](grouping-selectors.md)
+- [Использование медиавыражений](media-queries.md)
+- [Импорт стилей](import-styles.md)
+- [Домашнее задание](homework-2.md)
 
 ## Глава 3. Переменные и примеси
 
@@ -44,14 +44,14 @@
 
 Из этой главы вы узнаете, как использовать переменные и примеси, правильно давать им имена, а также некоторые особенности и тонкости их применения в реальных проектах.
 
-- using-variables.md
-- variable-interpolation.md
-- variable-names.md
-- using-mixins.md
-- special-parameters-and-pattern-matching.md
-- additional-features-of-mixins.md
-- working-with-rulesets.md
-- homework-3.md
+- [Использование переменных](using-variables.md)
+- [Интерполяция переменных](variable-interpolation.md)
+- [Наименование переменных](variable-names.md)
+- [Использование примесей](using-mixins.md)
+- [Специальные параметры и сопоставление шаблонов](special-parameters-and-pattern-matching.md)
+- [Дополнительные возможности примесей](additional-features-of-mixins.md)
+- [Работа с набором правил](working-with-rulesets.md)
+- [Домашнее задание](homework-3.md)
 
 # Глава 4. Операции со свойствами и встроенные функции
 
@@ -59,21 +59,21 @@
 
 В этой главе мы поговорим о возможности слияния свойств, которое может пригодиться при наличии одинаковых свойств в двух селекторах (примесях), встроенных функциях для работы со строками, списками (массивами), изображениями и типами данных. А также затронем тему манипуляции цветами и поговорим о наличии всевозможных математических функциях, которые зачем-то могут пригодиться в CSS.
 
-- merge-properties.md
-- strings-and-lists.md
-- working-with-images.md
-- working-with-data-types-and-units.md
-- math-functions.md
-- manipulation-with-colors.md
-- homework-4.md
+- [Слияние свойств](merge-properties.md)
+- [Строки и списки](strings-and-lists.md)
+- [Работа с изображениями](working-with-images.md)
+- [Работа с типами данных и единицами измерения](working-with-data-types-and-units.md)
+- [Математические функции](math-functions.md)
+- [Манипуляции с цветами](manipulation-with-colors.md)
+- [Домашнее задание](homework-4.md)
 
 # Глава 5. Инструкции (операторы)
 
 Препроцессор Less включает несколько инструкций (операторов), называемых также _управляющими инструкциями (конструкциями)_. Набор инструкций тривиален и включает в себя только классический `if` и `while`, причём со своим синтаксисом, назначением и большим количеством ограничений.
 
-- if.md
-- loops.md
-- homework-5.md
+- [Условные конструкции (защита примесей)](if.md)
+- [Циклические конструкции](loops.md)
+- [Домашнее задание](homework-5.md)
 
 # Глава 6. JavaScript в Less
 
@@ -81,5 +81,9 @@
 
 Из этой главы вы узнаете, как использовать JavaScript-код в Less, манипулировать введенными данными, обрабатывать и возвращать их.
 
-- features-overview.md
-- working-with-variables-and-mixins.md
+- [Обзор возможностей](features-overview.md)
+- [Работа с переменными и примесями](working-with-variables-and-mixins.md)
+
+## Источник
+
+- [Путеводитель для новичков по CSS-препроцессору Less](https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/content/)

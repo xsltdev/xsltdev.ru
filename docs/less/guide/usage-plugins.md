@@ -7,7 +7,7 @@
 Первым делом установим этот плагин локально или глобально. Я буду устанавливать глобально, поэтому у себя в консоли выполняю следующую команду:
 
 ```
-$ npm i -g less-plugin-functions
+npm i -g less-plugin-functions
 ```
 
 Теперь обратимся к документации плагина и напишем небольшой пример, демонстрирующий работу функций:
@@ -15,20 +15,20 @@ $ npm i -g less-plugin-functions
 ```less
 // Исходя из документации, функции всегда должны начинаться со слова `function`
 .function-hello() {
-  return: "Hello!";
+  return: 'Hello!';
 }
 
 // Вызов функции производится без ключевого слова `function`
 .test {
   content: hello();
 }
-
 ```
 
 Когда компилятор встретит на своём пути какую-нибудь функцию, он подставит вместо её вызова значение, возвращаемое этой функцией. Всё как в JavaScript. Для того, чтобы скомпилировать этот файл, необходимо выполнить команду:
 
 ```
-$ lessc --functions styles.less
+lessc --functions styles.less
+
 .test {
   content: "Hello!";
 }
@@ -41,11 +41,8 @@ $ lessc --functions styles.less
 Чтобы применить к файлу несколько плагинов, необходимо просто добавить их в команду, выполняемую в консоли:
 
 ```
-$ lessc --functions --inline-urls styles.less
+lessc --functions --inline-urls styles.less
 ```
-
-
-
 
 ## Использование плагинов в браузере
 
@@ -54,9 +51,9 @@ $ lessc --functions --inline-urls styles.less
 ```html
 <script src="plugin.js"></script>
 <script>
-less = {
-  plugins: [plugin]
-};
+  less = {
+    plugins: [plugin]
+  }
 </script>
 <script src="less.min.js"></script>
 ```

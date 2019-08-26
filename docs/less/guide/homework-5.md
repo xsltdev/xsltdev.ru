@@ -16,10 +16,15 @@
 Результат должен совпадать с вручную написанным CSS-кодом:
 
 ```less
-.color-black { color: #000000; }
-.color-red   { color: #ff0000; }
-...
-.color-blue  { color: #0000ff; }
+.color-black {
+  color: #000000;
+}
+.color-red {
+  color: #ff0000;
+}
+... .color-blue {
+  color: #0000ff;
+}
 ```
 
 > **Замечание**

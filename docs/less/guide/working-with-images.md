@@ -4,9 +4,9 @@
 
 Отличительной особенностью Less версии 2.2.0 стали встроенные функции для работы с изображениями, которые позволяют получить следующие данные:
 
- * Размер (ширина и высота) — `image-size(url)`.
- * Ширину — `image-width(url)`.
- * Высоту — `image-height(url)`.
+- Размер (ширина и высота) — `image-size(url)`.
+- Ширину — `image-width(url)`.
+- Высоту — `image-height(url)`.
 
 Для того, чтобы получить ширину изображения, необходимо указать путь до него, относительно того файла, в котором вызывается эта функция.
 
@@ -15,8 +15,6 @@
 > Все примеры из этой части доступны в архиве, который прилагается к этой книге.
 
 Рассмотрим два случая, которые могут вводить новичков в заблуждение:
-
-
 
 ### Случай 1. Один файл
 
@@ -35,14 +33,14 @@ images/logo.png
 В этом случае, любая из трёх функций должна вызываться следующим образом:
 
 ```less
-@logo-path: "../../images/avatar.jpg";
+@logo-path: '../../images/avatar.jpg';
 
 .logo {
   @logo-width: image-width(@logo-path);
   @logo-height: image-height(@logo-path);
   @logo-size: image-size(@logo-path);
 
-  content: "@{logo-size} [@{logo-width} x @{logo-height}]";
+  content: '@{logo-size} [@{logo-width} x @{logo-height}]';
 }
 ```
 
@@ -50,39 +48,37 @@ images/logo.png
 
 ```css
 .logo {
-  content: "460px 460px [460px x 460px]";
+  content: '460px 460px [460px x 460px]';
 }
 ```
 
 Если же путь будет не верным, то компилятор выдаст ошибку.
 
-
-
 ### Случай 2. Структурный файл
 
 Ранее путь писался относительно того файла, в котором была вызвана та или иная функция для получения размера изображения. Допустим, что у нас имеется конфигурация:
 
- * Рабочий файл: `styles/less/components/_styles.less`
- * Главный файл: `styles/less/main.less`
- * Файл изображения: `images/logo.png`
+- Рабочий файл: `styles/less/components/_styles.less`
+- Главный файл: `styles/less/main.less`
+- Файл изображения: `images/logo.png`
 
 Содержимое каждого файла будет таким:
 
 ```less
 // file: `styles/less/main.less`
 
-@import "components/_styles.less";
+@import 'components/_styles.less';
 
 // file: `styles/less/components/_styles.less`
 
-@logo-path: "../../images/avatar.jpg";
+@logo-path: '../../images/avatar.jpg';
 
 .logo {
   @logo-width: image-width(@logo-path);
   @logo-height: image-height(@logo-path);
   @logo-size: image-size(@logo-path);
 
-  content: "@{logo-size} [@{logo-width} x @{logo-height}]";
+  content: '@{logo-size} [@{logo-width} x @{logo-height}]';
 }
 ```
 
@@ -101,9 +97,6 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
 5   @logo-height: image-height(@logo-path);
 ```
 
-
-
-
 ## Встраиваемые ресурсы
 
 Под встроенными ресурсами стоит понимать закодированный ресурс (картинку, скрипт, стили), содержащийся внутри строки кода.
@@ -116,6 +109,7 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
   background-image: url('data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==');
 }
 ```
+
 Этот подход используется для того, чтобы уменьшить число HTTP-запросов к серверу и должен применяться только тогда, когда количество и размер изображений достаточно мал.
 
 При обнаружении такой конструкции в подключённых к странице стилях браузер декодирует строку, получает исходное изображение и выводит пользователю.
@@ -136,34 +130,31 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
 
 ```less
 .logo {
-  background-image: data-uri("image.jpg");
+  background-image: data-uri('image.jpg');
   // url("data:image/jpeg;base64,/9j/7gAOQWRvYmUAZAAAAAAA/9sAQwA...")
 
-  background-image: data-uri("image/jpeg;base64", "image.jpg");
+  background-image: data-uri('image/jpeg;base64', 'image.jpg');
   // url("data:image/jpeg;base64,/9j/7gAOQWRvYmUAZAAAAAAA/9sAQwA...")
 
-  background-image: data-uri("image.png");
+  background-image: data-uri('image.png');
   // url("data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAB...")
 
-  background-image: data-uri("image.gif");
+  background-image: data-uri('image.gif');
   // url("data:image/gif;base64,R0lGODlhQABAAPeAAP7+/v39/fz8/Pv7...")
 
-  background-image: data-uri("image.svg");
+  background-image: data-uri('image.svg');
   // url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20e...")
 
-  background-image: data-uri("image/svg+xml;charset=UTF-8", "image.svg");
+  background-image: data-uri('image/svg+xml;charset=UTF-8', 'image.svg');
   // url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3...")
 }
 ```
 
 Как не сложно заметить, различный результат проявился только у пары, где используется SVG изображение.
 
-
-
-
 ## SVG-градиенты
 
-Кроме стандартных функций для работы с изображениями и их кодированием, препроцессор Less умеет генерировать SVG-градиенты. Для этого используется функция, которая принимает на вход три параметра: *направление*, *цвет и позиция*. Вот синтаксис этой функции:
+Кроме стандартных функций для работы с изображениями и их кодированием, препроцессор Less умеет генерировать SVG-градиенты. Для этого используется функция, которая принимает на вход три параметра: _направление_, _цвет и позиция_. Вот синтаксис этой функции:
 
 ```less
 .gradient {
@@ -193,12 +184,13 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
   <rect x="-50" y="-50" width="101" height="101" fill="url(#gradient)" />
 </svg>
 ```
+
 Конечно, функция может генерировать не только эллиптические градиенты. В список поддерживаемых направлений входят следующие значения:
 
- * to (top | right | bottom | left)
- * комбинации: to top bottom | to right bottom и прочие
- * ellipse
- * ellipse at center
+- to (top | right | bottom | left)
+- комбинации: to top bottom | to right bottom и прочие
+- ellipse
+- ellipse at center
 
 > **Внимание**
 >

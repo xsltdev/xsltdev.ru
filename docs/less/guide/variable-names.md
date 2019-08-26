@@ -4,9 +4,6 @@
 
 Для того, чтобы погрузиться в «программирование» на Less, как и в любом другом языке, нужно правильно именовать переменные. Я не шучу, это очень важная и животрепещущая тема для всех новичков и даже тех, кто уже может себя по праву считать заслуженным программистом.
 
-
-
-
 ## Имя переменной
 
 Когда переменная имеет имя `a` или `razmer-wrifta`, а правила наименования меняются каждые десять строк, то уже сразу можно говорить о разработчике плохо. Просто примите как должное, что название переменной должно быть на английском языке, вне зависимости от того, на каком языке написаны комментарии к коду. Будь вы хоть трижды патриот своей страны или вы не знаете английский.
@@ -20,9 +17,6 @@
 @btn-border-radius: 4px;
 @navbar-item-line-height: 20px;
 ```
-
-
-
 
 ## Разделение слов в имени
 
@@ -39,16 +33,13 @@
 // Нижнее подчёркивание (under_score)
 @hamburger_border_radius: @border_radius;
 @line_height_computed: 24px;
-@font_awesome_path: "../vendor/font-awesome/font";
+@font_awesome_path: '../vendor/font-awesome/font';
 
 // Верблюжья нотация (camelCase)
 @labelFontSize: 0.8em;
-@commentBackground: #FFFFFF;
+@commentBackground: #ffffff;
 @authorHoverColor: @primaryColorHover;
 ```
-
-
-
 
 ## Содержательное имя
 
@@ -62,8 +53,6 @@
 @btn-default-hover-background: #ccc;
 @article-item-title-hover-color: @brand-color;
 ```
-
-
 
 ## Последовательность имени
 
@@ -110,9 +99,6 @@
 @tag-item-color: #777;
 @tag-item-hover-color: #333;
 ```
-
-
-
 
 ## Единый стиль
 

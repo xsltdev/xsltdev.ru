@@ -5,8 +5,8 @@
 ```less
 .test-js {
   @test: 123;
-  content: `@{test}`;
-  content: `this.test.toJS()`;
+  content: ` @{test}`;
+  content: `this.test.toJS() `;
 }
 ```
 
@@ -17,7 +17,7 @@
 ```css
 .test-js {
   content: 123;
-  content: "123";
+  content: '123';
 }
 ```
 
@@ -26,12 +26,12 @@
 ```less
 .test-js {
   // Интерполяция
-  @world: "world";
-  content: ~`'hello' + ' ' + @{world}`;
+  @world: 'world';
+  content: ~` 'hello' + ' ' + @{world}`;
 
   // Списки
-  @list:  1, 2, 3;
-  @list-js: ~`@{list}.join(', ')`;
+  @list: 1, 2, 3;
+  @list-js: ~` @{list}.join(', ') `;
   content: @list-js;
 }
 ```
@@ -51,7 +51,7 @@
 
 ```less
 .test-js {
-  @list:  1, 2, 3;
+  @list: 1, 2, 3;
   content: length(@list);
   content: extract(@list, 1);
 }
@@ -67,35 +67,30 @@
 
 ```less
 .test-js {
-  @list:  1, 2, 3;
-  @list-js: ~`@{list}.join(', ')`;
+  @list: 1, 2, 3;
+  @list-js: ~` @{list}.join(', ') `;
   content: length(@list-js);
   content: extract(@list-js, 1);
 }
 
 // На выходе получаем
 .test-js {
-  content: 1;       // Длина
+  content: 1; // Длина
   content: 1, 2, 3; // Первый элемент массива
 }
 ```
 
-
-
-
 ## Примеси
 
 Наиболее очевидным применением возможностей JavaScript-кода в Less является создание примесей, которые на вход получают какое-то количество переменных, обрабатывают их, используя JavaScript и возвращают строку, как результат.
-
-
 
 ### Конечное число переменных
 
 Самым простым способом получить значения из переменных в Less является следующая функция:
 
 ```js
-(function(a, b) {
-  return a + b;
+;(function(a, b) {
+  return a + b
 })('@{a}', '@{b}')
 ```
 
@@ -103,7 +98,7 @@
 
 ```less
 .mixin(@a, @b) {
-  @js: ~`(function(a, b) { return a + b; })('@{a}', '@{b}')`;
+  @js: ~`(function(a, b) {return a + b;}) ('@{a}', '@{b}') `;
 
   content: @js;
 }
@@ -121,15 +116,13 @@
 }
 ```
 
-
-
 ### Неопределённое число переменных
 
 Если для проведения операций в выражении требуется большое количество переменных, или их количество неизвестно заранее, то на помощь приходит следующая функция, возвращающая массив всех переданных аргументов:
 
 ```js
-(function(args) {
-  return args;
+;(function(args) {
+  return args
 })('@{arguments}')
 ```
 
@@ -137,7 +130,7 @@
 
 ```less
 .mixin(...) {
-  @js: ~`(function(args){ return args; })('@{arguments}')`;
+  @js: ~`(function(args){return args;}) ('@{arguments}') `;
 
   content: @js;
 }
@@ -158,19 +151,25 @@
 В Less с таким результатом сделать ничего не получится (мешают квадратные скобки), поэтому на практике лучше всего использовать следующую модификацию предложенной функции:
 
 ```js
-(function(args) {
-  return args;
-})((function() {
-  var args = '@{arguments}';
-  return args.replace(/^\[|\]$/g, '')
-})())
+;(function(args) {
+  return args
+})(
+  (function() {
+    var args = '@{arguments}'
+    return args.replace(/^\[|\]$/g, '')
+  })()
+)
 ```
 
 Этот вариант записи удаляет квадратные скобки, используя метод `replace()`, при этом делая получаемый на выходе массив немного лучше:
 
 ```less
 .mixin(...) {
-  @js: ~`function(args){return args}(function(){var args='@{arguments}';return args.replace(/^\[|\]$/g,'')}())`;
+  @js: ~`function(args){return args }(
+      function(){var args= '@{arguments}' ;return args.replace(/ ^\[|\]$/g, '') }(
+
+        )
+    ) `;
 
   content: @js;
 }
@@ -188,9 +187,6 @@
 }
 ```
 
-
-
-
 ## Преобразование значений
 
 Конечно, на практике мало пользы от того, что вы можете получить, распарсить и отдать результат обратно — необходимо с ним как-то взаимодействовать.
@@ -198,21 +194,37 @@
 В приведённом ниже примере последнему в списке значению добавляется единица измерения `deg`:
 
 ```js
-(function(args) {
-  return args = args || '0, 0, 0, 0', args = args.replace(/,\s*\d+$/, function(args) {
-    return args + 'deg'
-  })
-})((function() {
-  var args = '@{arguments}';
-  return args = args.replace(/^\[|\]$/g, '')
-})())
+;(function(args) {
+  return (
+    (args = args || '0, 0, 0, 0'),
+    (args = args.replace(/,\s*\d+$/, function(args) {
+      return args + 'deg'
+    }))
+  )
+})(
+  (function() {
+    var args = '@{arguments}'
+    return (args = args.replace(/^\[|\]$/g, ''))
+  })()
+)
 ```
 
 В итоге примесь имеет вид:
 
 ```less
 .rotate3d(...) {
-  @js: ~`(function(args) { return args = args || '0, 0, 0, 0', args = args.replace(/,\s*\d+$/, function(args) { return args + 'deg' }) })((function() { var args = '@{arguments}'; return args = args.replace(/^\[|\]$/g, '') })())`;
+  @js: ~`(
+      function(args) {return args = args || '0, 0, 0, 0',
+      args = args.replace(/, \s* \d+ $/, function(args) {return args + 'deg'})}
+    ) (
+      (
+          function() {var args = '@{arguments}' ; return args = args.replace(
+              / ^\[|\]$/g,
+              ''
+            )}
+        )
+        ()
+    ) `;
 
   transform: rotate3d(@js);
 }
@@ -239,9 +251,6 @@
 ```
 
 > Описанные в этой главе примеры доступны под номерами 6.1.1 - 6.1.4 и работают только с компиляторами, написанными на JavaScript.
-
-
-
 
 ## Выводы и мысли
 
