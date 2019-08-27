@@ -68,3 +68,7 @@ h2 {
 .md-nav__title {
 	font-size: 130%;
 }
+
+.md-tabs__link {
+	opacity: .85;
+}
