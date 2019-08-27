@@ -6,7 +6,7 @@ title: Оглавление
 
 Справочник по функциям XPath на русском языке
 
-[Язык запросов XML Path (XPath) версия 1.0](https://xsltdev.ru/tr/xpath10/) &mdash; Перевод рекомендации W3C на русский язык
+<!-- [Язык запросов XML Path (XPath) версия 1.0](https://xsltdev.ru/tr/xpath10/) &mdash; Перевод рекомендации W3C на русский язык -->
 
 <div class="col3" markdown="1">
 - [boolean](boolean.md)

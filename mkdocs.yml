@@ -12,8 +12,8 @@ theme:
     name: null
     custom_dir: 'theme/material'
     palette:
-        primary: 'green'
-        accent: 'green'
+        primary: 'pink'
+        accent: 'pink'
     language: 'ru'
     #    favicon: 'assets/images/favicon.ico'
     feature:
