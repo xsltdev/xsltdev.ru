@@ -2,7 +2,7 @@ title: Документация API jQuery
 hide: false
 arrange:
     - index.md
-    - selectors.md
+    - selectors
     - events.md
     - dom.md
     - traversing.md
