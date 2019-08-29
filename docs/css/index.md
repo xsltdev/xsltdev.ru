@@ -23,7 +23,7 @@ title: Оглавление
 - [@font-face](@font-face.md)
 - [@keyframes](@keyframes.md)
 - [@viewport](@viewport.md)
-- `@counter-style`
+- [@counter-style](@counter-style.md)
 - `@font-feature-values`
   - `@swash`
   - `@ornaments`
