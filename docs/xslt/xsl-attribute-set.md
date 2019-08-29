@@ -1,3 +1,7 @@
+---
+description: Элемент xsl:attribute-set определяет именованный набор атрибутов
+---
+
 # xsl:attribute-set
 
 Элемент **`xsl:attribute-set`** определяет именованный набор атрибутов.

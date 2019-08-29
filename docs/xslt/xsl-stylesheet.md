@@ -1,3 +1,7 @@
+---
+description: Корневым элементом XSLT-документа всегда является элемент xsl:stylesheet или его синоним xsl:transform
+---
+
 # xsl:stylesheet
 
 Корневым элементом XSLT-документа всегда является элемент **`xsl:stylesheet`** или его синоним [`xsl:transform`](xsl-transform.md).

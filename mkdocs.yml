@@ -1,7 +1,7 @@
 site_name: Справочник
 site_url: https://xsltdev.ru/
 site_description: Справочник web-разработчика с примерами кода - HTML, CSS, Javascript, Typescript, Angular, React, Node.js, XSLT, XPath
-site_author: Бондаренко Юрий
+# site_author: Бондаренко Юрий
 copyright: (С) 2012-2019, Справочник web-разработчика с примерами кода
 
 repo_name: 'Репозиторий справочника'
@@ -12,8 +12,8 @@ theme:
     name: null
     custom_dir: 'theme/material'
     palette:
-        primary: 'pink'
-        accent: 'pink'
+        primary: 'teal'
+        accent: 'teal'
     language: 'ru'
     #    favicon: 'assets/images/favicon.ico'
     feature:

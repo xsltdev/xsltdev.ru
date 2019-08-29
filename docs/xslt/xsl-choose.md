@@ -1,3 +1,7 @@
+---
+description: Элемент xsl:choose содержит один или несколько элементов xsl:when и необязательный элемент xsl:otherwise
+---
+
 # xsl:choose
 
 Элемент **`xsl:choose`** содержит один или несколько элементов [`xsl:when`](xsl-when.md) и необязательный элемент [`xsl:otherwise`](xsl-otherwise.md).

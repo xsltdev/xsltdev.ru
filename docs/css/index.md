@@ -24,13 +24,7 @@ title: Оглавление
 - [@keyframes](@keyframes.md)
 - [@viewport](@viewport.md)
 - [@counter-style](@counter-style.md)
-- `@font-feature-values`
-  - `@swash`
-  - `@ornaments`
-  - `@annotation`
-  - `@stylistic`
-  - `@styleset`
-  - `@character-variant`
+- [@font-feature-values](@font-feature-values.md)
 </div>
 
 ## Псевдоклассы

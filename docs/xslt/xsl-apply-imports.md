@@ -1,3 +1,7 @@
+---
+description: Элемент xsl:apply-imports используется в шаблонах для применения правил, которые были импортированы во внешних модулях, но переопределены шаблонами основного преобразования
+---
+
 # xsl:apply-imports
 
 Элемент **`xsl:apply-imports`** используется в шаблонах для применения правил, которые были импортированы во внешних модулях, но переопределены шаблонами основного преобразования.
@@ -333,14 +337,16 @@ Some binary operations
 <html>
   <body>
     <font face="Arial"
-      ><i><b>XML Developer's Guide</b></i> By: <font color="blue">Gambardella, Matthew</font><br
+      ><i><b>XML Developer's Guide</b></i> By:
+      <font color="blue">Gambardella, Matthew</font><br
     /></font>
     <font face="Arial"
       ><i><b>Midnight Rain</b></i> By: <font color="blue">Ralls, Kim</font><br
     /></font>
     ...
     <font face="Arial"
-      ><i><b>Visual Studio 7: A Comprehensive Guide</b></i> By: <font color="blue">Galos, Mike</font><br
+      ><i><b>Visual Studio 7: A Comprehensive Guide</b></i> By:
+      <font color="blue">Galos, Mike</font><br
     /></font>
   </body>
 </html>
@@ -348,9 +354,10 @@ Some binary operations
 
 ## См. также
 
-- [`xsl:import`](xsl-import.md) -- импорт преобразований
+- [`xsl:import`](xsl-import.md) &mdash; импорт преобразований
 
 ## Ссылки
 
 - [`xsl:apply-imports`](https://developer.mozilla.org/en/XSLT/apply-imports) на MDN
 - [`xsl:apply-imports`](https://msdn.microsoft.com/en-us/library/ms256178.aspx) на MSDN
+- [`xsl:apply-imports`](http://www.saxonica.com/documentation/index.html#!xsl-elements/apply-imports) на Saxon

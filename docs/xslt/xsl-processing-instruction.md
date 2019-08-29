@@ -1,3 +1,7 @@
+---
+description: Элемент xsl:processing-instruction создает в результирующем дереве узел инструкции по обработке
+---
+
 # xsl:processing-instruction
 
 Элемент **`xsl:processing-instruction`** создает в результирующем дереве узел инструкции по обработке.
