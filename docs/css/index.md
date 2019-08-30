@@ -32,7 +32,7 @@ title: Оглавление
 <div class="col3" markdown="1">
 - [:active](:active.md)
 - [:any-link](:any-link.md)
-- `:blank`
+- [:blank](:blank.md)
 - [:checked](:checked.md)
 - `:current`
 - [:default](:default.md)
@@ -47,7 +47,7 @@ title: Оглавление
 - [:first-of-type](:first-of-type.md)
 - [:focus](:focus.md)
 - :focus-visible
-- :focus-within
+- [:focus-within](:focus-within.md)
 - [:fullscreen](:fullscreen.md)
 - :future
 - :has()
@@ -65,7 +65,7 @@ title: Оглавление
 - [:left](:left.md)
 - [:link](:link.md)
 - :local-link
-- :not()
+- [:not()](:not().md)
 - :nth-child()
 - :nth-col()
 - :nth-last-child()
