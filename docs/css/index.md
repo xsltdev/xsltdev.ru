@@ -96,7 +96,7 @@ title: Оглавление
 
 <div class="col3" markdown="1">
 - [::after](::after.md)
-- `::backdrop`
+- [::backdrop](::backdrop.md)
 - [::before](::before.md)
 - `::cue`
 - [::first-letter](::first-letter.md)
@@ -104,8 +104,8 @@ title: Оглавление
 - `::grammar-error`
 - `::marker`
 - `::part()`
-- `::placeholder`
-- `::selection`
+- [::placeholder](::placeholder.md)
+- [::selection](::selection.md)
 - `::slotted()`
 - `::spelling-error`
 </div>
