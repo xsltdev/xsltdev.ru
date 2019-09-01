@@ -66,9 +66,9 @@ title: Оглавление
 - [:link](:link.md)
 - :local-link
 - [:not()](:not().md)
-- :nth-child()
+- [:nth-child()](:nth-child().md)
 - :nth-col()
-- :nth-last-child()
+- [:nth-last-child()](:nth-last-child().md)
 - :nth-last-col()
 - :nth-last-of-type()
 - :nth-of-type()
