@@ -24,14 +24,14 @@ theme:
     logo:
         icon: 'code'
 
-extra:
-    #    social:
-    #        - type: 'github'
-    #          link: 'https://github.com/bndby'
-    #        - type: 'linkedin'
-    #          link: 'https://www.linkedin.com/in/bndby/'
-    #search:
-    #    language: 'en, ru'
+#extra:
+#    social:
+#        - type: 'github'
+#          link: 'https://github.com/bndby'
+#        - type: 'linkedin'
+#          link: 'https://www.linkedin.com/in/bndby/'
+#search:
+#    language: 'en, ru'
 
 google_analytics:
     - 'UA-34215161-1'
