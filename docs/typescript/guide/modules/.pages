@@ -1,4 +1,4 @@
-title: Модули и пространства имен
+title: Модули Typescript
 arrange:
     - namespaces.md
     - modules.md

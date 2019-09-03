@@ -1,4 +1,4 @@
-title: Декораторы
+title: Декораторы Typescript
 arrange:
     - decor-classes.md
     - decor-method.md

@@ -1,4 +1,4 @@
-title: Объектно-ориентированное программирование
+title: ООП в Typescript
 arrange:
     - classes.md
     - modificators.md
