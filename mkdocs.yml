@@ -30,8 +30,8 @@ extra:
     #          link: 'https://github.com/bndby'
     #        - type: 'linkedin'
     #          link: 'https://www.linkedin.com/in/bndby/'
-    search:
-        language: 'en, ru'
+    #search:
+    #    language: 'en, ru'
 
 google_analytics:
     - 'UA-34215161-1'
@@ -49,7 +49,7 @@ markdown_extensions:
     - pymdownx.emoji
 
 plugins:
-    - search
+    #- search
     - awesome-pages
 
 extra_javascript:
