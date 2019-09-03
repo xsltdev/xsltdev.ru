@@ -75,7 +75,7 @@ render(
 
 Некорректный `bundle.js` для `http://localhost:3000/genrepewpewpew/anotherpage`
 
-![](notfound_incorrect_bundle.jpg)
+![Некорректный bundle](notfound_incorrect_bundle.jpg)
 
 Как думаете, в чем проблема?
 
