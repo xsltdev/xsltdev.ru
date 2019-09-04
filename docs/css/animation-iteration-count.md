@@ -1,3 +1,7 @@
+---
+description: Свойство animation-iteration-count определяет, сколько раз проигрывать цикл анимации до её остановки
+---
+
 # animation-iteration-count
 
 Свойство **`animation-iteration-count`** определяет, сколько раз проигрывать цикл анимации до её остановки.
@@ -26,7 +30,7 @@ animation-iteration-count: 2, 0, infinite;
 animation-iteration-count: 1;
 ```
 
-Применяется к: Ко всем элементам, к псевдоэлементам `::before` и `::after`
+Применяется ко всем элементам, к псевдоэлементам `::before` и `::after`
 
 ## Спецификации
 
@@ -78,7 +82,9 @@ animation-iteration-count: 1;
     </style>
   </head>
   <body>
-    <div class="blink">Мигающий текст привлекает к себе внимание, не правда ли.</div>
+    <div class="blink">
+      Мигающий текст привлекает к себе внимание, не правда ли.
+    </div>
   </body>
 </html>
 ```

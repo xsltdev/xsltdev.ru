@@ -173,7 +173,7 @@ description: Элемент xsl:apply-templates применяет шаблон�
 
 ### Пример 6
 
-```xml tab=
+```xml tab="XML"
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="applyt.xsl" ?>
 <customers>
@@ -216,7 +216,7 @@ description: Элемент xsl:apply-templates применяет шаблон�
 </customers>
 ```
 
-```xslt tab=
+```xslt tab="XSLT"
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >

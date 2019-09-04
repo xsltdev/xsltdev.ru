@@ -92,7 +92,7 @@ description: Элемент xsl:apply-imports используется в шаб
 
 ### Пример 3
 
-```XML tab=
+```xml tab="XML"
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="ops.xsl"?>
 <ops>
@@ -164,7 +164,7 @@ description: Элемент xsl:apply-imports используется в шаб
 </xsl:stylesheet>
 ```
 
-```Output tab=
+```tab="Output"
 Some binary operations
 
 1+2 = 12 (from str.xsl)
@@ -176,7 +176,7 @@ Some binary operations
 
 ### Пример 4
 
-```xml tab=
+```xml tab="XML"
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="sample.xsl"?>
 <catalog>

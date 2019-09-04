@@ -26,13 +26,13 @@ description: Элемент xsl:call-template вызывает шаблон по
 
 ### Пример 1
 
-```xml tab=
+```xml tab="XML"
 <content>
     Just a few words...
 </content>
 ```
 
-```xslt tab=
+```xslt tab="XSLT"
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template match="/">
@@ -119,7 +119,7 @@ description: Элемент xsl:call-template вызывает шаблон по
 
 ### Пример 3
 
-```xml tab=
+```xml tab="XML"
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="topic.xsl"?>
 <topic name="My_topic"

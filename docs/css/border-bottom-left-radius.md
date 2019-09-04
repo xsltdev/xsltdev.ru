@@ -1,3 +1,7 @@
+---
+description: Свойство border-bottom-left-radius устанавливает радиус скругления левого нижнего угла рамки
+---
+
 # border-bottom-left-radius
 
 Свойство **`border-bottom-left-radius`** устанавливает радиус скругления левого нижнего угла рамки.
@@ -37,7 +41,7 @@ border-bottom-left-radius: inherit;
 border-bottom-left-radius: 0;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 

@@ -1,3 +1,7 @@
+---
+description: Свойство border-image-source определяет изображение вместо стиля границы
+---
+
 # border-image-source
 
 Свойство **`border-image-source`** определяет изображение вместо стиля границы.

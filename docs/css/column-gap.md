@@ -1,3 +1,7 @@
+---
+description: Свойство column-gap задаёт расстояние между колонками в многоколоночном тексте
+---
+
 # column-gap
 
 Свойство **`column-gap`** задаёт расстояние между колонками в многоколоночном тексте.
@@ -106,7 +110,8 @@ Safari, Chrome и Аndroid поддерживают свойство `-webkit-co
 
 ```html tab="HTML"
 <p class="content-box">
-  This is some multi-column text with a 40px column gap created with the CSS `column-gap` property. Don't you think that's fun and exciting? I sure do!
+  This is some multi-column text with a 40px column gap created with the CSS
+  `column-gap` property. Don't you think that's fun and exciting? I sure do!
 </p>
 ```
 

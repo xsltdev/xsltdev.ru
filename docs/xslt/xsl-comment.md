@@ -63,7 +63,7 @@ description: Элемент xsl:comment используется для созд
 
 ### Пример 2
 
-```xml tab=
+```xml tab="XML"
 <?xml version ="1.0"?>
 <?xml-stylesheet type="text/xsl" href="news.xsl"?>
 <news>
@@ -72,7 +72,7 @@ description: Элемент xsl:comment используется для созд
 </news>
 ```
 
-```xslt tab=
+```xslt tab="XSLT"
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
@@ -90,7 +90,7 @@ description: Элемент xsl:comment используется для созд
 </xsl:stylesheet>
 ```
 
-```html tab=
+```html tab="Output"
 <html>
   <body>
     <!--insert top news story-->

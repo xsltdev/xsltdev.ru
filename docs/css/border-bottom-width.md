@@ -1,3 +1,7 @@
+---
+description: Свойство border-bottom-width устанавливает толщину границы внизу элемента
+---
+
 # border-bottom-width
 
 Свойство **`border-bottom-width`** устанавливает толщину границы внизу элемента.
@@ -31,7 +35,7 @@ border-bottom-width: unset;
 border-bottom-width: medium;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 

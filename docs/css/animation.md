@@ -1,3 +1,7 @@
+---
+description: Универсальное свойство animation, задаёт сразу несколько параметров анимации
+---
+
 # animation
 
 Универсальное свойство **`animation`**, задаёт сразу несколько параметров анимации.
@@ -5,7 +9,7 @@
 ## Синтаксис
 
 ```css
-/* @keyframes duration | timing-function | delay | 
+/* @keyframes duration | timing-function | delay |
 	iteration-count | direction | fill-mode | play-state | name */
 animation: 3s ease-in 1s 2 reverse both paused slidein;
 
@@ -33,7 +37,7 @@ animation-fill-mode: none;
 animation-play-state: running;
 ```
 
-Применяется к: Ко всем элементам, к псевдоэлементам `::before` и `::after`
+Применяется ко всем элементам, к псевдоэлементам `::before` и `::after`
 
 ## Спецификации
 

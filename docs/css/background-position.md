@@ -1,3 +1,7 @@
+---
+description: Свойство background-position задаёт начальное положение фонового изображения, установленного с помощью свойства background-image
+---
+
 # background-position
 
 Свойство **`background-position`** задаёт начальное положение фонового изображения, установленного с помощью свойства [`background-image`](background-image.md).
@@ -59,7 +63,7 @@ background-position: unset;
 background-position: 0% 0%;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
@@ -112,7 +116,8 @@ background-position: 0% 0%;
     <title>background-position</title>
     <style>
       body {
-        background-image: url('/example/image/pattern-left.png'), url('/example/image/pattern-right.png');
+        background-image: url('/example/image/pattern-left.png'),
+          url('/example/image/pattern-right.png');
         background-repeat: repeat-y, repeat-y;
         background-position: left, right;
       }

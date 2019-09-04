@@ -1,3 +1,7 @@
+---
+description: Свойство background-color определяет цвет фона элемента
+---
+
 # background-color
 
 Свойство **`background-color`** определяет цвет фона элемента.
@@ -40,8 +44,11 @@ background-color: unset;
 
 ## Значения
 
-- `transparent` -- устанавливает прозрачный фон
-- любой цвет
+`цвет`
+: Цвет
+
+`transparent`
+: устанавливает прозрачный фон
 
 Значение по-умолчанию:
 
@@ -49,7 +56,7 @@ background-color: unset;
 background-color: transparent;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
@@ -80,7 +87,10 @@ background-color: transparent;
   </head>
   <body>
     <h1>Lorem ipsum dolor sit amet</h1>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy
+      nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.
+    </p>
   </body>
 </html>
 ```

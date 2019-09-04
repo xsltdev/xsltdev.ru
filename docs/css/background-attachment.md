@@ -1,3 +1,7 @@
+---
+description: Свойство background-attachment устанавливает, будет ли прокручиваться фоновое изображение вместе с содержимым элемента
+---
+
 # background-attachment
 
 Свойство **`background-attachment`** устанавливает, будет ли прокручиваться фоновое изображение вместе с содержимым элемента.
@@ -20,9 +24,14 @@ background-attachment: unset;
 
 ## Значения
 
-- `fixed` -- Делает фоновое изображение элемента неподвижным.
-- `scroll` -- Позволяет перемещаться фону вместе с содержимым.
-- `local` -- Фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон, выходящий за рамки элемента, остаётся на месте.
+`fixed`
+: Делает фоновое изображение элемента неподвижным.
+
+`scroll`
+: Позволяет перемещаться фону вместе с содержимым.
+
+`local`
+: Фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон, выходящий за рамки элемента, остаётся на месте.
 
 Значение по-умолчанию:
 
@@ -30,7 +39,7 @@ background-attachment: unset;
 background-attachment: scroll;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
@@ -79,7 +88,8 @@ background-attachment: scroll;
     <title>background-attachment</title>
     <style>
       body {
-        background-image: url('/example/image/pattern-left.png'), url('/example/image/pattern-right.png');
+        background-image: url('/example/image/pattern-left.png'),
+          url('/example/image/pattern-right.png');
         background-repeat: repeat-y, repeat-y;
         background-position: left, right;
         background-attachment: fixed, fixed;

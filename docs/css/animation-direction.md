@@ -1,3 +1,7 @@
+---
+description: Свойство animation-direction устанавливает направление движения анимации
+---
+
 # animation-direction
 
 Свойство **`animation-direction`** устанавливает направление движения анимации.
@@ -41,7 +45,7 @@ animation-direction: unset;
 animation-direction: normal;
 ```
 
-Применяется к: Ко всем элементам, к псевдоэлементам `::before` и `::after`
+Применяется ко всем элементам, к псевдоэлементам `::before` и `::after`
 
 ## Спецификации
 

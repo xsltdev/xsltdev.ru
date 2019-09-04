@@ -120,7 +120,7 @@ description: Элемент xsl:copy создает копию текущего 
 
 ### Пример 4
 
-```xml tab=
+```xml tab="XML"
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="identityxfm.xsl"?>
 <catalog>
@@ -156,7 +156,7 @@ society.</description>
 </catalog>
 ```
 
-```xslt tab=
+```xslt tab="XSLT"
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >

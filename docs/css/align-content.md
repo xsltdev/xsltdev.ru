@@ -1,3 +1,7 @@
+---
+description: Свойство align-content задаёт тип выравнивания строк внутри флекс-контейнера по поперечной оси при наличии свободного пространства
+---
+
 # align-content
 
 Свойство **`align-content`** задаёт тип выравнивания строк внутри флекс-контейнера по поперечной оси при наличии свободного пространства.
@@ -20,17 +24,25 @@ align-content: first baseline;
 align-content: last baseline;
 
 /* Distributed alignment */
-align-content: space-between; /* Distribute items evenly
-									The first item is flush with the start,
-									the last is flush with the end */
-align-content: space-around; /* Distribute items evenly
-									Items have a half-size space
-									on either end */
-align-content: space-evenly; /* Distribute items evenly
-									Items have equal space around them */
-align-content: stretch; /* Distribute items evenly
-									Stretch 'auto'-sized items to fit
-									the container */
+
+/* Distribute items evenly
+The first item is flush with the start,
+the last is flush with the end */
+align-content: space-between;
+
+/* Distribute items evenly
+Items have a half-size space
+on either end */
+align-content: space-around;
+
+/* Distribute items evenly
+Items have equal space around them */
+align-content: space-evenly;
+
+/* Distribute items evenly
+Stretch 'auto'-sized items to fit
+the container */
+align-content: stretch;
 
 /* Overflow alignment */
 align-content: safe center;
@@ -46,7 +58,7 @@ align-content: unset;
 
 Значение по-умолчанию: `stretch`
 
-Применяется к: К флекс-контейнеру
+Применяется к флекс-контейнеру
 
 <table>
 <thead>

@@ -1,3 +1,7 @@
+---
+description: Свойство border-image-slice разделяет изображение, указанное в border-image-source на девять регионов - четыре угла, четыре края и середину
+---
+
 # border-image-slice
 
 Свойство **`border-image-slice`** разделяет изображение, указанное в [`border-image-source`](border-image-source.md) на девять регионов: четыре угла, четыре края и середину.

@@ -1,3 +1,7 @@
+---
+description: Свойство caret-color задает цвет текстового курсора в полях ввода
+---
+
 # caret-color
 
 Свойство **`caret-color`** задает цвет текстового курсора в полях ввода, например, [`input`](../html/input.md) или [`textarea`](../html/textarea.md).
@@ -25,7 +29,7 @@ caret-color: hsla(228, 4%, 24%, 0.8);
 caret-color: auto;
 ```
 
-Применяется к: ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
@@ -42,7 +46,9 @@ caret-color: auto;
 ```html tab="HTML"
 <input value="This field uses a default caret." size="64" />
 <input class="custom" value="I have a custom caret color!" size="64" />
-<p contenteditable class="custom">This paragraph can be edited, and its caret has a custom color as well!</p>
+<p contenteditable class="custom">
+  This paragraph can be edited, and its caret has a custom color as well!
+</p>
 ```
 
 ```css tab="CSS"

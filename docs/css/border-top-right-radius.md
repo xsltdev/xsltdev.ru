@@ -1,3 +1,7 @@
+---
+description: Свойство border-top-right-radius устанавливает радиус скругления правого верхнего уголка рамки
+---
+
 # border-top-right-radius
 
 Свойство **`border-top-right-radius`** устанавливает радиус скругления правого верхнего уголка рамки.
@@ -32,7 +36,7 @@ border-top-right-radius: inherit;
 border-top-right-radius: 0;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 

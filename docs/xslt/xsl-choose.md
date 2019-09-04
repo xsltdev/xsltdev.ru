@@ -49,7 +49,7 @@ description: Элемент xsl:choose содержит один или неск
 
 ### Пример 2
 
-```xml tab=
+```xml tab="XML"
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="refchoose.xsl" ?>
 <orders>
@@ -71,7 +71,7 @@ description: Элемент xsl:choose содержит один или неск
 </orders>
 ```
 
-```xslt tab=
+```xslt tab="XSLT"
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >

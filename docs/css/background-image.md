@@ -1,3 +1,7 @@
+---
+description: Свойство background-image устанавливает фоновое изображение для элемента
+---
+
 # background-image
 
 Свойство **`background-image`** устанавливает фоновое изображение для элемента.
@@ -11,7 +15,8 @@
 background-image: url('https://example.com/bck.png');
 
 /* Multiple values */
-background-image: url('https://example.com/top.png'), url('https://example.com/bottom.png');
+background-image: url('https://example.com/top.png'),
+  url('https://example.com/bottom.png');
 
 /* Keyword value */
 background-image: none;
@@ -24,8 +29,11 @@ background-image: unset;
 
 ## Значения
 
-- `url()` -- В качестве значения используется путь к графическому файлу, который указывается внутри конструкции `url()`. Путь к файлу при этом можно писать как в кавычках (двойных или одинарных), так и без них.
-- `none` -- Отменяет фоновое изображение для элемента.
+`url()`
+: В качестве значения используется путь к графическому файлу, который указывается внутри конструкции `url()`. Путь к файлу при этом можно писать как в кавычках (двойных или одинарных), так и без них.
+
+`none`
+: Отменяет фоновое изображение для элемента.
 
 Значение по-умолчанию:
 
@@ -33,7 +41,7 @@ background-image: unset;
 background-image: none;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 

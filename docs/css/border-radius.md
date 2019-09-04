@@ -1,3 +1,7 @@
+---
+description: Свойство border-radius устанавливает радиус скругления уголков рамки
+---
+
 # border-radius
 
 Свойство **`border-radius`** устанавливает радиус скругления уголков рамки.
@@ -64,7 +68,7 @@ border-radius: inherit;
 border-radius: 0;
 ```
 
-Применяется к: Ко всем элементам, за исключением таблиц с `border-collapse: collapse`
+Применяется ко всем элементам, за исключением таблиц с `border-collapse: collapse`
 
 ## Спецификации
 

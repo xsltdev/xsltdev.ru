@@ -1,3 +1,7 @@
+---
+description: Свойство background-repeat определяет, как будет повторяться фоновое изображение, установленное с помощью свойства background-image
+---
+
 # background-repeat
 
 Свойство **`background-repeat`** определяет, как будет повторяться фоновое изображение, установленное с помощью свойства [`background-image`](background-image.md).
@@ -7,36 +11,47 @@
 ## Синтаксис
 
 ```css
-	/* One-value syntax */
-	background-repeat: repeat-x;
-	background-repeat: repeat-y;
-	background-repeat: repeat;
-	background-repeat: space;
-	background-repeat: round;
-	background-repeat: no-repeat;
+/* One-value syntax */
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: repeat;
+background-repeat: space;
+background-repeat: round;
+background-repeat: no-repeat;
 
-	/* Two-value syntax: horizontal | vertical */
-	background-repeat: repeat space;
-	background-repeat: repeat repeat;
-	background-repeat: round space;
-	background-repeat: no-repeat round;
+/* Two-value syntax: horizontal | vertical */
+background-repeat: repeat space;
+background-repeat: repeat repeat;
+background-repeat: round space;
+background-repeat: no-repeat round;
 
-	/* Global values */
-	background-repeat: inherit;
-	background-repeat: initial;
-	background-repeat: unset;
+/* Global values */
+background-repeat: inherit;
+background-repeat: initial;
+background-repeat: unset;
+```
 
 Допустимо указывать два значения, первое ключевое слово задаёт повторение по горизонтали, второе по вертикали.
-```
 
 ## Значения
 
-- `no-repeat` -- Устанавливает одно фоновое изображение в элементе без его повторений, положение которого определяется свойством [`background-position`](background-position.md) (по умолчанию в левом верхнем углу). Аналогично `no-repeat no-repeat`.
-- `repeat` -- Фоновое изображение повторяется по горизонтали и вертикали. Аналогично `repeat repeat`.
-- `repeat-x` -- Фоновый рисунок повторяется только по горизонтали. Аналогично `repeat no-repeat`.
-- `repeat-y` -- Фоновый рисунок повторяется только по вертикали. Аналогично `no-repeat repeat`.
-- `space` -- Изображение повторяется столько раз, чтобы полностью заполнить область; если это не удаётся, между картинками добавляется пустое пространство.
-- `round` -- Изображение повторяется так, чтобы в области поместилось целое число рисунков; если это не удаётся сделать, то фоновые рисунки масштабируются.
+`no-repeat`
+: Устанавливает одно фоновое изображение в элементе без его повторений, положение которого определяется свойством [`background-position`](background-position.md) (по умолчанию в левом верхнем углу). Аналогично `no-repeat no-repeat`.
+
+`repeat`
+: Фоновое изображение повторяется по горизонтали и вертикали. Аналогично `repeat repeat`.
+
+`repeat-x`
+: Фоновый рисунок повторяется только по горизонтали. Аналогично `repeat no-repeat`.
+
+`repeat-y`
+: Фоновый рисунок повторяется только по вертикали. Аналогично `no-repeat repeat`.
+
+`space`
+: Изображение повторяется столько раз, чтобы полностью заполнить область; если это не удаётся, между картинками добавляется пустое пространство.
+
+`round`
+: Изображение повторяется так, чтобы в области поместилось целое число рисунков; если это не удаётся сделать, то фоновые рисунки масштабируются.
 
 Значение по-умолчанию:
 
@@ -44,7 +59,7 @@
 background-repeat: repeat;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
@@ -77,7 +92,11 @@ background-repeat: repeat;
     </style>
   </head>
   <body>
-    <p>Даже опытному верстальщику приходится иногда смотреть свой код на наличие опечаток и ошибок. Так что не брезгуй проверять код валидатором, это поможет избежать множества ляпов в будущем.</p>
+    <p>
+      Даже опытному верстальщику приходится иногда смотреть свой код на наличие
+      опечаток и ошибок. Так что не брезгуй проверять код валидатором, это
+      поможет избежать множества ляпов в будущем.
+    </p>
   </body>
 </html>
 ```
@@ -92,7 +111,8 @@ background-repeat: repeat;
     <title>background-repeat</title>
     <style>
       body {
-        background-image: url('/example/image/pattern-left.png'), url('/example/image/pattern-right.png');
+        background-image: url('/example/image/pattern-left.png'),
+          url('/example/image/pattern-right.png');
         background-position: left, right;
         background-repeat: repeat-y, repeat-y;
       }

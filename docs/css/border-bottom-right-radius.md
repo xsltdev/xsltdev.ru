@@ -1,3 +1,7 @@
+---
+description: Свойство border-bottom-right-radius устанавливает радиус скругления правого нижнего уголка рамки
+---
+
 # border-bottom-right-radius
 
 Свойство **`border-bottom-right-radius`** устанавливает радиус скругления правого нижнего уголка рамки.
@@ -37,7 +41,7 @@ border-bottom-right-radius: inherit;
 border-bottom-right-radius: 0;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 

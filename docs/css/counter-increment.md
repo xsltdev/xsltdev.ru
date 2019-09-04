@@ -1,3 +1,7 @@
+---
+description: Свойство counter-increment предназначено для увеличения значения счётчика приращений, который задается свойством counter-reset
+---
+
 # counter-increment
 
 Свойство **`counter-increment`** предназначено для увеличения значения счётчика приращений, который задается свойством [`counter-reset`](counter-reset.md).
@@ -61,7 +65,7 @@ counter-increment: unset;
 counter-increment: none;
 ```
 
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
