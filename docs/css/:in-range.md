@@ -1,3 +1,7 @@
+---
+description: Псевдокласс :in-range представляет собой элемент input, текущее значение которого находится в пределах диапазона, заданных атрибутами min и max
+---
+
 # :in-range
 
 Псевдокласс **`:in-range`** представляет собой элемент [`<input>`](../html/input.md), текущее значение которого находится в пределах диапазона, заданных атрибутами `min` и `max`.
@@ -28,7 +32,15 @@ input:in-range {
   <ul>
     Values between 1 and 10 are valid.
     <li>
-      <input id="value1" name="value1" type="number" placeholder="1 to 10" min="1" max="10" value="12" />
+      <input
+        id="value1"
+        name="value1"
+        type="number"
+        placeholder="1 to 10"
+        min="1"
+        max="10"
+        value="12"
+      />
       <label for="value1">Your value is </label>
     </li>
   </ul>

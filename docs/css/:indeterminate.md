@@ -1,3 +1,7 @@
+---
+description: Псевдо-класс :indeterminate представляет любой элемент формы, состояние которого неопределенно
+---
+
 # :indeterminate
 
 Псевдо-класс **`:indeterminate`** представляет любой элемент формы, состояние которого неопределенно.
@@ -11,7 +15,7 @@ input:indeterminate {
 }
 ```
 
-## Значения
+## Описание
 
 Элементы, предназначенные для этого селектора:
 
@@ -26,7 +30,7 @@ input:indeterminate {
 - [Selectors Level 4](https://drafts.csswg.org/selectors-4/#indeterminate)
 - [CSS Basic User Interface Module Level 3](https://drafts.csswg.org/css-ui-3/#indeterminate)
 
-## Описание и примеры
+## Примеры
 
 ```html tab="HTML"
 <div>

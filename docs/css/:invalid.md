@@ -1,3 +1,7 @@
+---
+description: Псевдо-класс :invalid находит любые input или form элементы, контент которых не проходит валидацию, в соответствии с типом поля
+---
+
 # :invalid
 
 Псевдо-класс **`:invalid`** находит любые [`<input>`](../html/input.md) или [`<form>`](../html/form.md) элементы, контент которых не проходит валидацию, в соответствии с типом поля. Он позволяет вам легко менять внешний вид полей, что позволяет пользователю видеть и исправлять ошибки.
@@ -70,7 +74,12 @@ input:required {
   </head>
   <body>
     <input type="email" value="myemailpochta.ru" /><br /><br />
-    <p><strong>Internet Explorer 9 и ниже не поддерживает псевдоклассы :invalid и :valid..</strong></p>
+    <p>
+      <strong
+        >Internet Explorer 9 и ниже не поддерживает псевдоклассы :invalid и
+        :valid..</strong
+      >
+    </p>
   </body>
 </html>
 ```

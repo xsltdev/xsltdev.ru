@@ -1,3 +1,7 @@
+---
+description: Правило @font-feature-values позволяет использовать общее имя в свойстве font-variant-alternates для функций, которые по разному активируются в OpenType
+---
+
 # @font-feature-values
 
 Правило **`@font-feature-values`** позволяет использовать общее имя в свойстве [`font-variant-alternates`](font-variant-alternates.md) для функций, которые по разному активируются в OpenType. Это может помочь упростить ваш CSS при использовании нескольких шрифтов.

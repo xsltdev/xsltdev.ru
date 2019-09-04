@@ -1,3 +1,7 @@
+---
+description: Псевдокласс :fullscreen выбирает элемент, который отображается, когда браузер находится в полноэкранном режиме
+---
+
 # :fullscreen
 
 Псевдокласс **`fullscreen`** выбирает элемент, который отображается, когда браузер находится в полноэкранном режиме.
@@ -36,7 +40,9 @@ Microsoft Edge и Internet Explorer используют стандартное 
 ```html tab="HTML"
 <div id="fullscreen">
   <h1>:fullscreen Demo</h1>
-  <p>This text will become big and red when the browser is in fullscreen mode.</p>
+  <p>
+    This text will become big and red when the browser is in fullscreen mode.
+  </p>
   <button id="fullscreen-button">Enter Fullscreen</button>
 </div>
 ```

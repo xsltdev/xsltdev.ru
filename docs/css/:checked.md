@@ -1,3 +1,7 @@
+---
+description: Псевдокласс :checked находит любые элементы radio, checkbox или option, которые выбраны или включены
+---
+
 # :checked
 
 Псевдокласс **`:checked`** находит любые элементы `radio` (`<input type="radio">`), `checkbox` (`<input type="checkbox">`) или `option` (`<option>` внутри `<select>`), которые выбраны или включены.

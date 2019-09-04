@@ -1,3 +1,7 @@
+---
+description: Псевдо-класс :enabled находит любой включенный элемент
+---
+
 # :enabled
 
 Псевдо-класс **`:enabled`** находит любой включенный элемент.
@@ -27,8 +31,10 @@ input:enabled {
 
 ```html tab="HTML"
 <form action="url_of_form">
-  <label for="FirstField">Первое поле (включено):</label> <input type="text" id="FirstField" value="Lorem" /><br />
-  <label for="SecondField">Второе поле (отключено):</label> <input type="text" id="SecondField" value="Ipsum" disabled="disabled" /><br />
+  <label for="FirstField">Первое поле (включено):</label>
+  <input type="text" id="FirstField" value="Lorem" /><br />
+  <label for="SecondField">Второе поле (отключено):</label>
+  <input type="text" id="SecondField" value="Ipsum" disabled="disabled" /><br />
   <input type="button" value="Submit" />
 </form>
 ```

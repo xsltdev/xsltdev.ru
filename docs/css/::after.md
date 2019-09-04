@@ -1,3 +1,7 @@
+---
+description: Псевдо-элемент ::after соответствует виртуальному последнему дочернему элементу выбранного элемента.
+---
+
 # ::after
 
 Псевдо-элемент **`::after`** соответствует виртуальному последнему дочернему элементу выбранного элемента.
@@ -50,8 +54,14 @@ element::after { свойства }
   </head>
   <body>
     <h2>Истории</h2>
-    <p class="new">История о том, как необходимо было сделать могилу, ее начали копать, а потом закапывать, и что из этого получилось.</p>
-    <p>История о том, как возле столовой появились загадочные розовые следы с шестью пальцами, и почему это случилось.</p>
+    <p class="new">
+      История о том, как необходимо было сделать могилу, ее начали копать, а
+      потом закапывать, и что из этого получилось.
+    </p>
+    <p>
+      История о том, как возле столовой появились загадочные розовые следы с
+      шестью пальцами, и почему это случилось.
+    </p>
   </body>
 </html>
 ```
@@ -65,8 +75,12 @@ element::after { свойства }
 ```html tab="HTML"
 <p>
   Here is the live example of the above code.<br />
-  We have some <span data-descr="collection of words and punctuation">text</span> here with a few <span data-descr="small popups which also hide again">tooltips</span>.<br />
-  Don't be shy, hover over to take a <span data-descr="not to be taken literally">look</span>.
+  We have some
+  <span data-descr="collection of words and punctuation">text</span> here with a
+  few
+  <span data-descr="small popups which also hide again">tooltips</span>.<br />
+  Don't be shy, hover over to take a
+  <span data-descr="not to be taken literally">look</span>.
 </p>
 ```
 

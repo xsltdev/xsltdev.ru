@@ -1,3 +1,7 @@
+---
+description: Правило @import используется для импорта CSS-стилей из других таблиц стилей
+---
+
 # @import
 
 Правило **`@import`** используется для импорта CSS-стилей из других таблиц стилей.
@@ -41,7 +45,7 @@
 
 ## Спецификации
 
-- [CSS Cascading and Inheritance Level 3 ](https://drafts.csswg.org/css-cascade-3/#at-ruledef-import)
+- [CSS Cascading and Inheritance Level 3](https://drafts.csswg.org/css-cascade-3/#at-ruledef-import)
 - [Media Queries](https://drafts.csswg.org/mediaqueries-3/#media0)
 - [CSS Level 2 (Revision 1)](http://www.w3.org/TR/CSS2/cascade.html#at-import)
 - [CSS Level 1](http://www.w3.org/TR/CSS1/#the-cascade)

@@ -1,3 +1,7 @@
+---
+description: Псевдокласс :first-of-type находит первого потомка своего типа среди детей родителя
+---
+
 # :first-of-type
 
 Псевдокласс **`:first-of-type`** находит первого потомка своего типа среди детей родителя.
@@ -25,7 +29,9 @@ p:first-of-type {
 <article>
   <div>This `div` is first!</div>
   <div>This <span>nested `span` is first</span>!</div>
-  <div>This <em>nested `em` is first</em>, but this <em>nested `em` is last</em>!</div>
+  <div>
+    This <em>nested `em` is first</em>, but this <em>nested `em` is last</em>!
+  </div>
   <div>This <span>nested `span` gets styled</span>!</div>
   <b>This `b` qualifies!</b>
   <div>This is the final `div`.</div>

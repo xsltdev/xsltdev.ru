@@ -1,3 +1,7 @@
+---
+description: Псевдокласс ::first-line применяет стили к первой строке элемента уровня блока
+---
+
 # ::first-line
 
 Псевдокласс **`::first-line`** применяет стили к первой строке элемента уровня блока.
@@ -40,9 +44,15 @@ p::first-line {
 ## Описание и примеры
 
 ```html tab="HTML"
-<p>Styles will only be applied to the first line of this paragraph. After that, all text will be styled like normal. See what I mean?</p>
+<p>
+  Styles will only be applied to the first line of this paragraph. After that,
+  all text will be styled like normal. See what I mean?
+</p>
 
-<span>The first line of this text will not receive special styling because it is not a block-level element.</span>
+<span
+  >The first line of this text will not receive special styling because it is
+  not a block-level element.</span
+>
 ```
 
 ```css tab="CSS"
