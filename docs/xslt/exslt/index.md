@@ -11,23 +11,23 @@ description: Справочник по функциям EXSLT на русско�
 
 <div class="col3" markdown="1">
 - [exsl​:object-type](exsl:object-type().md)
-- [exsl​:node-set](exsl​:node-set().md)
-- [math​:highest](math​:highest().md)
+- [exsl​:node-set](exsl:node-set().md)
+- [math​:highest](math:highest().md)
 - [math​:lowest](math:lowest().md)
-- [math​:max](math​:max().md)
-- [math​:min](math​:min().md)
+- [math​:max](math:max().md)
+- [math​:min](math:min().md)
 - [regexp​:match](regexp:match().md)
 - [regexp​:replace](regexp:replace().md)
-- [regexp​:test](regexp​:test().md)
+- [regexp​:test](regexp:test().md)
 - [set​:leading](set:leading().md)
 - [set​:trailing](set:trailing().md)
 - [set​:difference](set:difference().md)
 - [set​:distinct](set:distinct().md)
 - [set​:has-same-node](set:has-same-node().md)
-- [set​:intersection](set​:intersection().md)
-- [str​:concat](str​:concat().md)
+- [set​:intersection](set:intersection().md)
+- [str​:concat](str:concat().md)
 - [str​:split](str:split().md)
-- [str​:tokenize](str​:tokenize().md)
+- [str​:tokenize](str:tokenize().md)
 </div>
 
 Ссылки:
