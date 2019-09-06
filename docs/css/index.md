@@ -70,11 +70,11 @@ title: Оглавление
 - :nth-col()
 - [:nth-last-child()](:nth-last-child().md)
 - :nth-last-col()
-- :nth-last-of-type()
-- :nth-of-type()
-- :only-child
-- :only-of-type
-- :optional
+- [:nth-last-of-type()](:nth-last-of-type().md)
+- [:nth-of-type()](:nth-of-type().md)
+- [:only-child](:only-child.md)
+- [:only-of-type](:only-of-type.md)
+- [:optional](:optional.md)
 - :out-of-range
 - :past
 - :placeholder-shown
