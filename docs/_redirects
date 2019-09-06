@@ -1,0 +1,12 @@
+# Файл с редиректами на разделы сайта
+# /html/* https://xsltdev-html.netlify.com/html/* 200!
+# /css/* https://xsltdev-css.netlify.com/css/* 200!
+/less/* https://xsltdev-less.netlify.com/less/* 200!
+# /javascript/* https://xsltdev-html.netlify.com/html/* 200!
+# /typescript/* https://xsltdev-html.netlify.com/html/* 200!
+# /angular/* https://xsltdev-html.netlify.com/html/* 200!
+# /react/* https://xsltdev-html.netlify.com/html/* 200!
+# /jquery/* https://xsltdev-html.netlify.com/html/* 200!
+# /nodejs/* https://xsltdev-html.netlify.com/html/* 200!
+# /xslt/* https://xsltdev-html.netlify.com/html/* 200!
+# /xpath/* https://xsltdev-html.netlify.com/html/* 200!

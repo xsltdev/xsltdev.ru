@@ -3,6 +3,7 @@ arrange:
     - html
     - css
     - less
+    - javascript
     - typescript
     - angular
     - react
