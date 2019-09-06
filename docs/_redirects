@@ -1,6 +1,7 @@
 # Файл с редиректами на разделы сайта
 # /html/* https://xsltdev-html.netlify.com/html/* 200!
 # /css/* https://xsltdev-css.netlify.com/css/* 200!
+/less/	https://xsltdev-less.netlify.com/less/index.html	200!
 /less/*	https://xsltdev-less.netlify.com/less/:splat	200!
 # /javascript/* https://xsltdev-html.netlify.com/html/* 200!
 # /typescript/* https://xsltdev-html.netlify.com/html/* 200!
