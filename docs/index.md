@@ -5,30 +5,30 @@
 <table class="layout" markdown="1" width="100%">
 <tr>
 <th width="30%">
-![HTML](html.svg){: style="height:60px;width:60px"}
+[![HTML](html.svg){: style="height:60px;width:60px"}](/html/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%">
-![CSS](css.svg){: style="height:60px;width:60px"}
+[![CSS](css.svg){: style="height:60px;width:60px"}](/css/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%">
-![LESS](less.svg){: style="height:30px;width:70px"}
+[![LESS](less.svg){: style="height:30px;width:70px"}](/less/)
 </th>
 </tr>
 <tr>
 <th>
-[HTML](html/index.md)<br />
+[HTML](/html/)<br />
 <small>Справочник элементов</small>
 </th>
 <th></th>
 <th>
-[CSS](css/index.md)<br />
+[CSS](/css/)<br />
 <small>Справочник свойств</small>
 </th>
 <th></th>
 <th>
-[LESS](less/index.md)<br />
+[LESS](/less/)<br />
 <small>Руководства</small>
 </th>
 </tr>
@@ -37,7 +37,7 @@
 <table class="layout" markdown="1" width="100%">
 <tr>
 <th width="30%">
-![Typescript](ts.svg){: style="height:60px;width:60px"}
+[![Typescript](ts.svg){: style="height:60px;width:60px"}](/typescript/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%"></th>
@@ -46,7 +46,7 @@
 </tr>
 <tr>
 <th>
-[Typescript](typescript/index.md)<br />
+[Typescript](/typescript/)<br />
 <small>Руководства</small>
 </th>
 <th></th>
@@ -56,28 +56,28 @@
 </tr>
 </table>
 
-## Фреймворки
+### Фреймворки
 
 <table class="layout" markdown="1" width="100%">
 <tr>
 <th width="30%">
-![Angular 2+](angular.svg){: style="height:60px;width:60px"}
+[![Angular 2+](angular.svg){: style="height:60px;width:60px"}](/angular/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%">
-![React](react.svg){: style="height:60px;width:60px"}
+[![React](react.svg){: style="height:60px;width:60px"}](/react/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%"></th>
 </tr>
 <tr>
 <th>
-[Angular 2+](angular/index.md)<br />
+[Angular 2+](/angular/)<br />
 <small>Руководства по фреймворку</small>
 </th>
 <th></th>
 <th>
-[React](react/index.md)<br />
+[React](/react/)<br />
 <small>Руководства по фреймворку</small>
 </th>
 <th></th>
@@ -90,7 +90,7 @@
 <table class="layout" markdown="1" width="100%">
 <tr>
 <th width="30%">
-![Node.js](nodejs.svg){: style="height:60px;width:60px"}
+[![Node.js](nodejs.svg){: style="height:60px;width:60px"}](/nodejs/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%"></th>
@@ -99,7 +99,7 @@
 </tr>
 <tr>
 <th>
-[Node.js](nodejs/index.md)<br />
+[Node.js](/nodejs/)<br />
 <small>Руководства</small>
 </th>
 <th></th>
@@ -111,8 +111,8 @@
 
 ## XML технологии
 
-- [XSLT](xslt/index.md) &mdash; справочник элементов XSLT
-- [XPath](xpath/index.md) &mdash; справочник функций XPath
+- [XSLT](/xslt/) &mdash; справочник элементов XSLT
+- [XPath](/xpath/) &mdash; справочник функций XPath
 
 ---
 
