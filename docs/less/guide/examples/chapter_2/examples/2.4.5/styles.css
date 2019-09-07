@@ -1,0 +1,8 @@
+.item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.item .header,
+.article {
+  padding: 25px;
+}

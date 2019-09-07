@@ -1,0 +1,16 @@
+@media screen {
+  .one {
+    background-color: #fff;
+  }
+  
+  @media (min-width: 992px) {
+    .two {
+      color: #777;
+    }
+  }
+}
+
+.test {
+  &:extend(.one, .two);
+  border-right: 1px solid #000;
+}

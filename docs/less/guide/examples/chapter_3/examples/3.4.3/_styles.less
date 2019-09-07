@@ -1,0 +1,13 @@
+.transition(@function: ease, @duration: .3s, @property: all) {
+  transition-timing-function: @function;
+  transition-duration: @duration;
+  transition-property: @property;
+}
+
+.block {
+  .transition(linear);
+}
+
+.link {
+  .transition(linear, .5s);
+}

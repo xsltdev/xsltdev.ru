@@ -1,0 +1,22 @@
+.area {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.area:before,
+.area:after {
+  display: table;
+  content: " ";
+}
+
+.area:after {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .area {
+    width: 750px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

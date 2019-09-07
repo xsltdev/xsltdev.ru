@@ -1,0 +1,20 @@
+ul, li {
+  border-top: 2px dotted #366;
+  
+  & + & {
+    border-top: 0;
+  }
+}
+
+
+/*
+ * Test
+ */
+
+ul, li {
+  border-top: 2px dotted #366;
+  
+  & + & + & {
+    border-top: 0;
+  }
+}

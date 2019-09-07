@@ -1,0 +1,18 @@
+.mixin(@a, @b, @c) {
+  @sqrt: sqrt(@a);
+  @cos: cos(@b);
+  @max: max(@a, @b, @c);
+  @pow: pow(@c, 5);
+  @return: (@sqrt + @cos + @max) / @pow;
+}
+
+.test {
+  .mixin(9, pi(), 1);
+  content: @return;
+}
+
+// sqrt(9)       = 3
+// cos(pi())     = -1
+// max(9, pi, 1) = 9
+// pow(1, 5)     = 1
+// return        = (3 + -1 + 9) / 1 = 11 / 1 = 11

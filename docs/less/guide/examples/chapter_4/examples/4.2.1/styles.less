@@ -1,0 +1,13 @@
+.bg(@path, @width, @height) {
+  background-image: url(@path);
+  
+  @media only screen and (min-resolution: (1.5 * 96dpi)), only screen and (min-resolution: (1.5 * 1dppx)) {
+    @retina: replace(@path, "(\.[0-9a-z]+)$", "@2x$1", "i");
+    background-image: url(@retina);
+    background-size: @width @height;
+  }
+}
+
+.block {
+  .bg("../images/header-bg.png", 18px, 18px);
+}

@@ -1,0 +1,51 @@
+/*
+ * Before
+ */
+.button {
+  background-color: #ddd;
+  color: #000;
+}
+
+.button-add {
+  background-color: green;
+  color: #fff;
+}
+
+.button-remove {
+  background-color: red;
+  color: #fff;
+}
+
+/*
+ * After
+ */
+.button {
+  background-color: #ddd;
+  color: #000;
+  
+  &-add {
+    background-color: green;
+    color: #fff;
+  }
+  
+  &-remove {
+    background-color: red;
+    color: #fff;
+  }
+}
+
+/*
+ * Optimization
+ */
+.button {
+  background-color: #ddd;
+  color: #000;
+  
+  &-add,
+  &-remove {
+    color: #fff;
+  }
+  
+  &-add { background-color: green; }
+  &-remove { background-color: red; }
+}

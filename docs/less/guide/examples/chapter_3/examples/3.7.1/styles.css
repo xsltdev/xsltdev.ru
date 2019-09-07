@@ -1,0 +1,8 @@
+.class {
+  background-color: #000;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .class {
+    background-color: #fff;
+  }
+}

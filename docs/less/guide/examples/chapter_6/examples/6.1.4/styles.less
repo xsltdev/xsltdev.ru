@@ -1,0 +1,16 @@
+.rotate3d(...) {
+  @js: ~`(function(e) {
+    return e = e || "0, 0, 0, 0", e = e.replace(/,\s*\d+$/, function(e) {
+        return e + "deg"
+    })
+})((function() {
+    var e = "@{arguments}";
+    return e = e.replace(/^\[|\]$/g, "")
+})())`;
+  transform: rotate3d(@js);
+}
+
+.test-js {
+  .rotate3d(1, 0, 0, 50);
+  .rotate3d();
+}

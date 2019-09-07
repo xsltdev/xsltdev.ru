@@ -1,0 +1,12 @@
+.mixin(@color: #777) {
+  color: @color;
+}
+
+.mixin(@color, @bg: #fff) {
+  color: @color;
+  background-color: @bg;
+}
+
+.class {
+  .mixin(#000);
+}

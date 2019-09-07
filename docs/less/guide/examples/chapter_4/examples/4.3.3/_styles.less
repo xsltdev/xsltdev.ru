@@ -1,0 +1,11 @@
+.isunit(@value, @unit) {
+  @exValue: e(@value);
+  @exUnit: e(@unit);
+
+
+  content: get-unit(@exValue);
+}
+
+.test {
+  .isunit("10px", "px");
+}
