@@ -34,23 +34,30 @@
 </tr>
 </table>
 
+<br />
+
 <table class="layout" markdown="1" width="100%">
 <tr>
+<th width="30%">
+[![Javascript](js.svg){: style="height:60px;width:60px"}](/javascript/)
+</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%">
 [![Typescript](ts.svg){: style="height:60px;width:60px"}](/typescript/)
 </th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 <th width="30%"></th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%"></th>
 </tr>
 <tr>
+<th>
+[Javascript](/javascript/)<br />
+<small>Руководства</small>
+</th>
+<th></th>
 <th>
 [Typescript](/typescript/)<br />
 <small>Руководства</small>
 </th>
-<th></th>
-<th></th>
 <th></th>
 <th></th>
 </tr>
