@@ -34,10 +34,10 @@ title: Оглавление
 - [:any-link](:any-link.md)
 - [:blank](:blank.md)
 - [:checked](:checked.md)
-- `:current`
+- :current
 - [:default](:default.md)
-- `:defined`
-- `:dir()`
+- :defined
+- :dir()
 - [:disabled](:disabled.md)
 - :drop
 - [:empty](:empty.md)
@@ -58,7 +58,7 @@ title: Оглавление
 - [:indeterminate](:indeterminate.md)
 - [:in-range](:in-range.md)
 - [:invalid](:invalid.md)
-- :is()
+- [:is()](:is().md)
 - [:lang()](:lang().md)
 - [:last-child](:last-child.md)
 - [:last-of-type](:last-of-type.md)
@@ -84,12 +84,12 @@ title: Оглавление
 - :right
 - [:root](:root.md)
 - :scope
-- :target
+- [:target](:target.md)
 - :target-within
 - :user-invalid
-- :valid
-- :visited
-- :where()
+- [:valid](:valid.md)
+- [:visited](:visited.md)
+- [`:where()`](:where().md)
 </div>
 
 ## Псевдоэлементы
