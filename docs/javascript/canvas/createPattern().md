@@ -37,7 +37,7 @@ context.createPattern(image,"repeat | repeat-x | repeat-y | no-repeat");
 
 Изображение для примера:
 
-<img src="/sites/default/files/msiter_images/img_lamp.jpg" width="32" height="32" id="lamp" alt="Лампа">
+<img src="/javascript/canvas/img_lamp.jpg" width="32" height="32" id="lamp" alt="Лампа">
 
 Размножим изображение по горизонтали и вертикали:
 

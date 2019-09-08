@@ -40,7 +40,7 @@ Internet Explorer 9, Firefox, Opera, Chrome и Safari поддерживают �
 [`createLinearGradient()`](<createLinearGradient().md>)
 : Создает линейный градиент (для использования с содержимым элемента `<canvas>`)
 
-`createPattern()`
+[`createPattern()`](<createPattern().md>)
 : Размножает заданный элемент в заданном направлении
 
 `createRadialGradient()`
