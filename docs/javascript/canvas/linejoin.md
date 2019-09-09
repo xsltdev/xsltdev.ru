@@ -41,7 +41,7 @@ try {c.getContext("2d");}
 catch (er) {canvOK=0;}
 if (canvOK==1){
 var ctx=c.getContext("2d");
-ctx.beginPath(); 
+ctx.beginPath();
 ctx.lineWidth=10;
 ctx.lineJoin="round";
 ctx.moveTo(20,20);
