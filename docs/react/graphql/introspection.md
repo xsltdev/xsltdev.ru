@@ -1,4 +1,4 @@
-# Introspection
+# Самонаблюдение
 
 Довольно полезно запрашивать схему GraphQL, чтобы понимать, какие запросы он поддерживает. GraphQL позволяет сделать это при помощи системы самонаблюдения!
 
@@ -142,9 +142,7 @@
 
 Часто полезно разобрать один определенный тип. Давайте взглянем на тип `Droid`:
 
-`Request`
-
-```graphql tab=""
+```graphql tab="Request"
 {
   __type(name: "Droid") {
     name
@@ -152,9 +150,7 @@
 }
 ```
 
-`Result`
-
-```graphql tab=""
+```graphql tab="Result"
 {
   "data": {
     "__type": {
@@ -166,9 +162,7 @@
 
 Что, если мы хотим знать больше о `Droid`? Например, является ли он интерфейсом или объектом?
 
-`Request`
-
-```graphql tab=""
+```graphql tab="Request"
 {
   __type(name: "Droid") {
     name
@@ -177,9 +171,7 @@
 }
 ```
 
-`Result`
-
-```graphql tab=""
+```graphql tab="Result"
 {
   "data": {
     "__type": {
@@ -192,9 +184,7 @@
 
 Поле `kind` возвращает `__TypeKind` вида enum, одно из этих значений - `OBJECT`. Если мы запросим `Character`, мы обнаружим, что это интерфейс:
 
-`Request`
-
-```graphql tab=""
+```graphql tab="Request"
 {
   __type(name: "Character") {
     name
@@ -203,9 +193,7 @@
 }
 ```
 
-`Result`
-
-```graphql tab=""
+```graphql tab="Result"
 {
   "data": {
     "__type": {
@@ -218,9 +206,7 @@
 
 В случае с объектом полезно знать, какие поля доступны, так что давайте спросит систему самонаблюдения о `Droid`:
 
-`Request`
-
-```graphql tab=""
+```graphql tab="Request"
 {
   __type(name: "Droid") {
     name
@@ -235,9 +221,7 @@
 }
 ```
 
-`Result`
-
-```graphql tab=""
+```graphql tab="Result"
 {
   "data": {
     "__type": {
