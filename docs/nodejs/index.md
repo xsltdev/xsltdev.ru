@@ -1,8 +1,9 @@
 ---
-title: Оглавление
+title: Справочник
+description: Node.js - это программная платформа, которая транслирует JavaScript в машинный код, исполняемый на стороне сервера
 ---
 
-# Node.js: Оглавление
+# ![Node.js](../nodejs.svg){: style="height:32px;width:32px;vertical-align:middle;"} Справочник Node.js
 
 [Справочник по Node.js](tutorial/about.md)
 : **Node.js** - это программная платформа, которая транслирует JavaScript в машинный код, исполняемый на стороне сервера. Таким образом, JavaScript можно использовать для создания серверной части.<br /><small>Источник: [webdraftt.com](https://webdraftt.com/tutorial/nodejs)</small>

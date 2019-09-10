@@ -2,119 +2,25 @@
 
 ## Фронтенд
 
-<table class="layout" markdown="1" width="100%">
-<tr>
-<th width="30%">
-[![HTML](html.svg){: style="height:60px;width:60px"}](/html/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%">
-[![CSS](css.svg){: style="height:60px;width:60px"}](/css/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%">
-[![LESS](less.svg){: style="height:30px;width:70px"}](/less/)
-</th>
-</tr>
-<tr>
-<th>
-[HTML](/html/)<br />
-<small>Справочник элементов</small>
-</th>
-<th></th>
-<th>
-[CSS](/css/)<br />
-<small>Справочник свойств</small>
-</th>
-<th></th>
-<th>
-[LESS](/less/)<br />
-<small>Руководства</small>
-</th>
-</tr>
-</table>
+[![HTML](html.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/html/) [HTML](/html/)
 
-<br />
+[![CSS](css.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/css/) [CSS](/css/) <small> &mdash; [Руководство по Flexbox](css/flex-guide/flex-1.md) &mdash; [Руководство Grid Layout](css/grid-guide/grid-1.md)</small>
 
-<table class="layout" markdown="1" width="100%">
-<tr>
-<th width="30%">
-[![Javascript](js.svg){: style="height:60px;width:60px"}](/javascript/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%">
-[![Typescript](ts.svg){: style="height:60px;width:60px"}](/typescript/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%"></th>
-</tr>
-<tr>
-<th>
-[Javascript](/javascript/)<br />
-<small>Руководства</small>
-</th>
-<th></th>
-<th>
-[Typescript](/typescript/)<br />
-<small>Руководства</small>
-</th>
-<th></th>
-<th></th>
-</tr>
-</table>
+[![LESS](less.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/less/) [LESS](/less/)
+
+[![Javascript](js.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/javascript/) [Javascript](/javascript/) <small> &mdash; [Canvas 2D](javascript/canvas/index.md)</small>
+
+[![Typescript](ts.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/typescript/) [Typescript](/typescript/)
 
 ### Фреймворки
 
-<table class="layout" markdown="1" width="100%">
-<tr>
-<th width="30%">
-[![Angular 2+](angular.svg){: style="height:60px;width:60px"}](/angular/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%">
-[![React](react.svg){: style="height:60px;width:60px"}](/react/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%"></th>
-</tr>
-<tr>
-<th>
-[Angular 2+](/angular/)<br />
-<small>Руководства по фреймворку</small>
-</th>
-<th></th>
-<th>
-[React](/react/)<br />
-<small>Руководства по фреймворку</small>
-</th>
-<th></th>
-<th></th>
-</tr>
-</table>
+[![Angular 2+](angular.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/angular/) [Angular 2+](/angular/) <small> &mdash; [NgRx](angular/ngrx/about.md) &mdash; [RxJS](angular/rxjs/about.md) </small>
+
+[![React](react.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/react/) [React](/react/) <small> &mdash; [Роутинг](react/router/intro.md) &mdash; [React Redux](react/redux/intro.md) &mdash; [GraphQL](react/graphql/index.md)</small>
 
 ## Бэкенд
 
-<table class="layout" markdown="1" width="100%">
-<tr>
-<th width="30%">
-[![Node.js](nodejs.svg){: style="height:60px;width:60px"}](/nodejs/)
-</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%"></th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th width="30%"></th>
-</tr>
-<tr>
-<th>
-[Node.js](/nodejs/)<br />
-<small>Руководства</small>
-</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</table>
+[![Node.js](nodejs.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/nodejs/) [Node.js](/nodejs/) <small> &mdash; [Express.js](nodejs/expressjs4/installing.md) </small>
 
 ## XML технологии
 
@@ -145,4 +51,10 @@
 - [WebGL](https://metanit.com/web/webgl/1.1.php)
 
 - [Canvas](https://msiter.ru/references/canvas-reference)
+
+- [MongoDB](https://github.com/jsmarkus/the-little-mongodb-book/blob/master/ru/mongodb.markdown)
+
+- [Pug](https://habr.com/ru/post/278109/)
+- [Pug](https://jsman.ru/jade/)
+- [Pug](https://gist.github.com/neretin-trike/53aff5afb76153f050c958b82abd9228)
 -->

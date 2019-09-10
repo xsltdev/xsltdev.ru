@@ -1,6 +1,11 @@
-# Теги HTML
+---
+title: Справочник
+description: Справочник по тегам HTML с примерами кода
+---
 
-Справочник по тегам HTML на русском языке.
+# ![HTML](../html.svg){: style="height:32px;width:32px;vertical-align:middle;"} Справочник HTML
+
+Справочник по тегам HTML с примерами кода.
 
 ## Основные элементы
 
