@@ -2,7 +2,7 @@
 
 Метод **`addColorStop()`** определяет цвет и позицию остановки в объекте градиента.
 
-Метод `addColorStop()` используется вместе с методом [`createLinearGradient()`](<createLinearGradient().md>) или [`createRadialGradient()`](<createRadialGradient().md>).
+Метод `addColorStop()` используется вместе с методом [`createLinearGradient()`](<createlineargradient().md>) или [`createRadialGradient()`](<createradialgradient().md>).
 
 Примечание: Вы можете вызывать метод `addColorStop()` любое число раз, чтобы изменять градиент. Если этот метод не используется, то градиент будет невидим. Чтобы градиент отображался, необходимо создать хотя бы одну цветовую остановку.
 
@@ -12,7 +12,7 @@
 gradient.addColorStop(позиция, цвет);
 ```
 
-## Значения
+## Параметры
 
 `позиция`
 : Значение от `0.0` до `1.0`, которое представляет позицию между началом и концом градиента

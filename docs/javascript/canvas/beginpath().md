@@ -2,7 +2,7 @@
 
 Метод **`beginPath()`** начинает контур или сбрасывает текущий контур.
 
-Примечание: Для создания контуров используйте методы [`moveTo()`](<moveTo().md>), [`lineTo()`](<lineTo().md>), [`quadraticCurveTo()`](<quadraticCurveTo().md>), [`bezierCurveTo()`](<bezierCurveTo().md>), [`arcTo()`](<arcTo().md>), и [`arc()`](<arc().md>). Чтобы действительно нарисовать контур в элементе `<canvas>`, используется метод [`stroke()`](<stroke().md>).
+Примечание: Для создания контуров используйте методы [`moveTo()`](<moveto().md>), [`lineTo()`](<lineto().md>), [`quadraticCurveTo()`](<quadraticcurveto().md>), [`bezierCurveTo()`](<beziercurveto().md>), [`arcTo()`](<arcto().md>), и [`arc()`](<arc().md>). Чтобы действительно нарисовать контур в элементе `<canvas>`, используется метод [`stroke()`](<stroke().md>).
 
 ## Синтаксис
 

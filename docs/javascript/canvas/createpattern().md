@@ -12,7 +12,7 @@
 context.createPattern(image,"repeat | repeat-x | repeat-y | no-repeat");
 ```
 
-## Значения
+## Параметры
 
 `image`
 : Определяет элемент изображения, `<canvas>` или видео, который будет использоваться в качестве шаблона

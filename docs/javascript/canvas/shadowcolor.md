@@ -2,7 +2,7 @@
 
 Свойство **`shadowColor`** устанавливает/возвращает цвет теней графического объекта.
 
-Примечание: Чтобы создать тень для графического объекта, используется свойство `shadowColor` вместе со свойством [`shadowBlur`](shadowBlur.md). Положение тени устанавливается при помощи свойств [`shadowOffsetX`](shadowOffsetX.md) и [`shadowOffsetY`](shadowOffsetY.md).
+Примечание: Чтобы создать тень для графического объекта, используется свойство `shadowColor` вместе со свойством [`shadowBlur`](shadowblur.md). Положение тени устанавливается при помощи свойств [`shadowOffsetX`](shadowoffsetx.md) и [`shadowOffsetY`](shadowoffsety.md).
 
 ## Синтаксис
 

@@ -18,7 +18,7 @@
 context.arc(x, y, r, sAngle, eAngle, counterclockwise);
 ```
 
-## Значения
+## Параметры
 
 `x`
 : Координата X центра круга
