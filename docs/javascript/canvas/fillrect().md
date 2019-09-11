@@ -30,7 +30,7 @@ context.fillRect(x, y, width, height);
 
 ## Пример
 
-Нарисуем залитый прямоугольник 150\*100 пикселей:
+Нарисуем залитый прямоугольник `150x100` пикселей:
 
 <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;background:#ffffff;">
 Ваш браузер не поддерживает HTML5 тег canvas.

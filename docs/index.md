@@ -48,7 +48,8 @@
 - https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/
 
 - [Руководство Javascript](https://metanit.com/web/javascript/)
-- [WebGL](https://metanit.com/web/webgl/1.1.php)
+
+- ??? [WebGL](https://metanit.com/web/webgl/1.1.php)
 
 - [Canvas](https://msiter.ru/references/canvas-reference)
 
