@@ -172,18 +172,18 @@ Internet Explorer 9, Firefox, Opera, Chrome и Safari поддерживают �
 
 Свойства:
 
-`data`
+[`data`](data.md)
 : Возвращает объект, содержащий данные изображения заданного объекта `ImageData`
 
-`height`
+[`height`](height.md)
 : Возвращает высоту объекта `ImageData`
 
-`width`
+[`width`](width.md)
 : Возвращает ширину объекта `ImageData`
 
 Методы:
 
-`createImageData()`
+[`createImageData()`](<createimagedata().md>)
 : Создает новый, пустой объект `ImageData`
 
 `getImageData()`
