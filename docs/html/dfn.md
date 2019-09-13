@@ -1,10 +1,14 @@
+---
+description: Тег dfn (от англ. definition - термин, определение) применяется для выделения терминов при их первом появлении в тексте
+---
+
 # &lt;dfn&gt;
 
 Тег **`<dfn>`** _(от англ. **d**e**f**i**n**ition - термин, определение)_ применяется для выделения терминов при их первом появлении в тексте. Как правило, в документе, когда упоминается новый термин, он выделяется курсивом и даётся его определение. При использовании этого термина в дальнейшем, он считается уже известным читателю.
 
 Браузеры, чаще всего отображают содержимое контейнера `<dfn>` с помощью курсивного начертания.
 
-Определение термина задаётся с помощью атрибута `title` у элемента `<dfn>`, либо с помощью атрибута `title` у вложенного элемента [`<abbr>`](/html/abbr/), либо текстом внутри `<dfn>`.
+Определение термина задаётся с помощью атрибута `title` у элемента `<dfn>`, либо с помощью атрибута `title` у вложенного элемента [`<abbr>`](abbr.md), либо текстом внутри `<dfn>`.
 
 ## Синтаксис
 
@@ -16,7 +20,7 @@
 
 ## Атрибуты
 
-Для этого элемента доступны [универсальные атрибуты](/lib/uni-attr/) и [события](/lib/events/).
+Для этого элемента доступны [универсальные атрибуты](uni-attr.md).
 
 ## Спецификации
 
@@ -36,7 +40,10 @@
     <title>DFN</title>
   </head>
   <body>
-    <p><dfn>Капителью</dfn> в типографике называется текст, набранный прописными буквами уменьшенного размера.</p>
+    <p>
+      <dfn>Капителью</dfn> в типографике называется текст, набранный прописными
+      буквами уменьшенного размера.
+    </p>
   </body>
 </html>
 ```
@@ -45,7 +52,11 @@
 
 ```html
 <!-- Define "The Internet" -->
-<p><dfn id="def-internet">The Internet</dfn> is a global system of interconnected networks that use the Internet Protocol Suite (TCP/IP) to serve billions of users worldwide.</p>
+<p>
+  <dfn id="def-internet">The Internet</dfn> is a global system of interconnected
+  networks that use the Internet Protocol Suite (TCP/IP) to serve billions of
+  users worldwide.
+</p>
 ```
 
 Далее в этом же документе:
@@ -59,6 +70,9 @@
       <abbr title="World-Wide Web">WWW</abbr>
     </dfn>
   </dt>
-  <dd>The World-Wide Web (WWW) is a system of interlinked hypertext documents accessed on <a href="#def-internet">the Internet</a>.</dd>
+  <dd>
+    The World-Wide Web (WWW) is a system of interlinked hypertext documents
+    accessed on <a href="#def-internet">the Internet</a>.
+  </dd>
 </dl>
 ```

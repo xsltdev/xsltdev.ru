@@ -1,6 +1,10 @@
+---
+description: Тег figcaption (от англ. figure caption - подпись к рисунку) содержит описание для элемента figure
+---
+
 # &lt;figcaption&gt;
 
-Тег **`<figcaption>`** _(от англ. **fig**ure **caption** - подпись к рисунку)_ содержит описание для элемента [`<figure>`](/html/figure/).
+Тег **`<figcaption>`** _(от англ. **fig**ure **caption** - подпись к рисунку)_ содержит описание для элемента [`<figure>`](figure.md).
 
 `<figcaption>` должен быть первым или последним элементом в группе.
 
@@ -71,12 +75,18 @@
 ```html
 <!-- Just a figure -->
 <figure>
-  <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture" />
+  <img
+    src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png"
+    alt="An awesome picture"
+  />
 </figure>
 <p></p>
 <!-- Figure with figcaption -->
 <figure>
-  <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture" />
+  <img
+    src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png"
+    alt="An awesome picture"
+  />
   <figcaption>Fig1. MDN Logo</figcaption>
 </figure>
 <p></p>
