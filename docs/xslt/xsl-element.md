@@ -371,9 +371,9 @@ Transformation failed: Run-time errors were reported
 
 ## См. также
 
-- [`xsl:attribute`](xsl-attribute.md) -- создание атрибутов элемента.
-- [`local-name()`](../xpath/local-name.md) -- возвращает локальную часть имени первого в порядке просмотра документа узла множества.
-- [`name()`](../xpath/name.md) -- возвращает расширенное имя.
+- [`xsl:attribute`](xsl-attribute.md) — создание атрибутов элемента.
+- [`local-name()`](../xpath/local-name.md) — возвращает локальную часть имени первого в порядке просмотра документа узла множества.
+- [`name()`](../xpath/name.md) — возвращает расширенное имя.
 
 ## Ссылки
 

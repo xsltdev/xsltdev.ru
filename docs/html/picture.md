@@ -1,6 +1,10 @@
+---
+description: Тег picture (от англ. picture — картина, изображение) представляет собой контейнер для хранения нескольких элементов source, которые поддерживают элемент img
+---
+
 # &lt;picture&gt;
 
-Тег **`<picture>`** _(от англ. **picture** -- картина, изображение)_ представляет собой контейнер для хранения нескольких элементов [`<source>`](/html/source/), которые поддерживают элемент [`<img>`](/html/img/).
+Тег **`<picture>`** _(от англ. **picture** — картина, изображение)_ представляет собой контейнер для хранения нескольких элементов [`<source>`](source.md), которые поддерживают элемент [`<img>`](img.md).
 
 Это позволяет указывать разные изображения с учётом размера экрана, плотности пикселей, формата изображения и других параметров. Вот несколько областей применения `<picture>`:
 
@@ -12,7 +16,7 @@
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="picture" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=picture">Can I Use picture?</a> Data on support for the picture feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=picture">Can I Use picture?</a> Data on support for the picture feature across the major browsers from caniuse.com.
 </p>
 
 Полифилы для включения поддержки:
@@ -28,13 +32,13 @@
 </picture>
 ```
 
-Внутри `<picture>` содержится ноль или несколько элементов [`<source>`](/html/source/), которые идут перед одним элементом [`<img>`](/html/img/).
+Внутри `<picture>` содержится ноль или несколько элементов [`<source>`](source.md), которые идут перед одним элементом [`<img>`](img.md).
 
 Закрывающий тег обязателен.
 
 ## Атрибуты
 
-Для этого элемента доступны [универсальные атрибуты](/lib/uni-attr/) и [события](/lib/events/).
+Для этого элемента доступны [универсальные атрибуты](uni-attr.md).
 
 ## Спецификации
 

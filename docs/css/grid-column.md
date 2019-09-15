@@ -1,6 +1,6 @@
 # grid-column
 
-Свойство **`grid-column`** -- это сокращение для [`grid-column-start`](/css/grid-column-start/) + [`grid-column-end`](/css/grid-column-end/)
+Свойство **`grid-column`** — это сокращение для [`grid-column-start`](/css/grid-column-start/) + [`grid-column-end`](/css/grid-column-end/)
 
 ## Синтаксис
 

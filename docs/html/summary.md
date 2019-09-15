@@ -1,13 +1,17 @@
+---
+description: Тег summary (от англ. summary — резюме, сводка) указывает заголовок для details, по которому можно щёлкать для разворачивания/сворачивания информации
+---
+
 # &lt;summary&gt;
 
-Тег **`<summary>`** _(от англ. **summary** -- резюме, сводка)_ указывает заголовок для [`<details>`](/html/details/), по которому можно щёлкать для разворачивания/сворачивания информации.
+Тег **`<summary>`** _(от англ. **summary** — резюме, сводка)_ указывает заголовок для [`<details>`](details.md), по которому можно щёлкать для разворачивания/сворачивания информации.
 
 Элемент `<summary>` должен идти первым внутри `<details>`.
 
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="details" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=details">Can I Use details?</a> Data on support for the details feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=details">Can I Use details?</a> Data on support for the details feature across the major browsers from caniuse.com.
 </p>
 
 Полифилы для включения поддержки:

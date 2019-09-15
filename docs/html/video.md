@@ -1,6 +1,10 @@
+---
+description: Тег video (от англ. video — видео) добавляет, воспроизводит и управляет настройками видеоролика на веб-странице
+---
+
 # &lt;video&gt;
 
-Тег **`<video>`** _(от англ. **video** -- видео)_ добавляет, воспроизводит и управляет настройками видеоролика на веб-странице.
+Тег **`<video>`** _(от англ. **video** — видео)_ добавляет, воспроизводит и управляет настройками видеоролика на веб-странице.
 
 Путь к файлу задаётся через атрибут `src` или вложенный элемент [`<source>`](source.md). Список поддерживаемых браузерами аудио и видеокодеков ограничен.
 
@@ -236,31 +240,31 @@
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="video" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=video">Can I Use video?</a> Data on support for the video feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=video">Can I Use video?</a> Data on support for the video feature across the major browsers from caniuse.com.
 </p>
 
 Поддержка WebM видео-кодека:
 
 <p class="ciu_embed" data-feature="webm" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=webm">Can I Use webm?</a> Data on support for the webm feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=webm">Can I Use webm?</a> Data on support for the webm feature across the major browsers from caniuse.com.
 </p>
 
 Поддержка Ogg/Theora видео-кодека:
 
 <p class="ciu_embed" data-feature="ogv" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=ogv">Can I Use ogv?</a> Data on support for the ogv feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=ogv">Can I Use ogv?</a> Data on support for the ogv feature across the major browsers from caniuse.com.
 </p>
 
 Поддержка MPEG-4/H.264 видео-кодека:
 
 <p class="ciu_embed" data-feature="mpeg4" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=mpeg4">Can I Use mpeg4?</a> Data on support for the mpeg4 feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=mpeg4">Can I Use mpeg4?</a> Data on support for the mpeg4 feature across the major browsers from caniuse.com.
 </p>
 
 Поддержка HEVC/H.265 видео-кодека:
 
 <p class="ciu_embed" data-feature="hevc" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=hevc">Can I Use hevc?</a> Data on support for the hevc feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=hevc">Can I Use hevc?</a> Data on support for the hevc feature across the major browsers from caniuse.com.
 </p>
 
 ## См. также

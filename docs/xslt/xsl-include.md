@@ -196,7 +196,7 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 
 ## См. также
 
-- [`xsl:import`](xsl-import.md) -- импорт преобразований.
+- [`xsl:import`](xsl-import.md) — импорт преобразований.
 
 ## Ссылки
 

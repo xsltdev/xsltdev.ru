@@ -4,7 +4,7 @@ description: Тег input (от англ. input - ввод) является о�
 
 # &lt;input&gt;
 
-Тег **`<input>`** _(от англ. **input** -- ввод)_ является одним из разносторонних элементов формы и позволяет создавать разные части интерфейса и обеспечивать взаимодействие с пользователем.
+Тег **`<input>`** _(от англ. **input** — ввод)_ является одним из разносторонних элементов формы и позволяет создавать разные части интерфейса и обеспечивать взаимодействие с пользователем.
 
 Главным образом `<input>` предназначен для создания текстовых полей, различных кнопок, переключателей и флажков.
 
@@ -854,20 +854,20 @@ description: Тег input (от англ. input - ввод) является о�
 
 ## Значения ARIA role
 
-- `<input type=button>` -- `role=button`
-- `<input type=checkbox>` -- `role=checkbox`
-- `<input type=email>` -- `role=textbox`
-- `<input type=image>` -- `role=button`
-- `<input type=number>` -- `role=spinbutton`
-- `<input type=radio>` -- `role=radio`
-- `<input type=range>` -- `role=slider`
-- `<input type=reset>` -- `role=button`
-- `<input type=search>` -- `role=searchbox`
-- `<input type=submit>` -- `role=button`
-- `<input type=tel>` -- `role=textbox`
-- `<input type=text>` -- `role=textbox`
-- `<input type=text, search, tel, url, или email с атрибутом list>` -- `role=combobox`
-- `<input type=url>` -- `role=textbox`
+- `<input type=button>` — `role=button`
+- `<input type=checkbox>` — `role=checkbox`
+- `<input type=email>` — `role=textbox`
+- `<input type=image>` — `role=button`
+- `<input type=number>` — `role=spinbutton`
+- `<input type=radio>` — `role=radio`
+- `<input type=range>` — `role=slider`
+- `<input type=reset>` — `role=button`
+- `<input type=search>` — `role=searchbox`
+- `<input type=submit>` — `role=button`
+- `<input type=tel>` — `role=textbox`
+- `<input type=text>` — `role=textbox`
+- `<input type=text, search, tel, url, или email с атрибутом list>` — `role=combobox`
+- `<input type=url>` — `role=textbox`
 
 ## Спецификации
 

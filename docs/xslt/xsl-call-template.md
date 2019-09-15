@@ -271,8 +271,8 @@ description: Элемент xsl:call-template вызывает шаблон по
 
 ## См. также
 
-- [`xsl:apply-templates`](xsl-apply-templates.md) -- применяет шаблонные правила к узлам.
-- [`xsl:with-param`](xsl-with-param.md) -- связывает с именем параметра значение.
+- [`xsl:apply-templates`](xsl-apply-templates.md) — применяет шаблонные правила к узлам.
+- [`xsl:with-param`](xsl-with-param.md) — связывает с именем параметра значение.
 
 ## Ссылки
 

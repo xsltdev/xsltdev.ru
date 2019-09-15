@@ -1,6 +1,6 @@
 # grid-template
 
-Свойство **`grid-template`** -- сокращение для [`grid-template-rows`](/css/grid-template-rows/), [`grid-template-columns`](/css/grid-template-columns/), и [`grid-template-areas`](/css/grid-template-areas/).
+Свойство **`grid-template`** — сокращение для [`grid-template-rows`](/css/grid-template-rows/), [`grid-template-columns`](/css/grid-template-columns/), и [`grid-template-areas`](/css/grid-template-areas/).
 
 ## Синтаксис
 

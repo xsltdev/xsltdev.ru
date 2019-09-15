@@ -199,7 +199,7 @@ The Next Heading
 
 ## См. также
 
-- [`xsl:attribute`](xsl-attribute.md) -- служит для создания узлов атрибутов.
+- [`xsl:attribute`](xsl-attribute.md) — служит для создания узлов атрибутов.
 
 ## Ссылки
 

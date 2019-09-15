@@ -1,6 +1,10 @@
+---
+description: Тег progress (от англ. progress — прогрес) используется для отображения прогресса завершённости задачи
+---
+
 # &lt;progress&gt;
 
-Тег **`<progress>`** _(от англ. **progress** -- прогрес)_ используется для отображения прогресса завершённости задачи.
+Тег **`<progress>`** _(от англ. **progress** — прогрес)_ используется для отображения прогресса завершённости задачи.
 
 Изменение значения происходит через JavaScript.
 
@@ -9,7 +13,7 @@
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="progress" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=progress">Can I Use progress?</a> Data on support for the progress feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=progress">Can I Use progress?</a> Data on support for the progress feature across the major browsers from caniuse.com.
 </p>
 
 Полифилы для включения поддержки:
@@ -28,8 +32,11 @@
 
 ## Атрибуты
 
-- `value` -- Текущее значение прогресса.
-- `max` -- Максимальное значение прогресса.
+`value`
+: Текущее значение прогресса.
+
+`max`
+: Максимальное значение прогресса.
 
 ## Спецификации
 
@@ -47,7 +54,9 @@
   </head>
   <body>
     <p>Пожалуйста, подождите, фотографии загружаются.</p>
-    <progress max="100" value="25">Загружено на <span id="value">25</span>%</progress>
+    <progress max="100" value="25"
+      >Загружено на <span id="value">25</span>%</progress
+    >
   </body>
 </html>
 ```

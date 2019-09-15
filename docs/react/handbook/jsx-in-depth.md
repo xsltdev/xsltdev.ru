@@ -388,7 +388,7 @@ function ListOfTenThings() {
 
 ### Логические значения, null и undefined игнорируются {#booleans-null-and-undefined-are-ignored}
 
-Значения `false`, `null`, `undefined` и `true` -- валидные дочерние компоненты. Просто они не рендерятся. Эти JSX-выражения будут рендерить одно и то же:
+Значения `false`, `null`, `undefined` и `true` — валидные дочерние компоненты. Просто они не рендерятся. Эти JSX-выражения будут рендерить одно и то же:
 
 ```js
 <div />

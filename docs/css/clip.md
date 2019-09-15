@@ -46,12 +46,12 @@ clip: auto;
 
 ## Поддержка браузерами
 
-- Chrome -- 1.0
-- Edge -- Да
-- Firefox (Gecko) -- 1.0
-- Internet Explorer -- 4.0
-- Opera -- 7.0
-- Safari (WebKit) -- 1.0 (85)
+- Chrome — 1.0
+- Edge — Да
+- Firefox (Gecko) — 1.0
+- Internet Explorer — 4.0
+- Opera — 7.0
+- Safari (WebKit) — 1.0 (85)
 
 Internet Explorer до версии 7.0 и Safari до 5.1.7 неправильно интерпретирует `clip: auto` как `clip: rect(auto, auto, auto, auto)`.
 

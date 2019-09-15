@@ -1,6 +1,10 @@
+---
+description: Тег track (от англ. track — след, дорожка) позволяет авторам указать текстовую дорожку для медийных элементов audio и video
+---
+
 # &lt;track&gt;
 
-Тег **`<track>`** _(от англ. **track** -- след, дорожка)_ позволяет авторам указать текстовую дорожку для медийных элементов [`<audio>`](/html/audio/) и [`<video>`](/html/video/).
+Тег **`<track>`** _(от англ. **track** — след, дорожка)_ позволяет авторам указать текстовую дорожку для медийных элементов [`<audio>`](audio.md) и [`<video>`](video.md).
 
 Такая дорожка обычно содержит субтитры на разных языках, комментарии, заголовки и др.
 
@@ -19,11 +23,20 @@
 
 ## Атрибуты
 
-- `kind` -- Указывает тип дорожки, возможные варианты перечислены в табл. 1.
-- `src` -- Путь к файлу с дорожкой.
-- `srclang` -- Язык дорожки. См. коды языков.
-- `label` -- Отображаемое название дорожки. Если этот атрибут не указан, браузер станет использовать значение, которое применяется у него по умолчанию, например «untitled1».
-- `default` -- Наличие этого атрибута указывает, что данная дорожка предпочтительна и должна быть выбрана по умолчанию. Только одна дорожка может иметь атрибут `default`.
+`kind`
+: Указывает тип дорожки, возможные варианты перечислены в табл. 1.
+
+`src`
+: Путь к файлу с дорожкой.
+
+`srclang`
+: Язык дорожки. См. коды языков.
+
+`label`
+: Отображаемое название дорожки. Если этот атрибут не указан, браузер станет использовать значение, которое применяется у него по умолчанию, например «untitled1».
+
+`default`
+: Наличие этого атрибута указывает, что данная дорожка предпочтительна и должна быть выбрана по умолчанию. Только одна дорожка может иметь атрибут `default`.
 
 <table>
 <caption>Табл. 1. Значения атрибута <code>kind</code></caption>
@@ -51,11 +64,30 @@
   </head>
   <body>
     <video width="500" height="400" controls>
-      <track kind="subtitles" src="video/jane.en.vtt" srclang="en" label="English" />
-      <track kind="subtitles" src="video/jane.ua.vtt" srclang="ua" label="Український" />
-      <track kind="subtitles" src="video/jane.ru.vtt" srclang="ru" label="Русский" default />
+      <track
+        kind="subtitles"
+        src="video/jane.en.vtt"
+        srclang="en"
+        label="English"
+      />
+      <track
+        kind="subtitles"
+        src="video/jane.ua.vtt"
+        srclang="ua"
+        label="Український"
+      />
+      <track
+        kind="subtitles"
+        src="video/jane.ru.vtt"
+        srclang="ru"
+        label="Русский"
+        default
+      />
       <source src="video/jane.ogv" type='video/ogg; codecs="theora, vorbis"' />
-      <source src="video/jane.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+      <source
+        src="video/jane.mp4"
+        type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+      />
       <source src="video/jane.webm" type='video/webm; codecs="vp8, vorbis"' />
       Элемент video не поддерживается вашим браузером.
     </video>

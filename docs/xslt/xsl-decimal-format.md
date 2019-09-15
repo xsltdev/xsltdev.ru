@@ -142,7 +142,7 @@ format-number(12345.06789, '#.#####', 'format3') ? '23456.1789:'
 
 ## См. также
 
-- [`format-number()`](../xpath/format-number.md) -- функция для форматирования чисел.
+- [`format-number()`](../xpath/format-number.md) — функция для форматирования чисел.
 
 ## Ссылки
 

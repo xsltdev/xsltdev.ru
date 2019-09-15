@@ -1,13 +1,17 @@
+---
+description: Тег template (от англ. template — шаблон) представляет собой механизм для хранения содержимого на стороне клиента, которое не отображается в процессе загрузки страницы, но впоследствии может быть заполнено с помощью JavaScript
+---
+
 # &lt;template&gt;
 
-Тег **`<template>`** _(от англ. **template** -- шаблон)_ представляет собой механизм для хранения содержимого на стороне клиента, которое не отображается в процессе загрузки страницы, но впоследствии может быть заполнено с помощью JavaScript.
+Тег **`<template>`** _(от англ. **template** — шаблон)_ представляет собой механизм для хранения содержимого на стороне клиента, которое не отображается в процессе загрузки страницы, но впоследствии может быть заполнено с помощью JavaScript.
 
-Содержимое `<template>` — это шаблон для фрагмента HTML, который может быть клонирован и вставлен в документ через скрипты. Обычно применяется для элементов с повторяющейся структурой, вроде списков, таблиц, списков [`<select>`](/html/select/) и др.
+Содержимое `<template>` — это шаблон для фрагмента HTML, который может быть клонирован и вставлен в документ через скрипты. Обычно применяется для элементов с повторяющейся структурой, вроде списков, таблиц, списков [`<select>`](select.md) и др.
 
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="template" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=template">Can I Use template?</a> Data on support for the template feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=template">Can I Use template?</a> Data on support for the template feature across the major browsers from caniuse.com.
 </p>
 
 ## Синтаксис
@@ -18,7 +22,7 @@
 
 ## Атрибуты
 
-Для этого элемента доступны [универсальные атрибуты](/lib/uni-attr/) и [события](/lib/events/).
+Для этого элемента доступны [универсальные атрибуты](uni-attr.md).
 
 ## Спецификации
 
@@ -64,7 +68,42 @@
       </tbody>
     </table>
     <script>
-      var data = [{ hardness: 1, mineral: 'Тальк', workability: 'Царапается ногтём' }, { hardness: 2, mineral: 'Гипс', workability: 'Царапается ногтём' }, { hardness: 3, mineral: 'Кальцит', workability: 'Царапается медью' }, { hardness: 4, mineral: 'Флюорит', workability: 'Легко царапается ножом, оконным стеклом' }, { hardness: 5, mineral: 'Апатит', workability: 'С усилием царапается ножом, оконным стеклом' }, { hardness: 6, mineral: 'Ортоклаз', workability: 'Царапает стекло. Обрабатывается напильником' }, { hardness: 7, mineral: 'Кварц', workability: 'Поддаётся обработке алмазом, царапает стекло' }, { hardness: 8, mineral: 'Топаз', workability: 'Поддаётся обработке алмазом, царапает стекло' }, { hardness: 9, mineral: 'Корунд', workability: 'Поддаётся обработке алмазом, царапает стекло' }, { hardness: 10, mineral: 'Алмаз', workability: 'Царапает стекло' }]
+      var data = [
+        { hardness: 1, mineral: 'Тальк', workability: 'Царапается ногтём' },
+        { hardness: 2, mineral: 'Гипс', workability: 'Царапается ногтём' },
+        { hardness: 3, mineral: 'Кальцит', workability: 'Царапается медью' },
+        {
+          hardness: 4,
+          mineral: 'Флюорит',
+          workability: 'Легко царапается ножом, оконным стеклом'
+        },
+        {
+          hardness: 5,
+          mineral: 'Апатит',
+          workability: 'С усилием царапается ножом, оконным стеклом'
+        },
+        {
+          hardness: 6,
+          mineral: 'Ортоклаз',
+          workability: 'Царапает стекло. Обрабатывается напильником'
+        },
+        {
+          hardness: 7,
+          mineral: 'Кварц',
+          workability: 'Поддаётся обработке алмазом, царапает стекло'
+        },
+        {
+          hardness: 8,
+          mineral: 'Топаз',
+          workability: 'Поддаётся обработке алмазом, царапает стекло'
+        },
+        {
+          hardness: 9,
+          mineral: 'Корунд',
+          workability: 'Поддаётся обработке алмазом, царапает стекло'
+        },
+        { hardness: 10, mineral: 'Алмаз', workability: 'Царапает стекло' }
+      ]
       var template = document.querySelector('#row')
       for (var i = 0; i < data.length; i++) {
         var mohs = data[i]
