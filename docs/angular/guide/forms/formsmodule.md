@@ -1,3 +1,7 @@
+---
+description: Для взаимодействия с пользователем в веб-приложениях, как правило применяются формы
+---
+
 # Модуль FormsModule и директива NgModel
 
 Для взаимодействия с пользователем в веб-приложениях, как правило применяются формы. В Angular прежде чем использовать формы в компонентах, нам надо импортировать в главном модуле `AppModule` модуль `FormsModule`, который позволяет работать с формами:
@@ -67,7 +71,11 @@ export class AppModule {}
 import { Component } from '@angular/core'
 
 export class Phone {
-  constructor(public title: string, public price: number, public company: string) {}
+  constructor(
+    public title: string,
+    public price: number,
+    public company: string
+  ) {}
 }
 
 @Component({
@@ -80,7 +88,12 @@ export class Phone {
       </div>
       <div class="form-group">
         <label>Цена</label>
-        <input type="number" class="form-control" name="price" [(ngModel)]="price" />
+        <input
+          type="number"
+          class="form-control"
+          name="price"
+          [(ngModel)]="price"
+        />
       </div>
       <div class="form-group">
         <label>Производитель</label>
@@ -91,7 +104,12 @@ export class Phone {
         </select>
       </div>
       <div class="form-group">
-        <button class="btn btn-default" (click)="addPhone(title, price, company)">Добавить</button>
+        <button
+          class="btn btn-default"
+          (click)="addPhone(title, price, company)"
+        >
+          Добавить
+        </button>
       </div>
     </div>
     <div>
@@ -104,7 +122,15 @@ export class Phone {
 })
 export class AppComponent {
   phones: Phone[] = []
-  companies: string[] = ['Apple', 'Huawei', 'Xiaomi', 'Samsung', 'LG', 'Motorola', 'Alcatel']
+  companies: string[] = [
+    'Apple',
+    'Huawei',
+    'Xiaomi',
+    'Samsung',
+    'LG',
+    'Motorola',
+    'Alcatel'
+  ]
 
   addPhone(title: string, price: number, company: string) {
     this.phones.push(new Phone(title, price, company))
@@ -126,7 +152,11 @@ export class AppComponent {
 import { Component } from '@angular/core'
 
 export class Phone {
-  constructor(public title: string, public price: number, public company: string) {}
+  constructor(
+    public title: string,
+    public price: number,
+    public company: string
+  ) {}
 }
 
 @Component({
@@ -139,7 +169,12 @@ export class Phone {
       </div>
       <div class="form-group">
         <label>Цена</label>
-        <input type="number" class="form-control" name="price" [(ngModel)]="phone.price" />
+        <input
+          type="number"
+          class="form-control"
+          name="price"
+          [(ngModel)]="phone.price"
+        />
       </div>
       <div class="form-group">
         <label>Производитель</label>
@@ -164,10 +199,20 @@ export class Phone {
 export class AppComponent {
   phone: Phone = new Phone('', 0, 'Huawei')
   phones: Phone[] = []
-  companies: string[] = ['Apple', 'Huawei', 'Xiaomi', 'Samsung', 'LG', 'Motorola', 'Alcatel']
+  companies: string[] = [
+    'Apple',
+    'Huawei',
+    'Xiaomi',
+    'Samsung',
+    'LG',
+    'Motorola',
+    'Alcatel'
+  ]
 
   addPhone() {
-    this.phones.push(new Phone(this.phone.title, this.phone.price, this.phone.company))
+    this.phones.push(
+      new Phone(this.phone.title, this.phone.price, this.phone.company)
+    )
   }
 }
 ```

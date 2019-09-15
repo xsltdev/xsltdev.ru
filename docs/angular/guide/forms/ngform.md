@@ -1,8 +1,12 @@
+---
+description: в Angular для работы с формой определена специальная директива NgForm. Она создает объект FormGroup и привязывает его к форме, что позволяет отслеживать состояние формы, управлять ее валидацией
+---
+
 # Директива NgForm
 
 Как правило, при работе с формами все элементы ввода не определяются сами по себе, а помещаются в стандартный элемент формы - `<form></form>`. Применение данного элемента позволяет управлять всеми элемента ввода вцелом как одной общей формой.
 
-Непосредственно в Angular для работы с формой определена специальная директива `NgForm`. Она создает объект `FormGroup` и привязывает его к форме, что позволяет отслеживать состояние формы, управлять ее валидацией.
+Непосредственно в Angular для работы с формой определена специальная директива **`NgForm`**. Она создает объект `FormGroup` и привязывает его к форме, что позволяет отслеживать состояние формы, управлять ее валидацией.
 
 Мы можем применить данную директиву, определив переменную в теге формы:
 
@@ -42,10 +46,22 @@ import { NgForm } from '@angular/forms'
       </div>
       <div class="form-group">
         <label>Телефон</label>
-        <input class="form-control" name="phone" ngModel required pattern="[0-9]{10}" />
+        <input
+          class="form-control"
+          name="phone"
+          ngModel
+          required
+          pattern="[0-9]{10}"
+        />
       </div>
       <div class="form-group">
-        <button [disabled]="myForm.invalid" class="btn btn-default" (click)="submit(myForm)">Добавить</button>
+        <button
+          [disabled]="myForm.invalid"
+          class="btn btn-default"
+          (click)="submit(myForm)"
+        >
+          Добавить
+        </button>
       </div>
     </form>
     <div>Имя: {{ myForm.value.name }}</div>
@@ -141,10 +157,21 @@ import { NgForm } from '@angular/forms'
       </div>
       <div class="form-group">
         <label>Телефон</label>
-        <input class="form-control" name="phone" ngModel required pattern="[0-9]{10}" />
+        <input
+          class="form-control"
+          name="phone"
+          ngModel
+          required
+          pattern="[0-9]{10}"
+        />
       </div>
       <div class="form-group">
-        <input type="submit" [disabled]="myForm.invalid" class="btn btn-default" value="Отправить" />
+        <input
+          type="submit"
+          [disabled]="myForm.invalid"
+          class="btn btn-default"
+          value="Отправить"
+        />
       </div>
     </form>
   `

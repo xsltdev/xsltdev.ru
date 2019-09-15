@@ -1,6 +1,10 @@
+---
+description: Еще одной формой взаимодействия представляет привязка к событиям дочернего компонента
+---
+
 # Привязка к событиям дочернего компонента
 
-Еще одной формой взаимодействия представляет привязка к событиям дочернего компонента. Так, определим следующий дочерний компонент:
+Еще одной формой взаимодействия представляет **привязка к событиям дочернего компонента**. Так, определим следующий дочерний компонент:
 
 ```typescript
 import { Component, EventEmitter, Input, Output } from '@angular/core'
@@ -8,7 +12,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 @Component({
   selector: 'child-comp',
   template: `
-    <button (click)="change(true)">+</button> <button (click)="change(false)">-</button>
+    <button (click)="change(true)">+</button>
+    <button (click)="change(false)">-</button>
   `
 })
 export class ChildComponent {

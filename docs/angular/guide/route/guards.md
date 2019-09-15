@@ -1,3 +1,7 @@
+---
+description: Guards позволяют ограничить навигацию по определенным маршрутам
+---
+
 # Guards
 
 **`Guards`** позволяют ограничить навигацию по определенным маршрутам. Например, если для доступа к определенному ресурсу требуется наличие аутентификации или наличие каких-то других условий, в зависимости от которых мы можем предоставить пользователю доступ, а можем и не предоставить. То есть guards защищают доступ к ресурсу, собственно поэтому данные элементы и названы так: "guards", что с английского можно перевести как "защитники".
@@ -39,11 +43,18 @@ export class AboutComponent {}
 Допустим, мы хотим ограничить доступ к компоненту `AboutComponent`. Для этого добавим в папку `src/app` новый файл `about.guard.ts`:
 
 ```typescript
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router'
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+} from '@angular/router'
 import { Observable } from 'rxjs'
 
 export class AboutGuard implements CanActivate {
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean> | boolean {
     return confirm('Вы уверены, что хотите перейти?')
   }
 }
@@ -100,7 +111,10 @@ import { HomeComponent } from './home.component'
 import { AboutGuard } from './about.guard'
 
 // определение маршрутов
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent, canActivate: [AboutGuard] }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent, canActivate: [AboutGuard] }
+]
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
@@ -140,7 +154,9 @@ export interface ComponentCanDeactivate {
 }
 
 export class ExitAboutGuard implements CanDeactivate<ComponentCanDeactivate> {
-  canDeactivate(component: ComponentCanDeactivate): Observable<boolean> | boolean {
+  canDeactivate(
+    component: ComponentCanDeactivate
+  ): Observable<boolean> | boolean {
     return component.canDeactivate ? component.canDeactivate() : true
   }
 }

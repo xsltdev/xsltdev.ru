@@ -1,3 +1,7 @@
+---
+description: Angular поддерживает программную навигацию. То есть программным образом из любого места приложения мы можем перейти к любому ресурсу
+---
+
 # Программная навигация
 
 Мы можем переходить по ресурсам внутри приложения с помощью ссылок. Но также Angular поддерживает программную навигацию. То есть программным образом из любого места приложения мы можем перейти к любому ресурсу. Для этого применяется сервис `Router`, который определен в пакете `@angular/router` и который передается в компоненты через механизм dependency injection.
@@ -55,9 +59,23 @@ export class Item {
       </nav>
       <div class="form-group">
         <h3>Параметры объекта</h3>
-        <input type="number" [(ngModel)]="item.id" class="form-control" placeholder="Номер модели" /><br />
-        <input type="number" [(ngModel)]="item.price" class="form-control" placeholder="Цена" /><br />
-        <input [(ngModel)]="item.product" class="form-control" placeholder="Товар" /><br />
+        <input
+          type="number"
+          [(ngModel)]="item.id"
+          class="form-control"
+          placeholder="Номер модели"
+        /><br />
+        <input
+          type="number"
+          [(ngModel)]="item.price"
+          class="form-control"
+          placeholder="Цена"
+        /><br />
+        <input
+          [(ngModel)]="item.product"
+          class="form-control"
+          placeholder="Товар"
+        /><br />
         <button (click)="goToItem(item)" class="btn">Перейти</button>
       </div>
       <router-outlet></router-outlet>

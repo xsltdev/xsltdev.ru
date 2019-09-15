@@ -1,3 +1,7 @@
+---
+description: Взаимодействие компонентов, по умолчанию компоненты никак не взаимодействуют, они независимы. Каждый компонент определяет свои выражения привязки
+---
+
 # Взаимодействие между компонентами
 
 В прошлой теме было рассмотрено, как вызывать компонент из главного компонента. Однако по умолчанию эти компоненты никак не взаимодействуют, они независимы. Каждый компонент определяет свои выражения привязки. Однако что, если мы хотим свойства дочернего компонента привязать к свойствам из главного компонента? Для этого определим следующий дочерний компонент:
@@ -34,7 +38,8 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <child-comp [userName]="name" [userAge]="age"></child-comp> <input type="text" [(ngModel)]="name" />
+    <child-comp [userName]="name" [userAge]="age"></child-comp>
+    <input type="text" [(ngModel)]="name" />
   `
 })
 export class AppComponent {
@@ -67,7 +72,8 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <child-comp [userName]="name" [userAge]="age"></child-comp> <input type="number" [(ngModel)]="age" />
+    <child-comp [userName]="name" [userAge]="age"></child-comp>
+    <input type="number" [(ngModel)]="age" />
   `
 })
 export class AppComponent {

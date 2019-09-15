@@ -1,3 +1,7 @@
+---
+description: Маршруты могут определять параметры, через которые мы можем передавать компоненту какие-то данные извне
+---
+
 # Параметры маршрута
 
 Маршруты могут определять параметры, через которые мы можем передавать компоненту какие-то данные извне. Для примера возьмем проект из прошлой темы:
@@ -47,11 +51,22 @@ import { NotFoundComponent } from './not-found.component'
 import { ItemComponent } from './item.component'
 
 // определение маршрутов
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }, { path: 'item/:id', component: ItemComponent }, { path: '**', component: NotFoundComponent }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'item/:id', component: ItemComponent },
+  { path: '**', component: NotFoundComponent }
+]
 
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, HomeComponent, AboutComponent, NotFoundComponent, ItemComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent,
+    ItemComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -97,7 +112,8 @@ export class AppComponent {}
 Данный подход работает для одной ссылки, но что если у нас несколько ссылок на один и тот же компонент, но с разными `id`:
 
 ```html
-<a [routerLink]="['item', '5']">item 5</a> <a [routerLink]="['item', '8']">item 8</a>
+<a [routerLink]="['item', '5']">item 5</a>
+<a [routerLink]="['item', '8']">item 8</a>
 ```
 
 Если мы сначала перейдем по первой ссылке, то компонент `ItemComponent` получит `id=5`. Если после этого мы перейдем по второй ссылке, `ItemComponent` будет продолжать хранить прежнее значение `id = 5`.
@@ -119,7 +135,9 @@ export class ItemComponent {
   private id: number
   private subscription: Subscription
   constructor(private activateRoute: ActivatedRoute) {
-    this.subscription = activateRoute.params.subscribe(params => (this.id = params['id']))
+    this.subscription = activateRoute.params.subscribe(
+      params => (this.id = params['id'])
+    )
   }
 }
 ```

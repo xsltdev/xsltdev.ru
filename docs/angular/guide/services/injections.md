@@ -1,3 +1,7 @@
+---
+description: использовать один сервис в другом сервисе
+---
+
 # Внедрение сервиса в другой сервис
 
 Вполне вероятна ситуация, когда мы захотим использовать один сервис в другом сервисе. Например, в прошлой теме был создан сервис для работы с данными. Что если нам необходимо логгировать все операции с данными. Для логгирования определим новый сервис. Для этого добавим в папку `src/app` новый файл `log.service.ts` со следующим содержимым:
@@ -21,7 +25,11 @@ import { LogService } from './log.service'
 
 @Injectable()
 export class DataService {
-  private data: Phone[] = [{ name: 'Apple iPhone 7', price: 56000 }, { name: 'HP Elite x3', price: 56000 }, { name: 'Alcatel Idol S4', price: 25000 }]
+  private data: Phone[] = [
+    { name: 'Apple iPhone 7', price: 56000 },
+    { name: 'HP Elite x3', price: 56000 },
+    { name: 'Alcatel Idol S4', price: 25000 }
+  ]
   constructor(private logService: LogService) {}
 
   getData(): Phone[] {
@@ -56,17 +64,28 @@ import { Phone } from './phone'
       <div class="form-inline">
         <div class="form-group">
           <div class="col-md-8">
-            <input class="form-control" [(ngModel)]="name" placeholder="Модель" />
+            <input
+              class="form-control"
+              [(ngModel)]="name"
+              placeholder="Модель"
+            />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-6">
-            <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="price"
+              placeholder="Цена"
+            />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-8">
-            <button class="btn btn-default" (click)="addItem(name, price)">Добавить</button>
+            <button class="btn btn-default" (click)="addItem(name, price)">
+              Добавить
+            </button>
           </div>
         </div>
       </div>

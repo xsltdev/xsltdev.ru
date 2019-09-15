@@ -1,3 +1,7 @@
+---
+description: В зависимости от того, где внедряются сервисы, бывают различные уровни провайдеров сервисов
+---
+
 # Иерархия сервисов
 
 Как было показано в предыдущих статьях, мы можем внедрять сервисы в компонентах и модулях. В зависимости от того, где внедряются сервисы, бывают различные уровни провайдеров сервисов. Уровень по сути определяет область действия и жизненный цикл сервиса. Есть три уровня провайдеров сервисов:
@@ -105,7 +109,10 @@ import { DataService } from './data.service'
   selector: 'data-comp',
   template: `
     <div>
-      <div><input [(ngModel)]="name" placeholder="Модель" /> <button (click)="addItem(name, price)">Добавить</button></div>
+      <div>
+        <input [(ngModel)]="name" placeholder="Модель" />
+        <button (click)="addItem(name, price)">Добавить</button>
+      </div>
       <table>
         <tr *ngFor="let item of items">
           <td>{{ item }}</td>

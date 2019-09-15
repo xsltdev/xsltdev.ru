@@ -1,3 +1,7 @@
+---
+description: В приложении будет несколько различных компонентов, которые используют сервисы. При этом компоненты могут использовать одни и те же сервисы
+---
+
 # Один сервис для всех компонентов
 
 Вполне возможно, что в нашем приложении будет несколько различных компонентов, которые используют сервисы. При этом компоненты могут использовать одни и те же сервисы. Например, в прошлых темах был создан сервис `DataService`, который управляет данными. Определим специальный компонент для работы с данными. Для этого возьмем проект из прошлой темы и добавим в папку `src/app` новый файл `data.component.ts`:
@@ -19,8 +23,15 @@ import { Phone } from './phone'
       <div class="form-inline">
         <div class="form-group">
           <input class="form-control" [(ngModel)]="name" placeholder="Модель" />
-          <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
-          <button class="btn btn-default" (click)="addItem(name, price)">Добавить</button>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="price"
+            placeholder="Цена"
+          />
+          <button class="btn btn-default" (click)="addItem(name, price)">
+            Добавить
+          </button>
         </div>
       </div>
       <table class="table table-striped">
@@ -124,8 +135,15 @@ import { Phone } from './phone'
       <div class="form-inline">
         <div class="form-group">
           <input class="form-control" [(ngModel)]="name" placeholder="Модель" />
-          <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
-          <button class="btn btn-default" (click)="addItem(name, price)">Добавить</button>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="price"
+            placeholder="Цена"
+          />
+          <button class="btn btn-default" (click)="addItem(name, price)">
+            Добавить
+          </button>
         </div>
       </div>
       <table class="table table-striped">

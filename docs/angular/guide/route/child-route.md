@@ -1,3 +1,7 @@
+---
+description: Если выбранный компонент сам должен принимать в качестве внутреннего содержимого какой-то другой компонент в зависимости от запроса. В этому случае нам надо использовать дочерние маршруты
+---
+
 # Дочерние маршруты
 
 В прошлых темах рассматривалась работа с обычными маршрутами. То есть система маршрутизации выбирает один из компонентов на основе `url` и помещает его в главный компонент `AppComponent`. Но что если выбранный компонент сам должен принимать в качестве внутреннего содержимого какой-то другой компонент в зависимости от запроса. В этому случае нам надо использовать дочерние маршруты (child route).
@@ -59,13 +63,26 @@ import { ItemStatComponent } from './item.stat.component'
 import { ItemDetailsComponent } from './item.details.component'
 
 // определение дочерних маршрутов
-const itemRoutes: Routes = [{ path: 'details', component: ItemDetailsComponent }, { path: 'stat', component: ItemStatComponent }]
+const itemRoutes: Routes = [
+  { path: 'details', component: ItemDetailsComponent },
+  { path: 'stat', component: ItemStatComponent }
+]
 
-const appRoutes: Routes = [{ path: 'item/:id', component: ItemComponent }, { path: 'item/:id', component: ItemComponent, children: itemRoutes }, { path: '', component: HomeComponent }]
+const appRoutes: Routes = [
+  { path: 'item/:id', component: ItemComponent },
+  { path: 'item/:id', component: ItemComponent, children: itemRoutes },
+  { path: '', component: HomeComponent }
+]
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, HomeComponent, ItemComponent, ItemDetailsComponent, ItemStatComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ItemComponent,
+    ItemDetailsComponent,
+    ItemStatComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -96,7 +113,9 @@ export class ItemComponent {
   private routeSubscription: Subscription
 
   constructor(private route: ActivatedRoute) {
-    this.routeSubscription = route.params.subscribe(params => (this.id = params['id']))
+    this.routeSubscription = route.params.subscribe(
+      params => (this.id = params['id'])
+    )
   }
 }
 ```
@@ -113,7 +132,8 @@ import { Component } from '@angular/core'
   template: `
     <div>
       <nav>
-        <a routerLink="">Главная</a> | <a routerLink="/item/5/details">Информация о товаре</a> |
+        <a routerLink="">Главная</a> |
+        <a routerLink="/item/5/details">Информация о товаре</a> |
         <a routerLink="/item/5/stat">Статистика товара</a>
       </nav>
       <router-outlet></router-outlet>

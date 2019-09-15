@@ -1,3 +1,7 @@
+---
+description: Сервис может быть опциональным, необязательным
+---
+
 # Опциональные сервисы
 
 Сервис может быть опциональным, необязательным. Например, в прошлой теме был создан сервис `LogService`:
@@ -42,7 +46,10 @@ import { DataService } from './data.service'
   selector: 'my-app',
   template: `
     <div>
-      <div><input [(ngModel)]="name" placeholder="Модель" /> <button (click)="addItem(name)">Добавить</button></div>
+      <div>
+        <input [(ngModel)]="name" placeholder="Модель" />
+        <button (click)="addItem(name)">Добавить</button>
+      </div>
       <table>
         <tr *ngFor="let item of items">
           <td>{{ item }}</td>

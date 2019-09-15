@@ -1,6 +1,10 @@
+---
+description: После создания компонента фреймворк Angular вызывает у этого компонента ряд методов, которые представляют различные этапы жизненного цикла
+---
+
 # Жизненный цикл компонента
 
-После создания компонента фреймворк Angular вызывает у этого компонента ряд методов, которые представляют различные этапы жизненного цикла:
+После создания компонента фреймворк Angular вызывает у этого компонента ряд методов, которые представляют различные этапы **жизненного цикла**:
 
 ![Жизненный цикл компонента](lifecicle-1.png)
 
@@ -59,7 +63,13 @@ export class AppComponent implements OnInit, OnDestroy {
 Метод `ngOnChanges()` вызывается перед методом `ngOnInit()` и при изменении свойств в привязке. С помощью параметра `SimpleChanges` в методе можно получить текущее и предыдущее значение измененного свойства. Например, пусть у нас будет следующий дочерний компонент:
 
 ```typescript
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core'
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core'
 
 @Component({
   selector: 'child-comp',
@@ -135,7 +145,17 @@ export class AppComponent implements OnChanges {
 Определим следующий дочерний компонент:
 
 ```typescript
-import { Component, Input, OnInit, DoCheck, OnChanges, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit } from '@angular/core'
+import {
+  Component,
+  Input,
+  OnInit,
+  DoCheck,
+  OnChanges,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewChecked,
+  AfterViewInit
+} from '@angular/core'
 
 @Component({
   selector: 'child-comp',
@@ -143,7 +163,15 @@ import { Component, Input, OnInit, DoCheck, OnChanges, AfterContentInit, AfterCo
     <p>Привет {{ name }}</p>
   `
 })
-export class ChildComponent implements OnInit, DoCheck, OnChanges, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit {
+export class ChildComponent
+  implements
+    OnInit,
+    DoCheck,
+    OnChanges,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewChecked,
+    AfterViewInit {
   @Input() name: string
   count: number = 1
 
@@ -184,7 +212,8 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <child-comp [name]="name"></child-comp> <input type="text" [(ngModel)]="name" />
+    <child-comp [name]="name"></child-comp>
+    <input type="text" [(ngModel)]="name" />
   `
 })
 export class AppComponent {

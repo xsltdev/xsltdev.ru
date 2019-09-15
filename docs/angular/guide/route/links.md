@@ -1,3 +1,7 @@
+---
+description: Для удобного перехода между различными частями приложения, как правило, применяется система навигации, состоящая из ссылок
+---
+
 # Создание ссылок
 
 Для удобного перехода между различными частями приложения, как правило, применяется система навигации, состоящая из ссылок. К примеру, возьмем проект из прошлой темы и добавим в него навигацию. В этом проекте есть два компонента `HomeComponent` и `AboutComponent`, которые обрабатывают различные запросы и результат обработки которых вставляется в шаблон главного компонента - класса `AppComponent`.
@@ -27,7 +31,11 @@ export class AppComponent {}
 В прошлой теме в модуле `AppModule` было определено три маршрута:
 
 ```typescript
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }, { path: '**', component: NotFoundComponent }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '**', component: NotFoundComponent }
+]
 ```
 
 В соответствии с первым маршрутом `HomeComponent` обрабатывает запросы url без сегментов, поэтому для создания ссылки на этот компонент указывается пустая строка: `<a routerLink="">`.
@@ -77,7 +85,12 @@ export class AppComponent {}
 
 ```html
 <nav>
-  <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Главная</a>
+  <a
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact:true}"
+    >Главная</a
+  >
   <a routerLink="/about" routerLinkActive="active">О сайте</a>
 </nav>
 ```
@@ -109,7 +122,10 @@ import { Component } from '@angular/core'
   template: `
     <div>
       <ul class="nav">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           <a routerLink="">Главная</a>
         </li>
         <li routerLinkActive="active">

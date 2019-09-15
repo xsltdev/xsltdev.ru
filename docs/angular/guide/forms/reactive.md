@@ -1,6 +1,10 @@
+---
+description: При подходе Reactive Forms для формы создается набор объектов FormGroup и FormControl. Сама форма и ее подсекции представляют класс FormGroup, а отдельные элементы ввода - класс FormControl
+---
+
 # Reactive Forms
 
-В прошлых темах был описан подход `Template-Driven`, который концентрировался вокруг шаблона компонента: для работы с формой и ее элементами в шаблоне компонента к элементам html применялись директивы `NgModel` и `NgForm`, правила валидации задавались в тегах элементов с помощью атрибутов `required` и `pattern`. Но есть альтернативный подход - использование реактивных форм (Reactive Forms). Рассмотрим, в чем он заключается.
+В прошлых темах был описан подход `Template-Driven`, который концентрировался вокруг шаблона компонента: для работы с формой и ее элементами в шаблоне компонента к элементам html применялись директивы `NgModel` и `NgForm`, правила валидации задавались в тегах элементов с помощью атрибутов `required` и `pattern`. Но есть альтернативный подход - использование **реактивных форм** (Reactive Forms). Рассмотрим, в чем он заключается.
 
 При подходе Reactive Forms для формы создается набор объектов `FormGroup` и `FormControl`. Сама форма и ее подсекции представляют класс `FormGroup`, а отдельные элементы ввода - класс `FormControl`. Например, базовое создание формы:
 
@@ -24,7 +28,10 @@ myForm: FormGroup = new FormGroup({
 ```typescript
 myForm: FormGroup = new FormGroup({
   userName: new FormControl('Tom', Validators.required),
-  userEmail: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')])
+  userEmail: new FormControl('', [
+    Validators.required,
+    Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+  ])
 })
 ```
 
@@ -68,7 +75,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
         <label>Имя</label>
         <input class="form-control" name="name" formControlName="userName" />
 
-        <div class="alert alert-danger" *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            myForm.controls['userName'].invalid &&
+            myForm.controls['userName'].touched
+          "
+        >
           Не указано имя
         </div>
       </div>
@@ -76,7 +89,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
         <label>Email</label>
         <input class="form-control" name="email" formControlName="userEmail" />
 
-        <div class="alert alert-danger" *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            myForm.controls['userEmail'].invalid &&
+            myForm.controls['userEmail'].touched
+          "
+        >
           Некорректный email
         </div>
       </div>
@@ -97,7 +116,10 @@ export class AppComponent {
   constructor() {
     this.myForm = new FormGroup({
       userName: new FormControl('Tom', Validators.required),
-      userEmail: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')]),
+      userEmail: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+      ]),
       userPhone: new FormControl()
     })
   }
@@ -144,8 +166,14 @@ export class AppComponent {
   myForm: FormGroup
   constructor() {
     this.myForm = new FormGroup({
-      userName: new FormControl('Tom', [Validators.required, this.userNameValidator]),
-      userEmail: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')]),
+      userName: new FormControl('Tom', [
+        Validators.required,
+        this.userNameValidator
+      ]),
+      userEmail: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+      ]),
       userPhone: new FormControl()
     })
   }
@@ -204,7 +232,13 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'
         <label>Имя</label>
         <input class="form-control" name="name" formControlName="userName" />
 
-        <div class="alert alert-danger" *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            myForm.controls['userName'].invalid &&
+            myForm.controls['userName'].touched
+          "
+        >
           Не указано имя
         </div>
       </div>
@@ -212,12 +246,24 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'
         <label>Email</label>
         <input class="form-control" name="email" formControlName="userEmail" />
 
-        <div class="alert alert-danger" *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            myForm.controls['userEmail'].invalid &&
+            myForm.controls['userEmail'].touched
+          "
+        >
           Некорректный email
         </div>
       </div>
       <div formArrayName="phones">
-        <div class="form-group" *ngFor="let phone of myForm.controls['phones'].controls; let i = index">
+        <div
+          class="form-group"
+          *ngFor="
+            let phone of myForm.controls['phones'].controls;
+            let i = index
+          "
+        >
           <label>Телефон</label>
           <input class="form-control" formControlName="{{ i }}" />
         </div>
@@ -238,12 +284,17 @@ export class AppComponent {
   constructor() {
     this.myForm = new FormGroup({
       userName: new FormControl('Tom', [Validators.required]),
-      userEmail: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')]),
+      userEmail: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+      ]),
       phones: new FormArray([new FormControl('+7', Validators.required)])
     })
   }
   addPhone() {
-    ;(<FormArray>this.myForm.controls['phones']).push(new FormControl('+7', Validators.required))
+    ;(<FormArray>this.myForm.controls['phones']).push(
+      new FormControl('+7', Validators.required)
+    )
   }
   submit() {
     console.log(this.myForm)
@@ -275,7 +326,10 @@ addPhone(){
 
 ```html
 <div formArrayName="phones">
-  <div class="form-group" *ngFor="let phone of myForm.controls['phones'].controls; let i = index">
+  <div
+    class="form-group"
+    *ngFor="let phone of myForm.controls['phones'].controls; let i = index"
+  >
     <label>Телефон</label>
     <input class="form-control" formControlName="{{i}}" />
   </div>
@@ -294,7 +348,13 @@ addPhone(){
 
 ```typescript
 import { Component } from '@angular/core'
-import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms'
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormArray,
+  FormBuilder
+} from '@angular/forms'
 
 @Component({
   selector: 'my-app',
@@ -314,7 +374,13 @@ import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@ang
         <label>Имя</label>
         <input class="form-control" name="name" formControlName="userName" />
 
-        <div class="alert alert-danger" *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            myForm.controls['userName'].invalid &&
+            myForm.controls['userName'].touched
+          "
+        >
           Не указано имя
         </div>
       </div>
@@ -322,12 +388,24 @@ import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@ang
         <label>Email</label>
         <input class="form-control" name="email" formControlName="userEmail" />
 
-        <div class="alert alert-danger" *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            myForm.controls['userEmail'].invalid &&
+            myForm.controls['userEmail'].touched
+          "
+        >
           Некорректный email
         </div>
       </div>
       <div formArrayName="phones">
-        <div class="form-group" *ngFor="let phone of myForm.controls['phones'].controls; let i = index">
+        <div
+          class="form-group"
+          *ngFor="
+            let phone of myForm.controls['phones'].controls;
+            let i = index
+          "
+        >
           <label>Телефон</label>
           <input class="form-control" formControlName="{{ i }}" />
         </div>
@@ -348,12 +426,20 @@ export class AppComponent {
   constructor(private formBuilder: FormBuilder) {
     this.myForm = formBuilder.group({
       userName: ['Tom', [Validators.required]],
-      userEmail: ['', [Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')]],
+      userEmail: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+        ]
+      ],
       phones: formBuilder.array([['+7', Validators.required]])
     })
   }
   addPhone() {
-    ;(<FormArray>this.myForm.controls['phones']).push(new FormControl('+7', Validators.required))
+    ;(<FormArray>this.myForm.controls['phones']).push(
+      new FormControl('+7', Validators.required)
+    )
   }
   submit() {
     console.log(this.myForm)

@@ -1,3 +1,7 @@
+---
+description: Использование языка программирования TypeScript представляет наиболее распространенный подход для создания приложений на Angular
+---
+
 # Первое приложение на JavaScript
 
 В предыдущей теме было создано первое приложение на Angular с применением TypeScript. Использование языка программирования TypeScript представляет наиболее распространенный подход для создания приложений на Angular. Однако это не единственный подход. Теоретически мы можем использовать также Dart, ES2015 и ES5(стандартный JavaScript). И в этой статье рассмотрим создание первого приложения с помощью кода javascript, который поддерживается всеми браузерами.
@@ -57,7 +61,12 @@ var AppComponent = ng.core
   })
   .Class({
     constructor: function() {
-      this.items = [new Item('Хлеб', 15.9), new Item('Масло', 60), new Item('Картофель', 22.6, true), new Item('Сыр', 310)]
+      this.items = [
+        new Item('Хлеб', 15.9),
+        new Item('Масло', 60),
+        new Item('Картофель', 22.6, true),
+        new Item('Сыр', 310)
+      ]
     }
   })
 
@@ -106,7 +115,10 @@ ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule)
     <meta charset="utf-8" />
     <title>Приложение покупок</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
     <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
     <script src="https://unpkg.com/zone.js/dist/zone.min.js"></script>
     <script src="https://unpkg.com/rxjs/bundles/Rx.min.js"></script>
@@ -132,7 +144,10 @@ ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule)
 Первая группа файлов аналогична тем, что подключались в прошлой теме в приложении на TypeScript:
 
 ```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+/>
 <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
 <script src="https://unpkg.com/zone.js/dist/zone.min.js"></script>
 <script src="https://unpkg.com/rxjs/bundles/Rx.min.js"></script>

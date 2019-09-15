@@ -1,6 +1,10 @@
+---
+description: Маршрутизация позволяет сопоставлять запросы к приложению с определенными ресурсами внутри приложения
+---
+
 # Определение маршрутов
 
-Маршрутизация позволяет сопоставлять запросы к приложению с определенными ресурсами внутри приложения.
+**Маршрутизация** позволяет сопоставлять запросы к приложению с определенными ресурсами внутри приложения.
 
 Ключевым для работы маршрутизации является модуль `RouterModule`, который располагается в пакете `@angular/router`. Поэтому при работе с маршрутизацией этот пакет должен быть указан в списке зависимостей в файле `package.json`:
 
@@ -37,7 +41,10 @@
     <meta charset="utf-8" />
     <base href="/" />
     <title>Hello Angular 7</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <my-app>Загрузка...</my-app>
@@ -109,11 +116,20 @@ import { HomeComponent } from './home.component'
 import { NotFoundComponent } from './not-found.component'
 
 // определение маршрутов
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }, { path: '**', component: NotFoundComponent }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '**', component: NotFoundComponent }
+]
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, HomeComponent, AboutComponent, NotFoundComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -128,7 +144,11 @@ import { Routes, RouterModule } from '@angular/router'
 Далее определяется сам набор маршрутов:
 
 ```typescript
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }, { path: '**', component: NotFoundComponent }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '**', component: NotFoundComponent }
+]
 ```
 
 Здесь определено три маршрута, каждый из которых будет обрабатываться отдельным компонентом. Для указания маршрута применяется параметр `path`. Например, путь `about` будет представлять запрос типа `http://localhost:3000/about` и будет обрабатываться классом `AboutComponent`.
@@ -206,7 +226,9 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: path.resolve(__dirname, 'tsconfig.json') }
+            options: {
+              configFileName: path.resolve(__dirname, 'tsconfig.json')
+            }
           },
           'angular2-template-loader'
         ]
@@ -243,7 +265,11 @@ module.exports = {
 Но при определении маршрутов следует учитывать их порядок. Вполне возможно, что под определенный запрос будет соответствовать сразу несколько маршрутов. В этом случае запрос будет обрабатываться первым из них. Другие же маршруты не будут учитываться. Например, если мы изменим порядок маршрутов:
 
 ```typescript
-const appRoutes: Routes = [{ path: '**', component: NotFoundComponent }, { path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }]
+const appRoutes: Routes = [
+  { path: '**', component: NotFoundComponent },
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+]
 ```
 
 То в этом случае запрос `/about` будет обрабатываться первым маршрутом, поскольку он соответствует запросу `/about` (путь `**` соответствует любому набору символов). Поэтому маршрут
@@ -259,7 +285,11 @@ const appRoutes: Routes = [{ path: '**', component: NotFoundComponent }, { path:
 Вполне возможно, что по какому-то маршруту мы захотим сделать переадресацию по другому пути. Например, в случае, если нужного маршрута для запроса не найдено, мы можем переадресовать на главную страницу:
 
 ```typescript
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }, { path: '**', redirectTo: '/' }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '**', redirectTo: '/' }
+]
 ```
 
 Для переадресации указываем параметр `redirectTo`. Его значение представляет путь переадресации. В данном случае слеш указывает на первый маршрут или на главную страницу.
@@ -267,7 +297,12 @@ const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'abou
 Также мы можем задать критерий соответствия строки запроса маршруту с помощью параметра `pathMatch`:
 
 ```typescript
-const appRoutes: Routes = [{ path: '', component: HomeComponent }, { path: 'about', component: AboutComponent }, { path: 'contact', redirectTo: '/about', pathMatch: 'full' }, { path: '**', redirectTo: '/' }]
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', redirectTo: '/about', pathMatch: 'full' },
+  { path: '**', redirectTo: '/' }
+]
 ```
 
 Значение `pathMatch:'full'` указывает, что запрошенный адрес должен полностью соответствовать маршруту, то есть должно быть полное соответствие. Например, запрос `/contact` полностью соотвествует маршруту `{ path: 'contact', redirectTo: '/about', pathMatch:'full'}`, поэтому будет выполняться переадресация на адрес `/about`.

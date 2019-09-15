@@ -1,3 +1,7 @@
+---
+description: Параметры строки запроса не влияют на определение маршрутов, и их количество произвольно
+---
+
 # Параметры строки запроса
 
 Кроме параметров маршрута в запросе могут передаваться параметры строки запроса. Например, в запросе `http://localhost:3000/item?product=phone&price=200` часть `product=phone&price=200` будет представлять параметры запроса - `product` и `price`. Такие параметры помещаются в конце адреса после вопросительного знака и разделяются амперсандом.
@@ -25,7 +29,9 @@ export class ItemComponent {
   private routeSubscription: Subscription
   private querySubscription: Subscription
   constructor(private route: ActivatedRoute) {
-    this.routeSubscription = route.params.subscribe(params => (this.id = params['id']))
+    this.routeSubscription = route.params.subscribe(
+      params => (this.id = params['id'])
+    )
     this.querySubscription = route.queryParams.subscribe((queryParam: any) => {
       this.product = queryParam['product']
       this.price = queryParam['price']
@@ -52,8 +58,14 @@ import { Component } from '@angular/core'
       <nav>
         <a routerLink="">Главная</a>
         <a routerLink="/about">О сайте</a>
-        <a [routerLink]="['item', '5']" [queryParams]="{ product: 'phone', price: 200 }">item 5</a>
-        <a [routerLink]="['item', '8']" [queryParams]="{ product: 'tablet' }">item 8</a>
+        <a
+          [routerLink]="['item', '5']"
+          [queryParams]="{ product: 'phone', price: 200 }"
+          >item 5</a
+        >
+        <a [routerLink]="['item', '8']" [queryParams]="{ product: 'tablet' }"
+          >item 8</a
+        >
       </nav>
       <router-outlet></router-outlet>
     </div>

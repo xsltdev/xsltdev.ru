@@ -1,3 +1,7 @@
+---
+description: Angular представляет фреймворк от компании Google для создания клиентских приложений. Прежде всего он нацелен на разработку SPA-решений
+---
+
 # Что такое Angular. Начало работы с фреймворком
 
 Angular представляет фреймворк от компании Google для создания клиентских приложений. Прежде всего он нацелен на разработку SPA-решений (Single Page Application), то есть одностраничных приложений. В этом плане Angular является наследником другого фреймворка AngularJS. В то же время Angular это не новая версия AngularJS, а принципиально новый фреймворк.
@@ -196,7 +200,9 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: path.resolve(__dirname, 'tsconfig.json') }
+            options: {
+              configFileName: path.resolve(__dirname, 'tsconfig.json')
+            }
           },
           'angular2-template-loader'
         ]

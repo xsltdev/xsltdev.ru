@@ -1,6 +1,10 @@
+---
+description: Для взаимодействия с сервером и отправки запросов по протоколу HTTP применяется класс HttpClient. Этот класс определяет ряд методов для отправки различного рода запросов
+---
+
 # HttpClient и отправка запросов
 
-Для взаимодействия с сервером и отправки запросов по протоколу http применяется класс `HttpClient`. Этот класс определяет ряд методов для отправки различного рода запросов: `GET`, `POST`, `PUT`, `DELETE`. Данный класс построен поверх стандартного объекта в JavaScript - `XMLHttpRequest`.
+Для взаимодействия с сервером и отправки запросов по протоколу HTTP применяется класс **`HttpClient`**. Этот класс определяет ряд методов для отправки различного рода запросов: `GET`, `POST`, `PUT`, `DELETE`. Данный класс построен поверх стандартного объекта в JavaScript - `XMLHttpRequest`.
 
 Для использования этого класса в проект необходимо установить пакет `@angular/common`:
 
@@ -217,7 +221,9 @@ export class AppComponent implements OnInit {
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
-    this.httpService.getData().subscribe(data => (this.users = data['userList']))
+    this.httpService
+      .getData()
+      .subscribe(data => (this.users = data['userList']))
   }
 }
 ```

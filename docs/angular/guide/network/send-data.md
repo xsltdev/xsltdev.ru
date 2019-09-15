@@ -1,3 +1,7 @@
+---
+description: Нередко возникает необходимость обращаться с более сложными запросами к удаленному ресурсу, передавая ему некоторые параметры
+---
+
 # Отправка данных в запросе
 
 В прошлых темах были рассмотрены простейшие запросы к файлу `json`, который содержал некоторые данные. Однако нередко возникает необходимость обращаться с более сложными запросами к удаленному ресурсу, передавая ему некоторые параметры. Вначале рассмотрим, как передать параметры в get-запросе.
@@ -85,7 +89,9 @@ export class HttpService {
   //http://localhost:60489/Home/GetFactorial?number=  ASP.NET MVC
   //http://localhost:8080/angular/getFactorial.php?number=    PHP
   getFactorial(num: number) {
-    return this.http.get('http://localhost:60489/Home/GetFactorial?number=' + num)
+    return this.http.get(
+      'http://localhost:60489/Home/GetFactorial?number=' + num
+    )
   }
 }
 ```
@@ -105,7 +111,12 @@ import { User } from './user'
     <div *ngIf="done">{{ factorial }}</div>
     <div class="form-group">
       <label>Введите число</label>
-      <input class="form-control" type="number" name="factorial" [(ngModel)]="num" />
+      <input
+        class="form-control"
+        type="number"
+        name="factorial"
+        [(ngModel)]="num"
+      />
     </div>
     <div class="form-group">
       <button class="btn btn-default" (click)="submit(num)">Отправить</button>

@@ -1,3 +1,7 @@
+---
+description: Кроме GET-запросов Angular позволяет отправлять остальные типы запросов POST, PUT, DELETE
+---
+
 # POST-запросы
 
 Кроме GET-запросов Angular позволяет отправлять остальные типы запросов: `POST`, `PUT`, `DELETE`. Рассмотрим, как выполнять POST-запросы.
@@ -117,7 +121,12 @@ import { User } from './user'
     </div>
     <div class="form-group">
       <label>Возраст</label>
-      <input class="form-control" type="number" name="age" [(ngModel)]="user.age" />
+      <input
+        class="form-control"
+        type="number"
+        name="age"
+        [(ngModel)]="user.age"
+      />
     </div>
     <div class="form-group">
       <button class="btn btn-default" (click)="submit(user)">Отправить</button>
@@ -191,7 +200,9 @@ export class HttpService {
   postData(user: User) {
     const myHeaders = new HttpHeaders().set('Authorization', 'my-auth-token')
 
-    return this.http.post('http://localhost:60820/api/values', user, { headers: myHeaders })
+    return this.http.post('http://localhost:60820/api/values', user, {
+      headers: myHeaders
+    })
   }
 }
 ```

@@ -1,3 +1,7 @@
+---
+description: Рассмотрим, как мы можем создать с помощью Angular подобие грида для вывода данных и совместить его с базовыми операциями по управлению данными
+---
+
 # Grid и CRUD-операции
 
 Рассмотрим, как мы можем создать с помощью Angular подобие грида для вывода данных и совместить его с базовыми операциями по управлению данными.
@@ -90,7 +94,9 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: path.resolve(__dirname, 'tsconfig.json') }
+            options: {
+              configFileName: path.resolve(__dirname, 'tsconfig.json')
+            }
           },
           'angular2-template-loader'
         ]
@@ -168,7 +174,8 @@ import { Observable } from 'rxjs'
 })
 export class AppComponent implements OnInit {
   //типы шаблонов
-  @ViewChild('readOnlyTemplate', { static: false }) readOnlyTemplate: TemplateRef<any>
+  @ViewChild('readOnlyTemplate', { static: false })
+  readOnlyTemplate: TemplateRef<any>
   @ViewChild('editTemplate', { static: false }) editTemplate: TemplateRef<any>
 
   editedUser: User
@@ -220,9 +227,11 @@ export class AppComponent implements OnInit {
       this.editedUser = null
     } else {
       // изменяем пользователя
-      this.serv.updateUser(this.editedUser.id, this.editedUser).subscribe(data => {
-        ;(this.statusMessage = 'Данные успешно обновлены'), this.loadUsers()
-      })
+      this.serv
+        .updateUser(this.editedUser.id, this.editedUser)
+        .subscribe(data => {
+          ;(this.statusMessage = 'Данные успешно обновлены'), this.loadUsers()
+        })
       this.editedUser = null
     }
   }
@@ -266,7 +275,12 @@ export class AppComponent implements OnInit {
 
 ```html
 <h1>Список пользователей</h1>
-<input type="button" value="Добавить" class="btn btn-default" (click)="addUser()" />
+<input
+  type="button"
+  value="Добавить"
+  class="btn btn-default"
+  (click)="addUser()"
+/>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -279,7 +293,11 @@ export class AppComponent implements OnInit {
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <ng-template [ngTemplateOutlet]="loadTemplate(user)" [ngTemplateOutletContext]="{ $implicit: user}"> </ng-template>
+      <ng-template
+        [ngTemplateOutlet]="loadTemplate(user)"
+        [ngTemplateOutletContext]="{ $implicit: user}"
+      >
+      </ng-template>
     </tr>
   </tbody>
 </table>
@@ -291,17 +309,33 @@ export class AppComponent implements OnInit {
   <td>{{user.name}}</td>
   <td>{{user.age}}</td>
   <td>
-    <input type="button" value="Изменить" class="btn btn-default" (click)="editUser(user)" />
+    <input
+      type="button"
+      value="Изменить"
+      class="btn btn-default"
+      (click)="editUser(user)"
+    />
   </td>
   <td>
-    <input type="button" value="Удалить" (click)="deleteUser(user)" class="btn btn-danger" />
+    <input
+      type="button"
+      value="Удалить"
+      (click)="deleteUser(user)"
+      class="btn btn-danger"
+    />
   </td>
 </ng-template>
 
 <!--шаблон для редактирования-->
 <ng-template #editTemplate>
   <td>
-    <input type="text" [(ngModel)]="editedUser.id" readonly disabled class="form-control" />
+    <input
+      type="text"
+      [(ngModel)]="editedUser.id"
+      readonly
+      disabled
+      class="form-control"
+    />
   </td>
   <td>
     <input type="text" [(ngModel)]="editedUser.name" class="form-control" />
@@ -310,10 +344,20 @@ export class AppComponent implements OnInit {
     <input type="text" [(ngModel)]="editedUser.age" class="form-control" />
   </td>
   <td>
-    <input type="button" value="Сохранить" (click)="saveUser()" class="btn btn-success" />
+    <input
+      type="button"
+      value="Сохранить"
+      (click)="saveUser()"
+      class="btn btn-success"
+    />
   </td>
   <td>
-    <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+    <input
+      type="button"
+      value="Отмена"
+      (click)="cancel()"
+      class="btn btn-warning"
+    />
   </td>
 </ng-template>
 ```
@@ -322,7 +366,11 @@ export class AppComponent implements OnInit {
 
 ```html
 <tr *ngFor="let user of users">
-  <ng-template [ngTemplateOutlet]="loadTemplate(user)" [ngTemplateOutletContext]="{ $implicit: user}"> </ng-template>
+  <ng-template
+    [ngTemplateOutlet]="loadTemplate(user)"
+    [ngTemplateOutletContext]="{ $implicit: user}"
+  >
+  </ng-template>
 </tr>
 ```
 
@@ -375,7 +423,10 @@ import 'zone.js/dist/zone'
     <title>Hello Angular 8</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <my-app>Загрузка...</my-app>

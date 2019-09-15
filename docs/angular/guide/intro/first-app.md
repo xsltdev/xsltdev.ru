@@ -1,3 +1,7 @@
+---
+description: Для написания приложений нам потребуется обычный текстовый редактор, хотя можно использовать специальные среды программирования
+---
+
 # Первое приложение на Angular
 
 В предыдущей теме были рассмотрены начальная информация об Angular и установка необходимых инструментов и настройка конфигурации для работы с фреймворком. Теперь же создадим первое приложение.
@@ -94,7 +98,9 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: path.resolve(__dirname, 'tsconfig.json') }
+            options: {
+              configFileName: path.resolve(__dirname, 'tsconfig.json')
+            }
           },
           'angular2-template-loader'
         ]
@@ -155,17 +161,28 @@ class Item {
       <div class="form-inline">
         <div class="form-group">
           <div class="col-md-8">
-            <input class="form-control" [(ngModel)]="text" placeholder="Название" />
+            <input
+              class="form-control"
+              [(ngModel)]="text"
+              placeholder="Название"
+            />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-6">
-            <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="price"
+              placeholder="Цена"
+            />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-8">
-            <button class="btn btn-default" (click)="addItem(text, price)">Добавить</button>
+            <button class="btn btn-default" (click)="addItem(text, price)">
+              Добавить
+            </button>
           </div>
         </div>
       </div>
@@ -189,7 +206,12 @@ class Item {
   `
 })
 export class AppComponent {
-  items: Item[] = [{ purchase: 'Хлеб', done: false, price: 15.9 }, { purchase: 'Масло', done: false, price: 60 }, { purchase: 'Картофель', done: true, price: 22.6 }, { purchase: 'Сыр', done: false, price: 310 }]
+  items: Item[] = [
+    { purchase: 'Хлеб', done: false, price: 15.9 },
+    { purchase: 'Масло', done: false, price: 60 },
+    { purchase: 'Картофель', done: true, price: 22.6 },
+    { purchase: 'Сыр', done: false, price: 310 }
+  ]
   addItem(text: string, price: number): void {
     if (text == null || text.trim() == '' || price == null) return
     this.items.push(new Item(text, price))
@@ -277,7 +299,10 @@ import 'zone.js/dist/zone'
     <meta charset="utf-8" />
     <title>Приложение покупок</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <purchase-app>Загрузка...</purchase-app>

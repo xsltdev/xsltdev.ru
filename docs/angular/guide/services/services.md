@@ -1,3 +1,7 @@
+---
+description: Сервисы в Angular представляют довольно широкий спектр классов, которые выполняют некоторые специфические задачи
+---
+
 # Сервисы
 
 Сервисы в Angular представляют довольно широкий спектр классов, которые выполняют некоторые специфические задачи, например, логгирование, работу с данными и т. д.
@@ -32,7 +36,11 @@ export class Phone {
 import { Phone } from './phone'
 
 export class DataService {
-  private data: Phone[] = [{ name: 'Apple iPhone 7', price: 56000 }, { name: 'HP Elite x3', price: 56000 }, { name: 'Alcatel Idol S4', price: 25000 }]
+  private data: Phone[] = [
+    { name: 'Apple iPhone 7', price: 56000 },
+    { name: 'HP Elite x3', price: 56000 },
+    { name: 'Alcatel Idol S4', price: 25000 }
+  ]
   getData(): Phone[] {
     return this.data
   }
@@ -58,17 +66,28 @@ import { Phone } from './phone'
       <div class="form-inline">
         <div class="form-group">
           <div class="col-md-8">
-            <input class="form-control" [(ngModel)]="name" placeholder="Модель" />
+            <input
+              class="form-control"
+              [(ngModel)]="name"
+              placeholder="Модель"
+            />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-6">
-            <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="price"
+              placeholder="Цена"
+            />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-8">
-            <button class="btn btn-default" (click)="addItem(name, price)">Добавить</button>
+            <button class="btn btn-default" (click)="addItem(name, price)">
+              Добавить
+            </button>
           </div>
         </div>
       </div>
