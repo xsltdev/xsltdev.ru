@@ -1,3 +1,7 @@
+---
+description: Метод createLinearGradient() создает объект линейного градиента
+---
+
 # createLinearGradient()
 
 Метод **`createLinearGradient()`** создает объект линейного градиента.

@@ -49,10 +49,6 @@
 
 - [Руководство Javascript](https://metanit.com/web/javascript/)
 
-- ??? [WebGL](https://metanit.com/web/webgl/1.1.php)
-
-- [Canvas](https://msiter.ru/references/canvas-reference)
-
 - [MongoDB](https://github.com/jsmarkus/the-little-mongodb-book/blob/master/ru/mongodb.markdown)
 
 - [Pug](https://habr.com/ru/post/278109/)

@@ -1,3 +1,7 @@
+---
+description: Метод createRadialGradient() создает объект радиального/кругового градиента
+---
+
 # createRadialGradient()
 
 Метод **`createRadialGradient()`** создает объект радиального/кругового градиента.
