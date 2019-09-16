@@ -39,7 +39,7 @@
 
 Статус сборки:
 
-![Статус сборки справочника](https://api.netlify.com/api/v1/badges/5ccd2adf-fce9-45cf-b232-4a2534616ebc/deploy-status)]
+![Статус сборки справочника](https://api.netlify.com/api/v1/badges/5ccd2adf-fce9-45cf-b232-4a2534616ebc/deploy-status)
 
 </small>
 
