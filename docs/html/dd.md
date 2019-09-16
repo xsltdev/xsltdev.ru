@@ -71,3 +71,7 @@ description: Тег dd (от англ. definition description - описание
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<dd>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dd) на MDN

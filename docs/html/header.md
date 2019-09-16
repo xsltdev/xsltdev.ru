@@ -48,3 +48,7 @@ description: Тег header (от англ. header - заголовок) зада
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<header>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/header) на MDN

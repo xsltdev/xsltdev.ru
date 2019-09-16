@@ -55,3 +55,7 @@ description: Тег datalist (от англ. list of data - список дан�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<datalist>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/datalist) на MDN

@@ -75,3 +75,7 @@ description: Тег label (от англ. label - метка, ярлык) уст
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<label>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/label) на MDN

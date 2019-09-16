@@ -76,3 +76,7 @@ description: Тег dfn (от англ. definition - термин, опреде�
   </dd>
 </dl>
 ```
+
+## Ссылки
+
+- [`<dfn>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dfn) на MDN

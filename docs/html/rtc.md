@@ -44,3 +44,7 @@ description: Тег rtc (от англ. ruby text container) обозначае�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<rtc>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rtc) на MDN

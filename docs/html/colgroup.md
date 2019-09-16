@@ -93,3 +93,7 @@ description: Тег colgroup (от англ. group of columns - группа к�
 	</body>
 </html>
 ```
+
+## Ссылки
+
+- [`<colgroup>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/colgroup) на MDN

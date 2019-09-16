@@ -52,3 +52,7 @@ description: Тег body (от англ. body - тело) предназначе
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<body>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/body) на MDN

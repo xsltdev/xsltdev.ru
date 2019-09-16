@@ -46,3 +46,7 @@ description: Тег head (от англ. head - голова) предназна
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<head>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/head) на MDN

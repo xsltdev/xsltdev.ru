@@ -58,3 +58,7 @@ description: Тег rt добавляет аннотацию сверху или
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<rt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rt) на MDN

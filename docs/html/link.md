@@ -199,3 +199,7 @@ description: Тег link (от англ. link - ссылка, связь) уст
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<link>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/link) на MDN

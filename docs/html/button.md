@@ -308,3 +308,7 @@ description: Тег button (от англ. button - кнопка) создаёт
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<button>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/button) на MDN

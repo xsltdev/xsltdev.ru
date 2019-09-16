@@ -64,3 +64,7 @@ description: Тег samp (от англ. sample — пример) использ
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<samp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/samp) на MDN

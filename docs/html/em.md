@@ -44,3 +44,7 @@ description: Тег em (от англ. emphasis - акцентирование) 
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<em>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/em) на MDN

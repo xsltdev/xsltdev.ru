@@ -55,3 +55,7 @@ description: Тег kbd (от англ. keyboard - клавиатура) исп�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<kbd>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/kbd) на MDN

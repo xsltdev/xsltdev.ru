@@ -179,3 +179,7 @@ description: Тег meter (от англ. meter — счетчик, измери
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<meter>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/meter) на MDN

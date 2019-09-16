@@ -71,3 +71,7 @@ description: Элемент slot является частью набора те
   <hr />
 </template>
 ```
+
+## Ссылки
+
+- [`<slot>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/slot) на MDN

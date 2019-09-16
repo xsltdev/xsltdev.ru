@@ -71,3 +71,7 @@ description: Тег dt (от англ. definition term - определение 
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<dt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dt) на MDN

@@ -61,3 +61,7 @@ description: Тег bdi (от англ. bidirectional isolation - элемент
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<bdi>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/bdi) на MDN

@@ -49,3 +49,7 @@ description: Тег nav (от англ. navigation — навигация) за�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<nav>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav) на MDN

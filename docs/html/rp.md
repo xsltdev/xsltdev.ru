@@ -52,3 +52,7 @@ description: Тег rp используется для вывода текста
 <ruby>
 字 <rp>(</rp><rt>zì</rt><rp>)</rp>
 </ruby>
+
+## Ссылки
+
+- [`<rp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rp) на MDN

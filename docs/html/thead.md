@@ -64,3 +64,7 @@ description: Тег thead (от англ. table head — голова, верх 
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<thead>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/thead) на MDN

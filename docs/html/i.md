@@ -41,3 +41,7 @@ description: Тег i (от англ. italic - курсив) устанавли�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<i>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/i) на MDN

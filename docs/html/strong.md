@@ -45,3 +45,7 @@ description: Тег strong (от англ. strong — сильный) предн
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<strong>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/strong) на MDN

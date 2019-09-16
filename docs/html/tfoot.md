@@ -65,3 +65,7 @@ description: Тег tfoot (от англ. table foot — подвал табли
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<tfoot>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tfoot) на MDN

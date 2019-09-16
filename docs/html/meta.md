@@ -176,3 +176,7 @@ description: Тег meta (от англ. meta information — мета инфо�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<meta>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta) на MDN

@@ -48,3 +48,7 @@ description: Тег main (от англ. main - основной) предназ
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<main>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/main) на MDN

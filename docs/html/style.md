@@ -124,3 +124,7 @@ description: Тег style (от англ. style — стиль) применяе
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<style>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/style) на MDN

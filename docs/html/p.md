@@ -46,3 +46,7 @@ description: Тег p (от англ. paragraph — параграф) опред
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<p>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/p) на MDN

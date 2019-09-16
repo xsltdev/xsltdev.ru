@@ -122,3 +122,7 @@ description: Тег ol (от англ. ordered list — упорядоченны
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<ol>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol) на MDN

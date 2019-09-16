@@ -44,3 +44,7 @@ description: Тег sup (от англ. superscript — надстрочный �
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<sup>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/sup) на MDN

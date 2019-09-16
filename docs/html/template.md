@@ -118,3 +118,7 @@ description: Тег template (от англ. template — шаблон) пред
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<template>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/template) на MDN

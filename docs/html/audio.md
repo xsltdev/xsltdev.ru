@@ -255,3 +255,7 @@ description: Тег audio (от англ. audio - звук, аудио) доба
   <source src="foo.wav" type="audio/wav" />
 </audio>
 ```
+
+## Ссылки
+
+- [`<audio>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/audio) на MDN

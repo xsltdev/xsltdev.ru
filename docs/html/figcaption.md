@@ -91,3 +91,7 @@ description: Тег figcaption (от англ. figure caption - подпись �
 </figure>
 <p></p>
 ```
+
+## Ссылки
+
+- [`<figcaption>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/figcaption) на MDN

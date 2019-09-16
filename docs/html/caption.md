@@ -84,3 +84,7 @@ description: Тег caption (от англ. caption - заголовок, под
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<caption>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/caption) на MDN

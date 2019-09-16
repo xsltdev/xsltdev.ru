@@ -46,3 +46,7 @@ description: Тег cite (от англ. cite - цитировать) предс
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<cite>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/cite) на MDN

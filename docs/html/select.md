@@ -224,3 +224,7 @@ description: Тег select (от англ. select — выбрать) позво
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<select>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/select) на MDN

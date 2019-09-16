@@ -40,3 +40,7 @@ description: Тег bdo (от англ. bidirectional override - элемент 
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<bdo>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/bdo) на MDN

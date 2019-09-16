@@ -42,3 +42,7 @@ description: Тег s (от англ. strikethrough — зачеркнутый) 
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<s>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/s) на MDN

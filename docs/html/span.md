@@ -50,3 +50,7 @@ description: Тег span (от англ. span — интервал) предна
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<span>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/span) на MDN

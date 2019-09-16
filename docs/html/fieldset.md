@@ -101,3 +101,7 @@ description: Тег fieldset (от англ. field set - набор полей) 
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<fieldset>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/fieldset) на MDN

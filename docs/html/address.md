@@ -48,3 +48,7 @@ description: Тег address (от англ. address - адрес) предназ
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<address>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/address) на MDN

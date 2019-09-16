@@ -54,3 +54,7 @@ description: Тег summary (от англ. summary — резюме, сводк
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<summary>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/summary) на MDN

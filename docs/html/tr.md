@@ -49,3 +49,7 @@ description: Тег tr (от англ. table row — строка таблицы
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<tr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tr) на MDN

@@ -127,3 +127,7 @@ description: Тег del (от англ. delete - удалить) использ�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<del>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/del) на MDN

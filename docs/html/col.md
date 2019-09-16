@@ -72,3 +72,7 @@ description: Тег col (от англ. column - столбец, колонка)
 	</body>
 </html>
 ```
+
+## Ссылки
+
+- [`<col>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/col) на MDN

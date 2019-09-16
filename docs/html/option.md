@@ -138,3 +138,7 @@ description: Тег option (от англ. option — пункт, парамет
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<option>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/option) на MDN

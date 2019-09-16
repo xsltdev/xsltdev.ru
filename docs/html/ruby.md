@@ -51,3 +51,7 @@ description: Тег ruby предназначен для добавления н
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<ruby>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ruby) на MDN

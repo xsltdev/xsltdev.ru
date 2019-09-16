@@ -67,3 +67,7 @@ description: Тег aside (от англ. aside - в стороне) опред�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<aside>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/aside) на MDN

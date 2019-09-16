@@ -45,3 +45,7 @@ description: Тег data (от англ. data - данные) представл
   <data value="1319898260">14:24</data> <b>kaj</b> you are not helping your case
 </p>
 ```
+
+## Ссылки
+
+- [`<data>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/data) на MDN

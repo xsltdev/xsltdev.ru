@@ -61,3 +61,7 @@ description: Тег picture (от англ. picture — картина, изоб
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<picture>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/picture) на MDN

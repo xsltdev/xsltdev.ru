@@ -67,3 +67,7 @@ description: Тег q (от англ. quote — цитата) используе
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<q>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/q) на MDN

@@ -909,3 +909,7 @@ description: Тег input (от англ. input - ввод) является о�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<input>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/input) на MDN

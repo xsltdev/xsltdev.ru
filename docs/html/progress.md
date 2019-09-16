@@ -60,3 +60,7 @@ description: Тег progress (от англ. progress — прогрес) исп
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<progress>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/progress) на MDN

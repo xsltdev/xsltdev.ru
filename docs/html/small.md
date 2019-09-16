@@ -49,3 +49,7 @@ description: Тег small (от англ. small — маленький) испо
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<small>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/small) на MDN

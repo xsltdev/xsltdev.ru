@@ -116,3 +116,7 @@ description: Тег td (от англ. table data — данные таблиц�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<td>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/td) на MDN

@@ -46,3 +46,7 @@ description: Тег noscript (от англ. no script — без скрипто
 ## См. также
 
 - [`<script>`](script.md) — предназначен для описания скриптов, может содержать ссылку на программу или её текст на определённом языке.
+
+## Ссылки
+
+- [`<noscript>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/noscript) на MDN

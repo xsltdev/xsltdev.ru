@@ -43,3 +43,7 @@ description: Тег hr (от англ. horisontal rule - горизонталь�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<hr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/hr) на MDN

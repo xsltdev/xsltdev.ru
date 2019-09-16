@@ -55,3 +55,7 @@ description: Тег section (от англ. section — раздел) задаё
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<section>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/section) на MDN

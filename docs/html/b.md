@@ -45,3 +45,7 @@ description: Тег b (от англ. bold - жирный) задаёт жирн
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<b>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/b) на MDN

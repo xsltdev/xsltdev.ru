@@ -53,3 +53,7 @@ description: Тег details (от англ. details - детали) исполь
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<details>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/details) на MDN

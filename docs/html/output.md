@@ -53,3 +53,7 @@ description: Тег output (от англ. output — вывод) определ
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<output>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/output) на MDN

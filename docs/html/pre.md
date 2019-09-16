@@ -57,3 +57,7 @@ description: Тег pre (от англ. preformatted — предварител�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<pre>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/pre) на MDN

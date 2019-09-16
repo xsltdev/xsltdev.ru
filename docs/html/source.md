@@ -193,3 +193,7 @@ sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)"
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<source>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/source) на MDN

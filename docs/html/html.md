@@ -71,3 +71,7 @@ description: Тег html (от англ. HyperText Markup Language — «язы�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<html>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/html) на MDN

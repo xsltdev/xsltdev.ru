@@ -53,3 +53,7 @@ description: Тег code (от англ. code - код) предназначен
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<code>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/code) на MDN

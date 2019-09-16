@@ -85,3 +85,7 @@ description: Тег param (от англ. parameter — параметр) пре
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<param>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/param) на MDN

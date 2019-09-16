@@ -112,3 +112,7 @@ description: Тег ins (от англ. insert - вставка) предназ�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<ins>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ins) на MDN

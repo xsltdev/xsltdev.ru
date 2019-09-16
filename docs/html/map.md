@@ -129,3 +129,7 @@ description: Тег map (от англ. map - карта) служит конт�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<map>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/map) на MDN

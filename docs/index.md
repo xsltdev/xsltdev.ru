@@ -54,4 +54,6 @@
 - [Pug](https://habr.com/ru/post/278109/)
 - [Pug](https://jsman.ru/jade/)
 - [Pug](https://gist.github.com/neretin-trike/53aff5afb76153f050c958b82abd9228)
+
+- [Git](https://github.com/progit/progit2-ru)
 -->

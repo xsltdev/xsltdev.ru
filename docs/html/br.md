@@ -47,3 +47,7 @@ description: Тег br (от англ. break - разрыв) устанавли�
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<br>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/br) на MDN

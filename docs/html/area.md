@@ -308,3 +308,7 @@ MIME-тип
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<area>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/area) на MDN

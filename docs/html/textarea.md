@@ -361,9 +361,9 @@ description: Тег textarea (от англ. text area — область тек
 
 ## См. также
 
-- [`form`](form.md)
-- [`input`](input.md)
+- [`<form>`](form.md)
+- [`<input>`](input.md)
 
 ## Ссылки
 
-- [`textarea`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) на MDN
+- [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) на MDN

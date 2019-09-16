@@ -60,3 +60,7 @@ description: Тег li (от англ. list item - пункт списка) оп
   <li>Пятый элемент</li>
 </ol>
 ```
+
+## Ссылки
+
+- [`<li>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/li) на MDN

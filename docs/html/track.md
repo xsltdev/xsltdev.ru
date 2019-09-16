@@ -94,3 +94,7 @@ description: Тег track (от англ. track — след, дорожка) п
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<track>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/track) на MDN
