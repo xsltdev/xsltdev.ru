@@ -213,7 +213,9 @@ description: Тег video (от англ. video — видео) добавляе
 
 - [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/embedded-content.html#the-video-element)
 
-## Описание и примеры
+## Примеры
+
+### Пример 1
 
 ```html
 <!DOCTYPE html>
@@ -235,6 +237,55 @@ description: Тег video (от англ. video — видео) добавляе
     </video>
   </body>
 </html>
+```
+
+### Пример 2
+
+Первый пример воспроизводит видео, начиная воспроизведение, как только будет получено достаточное количество видео, чтобы позволить воспроизведение без паузы для загрузки еще. До начала воспроизведения видео на его месте отображается изображение "posterimage.jpg".
+
+```html
+<!-- Простой пример с видео -->
+<video src="videofile.ogg" autoplay poster="posterimage.jpg">
+  Sorry, your browser doesn't support embedded videos, but don't worry, you can
+  <a href="videofile.ogg">download it</a>
+  and watch it with your favorite video player!
+</video>
+```
+
+Второй пример позволяет пользователю выбирать различные субтитры.
+
+```html
+<!-- Видео с субтитрами -->
+<video src="foo.ogg">
+  <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English" />
+  <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska" />
+</video>
+```
+
+### Пример 3
+
+Пример нескольких источников
+
+```html
+<video
+  width="480"
+  controls
+  poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif"
+>
+  <source
+    src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4"
+    type="video/mp4"
+  />
+  <source
+    src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv"
+    type="video/ogg"
+  />
+  <source
+    src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm"
+    type="video/webm"
+  />
+  Your browser doesn't support HTML5 video tag.
+</video>
 ```
 
 ## Поддержка браузерами

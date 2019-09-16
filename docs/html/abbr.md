@@ -61,3 +61,7 @@ description: Тег abbr (от англ. abbreviation - аббревиатура
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [`<abbr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/abbr) на MDN

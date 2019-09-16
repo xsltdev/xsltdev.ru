@@ -20,15 +20,15 @@ description: Тег u (от англ. underline — подчеркнутый) и
 
 ## Атрибуты
 
-Для этого элемента доступны [универсальные атрибуты](uni-attr.md) и [события](events.md).
+Для этого элемента доступны [универсальные атрибуты](uni-attr.md).
 
 ## Спецификации
 
-- [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-u-element)
+- [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element)
 - [HTML 5](http://www.w3.org/TR/html5/text-level-semantics.html#the-u-element)
 - [HTML 4.01 Specification](http://www.w3.org/TR/html401/present/graphics.html#h-15.2.1)
 
-## Описание и примеры
+## Пример
 
 ```html
 <html>
@@ -44,3 +44,16 @@ description: Тег u (от англ. underline — подчеркнутый) и
   </body>
 </html>
 ```
+
+## См. также
+
+- [`<span>`](span.md)
+- [`<i>`](i.md)
+- [`<em>`](em.md)
+- [`<b>`](b.md)
+- [`<cite>`](cite.md)
+- [`text-decoration`](../css/text-decoration.md)
+
+## Ссылки
+
+- [`<u>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/u) на MDN

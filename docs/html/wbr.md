@@ -16,14 +16,16 @@ description: Тег wbr (от англ. word break — разрыв слова) 
 
 ## Атрибуты
 
-Нет.
+Для этого элемента доступны [универсальные атрибуты](uni-attr.md).
 
 ## Спецификации
 
-- [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-wbr-element)
+- [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element)
 - [HTML 5](http://www.w3.org/TR/html5/text-level-semantics.html#the-wbr-element)
 
-## Описание и примеры
+## Примеры
+
+### Пример 1
 
 ```html
 <!DOCTYPE html>
@@ -48,3 +50,23 @@ description: Тег wbr (от англ. word break — разрыв слова) 
   </body>
 </html>
 ```
+
+### Пример 2
+
+Руководство по стилю Yahoo рекомендует разбивать URL перед пунктуацией, чтобы не оставлять знаки препинания в конце строки, которые читатель может принять за конец URL.
+
+```html
+<p>
+  http://this<wbr />.is<wbr />.a<wbr />.really<wbr />.long<wbr />.example<wbr />.com/With<wbr />/deeper<wbr />/level<wbr />/pages<wbr />/deeper<wbr />/level<wbr />/pages<wbr />/deeper<wbr />/level<wbr />/pages<wbr />/deeper<wbr />/level<wbr />/pages<wbr />/deeper<wbr />/level<wbr />/pages
+</p>
+```
+
+## См. также
+
+- [overflow-wrap](../css/overflow-wrap.md)
+- [word-break](../css/word-break.md)
+- [hyphens](../css/hyphens.md)
+
+## Ссылки
+
+- [`<wbr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/wbr) на MDN
