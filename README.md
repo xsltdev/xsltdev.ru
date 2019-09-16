@@ -1,7 +1,5 @@
 # Справочник
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5ccd2adf-fce9-45cf-b232-4a2534616ebc/deploy-status)](https://app.netlify.com/sites/xsltdev/deploys)
-
 Для разметки контента используется markdown, собирается сайт движком MKDocs.
 
 ## Участие
