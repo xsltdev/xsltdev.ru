@@ -350,10 +350,13 @@ description: Справочник свойств CSS с примерами ко�
 - `text-decoration-color`
 - `text-decoration-line`
 - `text-decoration-style`
-- `text-emphasis`
-- `text-emphasis-color`
-- `text-emphasis-position`
-- `text-emphasis-style`
+- `text-decoration-thickness`
+- `text-decoration-skip`
+- `text-decoration-skip-ink`
+- [`text-emphasis`](text-emphasis.md)
+- [`text-emphasis-color`](text-emphasis-color.md)
+- [`text-emphasis-position`](text-emphasis-position.md)
+- [`text-emphasis-style`](text-emphasis-style.md)
 - [text-indent](text-indent.md)
 - `text-rendering`
 - [text-shadow](text-shadow.md)
