@@ -184,7 +184,7 @@
               {% endblock %}
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
-              {% endblock %}
+			  {% endblock %}
             </article>
           </div>
         </div>
@@ -220,6 +220,6 @@
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
-    {% endblock %}
+	{% endblock %}
   </body>
 </html>

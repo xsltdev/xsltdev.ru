@@ -5,6 +5,7 @@ Markdown==3.1.1
 MarkupSafe==1.1.1
 mkdocs==1.0.4
 mkdocs-awesome-pages-plugin==2.1.0
+mkdocs-git-committers-plugin==0.1.8
 mkdocs-material==4.4.0
 mkdocs-minify-plugin==0.2.1
 PyYAML==5.1.1

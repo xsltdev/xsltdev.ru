@@ -51,18 +51,11 @@ markdown_extensions:
 plugins:
     #- search
     - awesome-pages
+    - git-committers:
+          repository: xsltdev/index
+          branch: master
+          token:
+              !!python/object/apply:os.getenv ['MKDOCS_GIT_COMMITTERS_APIKEY']
 
 extra_javascript:
     - 'https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js'
-#nav:
-#    - Главная: index.md
-#    - HTML: html/index.md
-#    - CSS: css/index.md
-#    - LESS: less/index.md
-#    - Javascript: javascript/index.md
-#    - Typescript: typescript/index.md
-#    - Angular: angular/index.md
-#    - React: react/index.md
-#    - Node.js: nodejs/index.md
-#    - XSLT: xslt/index.md
-#    - XPath: xpath/index.md
