@@ -35,10 +35,10 @@ description: Справочник свойств CSS с примерами ко�
 - [:any-link](:any-link.md)
 - [:blank](:blank.md)
 - [:checked](:checked.md)
-- :current
+- [:current()](:current().md)
 - [:default](:default.md)
-- :defined
-- :dir()
+- [:defined](:defined.md)
+- [:dir()](:dir().md)
 - [:disabled](:disabled.md)
 - :drop
 - [:empty](:empty.md)
@@ -50,7 +50,7 @@ description: Справочник свойств CSS с примерами ко�
 - :focus-visible
 - [:focus-within](:focus-within.md)
 - [:fullscreen](:fullscreen.md)
-- :future
+- [:future](:future.md)
 - :has()
 - :host
 - :host()
@@ -77,7 +77,7 @@ description: Справочник свойств CSS с примерами ко�
 - [:only-of-type](:only-of-type.md)
 - [:optional](:optional.md)
 - [:out-of-range](:out-of-range.md)
-- :past
+- [:past](:past.md)
 - [:placeholder-shown](:placeholder-shown.md)
 - [:read-only](:read-only.md)
 - [:read-write](:read-write.md)
@@ -90,7 +90,7 @@ description: Справочник свойств CSS с примерами ко�
 - :user-invalid
 - [:valid](:valid.md)
 - [:visited](:visited.md)
-- [`:where()`](:where().md)
+- [:where()](:where().md)
 </div>
 
 ## Псевдоэлементы
@@ -272,7 +272,7 @@ description: Справочник свойств CSS с примерами ко�
 ## Интерфейс
 
 <div class="col3" markdown="1">
-- appearance
+- `appearance`
 - [box-sizing](box-sizing.md)
 - [caret-color](caret-color.md)
 - [cursor](cursor.md)
@@ -353,10 +353,10 @@ description: Справочник свойств CSS с примерами ко�
 - `text-decoration-thickness`
 - `text-decoration-skip`
 - `text-decoration-skip-ink`
-- [`text-emphasis`](text-emphasis.md)
-- [`text-emphasis-color`](text-emphasis-color.md)
-- [`text-emphasis-position`](text-emphasis-position.md)
-- [`text-emphasis-style`](text-emphasis-style.md)
+- [text-emphasis](text-emphasis.md)
+- [text-emphasis-color](text-emphasis-color.md)
+- [text-emphasis-position](text-emphasis-position.md)
+- [text-emphasis-style](text-emphasis-style.md)
 - [text-indent](text-indent.md)
 - `text-rendering`
 - [text-shadow](text-shadow.md)
