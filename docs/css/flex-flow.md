@@ -1,6 +1,10 @@
+---
+description: Свойство flex-flow является сокращённым свойством для отдельных свойств flex-direction и flex-wrap
+---
+
 # flex-flow
 
-Свойство **`flex-flow`** является сокращённым свойством для отдельных свойств [`flex-direction`](/css/flex-direction/) и [`flex-wrap`](/css/flex-wrap/).
+Свойство **`flex-flow`** является сокращённым свойством для отдельных свойств [`flex-direction`](flex-direction.md) и [`flex-wrap`](flex-wrap.md).
 
 ## Синтаксис
 
@@ -31,12 +35,12 @@ flex-flow: unset;
 
 Значение по-умолчанию:
 
-- [`flex-direction`](/css/flex-direction/): `row`
-- [`flex-wrap`](/css/flex-wrap/): `nowrap`
+- [`flex-direction`](flex-direction.md): `row`
+- [`flex-wrap`](flex-wrap.md): `nowrap`
 
 Наследуется: нет
 
-Применяется к: К флекс-элементам
+Применяется к флекс-элементам
 
 Анимируется: нет
 

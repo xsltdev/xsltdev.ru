@@ -1,6 +1,10 @@
+---
+description: Свойство grid-column — это сокращение для grid-column-start + grid-column-end
+---
+
 # grid-column
 
-Свойство **`grid-column`** — это сокращение для [`grid-column-start`](/css/grid-column-start/) + [`grid-column-end`](/css/grid-column-end/)
+Свойство **`grid-column`** — это сокращение для [`grid-column-start`](grid-column-start.md) + [`grid-column-end`](grid-column-end.md).
 
 ## Синтаксис
 
@@ -33,12 +37,13 @@ grid-column: unset;
 
 ## Значения
 
-- `<start-line> / <end-line>` — каждый из них принимает тоже самое, что и в длинной версии, включая охват;
+`<start-line> / <end-line>`
+: каждый из них принимает тоже самое, что и в длинной версии, включая охват;
 
 Значение по-умолчанию:
 
-- grid-column-start: `auto`
-- grid-column-end: `auto`
+- [`grid-column-start`](grid-column-start.md): `auto`
+- [`grid-column-end`](grid-column-end.md): `auto`
 
 ## Спецификации
 

@@ -1,3 +1,7 @@
+---
+description: Свойство grid является сокращенной формой записи, которая устанавливает значения для всех явных свойств сетки в одной строчке
+---
+
 # grid
 
 Свойство **`grid`** является сокращенной формой записи, которая устанавливает значения для всех явных свойств сетки ([`grid-template-rows`](grid-template-rows.md), [`grid-template-columns`](grid-template-columns.md) и [`grid-template-areas`](grid-template-areas.md)), всех неявных свойств сетки ([`grid-auto-rows`](grid-auto-rows.md), [`grid-auto-columns`](grid-auto-columns.md) и [`grid-auto-flow`](grid-auto-flow.md)) и свойств для промежутков между рядами и столбцами сетки ([`grid-column-gap`](grid-column-gap.md) и [`grid-row-gap`](grid-row-gap.md)) в одной строчке.
@@ -51,15 +55,20 @@ grid: unset;
 
 Наследуется: нет
 
-Применяется к: сеточные контейнеры
+Применяется к сеточным контейнеры
 
 Анимируется: нет
 
 Объектная модель: `object.style.grid`
 
-- `<'grid-template'>` — Определяет grid-template (шаблон сетки) включая grid-template-columns (столбцы), grid-template-rows (ряды) и grid-template-areas (области).
-- `<'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>?` — Устанавливает auto-flow явно задавая размещение по рядам с помощью свойства grid-template-rows (и устанавливая свойство grid-template-columns в значение none) и уточняет, как должно работать авто-повторение столбцов при помощи свойства grid-auto-columns (и устанавливая grid-auto-rows в значение auto). Свойство grid-auto-flow может быть так же установлено для столбцев со свойством dense если оно определено. Все остальные подсвойства grid сбрасываются в их начальные значения.
-- `[ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>` — Устанавливает auto-flow явно задавая размещение по столбцам с помощью свойства grid-template-columns (и устанавливая свойство grid-template-rows в значение none) и уточняет, как должно работать авто-повторение рядов при помощи свойства grid-auto-rows (и устанавливая grid-auto-columns в значение auto). Свойство grid-auto-flow может быть так же установлено для рядов со свойством dense если оно определено. Все остальные подсвойства grid сбрасываются в их начальные значения.
+`<'grid-template'>`
+: Определяет grid-template (шаблон сетки) включая grid-template-columns (столбцы), grid-template-rows (ряды) и grid-template-areas (области).
+
+`<'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>?`
+: Устанавливает auto-flow явно задавая размещение по рядам с помощью свойства grid-template-rows (и устанавливая свойство grid-template-columns в значение none) и уточняет, как должно работать авто-повторение столбцов при помощи свойства grid-auto-columns (и устанавливая grid-auto-rows в значение auto). Свойство grid-auto-flow может быть так же установлено для столбцев со свойством dense если оно определено. Все остальные подсвойства grid сбрасываются в их начальные значения.
+
+`[ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
+: Устанавливает auto-flow явно задавая размещение по столбцам с помощью свойства grid-template-columns (и устанавливая свойство grid-template-rows в значение none) и уточняет, как должно работать авто-повторение рядов при помощи свойства grid-auto-rows (и устанавливая grid-auto-columns в значение auto). Свойство grid-auto-flow может быть так же установлено для рядов со свойством dense если оно определено. Все остальные подсвойства grid сбрасываются в их начальные значения.
 
 ## Спецификации
 

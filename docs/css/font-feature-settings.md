@@ -1,3 +1,7 @@
+---
+description: Свойство font-feature-settings позволяет вам управлять расширенными типографскими функциями в шрифтах OpenType
+---
+
 # font-feature-settings
 
 Свойство **`font-feature-settings`** позволяет вам управлять расширенными типографскими функциями в шрифтах OpenType.

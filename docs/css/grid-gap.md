@@ -1,6 +1,10 @@
+---
+description: Свойство grid-gap - это сокращение для grid-row-gap и grid-column-gap
+---
+
 # grid-gap
 
-Свойство **`grid-gap`** - это сокращение для [`grid-row-gap`](/css/grid-row-gap/) и [`grid-column-gap`](/css/grid-column-gap/).
+Свойство **`grid-gap`** - это сокращение для [`grid-row-gap`](grid-row-gap.md) и [`grid-column-gap`](grid-column-gap.md).
 
 ## Синтаксис
 
@@ -35,14 +39,15 @@ grid-gap: unset;
 
 Значение по-умолчанию:
 
-- grid-row-gap: `0`
-- grid-column-gap: `0`
+- [`grid-row-gap`](grid-row-gap.md): `0`
+- [`grid-column-gap`](grid-column-gap.md): `0`
 
-Применяется к: к grid-контейнерам
+Применяется к grid-контейнерам
 
 Анимируется: да
 
-- `<grid-row-gap>` `<grid-column-gap>` — значения размеров;
+`<grid-row-gap>` `<grid-column-gap>`
+: значения размеров;
 
 ## Спецификации
 

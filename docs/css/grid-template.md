@@ -1,6 +1,10 @@
+---
+description: Свойство grid-template — сокращение для grid-template-rows, grid-template-columns, и grid-template-areas
+---
+
 # grid-template
 
-Свойство **`grid-template`** — сокращение для [`grid-template-rows`](/css/grid-template-rows/), [`grid-template-columns`](/css/grid-template-columns/), и [`grid-template-areas`](/css/grid-template-areas/).
+Свойство **`grid-template`** — сокращение для [`grid-template-rows`](grid-template-rows.md), [`grid-template-columns`](grid-template-columns.md), и [`grid-template-areas`](grid-template-areas.md).
 
 ## Синтаксис
 
@@ -34,9 +38,14 @@ grid-template: unset;
 
 ## Значения
 
-- `none` — устанавливает все три свойства в их начальное значение;
-- `subgrid` — устанавливает `grid-template-rows` и `grid-template-columns` в `subgrid`, и `grid-template-areas` в его начальное значение;
-- `<grid-template-rows>` / `<grid-template-columns>` — устанавливает `grid-template-columns` и `grid-template-rows` в определённое значение, соответственно, и устанавливает `grid-template-areas` в `none`;
+`none`
+: устанавливает все три свойства в их начальное значение;
+
+`subgrid`
+: устанавливает `grid-template-rows` и `grid-template-columns` в `subgrid`, и `grid-template-areas` в его начальное значение;
+
+`<grid-template-rows> / <grid-template-columns>`
+: устанавливает `grid-template-columns` и `grid-template-rows` в определённое значение, соответственно, и устанавливает `grid-template-areas` в `none`;
 
 ```css
 .container {
@@ -67,7 +76,7 @@ grid-template: unset;
 }
 ```
 
-Так как `grid-template` не сбрасывает неявные свойства ([`grid-auto-columns`](/css/grid-auto-columns/), [`grid-auto-rows`](/css/grid-auto-rows/), и [`grid-auto-flow`](/css/grid-auto-flow/)), а в большинстве случаев, вероятно, вы бы захотели это сделать, рекомендуется использовать свойство [`grid`](/css/grid/), вместо `grid-template`.
+Так как `grid-template` не сбрасывает неявные свойства ([`grid-auto-columns`](grid-auto-columns.md), [`grid-auto-rows`](grid-auto-rows.md), и [`grid-auto-flow`](grid-auto-flow.md)), а в большинстве случаев, вероятно, вы бы захотели это сделать, рекомендуется использовать свойство [`grid`](grid.md), вместо `grid-template`.
 
 ## Спецификации
 

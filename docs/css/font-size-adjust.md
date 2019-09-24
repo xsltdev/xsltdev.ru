@@ -1,3 +1,7 @@
+---
+description: Свойство font-size-adjust указывает, что размер шрифта должен быть выбран на основе высоты строчных букв, а не высоты заглавных букв
+---
+
 # font-size-adjust
 
 Свойство **`font-size-adjust`** указывает, что размер шрифта должен быть выбран на основе высоты строчных букв, а не высоты заглавных букв.
@@ -49,13 +53,21 @@ font-size-adjust: none;
 ```html tab="HTML"
 <p>CSS Examples: font-size-adjust</p>
 <br />
-<div class="times">This is the Times font (10px) which is hard to read in small sizes</div>
+<div class="times">
+  This is the Times font (10px) which is hard to read in small sizes
+</div>
 <p></p>
-<div class="verdana">This is the Verdana font (10px) which does much better, since it is a sans - serif font.</div>
+<div class="verdana">
+  This is the Verdana font (10px) which does much better, since it is a sans -
+  serif font.
+</div>
 <br />
 <p>Now we 'll do an adjustment:</p>
 <p></p>
-<div class="adjtimes">and the 10px Times, adjusted to the same aspect ratio as the Verdana. Cool, eh?</div>
+<div class="adjtimes">
+  and the 10px Times, adjusted to the same aspect ratio as the Verdana. Cool,
+  eh?
+</div>
 ```
 
 ```css tab="CSS"

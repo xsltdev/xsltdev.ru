@@ -1,8 +1,12 @@
+---
+description: Свойство grid-area даёт название элементу чтобы можно было ссылаться на него с помощью шаблона созданного через grid-template-areas свойство
+---
+
 # grid-area
 
-Свойство **`grid-area`** даёт название элементу чтобы можно было ссылаться на него с помощью шаблона созданного через [`grid-template-areas`](/css/grid-template-areas/) свойство.
+Свойство **`grid-area`** даёт название элементу чтобы можно было ссылаться на него с помощью шаблона созданного через [`grid-template-areas`](grid-template-areas.md) свойство.
 
-Свойство **`grid-area`** является сокращенным свойством для [`grid-row-start`](/css/grid-row-start/), [`grid-column-start`](/css/grid-column-start/), [`grid-row-end`](/css/grid-row-end/) и [`grid-column-end`](/css/grid-column-end/), определяя размер и расположение элемента сетки.
+Свойство **`grid-area`** является сокращенным свойством для [`grid-row-start`](grid-row-start.md), [`grid-column-start`](grid-column-start.md), [`grid-row-end`](grid-row-end.md) и [`grid-column-end`](grid-column-end.md), определяя размер и расположение элемента сетки.
 
 ## Синтаксис
 
@@ -43,11 +47,11 @@ grid-area: unset;
 
 Наследуется: нет
 
-Применяется к: к элементам сетки
+Применяется к элементам сетки
 
 Анимируется: нет
 
-Объектная модель: object.style.gridArea
+Объектная модель: `object.style.gridArea`
 
 ## Спецификации
 
