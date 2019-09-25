@@ -44,15 +44,6 @@
 					{{ config.copyright }}
 				</div>
 				{% endif %}
-				<div class="md-footer-copyright__highlight">
-					Страница обновлена: {% if last_commit %}{{ last_commit.commit.committer.date.strftime('%d.%m.%Y') }}{% endif %}
-				</div>
-				<div class="md-footer-copyright__highlight">
-					Редакторы: {%- for user in committers -%}
-					<span> </span>
-					<a href="{{ user.repos }}" title="{{ user.name }}" data-bi-name="contributorprofile"><img  src="{{ user.avatar }}?size=32" alt="{{ user.name }}" style="width: 20px; vertical-align: middle;" /></a>
-					{%- endfor -%}
-				</div>
 			</div>
 			{% include "partials/social.html" %}
 		</div>

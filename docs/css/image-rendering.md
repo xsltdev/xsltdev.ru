@@ -1,3 +1,7 @@
+---
+description: Свойство image-rendering сообщает браузеру, каким алгоритмом интерполировать изображение при масштабировании его размеров или изменении масштаба в параметрах браузера
+---
+
 # image-rendering
 
 Свойство **`image-rendering`** сообщает браузеру, каким алгоритмом интерполировать изображение при масштабировании его размеров или изменении масштаба в параметрах браузера.
@@ -39,7 +43,7 @@ image-rendering: unset;
 image-rendering: auto;
 ```
 
-Применяется к: К изображениям, фоновым картинкам, [`<video>`](../html/video.md), [`<canvas>`](../html/canvas.md)
+Применяется к изображениям, фоновым картинкам, [`<video>`](../html/video.md), [`<canvas>`](../html/canvas.md)
 
 ## Спецификации
 
@@ -63,7 +67,10 @@ image-rendering: auto;
     </style>
   </head>
   <body>
-    <p><img src="image/russia.png" alt="Флаг России" width="200" /> <img src="image/russia.png" alt="Флаг России" width="200" class="fast" /></p>
+    <p>
+      <img src="image/russia.png" alt="Флаг России" width="200" />
+      <img src="image/russia.png" alt="Флаг России" width="200" class="fast" />
+    </p>
   </body>
 </html>
 ```
