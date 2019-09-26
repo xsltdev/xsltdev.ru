@@ -53,6 +53,8 @@
 
 - [Руководство Javascript](https://metanit.com/web/javascript/)
 
+- [Redux на русском](https://rajdee.gitbooks.io/redux-in-russian/content/)
+
 - [MongoDB](https://github.com/jsmarkus/the-little-mongodb-book/blob/master/ru/mongodb.markdown)
 
 - [Pug](https://habr.com/ru/post/278109/)
