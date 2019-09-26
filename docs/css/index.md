@@ -316,10 +316,10 @@ description: Справочник свойств CSS с примерами ко�
 
 <div class="col3" markdown="1">
 - [backface-visibility](backface-visibility.md)
-- `perspective`
-- `perspective-origin`
+- [perspective](perspective.md)
+- [perspective-origin](perspective-origin.md)
 - [transform](transform.md)
-- `transform-box`
+- [transform-box](transform-box.md)
 - [transform-origin](transform-origin.md)
 - [transform-style](transform-style.md)
 </div>
@@ -327,7 +327,7 @@ description: Справочник свойств CSS с примерами ко�
 ## Текст
 
 <div class="col3" markdown="1">
-- `hanging-punctuation`
+- [hanging-punctuation](hanging-punctuation.md)
 - [hyphens](hyphens.md)
 - [letter-spacing](letter-spacing.md)
 - `line-break`

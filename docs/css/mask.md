@@ -1,3 +1,7 @@
+---
+description: Свойство mask изменяет видимость элемента, частично или полностью скрывая его
+---
+
 # mask
 
 Свойство **`mask`** изменяет видимость элемента, частично или полностью скрывая его.
@@ -47,17 +51,17 @@ mask: unset;
 Значение по-умолчанию:
 
 ```css
-mask-image: none
-mask-mode: match-source
-mask-repeat: no-repeat
-mask-position: center
-mask-clip: border-box
-mask-origin: border-box
-mask-size: auto
-mask-composite: add
+mask-image: none;
+mask-mode: match-source;
+mask-repeat: no-repeat;
+mask-position: center;
+mask-clip: border-box;
+mask-origin: border-box;
+mask-size: auto;
+mask-composite: add;
 ```
 
-Применяется к: ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 

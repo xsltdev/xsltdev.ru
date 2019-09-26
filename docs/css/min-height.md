@@ -1,3 +1,7 @@
+---
+description: Свойство min-height задаёт минимальную высоту элемента
+---
+
 # min-height
 
 Свойство **`min-height`** задаёт минимальную высоту элемента.
@@ -31,17 +35,34 @@ min-height: unset;
 
 В качестве значений принимаются пиксели (px), проценты (%) и другие единицы измерения, принятые в CSS. Отрицательные значения не допускаются.
 
+`auto`
+: Минимальная высота для flex-элементов по умолчанию, предоставляет более разумное значение по умолчанию, чем `0` для других способов разметки.
+
+`max-content`
+: Внутренняя предпочтительная высота.
+
+`min-content`
+: Внутренняя минимальная высота.
+
+`fill-available`
+: Высота родительского блока минус вертикальные `margin`, `border`, и `padding`. (Обратите внимание, что некоторые браузеры реализуют устаревшее имя для этого ключевого слова `available`.)
+
+`fit-content`
+: Согласно CSS3 Box, это синоним min-content. CSS3 Sizing определяет более сложный алгоритм, но ни один браузер не реализует его даже экспериментальным путем.
+
 Значение по-умолчанию:
 
 ```css
-min-height: 0;
+min-height: auto;
 ```
 
-Применяется к: Ко всем элементам, кроме строчных и таблиц
+Применяется ко всем элементам, кроме строчных и таблиц
 
 ## Спецификации
 
-- [CSS Intrinsic & Extrinsic Sizing Module Level 3](http://dev.w3.org/csswg/css3-sizing/#width-height-keywords)
+- [CSS Intrinsic & Extrinsic Sizing Module Level 3](https://drafts.csswg.org/css-sizing-3/#width-height-keywords)
+- [CSS Flexible Box Layout Module](https://drafts.csswg.org/css-flexbox-1/#min-auto)
+- [CSS Transitions](https://drafts.csswg.org/css-transitions/#animatable-css)
 - [CSS Level 2 (Revision 1)](http://www.w3.org/TR/CSS2/visudet.html#min-max-heights)
 
 ## Поддержка браузерами
@@ -76,7 +97,10 @@ min-height: 0;
   <body>
     <footer>
       <p>Сайт Cloverfield</p>
-      <p><a href="page/techinfo.html">Информация о сайте</a> <a href="page/activity.html">Об авторе</a></p>
+      <p>
+        <a href="page/techinfo.html">Информация о сайте</a>
+        <a href="page/activity.html">Об авторе</a>
+      </p>
     </footer>
   </body>
 </html>
