@@ -18,7 +18,7 @@ description: Свойство miterLimit устанавливает/возвра
 
 Если длина среза будет превышать заданное в свойстве `miterLimit` значение, угол будет отображаться как при значении `bevel` свойства `lineJoin` (Fig 3):
 
-![miterlimitbevel](miterlimitbevel.gif)
+![miterlimitbevel](miterlimitbevelfig.gif)
 
 ## Синтаксис
 

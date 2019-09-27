@@ -1,0 +1,36 @@
+# Компоненты React Native
+
+- ActivityIndicator
+- Button
+- DateTimePicker
+- DrawerLayoutAndroid
+- FlatList
+- Image
+- ImageBackground
+- InputAccessoryView
+- KeyboardAvoidingView
+- MaskedView
+- Modal
+- Picker
+- ProgressBarAndroid
+- ProgressViewIOS
+- RefreshControl
+- SafeAreaView
+- ScrollView
+- SectionList
+- SegmentedControlIOS
+- Slider
+- StatusBar
+- Switch
+- TabBarIOS
+- TabBarIOS.Item
+- Text
+- TextInput
+- ToolbarAndroid
+- TouchableHighlight
+- TouchableNativeFeedback
+- TouchableOpacity
+- TouchableWithoutFeedback
+- View
+- ViewPager
+- VirtualizedList

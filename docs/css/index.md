@@ -330,8 +330,9 @@ description: Справочник свойств CSS с примерами ко�
 - [hanging-punctuation](hanging-punctuation.md)
 - [hyphens](hyphens.md)
 - [letter-spacing](letter-spacing.md)
-- `line-break`
-- `overflow-wrap`
+- [line-break](line-break.md)
+- [overflow-wrap](overflow-wrap.md)
+- `paint-order`
 - `tab-size`
 - [text-align](text-align.md)
 - [text-align-last](text-align-last.md)

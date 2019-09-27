@@ -58,7 +58,7 @@ ctx.fillRect(20,20,100,80); }
 
 ## См. также
 
-- [shadowColor](shadowColor.md)
+- [shadowColor](shadowcolor.md)
 
 ## Ссылки
 
