@@ -143,6 +143,10 @@ Grid Layout представляет специальный модуль CSS3, �
 
 ![Grid Layout](grid-1-2.png)
 
+## см. также
+
+- [display](../display.md)
+
 <small markdown="1">
 
 1. **Что такое Grid Layout. Grid Container**

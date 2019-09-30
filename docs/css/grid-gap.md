@@ -70,3 +70,7 @@ grid-gap: unset;
 ```
 
 Если значение для `grid-row-gap` не задано, ему присваивается такое же значение как и у `grid-column-gap`.
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

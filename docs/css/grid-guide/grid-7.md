@@ -118,6 +118,10 @@
 
 ![Наложение элементов](grid-7-2.png)
 
+## См. также
+
+- [z-index](../z-index.md)
+
 <small markdown="1">
 
 1. [Что такое Grid Layout. Grid Container](grid-1.md)

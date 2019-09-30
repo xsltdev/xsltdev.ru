@@ -95,6 +95,10 @@ grid: grid-template-rows / grid-template-columns;
 }
 ```
 
+## См. также
+
+- [grid](../grid.md)
+
 <small markdown="1">
 
 1. [Что такое Grid Layout. Grid Container](grid-1.md)

@@ -21,31 +21,44 @@ Flex-контейнер может увеличиваться или умень�
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Flexbox в CSS3</title>
-        <style>
-            .flex-container {
-                display: flex;
-                border:1px #ccc solid;
-            }
-            .flex-item {
-                text-align:center;
-                font-size: 1em;
-                padding: 1.2em;
-                color: white;
-            }
-            .item1 {background-color: #675BA7; flex-basis: auto; width:150px;}
-            .item2 {background-color: #9BC850; flex-basis: auto; width:auto;}
-            .item3 {background-color: #A62E5C; flex-basis: 200px;width:150px;}
-        </style>
-    </head>
-    <body>
-        <div class="flex-container">
-            <div class="flex-item item1">Flex Item 1</div>
-            <div class="flex-item item2">Flex Item 2</div>
-            <div class="flex-item item3">Flex Item 3</div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Flexbox в CSS3</title>
+    <style>
+      .flex-container {
+        display: flex;
+        border: 1px #ccc solid;
+      }
+      .flex-item {
+        text-align: center;
+        font-size: 1em;
+        padding: 1.2em;
+        color: white;
+      }
+      .item1 {
+        background-color: #675ba7;
+        flex-basis: auto;
+        width: 150px;
+      }
+      .item2 {
+        background-color: #9bc850;
+        flex-basis: auto;
+        width: auto;
+      }
+      .item3 {
+        background-color: #a62e5c;
+        flex-basis: 200px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item1">Flex Item 1</div>
+      <div class="flex-item item2">Flex Item 2</div>
+      <div class="flex-item item3">Flex Item 3</div>
+    </div>
+  </body>
 </html>
 ```
 
@@ -68,32 +81,45 @@ Flex-контейнер может увеличиваться или умень�
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Flexbox в CSS3</title>
-        <style>
-            .flex-container {
-                display: flex;
-                border:1px #ccc solid;
-                width:400px;
-            }
-            .flex-item {
-                text-align:center;
-                font-size: 1em;
-                padding: 1.2em;
-                color: white;
-            }
-            .item1 {background-color: #675BA7; flex-basis: 200px; flex-shrink:1;}
-            .item2 {background-color: #9BC850; flex-basis: 200px; flex-shrink:2;}
-            .item3 {background-color: #A62E5C; flex-basis: 200px; flex-shrink:3;}
-        </style>
-    </head>
-    <body>
-        <div class="flex-container">
-            <div class="flex-item item1">Flex Item 1</div>
-            <div class="flex-item item2">Flex Item 2</div>
-            <div class="flex-item item3">Flex Item 3</div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Flexbox в CSS3</title>
+    <style>
+      .flex-container {
+        display: flex;
+        border: 1px #ccc solid;
+        width: 400px;
+      }
+      .flex-item {
+        text-align: center;
+        font-size: 1em;
+        padding: 1.2em;
+        color: white;
+      }
+      .item1 {
+        background-color: #675ba7;
+        flex-basis: 200px;
+        flex-shrink: 1;
+      }
+      .item2 {
+        background-color: #9bc850;
+        flex-basis: 200px;
+        flex-shrink: 2;
+      }
+      .item3 {
+        background-color: #a62e5c;
+        flex-basis: 200px;
+        flex-shrink: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item1">Flex Item 1</div>
+      <div class="flex-item item2">Flex Item 2</div>
+      <div class="flex-item item3">Flex Item 3</div>
+    </div>
+  </body>
 </html>
 ```
 
@@ -125,31 +151,41 @@ Flex-контейнер может увеличиваться или умень�
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Flexbox в CSS3</title>
-        <style>
-            .flex-container {
-                display: flex;
-                border:1px #ccc solid;
-            }
-            .flex-item {
-                text-align:center;
-                font-size: 1em;
-                padding: 1.3em;
-                color: white;
-            }
-            .item1 {background-color: #675BA7; flex-grow:0;}
-            .item2 {background-color: #9BC850; flex-grow:1;}
-            .item3 {background-color: #A62E5C; flex-grow:2;}
-        </style>
-    </head>
-    <body>
-        <div class="flex-container">
-            <div class="flex-item item1">Flex Item 1</div>
-            <div class="flex-item item2">Flex Item 2</div>
-            <div class="flex-item item3">Flex Item 3</div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Flexbox в CSS3</title>
+    <style>
+      .flex-container {
+        display: flex;
+        border: 1px #ccc solid;
+      }
+      .flex-item {
+        text-align: center;
+        font-size: 1em;
+        padding: 1.3em;
+        color: white;
+      }
+      .item1 {
+        background-color: #675ba7;
+        flex-grow: 0;
+      }
+      .item2 {
+        background-color: #9bc850;
+        flex-grow: 1;
+      }
+      .item3 {
+        background-color: #a62e5c;
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item1">Flex Item 1</div>
+      <div class="flex-item item2">Flex Item 2</div>
+      <div class="flex-item item3">Flex Item 3</div>
+    </div>
+  </body>
 </html>
 ```
 
@@ -184,34 +220,51 @@ flex: [flex-grow] [flex-shrink] [flex-basis];
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Flexbox в CSS3</title>
-        <style>
-            .flex-container {
-                display: flex;
-                border:1px #ccc solid;
-                width: 600px;
-            }
-            .flex-item {
-                text-align:center;
-                font-size: 16px;
-                padding: 10px 0;
-                color: white;
-            }
-            .item1 {background-color: #675BA7; width: 150px; flex: 0 0 auto }
-            .item2 {background-color: #9BC850; width: 150px; flex: 1 0 auto;}
-            .item3 {background-color: #A62E5C; width: 150px; flex: 0 1 auto;}
-            .item4 {background-color: #2A9FBC; width: 150px; flex: 1 1 auto;}
-        </style>
-    </head>
-    <body>
-        <div class="flex-container">
-            <div class="flex-item item1">Flex Item 1</div>
-            <div class="flex-item item2">Flex Item 2</div>
-            <div class="flex-item item3">Flex Item 3</div>
-            <div class="flex-item item4">Flex Item 4</div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Flexbox в CSS3</title>
+    <style>
+      .flex-container {
+        display: flex;
+        border: 1px #ccc solid;
+        width: 600px;
+      }
+      .flex-item {
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0;
+        color: white;
+      }
+      .item1 {
+        background-color: #675ba7;
+        width: 150px;
+        flex: 0 0 auto;
+      }
+      .item2 {
+        background-color: #9bc850;
+        width: 150px;
+        flex: 1 0 auto;
+      }
+      .item3 {
+        background-color: #a62e5c;
+        width: 150px;
+        flex: 0 1 auto;
+      }
+      .item4 {
+        background-color: #2a9fbc;
+        width: 150px;
+        flex: 1 1 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item1">Flex Item 1</div>
+      <div class="flex-item item2">Flex Item 2</div>
+      <div class="flex-item item3">Flex Item 3</div>
+      <div class="flex-item item4">Flex Item 4</div>
+    </div>
+  </body>
 </html>
 ```
 
@@ -222,3 +275,10 @@ flex: [flex-grow] [flex-shrink] [flex-basis];
 При сжатии контейнера будут уменьшаться 3-й и 4-й элементы, так как у них свойство `flex-shrink` больше нуля. И так как у обоих элементов это свойство равно `1`, то оба элемента будут уменьшаться в равных долях.
 
 При растяжении контейнера будут увеличиваться 2-й и 4-й элементы, так как у этих элементов свойство `flex-grow` больше нуля. И также, так как это свойство равно `1`, то эти элементы будут увеличиваться в равных долях.
+
+## См. также
+
+- [flex](../flex.md)
+- [flex-basis](../flex-basis.md)
+- [flex-shrink](../flex-shrink.md)
+- [flex-grow](../flex-grow.md)

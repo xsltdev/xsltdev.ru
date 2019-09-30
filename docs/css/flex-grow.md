@@ -129,3 +129,7 @@ flex-grow: 1;
 <p><button>Отправить</button></p>
 </form>
 </div>
+
+## См. также
+
+- [Руководство по Flexbox](flex-guide/flex-1.md)

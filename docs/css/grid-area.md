@@ -101,3 +101,7 @@ CSS
 Результат
 
 ![Пример использования свойства grid-area](grid-area.png)
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

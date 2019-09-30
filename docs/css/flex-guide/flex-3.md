@@ -165,3 +165,7 @@
 ```
 
 ![flex-wrap](flex-3-3.png)
+
+## См. также
+
+- [flex-wrap](../flex-wrap.md)

@@ -176,6 +176,11 @@ grid-template-areas:
 
 ![Области грида](grid-11-3.png)
 
+## См. также
+
+- [grid-template-areas](../grid-template-areas.md)
+- [grid-area](../grid-area.md)
+
 <small markdown="1">
 
 1. [Что такое Grid Layout. Grid Container](grid-1.md)

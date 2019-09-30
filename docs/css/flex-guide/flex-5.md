@@ -99,3 +99,7 @@
 Выравнивание при расположении в виде столбцов:
 
 ![Выравнивание элементов. justify-content](flex-5-2.png)
+
+## См. также
+
+- [justify-content](../justify-content.md)

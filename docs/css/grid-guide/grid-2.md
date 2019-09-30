@@ -160,6 +160,11 @@ grid-template-columns: 8em 7em 8em;
 
 И поскольку ячеек грида больше, чем элементов, то последняя строка оказывается пустой.
 
+## См. также
+
+- [grid-template-columns](../grid-template-columns.md)
+- [grid-template-rows](../grid-template-rows.md)
+
 <small markdown="1">
 
 1. [Что такое Grid Layout. Grid Container](grid-1.md)

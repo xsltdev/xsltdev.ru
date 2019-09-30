@@ -110,3 +110,7 @@ Safari до версии 9 поддерживает свойство `-webkit-fl
   </body>
 </html>
 ```
+
+## См. также
+
+- [Руководство по Flexbox](flex-guide/flex-1.md)

@@ -125,3 +125,8 @@ font-size: 2em;
 <li class="flex-item">4</li>
 <li class="flex-item">5</li>
 </ul>
+
+## См. также
+
+- [Руководство по Flexbox](flex-guide/flex-1.md)
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

@@ -158,3 +158,7 @@ CSS
 ```
 
 ![CSS Grid Auto Flow Column](grid-auto-flow-column.png)
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

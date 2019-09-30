@@ -97,3 +97,7 @@ CSS
 Результат
 
 ![Пример использования свойства grid-auto-rows](grid-auto-rows.png)
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

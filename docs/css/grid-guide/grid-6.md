@@ -176,6 +176,16 @@ grid-area: row-start / column-start / row-end / column-end;
 
 ![Позиционирование элементов](grid-6-5.png)
 
+## См. также
+
+- [grid-row](../grid-row.md)
+- [grid-column](../grid-column.md)
+- [grid-area](../grid-area.md)
+- [grid-row-start](../grid-row-start.md)
+- [grid-row-end](../grid-row-end.md)
+- [grid-column-start](../grid-column-start.md)
+- [grid-column-end](../grid-column-end.md)
+
 <small markdown="1">
 
 1. [Что такое Grid Layout. Grid Container](grid-1.md)

@@ -94,6 +94,12 @@
 }
 ```
 
+## См. также
+
+- [grid-gap](../grid-gap.md)
+- [grid-column-gap](../grid-column-gap.md)
+- [grid-row-gap](../grid-row-gap.md)
+
 <small markdown="1">
 
 1. [Что такое Grid Layout. Grid Container](grid-1.md)

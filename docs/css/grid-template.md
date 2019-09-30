@@ -139,3 +139,7 @@ HTML
 Результат:
 
 ![Пример использования свойства grid-template](grid-template.png)
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

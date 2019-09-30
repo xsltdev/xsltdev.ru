@@ -102,3 +102,7 @@ CSS
 Результат
 
 ![Пример использования свойства grid-auto-columns](grid-auto-columns.png)
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

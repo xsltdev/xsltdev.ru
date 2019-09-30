@@ -112,3 +112,7 @@ text-align: center;
 <li class="flex-item"><img src="image/aquaria2.jpg" alt=""></li>
 <li class="flex-item"><img src="image/aquaria3.jpg" alt=""></li>
 </ul>
+
+## См. также
+
+- [Руководство по Flexbox](flex-guide/flex-1.md)

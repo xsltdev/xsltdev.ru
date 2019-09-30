@@ -67,3 +67,7 @@ grid-column: unset;
 ![CSS Grid Start End](grid-start-end-c.png)
 
 Если значение конечной линии не указано, то элемент будет охватывать только 1 трек, по умолчанию.
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)

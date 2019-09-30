@@ -56,6 +56,10 @@ grid-column-gap: unset;
 }
 ```
 
-![CSS Grid row gap](/workspace/uploads/css/grid-column-row-gap.png)
+![CSS Grid row gap](grid-column-row-gap.png)
 
 Отступы создаются только между колонками и строками, но не для внешних краев сетки.
+
+## См. также
+
+- [Руководство по Grid Layout](grid-guide/grid-1.md)
