@@ -1,5 +1,20 @@
 # Выравнивание элементов. align-items и align-self
 
+<small markdown="1">
+
+1. [Что такое Flexbox. Flex Container](flex-1.md)
+2. [Макет страницы на Flexbox](flex-2.md)
+3. [Направление flex-direction](flex-3.md)
+4. [flex-wrap](flex-4.md)
+5. [flex-flow. Порядок элементов](flex-5.md)
+6. **Выравнивание элементов. justify-content**
+7. [Выравнивание элементов. align-items и align-self](flex-7.md)
+8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
+10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+
+</small>
+
 ## Свойство align-items
 
 Свойство [`align-items`](../align-items.md) также выравнивает элементы, но уже по поперечной оси (cross axis) (при расположении в виде строки по вертикали, при расположении в виде столбца - по горизонтали). Это свойство может принимать следующие значения:
@@ -176,3 +191,18 @@
 
 - [align-items](../align-items.md)
 - [align-self](../align-self.md)
+
+<small markdown="1">
+
+1. [Что такое Flexbox. Flex Container](flex-1.md)
+2. [Макет страницы на Flexbox](flex-2.md)
+3. [Направление flex-direction](flex-3.md)
+4. [flex-wrap](flex-4.md)
+5. [flex-flow. Порядок элементов](flex-5.md)
+6. **Выравнивание элементов. justify-content**
+7. [Выравнивание элементов. align-items и align-self](flex-7.md)
+8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
+10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+
+</small>

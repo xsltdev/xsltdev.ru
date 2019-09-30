@@ -1,5 +1,20 @@
 # Многоколоночный дизайн на Flexbox
 
+<small markdown="1">
+
+1. [Что такое Flexbox. Flex Container](flex-1.md)
+2. [Макет страницы на Flexbox](flex-2.md)
+3. [Направление flex-direction](flex-3.md)
+4. [flex-wrap](flex-4.md)
+5. [flex-flow. Порядок элементов](flex-5.md)
+6. [Выравнивание элементов. justify-content](flex-6.md)
+7. [Выравнивание элементов. align-items и align-self](flex-7.md)
+8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+9. **Управление элементами. flex-basis, flex-shrink и flex-grow**
+10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+
+</small>
+
 Рассмотрим, как сделать простейшие многоколонночные макеты страницы с помощью Flexbox.
 
 ## Двуколоночный дизайн
@@ -164,3 +179,18 @@
 В этом случае первый элемент всегда будет занимать 50% пространства контейнера:
 
 ![Многоколоночный дизайн на Flexbox](flex-9-3.png)
+
+<small markdown="1">
+
+1. [Что такое Flexbox. Flex Container](flex-1.md)
+2. [Макет страницы на Flexbox](flex-2.md)
+3. [Направление flex-direction](flex-3.md)
+4. [flex-wrap](flex-4.md)
+5. [flex-flow. Порядок элементов](flex-5.md)
+6. [Выравнивание элементов. justify-content](flex-6.md)
+7. [Выравнивание элементов. align-items и align-self](flex-7.md)
+8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+9. **Управление элементами. flex-basis, flex-shrink и flex-grow**
+10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+
+</small>
