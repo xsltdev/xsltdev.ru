@@ -1,3 +1,7 @@
+---
+description: Angular имеет свой собственный механизм реализации анимаций, в основе которого лежит стандарт Web Animations API
+---
+
 # Анимация. Часть 1
 
 Angular имеет свой собственный механизм реализации анимаций, в основе которого лежит стандарт [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
@@ -14,7 +18,13 @@ _example-panel.component.ts_
 @Component({
   selector: 'example-panel',
   templateUrl: './example-panel.component.html',
-  animations: [trigger('expandedPanel', [state('initial', style({ height: 0 })), state('expanded', style({ height: '*' })), transition('initial <=> expanded', animate('0.3s'))])]
+  animations: [
+    trigger('expandedPanel', [
+      state('initial', style({ height: 0 })),
+      state('expanded', style({ height: '*' })),
+      transition('initial <=> expanded', animate('0.3s'))
+    ])
+  ]
 })
 export class ExamplePanelComponent {
   isExpanded: boolean = false
@@ -70,20 +80,26 @@ transition('* => *', animate('0.3s'))
 ```
 
 ```ts
-trigger('animationTriggerName', [transition('void => *', [style({ opacity: 0 }), animate('1.2s', style({ opacity: 1 }))]), transition('* => void', [animate('1.2s', style({ opacity: 0 }))])])
+trigger('animationTriggerName', [
+  transition('void => *', [
+    style({ opacity: 0 }),
+    animate('1.2s', style({ opacity: 1 }))
+  ]),
+  transition('* => void', [animate('1.2s', style({ opacity: 0 }))])
+])
 ```
 
 Определение переходов `void => *` и `* => void` имеют краткие альтернативные варианты записи:
 
 ```ts
-    trigger('animationTriggerName', [
-     transition(':enter', [
-       ...
-     ]),
-     transition(':leave', [
-       ...
-     ])
-    ])
+trigger('animationTriggerName', [
+  transition(':enter', [
+    // code
+  ]),
+  transition(':leave', [
+    // code
+  ])
+])
 ```
 
 Задание стилей для `*` и `void` можно производить прямо в функции `transition()`.
@@ -113,7 +129,14 @@ transition('initial <=> expanded', animate('0.3s'))
 Для определения Angular animation, которая в процессе смены состояний должна применять промежуточные стили, используется функция `keyframes()`, принимающая массив промежуточных стилей, определенных с помощью `style()`.
 
 ```ts
-animate('1.25s', keyframes([style({ fontSize: '12px', offset: 0 }), style({ fontSize: '18px', offset: 0.67 }), style({ fontSize: '16px', offset: 1 })]))
+animate(
+  '1.25s',
+  keyframes([
+    style({ fontSize: '12px', offset: 0 }),
+    style({ fontSize: '18px', offset: 0.67 }),
+    style({ fontSize: '16px', offset: 1 })
+  ])
+)
 ```
 
 Параметр `offset` указывает, в рамках какого интервала анимации применяется промежуточный стиль.
@@ -123,15 +146,19 @@ animate('1.25s', keyframes([style({ fontSize: '12px', offset: 0 }), style({ font
 Для полного контроля Angular анимации у триггера предусмотрено два события `start()` и `done()`, которые срабатывают при старте и окончании анимации соответственно.
 
 ```html
-<div [@animateName]="currentState" (@animateName.start)="whenAnimate($event)" (@animateName.done)="whenAnimate($event)">
+<div
+  [@animateName]="currentState"
+  (@animateName.start)="whenAnimate($event)"
+  (@animateName.done)="whenAnimate($event)"
+>
   <h1>Welcome to webdraftt.com!</h1>
 </div>
 ```
 
 ```js
-    whenAnimate(event){
-     console.log(event);
-    }
+whenAnimate(event){
+	console.log(event);
+}
 ```
 
 Функции, определенные для этих событий, в качестве аргумента получают объект типа `AnimationEvent`, который содержит следующие свойства:
@@ -139,3 +166,7 @@ animate('1.25s', keyframes([style({ fontSize: '12px', offset: 0 }), style({ font
 - `fromState` - исходное состояние;
 - `toState` - состояние, на которое происходит смена;
 - `totalTime` - длительность анимации.
+
+## Ссылки
+
+- [Introduction to Angular animations](https://angular.io/guide/animations)

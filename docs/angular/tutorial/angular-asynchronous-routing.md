@@ -1,3 +1,7 @@
+---
+description: С ростом приложения увеличивается количество его модулей и общее время его загрузки. Для оптимизации скорости работы приложения можно применить асинхронную (lazy load) маршрутизацию
+---
+
 # Маршрутизация. Асинхронная загрузка
 
 С ростом приложения увеличивается количество его модулей и общее время его загрузки. Для оптимизации скорости работы приложения можно применить асинхронную (lazy load) маршрутизацию.
@@ -75,5 +79,12 @@ export class CustomPreloadingStrategyService implements PreloadingStrategy {
 ```ts
 import { CustomPreloadingStrategyService } from './custom-preloading-strategy.service'
 
-RouterModule.forRoot({}, { preloadingStrategy: CustomPreloadingStrategyService })
+RouterModule.forRoot(
+  {},
+  { preloadingStrategy: CustomPreloadingStrategyService }
+)
 ```
+
+## Ссылки
+
+- [Asynchronous routing](https://angular.io/guide/router#milestone-6-asynchronous-routing)

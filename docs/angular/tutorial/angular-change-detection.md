@@ -83,3 +83,8 @@ export class ManualDetectionComponent {
 ```
 
 Здесь изначально отключается механизм отслеживания изменений. Затем переменной `book` присваивается новое значение, но в шаблоне изменения будут видны только после нажатия кнопки `Apply`, которая инициирует принудительный запуск механизма `ChangeDetection`.
+
+## Ссылки
+
+- [ChangeDetectionStrategy](https://angular.io/api/core/ChangeDetectionStrategy)
+- [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef)

@@ -1,3 +1,7 @@
+---
+description: RxJS - это библиотека, реализующая принципы реактивного программирования для JavaScript
+---
+
 # Angular и RxJS
 
 **RxJS** - это библиотека, реализующая принципы реактивного программирования для JavaScript. Основанная на объектах типа `Observable`, она упрощает написание и контроль асинхронного и событийного кода.
@@ -26,32 +30,38 @@
 
 ```ts
 const values = new Observable(observer => {
-	observer.next(8);
-	observer.next(9);
+  observer.next(8)
+  observer.next(9)
 
-	const handler = () => {
-		console.log('Click detected');
-	});
+  const handler = () => {
+    console.log('Click detected')
+  }
 
-	document.addEventListener('click', handler);
+  document.addEventListener('click', handler)
 
-	observer.complete();
+  observer.complete()
 
-	return {
-		unsubscribe() {
-			console.log('Unsubscribed');
-			document.removeEventListener('click', handler);
-		}
-	};
-);
+  return {
+    unsubscribe() {
+      console.log('Unsubscribed')
+      document.removeEventListener('click', handler)
+    }
+  }
+})
 
 const subscription = values.subscribe(
-	v => { console.log(v); },
-	error => { console.log(error); },
-	() => { console.log('Completed'); }
-);
+  v => {
+    console.log(v)
+  },
+  error => {
+    console.log(error)
+  },
+  () => {
+    console.log('Completed')
+  }
+)
 
-subscription.unsubscribe();
+subscription.unsubscribe()
 ```
 
 Здесь принимаемый функцией объект `observer` сначала используется для передачи значений (метод `next()`), а затем для оповещения всех подписчиков об окончании рассылки (метод `complete()`).
@@ -77,8 +87,8 @@ values.subscribe(value => {
 
 ```ts
 const values = new Observable(observer => {
-	observer.next([1, 2, 3]);
-);
+  observer.next([1, 2, 3])
+})
 ```
 
 Если необходимо, чтобы обработчик вместо всего массива сразу получал каждый его элемент в отдельности, используйте оператор `from`.
@@ -88,13 +98,11 @@ const values = new Observable(observer => {
 Теперь рассмотрим пример преобразования данных с использованием оператора `map`.
 
 ```ts
-    const values = Observable.of(1, 2, 3);
+const values = Observable.of(1, 2, 3)
 
-    values.pipe(
-      map(number => number * 2)
-    }).subscribe(v => {
-      console.log(v);
-    });
+values.pipe(map(number => number * 2)).subscribe(v => {
+  console.log(v)
+})
 ```
 
 Здесь `map()` умножает каждое значение элемента массива на 2.
@@ -177,3 +185,8 @@ asyncSubject.next(9)
 
 asyncSubject.complete()
 ```
+
+## Ссылки
+
+- [The RxJS library](https://angular.io/guide/rx-library)
+- [Observables in Angular](https://angular.io/guide/observables-in-angular)

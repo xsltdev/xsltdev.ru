@@ -1,3 +1,7 @@
+---
+description: В Angular анимации можно определить стили один раз и использовать их в нескольких компонентах при создании для них анимированных смен состояний
+---
+
 # Анимация. Часть 2
 
 ## Переиспользование анимации
@@ -22,23 +26,22 @@ export const reusableAnimation = animation([
 Пример такой Angular анимации.
 
 ```ts
-    @Component({
-       selector: 'reusable-animation',
-       templateUrl: './reusable-animation.component.html',
-       animations: [
-           trigger('reusableAnimation', [
-               transition('initial => expanded', useAnimation(reusableAnimation, {
-                  params: {
-                   backgroundColor: '#fff',
-                   fontSize: '16px',
-                   time: '0.3s',
-                   width: '100%'
-                }
-               }))
-           ])
-       ]
-    })
-    ...
+@Component({
+	selector: 'reusable-animation',
+	templateUrl: './reusable-animation.component.html',
+	animations: [
+		trigger('reusableAnimation', [
+			transition('initial => expanded', useAnimation(reusableAnimation, {
+				params: {
+					backgroundColor: '#fff',
+					fontSize: '16px',
+					time: '0.3s',
+					width: '100%'
+				}
+			}))
+		])
+	]
+})
 ```
 
 Функция `useAnimation()` принимает два параметра: первый - анимация, определенная для переиспользования, второй - объект, в свойстве params которого указываются значения параметров.
@@ -57,7 +60,18 @@ export const reusableAnimation = animation([
 Рассмотрим применение сложной анимации одновременно к нескольким элементам, используя `query()` и `stagger()`.
 
 ```js
-animations: [trigger('appearingItems', [transition(':enter', [query('ul.users li', [style({ opacity: 0, transform: 'translateY(-100px)' }), stagger(-50, [animate('300ms', style({ opacity: 1, transform: 'none' }))])])])])]
+animations: [
+  trigger('appearingItems', [
+    transition(':enter', [
+      query('ul.users li', [
+        style({ opacity: 0, transform: 'translateY(-100px)' }),
+        stagger(-50, [
+          animate('300ms', style({ opacity: 1, transform: 'none' }))
+        ])
+      ])
+    ])
+  ])
+]
 ```
 
 Здесь Angular анимация `appearingItems` определяется для появляющихся элементов списка (состояние `:enter`) с классом стилей `.users`.
@@ -67,7 +81,17 @@ animations: [trigger('appearingItems', [transition(':enter', [query('ul.users li
 Теперь перейдем к примеру с использованием `group()`.
 
 ```ts
-animations: [trigger('groupAnimation', [transition(':enter', [style({ transform: 'translateX(-100px)', opacity: 0 }), group([animate('0.3s ease', style({ transform: 'translateX(0)' })), animate('0.2s 0.15 ease', style({ opacity: 1 }))])])])]
+animations: [
+  trigger('groupAnimation', [
+    transition(':enter', [
+      style({ transform: 'translateX(-100px)', opacity: 0 }),
+      group([
+        animate('0.3s ease', style({ transform: 'translateX(0)' })),
+        animate('0.2s 0.15 ease', style({ opacity: 1 }))
+      ])
+    ])
+  ])
+]
 ```
 
 Сразу стоит отметить, что функция `group()` группирует не элементы, а стадии составной анимации применительно к одному элементу, которые работают одновременно и независимо друг от друга.
@@ -77,7 +101,17 @@ animations: [trigger('groupAnimation', [transition(':enter', [style({ transform:
 Для выполнения этой же Angular анимации последовательно без использования задержки, используется функция `sequence()`.
 
 ```ts
-animations: [trigger('sequenceAnimation', [transition(':enter', [style({ transform: 'translateX(-100px)', opacity: 0 }), sequence([animate('0.3s ease', style({ transform: 'translateX(0)' })), animate('0.2s 0.15 ease', style({ opacity: 1 }))])])])]
+animations: [
+  trigger('sequenceAnimation', [
+    transition(':enter', [
+      style({ transform: 'translateX(-100px)', opacity: 0 }),
+      sequence([
+        animate('0.3s ease', style({ transform: 'translateX(0)' })),
+        animate('0.2s 0.15 ease', style({ opacity: 1 }))
+      ])
+    ])
+  ])
+]
 ```
 
 ## Анимированная смена маршрутов
@@ -89,19 +123,19 @@ animations: [trigger('sequenceAnimation', [transition(':enter', [style({ transfo
 _app-routing.module.ts_
 
 ```ts
-    const routes: Routes = [
-     {
-       {path: 'page1', component: Page1Component, data: {animation: 'page1'}},
-       {path: 'page2', component: Page2Component, data: {animation: 'page2'}}
-     }
-    ];
+const routes: Routes = [
+	{
+		{path: 'page1', component: Page1Component, data: {animation: 'page1'}},
+		{path: 'page2', component: Page2Component, data: {animation: 'page2'}}
+	}
+];
 
-    @NgModule({
-     imports: [RouterModule.forRoot(routes)],
-     exports: [RouterModule]
-    })
+@NgModule({
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
+})
 
-    export class AppRoutingModule {}
+export class AppRoutingModule {}
 ```
 
 _app.component.html_
@@ -124,7 +158,11 @@ export class AppComponent {
   constructor() {}
 
   getRouteAnimationState(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['animation']
+    )
   }
 }
 ```
@@ -145,7 +183,10 @@ export const routeChangeAnimation = trigger('routeChangeAnimation', [
     ]),
     query(':enter', [style({ left: '-100%' })]),
     query(':leave', animateChild()),
-    group([query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]), query(':enter', [animate('300ms ease-out', style({ left: '0%' }))])]),
+    group([
+      query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]),
+      query(':enter', [animate('300ms ease-out', style({ left: '0%' }))])
+    ]),
     query(':enter', animateChild())
   ])
 ])
@@ -176,15 +217,13 @@ style({ position: 'relative' }),
 Далее представление маршрута, на который осуществляется переход, скрывается сдвигом влево.
 
 ```ts
-query(':enter', [
-	style({ left: '-100%'})
-]),
+query(':enter', [style({ left: '-100%' })])
 ```
 
 А в представлении, с которого происходит переход, инициируется с помощью функции `animateChild()` вызов его дочерних анимаций.
 
 ```ts
-    query(':leave', animateChild()),
+query(':leave', animateChild())
 ```
 
 Для понимания, в коде ниже анимация `childAnimation` является дочерней по отношению к анимации `parentAnimation`:
@@ -200,7 +239,10 @@ query(':enter', [
 После функция `group()` запускает одновременно анимированную смену представлений. Старое представление сдвигается за пределы окна вправо, а новое, которое было изначально спрятано слева, появляется.
 
 ```ts
-group([query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]), query(':enter', [animate('300ms ease-out', style({ left: '0%' }))])])
+group([
+  query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]),
+  query(':enter', [animate('300ms ease-out', style({ left: '0%' }))])
+])
 ```
 
 И в конце инициируется запуск дочерних Angular анимаций нового представления.
@@ -208,3 +250,7 @@ group([query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]), qu
 ```ts
 query(':enter', animateChild())
 ```
+
+## Ссылки
+
+- [Introduction to Angular animations](https://angular.io/guide/animations)
