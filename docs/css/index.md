@@ -40,7 +40,6 @@ description: Справочник свойств CSS с примерами ко�
 - [:defined](:defined.md)
 - [:dir()](:dir().md)
 - [:disabled](:disabled.md)
-- :drop
 - [:empty](:empty.md)
 - [:enabled](:enabled.md)
 - [:first](:first.md)
@@ -51,7 +50,7 @@ description: Справочник свойств CSS с примерами ко�
 - [:focus-within](:focus-within.md)
 - [:fullscreen](:fullscreen.md)
 - [:future](:future.md)
-- :has()
+- [:has()](:has().md)
 - :host
 - :host()
 - :host-context()
@@ -84,7 +83,7 @@ description: Справочник свойств CSS с примерами ко�
 - [:required](:required.md)
 - :right
 - [:root](:root.md)
-- :scope
+- [:scope](:scope.md)
 - [:target](:target.md)
 - :target-within
 - :user-invalid

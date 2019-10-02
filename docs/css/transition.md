@@ -1,3 +1,7 @@
+---
+description: Универсальное свойство transition, которое позволяет одновременно задать значения transition-property, transition-duration, transition-timing-function и transition-delay
+---
+
 # transition
 
 Универсальное свойство **`transition`**, которое позволяет одновременно задать значения [`transition-property`](transition-property.md), [`transition-duration`](transition-duration.md), [`transition-timing-function`](transition-timing-function.md) и [`transition-delay`](transition-delay.md).
@@ -34,7 +38,8 @@ transition: unset;
 
 ## Значения
 
-- `none` — Отменяет эффект перехода.
+`none`
+: Отменяет эффект перехода.
 
 ### Примечание
 
@@ -42,13 +47,9 @@ transition: unset;
 - Opera до версии 12.10 поддерживает свойство `-o-transition`.
 - Firefox до версии 16 поддерживает свойство `-moz-transition`.
 
-Значение по-умолчанию:
+Значение по-умолчанию: `all 0s ease 0s`
 
-```css
-transition: all 0s ease 0s;
-```
-
-Применяется к: Ко всем элементам, к псевдоэлементам `::before` и `::after`
+Применяется ко всем элементам, к псевдоэлементам [`::before`](::before.md) и [`::after`](::after.md)
 
 ## Спецификации
 

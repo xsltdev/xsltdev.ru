@@ -1,3 +1,7 @@
+---
+description: Свойство transform-style определяет, как дочерние элементы будут отображаться в 3D-пространстве
+---
+
 # transform-style
 
 Свойство **`transform-style`** определяет, как дочерние элементы будут отображаться в 3D-пространстве. Это свойство должно использоваться совместно с [`transform`](transform.md).
@@ -28,13 +32,9 @@ transform-style: unset;
 - Chrome до версии 36, Safari, Opera, Android и iOS поддерживают свойство `-webkit-transform-style`.
 - Firefox до версии 16 поддерживает свойство `-moz-transform-style`.
 
-Значение по-умолчанию:
+Значение по-умолчанию: `flat`
 
-```css
-transform-style: flat;
-```
-
-Применяется к: К трансформируемым элементам
+Применяется к трансформируемым элементам
 
 ## Спецификации
 
@@ -74,7 +74,10 @@ CSS Transform 3D:
     </style>
   </head>
   <body>
-    <p><img src="image/igels.png" alt="Ёжик" class="turn" /> <img src="image/igels.png" alt="Ёжик" class="turn" /></p>
+    <p>
+      <img src="image/igels.png" alt="Ёжик" class="turn" />
+      <img src="image/igels.png" alt="Ёжик" class="turn" />
+    </p>
   </body>
 </html>
 ```

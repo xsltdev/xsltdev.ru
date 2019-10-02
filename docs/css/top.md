@@ -1,3 +1,7 @@
+---
+description: Свойство top для позиционированного элемента определяет расстояние от верхнего края родительского элемента до верхнего края дочернего элемента
+---
+
 # top
 
 Свойство **`top`** для позиционированного элемента определяет расстояние от верхнего края родительского элемента до верхнего края дочернего элемента. Отсчёт координат зависит от значения свойства [position](position.md). Если оно равно `absolute`, в качестве родителя выступает окно браузера и положение элемента определяется от его верхнего края (рис. 1).
@@ -31,15 +35,12 @@ top: unset;
 
 В качестве значений принимаются любые единицы длины, принятые в CSS — например, пиксели (px), дюймы (in), пункты (pt) и др. Значение свойства `top` может быть и отрицательным, в этом случае возможны наложения разных элементов друг на друга. При задании значения в процентах, положение элемента вычисляется в зависимости от высоты родительского элемента.
 
-- `auto` — Не изменяет положение элемента.
+`auto`
+: Не изменяет положение элемента.
 
-Значение по-умолчанию:
+Значение по-умолчанию: `auto`
 
-```css
-top: auto;
-```
-
-Применяется к: Ко всем элементам
+Применяется ко всем элементам
 
 ## Спецификации
 
@@ -78,10 +79,15 @@ top: auto;
   </head>
   <body>
     <div class="content">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat. Ut wisis enim ad minim veniam, quis nostrud exerci tution ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis te feugifacilisi.
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy
+      nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat. Ut
+      wisis enim ad minim veniam, quis nostrud exerci tution ullamcorper
+      suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis te
+      feugifacilisi.
     </div>
     <div class="menu">
-      Ut wisi enim ad minim veniam, quis nostrud exerci taion ullamcorper suscipit lobortis nisl ut aliquip ex en commodo consequat.
+      Ut wisi enim ad minim veniam, quis nostrud exerci taion ullamcorper
+      suscipit lobortis nisl ut aliquip ex en commodo consequat.
     </div>
   </body>
 </html>
