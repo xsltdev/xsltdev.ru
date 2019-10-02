@@ -4,7 +4,7 @@ description: Свойство perspective-origin определяет позиц
 
 # perspective-origin
 
-Свойство **`perspective-origin`** определяет позицию, из которой смотрит зритель. Оно используется в качестве точки схода свойством [perspective](perspective.md).
+Свойство **`perspective-origin`** определяет позицию, из которой смотрит зритель. Оно используется в качестве точки схода свойством [`perspective`](perspective.md).
 
 Свойства `perspective-origin` и `perspective` прикрепляются к родительскому элементу дочернего элемента, преобразованного в трехмерном пространстве, в отличие от функции преобразования `perspective()`, которая размещается на преобразованном элементе.
 
@@ -333,9 +333,9 @@ section {
 
 ## См. также
 
-- [transform-style](transform-style.md)
-- [perspective](perspective.md)
+- [`transform-style`](transform-style.md)
+- [`perspective`](perspective.md)
 
 ## Ссылки
 
-- [perspective-origin](https://developer.mozilla.org/ru/docs/Web/CSS/perspective-origin) на MDN
+- [`perspective-origin`](https://developer.mozilla.org/ru/docs/Web/CSS/perspective-origin) на MDN

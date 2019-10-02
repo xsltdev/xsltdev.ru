@@ -1,6 +1,10 @@
+---
+description: Свойство place-content является сокращением для align-content и justify-content
+---
+
 # place-content
 
-Свойство **`place-content`** является сокращением для [align-content](align-content.md) и [justify-content](justify-content.md). Он может использоваться в любом методе компоновки, который использует оба этих значения выравнивания.
+Свойство **`place-content`** является сокращением для [`align-content`](align-content.md) и [`justify-content`](justify-content.md). Он может использоваться в любом методе компоновки, который использует оба этих значения выравнивания.
 
 Первое значение - это значение свойства `align-content`, второе - значение `justify-content`.
 
@@ -37,7 +41,7 @@ place-content: unset;
 
 Значение по-умолчанию: `normal`
 
-Применяется к: флекс-элементам
+Применяется к флекс-элементам
 
 ## Спецификации
 
@@ -94,5 +98,5 @@ div > div {
 
 ## См. также
 
-- [align-content](align-content.md)
-- [justify-content](justify-content.md)
+- [`align-content`](align-content.md)
+- [`justify-content`](justify-content.md)

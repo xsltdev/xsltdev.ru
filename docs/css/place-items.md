@@ -1,3 +1,7 @@
+---
+description: Сокращенное свойство place-items устанавливает свойства align-items и justify-items соответственно
+---
+
 # place-items
 
 Сокращенное свойство **`place-items`** устанавливает свойства [`align-items`](align-items.md) и [`justify-items`](justify-items.md) соответственно. Если второе значение не установлено, для него также используется первое значение.
@@ -36,8 +40,6 @@ place-items: unset;
 
 Значение по-умолчанию: `normal legacy`
 
-Применяется к:
-
 ## Спецификации
 
 - [CSS Box Alignment Module Level 3](https://drafts.csswg.org/css-align-3/#place-items-property)
@@ -70,7 +72,7 @@ place-items: unset;
 
 ## См. также
 
-- [align-items](align-items.md)
-- [align-self](align-self.md)
-- [justify-items](justify-items.md)
-- [justify-self](justify-self.md)
+- [`align-items`](align-items.md)
+- [`align-self`](align-self.md)
+- [`justify-items`](justify-items.md)
+- [`justify-self`](justify-self.md)

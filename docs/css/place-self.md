@@ -1,3 +1,7 @@
+---
+description: Свойство place-self - это сокращенное свойство, устанавливающее свойства align-self и justify-self
+---
+
 # place-self
 
 Свойство **`place-self`** - это сокращенное свойство, устанавливающее свойства [`align-self`](align-self.md) и [`justify-self`](justify-self.md). Если второе значение отсутствует, для него используется первое значение.
@@ -36,7 +40,7 @@ place-self: unset;
 
 Значение по-умолчанию: `auto auto`
 
-Применяется к: гридам
+Применяется к гридам
 
 ## Спецификации
 
@@ -56,5 +60,5 @@ place-self: unset;
 
 ## См. также
 
-- [align-self](align-self.md)
-- [justify-self](justify-self.md)
+- [`align-self`](align-self.md)
+- [`justify-self`](justify-self.md)
