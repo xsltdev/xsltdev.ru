@@ -1,14 +1,18 @@
+---
+description: Каждый раз, когда в Angular приложении осуществляется навигация, Router сервис инициирует ряд событий
+---
+
 # Маршрутизация. Router events
 
-Каждый раз, когда в Angular приложении осуществляется навигация, `Router` сервис инициирует ряд событий:
+Каждый раз, когда в Angular приложении осуществляется навигация, [`Router`](https://angular.io/api/router/Router) сервис инициирует ряд событий:
 
-- `NavigationStart` - начало навигации;
-- `RoutesRecognized` - завершение процесса парсинга URL и распознавания маршрутов;
-- `RouteConfigLoadStart` - инициируется непосредственно перед асинхронной загрузкой маршрутов;
-- `RouteConfigLoadEnd` - инициируется непосредственно после асинхронной загрузкой маршрутов;
-- `NavigationEnd` - завершение навигации;
-- `NavigationCancel` - навигация отклонена, возникает, когда guard возвращает `false`;
-- `NavigationError` - возникновение непредвиденной ошибки в процессе осуществления навигации.
+- [`NavigationStart`](https://angular.io/api/router/NavigationStart) - начало навигации;
+- [`RoutesRecognized`](https://angular.io/api/router/RoutesRecognized) - завершение процесса парсинга URL и распознавания маршрутов;
+- [`RouteConfigLoadStart`](https://angular.io/api/router/RouteConfigLoadStart) - инициируется непосредственно перед асинхронной загрузкой маршрутов;
+- [`RouteConfigLoadEnd`](https://angular.io/api/router/RouteConfigLoadEnd) - инициируется непосредственно после асинхронной загрузкой маршрутов;
+- [`NavigationEnd`](https://angular.io/api/router/NavigationEnd) - завершение навигации;
+- [`NavigationCancel`](https://angular.io/api/router/NavigationCancel) - навигация отклонена, возникает, когда guard возвращает `false`;
+- [`NavigationError`](https://angular.io/api/router/NavigationError) - возникновение непредвиденной ошибки в процессе осуществления навигации.
 
 Перечисленные выше события могут быть обработаны в любом компоненте или сервисе приложения. Чтобы определить для них обработчики, необходимо "подписаться" на свойство `events` сервиса `Router`.
 
@@ -37,3 +41,7 @@ export class HomePageComponent {
 Обратите внимание, что классы событий должны быть импортированы из библиотеки `@angular/router`.
 
 Например, приведенное выше можно использовать для отображения/скрытия индикатора загрузки страницы.
+
+## Ссылки
+
+- [Router events](https://angular.io/guide/router#router-events)

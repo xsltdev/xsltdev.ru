@@ -1,3 +1,7 @@
+---
+description: Пользователь всегда взаимодействует с интерфейсом приложения - наводит курсор на элементы, кликает мышкой по элементам web-страницы, нажимает клавиши. Это в свою очередь инициирует возникновение соответствующих событий
+---
+
 # Обработка событий
 
 Пользователь всегда взаимодействует с интерфейсом приложения: наводит курсор на элементы, кликает мышкой по элементам web-страницы, нажимает клавиши. Это в свою очередь инициирует возникновение соответствующих событий.
@@ -55,7 +59,7 @@ export class AppComponent {
 
 ## Пользовательские Angular события
 
-Часто в сложных приложениях стандартных событий бывает недостаточно и разработчикам приходится реализовывать собственные. За этот функционал отвечает класс `EventEmitter`.
+Часто в сложных приложениях стандартных событий бывает недостаточно и разработчикам приходится реализовывать собственные. За этот функционал отвечает класс [`EventEmitter`](https://angular.io/api/core/EventEmitter).
 
 Разберем на примере двух компонентов: `ContactsComponent` и `ContactsItemComponent`.
 
@@ -65,7 +69,9 @@ _contacts.component.ts_
 @Component({
   selector: 'contacts',
   template: `
-    <contacts-item (saveContactPerson)="catchCustomEvent($event)"></contacts-item>
+    <contacts-item
+      (saveContactPerson)="catchCustomEvent($event)"
+    ></contacts-item>
   `
 })
 export class ContactsComponent {
@@ -106,12 +112,12 @@ export class ContactsItemComponent {
 Обратите внимание, что название события совпадает с именем свойства, которое является экземпляром класса `EventEmitter`.
 
 ```ts
-    @Output() saveContactPerson= new EventEmitter<String>();
+@Output() saveContactPerson = new EventEmitter<String>();
 
-    (saveContactPerson) = "catchCustomEvent($event)"
+(saveContactPerson) = "catchCustomEvent($event)"
 ```
 
-Свойства с декораторами `@Input()` и `@Output()` подробно рассмотрены [здесь](angular-components.md).
+Свойства с декораторами [`@Input()`](https://angular.io/api/core/Input) и [`@Output()`](https://angular.io/api/core/Output) подробно рассмотрены [здесь](angular-components.md).
 
 !!! info ""
 

@@ -1,3 +1,7 @@
+---
+description: Angular директивы используются для изменения внешнего вида или поведения DOM-элемента
+---
+
 # Директивы
 
 Angular директивы используются для изменения внешнего вида или поведения DOM-элемента. Выделяют три типа директив:
@@ -12,7 +16,7 @@ Angular директивы используются для изменения в
 
 По умолчанию в Angular предусмотрен ряд встроенных директив. Рассмотрим самые популярные из них.
 
-К встроенным структурным директивам относятся: `*ngIf`, `*ngFor`, `*ngSwitch` и др. Все Angular директивы этой группы предваряются символом `*`.
+К встроенным структурным директивам относятся: [`*ngIf`](https://angular.io/api/common/NgIf), `*ngFor`, [`*ngSwitch`](https://angular.io/api/common/NgSwitch) и др. Все Angular директивы этой группы предваряются символом `*`.
 
 ## \*ngIf
 
@@ -92,11 +96,11 @@ car: string = 'Audi'
 </div>
 ```
 
-Angular директивы `*ngSwitchCase` и `*ngSwitchDefault` отображают указанный шаблон в зависимости от значения переданной `ngSwitch` переменной или шаблон по умолчанию, если ни один из описанных случаев не соответствует реальному значению.
+Angular директивы [`*ngSwitchCase`](https://angular.io/api/common/NgSwitchCase) и [`*ngSwitchDefault`](https://angular.io/api/common/NgSwitchDefault) отображают указанный шаблон в зависимости от значения переданной `ngSwitch` переменной или шаблон по умолчанию, если ни один из описанных случаев не соответствует реальному значению.
 
 ## ngStyle и ngClass
 
-К наиболее используемым директивам атрибутам относятся `[ngStyle]` и `[ngClass]`.
+К наиболее используемым директивам атрибутам относятся [`[ngStyle]`](https://angular.io/api/common/NgStyle) и [`[ngClass]`](https://angular.io/api/common/NgClass).
 
 **`[ngStyle]`** принимает объект, в котором ключами служат наименования CSS-свойств, а их значениями - возможные значения соответствующих CSS-свойств.
 
@@ -130,3 +134,7 @@ elementStyles: any = {
 ```html
 <div [ngClass]="['label', 'label-small']">Some text</div>
 ```
+
+## Ссылки
+
+- [Structural Directives](https://angular.io/guide/structural-directives)

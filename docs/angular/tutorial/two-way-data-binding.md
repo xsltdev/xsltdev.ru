@@ -1,3 +1,7 @@
+---
+description: Механизм двустороннего связывания (angular two way binding) используется, когда необходимо отобразить свойство в шаблоне (одностороннее связывание) и обновить его при изменении значения (возникновение события) без перезагрузки страницы
+---
+
 # Двустороннее связывание
 
 Механизм двустороннего связывания (angular two way binding) используется, когда необходимо отобразить свойство в шаблоне (одностороннее связывание) и обновить его при изменении значения (возникновение события) без перезагрузки страницы.
@@ -57,11 +61,11 @@ export class ContactsItemComponent {
 
     Общепринято при использовании angular two way binding метод, который изменяет значение отслеживаемого свойства (здесь name), называть как "имя свойства" + "Change" (здесь `nameChange`).
 
-Декораторы `@Input()` и `@Output()` рассмотрены [здесь](angular-components.md).
+Декораторы [`@Input()`](https://angular.io/api/core/Input) и [`@Output()`](https://angular.io/api/core/Output) рассмотрены [здесь](angular-components.md).
 
 ## NgModel
 
-Для двустороннего связывания в полях формы используется встроенная в Angular директива `NgModel`.
+Для двустороннего связывания в полях формы используется встроенная в Angular директива [`NgModel`](https://angular.io/api/forms/NgModel).
 
 ```html
 <input type="text" [(ngModel)]="contactPerson" />
@@ -73,4 +77,4 @@ export class ContactsItemComponent {
 
     Директива может использоваться только с элементами формы.
 
-`NgModel` находится в `FormsModule`, поэтому перед тем, как ее использовать, импортируйте `FormsModule` библиотеки `@angular/forms`.
+`NgModel` находится в [`FormsModule`](https://angular.io/api/forms/FormsModule), поэтому перед тем, как ее использовать, импортируйте `FormsModule` библиотеки `@angular/forms`.

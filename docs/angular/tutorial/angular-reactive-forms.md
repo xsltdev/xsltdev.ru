@@ -2,7 +2,7 @@
 
 **Реактивные формы** (Angular reactive forms) построены на основе механизма, использующего реактивный подход к программированию.
 
-Для их использования нужно импортировать модуль `ReactiveFormsModule`.
+Для их использования нужно импортировать модуль [`ReactiveFormsModule`](https://angular.io/api/forms/ReactiveFormsModule).
 
 Создание и валидация Angular reactive forms осуществляется прямо в контроллере. В шаблоне привязывается уже определенная в компоненте модель.
 
@@ -10,7 +10,7 @@
 
 Реактивная форма Angular - объединение взаимосвязанных полей (группа), которое может содержать дочерние группы.
 
-Группа представляет собой объект `FormGroup`, а поле - объект `FormControl`. Оба класса импортируются из `@angular/forms`.
+Группа представляет собой объект [`FormGroup`](https://angular.io/api/forms/FormGroup), а поле - объект [`FormControl`](https://angular.io/api/forms/FormControl). Оба класса импортируются из `@angular/forms`.
 
 _reactive-form-example.component.ts_
 
@@ -76,7 +76,7 @@ new FormControl({ value: null, disabled: true })
 
 С полным перечнем возможных параметров можно ознакомиться в документации.
 
-В шаблоне главная группа обозначается директивой `formGroup`, которой передается переменная одноименного типа, содержащая описание модели формы. Вложенные группы обозначаются директивой `formGroupName`, а поля группы - директивой `formControlName`.
+В шаблоне главная группа обозначается директивой `formGroup`, которой передается переменная одноименного типа, содержащая описание модели формы. Вложенные группы обозначаются директивой [`formGroupName`](https://angular.io/api/forms/FormGroupName), а поля группы - директивой [`formControlName`](https://angular.io/api/forms/FormControlName).
 
 Если значение директив реактивной формы Angular задается вручную, то директива пишется без квадратных скобок.
 
@@ -84,7 +84,7 @@ new FormControl({ value: null, disabled: true })
 <input type="text" formControlName="MOBILE_PHONE" />
 ```
 
-А если задается через переменную, то используется запись с квадратными скобками (подобно передаче значения через `@Input()` свойство).
+А если задается через переменную, то используется запись с квадратными скобками (подобно передаче значения через [`@Input()`](https://angular.io/api/core/Input) свойство).
 
 ```ts
 fieldName: string = 'MOBILE_PHONE' //в контроллере
@@ -97,7 +97,7 @@ fieldName: string = 'MOBILE_PHONE' //в контроллере
 
 Основные поля объекта реактивной формы Angular:
 
-- `controls` - поля, включая вложенные FormGroup;
+- `controls` - поля, включая вложенные `FormGroup`;
 - `errors` - содержит ошибки валидации;
 - `status` - строка, определяющая правильность заполнения формы, значение либо "VALID", либо "INVALID";
 - `valid` - true, если форма валидна;
@@ -132,9 +132,9 @@ this.loginForm.valueChanges.subscribe(v => {
 Использовать `valueChanges` можно применительно к отдельному полю.
 
 ```ts
-    this.loginForm.get('login').valueChanges.subscribe(v = > {
-     console.log(v);
-    });
+this.loginForm.get('login').valueChanges.subscribe(v => {
+  console.log(v)
+})
 ```
 
 Для отслеживания изменения статуса поля или формы в целом "подписывайтесь" на `statusChanges`.
@@ -184,7 +184,7 @@ this.loginForm.patchValue({ login: 'user123' }, { emitEvent: false })
 
 Для вывода (или динамического добавления) одной и той же группы или отдельного поля более, чем один раз, необходим экземпляр класса `FormArray`.
 
-В представлении для обозначения сущности `FormArray` используется `formArrayName`. Причем не должно быть совпадений значений `formGroupName` или `formControlName` в пределах всей формы.
+В представлении для обозначения сущности [`FormArray`](https://angular.io/api/forms/FormArray) используется [`formArrayName`](https://angular.io/api/forms/FormArrayName). Причем не должно быть совпадений значений `formGroupName` или `formControlName` в пределах всей формы.
 
 Пример с полем.
 
@@ -196,7 +196,10 @@ userForm: FormGroup = new FormGroup({
 ```
 
 ```html
-<div formArrayName="numbers" *ngFor="let item of userForm.get('numbers').controls; let i = index;">
+<div
+  formArrayName="numbers"
+  *ngFor="let item of userForm.get('numbers').controls; let i = index;"
+>
   <input type="text" [formControlName]="i" />
 </div>
 ```
@@ -220,7 +223,10 @@ userForm: FormGroup = new FormGroup({
 ```
 
 ```html
-<div formArrayName="numbers" *ngFor="let item of userForm.get('children').controls; let i = index;">
+<div
+  formArrayName="numbers"
+  *ngFor="let item of userForm.get('children').controls; let i = index;"
+>
   <div [formGroupName]="i">
     <div>
       <label>Name</label>
@@ -237,7 +243,7 @@ userForm: FormGroup = new FormGroup({
 
 ## Angular Form Builder
 
-В качестве альтернативы можно создать реактивную форму (и настоятельно рекомендуется) с Angular Form Builder.
+В качестве альтернативы можно создать реактивную форму (и настоятельно рекомендуется) с Angular [`FormBuilder`](https://angular.io/api/forms/FormBuilder).
 
 Его использование помогает избежать повторений и повышает читабельность кода.
 
@@ -278,3 +284,7 @@ this.buyTicketForm = this.fb.group({
   })
 })
 ```
+
+## Ссылки
+
+- [Reactive Forms](https://angular.io/guide/reactive-forms)

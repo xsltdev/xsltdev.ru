@@ -1,8 +1,12 @@
+---
+description: Большинство современных API основаны на протоколе HTTP, поэтому "общение" с сервером Angular осуществляет через REST-подобные запросы
+---
+
 # HttpClient
 
-Практически любое клиентское приложение получает данные от удаленного сервера. Большинство современных API основаны на протоколе HTTP, поэтому "общение" с сервером Angular осуществляет через REST-подобные запросы. За это отвечает `HttpClientModule`.
+Практически любое клиентское приложение получает данные от удаленного сервера. Большинство современных API основаны на протоколе HTTP, поэтому "общение" с сервером Angular осуществляет через REST-подобные запросы. За это отвечает [`HttpClientModule`](https://angular.io/api/common/http/HttpClientModule).
 
-После в компонент или сервис (в зависимости от построения архитектуры) импортируется сервис `HttpClient`.
+После в компонент или сервис (в зависимости от построения архитектуры) импортируется сервис [`HttpClient`](https://angular.io/api/common/http/HttpClient).
 
 ```ts
 @Injectable()
@@ -22,20 +26,20 @@ export class DataService {
 ```ts
 //GET-запрос на получение списка счетов
 getAccounts(){
-	return this.http.get(`http://example.com/api/accounts`);
+	return this.http.get('http://example.com/api/accounts');
 }
 
 //GET-запрос на получение счета по id, id передается как GET-параметр
 getAccountByID(id: number | string){
-	return this.http.get(`http://example.com/api/accounts`, {
-		params: new HttpParams().set(`id`, id)
+	return this.http.get('http://example.com/api/accounts', {
+		params: new HttpParams().set('id', id)
 	});
 }
 ```
 
 Для задания GET-параметров `get()` в качестве второго аргумента передается конфигурационный объект со свойством `params`. Здесь же в объекте указываются и другие параметры, например, `headers`, в котором задаются заголовки ответа. Все параметры подробно рассмотрены далее.
 
-Свойство `params` принимает экземпляр класса `HttpParams`, который предварительно импортируется.
+Свойство `params` принимает экземпляр класса [`HttpParams`](https://angular.io/api/common/http/HttpParams), который предварительно импортируется.
 
 ```ts
 import { HttpParams } from '@angular/common/http'
@@ -90,7 +94,7 @@ deleteAccountByID(id: number | string){
 
 Теперь рассмотрим, какие свойства можно задать в конфигурации:
 
-- `headers` - принимает экземпляр класса `HttpHeaders`, который содержит указанные с помощью метода `set(key: string, value: string)` HTTP-заголовки; класс `HttpHeaders` должен быть предварительно импортирован;
+- `headers` - принимает экземпляр класса [`HttpHeaders`](https://angular.io/api/common/http/HttpHeaders), который содержит указанные с помощью метода `set(key: string, value: string)` HTTP-заголовки; класс `HttpHeaders` должен быть предварительно импортирован;
 - `params` - принимает экземпляр класса `HttpParams`, который содержит указанные с помощью метода `set(key: string, value: string)` параметры строки запроса;
 - `reportProgress` - указывает, необходимо ли при загрузке на сервер или скачивании с сервера данных передавать информацию о текущем состоянии; принимает либо `true`, либо `false` (по умолчанию `null`);
 - `responseType` - указывает тип данных ответа ('arraybuffer' | 'blob' | 'json' | 'text'); по умолчанию `'json'`;
@@ -133,5 +137,9 @@ export class ContactsService {
 - `ResponseHeader` - получены код и заголовки ответа;
 - `UploadProgress` - событие отправки данных (для POST и PUT);
 - `DownloadProgress` - событие скачивания данных (для GET);
-- `User` - событие от `HttpInterceptor` или сервера;
+- `User` - событие от [`HttpInterceptor`](https://angular.io/api/common/http/HttpInterceptor) или сервера;
 - `Response` - выполнение запроса завершено.
+
+## Ссылки
+
+- [HttpClient](https://angular.io/guide/http)

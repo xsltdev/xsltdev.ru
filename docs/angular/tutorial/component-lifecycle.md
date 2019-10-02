@@ -1,28 +1,32 @@
+---
+description: Каждый компонент имеет свой жизненный цикл (Component Lifecycle), в процессе которого вызываются ряд описывающих текущий этап методов (Angular Hooks)
+---
+
 # Жизненный цикл компонента
 
 Каждый компонент имеет свой **жизненный цикл** (Component Lifecycle), в процессе которого вызываются ряд описывающих текущий этап методов (Angular Hooks):
 
-- `OnChanges` - устанавливаются или изменяются значения входных свойств класса компонента;
-- `OnInit` - устанавливаются "обычные" свойства; вызывается единожды вслед за первым вызовом `OnChanges()`;
-- `DoCheck` - происходит изменения свойства или вызывается какое-либо событие;
-- `AfterContentInit` - в шаблон включается контент, заключенный между тегами компонента;
-- `AfterContentChecked` - аналогичен `DoCheck()`, только используется для контента, заключенного между тегами компонента;
-- `AfterViewInit` - инициализируются компоненты, которые входят в шаблон текущего компонента;
-- `AfterViewChecked` - аналогичен `DoCheck()`, только используется для дочерних компонентов;
-- `OnDestroy` - компонент "умирает", т. е. удаляется из DOM-дерева
+- [`OnChanges`](https://angular.io/api/core/OnChanges) - устанавливаются или изменяются значения входных свойств класса компонента;
+- [`OnInit`](https://angular.io/api/core/OnInit) - устанавливаются "обычные" свойства; вызывается единожды вслед за первым вызовом `OnChanges()`;
+- [`DoCheck`](https://angular.io/api/core/DoCheck) - происходит изменения свойства или вызывается какое-либо событие;
+- [`AfterContentInit`](https://angular.io/api/core/AfterContentInit) - в шаблон включается контент, заключенный между тегами компонента;
+- [`AfterContentChecked`](https://angular.io/api/core/AfterContentChecked) - аналогичен `DoCheck()`, только используется для контента, заключенного между тегами компонента;
+- [`AfterViewInit`](https://angular.io/api/core/AfterViewInit) - инициализируются компоненты, которые входят в шаблон текущего компонента;
+- [`AfterViewChecked`](https://angular.io/api/core/AfterViewChecked) - аналогичен `DoCheck()`, только используется для дочерних компонентов;
+- [`OnDestroy`](https://angular.io/api/core/OnDestroy) - компонент "умирает", т. е. удаляется из DOM-дерева
 
 В списке выше все методы перечислены в порядке их вызова.
 
 Angular hooks реализованы в виде интерфейсов, реализующих функцию, совпадающую по названию с названием интерфейса + префикс `ng`.
 
 ```ts
-    export class ContactsItemComponent implements OnInit {
-      ...
-      ngOnInit() {
-        console.log('OnInit');
-      }
-        ...
-     }
+export class ContactsItemComponent implements OnInit {
+  //
+  ngOnInit() {
+    console.log('OnInit')
+  }
+  //
+}
 ```
 
 Чтобы стало понятно, разберем пример.
@@ -53,7 +57,15 @@ _contacts-list.component.ts_
     <contacts-item [name]="'Daniel'"></contacts-item>
   `
 })
-export class ContactsListComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+export class ContactsListComponent
+  implements
+    OnChanges,
+    OnInit,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked {
   @Input() title: string
 
   company: string = 'Google Inc.'
@@ -109,7 +121,7 @@ export class ContactsItemComponent {
 
 ![Component Lifecycle](lifecycle.png)
 
-Первым вызывается `OnChanges()`, повторный вызов которого осуществляется при изменении хотя бы одного входного свойства. В качестве аргумента ему передается объект с текущим и предыдущим значениями измененных `@Input()` свойств.
+Первым вызывается `OnChanges()`, повторный вызов которого осуществляется при изменении хотя бы одного входного свойства. В качестве аргумента ему передается объект с текущим и предыдущим значениями измененных [`@Input()`](https://angular.io/api/core/Input) свойств.
 
 Если входные свойства отсутствуют, то метод не будет вызван.
 
@@ -124,17 +136,17 @@ export class ContactsItemComponent {
 На этом этапе Component Lifecycle можно получить переданный извне компонент. Для этого используется декоратор `@ContentChild()`, который в качестве аргумента принимает название компонента, также рекомендуется указывать его тип. Передавать можно не только компонент, но и обычный HTML, доступ к которому осуществляется через ссылку на него, подробно [здесь](angular-view.md).
 
 ```ts
-    @ContentChild(ContactsItemComponent) contentChild: ContactsItemComponent;
+@ContentChild(ContactsItemComponent) contentChild: ContactsItemComponent;
 ```
 
 Следующим при любых изменениях во внешнем шаблоне вызывается `ngAfterContentChecked()`.
 
-Если вам нужно получить все экземпляры указанного компонента, используйте декоратор `@ContentChildren()`.
+Если вам нужно получить все экземпляры указанного компонента, используйте декоратор [`@ContentChildren()`](https://angular.io/api/core/ContentChildren).
 
 Методы `ngAfterViewInit()` и `ngAfterViewChecked()` схожи с `ngAfterContentInit()` и `ngAfterContentChecked()` лишь с тем различием, что первые два вызываются после полной иницализации шаблона.
 
-Используя декораторы `@ViewChild()` и `@ViewChildren()` можно получить доступ к прямым дочерним компонентам.
+Используя декораторы [`@ViewChild()`](https://angular.io/api/core/ViewChild) и [`@ViewChildren()`](https://angular.io/api/core/ViewChildren) можно получить доступ к прямым дочерним компонентам.
 
 Как и сами Angular Hooks, декораторы находятся в библиотеке `@angular/core`.
 
-Чтобы инициировать вызов `OnDestroy()`, необходимо удалить компонент из DOM-дерева (переход на другой URL или с помощью `*ngIf`).
+Чтобы инициировать вызов `OnDestroy()`, необходимо удалить компонент из DOM-дерева (переход на другой URL или с помощью [`*ngIf`](https://angular.io/api/common/NgIf)).

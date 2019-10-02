@@ -1,10 +1,14 @@
+---
+description: Взаимодействие компонентов
+---
+
 # Взаимодействие компонентов
 
 Для передачи данных из одного Angular компонента в другой существует несколько способов:
 
-- `@Input()` свойства;
-- `@Output()` свойства;
-- `@ViewChild()` свойства;
+- [`@Input()`](https://angular.io/api/core/Input) свойства;
+- [`@Output()`](https://angular.io/api/core/Output) свойства;
+- [`@ViewChild()`](https://angular.io/api/core/ViewChild) свойства;
 - Сервис.
 
 Первые три случая были рассмотрены ранее в предыдущих главах. Тем не менее в этой главе приведены примеры всех способов взаимодействия.
@@ -17,7 +21,10 @@ _parent-example.component.ts_
 @Component({
   selector: 'parent-example',
   template: `
-    <child-example [title]="'Title'" (dataChanged)="dataChangeHandler($event)"></child-example>
+    <child-example
+      [title]="'Title'"
+      (dataChanged)="dataChangeHandler($event)"
+    ></child-example>
   `
 })
 export class ParentExampleComponent implements AfterViewInit {
@@ -78,12 +85,12 @@ export class ChildExampleComponent {
 ```ts
     import {SomeDataService} './services/some.service';
 
-    ...
+    //
     providers: [
      SomeDataService,
-    ...
+    //
     ],
-    ...
+    //
 ```
 
 Пример Angular компонента с сервисом.
@@ -133,3 +140,7 @@ export class SecondComponent {
 В сервисе `SomeDataService` определено свойство `data` со значением `1`. В `FirstComponent` в консоль выводится значение `data` и затем ему же присваивается новое значение - `3`.
 
 Далее уже в конструкторе `SecondComponent` выводится свойство `data` сервиса `SomeDataService`. Как можно убедиться, в консоль будет выведено `3`. Все потому что оба Angular компонента обращаются к одному и тому же экземпляру класса сервиса.
+
+## Ссылки
+
+- [Component Interaction](https://angular.io/guide/component-interaction)

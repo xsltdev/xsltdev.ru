@@ -1,3 +1,7 @@
+---
+description: Независимо от выбранной технологии построения формы ее валидация происходит на основе данных о состоянии самой формы и каждого ее поля в отдельности
+---
+
 # Валидация форм
 
 Независимо от выбранной технологии построения формы ее валидация происходит на основе данных о состоянии самой формы и каждого ее поля в отдельности.
@@ -21,7 +25,13 @@
 <form>
   <div>
     <label>Bill Amount</label>
-    <input type="number" [(ngModel)]="bill.amount" #amount="ngModel" max="100" required />
+    <input
+      type="number"
+      [(ngModel)]="bill.amount"
+      #amount="ngModel"
+      max="100"
+      required
+    />
   </div>
 </form>
 ```
@@ -40,7 +50,13 @@
 <form>
   <div>
     <label>Bill Amount</label>
-    <input type="number" [(ngModel)]="bill.amount" #amount="ngModel" max="100" required />
+    <input
+      type="number"
+      [(ngModel)]="bill.amount"
+      #amount="ngModel"
+      max="100"
+      required
+    />
 
     <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
       <div *ngIf="amount.errors.required">
@@ -85,7 +101,14 @@ export class ReactiveFormValidationComponent {
   private _createForm() {
     this.clientForm = this.fb.group({
       client: ['', [Validators.required]],
-      clientAge: ['', [Validators.required, Validators.min(16), Validators.pattern(/^[0-9]+(?!.)/)]]
+      clientAge: [
+        '',
+        [
+          Validators.required,
+          Validators.min(16),
+          Validators.pattern(/^[0-9]+(?!.)/)
+        ]
+      ]
     })
   }
 
@@ -116,8 +139,13 @@ _reactive-form-validation.html_
     <input type="text" formControlName="clientAge" />
     <div *ngIf="_clientAge.invalid && (_clientAge.touched || _clientAge.dirty)">
       <span *ngIf="_clientAge.errors?.required">Обязательное поле</span>
-      <span *ngIf="_clientAge.errors?.min">Значение должно быть больше или равно {{_clientAge.errors?.min.min}}</span>
-      <span *ngIf="_clientAge.errors?.pattern?['/^[0-9]+(?!.)/']">Разрешаются только цифры</span>
+      <span *ngIf="_clientAge.errors?.min"
+        >Значение должно быть больше или равно
+        {{_clientAge.errors?.min.min}}</span
+      >
+      <span *ngIf="_clientAge.errors?.pattern?['/^[0-9]+(?!.)/']"
+        >Разрешаются только цифры</span
+      >
     </div>
   </div>
 </form>
@@ -182,11 +210,11 @@ export function accountValidator(): ValidatorFn {
 ```
 
 ```ts
-    import {accountValidator} from './validators/account.validator.ts';
+import {accountValidator} from './validators/account.validator.ts';
 
-    ...
-    accountNumber: ['', [accountValidators()]],
-    ...
+//
+accountNumber: ['', [accountValidators()]],
+//
 ```
 
 В примере `accountValidator()` проверяет корректность номера банковского счета (20 цифр - проверка условная). Если номер введен не верно, тогда для поля `accountNumber` будет установлена ошибка `account` со значением `true`.
@@ -243,7 +271,11 @@ export class CheckGoodsLeftValidatorExampleComponent {
   private _createForm() {
     this.orderForm = this.fb.group({
       client: ['', [Validators.required]],
-      goodsCount: ['', [Validators.required], [checkGoodsLeftValidator.bind(this.goodsService)]]
+      goodsCount: [
+        '',
+        [Validators.required],
+        [checkGoodsLeftValidator.bind(this.goodsService)]
+      ]
     })
   }
 }
@@ -266,3 +298,7 @@ export class CheckGoodsLeftValidatorExampleComponent {
 - `ng-dirty`;
 - `ng-untouched`;
 - `ng-touched`.
+
+## Ссылки
+
+- [Form Validation](https://angular.io/guide/form-validation)

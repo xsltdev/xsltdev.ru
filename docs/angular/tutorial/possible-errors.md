@@ -1,3 +1,7 @@
+---
+description: Создание Angular приложения просто невозможно без ошибок. Но не всегда очевидно, в каком месте или даже в какой части кода она таится, а ее поиск порой может отнять немало времени
+---
+
 # Распространенные ошибки
 
 Создание Angular приложения просто невозможно без ошибок. Но не всегда очевидно, в каком месте или даже в какой части кода она таится, а ее поиск порой может отнять немало времени.
@@ -78,7 +82,7 @@ src\app\services\example2.service.ts -> src\app\services\example1.service.ts ->
 
 ## Объект в качестве значения @Input() свойства
 
-Нередко в качестве значения компоненту через свойство `@Input()` передается объект, при этом в принимающем компоненте в `ngOnChanges()` определяется функция-обработчик, которая должна выполняться при любом изменении в объекте.
+Нередко в качестве значения компоненту через свойство [`@Input()`](https://angular.io/api/core/Input) передается объект, при этом в принимающем компоненте в `ngOnChanges()` определяется функция-обработчик, которая должна выполняться при любом изменении в объекте.
 
 Но если изменить значение какого-либо свойства или же добавить новое свойство, то компонент не увидит изменений, поскольку в JavaScript передача объекта осуществляется по ссылке.
 
@@ -144,20 +148,20 @@ setTimeout(() => (this.item = { ...this.item, ...{ count: 4 } }), 3000)
 Воспроизведение ошибки.
 
 ```ts
-    routeChangeSub: Subscription;
+routeChangeSub: Subscription;
 
-    constructor(private router: Router){
-     this.routeChangeSub = this.router.events.filter(ev => ev instanceof NavigationEnd)
-       .subscribe(ev => console.log('Route changed'));
-    }
+constructor(private router: Router){
+	this.routeChangeSub = this.router.events.filter(ev => ev instanceof NavigationEnd)
+		.subscribe(ev => console.log('Route changed'));
+}
 ```
 
 Часто бывает очень трудно выявить подобную ошибку, поэтому для избежания такой ситуации всегда вызывайте в `ngOnDestroy()` метод `unsubscribe()` у всех объектов `Subscription`.
 
 ```ts
-    ngOnDestroy(){
-     this.routeChangeSub.unsubscribe();
-    }
+ngOnDestroy(){
+	this.routeChangeSub.unsubscribe();
+}
 ```
 
 ## ExpressionChangedAfterItHasBeenCheckedError

@@ -1,3 +1,7 @@
+---
+description: Практически в каждом приложении имеются компоненты, которые зависимы от сервисов, которые хранят асинхронные методы, инициирующие HTTP-запросы к удаленному серверу и возвращающие определенные данные
+---
+
 # Unit-тестирование. Компоненты. Практические примеры
 
 ## Компонент с вызовом асинхронного метода
@@ -59,14 +63,13 @@ describe('InfoMessageComponent', () => {
 _app.service.ts_
 
 ```ts
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AppService {
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {}
-
-    getData(): Observable<any>{
-    return this.http.get('/api/data);
-    }
+  getData(): Observable<any> {
+    return this.http.get('/api/data')
+  }
 }
 ```
 
@@ -84,7 +87,9 @@ describe('InfoMessageComponent', () => {
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
-    appService = jasmine.createSpyObj('AppService', { getData: 'Out of service' })
+    appService = jasmine.createSpyObj('AppService', {
+      getData: 'Out of service'
+    })
   })
 
   it('should get message from AppService getData()', () => {
@@ -123,7 +128,9 @@ describe('InfoMessageComponent', () => {
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
-    appService = jasmine.createSpyObj('AppService', { getData: 'Out of service' })
+    appService = jasmine.createSpyObj('AppService', {
+      getData: 'Out of service'
+    })
   })
 
   it('should get message from AppService getData()', fakeAsync(() => {
@@ -184,7 +191,7 @@ describe('InfoMessageComponent', () => {
 
 ## Взаимодействие компонентов
 
-Когда вы передаете данные из одного компонента в другой через `@Output()` свойство, вам понадобится в тесте получить доступ к двум компонентам одновременно. Пример тестирования для такого случая.
+Когда вы передаете данные из одного компонента в другой через [`@Output()`](https://angular.io/api/core/Output) свойство, вам понадобится в тесте получить доступ к двум компонентам одновременно. Пример тестирования для такого случая.
 
 _parent.component.ts_
 
@@ -247,7 +254,9 @@ describe('ParentComponent', () => {
   }))
 
   it('should get message from ChildComponent', () => {
-    const childEl: HTMLElement = fixture.debugElement.nativeElement.query('.child')
+    const childEl: HTMLElement = fixture.debugElement.nativeElement.query(
+      '.child'
+    )
     childEl.click()
 
     expect(parentComp.message).toBe('Child message')

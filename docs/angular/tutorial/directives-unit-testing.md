@@ -1,3 +1,7 @@
+---
+description: Директивы-атрибуты предназначены для изменения поведения элемента или его отображения
+---
+
 # Unit-тестирование. Директивы
 
 Директивы-атрибуты предназначены для изменения поведения элемента или его отображения.
@@ -21,13 +25,17 @@ export class HintHotKeyDirective implements OnChanges {
   constructor(private el: ElementRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if ((changes.matchString && changes.matchString.currentValue) || (changes.bgColor && changes.bgColor.currentValue)) {
+    if (
+      (changes.matchString && changes.matchString.currentValue) ||
+      (changes.bgColor && changes.bgColor.currentValue)
+    ) {
       this._search(changes.matchString.currentValue)
     }
   }
 
   private _search(match: string) {
-    if (this.el.nativeElement.textContent.indexOf(match) != -1) this.el.nativeElement.style.backgroundColor = this.bgColor
+    if (this.el.nativeElement.textContent.indexOf(match) != -1)
+      this.el.nativeElement.style.backgroundColor = this.bgColor
     else this.el.nativeElement.style.backgroundColor = ''
   }
 }
@@ -45,7 +53,8 @@ _match-string-test.component.ts_
       <h3 [matchString]="match">Match string test component</h3>
 
       <p [matchString]="match" [bgColor]="color">
-        This is a component for testing all use cases of [matchString] directive.
+        This is a component for testing all use cases of [matchString]
+        directive.
       </p>
     </div>
   `

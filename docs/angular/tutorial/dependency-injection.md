@@ -1,10 +1,14 @@
+---
+description: Dependency Injection - широко распространенный паттерн проектирования (DI), который позволяет создавать объект, использующий другие объекты. При этом изменения в определении используемых объектов никак не влияют на создаваемый объект
+---
+
 # Dependency injection
 
 **Dependency Injection** - широко распространенный паттерн проектирования (сокращенно DI), который позволяет создавать объект, использующий другие объекты. При этом изменения в определении используемых объектов никак не влияют на создаваемый объект.
 
 Ядро Angular имеет свою собственную реализацию паттерна Dependency Injection и без него создать приложение было бы просто невозможно. Самый простой пример DI в Angular - это использованием компонентом сервиса, чаще всего для получения данных.
 
-Для того чтобы созданный сервис мог быть использован компонентом или другим сервисом, его объявление должно предваряться декоратором `@Injectable()`. Поскольку сервисы создаются именно для стороннего использования, то рекомендуется всегда использовать декоратор.
+Для того чтобы созданный сервис мог быть использован компонентом или другим сервисом, его объявление должно предваряться декоратором [`@Injectable()`](https://angular.io/api/core/Injectable). Поскольку сервисы создаются именно для стороннего использования, то рекомендуется всегда использовать декоратор.
 
 Все сервисы регистрируются Injector-ом, который является частью механизма DI в Angular. Причем в приложении может быть несколько injector-ов одновременно.
 
@@ -18,7 +22,7 @@
 
 Немного выше уже упоминались два нюанса, связанных с работой Angular Dependency Injection. Первая из них это прекращение поиска, если запрошенный сервис определен на уровне компонента. Но что если вам понадобится, например, обратиться из этого компонента к двум сервисам одновременно: локальному и глобальному?
 
-Здесь поможет использование декоратора `@SkipSelf()`. Если указать его в конструкторе перед нужным сервисом, то локальный injector будет исключен из поиска.
+Здесь поможет использование декоратора [`@SkipSelf()`](https://angular.io/api/core/SkipSelf). Если указать его в конструкторе перед нужным сервисом, то локальный injector будет исключен из поиска.
 
 ```ts
 @Component({
@@ -27,17 +31,20 @@
   styleUrls: ['./deposits.component.scss']
 })
 export class DepositsComponent {
-  constructor(private localDepositsService: DepositsService, @SkipSelf() private rootDepositsService: DepositsService) {}
+  constructor(
+    private localDepositsService: DepositsService,
+    @SkipSelf() private rootDepositsService: DepositsService
+  ) {}
 }
 ```
 
 Таким образом, если указать два одинаковых сервиса в одном компоненте, но перед одним из них поставить `@SkipSelf()`, то удастся получить доступ к локальному и глобальному экземплярам одновременно.
 
-Назначение декоратора `@Optional()` весьма простое. В случае отсутствия необходимого сервиса во всех Angular injector не будет сгенерировано исключение, а в переменную, которая должна была стать экземпляром, просто запишется `null`.
+Назначение декоратора [`@Optional()`](https://angular.io/api/core/Optional) весьма простое. В случае отсутствия необходимого сервиса во всех Angular injector не будет сгенерировано исключение, а в переменную, которая должна была стать экземпляром, просто запишется `null`.
 
 ## Angular Providers
 
-Основная задача Angular Dependency Injection - снабжение сервисами компонентов, директив и других сущностей. При создании экземпляров запрашиваемых сервисов injector полностью полагается на значения свойства providers (указывается у декораторов `@NgModule()` и `@Component()`) или на значение объекта, передаваемого `@Injectable()`.
+Основная задача Angular Dependency Injection - снабжение сервисами компонентов, директив и других сущностей. При создании экземпляров запрашиваемых сервисов injector полностью полагается на значения свойства providers (указывается у декораторов [`@NgModule()`](https://angular.io/api/core/NgModule) и [`@Component()`](https://angular.io/api/core/Component)) или на значение объекта, передаваемого `@Injectable()`.
 
 Если не указать сервис в providers и ничего не передать `@Injectable()`, то Angular injector не будет знать о его существовании.
 
@@ -89,7 +96,7 @@ _user.service.ts_
 
 ```ts
 constructor(private lastAuth: Date){
-	this.user.lastAuth = lastAuth;
+  this.user.lastAuth = lastAuth;
 }
 ```
 
@@ -124,7 +131,9 @@ _default-settings-injection-token.ts_
 ```ts
 import { InjectionToken } from '@angular/core'
 
-export const DEFAULT_SETTINGS = new InjectionToken<string>('settings', { providedIn: 'root' })
+export const DEFAULT_SETTINGS = new InjectionToken<string>('settings', {
+  providedIn: 'root'
+})
 ```
 
 _app.module.ts_
@@ -143,3 +152,8 @@ providers: [
 Для создания injection token используется класс `InjectionToken`, конструктор которого в качестве первого параметра принимает строковое описание, а в качестве второго - объект с дополнительной конфигурацией (по умолчанию `undefined`).
 
 В конфигурации можно указать только свойства `providedIn` и `factory`. Свойство `factory` должно определять функцию, которая возвращает значение для создаваемого injection token.
+
+## Ссылки
+
+- [Dependency Injection in Angular](https://angular.io/guide/dependency-injection)
+- [Dependency Injection in Action](https://angular.io/guide/dependency-injection-in-action)

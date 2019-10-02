@@ -1,3 +1,7 @@
+---
+description: Web Worker представляет собой механизм запуска выполнения скрипта отдельным процессом в фоновом режиме. Причем Web Worker-ы могут создавать другие и так далее. Общение между главным процессом и Web Worker-ами осуществляется с помощью сообщений
+---
+
 # Web Workers
 
 **Web Worker** представляет собой механизм запуска выполнения скрипта отдельным процессом в фоновом режиме. Причем Web Worker-ы могут создавать другие и так далее. Общение между главным процессом и Web Worker-ами осуществляется с помощью сообщений.
@@ -141,7 +145,9 @@ export class AppComponent {
     if (typeof Worker !== 'undefined') {
       this.worker = new Worker('./app.worker', { type: 'module' })
 
-      this.worker.addEventListener('message', (message: MessageEvent) => console.log('Got data from worker: ', message.data))
+      this.worker.addEventListener('message', (message: MessageEvent) =>
+        console.log('Got data from worker: ', message.data)
+      )
     } else alert('Web Worker is not supported.')
   }
 
@@ -167,3 +173,7 @@ addEventListener('message', (message: MessageEvent) => {
 !!! note ""
 
     На текущий момент в Angular SharedWorker не включен, а именно отсутствует его тип, который может быть описан вами самостоятельно и далее использован в вашем приложении. Подробнее разделяемых Worker-ах можно узнать [здесь](https://developer.mozilla.org/ru/docs/Web/API/SharedWorker).
+
+## Ссылки
+
+- [Using Web Workers with Angular CLI](https://angular.io/guide/web-worker)

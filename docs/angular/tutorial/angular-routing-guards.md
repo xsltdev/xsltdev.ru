@@ -1,3 +1,7 @@
+---
+description: Route Guards позволяют ограничить доступ к маршрутам на основе определенного условия, например, только авторизованные пользователи с определенным набором прав могут просматривать страницу
+---
+
 # Маршрутизация. Route guards
 
 **Route Guards** позволяют ограничить доступ к маршрутам на основе определенного условия, например, только авторизованные пользователи с определенным набором прав могут просматривать страницу.
@@ -6,15 +10,15 @@
 
 Различают следующие виды guard-ов:
 
-- `CanActivate` - разрешает/запрещает доступ к маршруту;
-- `CanActivateChild` -разрешает/запрещает доступ к дочернему маршруту;
-- `CanDeactivate` - разрешает/запрещает уход с текущего маршрута;
-- `Resolve` - выполняет какое-либо действие перед переходом на маршрут, обычно ожидает данные от сервера;
-- `CanLoad` - разрешает/запрещает загрузку модуля, загружаемого асинхронно.
+- [`CanActivate`](https://angular.io/api/router/CanActivate) - разрешает/запрещает доступ к маршруту;
+- [`CanActivateChild`](https://angular.io/api/router/CanActivateChild) -разрешает/запрещает доступ к дочернему маршруту;
+- [`CanDeactivate`](https://angular.io/api/router/CanDeactivate) - разрешает/запрещает уход с текущего маршрута;
+- [`Resolve`](https://angular.io/api/router/Resolve) - выполняет какое-либо действие перед переходом на маршрут, обычно ожидает данные от сервера;
+- [`CanLoad`](https://angular.io/api/router/CanLoad) - разрешает/запрещает загрузку модуля, загружаемого асинхронно.
 
 Все guard-ы должны возвращать либо `true`, либо `false`. И происходить это может как в синхронном режиме (тип `Boolean`), так и в асинхронном режиме (`Observable<boolean>` или `Promise<boolean>`).
 
-Если будет возвращено `false`, будет инициировано событие маршрутизации `NavigationCancel`.
+Если будет возвращено `false`, будет инициировано событие маршрутизации [`NavigationCancel`](https://angular.io/api/router/NavigationCancel).
 
 У одного URL может быть одновременно несколько guard-ов, причем одного и того же типа. Все guard-ы - обычные классы, реализующие определенный интерфейс. Указываются они в виде массива значением одноименных свойств при определении маршрутов.
 
@@ -29,11 +33,17 @@ _auth.guard.ts_
 export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(@Inject(AuthService) private auth: AuthService) {}
 
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
     return this.auth.isLoggedIn
   }
 
-  canActivateChild(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivateChild(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
     return this.canActivate(next, state)
   }
 }
@@ -49,7 +59,10 @@ const routes: Routes = [
     component: PagesComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
-    children: [{ path: 'about', component: AboutComponent }, { path: 'contacts', component: ContactsComponent }]
+    children: [
+      { path: 'about', component: AboutComponent },
+      { path: 'contacts', component: ContactsComponent }
+    ]
   }
 ]
 
@@ -81,8 +94,14 @@ _can-deactivate.guard.ts_
 export class DataChangesGuard implements CanDeactivate<BuyTicketFormComponent> {
   constructor() {}
 
-  canDeactivate(component: BuyTicketFormComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot) {
-    if (component.buyTicketForm.dirty) return window.confirm('Unsaved data detected. Want to exit?')
+  canDeactivate(
+    component: BuyTicketFormComponent,
+    currentRoute: ActivatedRouteSnapshot,
+    currentState: RouterStateSnapshot,
+    nextState: RouterStateSnapshot
+  ) {
+    if (component.buyTicketForm.dirty)
+      return window.confirm('Unsaved data detected. Want to exit?')
     else return true
   }
 }
@@ -108,7 +127,8 @@ export interface CanComponentDeactivate {
 }
 
 @Injectable({ providedIn: 'root' })
-export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
+export class CanDeactivateGuard
+  implements CanDeactivate<CanComponentDeactivate> {
   canDeactivate(component: CanComponentDeactivate) {
     return component.canDeactivate ? component.canDeactivate() : true
   }
@@ -119,7 +139,7 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
 
 Для решения этой проблемы можно было бы использовать `CanActivate`, но концептуально он предназначен для других целей. А здесь понадобится `resolver`.
 
-**Resolver** - это сервис, реализующий интерфейс `Resolve`, а именно метод `resolve()`, который обязательно должен возвращать данные типа `Observable`. Указанный для любого маршрута, `Resolver` разрешает переход на него после выполнения `Observable` в `resolve()`.
+**Resolver** - это сервис, реализующий интерфейс [`Resolve`](https://angular.io/api/router/Resolve), а именно метод `resolve()`, который обязательно должен возвращать данные типа `Observable`. Указанный для любого маршрута, `Resolver` разрешает переход на него после выполнения `Observable` в `resolve()`.
 
 ```ts
 @Injectable()
@@ -141,3 +161,7 @@ export class ContactsResovler implements Resolve<any> {
 ```
 
 Выполнение метода `resolve()` (как синхронного, так и асинхронного) инициирует событие `NavigationEnd`, что можно использовать для скрытия прелоадера при переходах между страницами.
+
+## Ссылки
+
+- [Route guards](https://angular.io/guide/router#milestone-5-route-guards)

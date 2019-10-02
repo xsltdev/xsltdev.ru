@@ -1,3 +1,7 @@
+---
+description: В Angular маршрутизация представляет собой переход от одного представления (шаблона) к другому в зависимости от заданного URL. Причем навигация может осуществляться и внутри представления
+---
+
 # Маршрутизация. Основы
 
 В Angular **маршрутизация** представляет собой переход от одного представления (шаблона) к другому в зависимости от заданного URL. Причем навигация может осуществляться и внутри представления.
@@ -16,14 +20,28 @@
 <base href="/example" />
 ```
 
-За организацию маршрутизации в Angular отвечает модуль `RouterModule` библиотеки `@angular/router`.
+За организацию маршрутизации в Angular отвечает модуль [`RouterModule`](https://angular.io/api/router/RouterModule) библиотеки `@angular/router`.
 
 URL организуются в специальные модули и определяются для каждого отдельного модуля приложения.
 
 Рассмотрим создание модуля `AppRoutingModule`.
 
 ```ts
-const routes: Routes = [{ path: 'login', component: LoginRouteComponent }, { path: 'home', component: HomeRouteComponent, children: [{ path: 'profile', component: ProfileRouteComponent }] }, { path: 'contacts', redirectTo: '/home', pathMatch: 'full', children: [{ path: 'director', component: DirectorContactsRouteComponent }] }, { path: '**', component: LoginRouteComponent }]
+const routes: Routes = [
+  { path: 'login', component: LoginRouteComponent },
+  {
+    path: 'home',
+    component: HomeRouteComponent,
+    children: [{ path: 'profile', component: ProfileRouteComponent }]
+  },
+  {
+    path: 'contacts',
+    redirectTo: '/home',
+    pathMatch: 'full',
+    children: [{ path: 'director', component: DirectorContactsRouteComponent }]
+  },
+  { path: '**', component: LoginRouteComponent }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -68,14 +86,14 @@ export class AppRoutingModule {}
 ```ts
 @NgModule({
 	imports: [
-	AppRoutingModule
+		AppRoutingModule
 	],
 	declarations: [
-	AppComponent,
-	LoginRouteComponent,
-	HomeRouteComponent,
-	ProfileRouteComponent,
-	DirectorContactsRouteComponent
+		AppComponent,
+		LoginRouteComponent,
+		HomeRouteComponent,
+		ProfileRouteComponent,
+		DirectorContactsRouteComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent],
@@ -125,14 +143,16 @@ _app-nav.component.html_
     <a routerLink="/home/profile" routerLinkActive="active-link">Profile</a>
   </li>
   <li>
-    <a routerLink="/contacts/director" routerLinkActive="active-link">Director contacts</a>
+    <a routerLink="/contacts/director" routerLinkActive="active-link"
+      >Director contacts</a
+    >
   </li>
 </ul>
 ```
 
-Для перехода по заданным URL используется директива `routerLink`, которая может быть указана не только у тега `<a>`, но и у любого другого блочного HTML элемента.
+Для перехода по заданным URL используется директива [`routerLink`](https://angular.io/api/router/RouterLink), которая может быть указана не только у тега `<a>`, но и у любого другого блочного HTML элемента.
 
-Совместно с `routerLink` используется директива `routerLinkActive`. Она принимает название класса, который будет добавлен элементу (у которого указаны директивы) при активном URL, на который они ссылаются.
+Совместно с `routerLink` используется директива [`routerLinkActive`](https://angular.io/api/router/RouterLinkActive). Она принимает название класса, который будет добавлен элементу (у которого указаны директивы) при активном URL, на который они ссылаются.
 
 Как видно, все ссылки указываются от корня приложения (начинаются с `/`). Но в Angular routing также возможно использование относительных ссылок.
 
@@ -151,7 +171,10 @@ _app-nav.component.html_
 Наиболее часто используемым методом сервиса Router является `navigate()`. В качестве первого параметра он принимает массив, где задается URL, а в качестве второго - объект с дополнительными параметрами запрашиваемого маршрута:
 
 ```ts
-this.router.navigate(['profile', 3], { queryParams: { id: 3 }, fragment: 'address' })
+this.router.navigate(['profile', 3], {
+  queryParams: { id: 3 },
+  fragment: 'address'
+})
 ```
 
 ## Маршруты с параметрами
@@ -161,9 +184,15 @@ this.router.navigate(['profile', 3], { queryParams: { id: 3 }, fragment: 'addres
 Модернизируем маршрут `profile`, который должен отображать данные профиля по запрашиваемому `id`. Также укажем хлебные крошки через свойство `data`.
 
 ```ts
-{path: 'home', component: HomeComponent, children: [
-	{path: 'profile/:id', component: ProfileComponent, data: {breadcrumbs: 'Profile info'}}
-]}
+{
+	path: 'home',
+	component: HomeComponent,
+	children: [{
+		path: 'profile/:id',
+		component: ProfileComponent,
+		data: {breadcrumbs: 'Profile info'}
+	}]
+}
 ```
 
 Получить значение параметра и свойства `data` позволяет сервис `ActivatedRoute`. В его экземпляре, определенном для компонента-маршрута, содержится полная информация.
@@ -266,3 +295,7 @@ this.router.navigate([{ outlets: { discount: 'discount-info' } }])
 ```ts
 ...(discount:discount-info)
 ```
+
+## Ссылки
+
+- [Router. The Basics](https://angular.io/guide/router#the-basics)

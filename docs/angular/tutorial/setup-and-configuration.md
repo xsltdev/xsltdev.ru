@@ -132,7 +132,7 @@ export class AppModule {}
 
 Здесь импортируются все модули и компоненты приложения.
 
-Декоратор `@NgModule()` создает корневой модуль, которому передается объект конфигурации со свойствами:
+Декоратор [`@NgModule()`](https://angular.io/api/core/NgModule) создает корневой модуль, которому передается объект конфигурации со свойствами:
 
 - `imports` - используемые второстепенные модули Angular;
 - `declarations` - все компоненты приложения;
@@ -155,7 +155,7 @@ export class AppComponent {
 }
 ```
 
-За объявление компонента отвечает декоратор `@Component()` из `@angular/core`. Принимаемый объект:
+За объявление компонента отвечает декоратор [`@Component()`](https://angular.io/api/core/Component) из `@angular/core`. Принимаемый объект:
 
 - `selector` - название компонента;
 - `template` (`templateUrl`) - HTML-разметка в виде строки (путь к HTML-файлу);
@@ -178,3 +178,7 @@ ng serve -o
 ```
 ng serve -o --port 5000
 ```
+
+## Ссылки
+
+- [Setting up the Local Environment and Workspace](https://angular.io/guide/setup-local)

@@ -1,8 +1,12 @@
+---
+description: Начнем с изучения тестирования сервисов Angular, поскольку именно сервисы проще всего покрываются тестами
+---
+
 # Unit-тестирование. Сервисы
 
 Начнем с изучения тестирования сервисов Angular, поскольку именно сервисы проще всего покрываются тестами.
 
-Ключевую роль в тестировании Angular приложений играет утилита `TestBed` из библиотеки `@angular/core/testing`. Она позволяет эмулировать модуль Testing Module, подобный модулю, создаваемого с декоратором `@NgModule()`. Тестовый модуль необходим для определения модулей, сервисов, компонентов и т. д., от которых зависим тест.
+Ключевую роль в тестировании Angular приложений играет утилита [`TestBed`](https://angular.io/api/core/testing/TestBed) из библиотеки `@angular/core/testing`. Она позволяет эмулировать модуль Testing Module, подобный модулю, создаваемого с декоратором [`@NgModule()`](https://angular.io/api/core/NgModule). Тестовый модуль необходим для определения модулей, сервисов, компонентов и т. д., от которых зависим тест.
 
 В `TestBed` имеется метод `configureTestingModule()`, которая принимает объект конфигурации аналогичный тому, что передается `@NgModule()`.
 
@@ -86,7 +90,7 @@ const appServiceSpy = jasmine.createSpyObj('AppService', {
 })
 ```
 
-Инструменты также предусматривают возможность тестирования сервисов Angular, которые обращаются за данными к удаленному серверу. Ключевую роль здесь играют модуль `HttpTestingModule` и контроллер `HttpTestingController`.
+Инструменты также предусматривают возможность тестирования сервисов Angular, которые обращаются за данными к удаленному серверу. Ключевую роль здесь играют модуль `HttpTestingModule` и контроллер [`HttpTestingController`](https://angular.io/api/common/http/testing/HttpTestingController).
 
 Тестирование HTTP-сервисов не подразумевает обращение к удаленному API. Вместо этого все исходящие запросы перенаправляются в контроллер `HttpTestingController`.
 
@@ -109,7 +113,10 @@ export class AppService {
 _app.service.spec.ts_
 
 ```ts
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from '@angular/common/http/testing'
 import { TestBed } from '@angular/core/testing'
 
 describe('AppService - testing HTTP request method getData()', () => {
@@ -159,20 +166,22 @@ const req = httpTestingController.match('/api/data')
 
 ```ts
 it('can test HttpClient.get', () => {
-	const message = 'Session expired';
+  const message = 'Session expired'
 
-	appService.getData().subscribe(response => fail('should fail with the 401 error'),
-	(err: HttpErrorResponse) =>
-		expect(err.status).toBe(401, 'status');
-		expect(err.error).toBe(message, 'message');
-	});
+  appService.getData().subscribe(
+    response => fail('should fail with the 401 error'),
+    (err: HttpErrorResponse) => {
+      expect(err.status).toBe(401, 'status')
+      expect(err.error).toBe(message, 'message')
+    }
+  )
 
-	const req = httpTestingController.expectOne('/api/data');
+  const req = httpTestingController.expectOne('/api/data')
 
-	expect(req.request.method).toBe('GET');
+  expect(req.request.method).toBe('GET')
 
-	req.flush(message, {status: 401, statusText: 'Unauthorized'});
-});
+  req.flush(message, { status: 401, statusText: 'Unauthorized' })
+})
 ```
 
 Для ошибки сетевого уровня можно использовать метода `error()` объекта запроса. Передаваемый параметр - объект типа `ErrorEvent`.

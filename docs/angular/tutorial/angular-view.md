@@ -1,28 +1,33 @@
+---
+description:
+---
+
 # Angular view
 
-Для манипуляций с DOM-элементами в Angular используются так называемые абстракции, которые представлены классами `ElementRef`, `TemplateRef`, `ViewRef`, `ComponentRef` и `ViewContainerRef`.
+Для манипуляций с DOM-элементами в Angular используются так называемые абстракции, которые представлены классами [`ElementRef`](https://angular.io/api/core/ElementRef), [`TemplateRef`](https://angular.io/api/core/TemplateRef), [`ViewRef`](https://angular.io/api/core/ViewRef), [`ComponentRef`](https://angular.io/api/core/ComponentRef) и [`ViewContainerRef`](https://angular.io/api/core/ViewContainerRef).
 
 Сами абстракции представляют шаблон компонента или его отдельные части.
 
-Для получения доступа к абстракциям используется механизм DOM-запросов, реализованных декораторами `@ViewChild()` (возвращает одну ссылку) и `@ViewChildren()` (возвращает массив ссылок).
+Для получения доступа к абстракциям используется механизм DOM-запросов, реализованных декораторами [`@ViewChild()`](https://angular.io/api/core/ViewChild) (возвращает одну ссылку) и [`@ViewChildren()`](https://angular.io/api/core/ViewChildren) (возвращает массив ссылок).
 
 Указанные декораторы используются совместно с шаблонными переменными, являющимися именованными ссылками на шаблон или его части. Именно они служат идентификатором для получения нужного шаблона.
 
 ```ts
-    @Component({
-     selector: 'view-child-demo',
-     template: `
-         <div>
-           <h1 #title>Angular tutorial</h1>
-         </div>
-       `
-    })
-    export class ViewChildDemoComponent implements AfterViewInit {
-     @ViewChild('title', {read: ElementRef}) title: ElementRef;
+@Component({
+  selector: 'view-child-demo',
+  template: `
+    <div>
+      <h1 #title>Angular tutorial</h1>
+    </div>
+  `
+})
+export class ViewChildDemoComponent implements AfterViewInit {
+  @ViewChild('title', { read: ElementRef }) title: ElementRef
 
-     ngAfterViewInit(): void {
-       console.log(this.title.nativeElement.textContent);
-     }
+  ngAfterViewInit(): void {
+    console.log(this.title.nativeElement.textContent)
+  }
+}
 ```
 
 В примере ссылка на представление сохраняется в переменную `title` и становится доступной только в момент вызова `AfterViewInit`.
@@ -87,7 +92,7 @@ export class TemplateRefDemoComponent implements AfterViewInit {
 
 В Angular различают два вида представлений:
 
-- Embedded Views - относятся к элементу <ng-template />;
+- Embedded Views - относятся к элементу `<ng-template />`;
 - Host Views - относятся к компоненту и инициализируются в момент [динамического создания компонентов](dynamic-components.md).
 
 Embedded и Host Views размещаются в контейнере `ViewContainerRef`.
@@ -118,7 +123,10 @@ export class ViewContainerRefDemoComponent implements AfterViewInit {
   @ViewChild('views', { read: ViewContainerRef }) views: ViewContainerRef
   @ViewChild('tpl') tpl: TemplateRef<any>
 
-  constructor(private componentFactory: ComponentFactoryResolver, private injector: Injector) {}
+  constructor(
+    private componentFactory: ComponentFactoryResolver,
+    private injector: Injector
+  ) {}
 
   ngAfterViewInit() {
     // embedded view
@@ -126,7 +134,9 @@ export class ViewContainerRefDemoComponent implements AfterViewInit {
     this.views.insert(view)
 
     // host view
-    const factory = this.componentFactory.resolveComponentFactory(ContactItemComponent)
+    const factory = this.componentFactory.resolveComponentFactory(
+      ContactItemComponent
+    )
     const componentRef = factory.create(this.injector)
 
     this.views.insert(componentRef.hostView, 0)
@@ -147,11 +157,11 @@ export class ViewContainerRefDemoComponent implements AfterViewInit {
 
 ## ComponentRef
 
-Ссылка типа `ComponentRef` возвращается при динамическом создании компонента с использованием сервиса `ComponentFactoryResolver`. Описание вынесено в отдельную главу.
+Ссылка типа `ComponentRef` возвращается при динамическом создании компонента с использованием сервиса [`ComponentFactoryResolver`](https://angular.io/api/core/ComponentFactoryResolver). Описание вынесено в отдельную главу.
 
 ## ngTemplateOutlet и ngComponentOutlet
 
-Директива `ngTemplateOutlet` создает из DOM-элемента ссылку `ViewContainerRef` и вставляет в него Embedded View, которое формируется по переданной шаблонной переменной прямо в шаблоне без написания кода в контроллере компонента.
+Директива [`ngTemplateOutlet`](https://angular.io/api/common/NgTemplateOutlet) создает из DOM-элемента ссылку `ViewContainerRef` и вставляет в него Embedded View, которое формируется по переданной шаблонной переменной прямо в шаблоне без написания кода в контроллере компонента.
 
 ```html
 <div>
@@ -185,7 +195,7 @@ items: any = ['Item 1', 'Item 2', 'Item 3']
 </div>
 ```
 
-Директива `ngComponentOutlet` аналогична `ngTemplateOutlet`. Различие лишь в том, что она формирует представление Host View по переданному ей названию компонента.
+Директива [`ngComponentOutlet`](https://angular.io/api/common/NgComponentOutlet) аналогична `ngTemplateOutlet`. Различие лишь в том, что она формирует представление Host View по переданному ей названию компонента.
 
 ```html
 <ng-container *ngComponentOutlet="ContactItem"></ng-container>

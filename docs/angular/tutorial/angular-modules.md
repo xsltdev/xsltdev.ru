@@ -1,17 +1,21 @@
+---
+description: Angular модуль - это класс с декоратором @NgModule(), который служит изолирующей логической объединяющей структурой для компонентов, директив, фильтров и сервисов
+---
+
 # Модули
 
-Angular **модуль** - это класс с декоратором `@NgModule()`, который служит изолирующей логической объединяющей структурой для компонентов, директив, фильтров и сервисов. Все перечисленные сущности определяются и конфигурируются с помощью `@NgModule()`.
+Angular **модуль** - это класс с декоратором [`@NgModule()`](https://angular.io/api/core/NgModule), который служит изолирующей логической объединяющей структурой для компонентов, директив, фильтров и сервисов. Все перечисленные сущности определяются и конфигурируются с помощью `@NgModule()`.
 
 Angular приложение имеет модульную архитектуру и состоит, по крайней мере, из одного главного, или корневого, модуля. Все остальные относятся к второстепенным.
 
 Сама библиотека `@angular` также модульная:
 
-- `BrowserModule`;
-- `CommonModule`;
-- `FormsModule`;
-- `ReactiveFormsModule`;
-- `HttpClientModule`;
-- `RouterModule` и др.
+- [`BrowserModule`](https://angular.io/api/platform-browser/BrowserModule);
+- [`CommonModule`](https://angular.io/api/common/CommonModule);
+- [`FormsModule`](https://angular.io/api/forms/FormsModule);
+- [`ReactiveFormsModule`](https://angular.io/api/forms/ReactiveFormsModule);
+- [`HttpClientModule`](https://angular.io/api/common/http/HttpClientModule);
+- [`RouterModule`](https://angular.io/api/router/RouterModule) и др.
 
 Ключевая роль при создании Angular модуля у декоратора `@NgModule()`, принимающего конфигурационный объект со свойствами:
 
@@ -35,14 +39,14 @@ Angular приложение имеет модульную архитектур�
 
 ```ts
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-	BrowserModule,
-	...
-	],
-	bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule
+    //
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule{}
+export class AppModule {}
 ```
 
 Функциональный Angular модуль реализует логически связанную совокупность компонентов, директив или фильтров (например, модули библиотеки `@angular/material`).
@@ -51,17 +55,16 @@ export class AppModule{}
 
 ```ts
 @NgModule({
-	...
-	exports: [
-	AccountsComponent,
-	CreditsComponent,
-	DepositsComponent,
-
-	CreditsFilterDirective
-	],
-	...
+  //
+  exports: [
+    AccountsComponent,
+    CreditsComponent,
+    DepositsComponent,
+    CreditsFilterDirective
+  ]
+  //
 })
-export class AppModule{}
+export class AppModule {}
 ```
 
 Модуль маршрутизации нужен для определения иерархии маршрутов.
@@ -96,9 +99,30 @@ _shared.module.ts_
 
 ```ts
 @NgModule({
-  imports: [CommonModule, FormsModule, ImageCropperModule, ScrollbarModule, SlickModule, SlickModule.forRoot()],
-  exports: [CommonModule, ImageCropperModule, ScrollbarModule, SlickModule, AppLangsComponent, AppTabFilterComponent, AppFileUploadComponent, ComponentPreloaderDirective],
-  declarations: [AppLangsComponent, AppTabFilterComponent, AppFileUploadComponent, ComponentPreloaderDirective]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ImageCropperModule,
+    ScrollbarModule,
+    SlickModule,
+    SlickModule.forRoot()
+  ],
+  exports: [
+    CommonModule,
+    ImageCropperModule,
+    ScrollbarModule,
+    SlickModule,
+    AppLangsComponent,
+    AppTabFilterComponent,
+    AppFileUploadComponent,
+    ComponentPreloaderDirective
+  ],
+  declarations: [
+    AppLangsComponent,
+    AppTabFilterComponent,
+    AppFileUploadComponent,
+    ComponentPreloaderDirective
+  ]
 })
 export class SharedModule {}
 ```
@@ -106,11 +130,9 @@ export class SharedModule {}
 ```ts
 @NgModule({
 	imports: [
-	...
-	CoreModule.forRoot(),
-	SharedModule
-	],
-
-	...
+		//
+		CoreModule.forRoot(),
+		SharedModule
+	]
 })
 ```
