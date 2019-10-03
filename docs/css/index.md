@@ -572,19 +572,20 @@ description: Справочник свойств CSS с примерами ко�
 - `scroll-behavior`
 </div>
 
-<!--
-
 ---
 
 ## Логические свойства и значения
 
-- [block-size](.md)
-- [inline-size](.md)
-- [max-block-size](.md)
-- [max-inline-size](.md)
-- [min-block-size](.md)
-- [min-inline-size](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
+- [block-size](block-size.md)
+- [inline-size](inline-size.md)
+- [max-block-size](max-block-size.md)
+- `max-inline-size`
+- `min-block-size`
+- `min-inline-size`
+</div>
+
+<!--
 
 - [border-block](.md)
 - [border-block-color](.md)

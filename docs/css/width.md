@@ -1,3 +1,7 @@
+---
+description: Свойство width устанавливает ширину блочных или заменяемых элементов (к ним, например, относится img)
+---
+
 # width
 
 Свойство **`width`** устанавливает ширину блочных или заменяемых элементов (к ним, например, относится [`<img>`](../html/img.md)).
@@ -35,15 +39,12 @@ width: unset;
 
 В качестве значений принимаются любые единицы длины, принятые в CSS — например, пикселы (px), дюймы (in), пункты (pt) и др. При использовании процентной записи ширина элемента вычисляется в зависимости от ширины родительского элемента. Если родитель явно не указан, то в его качестве выступает окно браузера.
 
-- `auto` — Устанавливает ширину исходя из типа и содержимого элемента.
+`auto`
+: Устанавливает ширину исходя из типа и содержимого элемента.
 
-Значение по-умолчанию:
+Значение по-умолчанию: `auto`
 
-```css
-width: auto;
-```
-
-Применяется к: К блочным элементам, ячейкам таблицы, заменяемым элементам
+Применяется к блочным элементам, ячейкам таблицы, заменяемым элементам
 
 ## Спецификации
 
@@ -73,7 +74,10 @@ width: auto;
   </head>
   <body>
     <div class="layer1">
-      <p class="layer2">Lorem ipsum dolor sit amet,consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.</p>
+      <p class="layer2">
+        Lorem ipsum dolor sit amet,consectetuer adipiscing elit,seddiem nonummy
+        nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.
+      </p>
     </div>
   </body>
 </html>
