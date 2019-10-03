@@ -110,3 +110,4 @@ max-block-size: unset;
 ## Ссылки
 
 - [`max-block-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size) <sup><small>MDN (англ.)</small></sup>
+- [Новые логические свойства в CSS!](https://medium.com/web-standards/logical-css-props-c5046c563640)

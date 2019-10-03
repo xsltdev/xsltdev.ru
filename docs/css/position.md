@@ -97,3 +97,7 @@ position: unset;
   </body>
 </html>
 ```
+
+## Ссылки
+
+- [Как на самом деле работает position: sticky в CSS](https://medium.com/web-standards/sticky-bc7ff7088693)

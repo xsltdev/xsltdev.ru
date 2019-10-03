@@ -12,10 +12,14 @@ description: Псевдо-элемент ::after соответствует ви
 
 ```css
 /* Синтаксис CSS2 */
-element:after { свойства }
+element:after {
+  /* свойства */
+}
 
 /* Синтаксис CSS3 */
-element::after { свойства }
+element::after {
+  /* свойства */
+}
 ```
 
 ## Спецификации
@@ -115,4 +119,4 @@ span[data-descr]:hover::after {
 
 ## Ссылки
 
-- [`::after (:after)`](https://developer.mozilla.org/ru/docs/Web/CSS/::after) на MDN
+- [`::after (:after)`](https://developer.mozilla.org/ru/docs/Web/CSS/::after) <sup><small>MDN (рус.)</small></sup>
