@@ -158,6 +158,7 @@
             {% endif %}
           {% endblock %}
           <div class="md-content">
+				{% include "partials/integrations/gsearch.html" %}
             <article class="md-content__inner md-typeset">
               {% block content %}
                 {% if page.edit_url %}
@@ -181,7 +182,8 @@
                     </a>
                   {% endif %}
                 {% endblock %}
-              {% endblock %}
+			  {% endblock %}
+
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
 			  {% endblock %}
