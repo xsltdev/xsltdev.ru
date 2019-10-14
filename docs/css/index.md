@@ -46,7 +46,7 @@ description: Справочник свойств CSS с примерами ко�
 - [:first-child](:first-child.md)
 - [:first-of-type](:first-of-type.md)
 - [:focus](:focus.md)
-- :focus-visible
+- [:focus-visible](:focus-visible.md)
 - [:focus-within](:focus-within.md)
 - [:fullscreen](:fullscreen.md)
 - [:future](:future.md)
@@ -271,7 +271,7 @@ description: Справочник свойств CSS с примерами ко�
 ## Интерфейс
 
 <div class="col3" markdown="1">
-- `appearance`
+- [appearance](appearance.md)
 - [box-sizing](box-sizing.md)
 - [caret-color](caret-color.md)
 - [cursor](cursor.md)
@@ -331,12 +331,12 @@ description: Справочник свойств CSS с примерами ко�
 - [letter-spacing](letter-spacing.md)
 - [line-break](line-break.md)
 - [overflow-wrap](overflow-wrap.md)
-- `paint-order`
-- `tab-size`
+- [paint-order](paint-order.md)
+- [tab-size](tab-size.md)
 - [text-align](text-align.md)
 - [text-align-last](text-align-last.md)
 - [text-indent](text-indent.md)
-- `text-justify`
+- [text-justify](text-justify.md)
 - `text-size-adjust`
 - [text-transform](text-transform.md)
 - [white-space](white-space.md)
