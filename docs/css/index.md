@@ -337,7 +337,7 @@ description: Справочник свойств CSS с примерами ко�
 - [text-align-last](text-align-last.md)
 - [text-indent](text-indent.md)
 - [text-justify](text-justify.md)
-- `text-size-adjust`
+- [text-size-adjust](text-size-adjust.md)
 - [text-transform](text-transform.md)
 - [white-space](white-space.md)
 - [word-break](word-break.md)
@@ -358,7 +358,7 @@ description: Справочник свойств CSS с примерами ко�
 - [text-emphasis-position](text-emphasis-position.md)
 - [text-emphasis-style](text-emphasis-style.md)
 - [text-indent](text-indent.md)
-- `text-rendering`
+- [text-rendering](text-rendering.md)
 - [text-shadow](text-shadow.md)
 - `text-underline-position`
 - [text-transform](text-transform.md)
@@ -398,7 +398,7 @@ description: Справочник свойств CSS с примерами ко�
 
 <div class="col3" markdown="1">
 - [color](color.md)
-- `color-adjust`
+- [color-adjust](color-adjust.md)
 - [opacity](opacity.md)
 </div>
 
