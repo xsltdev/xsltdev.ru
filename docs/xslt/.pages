@@ -2,3 +2,4 @@ title: XSLT
 arrange:
     - index.md
     - exslt
+    - recipes
