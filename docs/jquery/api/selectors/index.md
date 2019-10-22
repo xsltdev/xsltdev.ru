@@ -154,98 +154,98 @@
 : Выбирает каждый элемент `<p>`, глобальный атрибут `lang` которого, содержит значение `ru`.
 : `$("p:lang(ru)")`
 
-`[attribute]`
+[`[attribute]`](selector-attribute.md)
 : Выбирает все элементы, которые имеют атрибут `alt` с любым значением.
 : `$("[alt]")`
 
-`[attribute='value']`
+[`[attribute='value']`](selector-attribute-value.md)
 : Выбирает все элементы, которые имеют указанный атрибут (`src`) со значением `logo.png`.
 : `$("[src='logo.png']")`
 
-`[attribute='value'][attribute2='value2']`
+[`[attribute='value'][attribute2='value2']`](selector-attribute-multiple.md)
 : Выбирает все элементы, которые имеют указанные атрибуты (`src` и `alt`) со значениями этих атрибутов `logo.png` для первого и `image` для второго.
 : `$("[src='logo.png'][alt='image']")`
 
-`[attribute!='value']`
+[`[attribute!='value']`](selector-attribute-not-equal.md)
 : Выбирает все элементы, которые не имеют указанный атрибут, либо имеют указанный атрибут (`src`) со значением отличным от `logo.png` (не равно этому значению).
 : `$("[src!='logo.png']")`
 
-`[attribute$='value']`
+[`[attribute$='value']`](selector-attribute-value-end.md)
 : Выбирает все элементы, значение атрибута `href` которых, заканчивается на `.php`.
 : `$("[href$='.php']")`
 
-`[attribute|='value']`
+[`[attribute|='value']`](selector-attribute-contains-prefix.md)
 : Выбирает элементы, которые имеют глобальный атрибут `title` со значением равным `ru`, либо элементы, значение которых начинается с этого значения и после него сразу следует дефис (`ru-anystring`).
 : `$("[title|='ru']")`
 
-`[attribute^='value']`
+[`[attribute^='value']`](selector-attribute-value-begin.md)
 : Выбирает элементы, которые имеют указанный глобального атрибут `title` со значением, которое начинается с `eng`.
 : `$("[title^='eng']")`
 
-`[attribute~='value']`
+[`[attribute~='value']`](selector-attribute-contains-word.md)
 : Выбирает все элементы со значением глобального атрибута `title`, содержащего определенное слово `free` (слово может быть разделено пробелами).
 : `$("[title~='free']")`
 
-`[attribute*='value']`
+[`[attribute*='value']`](selector-attribute-contains-substring.md)
 : Выбирает все элементы со значением глобального атрибута `title`, содержащего указанную подстроку `free`.
 : `$("[title*='free']")`
 
-`:input`
+[`:input`](:input.md)
 : Выбирает все элементы `<input>`, `<textarea>`, `<select>` и `<button>`.
 : `$(":input")`
 
-`:text`
+[`:text`](:text.md)
 : Выбирает все элементы `<input>`, которые имеют атрибут `type` со значением `text`.
 : `$(":text")`
 
-`:password`
+[`:password`](:password.md)
 : Выбирает все элементы `<input>`, которые имеют атрибут `type` со значением `password`.
 : `$(":password")`
 
-`:radio`
+[`:radio`](:radio.md)
 : Выбирает все элементы `<input>`, которые имеют атрибут `type` со значением `radio`.
 : `$(":radio")`
 
-`:checkbox`
+[`:checkbox`](:checkbox.md)
 : Выбирает все элементы `<input>`, которые имеют атрибут `type` со значением `checkbox`.
 : `$(":checkbox")`
 
-`:submit`
+[`:submit`](:submit.md)
 : Выбирает все элементы `<input>` и `<button>`, которые имеют атрибут `type` со значением `submit` и элемент `<button>`, который не имеет атрибута `type`.
 : `$(":submit")`
 
-`:reset`
+[`:reset`](:reset.md)
 : Выбирает все элементы `<input>` и `<button>`, которые имеют атрибут `type` со значением `reset`.
 : `$(":reset")`
 
-`:button`
+[`:button`](:button.md)
 : Выбирает все элементы `<input>` и `<button>`, которые имеют атрибут `type` со значением `button`.
 : `$(":button")`
 
-`:image`
+[`:image`](:image.md)
 : Выбирает все элементы `<input>`, которые имеют атрибут `type` со значением `image`.
 : `$(":image")`
 
-`:file`
+[`:file`](:file.md)
 : Выбирает все элементы `<input>`, которые имеют атрибут `type` со значением `file`.
 : `$(":file")`
 
-`:enabled`
+[`:enabled`](:enabled.md)
 : Выбирает все элементы, которые активны (у которых не установлен логический атрибут `disabled`).
 : `$(":enabled")`
 
-`:disabled`
+[`:disabled`](:disabled.md)
 : Выбирает все элементы, которые не активны (у которых установлен логический атрибут `disabled`).
 : `$(":disabled")`
 
-`:selected`
+[`:selected`](:selected.md)
 : Выбирает все элементы `<option>`, у которых установлен логический атрибут `selected`.
 : `$(":selected")`
 
-`:checked`
+[`:checked`](:checked.md)
 : Выбирает все элементы `<input>`, у которых установлен логический атрибут `checked` (только для `<input type="checkbox">` и `<input type="radio">`). Кроме того, выбирает элементы `<option>` (пункты раскрывающегося списка `<select>`) с логическим атрибутом `selected`.
 : `$(":checked")`
 
-`:target`
+[`:target`](:target.md)
 : Если идентификатор ресурса (URI) документа содержит фрагмент идентификатора элемента, то селектор выбирет элемент с подобным идентификатором (глобальный атрибут `id`). Например, элемент `<p id="info">` будет выбран так как URI документа (`https://xsltdev.ru/#info`) содержит фрагмент идентификатора этого элемента.
 : `$("p:target")`
