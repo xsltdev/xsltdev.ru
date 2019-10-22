@@ -24,8 +24,9 @@
 
 ## XML технологии
 
-- [XSLT](/xslt/) &mdash; справочник элементов XSLT
-- [XPath](/xpath/) &mdash; справочник функций XPath
+[XSLT](xslt/index.md) <small>&mdash; [Спецификация](xslt/tr.md) &mdash; [EXSLT](xslt/exslt/index.md) </small>
+
+[XPath](xpath/index.md)
 
 ---
 
