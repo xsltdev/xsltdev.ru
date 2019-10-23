@@ -3,11 +3,11 @@ hide: false
 arrange:
     - index.md
     - selectors
-    - events.md
-    - dom.md
-    - traversing.md
-    - utilities.md
-    - effects.md
-    - ajax.md
-    - callbacks.md
-    - deferred.md
+    - events
+    - dom
+    - traversing
+    - utilities
+    - effects
+    - ajax
+    - callbacks
+    - deferred
