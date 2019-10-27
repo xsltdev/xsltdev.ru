@@ -1,3 +1,10 @@
 title: Сборник рецептов XSLT
 arrange:
     - primenenie-osey.md
+    - filtraciya-uzlov.md
+    - rabota-s-posledovatelnostyami.md
+    - vklyuchenie-usloviy-v-vyrazheniya-if.md
+    - iskluchenie-rekursii.md
+    - kvantory.md
+    - operacii-nad-mnozhestvami.md
+    - sravnenie-uzlov.md
