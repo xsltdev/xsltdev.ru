@@ -59,6 +59,7 @@
 - [Redux на русском](https://rajdee.gitbooks.io/redux-in-russian/content/)
 
 - [MongoDB](https://github.com/jsmarkus/the-little-mongodb-book/blob/master/ru/mongodb.markdown)
+- [MariaDB](https://oracleplsql.ru/mariadb-manual.html)
 
 - [Pug](https://habr.com/ru/post/278109/)
 - [Pug](https://jsman.ru/jade/)
