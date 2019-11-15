@@ -1,0 +1,7 @@
+title: Знакомство с языком
+arrange:
+    - index.md
+    - syntax.md
+    - arrays.md
+    - loops.md
+    - functions.md

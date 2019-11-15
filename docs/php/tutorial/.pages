@@ -1,0 +1,9 @@
+title: Учебник по PHP
+arrange:
+    - index.md
+    - basic
+    - include
+    - forms
+    - identity
+    - db
+    - lib
