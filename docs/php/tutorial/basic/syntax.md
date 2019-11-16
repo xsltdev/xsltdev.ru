@@ -27,6 +27,7 @@
 Примеры допустимых имён переменных:
 
 ```php
+<?php
 $age;
 $favorite_color;
 $name2;
@@ -45,6 +46,7 @@ $name2;
 Вот как выглядит присваивание информации в новую переменную:
 
 ```php
+<?php
 $favorite_color = "green";
 ```
 
@@ -57,6 +59,7 @@ $favorite_color = "green";
 Пример:
 
 ```php
+<?php
 $favorite_number = 42;
 ```
 
