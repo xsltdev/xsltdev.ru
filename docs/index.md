@@ -24,6 +24,8 @@
 
 [![Node.js](nodejs.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/nodejs/) [Node.js](/nodejs/) <small> &mdash; [Express.js](nodejs/expressjs4/installing.md) </small>
 
+[![php](php.svg){: style="height:32px;width:32px;vertical-align:middle;"}](/php/) [PHP](/php/)
+
 ## XML технологии
 
 [XSLT](xslt/index.md) <small>&mdash; [Спецификация](xslt/tr.md) &mdash; [EXSLT](xslt/exslt/index.md) </small>
