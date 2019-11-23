@@ -1,5 +1,6 @@
 title: Сборник рецептов XSLT
 arrange:
+    - index.md
     - primenenie-osey.md
     - filtraciya-uzlov.md
     - rabota-s-posledovatelnostyami.md
@@ -18,3 +19,4 @@ arrange:
     - preobrazovanie-registra.md
     - razbienie-stroki-na-leksemy.md
     - ispolzovanie-regularnyh-vyrazheniy.md
+    - rasshireniya-exslt-dlya-raboty-so-strokami.md
