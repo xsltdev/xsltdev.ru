@@ -20,6 +20,30 @@
 				"useTabs": false,
 				"tabWidth": 4
 			}
+		},
+		{
+			"files": ".xml",
+			"options": {
+				"parser": "html",
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": ".xsl",
+			"options": {
+				"parser": "html",
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": ".xslt",
+			"options": {
+				"parser": "html",
+				"useTabs": false,
+				"tabWidth": 2
+			}
 		}
 	]
 }

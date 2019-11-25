@@ -28,9 +28,9 @@
 
 ## XML технологии
 
-[XSLT](xslt/index.md) <small>&mdash; [Спецификация](xslt/tr.md) &mdash; [EXSLT](xslt/exslt/index.md) </small>
+[XSLT](/xslt/) <small>&mdash; [Спецификация](/xslt/tr/) &mdash; [EXSLT](/xslt/exslt/) &mdash; [Рецепты](/xslt/recipes/) </small>
 
-[XPath](xpath/index.md)
+[XPath](/xpath/)
 
 ---
 
@@ -62,10 +62,6 @@
 
 - [MongoDB](https://github.com/jsmarkus/the-little-mongodb-book/blob/master/ru/mongodb.markdown)
 - [MariaDB](https://oracleplsql.ru/mariadb-manual.html)
-
-- [Pug](https://habr.com/ru/post/278109/)
-- [Pug](https://jsman.ru/jade/)
-- [Pug](https://gist.github.com/neretin-trike/53aff5afb76153f050c958b82abd9228)
 
 - [Git](https://github.com/progit/progit2-ru)
 -->
