@@ -9,3 +9,6 @@ description: Справочник по языку программировани
 
 [Canvas 2D](canvas/index.md)
 : Свойства и методы Canvas 2D.<br /><small>Источник: [msiter.ru](https://msiter.ru/references/canvas-reference)</small>
+
+[XMLHttpRequest](xhr.md)
+: XMLHttpRequest<br /><small>Источник: [xmlhttprequest.ru](https://xmlhttprequest.ru/)</small>

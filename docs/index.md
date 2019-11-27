@@ -51,12 +51,16 @@
 <!--
 Планы
 
+- http://www.lib4dev.in/info/Dmitriy-8-Kireev/Frontend_information-master/136959376
+
 - CSS
 - [Документация jQuery](https://jquery-docs.ru/)
 - Книга [Изучаем jQuery](https://metanit.com/web/jquery/)
 - https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/
 
 - [Руководство Javascript](https://metanit.com/web/javascript/)
+- [Углубленный JS](https://github.com/BonsaiDen/JavaScript-Garden/tree/master/doc/ru)
+- [Регулярные выражения в JS](https://tuhub.ru/frontend/js-regexp)
 
 - [Redux на русском](https://rajdee.gitbooks.io/redux-in-russian/content/)
 

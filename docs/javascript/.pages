@@ -1,3 +1,4 @@
 title: Javascript
 arrange:
     - index.md
+    - xhr.md
