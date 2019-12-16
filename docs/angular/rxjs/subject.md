@@ -100,7 +100,7 @@ sbj.next(7)
 sbj.next(8)
 sbj.next(9)
 
-setTimeout(() => sbj.unsubscribe(), 3000)
+setTimeout(() => sbj.complete(), 3000)
 
 /*
 Результат  в консоли (по истечении 3 сек):
