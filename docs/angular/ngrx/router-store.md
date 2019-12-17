@@ -12,11 +12,11 @@ npm i @ngrx/router-store --save
 
 ```ts
 @NgModule({
-    imports: [
-        BrowserModule,
-        StoreModule.forRoot({router: routerReducer}),
-        StoreRouterConnectingModule.forRoot(),
-    ],
+  imports: [
+	BrowserModule,
+	StoreModule.forRoot({router: routerReducer}),
+	StoreRouterConnectingModule.forRoot(),
+  ],
 })
 ```
 
@@ -25,7 +25,7 @@ npm i @ngrx/router-store --save
 ```ts
 {
     state: {
-        root: {...},
+        root: {/*...*/},
         url: '/'
     },
     navigationId: 1

@@ -41,7 +41,7 @@ from(['b', 'c', 'd'])
 
 ## observeOn()
 
-Для управления передачей данных, в `pipe()` используйте метод [`observeOn()`](https://rxjs-dev.firebaseapp.com/api/operators/observeOn). Он принимает Scheduler и определяет, в каком порядке "потребители" получат данные после их отправления.
+Для управления передачей данных, в `pipe()` используйте метод [`observeOn()`](https://rxjs.dev/api/operators/observeOn). Он принимает Scheduler и определяет, в каком порядке "потребители" получат данные после их отправления.
 
 ```ts
 console.log('Before')
@@ -57,7 +57,7 @@ console.log('After')
 
 ## subscribeOn()
 
-В отличие от `observeOn()`, метод [`subscribeOn()`](https://rxjs-dev.firebaseapp.com/api/operators/subscribeOn) определяет не контекст передачи данных, а контекст вызова метода `subscribe()`. Параметром ему также передается Scheduler.
+В отличие от `observeOn()`, метод [`subscribeOn()`](https://rxjs.dev/api/operators/subscribeOn) определяет не контекст передачи данных, а контекст вызова метода `subscribe()`. Параметром ему также передается Scheduler.
 
 ```ts
 console.log('Before')

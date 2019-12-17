@@ -84,17 +84,19 @@ export function usersReducer(state: State = initialState, action: UsersUnion) {
 При первом вызове редюсера в качестве значения состояния ему передается `undefined`, поэтому очень важно определить значение части хранилища по умолчанию, которое задаст необходимую структуру и, если это необходимо, исходные значения свойств этой структуры.
 
 ```ts
-export interface State{
-	users: User[],
-	count: number;
+export interface State {
+  users: User[]
+  count: number
 }
 
 const initialState: State = {
-	users: [],
-	count: 0
-};
+  users: [],
+  count: 0
+}
 
-export function usersReducer(state: State = initialState, action: UsersUnion){...}
+export function usersReducer(state: State = initialState, action: UsersUnion) {
+  /* ... */
+}
 ```
 
 !!! note ""
@@ -105,7 +107,7 @@ export function usersReducer(state: State = initialState, action: UsersUnion){..
 
 ```ts
 @NgModule({
-	imports: [StoreModule.forRoot({users: usersReducer})],
+  imports: [StoreModule.forRoot({users: usersReducer})],
 })
 ```
 

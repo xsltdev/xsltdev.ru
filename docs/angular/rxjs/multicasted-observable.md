@@ -4,7 +4,7 @@
 
 ## multicast()
 
-Такие объекты создаются с помощью метода RxJS [`multicast()`](https://rxjs-dev.firebaseapp.com/api/operators/multicast), а в их основе находятся объекты `Subject`.
+Такие объекты создаются с помощью метода RxJS [`multicast()`](https://rxjs.dev/api/operators/multicast), а в их основе находятся объекты `Subject`.
 
 ```ts
 const subject = new Subject()
@@ -26,7 +26,7 @@ RxJS `multicast(`) принимает `Subject`, который регистри
 
 ## refCount()
 
-Метод RxJS [`refCount()`](https://rxjs-dev.firebaseapp.com/api/operators/refCount) облегчает работу с `ConnectableObservable`.
+Метод RxJS [`refCount()`](https://rxjs.dev/api/operators/refCount) облегчает работу с `ConnectableObservable`.
 
 При регистрации первого обработчика он автоматически начинает выполнение исходного объекта (вызывается `connect()`), а когда не остается ни одного "потребителя" автоматически завершает его выполнение (вызывается `unsubscribe()`).
 
@@ -34,17 +34,17 @@ RxJS `multicast(`) принимает `Subject`, который регистри
 
 ```ts
 const subject = new Subject()
-const refCounted = interval(3).pipe(
-  multicast(subject),
-  refCount()
-)
+const refCounted = interval(3).pipe(multicast(subject), refCount())
 
 let sub1, sub2
 
 //выполнение Observable начинается
 sub1 = refCounted.subscribe(vl => console.log(`1st: ${vl}`))
 
-setTimeout(() => (sub2 = refCounted.subscribe(vl => console.log(`2nd: ${vl}`))), 500)
+setTimeout(
+  () => (sub2 = refCounted.subscribe(vl => console.log(`2nd: ${vl}`))),
+  500
+)
 
 setTimeout(() => sub1.unsubscribe(), 1500)
 

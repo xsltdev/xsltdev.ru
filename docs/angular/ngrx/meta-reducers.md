@@ -24,14 +24,14 @@ export function log(reducer: ActionReducer<any>): ActionReducer<any> {
 _app.module.ts_
 
 ```ts
-import {reducers} from './store/reducers/index';
-import {log} from './store/meta-reducers/log.meta-reducer';
+import { reducers } from './store/reducers/index'
+import { log } from './store/meta-reducers/log.meta-reducer'
 
 @NgModule({
-    imports: [StoreModule.forRoot(reducers), {metaReducers: [log]}],
-    ...
+  imports: [StoreModule.forRoot(reducers), { metaReducers: [log] }]
+  // ...
 })
-export class AppModule{}
+export class AppModule {}
 ```
 
 NgRx Meta Reducers указываются в виде массива в свойстве `metaReducers` объекта конфигурации, который передается вторым параметром методу `StoreModule.forRoot()`.

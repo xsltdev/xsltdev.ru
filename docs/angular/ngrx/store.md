@@ -17,15 +17,26 @@ NgRx **Store** (или просто хранилище) хранит в себе
 _users.reducer.ts_
 
 ```ts
-export interface State{...}
-export function usersReducer(state: State = initialState, action: UsersUnion){...}
+export interface State {
+  /* ... */
+}
+export function usersReducer(state: State = initialState, action: UsersUnion) {
+  /* ... */
+}
 ```
 
 _articles.reducer.ts_
 
 ```ts
-export interface State{...}
-export function articlesReducer(state: State = initialState, action: ArticlesUnion){...}
+export interface State {
+  /*...*/
+}
+export function articlesReducer(
+  state: State = initialState,
+  action: ArticlesUnion
+) {
+  /*...*/
+}
 ```
 
 _index.ts_
@@ -75,13 +86,10 @@ _app.module.ts_
 
 ```ts
 @NgModule({
-	imports: [
-	StoreModule.forRoot({}),
-	UsersModule
-	],
-	...
+  imports: [StoreModule.forRoot({}), UsersModule]
+  // ...
 })
-export class AppModule{}
+export class AppModule {}
 ```
 
 Для регистрации редюсеров на уровне второстепенных модулей используется метод `forFeature()` модуля `StoreModule.forFeature()`. При этом корневой модуль может вообще не иметь собственных редюсеров.
@@ -164,7 +172,11 @@ export class AppComponent {
   constructor(private store: Store) {
     this.store.subscribe(state => console.log(state))
 
-    this.store.dispatch(new LoadArticle({ article: { id: 1, title: 'Learn NgRx', publish: false } }))
+    this.store.dispatch(
+      new LoadArticle({
+        article: { id: 1, title: 'Learn NgRx', publish: false }
+      })
+    )
 
     this.store.dispatch(new PublishArticle({ id: 1 }))
   }

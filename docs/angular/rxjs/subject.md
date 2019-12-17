@@ -33,7 +33,11 @@ sbj.next(9)
 
     Объекты RxJS Subject по умолчанию являются бесконечно исполняемыми, так как заранее неизвестно, когда будет вызов `complete()` и будет ли он вызван вообще. Поэтому не стоит забывать про `unsubscribe()`.
 
-В RxJS имеется несколько разновидностей `Subject`: [`BehaviorSubject`](https://rxjs-dev.firebaseapp.com/api/index/class/BehaviorSubject), [`ReplaySubject`](https://rxjs-dev.firebaseapp.com/api/index/class/ReplaySubject) и [`AsyncSubject`](https://rxjs-dev.firebaseapp.com/api/index/class/AsyncSubject).
+В RxJS имеется несколько разновидностей `Subject`:
+
+- [`BehaviorSubject`](https://rxjs.dev/api/index/class/BehaviorSubject),
+- [`ReplaySubject`](https://rxjs.dev/api/index/class/ReplaySubject),
+- [`AsyncSubject`](https://rxjs.dev/api/index/class/AsyncSubject).
 
 ## BehaviorSubject
 

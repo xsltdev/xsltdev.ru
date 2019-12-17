@@ -8,18 +8,18 @@ from([7, 21, 10])
   .subscribe(vl => console.log(vl))
 ```
 
-Здесь в [`map()`](https://rxjs-dev.firebaseapp.com/api/operators/map) каждое число равное или меньше 10 заменяется на `1`, если больше - на `0`.
+Здесь в [`map()`](https://rxjs.dev/api/operators/map) каждое число равное или меньше 10 заменяется на `1`, если больше - на `0`.
 
 Все RxJS операторы подразделяются на категории. Так, различают операторы:
 
-- Создания ([`of`](https://rxjs-dev.firebaseapp.com/api/index/function/of), [`from`](https://rxjs-dev.firebaseapp.com/api/index/function/from), [`fromEvent`](https://rxjs-dev.firebaseapp.com/api/index/function/fromEvent), [`interval`](https://rxjs-dev.firebaseapp.com/api/index/function/interval));
-- Преобразования ([`map`](https://rxjs-dev.firebaseapp.com/api/operators/map), [`scan`](https://rxjs-dev.firebaseapp.com/api/operators/scan), [`buffer`](https://rxjs-dev.firebaseapp.com/api/operators/buffer));
-- Фильтрации ([`filter`](https://rxjs-dev.firebaseapp.com/api/operators/filter), [`take`](https://rxjs-dev.firebaseapp.com/api/operators/take), [`skip`](https://rxjs-dev.firebaseapp.com/api/operators/skip), [`distinct`](https://rxjs-dev.firebaseapp.com/api/operators/distinct));
-- Обработки ошибок ([`catchError`](https://rxjs-dev.firebaseapp.com/api/operators/catchError), [`retry`](https://rxjs-dev.firebaseapp.com/api/operators/retry), [`onErrorResumeNext`](https://rxjs-dev.firebaseapp.com/api/index/function/onErrorResumeNext));
-- Условия ([`skipUntil`](https://rxjs-dev.firebaseapp.com/api/operators/skipUntil), [`skipWhile`](https://rxjs-dev.firebaseapp.com/api/operators/skipWhile), [`takeUntil`](https://rxjs-dev.firebaseapp.com/api/operators/takeUntil), [`takeWhile`](https://rxjs-dev.firebaseapp.com/api/operators/takeWhile));
-- Математические ([`min`](https://rxjs-dev.firebaseapp.com/api/operators/min), [`max`](https://rxjs-dev.firebaseapp.com/api/operators/max), [`count`](https://rxjs-dev.firebaseapp.com/api/operators/count));
-- Утилиты ([`tap`](https://rxjs-dev.firebaseapp.com/api/operators/tap), [`delay`](https://rxjs-dev.firebaseapp.com/api/operators/delay));
-- Для Connectable Observable ([`share`](https://rxjs-dev.firebaseapp.com/api/operators/share), [`shareReplay`](https://rxjs-dev.firebaseapp.com/api/operators/shareReplay), [`publish`](https://rxjs-dev.firebaseapp.com/api/operators/publish)).
+- Создания ([`of`](https://rxjs.dev/api/index/function/of), [`from`](https://rxjs.dev/api/index/function/from), [`fromEvent`](https://rxjs.dev/api/index/function/fromEvent), [`interval`](https://rxjs.dev/api/index/function/interval));
+- Преобразования ([`map`](https://rxjs.dev/api/operators/map), [`scan`](https://rxjs.dev/api/operators/scan), [`buffer`](https://rxjs.dev/api/operators/buffer));
+- Фильтрации ([`filter`](https://rxjs.dev/api/operators/filter), [`take`](https://rxjs.dev/api/operators/take), [`skip`](https://rxjs.dev/api/operators/skip), [`distinct`](https://rxjs.dev/api/operators/distinct));
+- Обработки ошибок ([`catchError`](https://rxjs.dev/api/operators/catchError), [`retry`](https://rxjs.dev/api/operators/retry), [`onErrorResumeNext`](https://rxjs.dev/api/index/function/onErrorResumeNext));
+- Условия ([`skipUntil`](https://rxjs.dev/api/operators/skipUntil), [`skipWhile`](https://rxjs.dev/api/operators/skipWhile), [`takeUntil`](https://rxjs.dev/api/operators/takeUntil), [`takeWhile`](https://rxjs.dev/api/operators/takeWhile));
+- Математические ([`min`](https://rxjs.dev/api/operators/min), [`max`](https://rxjs.dev/api/operators/max), [`count`](https://rxjs.dev/api/operators/count));
+- Утилиты ([`tap`](https://rxjs.dev/api/operators/tap), [`delay`](https://rxjs.dev/api/operators/delay));
+- Для Connectable Observable ([`share`](https://rxjs.dev/api/operators/share), [`shareReplay`](https://rxjs.dev/api/operators/shareReplay), [`publish`](https://rxjs.dev/api/operators/publish)).
 
 ## pipe()
 
@@ -42,10 +42,7 @@ from([30, 41, 60])
 
 ```ts
 const doubleFilter = <T, R>(fn: (value: T, index: number) => R) =>
-  pipe(
-    filter(fn),
-    filter(fn)
-  )
+  pipe(filter(fn), filter(fn))
 ```
 
 Пример приведен только для наглядности. Практическое использование такого оператора не эффективно.

@@ -23,17 +23,26 @@ const takeNth = (n: number) => <T>(source: Observable<T>) =>
 
 from(['Jack', 'Jane', 'Jim', 'Jason'])
   .pipe(takeNth(3))
-  .subscribe(vl => console.log(vl), err => {}, () => console.log('Completed'))
+  .subscribe(
+    vl => console.log(vl),
+    err => {},
+    () => console.log('Completed')
+  )
 ```
 
-Подробное описание оператора [`from()`](https://rxjs-dev.firebaseapp.com/api/index/function/from).
+Подробное описание оператора [`from()`](https://rxjs.dev/api/index/function/from).
 
 Также создавать операторы можно используя уже существующие.
 
 ```ts
-const takeNth = (n: number) => <T>(source: Observable<T>) => source.pipe(filter((value, index) => index === n - 1))
+const takeNth = (n: number) => <T>(source: Observable<T>) =>
+  source.pipe(filter((value, index) => index === n - 1))
 
 from(['Jack', 'Jane', 'Jim', 'Jason'])
   .pipe(takeNth(3))
-  .subscribe(vl => console.log(vl), err => {}, () => console.log('Completed'))
+  .subscribe(
+    vl => console.log(vl),
+    err => {},
+    () => console.log('Completed')
+  )
 ```

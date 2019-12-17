@@ -167,7 +167,18 @@ export class DeleteAllArticles implements Action {
   readonly type = ArticleActionTypes.DeleteAllArticles
 }
 
-export type ArticleActionsUnion = LoadArticles | AddArticle | UpsertArticle | AddArticles | UpsertArticles | UpdateArticle | UpdateArticles | MapArticles | DeleteArticle | DeleteArticles | DeleteAllArticles
+export type ArticleActionsUnion =
+  | LoadArticles
+  | AddArticle
+  | UpsertArticle
+  | AddArticles
+  | UpsertArticles
+  | UpdateArticle
+  | UpdateArticles
+  | MapArticles
+  | DeleteArticle
+  | DeleteArticles
+  | DeleteAllArticles
 ```
 
 _article.reducer.ts_
@@ -189,7 +200,10 @@ export const initialState: State = adapter.getInitialState({
   currentArticle: null
 })
 
-export function articlesReducer(state = initialState, action: ArticleActionsUnion): State {
+export function articlesReducer(
+  state = initialState,
+  action: ArticleActionsUnion
+): State {
   switch (action.type) {
     case ArticleActionTypes.LoadArticles: {
       return adapter.addAll(action.payload.articles, state)
@@ -250,7 +264,12 @@ export function articlesReducer(state = initialState, action: ArticleActionsUnio
 - `selectTotal` - возвращает общее количество записей в массиве.
 
 ```ts
-const { selectIds, selectEntities, selectAll, selectTotal } = adapter.getSelectors()
+const {
+  selectIds,
+  selectEntities,
+  selectAll,
+  selectTotal
+} = adapter.getSelectors()
 
 export const selectArticleIds = selectIds
 export const selectArticleEntities = selectEntities

@@ -50,7 +50,10 @@ export class ArticlesComponent {
   getArticles() {
     this.articles = []
 
-    this.articlesService.getArticles().subscribe(items => (this.articles = items), err => console.log(err))
+    this.articlesService.getArticles().subscribe(
+      items => (this.articles = items),
+      err => console.log(err)
+    )
   }
 }
 ```
@@ -106,7 +109,10 @@ export class ArticlesLoadedError implements Action {
   readonly type = ArticlesActions.ArticlesLoadedError
 }
 
-export type ArticlesUnion = LoadArticles | ArticlesLoadedSuccess | ArticlesLoadedError
+export type ArticlesUnion =
+  | LoadArticles
+  | ArticlesLoadedSuccess
+  | ArticlesLoadedError
 ```
 
 _articles.reducer.ts_
@@ -120,7 +126,10 @@ const initialState: ArticlesState = {
   list: []
 }
 
-export function articlesReducer(state: State = initialState, action: ArticlesUnion) {
+export function articlesReducer(
+  state: State = initialState,
+  action: ArticlesUnion
+) {
   switch (action.type) {
     case ArticlesActions.ArticlesLoadedSuccess:
       return {
@@ -161,7 +170,10 @@ export class ArticlesEffects {
     )
   )
 
-  constructor(private actions$: Actions, private articlesService: ArticlesService) {}
+  constructor(
+    private actions$: Actions,
+    private articlesService: ArticlesService
+  ) {}
 }
 ```
 
@@ -210,7 +222,7 @@ export class AppModule {}
 @Effect()
 initEffects$ = this.actions$.pipe(
     ofType(ROOT_EFFECTS_INIT),
-    ...
+    //...
 );
 ```
 
@@ -235,7 +247,10 @@ export class ArticlesEffects implements OnInitEffects, OnRunEffects {
     )
   )
 
-  constructor(private actions$: Actions, private articlesService: ArticlesService) {}
+  constructor(
+    private actions$: Actions,
+    private articlesService: ArticlesService
+  ) {}
 
   ngrxOnInitEffects(): Action {
     return new ArticlesEffectsInit()
@@ -244,7 +259,13 @@ export class ArticlesEffects implements OnInitEffects, OnRunEffects {
   ngrxOnRunEffects(resolvedEffects$: Observable<EffectNotification>) {
     return this.actions$.pipe(
       ofType(ArticlesActions.ArticlesEffectsInit),
-      exhaustMap(() => resolvedEffects$.pipe(takeUntil(this.actions$.pipe(ofType(ArticlesActions.ArticlesLoadedSuccess)))))
+      exhaustMap(() =>
+        resolvedEffects$.pipe(
+          takeUntil(
+            this.actions$.pipe(ofType(ArticlesActions.ArticlesLoadedSuccess))
+          )
+        )
+      )
     )
   }
 }
@@ -257,10 +278,10 @@ export class ArticlesEffects implements OnInitEffects, OnRunEffects {
 ```ts
 @Injectable()
 export class ArticlesEffects{
-    @Effect()
-    loadArticles$ = ...
+	@Effect()
+	loadArticles$ = ...
 
-    @Effect()
-    loadAuthors$ = ...
+	@Effect()
+	loadAuthors$ = ...
 }
 ```

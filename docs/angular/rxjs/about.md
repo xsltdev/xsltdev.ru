@@ -25,7 +25,7 @@ RxJS оперирует объектами `Observable`, которые суще
 
 В контексте приложений Angular RxJS применяется для выполнения HTTP-запросов, отслеживания событий браузера или создания пользовательских событий.
 
-Пример создания простого `Observable` с использованием функции [`fromEvent`](https://rxjs-dev.firebaseapp.com/api/index/function/fromEvent).
+Пример создания простого `Observable` с использованием функции [`fromEvent`](https://rxjs.dev/api/index/function/fromEvent).
 
 ```ts
 import { fromEvent } from 'rxjs'
@@ -39,4 +39,4 @@ fromEvent(document, 'mousemove').subscribe(ev => {
 
 ## Ссылки
 
-- [Библиотека RxJS](https://rxjs-dev.firebaseapp.com/)
+- [Библиотека RxJS](https://rxjs.dev/)

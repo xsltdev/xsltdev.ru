@@ -110,13 +110,35 @@ export class CarDeletedError implements Action {
   readonly type = CarActionTypes.CarDeletedError
 }
 
-export type CarUnion = AddCarRequest | CarAddedSuccess | CarAddedError | UpdateCarRequest | CarUpdatedSuccess | CarUpdatedError | LoadCars | CarsLoadedSuccess | CarsLoadedError | DeleteCarRequest | CarDeletedSuccess | CarDeletedError
+export type CarUnion =
+  | AddCarRequest
+  | CarAddedSuccess
+  | CarAddedError
+  | UpdateCarRequest
+  | CarUpdatedSuccess
+  | CarUpdatedError
+  | LoadCars
+  | CarsLoadedSuccess
+  | CarsLoadedError
+  | DeleteCarRequest
+  | CarDeletedSuccess
+  | CarDeletedError
 ```
 
 _store/effects/cars.effects.ts_
 
 ```ts
-import { CarActionTypes, CarsLoadedSuccess, CarsLoadedError, AddCarRequest, CarAddedSuccess, CarAddedError, DeleteCarRequest, CarDeletedSuccess, CarDeletedError } from '../actions/car.actions'
+import {
+  CarActionTypes,
+  CarsLoadedSuccess,
+  CarsLoadedError,
+  AddCarRequest,
+  CarAddedSuccess,
+  CarAddedError,
+  DeleteCarRequest,
+  CarDeletedSuccess,
+  CarDeletedError
+} from '../actions/car.actions'
 
 import { Car } from '../models/car.model'
 
@@ -226,7 +248,12 @@ export const reducer = (state: State = initialState, action: CarUnion) => {
   }
 }
 
-const { selectIds, selectEntities, selectAll, selectTotal } = adapter.getSelectors()
+const {
+  selectIds,
+  selectEntities,
+  selectAll,
+  selectTotal
+} = adapter.getSelectors()
 
 export const selectCarsIds = selectIds
 export const selectCarEntities = selectEntities
@@ -237,7 +264,11 @@ export const selectCarTotal = selectTotal
 _store/index.ts_
 
 ```ts
-import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store'
+import {
+  ActionReducerMap,
+  createFeatureSelector,
+  createSelector
+} from '@ngrx/store'
 
 import * as cars from './reducers/car.reducer'
 
@@ -255,10 +286,7 @@ export const selectCarsState = createSelector(
   (state: State) => state.cars
 )
 
-export const selectAllCars = createSelector(
-  selectCarsState,
-  cars.selectAllCars
-)
+export const selectAllCars = createSelector(selectCarsState, cars.selectAllCars)
 
 export const selectCarsPending = createSelector(
   selectCarsState,
@@ -269,30 +297,30 @@ export const selectCarsPending = createSelector(
 _catalog.module.ts_
 
 ```ts
-import {reducers} from "./store";
-import {CarEffects} from "./store/effects/car.effects";
+import { reducers } from './store'
+import { CarEffects } from './store/effects/car.effects'
 
 @NgModule({
-    imports: [
-    ...
+  imports: [
+    //...
     EffectsModule.forFeature([CarEffects]),
     StoreModule.forFeature('catalog', reducers)
-    ],
-    ...
+  ]
+  //...
 })
-export class CatalogModule{}
+export class CatalogModule {}
 ```
 
 _app.module.ts_
 
 ```ts
 @NgModule({
-    imports: [
-    ...
+  imports: [
+    //...
     EffectsModule.forRoot([]),
     StoreModule.forRoot({})
-    ],
-    ...
+  ]
+  //...
 })
 export class AppModule {}
 ```

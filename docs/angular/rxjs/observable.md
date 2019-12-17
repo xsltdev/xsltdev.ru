@@ -1,6 +1,6 @@
 # Объект Observable
 
-Объекты RxJS **Observable** создаются либо с использованием операторов создания ([`of`](https://rxjs-dev.firebaseapp.com/api/index/function/of), [`from`](https://rxjs-dev.firebaseapp.com/api/index/function/from), [`fromEvent`](https://rxjs-dev.firebaseapp.com/api/index/function/fromEvent)), либо через `new Observable`.
+Объекты RxJS **Observable** создаются либо с использованием операторов создания ([`of`](https://rxjs.dev/api/index/function/of), [`from`](https://rxjs.dev/api/index/function/from), [`fromEvent`](https://rxjs.dev/api/index/function/fromEvent)), либо через `new Observable`.
 
 Пример с оператором `of()`.
 
@@ -40,7 +40,11 @@ const obs = new Observable(sub => {
   }, 500)
 })
 
-obs.subscribe(vl => console.log(vl), err => console.log('Error: ', err), () => console.log('Completed'))
+obs.subscribe(
+  vl => console.log(vl),
+  err => console.log('Error: ', err),
+  () => console.log('Completed')
+)
 ```
 
 !!! note ""

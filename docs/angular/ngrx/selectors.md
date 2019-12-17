@@ -121,7 +121,9 @@ export const selectArticlesByUser = createSelector(
 И далее в компоненте.
 
 ```ts
-this.store.pipe(select(selectArticlesByUser, { user_id: 3 })).subscribe(vl => console.log(vl))
+this.store
+  .pipe(select(selectArticlesByUser, { user_id: 3 }))
+  .subscribe(vl => console.log(vl))
 ```
 
 ## createFeatureSelector()
@@ -140,7 +142,9 @@ const selectArticles = createFeatureSelector<State>('articles')
 
 ```ts
 //получаем и запоминаем все статьи по запрашиваемому user_id
-this.store.pipe(select(selectArticlesByUser, { user_id: 3 })).subscribe(vl => console.log(vl))
+this.store
+  .pipe(select(selectArticlesByUser, { user_id: 3 }))
+  .subscribe(vl => console.log(vl))
 
 //сбрасываем сохраненное значение
 selectArticlesByUser.release()
