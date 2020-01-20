@@ -17,6 +17,10 @@ description: Angular представляет собой JavaScript-фреймв
 
 : Angular представляет собой JavaScript-фреймворк, который позволяет создавать высокопроизводительные и функциональные клиентские web-приложения. Angular состоит из совокупности библиотек, каждая из которых отвечает за определенный функционал: создание форм, работа с анимацией, осуществление HTTP-запросов и т. д.<br /><small>Источник: [webdraftt.com](https://webdraftt.com/tutorial)</small>
 
+[Angular 5 - Полное руководство](angular5/index.md)
+
+: Angular применяется для создания одностраничных приложений Single Page Applications SPA. Angular создает рендер программы, в отличие от подхода, когда весь контент загружен в DOM, а javaScript его меняет. В курсе речь идет о версии Angular 5.<br /><small>Источник: [bxnotes.ru](https://bxnotes.ru/conspect/lib/angular/angular-5-the-complete-guide/vvedenie-v-angular/)</small>
+
 [NgRx](ngrx/about.md)
 
 : NgRx предоставляет хранилище, которое выступает в качестве единственного источника данных для состояния Angular приложения. Управление состоянием хранилища и извлечение из него данных осущетсвляется в NgRx реактивно.<br /><small>Источник: [webdraftt.com](https://webdraftt.com/tutorial/ngrx)</small>

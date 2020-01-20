@@ -4,5 +4,6 @@ arrange:
     - cheatsheet.md
     - guide
     - tutorial
+    - angular5
     - ngrx
     - rxjs
