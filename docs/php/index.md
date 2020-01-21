@@ -9,3 +9,6 @@ PHP - это скриптовый язык общего назначения, и
 
 [Учебник по PHP](tutorial/index.md)
 : Учебник по PHP от HTMLAcademy<br /><small>Источник: [htmlacademy.ru](https://htmlacademy.ru/tutorial/php)</small>
+
+[Функциональный PHP](functional/index.md)
+: Как использовать функциональное программирование в PHP.<br /><small>Источник: [bxnotes.ru](https://bxnotes.ru/conspect/lang/php/functional-php/)</small>
