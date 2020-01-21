@@ -45,6 +45,7 @@ function container_map(callable $f, Container $c): Container {
 Использование данного класса обертки позволяет сделать серию трансформаций без сайд эффекта, так как всегда будет возвращаться новый экземпляр контейнера:
 
 ```php
+<?php
 $c = Container::of('</ Hello FP >')->map('htmlspecialchars')->map('strtolower');
 $c; //-> Container[ &lt;/ hello fp &gt; ]
 ```
@@ -52,6 +53,7 @@ $c; //-> Container[ &lt;/ hello fp &gt; ]
 От данного класса можно наследоваться, чтобы реализовать специальную логику. Например, класс `SafeNumber`, предназначен для безопасной работы с числами:
 
 ```php
+<?php
 class SafeNumber extends Container {
   public function map(callable $f): SafeNumber {
     if(!isset($this->_value) || is_nan($this->_value)) {
@@ -66,6 +68,7 @@ class SafeNumber extends Container {
 Пример использования:
 
 ```php
+<?php
 function safeDivide($a, $b): SafeNumber {
   return SafeNumber::of(empty($b) ? NAN : $a / $b);
 }

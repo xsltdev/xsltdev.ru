@@ -9,6 +9,7 @@ description: Зачем нужно функциональное программ
 Пример функционального подхода:
 
 ```php
+<?php
 $run = compose(toFile('ch01.txt'), $repeat(2), 'htmlentities');
 $run('Functional PHP <i>Rocks!</i>');
 //-> writes 'Functional PHP &lt;i&gt;Rocks!&lt;/i&gt;
