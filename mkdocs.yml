@@ -5,7 +5,7 @@ site_author: xsltdev.ru
 copyright: (С) 2012-2019, Справочник web-разработчика с примерами кода
 
 repo_name: 'Репозиторий справочника'
-repo_url: 'https://github.com/xsltdev/index'
+repo_url: 'https://github.com/xsltdev/xsltdev.ru'
 
 theme:
     # name: 'material'
