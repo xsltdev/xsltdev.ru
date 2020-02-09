@@ -1,4 +1,6 @@
 title: Javascript
 arrange:
     - index.md
+    - canvas
     - xhr.md
+    - json.md

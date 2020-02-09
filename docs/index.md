@@ -68,4 +68,6 @@
 - [MariaDB](https://oracleplsql.ru/mariadb-manual.html)
 
 - [Git](https://github.com/progit/progit2-ru)
+
+- [Angular и прочее](http://www.coldfox.ru/)
 -->
