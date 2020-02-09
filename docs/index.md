@@ -8,7 +8,7 @@
 
 [![LESS](less.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/less/) [LESS](/less/)
 
-[![Javascript](js.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/javascript/) [Javascript](/javascript/) <small> &mdash; [Canvas 2D](javascript/canvas/index.md)</small>
+[![Javascript](js.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/javascript/) [Javascript](/javascript/) <small> &mdash; [Canvas 2D](javascript/canvas/index.md) &mdash; [JSON](javascript/json.md)</small>
 
 [![Typescript](ts.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/typescript/) [Typescript](/typescript/)
 
