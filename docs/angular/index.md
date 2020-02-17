@@ -9,7 +9,7 @@ description: Angular представляет собой JavaScript-фреймв
 
 [Шпаргалка Angular](cheatsheet.md)
 
-[Гайд Angular 8](guide/intro/start.md)
+[Гайд Angular 9](guide/intro/start.md)
 
 : Angular представляет фреймворк от компании Google для создания клиентских приложений. Прежде всего он нацелен на разработку SPA-решений (Single Page Application), то есть одностраничных приложений.<br /><small>Источник: [metanit.com](https://metanit.com/web/angular2/)</small>
 
