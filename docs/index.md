@@ -70,4 +70,7 @@
 - [Git](https://github.com/progit/progit2-ru)
 
 - [Angular и прочее](http://www.coldfox.ru/)
+
+- [Node.js для начинающих](http://web.archive.org/web/20200221105045/http://www.nodebeginner.ru/#about)
+- [Руководства по Node.js](https://nodeguide.ru/doc/)
 -->

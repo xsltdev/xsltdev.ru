@@ -1,6 +1,7 @@
 title: Node.js
 arrange:
     - index.md
+    - beginners
     - tutorial
     - guide
     - expressjs4
