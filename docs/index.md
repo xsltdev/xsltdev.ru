@@ -1,5 +1,13 @@
 # Справочники
 
+Новое на сайте:
+
+[Основы GraphQL](/react/graphql-basics/)
+: GraphQL - это язык; язык, который используется для взаимодействия с сервером для получений данных.<br /><small>Источник: [coldfox.ru](http://www.coldfox.ru/article/5c5369b5779576192190cf1c/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-GraphQL)</small>
+
+[Node.js для начинающих](/nodejs/beginners/)
+: Цель данного руководства — помочь вам начать разработку приложений на Node.js и научить всему, что необходимо знать о «продвинутом» JavaScript. Это больше, чем обычный «Hello world»-туториал.
+
 ## Фронтенд
 
 [![HTML](html.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/html/) [HTML](/html/)
@@ -70,7 +78,4 @@
 - [Git](https://github.com/progit/progit2-ru)
 
 - [Angular и прочее](http://www.coldfox.ru/)
-
-- [Node.js для начинающих](http://web.archive.org/web/20200221105045/http://www.nodebeginner.ru/#about)
-- [Руководства по Node.js](https://nodeguide.ru/doc/)
 -->

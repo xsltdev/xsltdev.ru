@@ -1,0 +1,7 @@
+title: Основы GraphQL
+arrange:
+    - index.md
+    - how-it-works.md
+    - terms.md
+    - lang.md
+    - server.md
