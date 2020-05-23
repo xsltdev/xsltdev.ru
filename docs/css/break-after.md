@@ -118,10 +118,10 @@ break-after: unset;
 - [CSS Regions Module Level 1](https://drafts.csswg.org/css-regions-1/#region-flow-break)
 - [CSS Multi-column Layout Module](https://drafts.csswg.org/css-multicol-1/#break-before-break-after-break-inside)
 
-## См. также
+<!-- ## См. также
 
 - [`break-before`](break-before.md)
-- [`break-inside`](break-inside.md)
+- [`break-inside`](break-inside.md) -->
 
 ## Ссылки
 

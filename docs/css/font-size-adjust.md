@@ -40,7 +40,7 @@ font-size-adjust: unset;
 font-size-adjust: none;
 ```
 
-Применяется к: ко всем элементам, включая [`::first-letter`](::first-letter.md) и [`::first-line`](::first-line.md).
+Применяется к: ко всем элементам, включая [`::first-letter`](first-letter.md) и [`::first-line`](first-line.md).
 
 ## Поддержка браузерами
 

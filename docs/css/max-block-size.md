@@ -4,9 +4,9 @@ description: Свойство max-block-size определяет максима
 
 # max-block-size
 
-Свойство **`max-block-size`** определяет максимальный размер элемента в направлении, перпендикулярном направлению письма, указанному в [`writing-mode`](writing-mode.md). То есть, если направление записи горизонтальное, то `max-block-size` эквивалентно [`max-height`](max-height.md); если направление записи вертикальное, `max-block-size` равен [`max-width`](max-width.md).
+Свойство **`max-block-size`** определяет максимальный размер элемента в направлении, перпендикулярном направлению письма, указанному в `writing-mode`. То есть, если направление записи горизонтальное, то `max-block-size` эквивалентно [`max-height`](max-height.md); если направление записи вертикальное, `max-block-size` равен [`max-width`](max-width.md).
 
-Максимальная длина другого размера указывается с помощью свойства [`max-inline-size`](max-inline-size.md).
+Максимальная длина другого размера указывается с помощью свойства `max-inline-size`.
 
 ## Синтаксис
 
@@ -104,8 +104,6 @@ max-block-size: unset;
 ## См. также
 
 - [`max-width`](max-width.md) и [`max-height`](max-height.md)
-- [`max-inline-size`](max-inline-size.md)
-- [`writing-mode`](writing-mode.md)
 
 ## Ссылки
 

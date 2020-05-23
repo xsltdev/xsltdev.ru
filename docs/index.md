@@ -78,4 +78,6 @@
 - [Git](https://github.com/progit/progit2-ru)
 
 - [Angular и прочее](http://www.coldfox.ru/)
+
+- [Typescript 3.8](https://github.com/bndby/typescript-definitive-guide)
 -->

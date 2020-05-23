@@ -123,8 +123,6 @@ description: Тег ul (от англ. unordered list — неупорядоче
 
 - [`<ol>`](ol.md)
 - [`<li>`](li.md)
-- [`<menu>`](menu.md)
-- [`<dir>`](dir.md)
 - [list-style](../css/list-style.md)
 - [line-height](../css/line-height.md)
 
