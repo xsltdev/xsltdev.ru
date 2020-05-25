@@ -2,11 +2,11 @@
 
 Новое на сайте:
 
+[Документация Typescript 3.8](typescript/ts38/index.md)
+: Typescript 3.8 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
+
 [Основы GraphQL](/react/graphql-basics/)
 : GraphQL - это язык; язык, который используется для взаимодействия с сервером для получений данных.<br /><small>Источник: [coldfox.ru](http://www.coldfox.ru/article/5c5369b5779576192190cf1c/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-GraphQL)</small>
-
-[Node.js для начинающих](/nodejs/beginners/)
-: Цель данного руководства — помочь вам начать разработку приложений на Node.js и научить всему, что необходимо знать о «продвинутом» JavaScript. Это больше, чем обычный «Hello world»-туториал.
 
 ## Фронтенд
 
