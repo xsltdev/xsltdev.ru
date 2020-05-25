@@ -1,6 +1,7 @@
 title: TypeScript
 arrange:
     - index.md
+    - ts38
     - guide
     - handbook
     - declarations
