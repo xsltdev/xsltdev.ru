@@ -2,31 +2,34 @@ site_name: Справочник
 site_url: https://xsltdev.ru/
 site_description: Справочник web-разработчика с примерами кода - HTML, CSS, Javascript, Typescript, Angular, React, Node.js, XSLT, XPath
 site_author: xsltdev.ru
-copyright: (С) 2012-2019, Справочник web-разработчика с примерами кода
+copyright: (C) 2012-2020, Справочник web-разработчика с примерами кода
 
-repo_name: 'Репозиторий справочника'
+repo_name: 'Справочник на Github'
 repo_url: 'https://github.com/xsltdev/xsltdev.ru'
 
 theme:
-    # name: 'material'
-    name: null
-    custom_dir: 'theme/material'
+    name: material
+    custom_dir: overrides
+    # name: null
+    # custom_dir: 'theme/material'
     palette:
-        primary: 'teal'
-        accent: 'teal'
-    language: 'ru'
+        primary: teal
+        accent: teal
+    language: ru
     #    favicon: 'assets/images/favicon.ico'
-    feature:
-        tabs: true
+    features:
+        - tabs
+        - instant
     font:
-        text: 'Roboto'
-        code: 'Roboto Mono'
-    logo:
-        icon: 'code'
+        text: Roboto
+        code: Roboto Mono
+    # icon:
+    # logo: material/code
+    # repo: material/code
 
 extra:
     social:
-        - type: 'github'
+        - icon: fontawesome/brands/github-alt
           link: 'https://github.com/xsltdev'
 #        - type: 'linkedin'
 #          link: 'https://www.linkedin.com/in/bndby/'
@@ -34,8 +37,8 @@ extra:
 #    language: 'en, ru'
 
 google_analytics:
-    - 'UA-34215161-1'
-    - 'auto'
+    - UA-34215161-1
+    - auto
 
 markdown_extensions:
     - admonition
