@@ -2,11 +2,11 @@
 
 Новое на сайте:
 
+[Руководство по регулярным выражениям в JavaScript](javascript/regexp.md)
+: Регулярные выражения (RegExp) - это очень эффективный способ работы со строками.
+
 [Документация Typescript 3.8](typescript/ts38/index.md)
 : Typescript 3.8 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
-
-[Основы GraphQL](/react/graphql-basics/)
-: GraphQL - это язык; язык, который используется для взаимодействия с сервером для получений данных.<br /><small>Источник: [coldfox.ru](http://www.coldfox.ru/article/5c5369b5779576192190cf1c/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-GraphQL)</small>
 
 ## Фронтенд
 
@@ -78,6 +78,4 @@
 - [Git](https://github.com/progit/progit2-ru)
 
 - [Angular и прочее](http://www.coldfox.ru/)
-
-- [Typescript 3.8](https://github.com/bndby/typescript-definitive-guide)
 -->

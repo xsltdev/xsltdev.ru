@@ -12,3 +12,9 @@ description: Справочник по языку программировани
 
 [XMLHttpRequest](xhr.md)
 : XMLHttpRequest<br /><small>Источник: [xmlhttprequest.ru](https://xmlhttprequest.ru/)</small>
+
+[Введение в JSON](json.md)
+: JSON (JavaScript Object Notation) - простой формат обмена данными, удобный для чтения и написания как человеком, так и компьютером
+
+[Руководство по регулярным выражениям в JavaScript](regexp.md)
+: Регулярные выражения (RegExp) - это очень эффективный способ работы со строками.

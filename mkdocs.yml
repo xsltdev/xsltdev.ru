@@ -19,7 +19,6 @@ theme:
     #    favicon: 'assets/images/favicon.ico'
     features:
         - tabs
-        - instant
     font:
         text: Roboto
         code: Roboto Mono

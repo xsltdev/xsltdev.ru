@@ -4,3 +4,4 @@ arrange:
     - canvas
     - xhr.md
     - json.md
+    - regexp.mds
