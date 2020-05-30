@@ -7,6 +7,9 @@ description: Справочник по языку программировани
 
 Справочник по языку программирования Javascript с примерами кода.
 
+[Углубленный Javascript](garden/index.md)
+: JavaScript Гарден **не** имеет цели научить вас языку JavaScript. Вам понадобится реальный опыт работы с языком чтобы понимать темы, рассматриваемые в этом руководстве.
+
 [Canvas 2D](canvas/index.md)
 : Свойства и методы Canvas 2D.<br /><small>Источник: [msiter.ru](https://msiter.ru/references/canvas-reference)</small>
 

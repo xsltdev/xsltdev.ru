@@ -1,7 +1,8 @@
 title: Javascript
 arrange:
     - index.md
+    - garden
     - canvas
     - xhr.md
     - json.md
-    - regexp.mds
+    - regexp.md

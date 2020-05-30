@@ -2,10 +2,13 @@
 
 Новое на сайте:
 
-[Руководство по регулярным выражениям в JavaScript](javascript/regexp.md)
+[Углубленный Javascript](/javascript/garden/)
+: JavaScript Гарден **не** имеет цели научить вас языку JavaScript. Вам понадобится реальный опыт работы с языком чтобы понимать темы, рассматриваемые в этом руководстве.
+
+[Руководство по регулярным выражениям в JavaScript](/javascript/regexp/)
 : Регулярные выражения (RegExp) - это очень эффективный способ работы со строками.
 
-[Документация Typescript 3.8](typescript/ts38/index.md)
+[Документация Typescript 3.8](/typescript/ts38/)
 : Typescript 3.8 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
 
 ## Фронтенд
@@ -67,8 +70,6 @@
 - https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/
 
 - [Руководство Javascript](https://metanit.com/web/javascript/)
-- [Углубленный JS](https://github.com/BonsaiDen/JavaScript-Garden/tree/master/doc/ru)
-- [Регулярные выражения в JS](https://tuhub.ru/frontend/js-regexp)
 
 - [Redux на русском](https://rajdee.gitbooks.io/redux-in-russian/content/)
 

@@ -1,0 +1,7 @@
+title: Вступление
+arrange:
+    - index.md
+    - authors.md
+    - contributors.md
+    - translators.md
+    - license.md

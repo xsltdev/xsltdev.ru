@@ -1,0 +1,6 @@
+title: Объекты
+arrange:
+    - general.md
+    - prototype.md
+    - hasownproperty.md
+    - forinloop.md

@@ -1,0 +1,11 @@
+title: Углубленный Javascript
+arrange:
+    - index.md
+    - intro
+    - object
+    - function
+    - array
+    - types
+    - core
+    - other
+    - appendix

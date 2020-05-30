@@ -1,0 +1,6 @@
+title: Типы
+arrange:
+    - equality.md
+    - typeof.md
+    - instanceof.md
+    - casting.md
