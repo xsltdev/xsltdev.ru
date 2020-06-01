@@ -11,37 +11,43 @@
 [Документация Typescript 3.8](/typescript/ts38/)
 : Typescript 3.8 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
 
-## Фронтенд
+<div class="col2" markdown="1">
 
 [![HTML](html.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/html/) [HTML](/html/)
 
-[![CSS](css.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/css/) [CSS](/css/) <small> &mdash; [Руководство по Flexbox](css/flex-guide/flex-1.md) &mdash; [Руководство Grid Layout](css/grid-guide/grid-1.md)</small>
+[![CSS](css.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/css/) [CSS](/css/) <small> &mdash; [Руководство по Flexbox](/css/flex-guide/flex-1/) &mdash; [Руководство Grid Layout](/css/grid-guide/grid-1/) &mdash; [Руководство LESS](/css/less-guide/) &mdash; [Учебник LESS](/css/less-book/)</small>
 
-[![LESS](less.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/less/) [LESS](/less/)
-
-[![Javascript](js.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/javascript/) [Javascript](/javascript/) <small> &mdash; [Canvas 2D](javascript/canvas/index.md) &mdash; [JSON](javascript/json.md)</small>
+[![Javascript](js.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/javascript/) [Javascript](/javascript/) <small> &mdash; [Canvas 2D](/javascript/canvas/) &mdash; [JSON](/javascript/json/)</small>
 
 [![Typescript](ts.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/typescript/) [Typescript](/typescript/)
 
-### Фреймворки
+</div>
 
-[![Angular 2+](angular.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/angular/) [Angular 2+](/angular/) <small> &mdash; [NgRx](angular/ngrx/about.md) &mdash; [RxJS](angular/rxjs/about.md) </small>
+<div class="col2" markdown="1">
 
-[![React](react.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/react/) [React](/react/) <small> &mdash; [Роутинг](react/router/intro.md) &mdash; [React Redux](react/redux/intro.md) &mdash; [GraphQL](react/graphql/index.md)</small>
+[![Angular 2+](angular.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/angular/) [Angular 2+](/angular/) <small> &mdash; [NgRx](/angular/ngrx/about/) &mdash; [RxJS](/angular/rxjs/about/) </small>
+
+[![React](react.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/react/) [React](/react/) <small> &mdash; [Роутинг](/react/router/intro/) &mdash; [React Redux](/react/redux/intro/) &mdash; [GraphQL](/react/graphql/)</small>
 
 [![jQuery](jquery.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/jquery/) [jQuery](/jquery/)
 
-## Бэкенд
+</div>
 
-[![Node.js](nodejs.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/nodejs/) [Node.js](/nodejs/) <small> &mdash; [Express.js](nodejs/expressjs4/installing.md) </small>
+<div class="col2" markdown="1">
+
+[![Node.js](nodejs.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/nodejs/) [Node.js](/nodejs/) <small> &mdash; [Express.js](/nodejs/expressjs4/installing/) </small>
 
 [![php](php.svg){: style="height:32px;width:32px;vertical-align:middle;"}](/php/) [PHP](/php/)
 
-## XML технологии
+</div>
+
+<div class="col2" markdown="1">
 
 [XSLT](/xslt/) <small>&mdash; [Спецификация](/xslt/tr/) &mdash; [EXSLT](/xslt/exslt/) &mdash; [Рецепты](/xslt/recipes/) </small>
 
 [XPath](/xpath/)
+
+</div>
 
 ---
 

@@ -3,4 +3,5 @@ arrange:
     - index.md
     - flex-guide
     - grid-guide
-    - important.md
+    - less-guide
+    - less-book
