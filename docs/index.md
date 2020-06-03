@@ -1,3 +1,7 @@
+---
+template: overrides/home.html
+---
+
 # Справочники
 
 Новое на сайте:
