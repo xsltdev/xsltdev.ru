@@ -1,5 +1,5 @@
 ---
-template: home.html
+template: /home.html
 ---
 
 # Справочники
@@ -15,7 +15,7 @@ template: home.html
 [Документация Typescript 3.8](/typescript/ts38/)
 : Typescript 3.8 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
 
-<div class="col2" markdown="1">
+## Фронтенд
 
 [![HTML](html.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/html/) [HTML](/html/)
 
@@ -25,9 +25,7 @@ template: home.html
 
 [![Typescript](ts.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/typescript/) [Typescript](/typescript/)
 
-</div>
-
-<div class="col2" markdown="1">
+## Фреймворки
 
 [![Angular 2+](angular.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/angular/) [Angular 2+](/angular/) <small> &mdash; [NgRx](/angular/ngrx/about/) &mdash; [RxJS](/angular/rxjs/about/) </small>
 
@@ -35,23 +33,17 @@ template: home.html
 
 [![jQuery](jquery.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/jquery/) [jQuery](/jquery/)
 
-</div>
-
-<div class="col2" markdown="1">
+## Бекэнд
 
 [![Node.js](nodejs.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/nodejs/) [Node.js](/nodejs/) <small> &mdash; [Express.js](/nodejs/expressjs4/installing/) </small>
 
 [![php](php.svg){: style="height:32px;width:32px;vertical-align:middle;"}](/php/) [PHP](/php/)
 
-</div>
-
-<div class="col2" markdown="1">
+## XML
 
 [XSLT](/xslt/) <small>&mdash; [Спецификация](/xslt/tr/) &mdash; [EXSLT](/xslt/exslt/) &mdash; [Рецепты](/xslt/recipes/) </small>
 
 [XPath](/xpath/)
-
-</div>
 
 ---
 
