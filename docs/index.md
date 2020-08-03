@@ -27,8 +27,6 @@
 
 [![React](react.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/react/) [React](/react/) <small> &mdash; [Роутинг](/react/router/intro/) &mdash; [React Redux](/react/redux/intro/) &mdash; [GraphQL](/react/graphql/)</small>
 
-[![jQuery](jquery.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/jquery/) [jQuery](/jquery/)
-
 ## Бекэнд
 
 [![Node.js](nodejs.svg){: style="height:24px;width:24px;vertical-align:middle;"}](/nodejs/) [Node.js](/nodejs/) <small> &mdash; [Express.js](/nodejs/expressjs4/installing/) </small>
