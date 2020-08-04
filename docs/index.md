@@ -61,9 +61,8 @@
 - http://www.lib4dev.in/info/Dmitriy-8-Kireev/Frontend_information-master/136959376
 
 - CSS
-- [Документация jQuery](https://jquery-docs.ru/)
-- Книга [Изучаем jQuery](https://metanit.com/web/jquery/)
-- https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/
+
+- [SCSS](https://github.com/mikaspell/sass-site-rus/blob/rus-version/source/guide.html.haml)
 
 - [Руководство Javascript](https://metanit.com/web/javascript/)
 
