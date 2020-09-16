@@ -9,8 +9,8 @@
 5. [flex-flow. Порядок элементов](flex-5.md)
 6. [Выравнивание элементов. justify-content](flex-6.md)
 7. [Выравнивание элементов. align-items и align-self](flex-7.md)
-8. **Выравнивание строк и столбцов. align-content**
-9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
+8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+9. **Управление элементами. flex-basis, flex-shrink и flex-grow**
 10. [Многоколоночный дизайн на Flexbox](flex-10.md)
 
 </small>
@@ -298,6 +298,8 @@ flex: [flex-grow] [flex-shrink] [flex-basis];
 - [flex-shrink](../flex-shrink.md)
 - [flex-grow](../flex-grow.md)
 
+----
+
 <small markdown="1">
 
 1. [Что такое Flexbox. Flex Container](flex-1.md)
@@ -307,8 +309,8 @@ flex: [flex-grow] [flex-shrink] [flex-basis];
 5. [flex-flow. Порядок элементов](flex-5.md)
 6. [Выравнивание элементов. justify-content](flex-6.md)
 7. [Выравнивание элементов. align-items и align-self](flex-7.md)
-8. **Выравнивание строк и столбцов. align-content**
-9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
+8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+9. **Управление элементами. flex-basis, flex-shrink и flex-grow**
 10. [Многоколоночный дизайн на Flexbox](flex-10.md)
 
 </small>
