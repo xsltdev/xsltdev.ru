@@ -25,19 +25,23 @@ p:lang(en) {
 
 ## Описание и примеры
 
-```css tab="CSS"
-	:lang(en) > q {
-	  quotes: '\201C''\201D''\2018''\2019';
-	}
-	:lang(fr) > q {
-	  quotes: '« ' ' »';
-	}
-	:lang(de) > q {
-	  quotes: '»' '«' '\2039''\203A';
-	}
+=== CSS
+
+```css
+:lang(en) > q {
+  quotes: '\201C''\201D''\2018''\2019';
+}
+:lang(fr) > q {
+  quotes: '« ' ' »';
+}
+:lang(de) > q {
+  quotes: '»' '«' '\2039''\203A';
+}
 ```
 
-```html tab="HTML"
+=== HTML
+
+```html
 <div lang="en">
   <q>This English quote has a <q>nested</q> quote inside.</q>
 </div>
