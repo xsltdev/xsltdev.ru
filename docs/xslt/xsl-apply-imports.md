@@ -92,7 +92,9 @@ description: Элемент xsl:apply-imports используется в шаб
 
 ### Пример 3
 
-```xml tab="XML"
+=== XML
+
+```xml
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="ops.xsl"?>
 <ops>
@@ -112,7 +114,9 @@ description: Элемент xsl:apply-imports используется в шаб
 </ops>
 ```
 
-```xslt tab="ops.xsl"
+=== ops.xsl
+
+```xslt
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="1.0">
@@ -128,7 +132,8 @@ description: Элемент xsl:apply-imports используется в шаб
 </xsl:stylesheet>
 ```
 
-```xslt tab="arith.xsl"
+=== arith.xsl
+```xslt
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="1.0">
@@ -146,7 +151,8 @@ description: Элемент xsl:apply-imports используется в шаб
 </xsl:stylesheet>
 ```
 
-```xslt tab="str.xsl"
+=== str.xsl
+```xslt
 <?xml version="1.0"?>
   <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                   version="1.0">
@@ -164,7 +170,8 @@ description: Элемент xsl:apply-imports используется в шаб
 </xsl:stylesheet>
 ```
 
-```tab="Output"
+=== Результат
+```
 Some binary operations
 
 1+2 = 12 (from str.xsl)
@@ -176,7 +183,9 @@ Some binary operations
 
 ### Пример 4
 
-```xml tab="XML"
+=== XML
+
+```xml
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="sample.xsl"?>
 <catalog>
@@ -279,7 +288,8 @@ Some binary operations
 </catalog>
 ```
 
-```xslt tab="sample.xsl"
+=== sample.xsl
+```xslt
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:import href="sample-import.xsl"/>
@@ -294,7 +304,8 @@ Some binary operations
 </xsl:stylesheet>
 ```
 
-```xslt tab="sample-import.xsl"
+=== sample-import.xsl
+```xslt
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
@@ -333,7 +344,8 @@ Some binary operations
 </xsl:stylesheet>
 ```
 
-```html tab="Output"
+=== Output
+```html
 <html>
   <body>
     <font face="Arial"
