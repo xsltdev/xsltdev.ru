@@ -94,275 +94,281 @@ description: Элемент xsl:apply-imports используется в шаб
 
 === XML
 
-```xml
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="ops.xsl"?>
-<ops>
-  <desc>Some binary operations</desc>
-  <op name="add" symbol="+">
-    <operand>1</operand>
-    <operand>2</operand>
-  </op>
-  <op name="sub" symbol="-">
-    <operand>1</operand>
-    <operand>2</operand>
-  </op>
-  <op name="mul" symbol="*">
-    <operand>1</operand>
-    <operand>2</operand>
-  </op>
-</ops>
-```
+	```xml
+	<?xml version="1.0"?>
+	<?xml-stylesheet type="text/xsl" href="ops.xsl"?>
+	<ops>
+	  <desc>Some binary operations</desc>
+	  <op name="add" symbol="+">
+		<operand>1</operand>
+		<operand>2</operand>
+	  </op>
+	  <op name="sub" symbol="-">
+		<operand>1</operand>
+		<operand>2</operand>
+	  </op>
+	  <op name="mul" symbol="*">
+		<operand>1</operand>
+		<operand>2</operand>
+	  </op>
+	</ops>
+	```
 
 === ops.xsl
 
-```xslt
-<?xml version="1.0"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="1.0">
-  <xsl:import href="arith.xsl"/>
-  <xsl:import href="str.xsl"/>
-  <xsl:template match="op">
-    <xsl:value-of select="operand[1]"/>
-    <xsl:value-of select="@symbol"/>
-    <xsl:value-of select="operand[2]"/>
-    = <xsl:apply-imports/>
-    <br/>
-  </xsl:template>
-</xsl:stylesheet>
-```
+	```xslt
+	<?xml version="1.0"?>
+	<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+					version="1.0">
+	  <xsl:import href="arith.xsl"/>
+	  <xsl:import href="str.xsl"/>
+	  <xsl:template match="op">
+		<xsl:value-of select="operand[1]"/>
+		<xsl:value-of select="@symbol"/>
+		<xsl:value-of select="operand[2]"/>
+		= <xsl:apply-imports/>
+		<br/>
+	  </xsl:template>
+	</xsl:stylesheet>
+	```
 
 === arith.xsl
-```xslt
-<?xml version="1.0"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="1.0">
-  <xsl:template match="op[@symbol='+']">
-    <xsl:value-of select="sum(operand)"/> (from arith.xsl)
-  </xsl:template>
-  <xsl:template match="op[@symbol='-']">
-    <xsl:value-of select="number(operand[1])-number(operand[2])"/>
-   (from arith.xsl)
-  </xsl:template>
-  <xsl:template match="op[@symbol='*']">
-    <xsl:value-of select="number(operand[1])*number(operand[2])"/>
-    (from arith.xsl)
-  </xsl:template>
-</xsl:stylesheet>
-```
+
+	```xslt
+	<?xml version="1.0"?>
+	<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+					version="1.0">
+	  <xsl:template match="op[@symbol='+']">
+		<xsl:value-of select="sum(operand)"/> (from arith.xsl)
+	  </xsl:template>
+	  <xsl:template match="op[@symbol='-']">
+		<xsl:value-of select="number(operand[1])-number(operand[2])"/>
+	   (from arith.xsl)
+	  </xsl:template>
+	  <xsl:template match="op[@symbol='*']">
+		<xsl:value-of select="number(operand[1])*number(operand[2])"/>
+		(from arith.xsl)
+	  </xsl:template>
+	</xsl:stylesheet>
+	```
 
 === str.xsl
-```xslt
-<?xml version="1.0"?>
-  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                  version="1.0">
-  <xsl:template match="desc">
-    <DIV><xsl:value-of select="."/></DIV>
-  </xsl:template>
-  <xsl:template match="op[@name='add']">
-    <xsl:value-of select="operand[1]"/>
-    <xsl:value-of select="operand[2]"/> (from str.xsl)
-  </xsl:template>
-  <xsl:template match="op[@name='mul']">
-    <xsl:value-of select="operand[2]"/>
-    <xsl:value-of select="operand[1]"/> (from str.xsl)
-  </xsl:template>
-</xsl:stylesheet>
-```
+
+	```xslt
+	<?xml version="1.0"?>
+	  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+					  version="1.0">
+	  <xsl:template match="desc">
+		<DIV><xsl:value-of select="."/></DIV>
+	  </xsl:template>
+	  <xsl:template match="op[@name='add']">
+		<xsl:value-of select="operand[1]"/>
+		<xsl:value-of select="operand[2]"/> (from str.xsl)
+	  </xsl:template>
+	  <xsl:template match="op[@name='mul']">
+		<xsl:value-of select="operand[2]"/>
+		<xsl:value-of select="operand[1]"/> (from str.xsl)
+	  </xsl:template>
+	</xsl:stylesheet>
+	```
 
 === Результат
-```
-Some binary operations
 
-1+2 = 12 (from str.xsl)
+	```
+	Some binary operations
 
-1-2 = -1 (from arith.xsl)
+	1+2 = 12 (from str.xsl)
 
-1*2 = 21 (from str.xsl)
-```
+	1-2 = -1 (from arith.xsl)
+
+	1*2 = 21 (from str.xsl)
+	```
 
 ### Пример 4
 
 === XML
 
-```xml
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="sample.xsl"?>
-<catalog>
-   <book id="bk101">
-      <title>XML Developer's Guide</title>
-      <author>Gambardella, Matthew</author>
-      <genre>Computer</genre>
-      <price>44.95</price>
-      <publish_date>2000-10-01</publish_date>
-      <description>An in-depth look at creating applications with XML.</description>
-   </book>
-   <book id="bk102">
-      <title>Midnight Rain</title>
-      <author>Ralls, Kim</author>
-      <genre>Fantasy</genre>
-      <price>5.95</price>
-      <publish_date>2000-12-16</publish_date>
-      <description>A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.</description>
-   </book>
-   <book id="bk103">
-      <title>Maeve Ascendant</title>
-      <author>Corets, Eva</author>
-      <genre>Fantasy</genre>
-      <price>5.95</price>
-      <publish_date>2000-11-17</publish_date>
-      <description>After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.</description>
-   </book>
-   <book id="bk104">
-      <title>Oberon's Legacy</title>
-      <author>Corets, Eva</author>
-      <genre>Fantasy</genre>
-      <price>5.95</price>
-      <publish_date>2001-03-10</publish_date>
-      <description>In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant.</description>
-   </book>
-   <book id="bk105">
-      <title>The Sundered Grail</title>
-      <author>Corets, Eva</author>
-      <genre>Fantasy</genre>
-      <price>5.95</price>
-      <publish_date>2001-09-10</publish_date>
-      <description>The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon's Legacy.</description>
-   </book>
-   <book id="bk106">
-      <title>Lover Birds</title>
-      <author>Randall, Cynthia</author>
-      <genre>Romance</genre>
-      <price>4.95</price>
-      <publish_date>2000-09-02</publish_date>
-      <description>When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled.</description>
-   </book>
-   <book id="bk107">
-      <title>Splish Splash</title>
-      <author>Thurman, Paula</author>
-      <genre>Romance</genre>
-      <price>4.95</price>
-      <publish_date>2000-11-02</publish_date>
-      <description>A deep sea diver finds true love twenty thousand leagues beneath the sea.</description>
-   </book>
-   <book id="bk108">
-      <title>Creepy Crawlies</title>
-      <author>Knorr, Stefan</author>
-      <genre>Horror</genre>
-      <price>4.95</price>
-      <publish_date>2000-12-06</publish_date>
-      <description>An anthology of horror stories about roaches, centipedes, scorpions  and other insects.</description>
-   </book>
-   <book id="bk109">
-      <title>Paradox Lost</title>
-      <author>Kress, Peter</author>
-      <genre>Science Fiction</genre>
-      <price>6.95</price>
-      <publish_date>2000-11-02</publish_date>
-      <description>After an inadvertant trip through a Heisenberg Uncertainty Device, James Salway discovers the problems of being quantum.</description>
-   </book>
-   <book id="bk110">
-      <title>Microsoft .NET: The Programming Bible</title>
-      <author>O'Brien, Tim</author>
-      <genre>Computer</genre>
-      <price>36.95</price>
-      <publish_date>2000-12-09</publish_date>
-      <description>Microsoft's .NET initiative is explored in detail in this deep programmer's reference.</description>
-   </book>
-   <book id="bk111">
-      <title>MSXML3: A Comprehensive Guide</title>
-      <author>O'Brien, Tim</author>
-      <genre>Computer</genre>
-      <price>36.95</price>
-      <publish_date>2000-12-01</publish_date>
-      <description>The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more.</description>
-   </book>
-   <book id="bk112">
-      <title>Visual Studio 7: A Comprehensive Guide</title>
-      <author>Galos, Mike</author>
-      <genre>Computer</genre>
-      <price>49.95</price>
-      <publish_date>2001-04-16</publish_date>
-      <description>Microsoft Visual Studio 7 is explored in depth, looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment.</description>
-   </book>
-</catalog>
-```
+	```xml
+	<?xml version="1.0"?>
+	<?xml-stylesheet type="text/xsl" href="sample.xsl"?>
+	<catalog>
+	   <book id="bk101">
+		  <title>XML Developer's Guide</title>
+		  <author>Gambardella, Matthew</author>
+		  <genre>Computer</genre>
+		  <price>44.95</price>
+		  <publish_date>2000-10-01</publish_date>
+		  <description>An in-depth look at creating applications with XML.</description>
+	   </book>
+	   <book id="bk102">
+		  <title>Midnight Rain</title>
+		  <author>Ralls, Kim</author>
+		  <genre>Fantasy</genre>
+		  <price>5.95</price>
+		  <publish_date>2000-12-16</publish_date>
+		  <description>A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.</description>
+	   </book>
+	   <book id="bk103">
+		  <title>Maeve Ascendant</title>
+		  <author>Corets, Eva</author>
+		  <genre>Fantasy</genre>
+		  <price>5.95</price>
+		  <publish_date>2000-11-17</publish_date>
+		  <description>After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.</description>
+	   </book>
+	   <book id="bk104">
+		  <title>Oberon's Legacy</title>
+		  <author>Corets, Eva</author>
+		  <genre>Fantasy</genre>
+		  <price>5.95</price>
+		  <publish_date>2001-03-10</publish_date>
+		  <description>In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant.</description>
+	   </book>
+	   <book id="bk105">
+		  <title>The Sundered Grail</title>
+		  <author>Corets, Eva</author>
+		  <genre>Fantasy</genre>
+		  <price>5.95</price>
+		  <publish_date>2001-09-10</publish_date>
+		  <description>The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon's Legacy.</description>
+	   </book>
+	   <book id="bk106">
+		  <title>Lover Birds</title>
+		  <author>Randall, Cynthia</author>
+		  <genre>Romance</genre>
+		  <price>4.95</price>
+		  <publish_date>2000-09-02</publish_date>
+		  <description>When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled.</description>
+	   </book>
+	   <book id="bk107">
+		  <title>Splish Splash</title>
+		  <author>Thurman, Paula</author>
+		  <genre>Romance</genre>
+		  <price>4.95</price>
+		  <publish_date>2000-11-02</publish_date>
+		  <description>A deep sea diver finds true love twenty thousand leagues beneath the sea.</description>
+	   </book>
+	   <book id="bk108">
+		  <title>Creepy Crawlies</title>
+		  <author>Knorr, Stefan</author>
+		  <genre>Horror</genre>
+		  <price>4.95</price>
+		  <publish_date>2000-12-06</publish_date>
+		  <description>An anthology of horror stories about roaches, centipedes, scorpions  and other insects.</description>
+	   </book>
+	   <book id="bk109">
+		  <title>Paradox Lost</title>
+		  <author>Kress, Peter</author>
+		  <genre>Science Fiction</genre>
+		  <price>6.95</price>
+		  <publish_date>2000-11-02</publish_date>
+		  <description>After an inadvertant trip through a Heisenberg Uncertainty Device, James Salway discovers the problems of being quantum.</description>
+	   </book>
+	   <book id="bk110">
+		  <title>Microsoft .NET: The Programming Bible</title>
+		  <author>O'Brien, Tim</author>
+		  <genre>Computer</genre>
+		  <price>36.95</price>
+		  <publish_date>2000-12-09</publish_date>
+		  <description>Microsoft's .NET initiative is explored in detail in this deep programmer's reference.</description>
+	   </book>
+	   <book id="bk111">
+		  <title>MSXML3: A Comprehensive Guide</title>
+		  <author>O'Brien, Tim</author>
+		  <genre>Computer</genre>
+		  <price>36.95</price>
+		  <publish_date>2000-12-01</publish_date>
+		  <description>The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more.</description>
+	   </book>
+	   <book id="bk112">
+		  <title>Visual Studio 7: A Comprehensive Guide</title>
+		  <author>Galos, Mike</author>
+		  <genre>Computer</genre>
+		  <price>49.95</price>
+		  <publish_date>2001-04-16</publish_date>
+		  <description>Microsoft Visual Studio 7 is explored in depth, looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment.</description>
+	   </book>
+	</catalog>
+	```
 
 === sample.xsl
-```xslt
-<?xml version="1.0"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:import href="sample-import.xsl"/>
-<xsl:output method="html"/>
 
-<xsl:template match="book">
-   <font face="Arial">
-      <xsl:apply-imports/>
-   </font>
-</xsl:template>
+	```xslt
+	<?xml version="1.0"?>
+	<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+	<xsl:import href="sample-import.xsl"/>
+	<xsl:output method="html"/>
 
-</xsl:stylesheet>
-```
+	<xsl:template match="book">
+	   <font face="Arial">
+		  <xsl:apply-imports/>
+	   </font>
+	</xsl:template>
+
+	</xsl:stylesheet>
+	```
 
 === sample-import.xsl
-```xslt
-<?xml version="1.0"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-<!-- Override built-in template. -->
-<xsl:template match="text()"/>
+	```xslt
+	<?xml version="1.0"?>
+	<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-<xsl:template match="/">
-  <html>
-    <body>
-      <xsl:apply-templates/>
-    </body>
-  </html>
-</xsl:template>
+	<!-- Override built-in template. -->
+	<xsl:template match="text()"/>
 
-<xsl:template match="book">
-  <i>
-    <xsl:apply-templates select="title"/>
-  </i>
-    <xsl:text> By: </xsl:text>
-  <xsl:apply-templates select="author"/>
-  <br/>
-</xsl:template>
+	<xsl:template match="/">
+	  <html>
+		<body>
+		  <xsl:apply-templates/>
+		</body>
+	  </html>
+	</xsl:template>
 
-<xsl:template match="title">
-  <b>
-    <xsl:value-of select="."/>
-  </b>
-</xsl:template>
+	<xsl:template match="book">
+	  <i>
+		<xsl:apply-templates select="title"/>
+	  </i>
+		<xsl:text> By: </xsl:text>
+	  <xsl:apply-templates select="author"/>
+	  <br/>
+	</xsl:template>
 
-<xsl:template match="author">
-  <font color="blue">
-    <xsl:value-of select="."/>
-  </font>
-</xsl:template>
+	<xsl:template match="title">
+	  <b>
+		<xsl:value-of select="."/>
+	  </b>
+	</xsl:template>
 
-</xsl:stylesheet>
-```
+	<xsl:template match="author">
+	  <font color="blue">
+		<xsl:value-of select="."/>
+	  </font>
+	</xsl:template>
+
+	</xsl:stylesheet>
+	```
 
 === Output
-```html
-<html>
-  <body>
-    <font face="Arial"
-      ><i><b>XML Developer's Guide</b></i> By:
-      <font color="blue">Gambardella, Matthew</font><br
-    /></font>
-    <font face="Arial"
-      ><i><b>Midnight Rain</b></i> By: <font color="blue">Ralls, Kim</font><br
-    /></font>
-    ...
-    <font face="Arial"
-      ><i><b>Visual Studio 7: A Comprehensive Guide</b></i> By:
-      <font color="blue">Galos, Mike</font><br
-    /></font>
-  </body>
-</html>
-```
+
+	```html
+	<html>
+	  <body>
+		<font face="Arial"
+		  ><i><b>XML Developer's Guide</b></i> By:
+		  <font color="blue">Gambardella, Matthew</font><br
+		/></font>
+		<font face="Arial"
+		  ><i><b>Midnight Rain</b></i> By: <font color="blue">Ralls, Kim</font><br
+		/></font>
+		...
+		<font face="Arial"
+		  ><i><b>Visual Studio 7: A Comprehensive Guide</b></i> By:
+		  <font color="blue">Galos, Mike</font><br
+		/></font>
+	  </body>
+	</html>
+	```
 
 ## См. также
 
