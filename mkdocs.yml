@@ -49,6 +49,8 @@ markdown_extensions:
     - pymdownx.extra
     - pymdownx.details
     - pymdownx.emoji
+    - pymdownx.tabbed
+    - pymdownx.superfences
 
 plugins:
     #- search
