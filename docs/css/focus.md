@@ -28,19 +28,23 @@ input:focus {
 
 ## Описание и примеры
 
-```html tab="HTML"
-<input class="red-input" value="I'll be red when focused." /><br />
-<input class="blue-input" value="I'll be blue when focused." />
-```
+=== "HTML"
 
-```css tab="CSS"
-.red-input:focus {
-  background: yellow;
-  color: red;
-}
+    ```html
+    <input class="red-input" value="I'll be red when focused." /><br />
+    <input class="blue-input" value="I'll be blue when focused." />
+    ```
 
-.blue-input:focus {
-  background: yellow;
-  color: blue;
-}
-```
+=== "CSS"
+
+    ```css
+    .red-input:focus {
+      background: yellow;
+      color: red;
+    }
+
+    .blue-input:focus {
+      background: yellow;
+      color: blue;
+    }
+    ```

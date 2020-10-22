@@ -169,34 +169,38 @@ speak-as: <counter-style-name>;
 
 ## Пример
 
-```css tab="CSS"
-@counter-style circled-alpha {
-  system: fixed;
-  symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
-  suffix: ' ';
-}
+=== "CSS"
 
-.items {
-  list-style: circled-alpha;
-}
-```
+    ```css
+    @counter-style circled-alpha {
+      system: fixed;
+      symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+      suffix: ' ';
+    }
 
-```tab="Output"
-Ⓐ One
-Ⓑ Two
-Ⓒ Three
-Ⓓ Four
-Ⓔ FIve
-...
-...
-Ⓨ Twenty Five
-Ⓩ Twenty Six
-27 Twenty Seven
-28 Twenty Eight
-29 Twenty Nine
-30 Thirty
-```
+    .items {
+      list-style: circled-alpha;
+    }
+    ```
+
+=== "Output"
+
+    ```
+    Ⓐ One
+    Ⓑ Two
+    Ⓒ Three
+    Ⓓ Four
+    Ⓔ FIve
+    ...
+    ...
+    Ⓨ Twenty Five
+    Ⓩ Twenty Six
+    27 Twenty Seven
+    28 Twenty Eight
+    29 Twenty Nine
+    30 Thirty
+    ```
 
 ## Ссылки
 
-- [list-style](list-style.md), [list-style-image](list-style-image.md), [list-style-position](list-style-position.md), [list-style-type](list-style-type.md)
+- [`list-style`](list-style.md), [`list-style-image`](list-style-image.md), [`list-style-position`](list-style-position.md), [`list-style-type`](list-style-type.md)

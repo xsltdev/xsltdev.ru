@@ -22,28 +22,32 @@ div:empty {
 - [Selectors Level 4](https://drafts.csswg.org/selectors-4/#empty-pseudo)
 - [Selectors Level 3](https://drafts.csswg.org/selectors-3/#empty-pseudo)
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<div class="box"><!-- I will be lime. --></div>
-<div class="box">I will be pink.</div>
-<div class="box">
-  <!-- I will be pink because of the whitespace around this comment. -->
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-.box {
-  background: pink;
-  height: 80px;
-  width: 80px;
-}
+    ```html
+    <div class="box"><!-- I will be lime. --></div>
+    <div class="box">I will be pink.</div>
+    <div class="box">
+      <!-- I will be pink because of the whitespace around this comment. -->
+    </div>
+    ```
 
-.box:empty {
-  background: lime;
-}
-```
+=== "CSS"
 
-Результат
+    ```css
+    .box {
+      background: pink;
+      height: 80px;
+      width: 80px;
+    }
 
-![Результат работы псевдокласса :empty](empty.png)
+    .box:empty {
+      background: lime;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы псевдокласса :empty](empty.png)

@@ -46,7 +46,7 @@ clip-path: unset;
 
 Свойство `clip-path` определяется как одно или комбинация значений перечисленных ниже.
 
-`none`
+**`none`**
 : Обрезанная область не создается.
 
 `url()`
@@ -81,7 +81,7 @@ clip-path: unset;
 `content-box`
 : Использует content box в качестве базового блока.
 
-Значение по-умолчанию:
+**Значение по-умолчанию:**
 
 ```css
 clip-path: none;
@@ -102,34 +102,38 @@ clip-path: none;
 
 ## Описание и примеры
 
-```html tab="HTML"
-<img
-  id="clipped"
-  src="https://mdn.mozillademos.org/files/12668/MDN.svg"
-  alt="MDN logo"
-/>
-<svg height="0" width="0">
-  <defs>
-    <clipPath id="cross">
-      <rect y="110" x="137" width="90" height="90" />
-      <rect x="0" y="110" width="90" height="90" />
-      <rect x="137" y="0" width="90" height="90" />
-      <rect x="0" y="0" width="90" height="90" />
-    </clipPath>
-  </defs>
-</svg>
+=== "HTML"
 
-<select id="clipPath">
-  <option value="none">none</option>
-  <option value="circle(100px at 110px 100px)">circle</option>
-  <option value="url(#cross)" selected>cross</option>
-  <option value="inset(20px round 20px)">inset</option>
-</select>
-```
+    ```html
+    <img
+      id="clipped"
+      src="https://mdn.mozillademos.org/files/12668/MDN.svg"
+      alt="MDN logo"
+    />
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="cross">
+          <rect y="110" x="137" width="90" height="90" />
+          <rect x="0" y="110" width="90" height="90" />
+          <rect x="137" y="0" width="90" height="90" />
+          <rect x="0" y="0" width="90" height="90" />
+        </clipPath>
+      </defs>
+    </svg>
 
-```css tab="TAB"
-#clipped {
-  margin-bottom: 20px;
-  clip-path: url(#cross);
-}
-```
+    <select id="clipPath">
+      <option value="none">none</option>
+      <option value="circle(100px at 110px 100px)">circle</option>
+      <option value="url(#cross)" selected>cross</option>
+      <option value="inset(20px round 20px)">inset</option>
+    </select>
+    ```
+
+=== "CSS"
+
+    ```css
+    #clipped {
+      margin-bottom: 20px;
+      clip-path: url(#cross);
+    }
+    ```

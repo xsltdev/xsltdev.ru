@@ -39,17 +39,21 @@ p::before { content: "Hello world!"; }
 
 ## Пример
 
-```html tab="HTML"
-<q>Some quotes</q>, he said, <q>are better than none</q>.
-```
+=== "HTML"
 
-```css tab="CSS"
-q::before {
-  content: '«';
-  color: blue;
-}
-q::after {
-  content: '»';
-  color: red;
-}
-```
+    ```html
+    <q>Some quotes</q>, he said, <q>are better than none</q>.
+    ```
+
+=== "CSS"
+
+    ```css
+    q::before {
+      content: '«';
+      color: blue;
+    }
+    q::after {
+      content: '»';
+      color: red;
+    }
+    ```

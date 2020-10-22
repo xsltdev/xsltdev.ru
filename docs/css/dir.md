@@ -38,30 +38,34 @@ description:
 
 ## Пример
 
-```html tab="HTML"
-<div dir="rtl">
-  <span>test1</span>
-  <div dir="ltr">
-    test2
-    <div dir="auto">עִבְרִית</div>
-  </div>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-:dir(ltr) {
-  background-color: yellow;
-}
+    ```html
+    <div dir="rtl">
+      <span>test1</span>
+      <div dir="ltr">
+        test2
+        <div dir="auto">עִבְרִית</div>
+      </div>
+    </div>
+    ```
 
-:dir(rtl) {
-  background-color: powderblue;
-}
-```
+=== "CSS"
+
+    ```css
+    :dir(ltr) {
+      background-color: yellow;
+    }
+
+    :dir(rtl) {
+      background-color: powderblue;
+    }
+    ```
 
 ## См. также
 
-- [:lang()](lang.md)
+- [`:lang()`](lang.md)
 
 ## Ссылки
 
-- [:dir()](https://developer.mozilla.org/ru/docs/Web/CSS/:dir) на MDN
+- [`:dir()`](https://developer.mozilla.org/ru/docs/Web/CSS/:dir) на MDN

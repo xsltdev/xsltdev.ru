@@ -27,7 +27,7 @@ column-gap: unset;
 
 ## Значения
 
-Значение по-умолчанию: `normal`
+**Значение по-умолчанию:** `normal`
 
 Применяется к: колонкам, флексам, гридам
 
@@ -59,68 +59,80 @@ Safari, Chrome и Аndroid поддерживают свойство `-webkit-co
 
 ### Flex
 
-```html tab="HTML"
-<div id="flexbox">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-#flexbox {
-  display: flex;
-  height: 100px;
-  column-gap: 20px;
-}
+    ```html
+    <div id="flexbox">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    ```
 
-#flexbox > div {
-  border: 1px solid green;
-  background-color: lime;
-  flex: auto;
-}
-```
+=== "CSS"
+
+    ```css
+    #flexbox {
+      display: flex;
+      height: 100px;
+      column-gap: 20px;
+    }
+
+    #flexbox > div {
+      border: 1px solid green;
+      background-color: lime;
+      flex: auto;
+    }
+    ```
 
 ### Grid
 
-```html tab="HTML"
-<div id="grid">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-#grid {
-  display: grid;
-  height: 100px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 100px;
-  column-gap: 20px;
-}
+    ```html
+    <div id="grid">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    ```
 
-#grid > div {
-  border: 1px solid green;
-  background-color: lime;
-}
-```
+=== "CSS"
+
+    ```css
+    #grid {
+      display: grid;
+      height: 100px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 100px;
+      column-gap: 20px;
+    }
+
+    #grid > div {
+      border: 1px solid green;
+      background-color: lime;
+    }
+    ```
 
 ### Колонки
 
-```html tab="HTML"
-<p class="content-box">
-  This is some multi-column text with a 40px column gap created with the CSS
-  `column-gap` property. Don't you think that's fun and exciting? I sure do!
-</p>
-```
+=== "HTML"
 
-```css tab="CSS"
-.content-box {
-  column-count: 3;
-  column-gap: 40px;
-}
-```
+    ```html
+    <p class="content-box">
+      This is some multi-column text with a 40px column gap created with the CSS
+      `column-gap` property. Don't you think that's fun and exciting? I sure do!
+    </p>
+    ```
+
+=== "CSS"
+
+    ```css
+    .content-box {
+      column-count: 3;
+      column-gap: 40px;
+    }
+    ```
 
 ## См. также
 

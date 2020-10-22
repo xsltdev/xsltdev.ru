@@ -163,36 +163,40 @@ grid-template-columns: none;
 }
 ```
 
-### Пример 1
+### Пример
 
-```css tab="CSS"
-#grid {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 50px 1fr;
-}
+=== "CSS"
 
-#areaA {
-  background-color: lime;
-}
+    ```css
+    #grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 50px 1fr;
+    }
 
-#areaB {
-  background-color: yellow;
-}
-```
+    #areaA {
+      background-color: lime;
+    }
 
-```html tab="HTML"
-<div id="grid">
-  <div id="areaA">A</div>
-  <div id="areaB">B</div>
-</div>
-```
+    #areaB {
+      background-color: yellow;
+    }
+    ```
+
+=== "HTML"
+
+    ```html
+    <div id="grid">
+      <div id="areaA">A</div>
+      <div id="areaB">B</div>
+    </div>
+    ```
 
 ## См. также
 
-- Связанные свойства [grid-template-rows](grid-template-rows.md), [grid-template-areas](grid-template-areas.md), [grid-template](grid-template.md)
+- Связанные свойства [`grid-template-rows`](grid-template-rows.md), [`grid-template-areas`](grid-template-areas.md), [`grid-template`](grid-template.md)
 - [Руководство по Grid](grid-guide/grid-1.md)
 
 ## Ссылки
 
-- [grid-template-columns](https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-columns) на MDN
+- [`grid-template-columns`](https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-columns) на MDN

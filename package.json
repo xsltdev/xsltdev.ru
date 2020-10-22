@@ -1,0 +1,21 @@
+{
+  "name": "xsltdev.ru",
+  "version": "3.1.1",
+  "description": "Site with web documentations",
+  "dependencies": {},
+  "devDependencies": {
+	"prettier": "^2.1.2"
+  },
+  "scripts": {
+	"build": "mkdocs build",
+	"serve": "mkdocs serve --dirtyreload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xsltdev/xsltdev.ru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xsltdev/xsltdev.ru/issues"
+  },
+  "homepage": "https://xsltdev.ru/"
+}

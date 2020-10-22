@@ -29,24 +29,28 @@ description: Псевдокласс :any-link представляет собо�
 
 ## Пример
 
-```html tab="HTML"
-<a href="https://example.com">External link</a><br />
-<a href="#">Internal target link</a><br />
-<a>Placeholder link (won't get styled)</a>
-```
+=== "HTML"
 
-```css tab="CSS"
-a:any-link {
-  border: 1px solid blue;
-  color: orange;
-}
+    ```html
+    <a href="https://example.com">External link</a><br />
+    <a href="#">Internal target link</a><br />
+    <a>Placeholder link (won't get styled)</a>
+    ```
 
-/* WebKit browsers */
-a:-webkit-any-link {
-  border: 1px solid blue;
-  color: orange;
-}
-```
+=== "CSS"
+
+    ```css
+    a:any-link {
+      border: 1px solid blue;
+      color: orange;
+    }
+
+    /* WebKit browsers */
+    a:-webkit-any-link {
+      border: 1px solid blue;
+      color: orange;
+    }
+    ```
 
 ## См. также
 

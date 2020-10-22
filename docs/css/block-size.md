@@ -39,21 +39,25 @@ block-size: unset;
 
 ## Пример
 
-```css tab="CSS"
-.exampleText {
-  writing-mode: vertical-rl;
-  background-color: yellow;
-  block-size: 200px;
-}
-```
+=== "CSS"
 
-```html tab="HTML"
-<p class="exampleText">Example text</p>
-```
+    ```css
+    .exampleText {
+      writing-mode: vertical-rl;
+      background-color: yellow;
+      block-size: 200px;
+    }
+    ```
 
-Результат:
+=== "HTML"
 
-![block-size](block-size.png)
+    ```html
+    <p class="exampleText">Example text</p>
+    ```
+
+=== "Результат"
+
+    ![block-size](block-size.png)
 
 ## См. также
 

@@ -4,7 +4,7 @@ description: Свойство caret-color задает цвет текстово
 
 # caret-color
 
-Свойство **`caret-color`** задает цвет текстового курсора в полях ввода, например, [`input`](../html/input.md) или [`textarea`](../html/textarea.md).
+Свойство **`caret-color`** задает цвет текстового курсора в полях ввода, например, [`input`](/html/input/) или [`textarea`](/html/textarea/).
 
 ## Синтаксис
 
@@ -43,26 +43,30 @@ caret-color: auto;
 
 ## Описание и примеры
 
-```html tab="HTML"
-<input value="This field uses a default caret." size="64" />
-<input class="custom" value="I have a custom caret color!" size="64" />
-<p contenteditable class="custom">
-  This paragraph can be edited, and its caret has a custom color as well!
-</p>
-```
+=== "HTML"
 
-```css tab="CSS"
-input {
-  caret-color: auto;
-  display: block;
-  margin-bottom: 0.5em;
-}
+    ```html
+    <input value="This field uses a default caret." size="64" />
+    <input class="custom" value="I have a custom caret color!" size="64" />
+    <p contenteditable class="custom">
+      This paragraph can be edited, and its caret has a custom color as well!
+    </p>
+    ```
 
-input.custom {
-  caret-color: red;
-}
+=== "CSS"
 
-p.custom {
-  caret-color: green;
-}
-```
+    ```css
+    input {
+      caret-color: auto;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    input.custom {
+      caret-color: red;
+    }
+
+    p.custom {
+      caret-color: green;
+    }
+    ```

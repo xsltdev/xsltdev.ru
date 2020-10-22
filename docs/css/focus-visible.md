@@ -1,5 +1,5 @@
 ---
-description: Псевдокласс focus-visible применяется, в то время как элемент соответствует псевдоклассу focus, и UA определяет с помощью эвристики, что фокус должен быть сделан очевидным для элемента
+description: Псевдокласс :focus-visible применяется, в то время как элемент соответствует псевдоклассу :focus, и UA определяет с помощью эвристики, что фокус должен быть сделан очевидным для элемента
 ---
 
 # :focus-visible
@@ -28,33 +28,37 @@ description: Псевдокласс focus-visible применяется, в т�
 
 ## Пример
 
-```css tab="CSS"
-input,
-button {
-  margin: 10px;
-}
+=== "CSS"
 
-.focus-only:focus {
-  outline: 2px solid black;
-}
+    ```css
+    input,
+    button {
+      margin: 10px;
+    }
 
-.focus-visible-only:focus-visible {
-  outline: 4px dashed darkorange;
-}
-```
+    .focus-only:focus {
+      outline: 2px solid black;
+    }
 
-```html tab="HTML"
-<input value="Default styles" /><br />
-<button>Default styles</button><br />
-<input class="focus-only" value=":focus only" /><br />
-<button class="focus-only">:focus only</button><br />
-<input class="focus-visible-only" value=":focus-visible only" /><br />
-<button class="focus-visible-only">:focus-visible only</button>
-```
+    .focus-visible-only:focus-visible {
+      outline: 4px dashed darkorange;
+    }
+    ```
 
-Результат:
+=== "HTML"
 
-![:focus-visible](focus-visible.png)
+    ```html
+    <input value="Default styles" /><br />
+    <button>Default styles</button><br />
+    <input class="focus-only" value=":focus only" /><br />
+    <button class="focus-only">:focus only</button><br />
+    <input class="focus-visible-only" value=":focus-visible only" /><br />
+    <button class="focus-visible-only">:focus-visible only</button>
+    ```
+
+=== "Результат"
+
+    ![:focus-visible](focus-visible.png)
 
 ## См. также
 

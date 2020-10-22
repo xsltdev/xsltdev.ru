@@ -25,29 +25,33 @@ input:enabled {
 - [CSS Basic User Interface Module Level 3](https://drafts.csswg.org/css-ui-3/#pseudo-classes)
 - [Selectors Level 3](https://drafts.csswg.org/selectors-3/#enableddisabled)
 
-## Описание и примеры
+## Пример
 
 Следующий пример делает цвет текста средне-зелёного оттенка, когда поле включено, и серым, когда отключено. Это позволяет понимать пользователю какие элементы интерактивны, а какие нет.
 
-```html tab="HTML"
-<form action="url_of_form">
-  <label for="FirstField">Первое поле (включено):</label>
-  <input type="text" id="FirstField" value="Lorem" /><br />
-  <label for="SecondField">Второе поле (отключено):</label>
-  <input type="text" id="SecondField" value="Ipsum" disabled="disabled" /><br />
-  <input type="button" value="Submit" />
-</form>
-```
+=== "HTML"
 
-```css tab="CSS"
-input:enabled {
-  color: #22aa22;
-}
-input:disabled {
-  color: #d9d9d9;
-}
-```
+    ```html
+    <form action="url_of_form">
+      <label for="FirstField">Первое поле (включено):</label>
+      <input type="text" id="FirstField" value="Lorem" /><br />
+      <label for="SecondField">Второе поле (отключено):</label>
+      <input type="text" id="SecondField" value="Ipsum" disabled="disabled" /><br />
+      <input type="button" value="Submit" />
+    </form>
+    ```
 
-Результат:
+=== "CSS"
 
-![Результат работы псевдокласса :enabled](enabled.png)
+    ```css
+    input:enabled {
+      color: #22aa22;
+    }
+    input:disabled {
+      color: #d9d9d9;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы псевдокласса :enabled](enabled.png)

@@ -28,64 +28,65 @@ font-size-adjust: unset;
 
 ## Значения
 
+**Значение по-умолчанию:** `none`
+
 `none`
 : размер шрифта, основанный только на свойстве [`font-size`](font-size.md).
 
 `<number>`
 : задает отношение размера строчных букв к размеру шрифта.
 
-Значение по-умолчанию:
-
-```css
-font-size-adjust: none;
-```
-
 Применяется к: ко всем элементам, включая [`::first-letter`](first-letter.md) и [`::first-line`](first-line.md).
 
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="font-size-adjust" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=font-size-adjust">Can I Use font-size-adjust?</a> Data on support for the font-size-adjust feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=font-size-adjust">Can I Use font-size-adjust?</a> Data on support for the font-size-adjust feature across the major browsers from caniuse.com.
 </p>
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<p>CSS Examples: font-size-adjust</p>
-<br />
-<div class="times">
-  This is the Times font (10px) which is hard to read in small sizes
-</div>
-<p></p>
-<div class="verdana">
-  This is the Verdana font (10px) which does much better, since it is a sans -
-  serif font.
-</div>
-<br />
-<p>Now we 'll do an adjustment:</p>
-<p></p>
-<div class="adjtimes">
-  and the 10px Times, adjusted to the same aspect ratio as the Verdana. Cool,
-  eh?
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-.times {
-  font-family: Times, serif;
-  font-size: 10px;
-}
-.verdana {
-  font-family: Verdana, sans-serif;
-  font-size: 10px;
-}
-.adjtimes {
-  font-family: Times, sans-serif;
-  font-size-adjust: 0.58;
-  font-size: 10px;
-}
-```
+    ```html
+    <p>CSS Examples: font-size-adjust</p>
+    <br />
+    <div class="times">
+      This is the Times font (10px) which is hard to read in
+      small sizes
+    </div>
+    <p></p>
+    <div class="verdana">
+      This is the Verdana font (10px) which does much better,
+      since it is a sans - serif font.
+    </div>
+    <br />
+    <p>Now we 'll do an adjustment:</p>
+    <p></p>
+    <div class="adjtimes">
+      and the 10px Times, adjusted to the same aspect ratio as
+      the Verdana. Cool, eh?
+    </div>
+    ```
 
-Результат
+=== "CSS"
 
-![Результат работы свойства font-size-adjust](font-size-adjust.png)
+    ```css
+    .times {
+      font-family: Times, serif;
+      font-size: 10px;
+    }
+    .verdana {
+      font-family: Verdana, sans-serif;
+      font-size: 10px;
+    }
+    .adjtimes {
+      font-family: Times, sans-serif;
+      font-size-adjust: 0.58;
+      font-size: 10px;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы свойства font-size-adjust](font-size-adjust.png)

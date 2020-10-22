@@ -43,30 +43,34 @@ p::first-line {
 
 ## Описание и примеры
 
-```html tab="HTML"
-<p>
-  Styles will only be applied to the first line of this paragraph. After that,
-  all text will be styled like normal. See what I mean?
-</p>
+=== "HTML"
 
-<span
-  >The first line of this text will not receive special styling because it is
-  not a block-level element.</span
->
-```
+    ```html
+    <p>
+      Styles will only be applied to the first line of this paragraph. After that,
+      all text will be styled like normal. See what I mean?
+    </p>
 
-```css tab="CSS"
-::first-line {
-  color: blue;
-  text-transform: uppercase;
+    <span
+      >The first line of this text will not receive special styling because it is
+      not a block-level element.</span
+    >
+    ```
 
-  /* WARNING: DO NOT USE THESE */
-  /* Many properties are invalid in ::first-line pseudo-classes */
-  margin-left: 20px;
-  text-indent: 20px;
-}
-```
+=== "CSS"
 
-Результат
+    ```css
+    ::first-line {
+      color: blue;
+      text-transform: uppercase;
 
-![Результат работы псевдоэлемента ::first-line](first-line.png)
+      /* WARNING: DO NOT USE THESE */
+      /* Many properties are invalid in ::first-line pseudo-classes */
+      margin-left: 20px;
+      text-indent: 20px;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы псевдоэлемента ::first-line](first-line.png)

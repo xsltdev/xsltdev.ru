@@ -25,13 +25,13 @@ p::first-letter {
 
 Только малый поднабор свойств CSS можно использовать с псевдоэлементом `::first-letter`:
 
-- Свойства шрифта: [`font`](/css/font/), [`font-style`](/css/font-style/), [`font-feature-settings`](/css/font-feature-settings/), [`font-kerning`](/css/font-kerning/), [`font-language-override`](/css/font-language-override/), [`font-stretch`](/css/font-stretch/), [`font-synthesis`](/css/font-synthesis/), [`font-variant`](/css/font-variant/), [`font-variant-alternates`](/css/font-variant-alternates/), [`font-variant-caps`](/css/font-variant-caps/), [`font-variant-east-asian`](/css/font-variant-east-asian/), [`font-variant-ligatures`](/css/font-variant-ligatures/), [`font-variant-numeric`](/css/font-variant-numeric/), [`font-variant-position`](/css/font-variant-position/), [`font-weight`](/css/font-weight/), [`font-size`](/css/font-size/), [`font-size-adjust`](/css/font-size-adjust/), [`line-height`](/css/line-height/) и [`font-family`](/css/font-family/)
-- Свойства фона: [`background`](/css/background/), [`background-color`](/css/background-color/), [`background-image`](/css/background-image/), [`background-clip`](/css/background-clip/), [`background-origin`](/css/background-origin/), [`background-position`](/css/background-position/), [`background-repeat`](/css/background-repeat/), [`background-size`](/css/background-size/), [`background-attachment`](/css/background-attachment/) и [`background-blend-mode`](/css/background-blend-mode/)
-- Свойства отступов: [`margin`](/css/margin/), [`margin-top`](/css/margin-top/), [`margin-right`](/css/margin-right/), [`margin-bottom`](/css/margin-bottom/), [`margin-left`](/css/margin-left/)
-- Свойства полей: [`padding`](/css/padding/), [`padding-top`](/css/padding-top/), [`padding-right`](/css/padding-right/), [`padding-bottom`](/css/padding-bottom/), [`padding-left`](/css/padding-left/)
-- Свойства рамок: [`border`](/css/border/), [`border-style`](/css/border-style/), [`border-color`](/css/border-color/), [`border-width`](/css/border-width/), [`border-radius`](/css/border-radius/), [`border-image`](/css/border-image/)
-- Цвет [`color`](/css/color/)
-- Свойства [`text-decoration`](/css/text-decoration/), [`text-shadow`](/css/text-shadow/), [`text-transform`](/css/text-transform/), [`letter-spacing`](/css/letter-spacing/), [`word-spacing`](/css/word-spacing/), [`line-height`](/css/line-height/), [`text-decoration-color`](/css/text-decoration-color/), [`text-decoration-line`](/css/text-decoration-line/), [`text-decoration-style`](/css/text-decoration-style/), [`box-shadow`](/css/box-shadow/), [`float`](/css/float/), [`vertical-align`](/css/vertical-align/)
+- Свойства шрифта: [`font`](font.md), [`font-style`](font-style.md), [`font-feature-settings`](font-feature-settings.md), [`font-kerning`](font-kerning.md), [`font-language-override`](font-language-override.md), [`font-stretch`](font-stretch.md), [`font-synthesis`](font-synthesis.md), [`font-variant`](font-variant.md), [`font-variant-alternates`](font-variant-alternates.md), [`font-variant-caps`](font-variant-caps.md), [`font-variant-east-asian`](font-variant-east-asian.md), [`font-variant-ligatures`](font-variant-ligatures.md), [`font-variant-numeric`](font-variant-numeric.md), [`font-variant-position`](font-variant-position.md), [`font-weight`](font-weight.md), [`font-size`](font-size.md), [`font-size-adjust`](font-size-adjust.md), [`line-height`](line-height.md) и [`font-family`](font-family.md)
+- Свойства фона: [`background`](background.md), [`background-color`](background-color.md), [`background-image`](background-image.md), [`background-clip`](background-clip.md), [`background-origin`](background-origin.md), [`background-position`](background-position.md), [`background-repeat`](background-repeat.md), [`background-size`](background-size.md), [`background-attachment`](background-attachment.md) и [`background-blend-mode`](background-blend-mode.md)
+- Свойства отступов: [`margin`](margin.md), [`margin-top`](margin-top.md), [`margin-right`](margin-right.md), [`margin-bottom`](margin-bottom.md), [`margin-left`](margin-left.md)
+- Свойства полей: [`padding`](padding.md), [`padding-top`](padding-top.md), [`padding-right`](padding-right.md), [`padding-bottom`](padding-bottom.md), [`padding-left`](padding-left.md)
+- Свойства рамок: [`border`](border.md), [`border-style`](border-style.md), [`border-color`](border-color.md), [`border-width`](border-width.md), [`border-radius`](border-radius.md), [`border-image`](border-image.md)
+- Цвет [`color`](color.md)
+- Свойства [`text-decoration`](text-decoration.md), [`text-shadow`](text-shadow.md), [`text-transform`](text-transform.md), [`letter-spacing`](letter-spacing.md), [`word-spacing`](word-spacing.md), [`line-height`](line-height.md), [`text-decoration-color`](text-decoration-color.md), [`text-decoration-line`](text-decoration-line.md), [`text-decoration-style`](text-decoration-style.md), [`box-shadow`](box-shadow.md), [`float`](float.md), [`vertical-align`](vertical-align.md)
 
 ## Спецификации
 
@@ -47,42 +47,46 @@ p::first-letter {
   <a href="http://caniuse.com/#feat=css-first-letter">Can I Use css-first-letter?</a> Data on support for the css-first-letter feature across the major browsers from caniuse.com.
 </p>
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<p>
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-  kasd gubergren, no sea takimata sanctus est.
-</p>
-<p>
-  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-  consequat.
-</p>
-<p>
-  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-  lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-  dolor in hendrerit in vulputate velit esse molestie consequat.
-</p>
-<p>-The beginning of a special punctuation mark.</p>
-<p>_The beginning of a special punctuation mark.</p>
-<p>"The beginning of a special punctuation mark.</p>
-<p>'The beginning of a special punctuation mark.</p>
-<p>*The beginning of a special punctuation mark.</p>
-<p>#The beginning of a special punctuation mark.</p>
-<p>「特殊的汉字标点符号开头。</p>
-<p>《特殊的汉字标点符号开头。</p>
-<p>“特殊的汉字标点符号开头。</p>
-```
+=== "HTML"
 
-```css tab="CSS"
-p::first-letter {
-  color: red;
-  font-size: 130%;
-}
-```
+    ```html
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est.
+    </p>
+    <p>
+      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+      consequat.
+    </p>
+    <p>
+      Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+      dolor in hendrerit in vulputate velit esse molestie consequat.
+    </p>
+    <p>-The beginning of a special punctuation mark.</p>
+    <p>_The beginning of a special punctuation mark.</p>
+    <p>"The beginning of a special punctuation mark.</p>
+    <p>'The beginning of a special punctuation mark.</p>
+    <p>*The beginning of a special punctuation mark.</p>
+    <p>#The beginning of a special punctuation mark.</p>
+    <p>「特殊的汉字标点符号开头。</p>
+    <p>《特殊的汉字标点符号开头。</p>
+    <p>“特殊的汉字标点符号开头。</p>
+    ```
 
-Результат
+=== "CSS"
 
-![Результат работы псевдоэлемента ::first-letter](first-letter.png)
+    ```css
+    p::first-letter {
+      color: red;
+      font-size: 130%;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы псевдоэлемента ::first-letter](first-letter.png)

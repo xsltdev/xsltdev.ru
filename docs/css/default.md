@@ -36,30 +36,34 @@ input:default {
 
 ## Описание и примеры
 
-```html tab="HTML"
-<input type="radio" name="season" id="spring" />
-<label for="spring">Spring</label>
+=== "HTML"
 
-<input type="radio" name="season" id="summer" checked />
-<label for="spring">Summer</label>
+    ```html
+    <input type="radio" name="season" id="spring" />
+    <label for="spring">Spring</label>
 
-<input type="radio" name="season" id="fall" />
-<label for="spring">Fall</label>
+    <input type="radio" name="season" id="summer" checked />
+    <label for="spring">Summer</label>
 
-<input type="radio" name="season" id="winter" />
-<label for="spring">Winter</label>
-```
+    <input type="radio" name="season" id="fall" />
+    <label for="spring">Fall</label>
 
-```css tab="CSS"
-input:default {
-  box-shadow: 0 0 2px 1px coral;
-}
+    <input type="radio" name="season" id="winter" />
+    <label for="spring">Winter</label>
+    ```
 
-input:default + label {
-  color: coral;
-}
-```
+=== "CSS"
 
-Результат:
+    ```css
+    input:default {
+      box-shadow: 0 0 2px 1px coral;
+    }
 
-![Результат работы псевдокласса :default](default_1.png)
+    input:default + label {
+      color: coral;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы псевдокласса :default](default_1.png)

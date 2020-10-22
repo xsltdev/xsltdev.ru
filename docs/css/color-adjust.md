@@ -29,34 +29,38 @@ color-adjust: exact;
 
 ## Пример
 
-```css tab="CSS"
-.my-box {
-  background-color: black;
-  background-image: linear-gradient(
-    rgba(0, 0, 180, 0.5),
-    rgba(70, 140, 220, 0.5)
-  );
-  color: #900;
-  width: 15rem;
-  height: 6rem;
-  text-align: center;
-  font: 24px 'Helvetica', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color-adjust: exact;
-}
-```
+=== "CSS"
 
-```html tab="HTML"
-<div class="my-box">
-  <p>Need more contrast!</p>
-</div>
-```
+    ```css
+    .my-box {
+      background-color: black;
+      background-image: linear-gradient(
+        rgba(0, 0, 180, 0.5),
+        rgba(70, 140, 220, 0.5)
+      );
+      color: #900;
+      width: 15rem;
+      height: 6rem;
+      text-align: center;
+      font: 24px 'Helvetica', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color-adjust: exact;
+    }
+    ```
 
-Результат:
+=== "HTML"
 
-![color-adjust](color-adjust.png)
+    ```html
+    <div class="my-box">
+      <p>Need more contrast!</p>
+    </div>
+    ```
+
+=== "Результат"
+
+    ![color-adjust](color-adjust.png)
 
 ## Ссылки
 

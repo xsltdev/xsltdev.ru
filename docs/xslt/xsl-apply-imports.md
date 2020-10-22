@@ -92,7 +92,7 @@ description: Элемент xsl:apply-imports используется в шаб
 
 ### Пример 3
 
-=== XML
+=== "XML"
 
 	```xml
 	<?xml version="1.0"?>
@@ -114,7 +114,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</ops>
 	```
 
-=== ops.xsl
+=== "ops.xsl"
 
 	```xslt
 	<?xml version="1.0"?>
@@ -132,7 +132,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</xsl:stylesheet>
 	```
 
-=== arith.xsl
+=== "arith.xsl"
 
 	```xslt
 	<?xml version="1.0"?>
@@ -152,7 +152,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</xsl:stylesheet>
 	```
 
-=== str.xsl
+=== "str.xsl"
 
 	```xslt
 	<?xml version="1.0"?>
@@ -172,7 +172,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</xsl:stylesheet>
 	```
 
-=== Результат
+=== "Результат"
 
 	```
 	Some binary operations
@@ -186,7 +186,7 @@ description: Элемент xsl:apply-imports используется в шаб
 
 ### Пример 4
 
-=== XML
+=== "XML"
 
 	```xml
 	<?xml version="1.0"?>
@@ -291,7 +291,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</catalog>
 	```
 
-=== sample.xsl
+=== "sample.xsl"
 
 	```xslt
 	<?xml version="1.0"?>
@@ -308,7 +308,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</xsl:stylesheet>
 	```
 
-=== sample-import.xsl
+=== "sample-import.xsl"
 
 	```xslt
 	<?xml version="1.0"?>
@@ -349,7 +349,7 @@ description: Элемент xsl:apply-imports используется в шаб
 	</xsl:stylesheet>
 	```
 
-=== Output
+=== "Output"
 
 	```html
 	<html>

@@ -4,14 +4,14 @@ description: Псевдокласс :fullscreen выбирает элемент,
 
 # :fullscreen
 
-Псевдокласс **`fullscreen`** выбирает элемент, который отображается, когда браузер находится в полноэкранном режиме.
+Псевдокласс **`:fullscreen`** выбирает элемент, который отображается, когда браузер находится в полноэкранном режиме.
 
 ## Синтаксис
 
 ```css
 /* Selects any <div> that is being displayed in fullscreen mode */
 /* Implemented in Firefox, WebKit/Chrome, and Edge/IE using prefixes;
-	   Edge also supports the non-prefixed version */
+   Edge also supports the non-prefixed version */
 div:-moz-full-screen {
   background-color: pink;
 }
@@ -35,37 +35,40 @@ Microsoft Edge и Internet Explorer используют стандартное 
 
 - [Fullscreen API](https://fullscreen.spec.whatwg.org/#:fullscreen-pseudo-class)
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<div id="fullscreen">
-  <h1>:fullscreen Demo</h1>
-  <p>
-    This text will become big and red when the browser is in fullscreen mode.
-  </p>
-  <button id="fullscreen-button">Enter Fullscreen</button>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-#fullscreen:fullscreen {
-  padding: 42px;
-  background-color: pink;
-  border: 2px solid #f00;
-  font-size: 200%;
-}
+    ```html
+    <div id="fullscreen">
+      <h1>:fullscreen Demo</h1>
+      <p>
+        This text will become big and red when the browser is in
+        fullscreen mode.
+      </p>
+      <button id="fullscreen-button">Enter Fullscreen</button>
+    </div>
+    ```
 
-#fullscreen:fullscreen > h1 {
-  color: red;
-}
+=== "CSS"
 
-#fullscreen:fullscreen > p {
-  color: darkred;
-}
+    ```css
+    #fullscreen:fullscreen {
+      padding: 42px;
+      background-color: pink;
+      border: 2px solid #f00;
+      font-size: 200%;
+    }
 
-#fullscreen:fullscreen > button {
-  display: none;
-}
-```
+    #fullscreen:fullscreen > h1 {
+      color: red;
+    }
 
-[Результат](https://mdn.mozillademos.org/en-US/docs/Web/CSS/:fullscreen$samples/Example?revision=1312011)
+    #fullscreen:fullscreen > p {
+      color: darkred;
+    }
+
+    #fullscreen:fullscreen > button {
+      display: none;
+    }
+    ```

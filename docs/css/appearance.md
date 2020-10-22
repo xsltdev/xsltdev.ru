@@ -47,62 +47,66 @@ appearance: progress-bar;
 
 ## Пример
 
-```html tab="HTML"
-<h3>Check:</h3>
-<p><input type="checkbox"></input><label>Include Options</label></p>
-<h3><br/>Select one:</h3>
-<p><input type="radio" name="radio"></input><label>Option A</label></p>
-<p><input type="radio" name="radio"></input><label>Option B</label></p>
-```
+=== "HTML"
 
-```css tab="CSS"
-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  display: inline-block;
-  vertical-align: middle;
-}
+    ```html
+    <h3>Check:</h3>
+    <p><input type="checkbox"></input><label>Include Options</label></p>
+    <h3><br/>Select one:</h3>
+    <p><input type="radio" name="radio"></input><label>Option A</label></p>
+    <p><input type="radio" name="radio"></input><label>Option B</label></p>
+    ```
 
-input[type='checkbox'] {
-  border: 2px solid #555;
-  width: 20px;
-  height: 20px;
-  outline: none;
-  padding: 4px;
-}
-input[type='checkbox']:checked {
-  background: #555;
-  background-clip: content-box;
-}
-input[type='radio'] {
-  border: 2px solid #555;
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  outline: none;
-  padding: 4px;
-}
-input[type='radio']:checked {
-  background: #555;
-  background-clip: content-box;
-}
-p,
-h3 {
-  color: #333;
-  font-family: helvetica, arial;
-}
-label {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 -2px 8px;
-}
-```
+=== "CSS"
 
-Результат:
+    ```css
+    input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-![appearance](appearance.png)
+    input[type='checkbox'] {
+      border: 2px solid #555;
+      width: 20px;
+      height: 20px;
+      outline: none;
+      padding: 4px;
+    }
+    input[type='checkbox']:checked {
+      background: #555;
+      background-clip: content-box;
+    }
+    input[type='radio'] {
+      border: 2px solid #555;
+      border-radius: 10px;
+      width: 20px;
+      height: 20px;
+      outline: none;
+      padding: 4px;
+    }
+    input[type='radio']:checked {
+      background: #555;
+      background-clip: content-box;
+    }
+    p,
+    h3 {
+      color: #333;
+      font-family: helvetica, arial;
+    }
+    label {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0 -2px 8px;
+    }
+    ```
+
+=== "Результат"
+
+    ![appearance](appearance.png)
 
 ## Ссылки
 

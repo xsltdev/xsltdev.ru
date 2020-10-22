@@ -30,131 +30,139 @@ description: Псевдокласс :checked находит любые элем�
 
 ### Пример 1
 
-```html tab="HTML"
-<div>
-  <input type="radio" name="my-input" id="yes" />
-  <label for="yes">Yes</label>
+=== "HTML"
 
-  <input type="radio" name="my-input" id="no" />
-  <label for="yes">No</label>
-</div>
+    ```html
+    <div>
+      <input type="radio" name="my-input" id="yes" />
+      <label for="yes">Yes</label>
 
-<div>
-  <input type="checkbox" name="my-checkbox" id="opt-in" />
-  <label for="opt-in">Check me!</label>
-</div>
+      <input type="radio" name="my-input" id="no" />
+      <label for="yes">No</label>
+    </div>
 
-<select name="my-select" id="fruit">
-  <option value="opt1">Apples</option>
-  <option value="opt2">Grapes</option>
-  <option value="opt3">Pears</option>
-</select>
-```
+    <div>
+      <input type="checkbox" name="my-checkbox" id="opt-in" />
+      <label for="opt-in">Check me!</label>
+    </div>
 
-```css tab="CSS"
-div,
-select {
-  margin: 8px;
-}
+    <select name="my-select" id="fruit">
+      <option value="opt1">Apples</option>
+      <option value="opt2">Grapes</option>
+      <option value="opt3">Pears</option>
+    </select>
+    ```
 
-/* Labels for checked inputs */
-input:checked + label {
-  color: red;
-}
+=== "CSS"
 
-/* Radio element, when checked */
-input[type='radio']:checked {
-  box-shadow: 0 0 0 3px orange;
-}
+    ```css
+    div,
+    select {
+      margin: 8px;
+    }
 
-/* Checkbox element, when checked */
-input[type='checkbox']:checked {
-  box-shadow: 0 0 0 3px hotpink;
-}
+    /* Labels for checked inputs */
+    input:checked + label {
+      color: red;
+    }
 
-/* Option elements, when selected */
-option:checked {
-  box-shadow: 0 0 0 3px lime;
-  color: red;
-}
-```
+    /* Radio element, when checked */
+    input[type='radio']:checked {
+      box-shadow: 0 0 0 3px orange;
+    }
 
-### Переключение элементов со скрытым флажком
+    /* Checkbox element, when checked */
+    input[type='checkbox']:checked {
+      box-shadow: 0 0 0 3px hotpink;
+    }
+
+    /* Option elements, when selected */
+    option:checked {
+      box-shadow: 0 0 0 3px lime;
+      color: red;
+    }
+    ```
+
+### Пример 2: переключение элементов со скрытым флажком
 
 В этом примере используется псевдо-класс `:checked`, чтобы пользователь мог переключать контент на основе состояния флажка, без использования JavaScript.
 
-```html tab="HTML"
-<input type="checkbox" id="expand-toggle" />
+=== "HTML"
 
-<table>
-  <thead>
-    <tr>
-      <th>Column #1</th>
-      <th>Column #2</th>
-      <th>Column #3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="expandable">
-      <td>[more text]</td>
-      <td>[more text]</td>
-      <td>[more text]</td>
-    </tr>
-    <tr>
-      <td>[cell text]</td>
-      <td>[cell text]</td>
-      <td>[cell text]</td>
-    </tr>
-    <tr>
-      <td>[cell text]</td>
-      <td>[cell text]</td>
-      <td>[cell text]</td>
-    </tr>
-    <tr class="expandable">
-      <td>[more text]</td>
-      <td>[more text]</td>
-      <td>[more text]</td>
-    </tr>
-    <tr class="expandable">
-      <td>[more text]</td>
-      <td>[more text]</td>
-      <td>[more text]</td>
-    </tr>
-  </tbody>
-</table>
+    ```html
+    <input type="checkbox" id="expand-toggle" />
 
-<label for="expand-toggle" id="expand-btn">Toggle hidden rows</label>
-```
+    <table>
+      <thead>
+        <tr>
+          <th>Column #1</th>
+          <th>Column #2</th>
+          <th>Column #3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="expandable">
+          <td>[more text]</td>
+          <td>[more text]</td>
+          <td>[more text]</td>
+        </tr>
+        <tr>
+          <td>[cell text]</td>
+          <td>[cell text]</td>
+          <td>[cell text]</td>
+        </tr>
+        <tr>
+          <td>[cell text]</td>
+          <td>[cell text]</td>
+          <td>[cell text]</td>
+        </tr>
+        <tr class="expandable">
+          <td>[more text]</td>
+          <td>[more text]</td>
+          <td>[more text]</td>
+        </tr>
+        <tr class="expandable">
+          <td>[more text]</td>
+          <td>[more text]</td>
+          <td>[more text]</td>
+        </tr>
+      </tbody>
+    </table>
 
-```css tab="CSS"
-/* Hide the toggle checkbox */
-#expand-toggle {
-  display: none;
-}
+    <label for="expand-toggle" id="expand-btn">Toggle hidden rows</label>
+    ```
 
-/* Hide expandable content by default */
-.expandable {
-  visibility: collapse;
-  background: #ddd;
-}
+=== "CSS"
 
-/* Style the button */
-#expand-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 5px 11px;
-  background-color: #ff7;
-  border: 1px solid;
-  border-radius: 3px;
-}
+    ```css
+    /* Hide the toggle checkbox */
+    #expand-toggle {
+      display: none;
+    }
 
-/* Show hidden content when the checkbox is checked */
-#expand-toggle:checked ~ * .expandable {
-  visibility: visible;
-}
+    /* Hide expandable content by default */
+    .expandable {
+      visibility: collapse;
+      background: #ddd;
+    }
 
-/* Style the button when the checkbox is checked */
-#expand-toggle:checked ~ #expand-btn {
-  background-color: #ccc;
-}
-```
+    /* Style the button */
+    #expand-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 11px;
+      background-color: #ff7;
+      border: 1px solid;
+      border-radius: 3px;
+    }
+
+    /* Show hidden content when the checkbox is checked */
+    #expand-toggle:checked ~ * .expandable {
+      visibility: visible;
+    }
+
+    /* Style the button when the checkbox is checked */
+    #expand-toggle:checked ~ #expand-btn {
+      background-color: #ccc;
+    }
+    ```

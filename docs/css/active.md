@@ -31,24 +31,32 @@ a:active {
 
 ## Описание и примеры
 
-```html tab="HTML"
-<a href="#">This link will turn lime while you click on it.</a>
-```
+=== "HTML"
 
-```css tab="CSS"
-a:link {
-  color: blue;
-} /* Unvisited links */
-a:visited {
-  color: purple;
-} /* Visited links */
-a:hover {
-  background: yellow;
-} /* User hovers */
-a:active {
-  color: lime;
-} /* Active links */
-```
+    ```html
+    <a href="#">This link will turn lime while you click on it.</a>
+    ```
+
+=== "CSS"
+
+    ```css
+    /* Unvisited links */
+    a:link {
+      color: blue;
+    }
+    /* Visited links */
+    a:visited {
+      color: purple;
+    }
+    /* User hovers */
+    a:hover {
+      background: yellow;
+    }
+    /* Active links */
+    a:active {
+      color: lime;
+    }
+    ```
 
 ## См. также
 

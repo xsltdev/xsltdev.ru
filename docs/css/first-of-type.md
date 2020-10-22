@@ -25,25 +25,29 @@ p:first-of-type {
 
 Этот пример показывает, как применится универсальный селектор, если простой селектор не написан.
 
-```html tab="HTML"
-<article>
-  <div>This `div` is first!</div>
-  <div>This <span>nested `span` is first</span>!</div>
-  <div>
-    This <em>nested `em` is first</em>, but this <em>nested `em` is last</em>!
-  </div>
-  <div>This <span>nested `span` gets styled</span>!</div>
-  <b>This `b` qualifies!</b>
-  <div>This is the final `div`.</div>
-</article>
-```
+=== "HTML"
 
-```css tab="CSS"
-article :first-of-type {
-  background-color: pink;
-}
-```
+    ```html
+    <article>
+      <div>This `div` is first!</div>
+      <div>This <span>nested `span` is first</span>!</div>
+      <div>
+        This <em>nested `em` is first</em>, but this <em>nested `em` is last</em>!
+      </div>
+      <div>This <span>nested `span` gets styled</span>!</div>
+      <b>This `b` qualifies!</b>
+      <div>This is the final `div`.</div>
+    </article>
+    ```
 
-Результат
+=== "CSS"
 
-![Результат работы псевдокласса :first-of-type](first-of-type.png)
+    ```css
+    article :first-of-type {
+      background-color: pink;
+    }
+    ```
+
+=== "Результат"
+
+    ![Результат работы псевдокласса :first-of-type](first-of-type.png)

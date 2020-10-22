@@ -23,27 +23,33 @@ description: Псевдокласс :first используемый совмес
 - [CSS Paged Media Module Level 3](https://drafts.csswg.org/css-page-3/#left-right-first)
 - [CSS Level 2 (Revision 1)](http://www.w3.org/TR/CSS2/page.html#page-selectors)
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<p>First Page.</p>
-<p>Second Page.</p>
-<button>Print!</button>
-```
+=== "HTML"
 
-```css tab="CSS"
-@page :first {
-  margin-left: 50%;
-  margin-top: 50%;
-}
+    ```html
+    <p>First Page.</p>
+    <p>Second Page.</p>
+    <button>Print!</button>
+    ```
 
-p {
-  page-break-after: always;
-}
-```
+=== "CSS"
 
-```js tab="JS"
-document.querySelector('button').onclick = function () {
-  window.print()
-}
-```
+    ```css
+    @page :first {
+      margin-left: 50%;
+      margin-top: 50%;
+    }
+
+    p {
+      page-break-after: always;
+    }
+    ```
+
+=== "JS"
+
+    ```js
+    document.querySelector('button').onclick = function () {
+      window.print()
+    }
+    ```

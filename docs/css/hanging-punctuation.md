@@ -1,5 +1,5 @@
 ---
-description:
+description: Свойство hanging-punctuation определяет как браузер будет отображать знаки пунктуации, попадающие в начало или в конец строки
 ---
 
 # hanging-punctuation
@@ -51,7 +51,7 @@ hanging-punctuation: unset;
 - `first`, `allow-end` и `last`
 - `first`, `force-end` и `last`
 
-`none`
+**`none`**
 : Никакие символы не выносятся.
 
 `first`
@@ -76,25 +76,30 @@ hanging-punctuation: unset;
 
 ## Пример
 
-```html tab="HTML"
-<p>
-  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim
-  nunc mauris, et sollicitudin est scelerisque sed. Praesent laoreet tortor
-  massa, sit amet vulputate nulla pharetra ut.”
-</p>
-```
+=== "HTML"
 
-```css tab="CSS"
-p {
-  hanging-punctuation: first last;
-  margin: 0.5rem;
-}
-```
+    ```html
+    <p>
+      “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Curabitur dignissim nunc mauris, et sollicitudin est
+      scelerisque sed. Praesent laoreet tortor massa, sit amet
+      vulputate nulla pharetra ut.”
+    </p>
+    ```
 
-Результат:
+=== "CSS"
 
-![hanging-punctuation](hanging-punctuation.png)
+    ```css
+    p {
+      hanging-punctuation: first last;
+      margin: 0.5rem;
+    }
+    ```
+
+=== "Результат"
+
+    ![hanging-punctuation](hanging-punctuation.png)
 
 ## Ссылки
 
-- [hanging-punctuation](https://developer.mozilla.org/ru/docs/Web/CSS/hanging-punctuation) на MDN
+- [`hanging-punctuation`](https://developer.mozilla.org/ru/docs/Web/CSS/hanging-punctuation) на MDN

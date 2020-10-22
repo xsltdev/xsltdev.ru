@@ -13,8 +13,8 @@ description: Правило @font-face позволяет авторам ука�
 ```css
 @font-face {
   font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Regular-webfont.woff2') format('woff2'), url('/fonts/OpenSans-Regular-webfont.woff')
-      format('woff');
+  src: url('/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+    url('/fonts/OpenSans-Regular-webfont.woff') format('woff');
 }
 ```
 
@@ -59,37 +59,41 @@ description: Правило @font-face позволяет авторам ука�
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="fontface" data-periods="future_1,current,past_1,past_2">
-  <a href="http://caniuse.com/#feat=fontface">Can I Use fontface?</a> Data on support for the fontface feature across the major browsers from caniuse.com.
+<a href="http://caniuse.com/#feat=fontface">Can I Use fontface?</a> Data on support for the fontface feature across the major browsers from caniuse.com.
 </p>
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<html>
-  <head>
-    <title>Web Font Sample</title>
-    <style type="text/css" media="screen, print">
-      @font-face {
-        font-family: 'Bitstream Vera Serif Bold';
-        src: url('https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf');
-      }
+=== "HTML"
 
-      body {
-        font-family: 'Bitstream Vera Serif Bold', serif;
-      }
-    </style>
-  </head>
-  <body>
-    This is Bitstream Vera Serif Bold.
-  </body>
-</html>
-```
+    ```html
+    <html>
+      <head>
+        <title>Web Font Sample</title>
+        <style type="text/css" media="screen, print">
+          @font-face {
+            font-family: 'Bitstream Vera Serif Bold';
+            src: url('https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf');
+          }
 
-```css tab="CSS"
-@font-face {
-  font-family: MyHelvetica;
-  src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
-    url(MgOpenModernaBold.ttf);
-  font-weight: bold;
-}
-```
+          body {
+            font-family: 'Bitstream Vera Serif Bold', serif;
+          }
+        </style>
+      </head>
+      <body>
+        This is Bitstream Vera Serif Bold.
+      </body>
+    </html>
+    ```
+
+=== "CSS"
+
+    ```css
+    @font-face {
+      font-family: MyHelvetica;
+      src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
+        url(MgOpenModernaBold.ttf);
+      font-weight: bold;
+    }
+    ```
