@@ -23,7 +23,7 @@ isolation: unset;
 
 ## Значения
 
-`auto`
+**`auto`**
 : указывает, что новый контекст стека должен быть создан только в том случае, если это требует свойство, применяемое к элементу.
 
 `isolate`
@@ -43,40 +43,44 @@ isolation: auto;
 
 ## Описание и примеры
 
-```html tab="HTML"
-<div id="b" class="a">
-  <div id="d">
-    <div class="a c">auto</div>
-  </div>
-  <div id="e">
-    <div class="a c">isolate</div>
-  </div>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-.a {
-  background-color: rgb(0, 255, 0);
-}
-#b {
-  width: 200px;
-  height: 210px;
-}
-.c {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  padding: 2px;
-  mix-blend-mode: difference;
-}
-#d {
-  isolation: auto;
-}
-#e {
-  isolation: isolate;
-}
-```
+    ```html
+    <div id="b" class="a">
+      <div id="d">
+        <div class="a c">auto</div>
+      </div>
+      <div id="e">
+        <div class="a c">isolate</div>
+      </div>
+    </div>
+    ```
 
-Результат
+=== "CSS"
 
-![Пример работы свойства isolate](isolate.png)
+    ```css
+    .a {
+      background-color: rgb(0, 255, 0);
+    }
+    #b {
+      width: 200px;
+      height: 210px;
+    }
+    .c {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      padding: 2px;
+      mix-blend-mode: difference;
+    }
+    #d {
+      isolation: auto;
+    }
+    #e {
+      isolation: isolate;
+    }
+    ```
+
+=== "Результат"
+
+    ![Пример работы свойства isolate](isolate.png)

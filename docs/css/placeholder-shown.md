@@ -19,62 +19,70 @@
 
 ### Пример 1
 
-```html tab="HTML"
-<input placeholder="Type something here!" />
-```
+=== "HTML"
 
-```css tab="CSS"
-input {
-  border: 2px solid black;
-  padding: 3px;
-}
+    ```html
+    <input placeholder="Type something here!" />
+    ```
 
-input:placeholder-shown {
-  border-color: silver;
-}
-```
+=== "CSS"
+
+    ```css
+    input {
+      border: 2px solid black;
+      padding: 3px;
+    }
+
+    input:placeholder-shown {
+      border-color: silver;
+    }
+    ```
 
 ### Пример 2
 
 В следующем примере выделены поля Branch и ID с пользовательским стилем.
 
-```html tab="HTML"
-<form id="test">
-  <p>
-    <label for="name">Enter Student Name:</label>
-    <input id="name" placeholder="Student Name" />
-  </p>
-  <p>
-    <label for="branch">Enter Student Branch:</label>
-    <input id="branch" placeholder="Student Branch" />
-  </p>
-  <p>
-    <label for="sid">Enter Student ID:</label>
-    <input
-      type="number"
-      pattern="[0-9]{8}"
-      title="8 digit ID"
-      id="sid"
-      class="studentid"
-      placeholder="8 digit id"
-    />
-  </p>
-  <input type="submit" />
-</form>
-```
+=== "HTML"
 
-```css tab="CSS"
-input {
-  background-color: #e8e8e8;
-  color: black;
-}
+    ```html
+    <form id="test">
+      <p>
+        <label for="name">Enter Student Name:</label>
+        <input id="name" placeholder="Student Name" />
+      </p>
+      <p>
+        <label for="branch">Enter Student Branch:</label>
+        <input id="branch" placeholder="Student Branch" />
+      </p>
+      <p>
+        <label for="sid">Enter Student ID:</label>
+        <input
+          type="number"
+          pattern="[0-9]{8}"
+          title="8 digit ID"
+          id="sid"
+          class="studentid"
+          placeholder="8 digit id"
+        />
+      </p>
+      <input type="submit" />
+    </form>
+    ```
 
-input.studentid:placeholder-shown {
-  background-color: yellow;
-  color: red;
-  font-style: italic;
-}
-```
+=== "CSS"
+
+    ```css
+    input {
+      background-color: #e8e8e8;
+      color: black;
+    }
+
+    input.studentid:placeholder-shown {
+      background-color: yellow;
+      color: red;
+      font-style: italic;
+    }
+    ```
 
 ### Пример 3
 
@@ -98,7 +106,11 @@ input.studentid:placeholder-shown {
   <body>
     <form action="/example/handler.php">
       <input type="text" name="login" placeholder="Логин" />
-      <input type="password" name="pass" placeholder="Пароль" />
+      <input
+        type="password"
+        name="pass"
+        placeholder="Пароль"
+      />
     </form>
   </body>
 </html>
@@ -106,10 +118,10 @@ input.studentid:placeholder-shown {
 
 ## См. также
 
-- [::placeholder](placeholder.md)
-- [<input>](/html/input/)
-- [<textarea>](/html/textarea/)
+- [`::placeholder`](placeholder.md)
+- [`<input>`](/html/input/)
+- [`<textarea>`](/html/textarea/)
 
 ## Ссылки
 
-- [:placeholder-shown](https://developer.mozilla.org/ru/docs/Web/CSS/:placeholder-shown) на MDN
+- [`:placeholder-shown`](https://developer.mozilla.org/ru/docs/Web/CSS/:placeholder-shown) на MDN

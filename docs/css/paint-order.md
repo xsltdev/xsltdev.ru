@@ -13,12 +13,18 @@ description: Свойство paint-order позволяет вам контро
 paint-order: normal;
 
 /* Единичное значение */
-paint-order: stroke; /* отрисовывает сначала обводку, затем заливку и маркеры */
-paint-order: markers; /* отрисовывает сначала маркеры, затем заливку и обводку */
+
+/* отрисовывает сначала обводку, затем заливку и маркеры */
+paint-order: stroke;
+/* отрисовывает сначала маркеры, затем заливку и обводку */
+paint-order: markers;
 
 /* Множественные значения */
-paint-order: stroke fill; /* отрисовывает сначала обводку, затем заливку, затем маркеры */
-paint-order: markers stroke fill; /* отрисовывает маркеры, затем обводку, затем заливку */
+
+/* отрисовывает сначала обводку, затем заливку, затем маркеры */
+paint-order: stroke fill;
+/* отрисовывает маркеры, затем обводку, затем заливку */
+paint-order: markers stroke fill;
 ```
 
 Если значение не указано, значением по умолчанию является следующий порядок `fill`, `stroke`, `markers`.
@@ -39,24 +45,28 @@ paint-order: markers stroke fill; /* отрисовывает маркеры, з
 
 ## Пример
 
-```xml tab="SVG"
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
-  <text x="10" y="75">stroke in front</text>
-  <text x="10" y="150" class="stroke-behind">stroke behind</text>
-</svg>
-```
+=== "SVG"
 
-```css tab="CSS"
-text {
-  font-family: sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  fill: black;
-  stroke: red;
-  stroke-width: 4px;
-}
+    ```xml
+    <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+      <text x="10" y="75">stroke in front</text>
+      <text x="10" y="150" class="stroke-behind">stroke behind</text>
+    </svg>
+    ```
 
-.stroke-behind {
-  paint-order: stroke fill;
-}
-```
+=== "CSS"
+
+    ```css
+    text {
+      font-family: sans-serif;
+      font-size: 50px;
+      font-weight: bold;
+      fill: black;
+      stroke: red;
+      stroke-width: 4px;
+    }
+
+    .stroke-behind {
+      paint-order: stroke fill;
+    }
+    ```

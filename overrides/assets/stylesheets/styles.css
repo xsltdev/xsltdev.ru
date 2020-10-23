@@ -55,12 +55,8 @@ h2 {
 /*
 	Links with CODE
 */
-.md-typeset code {
-	color: #c2185b;
-}
-
 .md-typeset pre {
-    margin: 0;
+	margin: 0;
 }
 
 /*
@@ -84,7 +80,7 @@ h2 {
 
 /* Google button */
 .gsc-search-button-v2 svg {
-    fill: #FFFFFF;
-    min-width: 13px;
-    min-height: 13px;
+	fill: #ffffff;
+	min-width: 13px;
+	min-height: 13px;
 }

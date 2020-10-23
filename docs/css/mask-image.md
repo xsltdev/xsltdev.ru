@@ -30,7 +30,7 @@ mask-image: unset;
 
 ## Значения
 
-`none`
+**`none`**
 : это ключевое слово интерпретируется как прозрачный слой черного изображения.
 
 `<mask-source>`
@@ -55,18 +55,22 @@ mask-image: none;
   <a href="http://caniuse.com/#feat=css-masks">Can I Use css-masks?</a> Data on support for the css-masks feature across the major browsers from caniuse.com.
 </p>
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<div id="masked"></div>
-```
+=== "HTML"
 
-```css tab="CSS"
-#masked {
-  width: 100px;
-  height: 100px;
-  background-color: #8cffa0;
-  -webkit-mask-image: url('https://mdn.mozillademos.org/files/12676/star.svg');
-  mask-image: url('https://mdn.mozillademos.org/files/12676/star.svg');
-}
-```
+    ```html
+    <div id="masked"></div>
+    ```
+
+=== "CSS"
+
+    ```css
+    #masked {
+      width: 100px;
+      height: 100px;
+      background-color: #8cffa0;
+      -webkit-mask-image: url('https://mdn.mozillademos.org/files/12676/star.svg');
+      mask-image: url('https://mdn.mozillademos.org/files/12676/star.svg');
+    }
+    ```

@@ -35,24 +35,28 @@ Firefox до версии 62 использует нестандартный п�
 
 ### Пример 1
 
-```html tab="HTML"
-This text has special styles when you highlight it.
-<p>Also try selecting text in this paragraph.</p>
-```
+=== "HTML"
 
-```css tab="CSS"
-/* Make selected text gold on a red background */
-::selection {
-  color: gold;
-  background-color: red;
-}
+    ```html
+    This text has special styles when you highlight it.
+    <p>Also try selecting text in this paragraph.</p>
+    ```
 
-/* Make selected text in a paragraph white on a blue background */
-p::selection {
-  color: white;
-  background-color: blue;
-}
-```
+=== "CSS"
+
+    ```css
+    /* Make selected text gold on a red background */
+    ::selection {
+      color: gold;
+      background-color: red;
+    }
+
+    /* Make selected text in a paragraph white on a blue background */
+    p::selection {
+      color: white;
+      background-color: blue;
+    }
+    ```
 
 ### Пример 2
 
@@ -98,9 +102,9 @@ p::selection {
   </head>
   <body>
     <p>
-      В условиях электромагнитных помех, неизбежных при полевых измерениях, не
-      всегда можно опредлить, когда именно волна ненаблюдаемо стабилизирует
-      кварк
+      В условиях электромагнитных помех, неизбежных при
+      полевых измерениях, не всегда можно опредлить, когда
+      именно волна ненаблюдаемо стабилизирует кварк
     </p>
   </body>
 </html>
@@ -112,8 +116,8 @@ p::selection {
 
 ## См. также
 
-- [pointer-events](pointer-events.md)
+- [`pointer-events`](pointer-events.md)
 
 ## Ссылки
 
-- [::selection](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) на MDN
+- [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) на MDN

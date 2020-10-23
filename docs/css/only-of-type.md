@@ -1,3 +1,7 @@
+---
+description: Псевдокласс :only-of-type применяется к дочернему элементу указанного типа, только если он единственный у родителя
+---
+
 # :only-of-type
 
 Псевдокласс **`:only-of-type`** применяется к дочернему элементу указанного типа, только если он единственный у родителя.
@@ -22,7 +26,10 @@ p:only-of-type {
   <p>Автор: Гордон Фримен, канд. физ.-мат. наук</p>
   <p>Содержание статьи</p>
   <address>Почта: freemen@blackmesa.com</address>
-  <p>Опубликовано: <time datetime="2018-11-27">27 ноября 2018</time></p>
+  <p>
+    Опубликовано:
+    <time datetime="2018-11-27">27 ноября 2018</time>
+  </p>
 </article>
 ```
 
@@ -61,25 +68,29 @@ article p:only-of-type {
 
 ### Пример 1
 
-```html tab="HTML"
-<main>
-  <div>Я `div` №1.</div>
-  <p>Я тут единственный `p` елемент.</p>
-  <div>Я `div` №2.</div>
-  <div>
-    Я `div` №3.
-    <i>Я единственный потомок типа `i`.</i>
-    <em>Я `em` №1.</em>
-    <em>Я `em` №2.</em>
-  </div>
-</main>
-```
+=== "HTML"
 
-```css tab="CSS"
-main :only-of-type {
-  color: red;
-}
-```
+    ```html
+    <main>
+      <div>Я `div` №1.</div>
+      <p>Я тут единственный `p` елемент.</p>
+      <div>Я `div` №2.</div>
+      <div>
+        Я `div` №3.
+        <i>Я единственный потомок типа `i`.</i>
+        <em>Я `em` №1.</em>
+        <em>Я `em` №2.</em>
+      </div>
+    </main>
+    ```
+
+=== "CSS"
+
+    ```css
+    main :only-of-type {
+      color: red;
+    }
+    ```
 
 ### Пример 2
 
@@ -112,11 +123,11 @@ main :only-of-type {
 
 ## См. также
 
-- [:only-child](only-child.md)
-- [:nth-of-type](nth-of-type.md)
-- [:first-of-type](first-of-type.md)
-- [:last-of-type](last-of-type.md)
+- [`:only-child`](only-child.md)
+- [`:nth-of-type`](nth-of-type.md)
+- [`:first-of-type`](first-of-type.md)
+- [`:last-of-type`](last-of-type.md)
 
 ## Ссылки
 
-- [:only-of-type](https://developer.mozilla.org/ru/docs/Web/CSS/:only-of-type) на MDN
+- [`:only-of-type`](https://developer.mozilla.org/ru/docs/Web/CSS/:only-of-type) на MDN

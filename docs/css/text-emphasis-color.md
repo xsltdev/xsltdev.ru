@@ -35,24 +35,28 @@ text-emphasis-color: unset;
 
 ## Пример
 
-```html tab="HTML"
-<p>Here's an example:</p>
+=== "HTML"
 
-<em>This has emphasis marks!</em>
-```
+    ```html
+    <p>Here's an example:</p>
 
-```css tab="CSS"
-em {
-  -webkit-text-emphasis-color: green;
-  -webkit-text-emphasis-style: '*';
-  text-emphasis-color: green;
-  text-emphasis-style: '*';
-}
-```
+    <em>This has emphasis marks!</em>
+    ```
 
-Результат:
+=== "CSS"
 
-![text-emphasis-color](text-emphasis-color.png)
+    ```css
+    em {
+      -webkit-text-emphasis-color: green;
+      -webkit-text-emphasis-style: '*';
+      text-emphasis-color: green;
+      text-emphasis-style: '*';
+    }
+    ```
+
+=== "Результат"
+
+    ![text-emphasis-color](text-emphasis-color.png)
 
 ## См. также
 

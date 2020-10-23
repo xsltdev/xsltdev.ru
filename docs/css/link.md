@@ -25,17 +25,22 @@ description: Псевдо-класс link позволяет вам выбира
 - [CSS Level 2 (Revision 1)](http://www.w3.org/TR/CSS2/selector.html#link-pseudo-classes)
 - [CSS Level 1](http://www.w3.org/TR/CSS1/#anchor-pseudo-classes)
 
-## Описание и примеры
+## Пример
 
-```html tab="HTML"
-<a href="#ordinary-target">This is an ordinary link.</a><br />
-<a href="">You've already visited this link.</a><br />
-<a>Placeholder link (won't get styled)</a>
-```
+=== "HTML"
 
-```css tab="CSS"
-a:link {
-  background-color: gold;
-  color: green;
-}
-```
+    ```html
+    <a href="#ordinary-target">This is an ordinary link.</a
+    ><br />
+    <a href="">You've already visited this link.</a><br />
+    <a>Placeholder link (won't get styled)</a>
+    ```
+
+=== "CSS"
+
+    ```css
+    a:link {
+      background-color: gold;
+      color: green;
+    }
+    ```

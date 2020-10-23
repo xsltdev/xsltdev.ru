@@ -140,98 +140,104 @@ description: Псевдокласс :nth-child используется для �
 
 ### Пример 2
 
-```html tab="HTML"
-<h3>
-  <code>span:nth-child(2n+1)</code>, БЕЗ элемента <code>&lt;em&gt;</code> в
-  группе элементов-потомков.
-</h3>
-<p>Элементы 1, 3, 5 и 7 будут выбраны.</p>
-<div class="first">
-  <span>Span 1!</span>
-  <span>Span 2</span>
-  <span>Span 3!</span>
-  <span>Span 4</span>
-  <span>Span 5!</span>
-  <span>Span 6</span>
-  <span>Span 7!</span>
-</div>
+=== "HTML"
 
-<br />
+    ```html
+    <h3>
+      <code>span:nth-child(2n+1)</code>, БЕЗ элемента
+      <code>&lt;em&gt;</code> в группе элементов-потомков.
+    </h3>
+    <p>Элементы 1, 3, 5 и 7 будут выбраны.</p>
+    <div class="first">
+      <span>Span 1!</span>
+      <span>Span 2</span>
+      <span>Span 3!</span>
+      <span>Span 4</span>
+      <span>Span 5!</span>
+      <span>Span 6</span>
+      <span>Span 7!</span>
+    </div>
 
-<h3>
-  <code>span:nth-child(2n+1)</code>, С элементом <code>&lt;em&gt;</code> в
-  группе элементов-потомков.
-</h3>
-<p>
-  Элементы 1, 5 и 7 будут выбраны.<br />
-  3 используется в подсчёте потому что это элемент-потомок, но он не выбран
-  потому что он не <code>&lt;span&gt;</code>.
-</p>
-<div class="second">
-  <span>Span!</span>
-  <span>Span</span>
-  <em>Это `em`.</em>
-  <span>Span</span>
-  <span>Span!</span>
-  <span>Span</span>
-  <span>Span!</span>
-  <span>Span</span>
-</div>
+    <br />
 
-<br />
+    <h3>
+      <code>span:nth-child(2n+1)</code>, С элементом
+      <code>&lt;em&gt;</code> в группе элементов-потомков.
+    </h3>
+    <p>
+      Элементы 1, 5 и 7 будут выбраны.<br />
+      3 используется в подсчёте потому что это элемент-потомок,
+      но он не выбран потому что он не
+      <code>&lt;span&gt;</code>.
+    </p>
+    <div class="second">
+      <span>Span!</span>
+      <span>Span</span>
+      <em>Это `em`.</em>
+      <span>Span</span>
+      <span>Span!</span>
+      <span>Span</span>
+      <span>Span!</span>
+      <span>Span</span>
+    </div>
 
-<h3>
-  <code>span:nth-of-type(2n+1)</code>, С элементом <code>&lt;em&gt;</code> в
-  группе элементов-потомков.
-</h3>
-<p>
-  Элементы 1, 4, 6 и 8 будут выбраны.<br />
-  3 не используется в подсчёте и не выбран, потому что это
-  <code>&lt;em&gt;</code>, но не <code>&lt;span&gt;</code>, а
-  <code>nth-of-type</code> выбирает только потомков этого типа. Элемент
-  <code>&lt;em&gt;</code> полностью пропускается и игнорируется.
-</p>
-<div class="third">
-  <span>Span!</span>
-  <span>Span</span>
-  <em>Это `em`.</em>
-  <span>Span!</span>
-  <span>Span</span>
-  <span>Span!</span>
-  <span>Span</span>
-  <span>Span!</span>
-</div>
-```
+    <br />
 
-```css tab="CSS"
-html {
-  font-family: sans-serif;
-}
+    <h3>
+      <code>span:nth-of-type(2n+1)</code>, С элементом
+      <code>&lt;em&gt;</code> в группе элементов-потомков.
+    </h3>
+    <p>
+      Элементы 1, 4, 6 и 8 будут выбраны.<br />
+      3 не используется в подсчёте и не выбран, потому что это
+      <code>&lt;em&gt;</code>, но не <code>&lt;span&gt;</code>,
+      а <code>nth-of-type</code> выбирает только потомков этого
+      типа. Элемент <code>&lt;em&gt;</code> полностью
+      пропускается и игнорируется.
+    </p>
+    <div class="third">
+      <span>Span!</span>
+      <span>Span</span>
+      <em>Это `em`.</em>
+      <span>Span!</span>
+      <span>Span</span>
+      <span>Span!</span>
+      <span>Span</span>
+      <span>Span!</span>
+    </div>
+    ```
 
-span,
-div em {
-  padding: 5px;
-  border: 1px solid green;
-  display: inline-block;
-  margin-bottom: 3px;
-}
+=== "CSS"
 
-.first span:nth-child(2n + 1),
-.second span:nth-child(2n + 1),
-.third span:nth-of-type(2n + 1) {
-  background-color: lime;
-}
-```
+    ```css
+    html {
+      font-family: sans-serif;
+    }
 
-Результат:
+    span,
+    div em {
+      padding: 5px;
+      border: 1px solid green;
+      display: inline-block;
+      margin-bottom: 3px;
+    }
 
-![nth-child](nth-child.png)
+    .first span:nth-child(2n + 1),
+    .second span:nth-child(2n + 1),
+    .third span:nth-of-type(2n + 1) {
+      background-color: lime;
+    }
+    ```
+
+=== "Результат"
+
+    ![nth-child](nth-child.png)
 
 ## См. также
 
-- [:nth-of-type](nth-of-type.md)
-- [:nth-last-child](nth-last-child.md)
+- [`:nth-of-type`](nth-of-type.md)
+- [`:nth-last-child`](nth-last-child.md)
 
 ## Ссылки
 
-- [:nth-child](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child) на MDN
+- [`:nth-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child) на MDN

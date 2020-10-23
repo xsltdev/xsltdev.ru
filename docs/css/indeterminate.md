@@ -19,9 +19,9 @@ input:indeterminate {
 
 Элементы, предназначенные для этого селектора:
 
-- [`<input type = "checkbox">`](../html/input.md) элементы, неопределенное свойство которых установлено в JavaScript
-- [`<input type = "radio">`](../html/input.md), когда все переключатели с одинаковым именем в форме не отмечены
-- [`<progress>`](../html/progress.md) в неопределенном состоянии
+- [`<input type="checkbox">`](/html/input/) элементы, неопределенное свойство которых установлено в JavaScript
+- [`<input type="radio">`](/html/input/), когда все переключатели с одинаковым именем в форме не отмечены
+- [`<progress>`](/html/progress/) в неопределенном состоянии
 
 ## Спецификации
 
@@ -30,33 +30,39 @@ input:indeterminate {
 - [Selectors Level 4](https://drafts.csswg.org/selectors-4/#indeterminate)
 - [CSS Basic User Interface Module Level 3](https://drafts.csswg.org/css-ui-3/#indeterminate)
 
-## Примеры
+## Пример
 
-```html tab="HTML"
-<div>
-  <input type="checkbox" id="checkbox" />
-  <label for="checkbox">This label starts out lime.</label>
-</div>
-<div>
-  <input type="radio" id="radio" />
-  <label for="radio">This label starts out lime.</label>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-input:indeterminate + label {
-  background: lime;
-}
-```
+    ```html
+    <div>
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox">This label starts out lime.</label>
+    </div>
+    <div>
+      <input type="radio" id="radio" />
+      <label for="radio">This label starts out lime.</label>
+    </div>
+    ```
 
-```js tab="JS"
-var inputs = document.getElementsByTagName('input')
+=== "CSS"
 
-for (var i = 0; i < inputs.length; i++) {
-  inputs[i].indeterminate = true
-}
-```
+    ```css
+    input:indeterminate + label {
+      background: lime;
+    }
+    ```
 
-Результат
+=== "JS"
 
-![Пример работы псевдо-класса :indeterminate](indeterminate.png)
+    ```js
+    var inputs = document.getElementsByTagName('input')
+
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].indeterminate = true
+    }
+    ```
+
+=== "Результат"
+
+    ![Пример работы псевдо-класса :indeterminate](indeterminate.png)

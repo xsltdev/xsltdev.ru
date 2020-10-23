@@ -42,153 +42,157 @@ perspective: unset;
 
 ## Пример
 
-```html tab="HTML"
-<table>
-  <tbody>
-    <tr>
-      <th><code>perspective: 250px;</code></th>
-      <th><code>perspective: 350px;</code></th>
-      <th><code>perspective: 500px;</code></th>
-    </tr>
-    <tr>
-      <td>
-        <div class="container">
-          <div class="cube pers250">
-            <div class="face front">1</div>
-            <div class="face back">2</div>
-            <div class="face right">3</div>
-            <div class="face left">4</div>
-            <div class="face top">5</div>
-            <div class="face bottom">6</div>
-          </div>
-        </div>
-      </td>
-      <td>
-        <div class="container">
-          <div class="cube pers350">
-            <div class="face front">1</div>
-            <div class="face back">2</div>
-            <div class="face right">3</div>
-            <div class="face left">4</div>
-            <div class="face top">5</div>
-            <div class="face bottom">6</div>
-          </div>
-        </div>
-      </td>
-      <td>
-        <div class="container">
-          <div class="cube pers500">
-            <div class="face front">1</div>
-            <div class="face back">2</div>
-            <div class="face right">3</div>
-            <div class="face left">4</div>
-            <div class="face top">5</div>
-            <div class="face bottom">6</div>
-          </div>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-```
+=== "HTML"
 
-```css tab="CSS"
-/* Короткие классы для различных значений perspective */
-.pers250 {
-  perspective: 250px;
-  -webkit-perspective: 250px;
-}
-.pers350 {
-  perspective: 350px;
-  -webkit-perspective: 350px;
-}
-.pers500 {
-  perspective: 500px;
-  -webkit-perspective: 500px;
-}
+    ```html
+    <table>
+      <tbody>
+        <tr>
+          <th><code>perspective: 250px;</code></th>
+          <th><code>perspective: 350px;</code></th>
+          <th><code>perspective: 500px;</code></th>
+        </tr>
+        <tr>
+          <td>
+            <div class="container">
+              <div class="cube pers250">
+                <div class="face front">1</div>
+                <div class="face back">2</div>
+                <div class="face right">3</div>
+                <div class="face left">4</div>
+                <div class="face top">5</div>
+                <div class="face bottom">6</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="container">
+              <div class="cube pers350">
+                <div class="face front">1</div>
+                <div class="face back">2</div>
+                <div class="face right">3</div>
+                <div class="face left">4</div>
+                <div class="face top">5</div>
+                <div class="face bottom">6</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="container">
+              <div class="cube pers500">
+                <div class="face front">1</div>
+                <div class="face back">2</div>
+                <div class="face right">3</div>
+                <div class="face left">4</div>
+                <div class="face top">5</div>
+                <div class="face bottom">6</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    ```
 
-/* Определяем div.container, div.cube, и свойства граней куба */
-.container {
-  width: 200px;
-  height: 200px;
-  margin: 75px 0 0 75px;
-  border: none;
-}
-.cube {
-  width: 100%;
-  height: 100%;
-  backface-visibility: visible;
-  perspective-origin: 150% 150%;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: visible;
-  -webkit-perspective-origin: 150% 150%;
-  -webkit-transform-style: preserve-3d;
-}
-.face {
-  display: block;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: none;
-  line-height: 100px;
-  font-family: sans-serif;
-  font-size: 60px;
-  color: white;
-  text-align: center;
-}
+=== "CSS"
 
-/* Определяем каждую грань в зависимости от направления */
-.front {
-  background: rgba(0, 0, 0, 0.3);
-  transform: translateZ(50px);
-  -webkit-transform: translateZ(50px);
-}
-.back {
-  background: rgba(0, 255, 0, 1);
-  color: black;
-  transform: rotateY(180deg) translateZ(50px);
-  -webkit-transform: rotateY(180deg) translateZ(50px);
-}
-.right {
-  background: rgba(196, 0, 0, 0.7);
-  transform: rotateY(90deg) translateZ(50px);
-  -webkit-transform: rotateY(90deg) translateZ(50px);
-}
-.left {
-  background: rgba(0, 0, 196, 0.7);
-  transform: rotateY(-90deg) translateZ(50px);
-  -webkit-transform: rotateY(-90deg) translateZ(50px);
-}
-.top {
-  background: rgba(196, 196, 0, 0.7);
-  transform: rotateX(90deg) translateZ(50px);
-  -webkit-transform: rotateX(90deg) translateZ(50px);
-}
-.bottom {
-  background: rgba(196, 0, 196, 0.7);
-  transform: rotateX(-90deg) translateZ(50px);
-  -webkit-transform: rotateX(-90deg) translateZ(50px);
-}
+    ```css
+    /* Короткие классы для различных значений perspective */
+    .pers250 {
+      perspective: 250px;
+      -webkit-perspective: 250px;
+    }
+    .pers350 {
+      perspective: 350px;
+      -webkit-perspective: 350px;
+    }
+    .pers500 {
+      perspective: 500px;
+      -webkit-perspective: 500px;
+    }
 
-/* Делаем таблицу немного лучше */
-th,
-p,
-td {
-  background-color: #eeeeee;
-  padding: 10px;
-  font-family: sans-serif;
-  text-align: left;
-}
-```
+    /* Определяем div.container, div.cube, и свойства граней куба */
+    .container {
+      width: 200px;
+      height: 200px;
+      margin: 75px 0 0 75px;
+      border: none;
+    }
+    .cube {
+      width: 100%;
+      height: 100%;
+      backface-visibility: visible;
+      perspective-origin: 150% 150%;
+      transform-style: preserve-3d;
+      -webkit-backface-visibility: visible;
+      -webkit-perspective-origin: 150% 150%;
+      -webkit-transform-style: preserve-3d;
+    }
+    .face {
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: none;
+      line-height: 100px;
+      font-family: sans-serif;
+      font-size: 60px;
+      color: white;
+      text-align: center;
+    }
 
-Результат:
+    /* Определяем каждую грань в зависимости от направления */
+    .front {
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateZ(50px);
+      -webkit-transform: translateZ(50px);
+    }
+    .back {
+      background: rgba(0, 255, 0, 1);
+      color: black;
+      transform: rotateY(180deg) translateZ(50px);
+      -webkit-transform: rotateY(180deg) translateZ(50px);
+    }
+    .right {
+      background: rgba(196, 0, 0, 0.7);
+      transform: rotateY(90deg) translateZ(50px);
+      -webkit-transform: rotateY(90deg) translateZ(50px);
+    }
+    .left {
+      background: rgba(0, 0, 196, 0.7);
+      transform: rotateY(-90deg) translateZ(50px);
+      -webkit-transform: rotateY(-90deg) translateZ(50px);
+    }
+    .top {
+      background: rgba(196, 196, 0, 0.7);
+      transform: rotateX(90deg) translateZ(50px);
+      -webkit-transform: rotateX(90deg) translateZ(50px);
+    }
+    .bottom {
+      background: rgba(196, 0, 196, 0.7);
+      transform: rotateX(-90deg) translateZ(50px);
+      -webkit-transform: rotateX(-90deg) translateZ(50px);
+    }
 
-![perspective 250px](perspective250.png)
+    /* Делаем таблицу немного лучше */
+    th,
+    p,
+    td {
+      background-color: #eeeeee;
+      padding: 10px;
+      font-family: sans-serif;
+      text-align: left;
+    }
+    ```
 
-![perspective 350px](perspective350.png)
+=== "Результат"
 
-![perspective 500px](perspective500.png)
+    ![perspective 250px](perspective250.png)
+
+    ![perspective 350px](perspective350.png)
+
+    ![perspective 500px](perspective500.png)
 
 ## Ссылки
 
-- [perspective](https://developer.mozilla.org/ru/docs/Web/CSS/perspective) на MDN
+- [`perspective`](https://developer.mozilla.org/ru/docs/Web/CSS/perspective) на MDN

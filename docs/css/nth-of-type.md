@@ -1,5 +1,5 @@
 ---
-description: Псевдокласс nth-of-type используется для добавления стиля к элементам указанного типа на основе нумерации в дереве элементов
+description: Псевдокласс :nth-of-type() используется для добавления стиля к элементам указанного типа на основе нумерации в дереве элементов
 ---
 
 # :nth-of-type()
@@ -69,39 +69,43 @@ p:nth-of-type(4n) {
 
 ### Пример 1
 
-```html tab="HTML"
-<div>
-  <div>Этот элемент не учитывается.</div>
-  <p>Первый параграф.</p>
-  <p>Второй параграф.</p>
-  <div>Этот элемент не учитывается.</div>
-  <p>Третий параграф.</p>
-  <p>Четвёртый параграф.</p>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-/* Нечётные параграфы */
-p:nth-of-type(2n + 1) {
-  color: red;
-}
+    ```html
+    <div>
+      <div>Этот элемент не учитывается.</div>
+      <p>Первый параграф.</p>
+      <p>Второй параграф.</p>
+      <div>Этот элемент не учитывается.</div>
+      <p>Третий параграф.</p>
+      <p>Четвёртый параграф.</p>
+    </div>
+    ```
 
-/* Чётные параграфы */
-p:nth-of-type(2n) {
-  color: blue;
-}
+=== "CSS"
 
-/* Первый параграф */
-p:nth-of-type(1) {
-  font-weight: bold;
-}
-```
+    ```css
+    /* Нечётные параграфы */
+    p:nth-of-type(2n + 1) {
+      color: red;
+    }
 
-Результат:
+    /* Чётные параграфы */
+    p:nth-of-type(2n) {
+      color: blue;
+    }
 
-![nth-of-type](nth-of-type.png)
+    /* Первый параграф */
+    p:nth-of-type(1) {
+      font-weight: bold;
+    }
+    ```
 
-### Пример 3
+=== "Результат"
+
+    ![nth-of-type](nth-of-type.png)
+
+### Пример 2
 
 ```html
 <!DOCTYPE html>
@@ -135,9 +139,9 @@ p:nth-of-type(1) {
 
 ## См. также
 
-- [:nth-child](nth-child.md)
-- [:nth-last-of-type](nth-last-of-type.md)
+- [`:nth-child`](nth-child.md)
+- [`:nth-last-of-type`](nth-last-of-type.md)
 
 ## Ссылки
 
-- [:nth-of-type()](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-of-type) на MDN
+- [`:nth-of-type()`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-of-type) на MDN

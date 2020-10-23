@@ -1,6 +1,10 @@
+---
+description: Псевдокласс :only-child применяется к дочернему элементу, только если он является единственным у родителя
+---
+
 # :only-child
 
-Псевдокласс `:only-child` применяется к дочернему элементу, только если он является единственным у родителя.
+Псевдокласс **`:only-child`** применяется к дочернему элементу, только если он является единственным у родителя.
 
 ## Описание
 
@@ -12,7 +16,10 @@
   <p>Автор: Гордон Фримен, канд. физ.-мат. наук</p>
   <p>Содержание статьи</p>
   <address>Почта: freemen@blackmesa.com</address>
-  <p>Опубликовано: <time datetime="2018-11-27">27 ноября 2018</time></p>
+  <p>
+    Опубликовано:
+    <time datetime="2018-11-27">27 ноября 2018</time>
+  </p>
 </article>
 ```
 
@@ -38,77 +45,85 @@ article h1:only-child {
 
 ### Пример 1
 
-```html tab="HTML"
-<div>
-  <span>Этот span единственный ребёнок своего папы:(</span>
-</div>
+=== "HTML"
 
-<div>
-  <span>Этот span один из потомков родителя</span>
-  <span>Этот span один из детей отца</span>
-</div>
-```
+    ```html
+    <div>
+      <span>Этот span единственный ребёнок своего папы:(</span>
+    </div>
 
-```css tab="CSS"
-span:only-child {
-  color: red;
-}
-```
+    <div>
+      <span>Этот span один из потомков родителя</span>
+      <span>Этот span один из детей отца</span>
+    </div>
+    ```
 
-Результат:
+=== "CSS"
 
-![only-child](only-child.png)
+    ```css
+    span:only-child {
+      color: red;
+    }
+    ```
+
+=== "Результат"
+
+    ![only-child](only-child.png)
 
 ### Пример 2
 
 Пример со списком
 
-```html tab="HTML"
-<ol>
-  <li>
-    Первый
-    <ul>
-      <li>Это единственный ребёнок</li>
-    </ul>
-  </li>
-  <li>
-    Второй
-    <ul>
-      <li>Этот список с двумя элементами</li>
-      <li>Этот список с двумя элементами</li>
-    </ul>
-  </li>
-  <li>
-    Третий
-    <ul>
-      <li>Этот список с тремя элементами</li>
-      <li>Этот список с тремя элементами</li>
-      <li>Этот список с тремя элементами</li>
-    </ul>
-  </li>
-  <ol></ol>
-</ol>
-```
+=== "HTML"
 
-```css tab="CSS"
-li li {
-  list-style-type: disc;
-}
-li:only-child {
-  color: #6699ff;
-  font-style: italic;
-  list-style-type: square;
-}
-```
+    ```html
+    <ol>
+      <li>
+        Первый
+        <ul>
+          <li>Это единственный ребёнок</li>
+        </ul>
+      </li>
+      <li>
+        Второй
+        <ul>
+          <li>Этот список с двумя элементами</li>
+          <li>Этот список с двумя элементами</li>
+        </ul>
+      </li>
+      <li>
+        Третий
+        <ul>
+          <li>Этот список с тремя элементами</li>
+          <li>Этот список с тремя элементами</li>
+          <li>Этот список с тремя элементами</li>
+        </ul>
+      </li>
+      <ol></ol>
+    </ol>
+    ```
 
-Результат
+=== "CSS"
 
-![only-child](only-child2.png)
+    ```css
+    li li {
+      list-style-type: disc;
+    }
+    li:only-child {
+      color: #6699ff;
+      font-style: italic;
+      list-style-type: square;
+    }
+    ```
+
+=== "Результат"
+
+    ![only-child](only-child2.png)
 
 ## См. также
 
-- [:only-of-type](only-of-type.md)
+- [`:only-of-type`](only-of-type.md)
 
 ## Ссылки
 
-- [:only-child](https://developer.mozilla.org/ru/docs/Web/CSS/:only-child) на MDN
+- [`:only-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:only-child) на MDN

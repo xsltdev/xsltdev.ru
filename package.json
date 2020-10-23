@@ -4,11 +4,11 @@
   "description": "Site with web documentations",
   "dependencies": {},
   "devDependencies": {
-	"prettier": "^2.1.2"
+    "prettier": "^2.1.2"
   },
   "scripts": {
-	"build": "mkdocs build",
-	"serve": "mkdocs serve --dirtyreload"
+    "build": "mkdocs build",
+    "serve": "mkdocs serve --dirtyreload"
   },
   "repository": {
     "type": "git",

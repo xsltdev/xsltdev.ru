@@ -39,7 +39,9 @@ description: Псевдокласс :not задаёт правила стиле�
   <body>
     <form action="handler.php">
       <p>Ваше имя: <input name="user" /></p>
-      <p>Прилагаемый файл: <input type="file" name="file" /></p>
+      <p>
+        Прилагаемый файл: <input type="file" name="file" />
+      </p>
       <p><input type="submit" value="Отправить" /></p>
     </form>
   </body>
@@ -52,39 +54,43 @@ description: Псевдокласс :not задаёт правила стиле�
 
 ## Пример 2
 
-```html tab="HTML"
-<p>I am a paragraph.</p>
-<p class="fancy">I am so very fancy!</p>
-<div>I am NOT a paragraph.</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-.fancy {
-  text-shadow: 2px 2px 3px gold;
-}
+    ```html
+    <p>I am a paragraph.</p>
+    <p class="fancy">I am so very fancy!</p>
+    <div>I am NOT a paragraph.</div>
+    ```
 
-/* <p> elements that are not in the class `.fancy` */
-p:not(.fancy) {
-  color: green;
-}
+=== "CSS"
 
-/* Elements that are not <p> elements */
-body :not(p) {
-  text-decoration: underline;
-}
+    ```css
+    .fancy {
+      text-shadow: 2px 2px 3px gold;
+    }
 
-/* Elements that are not <div> and not <span> elements */
-body :not(div):not(span) {
-  font-weight: bold;
-}
+    /* <p> elements that are not in the class `.fancy` */
+    p:not(.fancy) {
+      color: green;
+    }
 
-/* Elements that are not `.crazy` or `.fancy` */
-/* Note that this syntax is not well supported yet. */
-body :not(.crazy, .fancy) {
-  font-family: sans-serif;
-}
-```
+    /* Elements that are not <p> elements */
+    body :not(p) {
+      text-decoration: underline;
+    }
+
+    /* Elements that are not <div> and not <span> elements */
+    body :not(div):not(span) {
+      font-weight: bold;
+    }
+
+    /* Elements that are not `.crazy` or `.fancy` */
+    /* Note that this syntax is not well supported yet. */
+    body :not(.crazy, .fancy) {
+      font-family: sans-serif;
+    }
+    ```
 
 ## Ссылки
 
-- [:not()](https://developer.mozilla.org/en-US/docs/Web/CSS/:not) на MDN
+- [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not) на MDN

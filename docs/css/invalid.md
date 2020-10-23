@@ -7,7 +7,8 @@ description: Псевдо-класс :invalid находит любые input и
 Псевдо-класс **`:invalid`** находит любые [`<input>`](/html/input/) или [`<form>`](/html/form/) элементы, контент которых не проходит валидацию, в соответствии с типом поля. Он позволяет вам легко менять внешний вид полей, что позволяет пользователю видеть и исправлять ошибки.
 
 !!! warn "Замечание"
-**Радиокнопки**. Если любая из радиокнопок в группе (т. е., с одинаковым атрибутом `name`) имеет атрибут `required`, псевдо-класс `:invalid` применяется ко всем из них, если ни одна из кнопок группы не выбрана.
+
+    **Радиокнопки**. Если любая из радиокнопок в группе (т. е., с одинаковым атрибутом `name`) имеет атрибут `required`, псевдо-класс `:invalid` применяется ко всем из них, если ни одна из кнопок группы не выбрана.
 
 ## Спецификации
 
@@ -20,80 +21,89 @@ description: Псевдо-класс :invalid находит любые input и
 
 Этот пример представляет собой простую форму, цвета элементов которой зелёные, когда данные корректные, и красные, когда нет.
 
-```html tab="HTML"
-<form>
-  <label>Введите URL:</label>
-  <input type="url" />
-  <br />
-  <br />
-  <label>Введите эл. почту:</label>
-  <input type="email" required />
-</form>
-```
+=== "HTML"
 
-```css tab="CSS"
-input:invalid {
-  background-color: #ffdddd;
-}
+    ```html
+    <form>
+      <label>Введите URL:</label>
+      <input type="url" />
+      <br />
+      <br />
+      <label>Введите эл. почту:</label>
+      <input type="email" required />
+    </form>
+    ```
 
-form:invalid {
-  border: 5px solid #ffdddd;
-}
+=== "CSS"
 
-input:valid {
-  background-color: #ddffdd;
-}
+    ```css
+    input:invalid {
+      background-color: #ffdddd;
+    }
 
-form:valid {
-  border: 5px solid #ddffdd;
-}
+    form:invalid {
+      border: 5px solid #ffdddd;
+    }
 
-input:required {
-  border-color: #800000;
-  border-width: 3px;
-}
-```
+    input:valid {
+      background-color: #ddffdd;
+    }
+
+    form:valid {
+      border: 5px solid #ddffdd;
+    }
+
+    input:required {
+      border-color: #800000;
+      border-width: 3px;
+    }
+    ```
 
 ## Пример 2
 
 Использования псевдоклассов `:invalid` и `:valid` на примере ввода пользователем своего адреса электронной почты (проверка по наличию в написании адреса собаки - `@`):
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Псевдокласс :first-of-type</title>
-    <style type="text/css">
-      input:invalid {
-        border: 2px solid red;
-      }
-      input:valid {
-        border: 2px solid green;
-      }
-    </style>
-  </head>
-  <body>
-    <input type="email" value="myemailpochta.ru" /><br /><br />
-    <p>
-      <strong
-        >Internet Explorer 9 и ниже не поддерживает псевдоклассы :invalid и
-        :valid..</strong
-      >
-    </p>
-  </body>
-</html>
-```
+=== "HTML"
 
-Результат:
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Псевдокласс :first-of-type</title>
+        <style type="text/css">
+          input:invalid {
+            border: 2px solid red;
+          }
+          input:valid {
+            border: 2px solid green;
+          }
+        </style>
+      </head>
+      <body>
+        <input
+          type="email"
+          value="myemailpochta.ru"
+        /><br /><br />
+        <p>
+          <strong
+            >Internet Explorer 9 и ниже не поддерживает
+            псевдоклассы :invalid и :valid..</strong
+          >
+        </p>
+      </body>
+    </html>
+    ```
 
-![Пример использования псевдоклассов :invalid и :valid.](990.png)
+=== "Результат"
+
+    ![Пример использования псевдоклассов :invalid и :valid.](990.png)
 
 ## См. также
 
-- [:valid](valid.md)
-- [:required](required.md)
-- [:optional](optional.md)
+- [`:valid`](valid.md)
+- [`:required`](required.md)
+- [`:optional`](optional.md)
 
 ## Ссылки
 
-- [:invalid](https://developer.mozilla.org/ru/docs/Web/CSS/:invalid) на MDN
+- [`:invalid`](https://developer.mozilla.org/ru/docs/Web/CSS/:invalid) на MDN

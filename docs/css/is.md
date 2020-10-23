@@ -49,84 +49,99 @@ footer p:hover {
 
 ### Пример 1
 
-```html tab="HTML"
-<header>
-  <p>This is my header paragraph</p>
-</header>
+=== "HTML"
 
-<main>
-  <ul>
-    <li>
-      <p>This is my first</p>
-      <p>list item</p>
-    </li>
-    <li>
-      <p>This is my second</p>
-      <p>list item</p>
-    </li>
-  </ul>
-</main>
+    ```html
+    <header>
+      <p>This is my header paragraph</p>
+    </header>
 
-<footer>
-  <p>This is my footer paragraph</p>
-</footer>
-```
+    <main>
+      <ul>
+        <li>
+          <p>This is my first</p>
+          <p>list item</p>
+        </li>
+        <li>
+          <p>This is my second</p>
+          <p>list item</p>
+        </li>
+      </ul>
+    </main>
 
-```css tab="CSS"
-:-webkit-any(header, main, footer) p:hover {
-  color: red;
-  cursor: pointer;
-}
+    <footer>
+      <p>This is my footer paragraph</p>
+    </footer>
+    ```
 
-:-moz-any(header, main, footer) p:hover {
-  color: red;
-  cursor: pointer;
-}
+=== "CSS"
 
-:matches(header, main, footer) p:hover {
-  color: red;
-  cursor: pointer;
-}
+    ```css
+    :-webkit-any(header, main, footer) p:hover {
+      color: red;
+      cursor: pointer;
+    }
 
-:is(header, main, footer) p:hover {
-  color: red;
-  cursor: pointer;
-}
-```
+    :-moz-any(header, main, footer) p:hover {
+      color: red;
+      cursor: pointer;
+    }
 
-```js tab="JS"
-let matchedItems
+    :matches(header, main, footer) p:hover {
+      color: red;
+      cursor: pointer;
+    }
 
-try {
-  matchedItems = document.querySelectorAll(':is(header, main, footer) p')
-} catch (e) {
-  try {
-    matchedItems = document.querySelectorAll(':matches(header, main, footer) p')
-  } catch (e) {
+    :is(header, main, footer) p:hover {
+      color: red;
+      cursor: pointer;
+    }
+    ```
+
+=== "JS"
+
+    ```js
+    let matchedItems
+
     try {
       matchedItems = document.querySelectorAll(
-        ':-webkit-any(header, main, footer) p'
+        ':is(header, main, footer) p'
       )
     } catch (e) {
       try {
         matchedItems = document.querySelectorAll(
-          ':-moz-any(header, main, footer) p'
+          ':matches(header, main, footer) p'
         )
       } catch (e) {
-        console.log("Your browser doesn't support :is(), :matches(), or :any()")
+        try {
+          matchedItems = document.querySelectorAll(
+            ':-webkit-any(header, main, footer) p'
+          )
+        } catch (e) {
+          try {
+            matchedItems = document.querySelectorAll(
+              ':-moz-any(header, main, footer) p'
+            )
+          } catch (e) {
+            console.log(
+              "Your browser doesn't support :is(), :matches(), or :any()"
+            )
+          }
+        }
       }
     }
-  }
-}
 
-matchedItems.forEach(applyHandler)
+    matchedItems.forEach(applyHandler)
 
-function applyHandler(elem) {
-  elem.addEventListener('click', function (e) {
-    alert('This paragraph is inside a ' + e.target.parentNode.nodeName)
-  })
-}
-```
+    function applyHandler(elem) {
+      elem.addEventListener('click', function (e) {
+        alert(
+          'This paragraph is inside a ' +
+            e.target.parentNode.nodeName
+        )
+      })
+    }
+    ```
 
 ### Пример 2
 
@@ -250,7 +265,9 @@ h1 {
   font-size: 25px;
 }
 /* Level 2 */
-:is(section, article, aside, nav) :is(section, article, aside, nav) h1 {
+:is(section, article, aside, nav)
+  :is(section, article, aside, nav)
+  h1 {
   font-size: 20px;
 }
 /* Level 3 */
@@ -264,8 +281,8 @@ h1 {
 
 ## См. также
 
-- [:where()](where.md)
+- [`:where()`](where.md)
 
 ## Ссылки
 
-- [:is()](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) на MDN
+- [`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) на MDN

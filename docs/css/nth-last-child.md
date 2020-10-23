@@ -135,46 +135,50 @@ element:nth-last-child(an + b) {
 
 ### Пример 2
 
-```css tab="CSS"
-table {
-  border: 1px solid blue;
-}
-tr:nth-last-child(-n + 3) {
-  /* последние 3 потомка */
-  background-color: lime;
-}
-```
+=== "CSS"
 
-```html tab="HTML"
-<table>
-  <tbody>
-    <tr>
-      <td>Первая</td>
-    </tr>
-    <tr>
-      <td>Вторая строка</td>
-    </tr>
-    <tr>
-      <td>Третья</td>
-    </tr>
-    <tr>
-      <td>Четвёртая</td>
-    </tr>
-    <tr>
-      <td>Пятая строчка</td>
-    </tr>
-  </tbody>
-</table>
-```
+    ```css
+    table {
+      border: 1px solid blue;
+    }
+    tr:nth-last-child(-n + 3) {
+      /* последние 3 потомка */
+      background-color: lime;
+    }
+    ```
 
-Результат:
+=== "HTML"
 
-![nth-last-child](nth-last-child.png)
+    ```html
+    <table>
+      <tbody>
+        <tr>
+          <td>Первая</td>
+        </tr>
+        <tr>
+          <td>Вторая строка</td>
+        </tr>
+        <tr>
+          <td>Третья</td>
+        </tr>
+        <tr>
+          <td>Четвёртая</td>
+        </tr>
+        <tr>
+          <td>Пятая строчка</td>
+        </tr>
+      </tbody>
+    </table>
+    ```
+
+=== "Результат"
+
+    ![nth-last-child](nth-last-child.png)
 
 ## См. также
 
-- [:nth-child](nth-child.md)
+- [`:nth-child`](nth-child.md)
 
 ## Ссылки
 
-- [:nth-last-child](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child) на MDN
+- [`:nth-last-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child) на MDN

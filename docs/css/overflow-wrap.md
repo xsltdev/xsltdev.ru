@@ -37,79 +37,99 @@ overflow-wrap: unset;
 
 ## Пример
 
-```html tab="HTML"
-<p>
-  They say the fishing is excellent at Lake
-  <em class="normal">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>, though
-  I've never been there myself. (<code>normal</code>)
-</p>
-<p>
-  They say the fishing is excellent at Lake
-  <em class="ow-anywhere">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>,
-  though I've never been there myself. (<code>overflow-wrap: anywhere</code>)
-</p>
-<p>
-  They say the fishing is excellent at Lake
-  <em class="ow-break-word">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>,
-  though I've never been there myself. (<code>overflow-wrap: break-word</code>)
-</p>
-<p>
-  They say the fishing is excellent at Lake
-  <em class="word-break">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>,
-  though I've never been there myself. (<code>word-break</code>)
-</p>
-<p>
-  They say the fishing is excellent at Lake
-  <em class="hyphens">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>, though
-  I've never been there myself. (<code>hyphens</code>, without
-  <code>lang</code> attribute)
-</p>
-<p lang="en">
-  They say the fishing is excellent at Lake
-  <em class="hyphens">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>, though
-  I've never been there myself. (<code>hyphens</code>, English rules)
-</p>
-<p class="hyphens" lang="de">
-  They say the fishing is excellent at Lake
-  <em class="hyphens">Chargoggagoggmanchauggagoggchaubunagungamaugg</em>, though
-  I've never been there myself. (<code>hyphens</code>, German rules)
-</p>
-```
+=== "HTML"
 
-```css tab="CSS"
-p {
-  width: 13em;
-  margin: 2px;
-  background: gold;
-}
+    ```html
+    <p>
+      They say the fishing is excellent at Lake
+      <em class="normal"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself.
+      (<code>normal</code>)
+    </p>
+    <p>
+      They say the fishing is excellent at Lake
+      <em class="ow-anywhere"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself. (<code
+        >overflow-wrap: anywhere</code
+      >)
+    </p>
+    <p>
+      They say the fishing is excellent at Lake
+      <em class="ow-break-word"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself. (<code
+        >overflow-wrap: break-word</code
+      >)
+    </p>
+    <p>
+      They say the fishing is excellent at Lake
+      <em class="word-break"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself.
+      (<code>word-break</code>)
+    </p>
+    <p>
+      They say the fishing is excellent at Lake
+      <em class="hyphens"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself.
+      (<code>hyphens</code>, without
+      <code>lang</code> attribute)
+    </p>
+    <p lang="en">
+      They say the fishing is excellent at Lake
+      <em class="hyphens"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself.
+      (<code>hyphens</code>, English rules)
+    </p>
+    <p class="hyphens" lang="de">
+      They say the fishing is excellent at Lake
+      <em class="hyphens"
+        >Chargoggagoggmanchauggagoggchaubunagungamaugg</em
+      >, though I've never been there myself.
+      (<code>hyphens</code>, German rules)
+    </p>
+    ```
 
-.ow-anywhere {
-  overflow-wrap: anywhere;
-}
+=== "CSS"
 
-.ow-break-word {
-  overflow-wrap: break-word;
-}
+    ```css
+    p {
+      width: 13em;
+      margin: 2px;
+      background: gold;
+    }
 
-.word-break {
-  word-break: break-all;
-}
+    .ow-anywhere {
+      overflow-wrap: anywhere;
+    }
 
-.hyphens {
-  hyphens: auto;
-}
-```
+    .ow-break-word {
+      overflow-wrap: break-word;
+    }
 
-Результат:
+    .word-break {
+      word-break: break-all;
+    }
 
-![overflow-wrap](overflow-wrap.png)
+    .hyphens {
+      hyphens: auto;
+    }
+    ```
+
+=== "Результат"
+
+    ![overflow-wrap](overflow-wrap.png)
 
 ## См. также
 
-- [word-break](word-break.md)
-- [hyphens](hyphens.md)
-- [text-overflow](text-overflow.md)
+- [`word-break`](word-break.md)
+- [`hyphens`](hyphens.md)
+- [`text-overflow`](text-overflow.md)
 
 ## Ссылки
 
-- [overflow-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap) на MDN
+- [`overflow-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap) на MDN

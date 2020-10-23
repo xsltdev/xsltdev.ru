@@ -27,66 +27,78 @@ description: Псевдокласс scope представляет собой э
 
 В этом простом примере мы демонстрируем, что использование псевдокласса `:scope` из метода `Element.matches()` соответствует элементу, для которого он вызывается.
 
-```js tab="JavaScript"
-let paragraph = document.getElementById('para')
-let output = document.getElementById('output')
+=== "JavaScript"
 
-if (paragraph.matches(':scope')) {
-  output.innerText = 'Yep, the element is its own scope as expected!'
-}
-```
+    ```js
+    let paragraph = document.getElementById('para')
+    let output = document.getElementById('output')
 
-```html tab="HTML"
-<p id="para">
-  This is a paragraph. It is not an interesting paragraph. Sorry about that.
-</p>
-<p id="output"></p>
-```
+    if (paragraph.matches(':scope')) {
+      output.innerText =
+        'Yep, the element is its own scope as expected!'
+    }
+    ```
 
-Результат:
+=== "HTML"
 
-![:scope](scope.png)
+    ```html
+    <p id="para">
+      This is a paragraph. It is not an interesting paragraph.
+      Sorry about that.
+    </p>
+    <p id="output"></p>
+    ```
+
+=== "Результат"
+
+    ![:scope](scope.png)
 
 ### Пример 2
 
 Ситуация, когда псевдокласс `:scope` оказывается полезной, - это когда вам нужно получить прямого потомка уже извлеченного элемента.
 
-```js tab="JavaScript"
-var context = document.getElementById('context')
-var selected = context.querySelectorAll(':scope > div')
+=== "JavaScript"
 
-document.getElementById('results').innerHTML = Array.prototype.map
-  .call(selected, function (element) {
-    return '#' + element.getAttribute('id')
-  })
-  .join(', ')
-```
+    ```js
+    var context = document.getElementById('context')
+    var selected = context.querySelectorAll(':scope > div')
 
-```html tab="HTML"
-<div id="context">
-  <div id="element-1">
-    <div id="element-1.1"></div>
-    <div id="element-1.2"></div>
-  </div>
-  <div id="element-2">
-    <div id="element-2.1"></div>
-  </div>
-</div>
-<p>
-  Selected elements ids :
-  <span id="results"></span>
-</p>
-```
+    document.getElementById(
+      'results'
+    ).innerHTML = Array.prototype.map
+      .call(selected, function (element) {
+        return '#' + element.getAttribute('id')
+      })
+      .join(', ')
+    ```
 
-Результат:
+=== "HTML"
 
-![:scope](scope2.png)
+    ```html
+    <div id="context">
+      <div id="element-1">
+        <div id="element-1.1"></div>
+        <div id="element-1.2"></div>
+      </div>
+      <div id="element-2">
+        <div id="element-2.1"></div>
+      </div>
+    </div>
+    <p>
+      Selected elements ids :
+      <span id="results"></span>
+    </p>
+    ```
+
+=== "Результат"
+
+    ![:scope](scope2.png)
 
 ## См. также
 
-- [:root](root.md)
-- [:has()](has.md)
+- [`:root`](root.md)
+- [`:has()`](has.md)
 
 ## Ссылки
 
-- [:scope](https://developer.mozilla.org/en-US/docs/Web/CSS/:scope) на MDN
+- [`:scope`](https://developer.mozilla.org/en-US/docs/Web/CSS/:scope) на MDN

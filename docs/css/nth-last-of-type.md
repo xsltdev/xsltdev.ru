@@ -62,26 +62,30 @@ p:nth-last-of-type(4n) {
 
 ### Пример 1
 
-```html tab="HTML"
-<div>
-  <span>Это span.</span>
-  <span>Это другой span.</span>
-  <em>Это текст будет подчёркнут.</em>
-  <span>Круто, этот span лаймовый!!!</span>
-  <strike>Это вообще не span.</strike>
-  <span>Это ещё один последний span.</span>
-</div>
-```
+=== "HTML"
 
-```css tab="CSS"
-span:nth-last-of-type(2) {
-  background-color: lime;
-}
-```
+    ```html
+    <div>
+      <span>Это span.</span>
+      <span>Это другой span.</span>
+      <em>Это текст будет подчёркнут.</em>
+      <span>Круто, этот span лаймовый!!!</span>
+      <strike>Это вообще не span.</strike>
+      <span>Это ещё один последний span.</span>
+    </div>
+    ```
 
-Результат:
+=== "CSS"
 
-![nth-last-of-type](nth-last-of-type.png)
+    ```css
+    span:nth-last-of-type(2) {
+      background-color: lime;
+    }
+    ```
+
+=== "Результат"
+
+    ![nth-last-of-type](nth-last-of-type.png)
 
 ### Пример 2
 
@@ -167,9 +171,9 @@ span:nth-last-of-type(2) {
 
 ## См. также
 
-- [:nth-last-child](nth-last-child.md)
-- [:nth-of-type](nth-of-type.md)
+- [`:nth-last-child`](nth-last-child.md)
+- [`:nth-of-type`](nth-of-type.md)
 
 ## Ссылки
 
-- [:nth-last-of-type()](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-of-type) на MDN
+- [`:nth-last-of-type()`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-of-type) на MDN

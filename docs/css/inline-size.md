@@ -39,21 +39,25 @@ inline-size: unset;
 
 ## Пример
 
-```css tab="CSS"
-.exampleText {
-  writing-mode: vertical-rl;
-  background-color: yellow;
-  inline-size: 110px;
-}
-```
+=== "CSS"
 
-```html tab="HTML"
-<p class="exampleText">Example text</p>
-```
+    ```css
+    .exampleText {
+      writing-mode: vertical-rl;
+      background-color: yellow;
+      inline-size: 110px;
+    }
+    ```
 
-Результат:
+=== "HTML"
 
-![inline-size](inline-size.png)
+    ```html
+    <p class="exampleText">Example text</p>
+    ```
+
+=== "Результат"
+
+    ![inline-size](inline-size.png)
 
 ## См. также
 
@@ -62,5 +66,5 @@ inline-size: unset;
 
 ## Ссылки
 
-- [inline-size](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size) на MDN
+- [`inline-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size) на MDN
 - [Новые логические свойства в CSS!](https://medium.com/web-standards/logical-css-props-c5046c563640)

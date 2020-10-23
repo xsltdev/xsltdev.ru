@@ -4,7 +4,9 @@ description: Псевдокласс valid применяется к полям �
 
 # :valid
 
-Псевдокласс **`:valid`** применяется к полям формы, содержимое которых проходит проверку в браузере на соответствие указанному типу. Например, для `type="number"` вводится число, а не буквы, для `type="email"` корректный адрес электронной почты.
+Псевдокласс **`:valid`** применяется к полям формы, содержимое которых проходит проверку в браузере на соответствие указанному типу.
+
+Например, для `type="number"` вводится число, а не буквы, для `type="email"` корректный адрес электронной почты.
 
 ## Синтаксис
 
@@ -21,56 +23,58 @@ description: Псевдокласс valid применяется к полям �
 - [Selectors Level 4](https://drafts.csswg.org/selectors-4/#validity-pseudos)
 - [CSS Basic User Interface Module Level 3](https://drafts.csswg.org/css-ui-3/#pseudo-validity)
 
-## Примеры
-
-### Пример 1
+## Пример
 
 Этот пример представляет собой простую форму, цвета элементов которой зелёные, когда данные корректные, и красные, когда нет.
 
-```html tab="HTML"
-<form>
-  <label>Введите URL:</label>
-  <input type="url" />
-  <br />
-  <br />
-  <label>Введите адрес эл. почты:</label>
-  <input type="email" required />
-</form>
-```
+=== "HTML"
 
-```css tab="CSS"
-input:invalid {
-  background-color: #ffdddd;
-}
+    ```html
+    <form>
+      <label>Введите URL:</label>
+      <input type="url" />
+      <br />
+      <br />
+      <label>Введите адрес эл. почты:</label>
+      <input type="email" required />
+    </form>
+    ```
 
-form:invalid {
-  border: 5px solid #ffdddd;
-}
+=== "CSS"
 
-input:valid {
-  background-color: #ddffdd;
-}
+    ```css
+    input:invalid {
+      background-color: #ffdddd;
+    }
 
-form:valid {
-  border: 5px solid #ddffdd;
-}
+    form:invalid {
+      border: 5px solid #ffdddd;
+    }
 
-input:required {
-  border-color: #800000;
-  border-width: 3px;
-}
-```
+    input:valid {
+      background-color: #ddffdd;
+    }
 
-Результат:
+    form:valid {
+      border: 5px solid #ddffdd;
+    }
 
-![:valid](valid.png)
+    input:required {
+      border-color: #800000;
+      border-width: 3px;
+    }
+    ```
+
+=== "Результат"
+
+    ![:valid](valid.png)
 
 ## См. также
 
-- [:invalid](invalid.md)
-- [:required](required.md)
-- [:optional](optional.md)
+- [`:invalid`](invalid.md)
+- [`:required`](required.md)
+- [`:optional`](optional.md)
 
 ## Ссылки
 
-- [:valid](https://developer.mozilla.org/ru/docs/Web/CSS/:valid) на MDN
+- [`:valid`](https://developer.mozilla.org/ru/docs/Web/CSS/:valid) на MDN

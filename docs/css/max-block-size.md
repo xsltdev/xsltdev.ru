@@ -64,42 +64,52 @@ max-block-size: unset;
 
 ## Пример
 
-```css tab="CSS"
-.standard-box {
-  padding: 4px;
-  background-color: #abcdef;
-  color: #000;
-  font: 16px 'Open Sans', 'Helvetica', 'Arial', sans-serif;
-  max-block-size: 160px;
-  min-block-size: 100px;
-}
+=== "CSS"
 
-.horizontal {
-  writing-mode: horizontal-tb;
-}
+    ```css
+    .standard-box {
+      padding: 4px;
+      background-color: #abcdef;
+      color: #000;
+      font: 16px 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+      max-block-size: 160px;
+      min-block-size: 100px;
+    }
 
-.vertical {
-  writing-mode: vertical-rl;
-}
-```
+    .horizontal {
+      writing-mode: horizontal-tb;
+    }
 
-```html tab="HTML"
-<p>Writing mode <code>horizontal-tb</code> (the default):</p>
-<div class="standard-box horizontal">
-  Call me Ishmael. Some years ago—never mind how long precisely—having little or
-  no money in my purse, and nothing particular to interest me on shore, I
-  thought I would sail about a little and see the watery part of the world. It
-  is a way I have of driving off the spleen and regulating the circulation.
-</div>
+    .vertical {
+      writing-mode: vertical-rl;
+    }
+    ```
 
-<p>Writing mode <code>vertical-rl</code>:</p>
-<div class="standard-box vertical">
-  Call me Ishmael. Some years ago—never mind how long precisely—having little or
-  no money in my purse, and nothing particular to interest me on shore, I
-  thought I would sail about a little and see the watery part of the world. It
-  is a way I have of driving off the spleen and regulating the circulation.
-</div>
-```
+=== "HTML"
+
+    ```html
+    <p>
+      Writing mode <code>horizontal-tb</code> (the default):
+    </p>
+    <div class="standard-box horizontal">
+      Call me Ishmael. Some years ago—never mind how long
+      precisely—having little or no money in my purse, and
+      nothing particular to interest me on shore, I thought I
+      would sail about a little and see the watery part of the
+      world. It is a way I have of driving off the spleen and
+      regulating the circulation.
+    </div>
+
+    <p>Writing mode <code>vertical-rl</code>:</p>
+    <div class="standard-box vertical">
+      Call me Ishmael. Some years ago—never mind how long
+      precisely—having little or no money in my purse, and
+      nothing particular to interest me on shore, I thought I
+      would sail about a little and see the watery part of the
+      world. It is a way I have of driving off the spleen and
+      regulating the circulation.
+    </div>
+    ```
 
 ## См. также
 

@@ -1,3 +1,7 @@
+---
+description: Псевдокласс :out-of-range применяется к полям форм, у которых введённое пользователем значение выходит из заданного диапазона
+---
+
 # :out-of-range
 
 Псевдокласс **`:out-of-range`** применяется к полям форм, у которых введённое пользователем значение выходит из заданного диапазона. Псевдокласс работает только для тех полей, где пользователь может сам ввести значение, даже несмотря на ограничения наложенные атрибутами `min` и `max`.
@@ -17,52 +21,56 @@
 
 ### Пример 1
 
-```html tab="HTML"
-<form action="" id="form1">
-  <ul>
-    Приминаются значения между 1 и 10.
-    <li>
-      <input
-        id="value1"
-        name="value1"
-        type="number"
-        placeholder="1 to 10"
-        min="1"
-        max="10"
-        value="12"
-      />
-      <label for="value1">Your value is </label>
-    </li>
-  </ul>
-</form>
-```
+=== "HTML"
 
-```css tab="CSS"
-li {
-  list-style: none;
-  margin-bottom: 1em;
-}
-input {
-  border: 1px solid black;
-}
-input:in-range {
-  background-color: rgba(0, 255, 0, 0.25);
-}
-input:out-of-range {
-  background-color: rgba(255, 0, 0, 0.25);
-  border: 2px solid red;
-}
-input:in-range + label::after {
-  content: ' НОРМАЛЬНОЕ';
-}
-input:out-of-range + label::after {
-  content: 'вне диапазона!';
-}
-```
+    ```html
+    <form action="" id="form1">
+      <ul>
+        Приминаются значения между 1 и 10.
+        <li>
+          <input
+            id="value1"
+            name="value1"
+            type="number"
+            placeholder="1 to 10"
+            min="1"
+            max="10"
+            value="12"
+          />
+          <label for="value1">Your value is </label>
+        </li>
+      </ul>
+    </form>
+    ```
 
-Результат:
+=== "CSS"
 
-![out-of-range](out-of-range.png)
+    ```css
+    li {
+      list-style: none;
+      margin-bottom: 1em;
+    }
+    input {
+      border: 1px solid black;
+    }
+    input:in-range {
+      background-color: rgba(0, 255, 0, 0.25);
+    }
+    input:out-of-range {
+      background-color: rgba(255, 0, 0, 0.25);
+      border: 2px solid red;
+    }
+    input:in-range + label::after {
+      content: ' НОРМАЛЬНОЕ';
+    }
+    input:out-of-range + label::after {
+      content: 'вне диапазона!';
+    }
+    ```
+
+=== "Результат"
+
+    ![out-of-range](out-of-range.png)
 
 ### Пример 2
 
@@ -90,7 +98,13 @@ input:out-of-range + label::after {
     <form>
       <p>Введите число от 1 до 10</p>
       <p>
-        <input type="number" id="dec" min="1" max="10" value="1" />
+        <input
+          type="number"
+          id="dec"
+          min="1"
+          max="10"
+          value="1"
+        />
         <label for="dec"></label>
       </p>
     </form>
@@ -100,8 +114,8 @@ input:out-of-range + label::after {
 
 ## См. также
 
-- [:in-range](in-range.md)
+- [`:in-range`](in-range.md)
 
 ## Ссылки
 
-- [:out-of-range](https://developer.mozilla.org/ru/docs/Web/CSS/:out-of-range) на MDN
+- [`:out-of-range`](https://developer.mozilla.org/ru/docs/Web/CSS/:out-of-range) на MDN

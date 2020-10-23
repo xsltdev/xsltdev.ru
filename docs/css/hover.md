@@ -38,45 +38,53 @@ a:hover {
 
 С псевдоклассом `:hover` вы можете создавать сложные каскадные алгоритмы. Эта техника часто используется, например, чтобы создать выпадающие меню на чистом CSS (только на CSS, без использования JavaScript). Сущность этой техники — создание правил, типа следуюшего:
 
-```css tab="CSS"
-div.menu-bar ul ul {
-  display: none;
-}
+=== "CSS"
 
-div.menu-bar li:hover > ul {
-  display: block;
-}
-```
+    ```css
+    div.menu-bar ul ul {
+      display: none;
+    }
 
-```html tab="HTML"
-<div class="menu-bar">
-  <ul>
-    <li>
-      <a href="example.html">Меню</a>
+    div.menu-bar li:hover > ul {
+      display: block;
+    }
+    ```
+
+=== "HTML"
+
+    ```html
+    <div class="menu-bar">
       <ul>
         <li>
-          <a href="example.html">Ссылка</a>
-        </li>
-        <li>
-          <a class="menu-nav" href="example.html">Подменю</a>
+          <a href="example.html">Меню</a>
           <ul>
             <li>
-              <a class="menu-nav" href="example.html">Подменю</a>
+              <a href="example.html">Ссылка</a>
+            </li>
+            <li>
+              <a class="menu-nav" href="example.html"
+                >Подменю</a
+              >
               <ul>
-                <li><a href="example.html">Ссылка</a></li>
-                <li><a href="example.html">Ссылка</a></li>
-                <li><a href="example.html">Ссылка</a></li>
+                <li>
+                  <a class="menu-nav" href="example.html"
+                    >Подменю</a
+                  >
+                  <ul>
+                    <li><a href="example.html">Ссылка</a></li>
+                    <li><a href="example.html">Ссылка</a></li>
+                    <li><a href="example.html">Ссылка</a></li>
+                    <li><a href="example.html">Ссылка</a></li>
+                  </ul>
+                </li>
                 <li><a href="example.html">Ссылка</a></li>
               </ul>
             </li>
-            <li><a href="example.html">Ссылка</a></li>
           </ul>
         </li>
       </ul>
-    </li>
-  </ul>
-</div>
-```
+    </div>
+    ```
 
 Смотрите полный [пример выпадающего меню](https://developer.mozilla.org/@api/deki/files/6238/=css_dropdown_menu.html), основанный на CSS.
 
@@ -152,7 +160,8 @@ div.menu-bar li:hover > ul {
         background-color: #5488af; /* Цвет фона активного пункта */
       }
       li:hover ul {
-        display: block; /* При выделении пункта курсором мыши отображается подменю */
+        /* При выделении пункта курсором мыши отображается подменю */
+        display: block;
       }
       .brd {
         border-bottom: 1px solid #ccc; /* Линия снизу */
@@ -166,17 +175,31 @@ div.menu-bar li:hover > ul {
         <ul>
           <li><a href="linkr1.html">Бефстроганов</a></li>
           <li><a href="linkr2.html">Гусь с яблоками</a></li>
-          <li><a href="linkr3.html">Крупеник новгородский</a></li>
-          <li><a href="linkr4.html" class="brd">Раки по-русски</a></li>
+          <li>
+            <a href="linkr3.html">Крупеник новгородский</a>
+          </li>
+          <li>
+            <a href="linkr4.html" class="brd"
+              >Раки по-русски</a
+            >
+          </li>
         </ul>
       </li>
       <li>
         <a href="ukrainian.html">Украинская кухня</a>
         <ul>
           <li><a href="linku1.html">Вареники</a></li>
-          <li><a href="linku2.html">Жаркое по-харьковски</a></li>
-          <li><a href="linku3.html">Капустняк черниговский</a></li>
-          <li><a href="linku4.html" class="brd">Потапцы с помидорами</a></li>
+          <li>
+            <a href="linku2.html">Жаркое по-харьковски</a>
+          </li>
+          <li>
+            <a href="linku3.html">Капустняк черниговский</a>
+          </li>
+          <li>
+            <a href="linku4.html" class="brd"
+              >Потапцы с помидорами</a
+            >
+          </li>
         </ul>
       </li>
       <li>
@@ -185,10 +208,16 @@ div.menu-bar li:hover > ul {
           <li><a href="linkc1.html">Суп-харчо</a></li>
           <li><a href="linkc2.html">Лилибдж</a></li>
           <li><a href="linkc3.html">Чихиртма</a></li>
-          <li><a href="linkc4.html" class="brd">Шашлык</a></li>
+          <li>
+            <a href="linkc4.html" class="brd">Шашлык</a>
+          </li>
         </ul>
       </li>
-      <li><a href="asia.html" class="brd">Кухня Средней Азии</a></li>
+      <li>
+        <a href="asia.html" class="brd"
+          >Кухня Средней Азии</a
+        >
+      </li>
     </ul>
   </body>
 </html>

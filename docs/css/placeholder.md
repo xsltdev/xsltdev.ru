@@ -29,17 +29,21 @@ description: С помощью псевдоэлемента ::placeholder зад
 
 ## Пример 1
 
-```html tab="HTML"
-<input placeholder="Type something here!" />
-```
+=== "HTML"
 
-```css tab="CSS"
-input::placeholder {
-  color: red;
-  font-size: 1.2em;
-  font-style: italic;
-}
-```
+    ```html
+    <input placeholder="Type something here!" />
+    ```
+
+=== "CSS"
+
+    ```css
+    input::placeholder {
+      color: red;
+      font-size: 1.2em;
+      font-style: italic;
+    }
+    ```
 
 ## Пример 2
 
@@ -79,7 +83,11 @@ input::placeholder {
   <body>
     <form action="handler.php">
       <p>
-        <input type="search" placeholder="Поиск по сайту" name="q" />
+        <input
+          type="search"
+          placeholder="Поиск по сайту"
+          name="q"
+        />
         <input type="submit" value="Найти" />
       </p>
     </form>
@@ -93,10 +101,10 @@ input::placeholder {
 
 ## См. также
 
-- [:placeholder-shown](placeholder-shown.md)
+- [`:placeholder-shown`](placeholder-shown.md)
 - [`<input>`](/html/input/)
 - [`<textarea>`](/html/textarea/)
 
 ## Ссылки
 
-- [::placeholder](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) на MDN
+- [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) на MDN
