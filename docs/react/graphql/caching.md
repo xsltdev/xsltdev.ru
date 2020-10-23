@@ -8,52 +8,56 @@
 
 Один из возможных шаблон для этого - резервирование поля, такого как `id`, в качестве глобального, уникального идентификатора. Пример схемы, которая использует этот подход:
 
-```graphql tab="Request"
-{
-  starship(id: "3003") {
-    id
-    name
-  }
-  droid(id: "2001") {
-    id
-    name
-    friends {
-      id
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "starship": {
-      "id": "3003",
-      "name": "Imperial shuttle"
-    },
-    "droid": {
-      "id": "2001",
-      "name": "R2-D2",
-      "friends": [
-        {
-          "id": "1000",
-          "name": "Luke Skywalker"
-        },
-        {
-          "id": "1002",
-          "name": "Han Solo"
-        },
-        {
-          "id": "1003",
-          "name": "Leia Organa"
+    ```graphql
+    {
+      starship(id: "3003") {
+        id
+        name
+      }
+      droid(id: "2001") {
+        id
+        name
+        friends {
+          id
+          name
         }
-      ]
+      }
     }
-  }
-}
+    ```
 
-```
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "starship": {
+          "id": "3003",
+          "name": "Imperial shuttle"
+        },
+        "droid": {
+          "id": "2001",
+          "name": "R2-D2",
+          "friends": [
+            {
+              "id": "1000",
+              "name": "Luke Skywalker"
+            },
+            {
+              "id": "1002",
+              "name": "Han Solo"
+            },
+            {
+              "id": "1003",
+              "name": "Leia Organa"
+            }
+          ]
+        }
+      }
+    }
+
+    ```
 
 Это мощный инструмент в руках разработчиков клиента. Таким же образом, как и URL-адреса API предоставляют глобально уникальный ключ, поле `id` в этой системе обеспечивает глобальный уникальный ключ.
 

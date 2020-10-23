@@ -6,23 +6,27 @@
 
 По простому, GraphQL запрашивает определенные **поля** у объектов. Давайте посмотрим на очень простой запрос и результат, который мы получим:
 
-```graphql tab="Request"
-{
-  hero {
-    name
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-   "data": {
-     "hero": {
-       "name": "R2-D2"
-     }
-   }
- }
-```
+    ```graphql
+    {
+      hero {
+        name
+      }
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2"
+        }
+      }
+    }
+    ```
 
 Вы можете сразу увидеть, что запрос имеет точно такую же форму, как и результат. Это важно для GraphQL, так-как Вы всегда получаете то, что Вы ожидаете, и сервер точно знает, что запрашивает клиент.
 
@@ -33,38 +37,42 @@
 
 В предыдущем примере, мы просто запросили имя нашего героя, который вернул строку, но поля также могут относиться и к объектам. В этом случае, Вы можете сделать дополнительный выбор (sub-selection) полей для данного объекта. GraphQL запросы могут включать связанные объекты (related objects) и их поля, позволяя клиентам получать много связанных данных (related data) в одном запросе, вместо того чтобы делать несколько запросов, как это нужно было-бы нужно в классической REST архитектуре.
 
-```graphql tab="Request"
-{
-  hero {
-    name
-    # Queries can have comments!
-    friends {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-   "data": {
-     "hero": {
-       "name": "R2-D2",
-       "friends": [
-         {
-           "name": "Luke Skywalker"
-         },
-         {
-           "name": "Han Solo"
-         },
-         {
-           "name": "Leia Organa"
-         }
-       ]
-     }
-   }
- }
-```
+    ```graphql
+    {
+      hero {
+        name
+        # Queries can have comments!
+        friends {
+          name
+        }
+      }
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+       "data": {
+         "hero": {
+           "name": "R2-D2",
+           "friends": [
+             {
+               "name": "Luke Skywalker"
+             },
+             {
+               "name": "Han Solo"
+             },
+             {
+               "name": "Leia Organa"
+             }
+           ]
+        }
+      }
+    }
+    ```
 
 Обратите внимание, что в этом примере, поле **friends** возвращает массив элементов. GraphQL запросы выглядят одинаково для одного элемента или списка, однако мы знаем, что из этого следует ожидать, основываясь на том, что указано в схеме.
 
@@ -72,47 +80,55 @@
 
 Если единственное, что мы делали, это получали объекты и их поля, GraphQL уже был очень полезный язык для выборки данных. Но когда Вы добавляете возможность передавать **аргументы** полям, все становится гораздо интереснее.
 
-```graphql tab="Request"
-{
-  human(id: "1000") {
-    name
-    height
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "human": {
-      "name": "Luke Skywalker",
-      "height": 1.72
+    ```graphql
+    {
+      human(id: "1000") {
+        name
+        height
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "human": {
+          "name": "Luke Skywalker",
+          "height": 1.72
+        }
+      }
+    }
+    ```
 
 В системе, как REST, можно передавать только один набор аргументов - параметры запроса и URL сегментов в запросе. Но в GraphQL, каждое поле и вложенный объект могут получить свой собственный набор аргументов, поэтому с помощью GraphQL можно избежать нескольких запросов для API-выборок. Вы даже можете передать аргументы в скалярных полях, для осуществления преобразования данных один раз на сервере, а не для каждого клиента в отдельности.
 
-```graphql tab="Request"
-{
-  human(id: "1000") {
-    name
-    height(unit: FOOT)
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "human": {
-      "name": "Luke Skywalker",
-      "height": 5.6430448
+    ```graphql
+    {
+      human(id: "1000") {
+        name
+        height(unit: FOOT)
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "human": {
+          "name": "Luke Skywalker",
+          "height": 5.6430448
+        }
+      }
+    }
+    ```
 
 Аргументы могут быть разных типов. В приведенном выше примере, мы использовали тип `Enumeration`, который представляет одно значение из нескольких вариантов (в данном случае единицы измерения длины, как `METER` или `FOOT`). GraphQL поставляется со стандартным набором типов, но GraphQL сервер также может объявить свой собственный пользовательский тип, поскольку он может быть сериализован в Вашем ответе.
 
@@ -122,29 +138,33 @@
 
 Если Вы предельно внимательны, Вы, возможно, заметили, что, хоть поля объекта-результата соответствуют имени поля в запросе, но они не включают аргументы. Вы не можете сделать запрос непосредственно для того же самого поля с разными аргументами. Вот почему Вам нужны **псевдонимы** - они позволяют Вам переименовывать результат поля во что Вам угодно.
 
-```graphql tab="Request"
-{
-  empireHero: hero(episode: EMPIRE) {
-    name
-  }
-  jediHero: hero(episode: JEDI) {
-    name
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "empireHero": {
-      "name": "Luke Skywalker"
-    },
-    "jediHero": {
-      "name": "R2-D2"
+    ```graphql
+    {
+      empireHero: hero(episode: EMPIRE) {
+        name
+      }
+      jediHero: hero(episode: JEDI) {
+        name
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "empireHero": {
+          "name": "Luke Skywalker"
+        },
+        "jediHero": {
+          "name": "R2-D2"
+        }
+      }
+    }
+    ```
 
 В приведенном выше примере два поля `hero` будут конфликтовать, но так как мы использовали разные псевдонимы, то можно получить оба результата в одном запросе.
 
@@ -154,72 +174,76 @@
 
 Вот почему GraphQL содержит в себе  многоразовые блоки названные фрагментами. **Фрагменты** позволяют Вам создавать наборы полей, а затем включать их в запросы где Вам это необходимо. Вот пример того, как Вы могли бы решить описанную ситуацию используя фрагменты:
 
-```graphql tab="Request"
-{
-  leftComparison: hero(episode: EMPIRE) {
-    ...comparisonFields
-  }
-  rightComparison: hero(episode: JEDI) {
-    ...comparisonFields
-  }
-}
+=== "Request"
 
-fragment comparisonFields on Character {
-  name
-  appearsIn
-  friends {
-    name
-  }
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "leftComparison": {
-      "name": "Luke Skywalker",
-      "appearsIn": [
-        "NEWHOPE",
-        "EMPIRE",
-        "JEDI"
-      ],
-      "friends": [
-        {
-          "name": "Han Solo"
-        },
-        {
-          "name": "Leia Organa"
-        },
-        {
-          "name": "C-3PO"
-        },
-        {
-          "name": "R2-D2"
-        }
-      ]
-    },
-    "rightComparison": {
-      "name": "R2-D2",
-      "appearsIn": [
-        "NEWHOPE",
-        "EMPIRE",
-        "JEDI"
-      ],
-      "friends": [
-        {
-          "name": "Luke Skywalker"
-        },
-        {
-          "name": "Han Solo"
-        },
-        {
-          "name": "Leia Organa"
-        }
-      ]
+    ```graphql
+    {
+      leftComparison: hero(episode: EMPIRE) {
+        ...comparisonFields
+      }
+      rightComparison: hero(episode: JEDI) {
+        ...comparisonFields
+      }
     }
-  }
-}
-```
+
+    fragment comparisonFields on Character {
+      name
+      appearsIn
+      friends {
+        name
+      }
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "leftComparison": {
+          "name": "Luke Skywalker",
+          "appearsIn": [
+            "NEWHOPE",
+            "EMPIRE",
+            "JEDI"
+          ],
+          "friends": [
+            {
+              "name": "Han Solo"
+            },
+            {
+              "name": "Leia Organa"
+            },
+            {
+              "name": "C-3PO"
+            },
+            {
+              "name": "R2-D2"
+            }
+          ]
+        },
+        "rightComparison": {
+          "name": "R2-D2",
+          "appearsIn": [
+            "NEWHOPE",
+            "EMPIRE",
+            "JEDI"
+          ],
+          "friends": [
+            {
+              "name": "Luke Skywalker"
+            },
+            {
+              "name": "Han Solo"
+            },
+            {
+              "name": "Leia Organa"
+            }
+          ]
+        }
+      }
+    }
+    ```
 
 Вы можете увидеть, как вышеупомянутый запрос будет довольно однообразный, если поля повторяются. Концепция фрагментов часто используется для разделения сложных требований данных приложений на более мелкие куски, особенно когда Вам необходимо объединить множество компонентов пользовательского интерфейса с разными фрагментами в исходные данные выборки.
 
@@ -237,43 +261,49 @@ fragment comparisonFields on Character {
 
 Вот как это выглядит все вместе:
 
-```graphql tab="Request"
-query HeroNameAndFriends($episode: Episode) {
-  hero(episode: $episode) {
-    name
-    friends {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "episode": "JEDI"
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "friends": [
-        {
-          "name": "Luke Skywalker"
-        },
-        {
-          "name": "Han Solo"
-        },
-        {
-          "name": "Leia Organa"
+    ```graphql
+    query HeroNameAndFriends($episode: Episode) {
+      hero(episode: $episode) {
+        name
+        friends {
+          name
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Переменные"
+
+    ```graphql
+    {
+      "episode": "JEDI"
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "friends": [
+            {
+              "name": "Luke Skywalker"
+            },
+            {
+              "name": "Han Solo"
+            },
+            {
+              "name": "Leia Organa"
+            }
+          ]
+        }
+      }
+    }
+    ```
 
 Теперь в нашем клиентском коде мы можем просто передать другую переменную, а не создавать совершенно новый запрос. Это также является хорошей практикой для обозначения того, какие аргументы в нашем запросе должны быть динамическими - Мы никогда не должны делать строковую интерполяцию для построения запросов из пользовательских значений.
 
@@ -299,33 +329,39 @@ query HeroNameAndFriends($episode: Episode) {
 
 Давайте создадим запрос для такого компонента:
 
-```graphql tab="Request"
-query Hero($episode: Episode, $withFriends: Boolean!) {
-  hero(episode: $episode) {
-    name
-    friends @include(if: $withFriends) {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "episode": "JEDI",
-  "withFriends": false
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2"
+    ```graphql
+    query Hero($episode: Episode, $withFriends: Boolean!) {
+      hero(episode: $episode) {
+        name
+        friends @include(if: $withFriends) {
+          name
+        }
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Переменные"
+
+    ```graphql
+    {
+      "episode": "JEDI",
+      "withFriends": false
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2"
+        }
+      }
+    }
+    ```
 
 Попробуйте изменить перечисленные выше переменные, передав `true` для `withFriends` и посмотреть, как изменится результат.
 
@@ -344,36 +380,44 @@ query Hero($episode: Episode, $withFriends: Boolean!) {
 
 Как и в запросах, если mutation поле возвращает тип объекта, Вы можете запросить вложенные поля. Это может быть полезно для извлечения нового состояния объекта после обновления. Давайте посмотрим на простой mutation пример:
 
-```graphql tab="Request"
-mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
-  createReview(episode: $ep, review: $review) {
-    stars
-    commentary
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "ep": "JEDI",
-  "review": {
-    "stars": 5,
-    "commentary": "This is a great movie!"
-  }
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "createReview": {
-      "stars": 5,
-      "commentary": "This is a great movie!"
+    ```graphql
+    mutation CreateReviewForEpisode(
+      $ep: Episode!
+      $review: ReviewInput!
+    ) {
+      createReview(episode: $ep, review: $review) {
+        stars
+        commentary
+      }
     }
-  }
-}
+    ```
 
-```
+=== "Переменные"
+
+    ```graphql
+    {
+      "ep": "JEDI",
+      "review": {
+        "stars": 5,
+        "commentary": "This is a great movie!"
+      }
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "createReview": {
+          "stars": 5,
+          "commentary": "This is a great movie!"
+        }
+      }
+    }
+    ```
 
 Обратите внимание, что поле `createReview` возвращает поля `stars` и `commentary` только что созданного обзора. Это особенно полезно при изменении существующих данных, например, при увеличении поля, поскольку мы можем изменять и запрашивать новое значение поля с помощью одного запроса.
 
@@ -393,36 +437,42 @@ Mutation может содержать несколько полей, как и 
 
 Если вы запрашиваете поле, которое возвращает интерфейс или тип объединения, Вам нужно будет использовать встроенные фрагменты для доступа к данным на конкретном типе. Проще всего увидеть на примере:
 
-```graphql tab="Request"
-query HeroForEpisode($ep: Episode!) {
-  hero(episode: $ep) {
-    name
-    ... on Droid {
-      primaryFunction
-    }
-    ... on Human {
-      height
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "ep": "JEDI"
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "primaryFunction": "Astromech"
+    ```graphql
+    query HeroForEpisode($ep: Episode!) {
+      hero(episode: $ep) {
+        name
+        ... on Droid {
+          primaryFunction
+        }
+        ... on Human {
+          height
+        }
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Переменные"
+
+    ```graphql
+    {
+      "ep": "JEDI"
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "primaryFunction": "Astromech"
+        }
+      }
+    }
+    ```
 
 В этом запросе поле `hero` возвращает тип `Character`, который может быть либо `Human`, либо `Droid` в зависимости от `episode` аргумента. В прямом выборе вы можете запрашивать только поля, которые существуют на интерфейсе `Character`, такие как `name`.
 
@@ -434,43 +484,47 @@ query HeroForEpisode($ep: Episode!) {
 
 Учитывая, что существуют ситуации, когда Вы не знаете, какой тип Вы получите от сервиса GraphQL, Вам нужно каким-то образом определить, как обрабатывать эти данные на клиенте. GraphQL позволяет Вам запросить `__typename`, **мета-поле**, в любой точке запроса, чтобы получить имя типа объекта в этой точке.
 
-```graphql tab="Request"
-{
-  search(text: "an") {
-    __typename
-    ... on Human {
-      name
-    }
-    ... on Droid {
-      name
-    }
-    ... on Starship {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "search": [
-      {
-        "__typename": "Human",
-        "name": "Han Solo"
-      },
-      {
-        "__typename": "Human",
-        "name": "Leia Organa"
-      },
-      {
-        "__typename": "Starship",
-        "name": "TIE Advanced x1"
+    ```graphql
+    {
+      search(text: "an") {
+        __typename
+        ... on Human {
+          name
+        }
+        ... on Droid {
+          name
+        }
+        ... on Starship {
+          name
+        }
       }
-    ]
-  }
-}
-```
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "search": [
+          {
+            "__typename": "Human",
+            "name": "Han Solo"
+          },
+          {
+            "__typename": "Human",
+            "name": "Leia Organa"
+          },
+          {
+            "__typename": "Starship",
+            "name": "TIE Advanced x1"
+          }
+        ]
+      }
+    }
+    ```
 
 В вышеупомянутом запросе `search` возвращает тип объединения, который может быть одним из трех вариантов. Невозможно отличить разные типы от клиента без поля `__typename`.
 

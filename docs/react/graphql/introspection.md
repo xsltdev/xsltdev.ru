@@ -6,107 +6,111 @@
 
 Мы спроектированили систему типов, так что мы знаем, какие типы доступны. В ином случае, мы можем спросить GraphQL, запросив поле `__schema`, всегда доступный в корневом типе `Query`. Давайте сделаем это сейчас, и узнаем, какие типы доступны.
 
-```graphql tab="Request"
-{
-  __schema {
-    types {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "__schema": {
-      "types": [
-        {
-          "name": "Query"
-        },
-        {
-          "name": "Episode"
-        },
-        {
-          "name": "Character"
-        },
-        {
-          "name": "ID"
-        },
-        {
-          "name": "String"
-        },
-        {
-          "name": "Int"
-        },
-        {
-          "name": "FriendsConnection"
-        },
-        {
-          "name": "FriendsEdge"
-        },
-        {
-          "name": "PageInfo"
-        },
-        {
-          "name": "Boolean"
-        },
-        {
-          "name": "Review"
-        },
-        {
-          "name": "SearchResult"
-        },
-        {
-          "name": "Human"
-        },
-        {
-          "name": "LengthUnit"
-        },
-        {
-          "name": "Float"
-        },
-        {
-          "name": "Starship"
-        },
-        {
-          "name": "Droid"
-        },
-        {
-          "name": "Mutation"
-        },
-        {
-          "name": "ReviewInput"
-        },
-        {
-          "name": "__Schema"
-        },
-        {
-          "name": "__Type"
-        },
-        {
-          "name": "__TypeKind"
-        },
-        {
-          "name": "__Field"
-        },
-        {
-          "name": "__InputValue"
-        },
-        {
-          "name": "__EnumValue"
-        },
-        {
-          "name": "__Directive"
-        },
-        {
-          "name": "__DirectiveLocation"
+    ```graphql
+    {
+      __schema {
+        types {
+          name
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__schema": {
+          "types": [
+            {
+              "name": "Query"
+            },
+            {
+              "name": "Episode"
+            },
+            {
+              "name": "Character"
+            },
+            {
+              "name": "ID"
+            },
+            {
+              "name": "String"
+            },
+            {
+              "name": "Int"
+            },
+            {
+              "name": "FriendsConnection"
+            },
+            {
+              "name": "FriendsEdge"
+            },
+            {
+              "name": "PageInfo"
+            },
+            {
+              "name": "Boolean"
+            },
+            {
+              "name": "Review"
+            },
+            {
+              "name": "SearchResult"
+            },
+            {
+              "name": "Human"
+            },
+            {
+              "name": "LengthUnit"
+            },
+            {
+              "name": "Float"
+            },
+            {
+              "name": "Starship"
+            },
+            {
+              "name": "Droid"
+            },
+            {
+              "name": "Mutation"
+            },
+            {
+              "name": "ReviewInput"
+            },
+            {
+              "name": "__Schema"
+            },
+            {
+              "name": "__Type"
+            },
+            {
+              "name": "__TypeKind"
+            },
+            {
+              "name": "__Field"
+            },
+            {
+              "name": "__InputValue"
+            },
+            {
+              "name": "__EnumValue"
+            },
+            {
+              "name": "__Directive"
+            },
+            {
+              "name": "__DirectiveLocation"
+            }
+          ]
+        }
+      }
+    }
+    ```
 
 Ух ты, здесь много типов! Что они представляют? Давайте сгруппируем их:
 
@@ -116,164 +120,184 @@
 
 Теперь, давайте выясним, с чего начать изучать, какие запросы доступны. Когда мы спроектировали нашу систему типов, мы указали, с какого типа будут начинаться все запросы; давайте спросим у системы самонаблюдения об этом!
 
-```graphql tab="Request"
-{
-  __schema {
-    queryType {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "__schema": {
-      "queryType": {
-        "name": "Query"
+    ```graphql
+    {
+      __schema {
+        queryType {
+          name
+        }
       }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__schema": {
+          "queryType": {
+            "name": "Query"
+          }
+        }
+      }
+    }
+    ```
 
 И это совпадает с тем, что мы говорили в разделе о системе типов,- тип `Query` там, где мы стартуем! Отметим, что именование тут по договоренности; мы можем назвать наш тип `Query` по-другому, и ответ будет возвращаться с этим новым именем. Хотя назвать его `Query` - полезная договоренность.
 
 Часто полезно разобрать один определенный тип. Давайте взглянем на тип `Droid`:
 
-```graphql tab="Request"
-{
-  __type(name: "Droid") {
-    name
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "__type": {
-      "name": "Droid"
+    ```graphql
+    {
+      __type(name: "Droid") {
+        name
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__type": {
+          "name": "Droid"
+        }
+      }
+    }
+    ```
 
 Что, если мы хотим знать больше о `Droid`? Например, является ли он интерфейсом или объектом?
 
-```graphql tab="Request"
-{
-  __type(name: "Droid") {
-    name
-    kind
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "__type": {
-      "name": "Droid",
-      "kind": "OBJECT"
-    }
-  }
-}
-```
-
-Поле `kind` возвращает `__TypeKind` вида enum, одно из этих значений - `OBJECT`. Если мы запросим `Character`, мы обнаружим, что это интерфейс:
-
-```graphql tab="Request"
-{
-  __type(name: "Character") {
-    name
-    kind
-  }
-}
-```
-
-```graphql tab="Result"
-{
-  "data": {
-    "__type": {
-      "name": "Character",
-      "kind": "INTERFACE"
-    }
-  }
-}
-```
-
-В случае с объектом полезно знать, какие поля доступны, так что давайте спросим систему самонаблюдения о `Droid`:
-
-```graphql tab="Request"
-{
-  __type(name: "Droid") {
-    name
-    fields {
-      name
-      type {
+    ```graphql
+    {
+      __type(name: "Droid") {
         name
         kind
       }
     }
-  }
-}
-```
+    ```
 
-```graphql tab="Result"
-{
-  "data": {
-    "__type": {
-      "name": "Droid",
-      "fields": [
-        {
-          "name": "id",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL"
-          }
-        },
-        {
-          "name": "name",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL"
-          }
-        },
-        {
-          "name": "friends",
-          "type": {
-            "name": null,
-            "kind": "LIST"
-          }
-        },
-        {
-          "name": "friendsConnection",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL"
-          }
-        },
-        {
-          "name": "appearsIn",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL"
-          }
-        },
-        {
-          "name": "primaryFunction",
-          "type": {
-            "name": "String",
-            "kind": "SCALAR"
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__type": {
+          "name": "Droid",
+          "kind": "OBJECT"
+        }
+      }
+    }
+    ```
+
+Поле `kind` возвращает `__TypeKind` вида enum, одно из этих значений - `OBJECT`. Если мы запросим `Character`, мы обнаружим, что это интерфейс:
+
+=== "Request"
+
+    ```graphql
+    {
+      __type(name: "Character") {
+        name
+        kind
+      }
+    }
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__type": {
+          "name": "Character",
+          "kind": "INTERFACE"
+        }
+      }
+    }
+    ```
+
+В случае с объектом полезно знать, какие поля доступны, так что давайте спросим систему самонаблюдения о `Droid`:
+
+=== "Request"
+
+    ```graphql
+    {
+      __type(name: "Droid") {
+        name
+        fields {
+          name
+          type {
+            name
+            kind
           }
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__type": {
+          "name": "Droid",
+          "fields": [
+            {
+              "name": "id",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL"
+              }
+            },
+            {
+              "name": "friends",
+              "type": {
+                "name": null,
+                "kind": "LIST"
+              }
+            },
+            {
+              "name": "friendsConnection",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL"
+              }
+            },
+            {
+              "name": "appearsIn",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL"
+              }
+            },
+            {
+              "name": "primaryFunction",
+              "type": {
+                "name": "String",
+                "kind": "SCALAR"
+              }
+            }
+          ]
+        }
+      }
+    }
+    ```
 
 Это все поля, которые мы определили в `Droid`!
 
@@ -281,121 +305,129 @@
 
 Так же, `friends` и `appearsIn` не имеют имени, т. к. они являются оберткой типа `LIST`. Мы можем запросить `ofType` этих типов, который скажет нам, что эти типы являются списками.
 
-```graphql tab="Request"
-{
-  __type(name: "Droid") {
-    name
-    fields {
-      name
-      type {
+=== "Request"
+
+    ```graphql
+    {
+      __type(name: "Droid") {
         name
-        kind
-        ofType {
+        fields {
           name
-          kind
+          type {
+            name
+            kind
+            ofType {
+              name
+              kind
+            }
+          }
         }
       }
     }
-  }
-}
-```
+    ```
 
-```graphql tab="Result"
-{
-  "data": {
-    "__type": {
-      "name": "Droid",
-      "fields": [
-        {
-          "name": "id",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL",
-            "ofType": {
-              "name": "ID",
-              "kind": "SCALAR"
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__type": {
+          "name": "Droid",
+          "fields": [
+            {
+              "name": "id",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "ID",
+                  "kind": "SCALAR"
+                }
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            },
+            {
+              "name": "friends",
+              "type": {
+                "name": null,
+                "kind": "LIST",
+                "ofType": {
+                  "name": "Character",
+                  "kind": "INTERFACE"
+                }
+              }
+            },
+            {
+              "name": "friendsConnection",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "FriendsConnection",
+                  "kind": "OBJECT"
+                }
+              }
+            },
+            {
+              "name": "appearsIn",
+              "type": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": null,
+                  "kind": "LIST"
+                }
+              }
+            },
+            {
+              "name": "primaryFunction",
+              "type": {
+                "name": "String",
+                "kind": "SCALAR",
+                "ofType": null
+              }
             }
-          }
-        },
-        {
-          "name": "name",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL",
-            "ofType": {
-              "name": "String",
-              "kind": "SCALAR"
-            }
-          }
-        },
-        {
-          "name": "friends",
-          "type": {
-            "name": null,
-            "kind": "LIST",
-            "ofType": {
-              "name": "Character",
-              "kind": "INTERFACE"
-            }
-          }
-        },
-        {
-          "name": "friendsConnection",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL",
-            "ofType": {
-              "name": "FriendsConnection",
-              "kind": "OBJECT"
-            }
-          }
-        },
-        {
-          "name": "appearsIn",
-          "type": {
-            "name": null,
-            "kind": "NON_NULL",
-            "ofType": {
-              "name": null,
-              "kind": "LIST"
-            }
-          }
-        },
-        {
-          "name": "primaryFunction",
-          "type": {
-            "name": "String",
-            "kind": "SCALAR",
-            "ofType": null
-          }
+          ]
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
 
 Давайте закончим на этом, запросив у системы документацию!
 
-```graphql tab="Request"
-{
-  __type(name: "Droid") {
-    name
-    description
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "__type": {
-      "name": "Droid",
-      "description": "An autonomous mechanical character in the Star Wars universe"
+    ```graphql
+    {
+      __type(name: "Droid") {
+        name
+        description
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "__type": {
+          "name": "Droid",
+          "description": "An autonomous mechanical character in the Star Wars universe"
+        }
+      }
+    }
+    ```
 
 Так мы можем получить доступ к документации о системе типов, используя самонаблюдение, и создать просмотр документации, или расширить возможности IDE.
 

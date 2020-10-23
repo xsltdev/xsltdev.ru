@@ -6,39 +6,43 @@
 
 ## Plurals
 
-Самый простой способ показать связь между объектами,- это поле, которое возвращает множественный тип. Например, если мы хотим получить список друзей R2-D2, мы могли бы просто запросить всех из них:
+Самый простой способ показать связь между объектами, - это поле, которое возвращает множественный тип. Например, если мы хотим получить список друзей R2-D2, мы могли бы просто запросить всех из них:
 
-```graphql tab="Request"
-{
-  hero {
-    name
-    friends {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "friends": [
-        {
-          "name": "Luke Skywalker"
-        },
-        {
-          "name": "Han Solo"
-        },
-        {
-          "name": "Leia Organa"
+    ```graphql
+    {
+      hero {
+        name
+        friends {
+          name
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "friends": [
+            {
+              "name": "Luke Skywalker"
+            },
+            {
+              "name": "Han Solo"
+            },
+            {
+              "name": "Leia Organa"
+            }
+          ]
+        }
+      }
+    }
+    ```
 
 ## Slicing
 
@@ -70,21 +74,21 @@
 Это приводит нас к проблеме; подумайте; как мы получаем курсор от объекта? Мы бы не хотели, чтобы курсор жил в `User`; это свойство соединения (connection), а не объекта. Таким образом, мы могли бы хотели ввести новый слой косвенности; поле `friends` должно дать нам
 список разрезов (edges) и каждый разрез содержит курсор и подчиненный узел:
 
-**Request**
+=== "Request"
 
-```
-{
-  hero {
-    name
-    friends(first:2) {
-      node {
+    ```graphql
+    {
+      hero {
         name
+        friends(first:2) {
+          node {
+            name
+          }
+          cursor
+        }
       }
-      cursor
     }
-  }
-}
-```
+    ```
 
 Понятие грани также оказывается полезным, если есть информация, специфичная для грани,
 а не для одного из объектов. Например, если мы хотим показать "время дружбы" в API, встраивание его в грань является естественным.
@@ -98,26 +102,28 @@
 иметь поле для граней, а также другую информацию (например, общего количества и информации о том,
 существует ли следующая страница). Таким образом, наш окончательный запрос может выглядеть как:
 
-```graphql tab="Request"
-{
-  hero {
-    name
-    friends(first: 2) {
-      totalCount
-      edges {
-        node {
-          name
+=== "Request"
+
+    ```graphql
+    {
+      hero {
+        name
+        friends(first: 2) {
+          totalCount
+          edges {
+            node {
+              name
+            }
+            cursor
+          }
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
         }
-        cursor
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
       }
     }
-  }
-}
-```
+    ```
 
 Обратите внимание, что мы также могли бы включить `endCursor` и `startCursor` в объект `PageInfo`. Таким образом, если нам не нужно какой-либо дополнительной информации о том, что содержит грань, мы можем не запрашивать получение граней, т. к. у нас уже есть необходимые для разбивки курсоры. Это потенциального приводит к улучшению удобства и простоты использования для соединений; вместо того,
 чтобы просто показать список граней, мы можем также показать специальный только список узлов, чтобы избежать слоя косвенности.
@@ -133,54 +139,58 @@
 
 Чтобы увидеть это в действии, вот дополнительное поле в схеме, под названием `friendsConnection`, которое предоставляет все эти концепции. Вы можете проверить это в примере. Попробуйте удалить параметр `after` в `friendsConnection` чтобы посмотреть, как будет затронута нумерация страниц. Кроме того, попробуйте заменить поле `edges` вспомогательным полем `friends` соединения, что позволит вам попасть напрямую в список друзей, без дополнительных слоев, когда это уместно для клиентов.
 
-```graphql tab="Request"
-{
-  hero {
-    name
-    friendsConnection(first: 2, after: "Y3Vyc29yMQ==") {
-      totalCount
-      edges {
-        node {
-          name
-        }
-        cursor
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
-      }
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "friendsConnection": {
-        "totalCount": 3,
-        "edges": [
-          {
-            "node": {
-              "name": "Han Solo"
-            },
-            "cursor": "Y3Vyc29yMg=="
-          },
-          {
-            "node": {
-              "name": "Leia Organa"
-            },
-            "cursor": "Y3Vyc29yMw=="
+    ```graphql
+    {
+      hero {
+        name
+        friendsConnection(first: 2, after: "Y3Vyc29yMQ==") {
+          totalCount
+          edges {
+            node {
+              name
+            }
+            cursor
           }
-        ],
-        "pageInfo": {
-          "endCursor": "Y3Vyc29yMw==",
-          "hasNextPage": false
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
         }
       }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "friendsConnection": {
+            "totalCount": 3,
+            "edges": [
+              {
+                "node": {
+                  "name": "Han Solo"
+                },
+                "cursor": "Y3Vyc29yMg=="
+              },
+              {
+                "node": {
+                  "name": "Leia Organa"
+                },
+                "cursor": "Y3Vyc29yMw=="
+              }
+            ],
+            "pageInfo": {
+              "endCursor": "Y3Vyc29yMw==",
+              "hasNextPage": false
+            }
+          }
+        }
+      }
+    }
+    ```

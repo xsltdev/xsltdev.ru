@@ -28,40 +28,44 @@ type Starship {
 
 Для того, чтобы описать, что происходит при выполнении запроса, используем пример для прохождения.
 
-```graphql tab="Request"
-{
-  human(id: 1002) {
-    name
-    appearsIn
-    starships {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "human": {
-      "name": "Han Solo",
-      "appearsIn": [
-        "NEWHOPE",
-        "EMPIRE",
-        "JEDI"
-      ],
-      "starships": [
-        {
-          "name": "Millenium Falcon"
-        },
-        {
-          "name": "Imperial shuttle"
+    ```graphql
+    {
+      human(id: 1002) {
+        name
+        appearsIn
+        starships {
+          name
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "human": {
+          "name": "Han Solo",
+          "appearsIn": [
+            "NEWHOPE",
+            "EMPIRE",
+            "JEDI"
+          ],
+          "starships": [
+            {
+              "name": "Millenium Falcon"
+            },
+            {
+              "name": "Imperial shuttle"
+            }
+          ]
+        }
+      }
+    }
+    ```
 
 Можно представить каждое поле запроса GraphQL как функцию или метод предыдущего типа, который возвращает следующий тип. По сути, так работает GraphQL. Каждое поле каждого типа поддерживается функцией, называемой **resolver**, предоставленной разработчиком сервера GraphQL. Когда выполняется поле, соответсвующий **resolver** вызывается для предоставления следующего значения.
 
@@ -170,37 +174,41 @@ GraphQL будет ожидать все эти Promises параллельно 
 
 Давайте сделаем последний взгляд на оригинальный запрос, чтобы увидеть, все эти функции приводят к результату:
 
-```graphql tab="Request"
-{
-  human(id: 1002) {
-    name
-    appearsIn
-    starships {
-      name
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Result"
-{
-  "data": {
-    "human": {
-      "name": "Han Solo",
-      "appearsIn": [
-        "NEWHOPE",
-        "EMPIRE",
-        "JEDI"
-      ],
-      "starships": [
-        {
-          "name": "Millenium Falcon"
-        },
-        {
-          "name": "Imperial shuttle"
+    ```graphql
+    {
+      human(id: 1002) {
+        name
+        appearsIn
+        starships {
+          name
         }
-      ]
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Result"
+
+    ```graphql
+    {
+      "data": {
+        "human": {
+          "name": "Han Solo",
+          "appearsIn": [
+            "NEWHOPE",
+            "EMPIRE",
+            "JEDI"
+          ],
+          "starships": [
+            {
+              "name": "Millenium Falcon"
+            },
+            {
+              "name": "Imperial shuttle"
+            }
+          ]
+        }
+      }
+    }
+    ```

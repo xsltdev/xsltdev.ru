@@ -6,29 +6,33 @@
 
 Если вы видели запрос GraphQL ранее, вы знаете, что язык запросов GraphQL - это выбор полей в объектах. Например, в данном запросе:
 
-```graphql tab="Request"
-{
-  hero {
-    name
-    appearsIn
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "appearsIn": [
-        "NEWHOPE",
-        "EMPIRE",
-        "JEDI"
-      ]
+    ```graphql
+    {
+      hero {
+        name
+        appearsIn
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "appearsIn": [
+            "NEWHOPE",
+            "EMPIRE",
+            "JEDI"
+          ]
+        }
+      }
+    }
+    ```
 
 - Мы начинаем со специального "root" объекта
 - Мы выбираем поле `hero` в нем
@@ -93,30 +97,34 @@ schema {
 
 Любой сервис GraphQL имеет тип `query` и может иметь или не иметь тип `mutation`. Эти типы подобны регулярным типам объекта, но являются особенными, т. к. определяют точку входа каждого запроса GraphаQL. Так что если вы видете запрос наподобие этого:
 
-```graphql tab="Request"
-query {
-  hero {
-    name
-  }
-  droid(id: "2000") {
-    name
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-
-  "data": {
-    "hero": {
-      "name": "R2-D2"
-    },
-    "droid": {
-      "name": "C-3PO"
+    ```graphql
+    query {
+      hero {
+        name
+      }
+      droid(id: "2000") {
+        name
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+
+      "data": {
+        "hero": {
+          "name": "R2-D2"
+        },
+        "droid": {
+          "name": "C-3PO"
+        }
+      }
+    }
+    ```
 
 Это значит, что сервис GraphQL должен иметь тип `Query` с полями `hero` и `droid`:
 
@@ -137,29 +145,33 @@ type Query {
 
 В следующем запросе, `name` и `appearsIn` отдадут скалярные типы:
 
-```graphql tab="Request"
-{
-  hero {
-    name
-    appearsIn
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "appearsIn": [
-        "NEWHOPE",
-        "EMPIRE",
-        "JEDI"
-      ]
+    ```graphql
+    {
+      hero {
+        name
+        appearsIn
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "appearsIn": [
+            "NEWHOPE",
+            "EMPIRE",
+            "JEDI"
+          ]
+        }
+      }
+    }
+    ```
 
 Мы знаем это, т. к. эти поля не имеют подчиненных полей - это листья запроса.
 
@@ -213,35 +225,41 @@ type Character {
 
 Модификатор типа `Non-Null` может быть так же использован, когда определяются аргументы поля, что побуждает сервер GraphQL возвращать ошибку проверки на `null` переданного аргумента.
 
-```graphql tab="Request"
-query DroidById($id: ID!) {
-  droid(id: $id) {
-    name
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "id": null
-}
-```
+    ```graphql
+    query DroidById($id: ID!) {
+      droid(id: $id) {
+        name
+      }
+    }
+    ```
 
-```graphql tab="Response"
-{
-  "errors": [
+=== "Переменные"
+
+    ```graphql
     {
-      "message": "Variable \"$id\" of required type \"ID!\" was not provided.",
-      "locations": [
+      "id": null
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "errors": [
         {
-          "line": 1,
-          "column": 17
+          "message": "Variable \"$id\" of required type \"ID!\" was not provided.",
+          "locations": [
+            {
+              "line": 1,
+              "column": 17
+            }
+          ]
         }
       ]
     }
-  ]
-}
-```
+    ```
 
 Списки работают по тому же принципу: мы можем использовать модификатор типа, чтобы отметить тип как `List`, что означает, что это поле вернет массив с этим типом. В языке схемы, это отображено как оборачивание типа в квадратные скобки, `[` и `]`. Так же и с аргументами, где этап проверки будет ожидать массив этих значений.
 
@@ -317,68 +335,80 @@ type Droid implements Character {
 
 Интерфейсы полезны, когда вы хотите вернуть объект или набор объектов, но они могут быть различных типов. Например, следующий запрос генерирует ошибку:
 
-```graphql tab="Request"
-query HeroForEpisode($ep: Episode!) {
-  hero(episode: $ep) {
-    name
-    primaryFunction
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "ep": "JEDI"
-}
-```
+    ```graphql
+    query HeroForEpisode($ep: Episode!) {
+      hero(episode: $ep) {
+        name
+        primaryFunction
+      }
+    }
+    ```
 
-```graphql tab="Response"
-{
-  "errors": [
+=== "Переменные"
+
+    ```graphql
     {
-      "message": "Cannot query field \"primaryFunction\" on type \"Character\". Did you mean to use an inline fragment on \"Droid\"?",
-      "locations": [
+      "ep": "JEDI"
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "errors": [
         {
-          "line": 4,
-          "column": 5
+          "message": "Cannot query field \"primaryFunction\" on type \"Character\". Did you mean to use an inline     fragment on \"Droid\"?",
+          "locations": [
+            {
+              "line": 4,
+              "column": 5
+            }
+          ]
         }
       ]
     }
-  ]
-}
-```
+    ```
 
 Поле `hero` возвращает тип `Character`, что означает, что это может быть `Human` или `Droid`, в зависимости от аргумента `episode`. В запросе выше, вы можете запросить только поля, которые существуют в интерфейсе `Character`, который не включает `primaryFunction`.
 
 Чтобы запросить поле из определенного типа объекта, вам нужно использовать такой фрагмент:
 
-```graphql tab="Request"
-query HeroForEpisode($ep: Episode!) {
-  hero(episode: $ep) {
-    name
-    ... on Droid {
-      primaryFunction
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "ep": "JEDI"
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "primaryFunction": "Astromech"
+    ```graphql
+    query HeroForEpisode($ep: Episode!) {
+      hero(episode: $ep) {
+        name
+        ... on Droid {
+          primaryFunction
+        }
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Переменные"
+
+    ```graphql
+    {
+      "ep": "JEDI"
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "hero": {
+          "name": "R2-D2",
+          "primaryFunction": "Astromech"
+        }
+      }
+    }
+    ```
 
 Более подробно об этом можно прочитать в разделе [inline fragments](queries-and-mutations.md#inline-fragments) инструкции к запросам.
 
@@ -392,45 +422,49 @@ query HeroForEpisode($ep: Episode!) {
 
 В этом случае, если вы запрашиваете поле, которое возвращает тип union `SearchResult`, вам нужно использовать фрагмент с условиями, который позволит запросить любое поле:
 
-```graphql tab="Request"
-{
-  search(text: "an") {
-    ... on Human {
-      name
-      height
-    }
-    ... on Droid {
-      name
-      primaryFunction
-    }
-    ... on Starship {
-      name
-      length
-    }
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Response"
-{
-  "data": {
-    "search": [
-      {
-        "name": "Han Solo",
-        "height": 1.8
-      },
-      {
-        "name": "Leia Organa",
-        "height": 1.5
-      },
-      {
-        "name": "TIE Advanced x1",
-        "length": 9.2
+    ```graphql
+    {
+      search(text: "an") {
+        ... on Human {
+          name
+          height
+        }
+        ... on Droid {
+          name
+          primaryFunction
+        }
+        ... on Starship {
+          name
+          length
+        }
       }
-    ]
-  }
-}
-```
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "search": [
+          {
+            "name": "Han Solo",
+            "height": 1.8
+          },
+          {
+            "name": "Leia Organa",
+            "height": 1.5
+          },
+          {
+            "name": "TIE Advanced x1",
+            "length": 9.2
+          }
+        ]
+      }
+    }
+    ```
 
 ## Типы ввода
 
@@ -445,34 +479,43 @@ input ReviewInput {
 
 Вот как вы можете использовать объект ввода в мутации:
 
-```graphql tab="Request"
-mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
-  createReview(episode: $ep, review: $review) {
-    stars
-    commentary
-  }
-}
-```
+=== "Request"
 
-```graphql tab="Переменные"
-{
-  "ep": "JEDI",
-  "review": {
-    "stars": 5,
-    "commentary": "This is a great movie!"
-  }
-}
-```
-
-```graphql tab="Response"
-{
-  "data": {
-    "createReview": {
-      "stars": 5,
-      "commentary": "This is a great movie!"
+    ```graphql
+    mutation CreateReviewForEpisode(
+      $ep: Episode!
+      $review: ReviewInput!
+    ) {
+      createReview(episode: $ep, review: $review) {
+        stars
+        commentary
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Переменные"
+
+    ```graphql
+    {
+      "ep": "JEDI",
+      "review": {
+        "stars": 5,
+        "commentary": "This is a great movie!"
+      }
+    }
+    ```
+
+=== "Response"
+
+    ```graphql
+    {
+      "data": {
+        "createReview": {
+          "stars": 5,
+          "commentary": "This is a great movie!"
+        }
+      }
+    }
+    ```
 
 Поля в объекте типа объекта ввода могут самостоятельно соотноситься с типами объектов, но вы не можете смешивать типы ввода и вывода в вашей схеме. Типы объектов ввода так же не могут иметь аргументов к полям.
