@@ -16,7 +16,7 @@ _match-string.directive.ts_
 
 ```ts
 @Directive({
-  selector: '[matchString]'
+  selector: '[matchString]',
 })
 export class HintHotKeyDirective implements OnChanges {
   @Input('matchString') matchString: string
@@ -26,7 +26,8 @@ export class HintHotKeyDirective implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (
-      (changes.matchString && changes.matchString.currentValue) ||
+      (changes.matchString &&
+        changes.matchString.currentValue) ||
       (changes.bgColor && changes.bgColor.currentValue)
     ) {
       this._search(changes.matchString.currentValue)
@@ -34,7 +35,9 @@ export class HintHotKeyDirective implements OnChanges {
   }
 
   private _search(match: string) {
-    if (this.el.nativeElement.textContent.indexOf(match) != -1)
+    if (
+      this.el.nativeElement.textContent.indexOf(match) != -1
+    )
       this.el.nativeElement.style.backgroundColor = this.bgColor
     else this.el.nativeElement.style.backgroundColor = ''
   }
@@ -50,14 +53,16 @@ _match-string-test.component.ts_
   selector: 'match-string-test',
   template: `
     <div>
-      <h3 [matchString]="match">Match string test component</h3>
+      <h3 [matchString]="match">
+        Match string test component
+      </h3>
 
       <p [matchString]="match" [bgColor]="color">
-        This is a component for testing all use cases of [matchString]
-        directive.
+        This is a component for testing all use cases of
+        [matchString] directive.
       </p>
     </div>
-  `
+  `,
 })
 export class MatchStringTestComponent {
   match: string
@@ -76,12 +81,17 @@ describe('[matchString] directive', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MatchStringDirective, MatchStringTestComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      declarations: [
+        MatchStringDirective,
+        MatchStringTestComponent,
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents()
       .then(() => {
-        fixture = TestBed.createComponent(MatchStringTestComponent)
+        fixture = TestBed.createComponent(
+          MatchStringTestComponent
+        )
         comp = fixture.componentInstance
       })
   }))
@@ -90,7 +100,9 @@ describe('[matchString] directive', () => {
     comp.match = 'directive'
     fixture.detectChanges()
 
-    const el = fixture.debugElement.queryAll(By.directive(MatchStringDirective))
+    const el = fixture.debugElement.queryAll(
+      By.directive(MatchStringDirective)
+    )
     const h3 = el[0].nativeElement
     const p = el[1].nativeElement
 
@@ -103,7 +115,9 @@ describe('[matchString] directive', () => {
     comp.color = '#fafad2'
     fixture.detectChanges()
 
-    const el = fixture.debugElement.queryAll(By.directive(MatchStringDirective))
+    const el = fixture.debugElement.queryAll(
+      By.directive(MatchStringDirective)
+    )
     const p = el[1].nativeElement
 
     expect(p.style.backgroundColor).toBe('#fafad2')

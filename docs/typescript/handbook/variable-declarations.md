@@ -117,7 +117,7 @@ function sumMatrix(matrix: number[][]) {
 
 ```ts
 for (var i = 0; i < 10; i++) {
-  setTimeout(function() {
+  setTimeout(function () {
     console.log(i)
   }, 100 * i)
 }
@@ -171,8 +171,8 @@ for (var i = 0; i < 10; i++) {
 for (var i = 0; i < 10; i++) {
   // capture the current state of 'i'
   // by invoking a function with its current value
-  ;(function(i) {
-    setTimeout(function() {
+  ;(function (i) {
+    setTimeout(function () {
       console.log(i)
     }, 100 * i)
   })(i)
@@ -342,7 +342,7 @@ function theCityThatAlwaysSleeps() {
 
   if (true) {
     let city = 'Seattle'
-    getCity = function() {
+    getCity = function () {
       return city
     }
   }
@@ -361,7 +361,7 @@ function theCityThatAlwaysSleeps() {
 
 ```ts
 for (let i = 0; i < 10; i++) {
-  setTimeout(function() {
+  setTimeout(function () {
     console.log(i)
   }, 100 * i)
 }
@@ -397,13 +397,13 @@ const numLivesForCat = 9
 const numLivesForCat = 9
 const kitty = {
   name: 'Aurora',
-  numLives: numLivesForCat
+  numLives: numLivesForCat,
 }
 
 // Ошибка
 kitty = {
   name: 'Danielle',
-  numLives: numLivesForCat
+  numLives: numLivesForCat,
 }
 
 // Все хорошо
@@ -498,7 +498,7 @@ let [, second, , fourth] = [1, 2, 3, 4]
 let o = {
   a: 'foo',
   b: 12,
-  c: 'bar'
+  c: 'bar',
 }
 let { a, b } = o
 ```
@@ -542,7 +542,10 @@ let { a, b }: { a: string; b: number } = o
 Значения по умолчанию позволяют определить свойство, даже если оно не задавалось:
 
 ```ts
-function keepWholeObject(wholeObject: { a: string; b?: number }) {
+function keepWholeObject(wholeObject: {
+  a: string
+  b?: number
+}) {
   let { a, b = 1001 } = wholeObject
 }
 ```

@@ -11,12 +11,12 @@ var http = require('http')
 var fs = require('fs')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     // получаем путь после слеша
     var filePath = request.url.substr(1)
     // установка пути по умолчанию
     if (filePath == '') filePath = 'index.html'
-    fs.readFile(filePath, function(error, data) {
+    fs.readFile(filePath, function (error, data) {
       if (error) {
         // если файл не найден
         response.statusCode = 404
@@ -27,8 +27,10 @@ http
       return
     })
   })
-  .listen(3000, function() {
-    console.log('Сервер запущен по адресу http://localhost:3000/')
+  .listen(3000, function () {
+    console.log(
+      'Сервер запущен по адресу http://localhost:3000/'
+    )
   })
 ```
 
@@ -81,8 +83,8 @@ makeCall(iphone)
       SystemJS.config({
         baseURL: 'app',
         packages: {
-          '/': { defaultExtension: 'js' }
-        }
+          '/': { defaultExtension: 'js' },
+        },
       })
       System.import('app.js')
     </script>

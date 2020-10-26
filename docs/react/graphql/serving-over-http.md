@@ -77,7 +77,7 @@ app.use(
   '/ graphql',
   graphqlHTTP({
     schema: MySessionAwareGraphQLSchema,
-    graphiql: process.env.NODE_ENV === 'development'
+    graphiql: process.env.NODE_ENV === 'development',
   })
 )
 ```

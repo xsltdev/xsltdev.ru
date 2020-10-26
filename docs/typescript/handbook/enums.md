@@ -9,7 +9,7 @@ enum Direction {
   Up = 1,
   Down,
   Left,
-  Right
+  Right,
 }
 ```
 
@@ -33,7 +33,7 @@ enum FileAccess {
   Write = 1 << 2,
   ReadWrite = Read | Write,
   // вычисляемые элементы
-  G = '123'.length
+  G = '123'.length,
 }
 ```
 
@@ -41,7 +41,7 @@ enum FileAccess {
 
 ```ts
 enum Enum {
-  A
+  A,
 }
 let a = Enum.A
 let nameOfA = Enum[Enum.A] // "A"
@@ -51,7 +51,7 @@ let nameOfA = Enum[Enum.A] // "A"
 
 ```js
 var Enum
-;(function(Enum) {
+;(function (Enum) {
   Enum[(Enum['A'] = 0)] = 'A'
 })(Enum || (Enum = {}))
 var a = Enum.A
@@ -63,7 +63,7 @@ var nameOfA = Enum[Enum.A] // "A"
 ```ts
 const enum Enum {
   A = 1,
-  B = A * 2
+  B = A * 2,
 }
 ```
 
@@ -74,16 +74,26 @@ const enum Directions {
   Up,
   Down,
   Left,
-  Right
+  Right,
 }
 
-let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right]
+let directions = [
+  Directions.Up,
+  Directions.Down,
+  Directions.Left,
+  Directions.Right,
+]
 ```
 
 в сгенерированном коде превратится в
 
 ```js
-var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */]
+var directions = [
+  0 /* Up */,
+  1 /* Down */,
+  2 /* Left */,
+  3 /* Right */,
+]
 ```
 
 ## Окружающие перечисления
@@ -94,7 +104,7 @@ var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */]
 declare enum Enum {
   A = 1,
   B,
-  C = 2
+  C = 2,
 }
 ```
 

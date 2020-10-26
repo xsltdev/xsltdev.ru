@@ -20,38 +20,44 @@ exsl:node-set(object)
 
 ## Примеры
 
-```xml tab="XML"
-<doc>
-	<one />
-	<two />
-	<three />
-	<four />
-</doc>
-```
+=== "XML"
 
-```xslt tab="XSLT"
-<!--  Test exslt:node-set applied to a result tree fragment  -->
-<xsl:variable name="tree">
-	<a>
-		<b>
-			<c>
-				<d />
-			</c>
-		</b>
-	</a>
-</xsl:variable>
-<xsl:template match="/">
-	<out>
-		<xsl:value-of select="count(exslt:node-set(//*))" />
-	</out>
-</xsl:template>
-```
+    ```xml
+    <doc>
+      <one />
+      <two />
+      <three />
+      <four />
+    </doc>
+    ```
 
-```xml tab="Result"
-<out xmlns:exslt="http://exslt.org/common">5</out>
-```
+=== "XSLT"
+
+    ```xml
+    <!--  Test exslt:node-set applied to a result tree fragment  -->
+    <xsl:variable name="tree">
+      <a>
+        <b>
+          <c>
+            <d />
+          </c>
+        </b>
+      </a>
+    </xsl:variable>
+    <xsl:template match="/">
+      <out>
+        <xsl:value-of select="count(exslt:node-set(//*))" />
+      </out>
+    </xsl:template>
+    ```
+
+=== "Result"
+
+    ```xml
+    <out xmlns:exslt="http://exslt.org/common">5</out>
+    ```
 
 ## Ссылки
 
-- [exsl​:node-set()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/node-set) на MDN
+- [`exsl​:node-set()`](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/node-set) на MDN
 - [Спецификация exsl​:node-set()](http://exslt.org/exsl/functions/node-set/index.html)

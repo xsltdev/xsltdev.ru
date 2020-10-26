@@ -111,7 +111,9 @@ class User {
   }
 
   public displayInfo(): void {
-    console.log('name: ' + this._name + '; age: ' + this._age)
+    console.log(
+      'name: ' + this._name + '; age: ' + this._age
+    )
   }
 }
 ```

@@ -39,7 +39,7 @@ description: Манипуляция формами (Angular forms) осущес�
 ```ts
 loginForm: any = {
   login: '',
-  password: ''
+  password: '',
 }
 ```
 
@@ -62,7 +62,7 @@ loginForm: any = {
 ```ts
 loginForm: any = {
   login: 'Логин по умолчанию',
-  password: ''
+  password: '',
 }
 ```
 
@@ -80,11 +80,19 @@ printForm(){
 <form>
   <div>
     <label>Логин</label>
-    <input type="text" [(ngModel)]="loginForm.login" required />
+    <input
+      type="text"
+      [(ngModel)]="loginForm.login"
+      required
+    />
   </div>
   <div>
     <label>Пароль</label>
-    <input type="password" [(ngModel)]="loginForm.password" required />
+    <input
+      type="password"
+      [(ngModel)]="loginForm.password"
+      required
+    />
   </div>
 
   <button (click)="printForm()">Войти</button>

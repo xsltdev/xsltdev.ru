@@ -32,7 +32,7 @@ const express = require('express')
 // создаем объект приложения
 const app = express()
 // определяем обработчик для маршрута "/"
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   // отправляем ответ
   response.send('<h2>Привет Express!</h2>')
 })
@@ -49,7 +49,7 @@ const app = express()
 Для обработки запросов в Express определено ряд встроенных функций, и одной из таких является функция `app.get()`. Она обрабатывает GET-запросы протокола HTTP и позволяет связать маршруты с определенными обработчиками. Для этого первым параметром передается маршрут, а вторым - обработчик, который будет вызываться, если запрос к серверу соответствует данному маршруту:
 
 ```js
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   // отправляем ответ
   response.send('<h2>Привет Express!</h2>')
 })
@@ -73,13 +73,13 @@ app.get('/', function(request, response) {
 const express = require('express')
 
 const app = express()
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.send('<h1>Главная страница</h1>')
 })
-app.get('/about', function(request, response) {
+app.get('/about', function (request, response) {
   response.send('<h1>О сайте</h1>')
 })
-app.get('/contact', function(request, response) {
+app.get('/contact', function (request, response) {
   response.send('<h1>Контакты</h1>')
 })
 app.listen(3000)

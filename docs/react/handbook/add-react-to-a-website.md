@@ -70,7 +70,9 @@
 ```js
 // ... стартовый код ...
 
-const domContainer = document.querySelector('#like_button_container')
+const domContainer = document.querySelector(
+  '#like_button_container'
+)
 ReactDOM.render(e(LikeButton), domContainer)
 ```
 
@@ -119,14 +121,22 @@ ReactDOM.render(e(LikeButton), domContainer)
 const e = React.createElement
 
 // Отобразить <button> с текстом «Нравится»
-return e('button', { onClick: () => this.setState({ liked: true }) }, 'Нравится')
+return e(
+  'button',
+  { onClick: () => this.setState({ liked: true }) },
+  'Нравится'
+)
 ```
 
 Однако, React позволяет использовать специальный синтаксис, называющийся [JSX](introducing-jsx.md):
 
 ```js
 // Отобразить <button> с текстом «Нравится»
-return <button onClick={() => this.setState({ liked: true })}>Нравится</button>
+return (
+  <button onClick={() => this.setState({ liked: true })}>
+    Нравится
+  </button>
+)
 ```
 
 Эти два примера делают одно и то же. Несмотря на то, что **JSX является [совершенно необязательным](react-without-jsx.md)**, многие разработчики считают его удобным для разработки UI — как с React, так и с другими библиотеками.

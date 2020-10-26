@@ -14,10 +14,10 @@ description: Тег col (от англ. column - столбец, колонка)
 
 ```html
 <table>
-	<col>
-	<tr>
-		<td>...</td>
-	</tr>
+  <col />
+  <tr>
+    <td>...</td>
+  </tr>
 </table>
 ```
 
@@ -56,20 +56,35 @@ description: Тег col (от англ. column - столбец, колонка)
 
 ```html
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>COL</title>
-	</head>
-	<body>
-		<table width="400" border="0" cellpadding="5" cellspacing="0">
-			<col width="150" valign="top">
-			<col width="250" valign="top">
-			<tr>
-				<td style="background: #B0B28E">Рутений распознает окисленный интермедиат, что позже подтвердилось многочисленными опытами.</td>
-				<td style="background: #CCCCCC">При осуществлении искусственных ядерных реакций было доказано, что хлорсульфит натрия кристалличен.</td>
-			</tr>
-		</table>
-	</body>
+  <head>
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
+    <title>COL</title>
+  </head>
+  <body>
+    <table
+      width="400"
+      border="0"
+      cellpadding="5"
+      cellspacing="0"
+    >
+      <col width="150" valign="top" />
+      <col width="250" valign="top" />
+      <tr>
+        <td style="background: #B0B28E">
+          Рутений распознает окисленный интермедиат, что
+          позже подтвердилось многочисленными опытами.
+        </td>
+        <td style="background: #CCCCCC">
+          При осуществлении искусственных ядерных реакций
+          было доказано, что хлорсульфит натрия
+          кристалличен.
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
 ```
 

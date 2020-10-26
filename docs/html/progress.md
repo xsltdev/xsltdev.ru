@@ -23,9 +23,7 @@ description: Тег progress (от англ. progress — прогрес) исп
 ## Синтаксис
 
 ```html
-<progress value="<число>" max="<число>">
-  Текст
-</progress>
+<progress value="<число>" max="<число>">Текст</progress>
 ```
 
 Закрывающий тег обязателен.
@@ -54,9 +52,9 @@ description: Тег progress (от англ. progress — прогрес) исп
   </head>
   <body>
     <p>Пожалуйста, подождите, фотографии загружаются.</p>
-    <progress max="100" value="25"
-      >Загружено на <span id="value">25</span>%</progress
-    >
+    <progress max="100" value="25">
+      Загружено на <span id="value">25</span>%
+    </progress>
   </body>
 </html>
 ```

@@ -84,7 +84,9 @@ export const selectCountSum = createSelector(
 ```ts
 export class AppComponent {
   constructor(private store: Store) {
-    this.store.pipe(select(selectCountSum)).subscribe(vl => console.log(vl))
+    this.store
+      .pipe(select(selectCountSum))
+      .subscribe((vl) => console.log(vl))
   }
 }
 ```
@@ -95,9 +97,9 @@ export class AppComponent {
 this.store
   .pipe(
     select(selectCountSum),
-    map(sum => sum * 2)
+    map((sum) => sum * 2)
   )
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 ```
 
 Для получения состояния на основе данных, отсутствующих в хранилище, вторым параметром функции NgRx `select()` передайте эти данные и они будут доступны в последней функции в качестве последнего параметра.
@@ -113,7 +115,9 @@ export const selectArticlesList = createSelector(
 export const selectArticlesByUser = createSelector(
   selectArticlesList,
   (articles, props) => {
-    return articles.filter(item => item.user_id === props.user_id)
+    return articles.filter(
+      (item) => item.user_id === props.user_id
+    )
   }
 )
 ```
@@ -123,7 +127,7 @@ export const selectArticlesByUser = createSelector(
 ```ts
 this.store
   .pipe(select(selectArticlesByUser, { user_id: 3 }))
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 ```
 
 ## createFeatureSelector()
@@ -131,7 +135,9 @@ this.store
 Для удобства получения срезов состояния верхнего уровня глобального объекта используйте функцию NgRx `createFeatureSelector()`, которая строковым параметром принимает один из верхних ключей.
 
 ```ts
-const selectArticles = createFeatureSelector<State>('articles')
+const selectArticles = createFeatureSelector<State>(
+  'articles'
+)
 ```
 
 ## Мемоизация
@@ -144,7 +150,7 @@ const selectArticles = createFeatureSelector<State>('articles')
 //получаем и запоминаем все статьи по запрашиваемому user_id
 this.store
   .pipe(select(selectArticlesByUser, { user_id: 3 }))
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 
 //сбрасываем сохраненное значение
 selectArticlesByUser.release()

@@ -11,16 +11,21 @@ _Директива_ это класс с декоратором `@Directive`. �
 Создадим файл `\app\basic-highlight\basic-highlight.directive.ts`:
 
 ```typescript
-import { Directive, ElementRef, OnInit } from '@angular/core'
+import {
+  Directive,
+  ElementRef,
+  OnInit,
+} from '@angular/core'
 
 @Directive({
-  selector: '[appBasicHighLight]'
+  selector: '[appBasicHighLight]',
 })
 export class BasicHighlightDirective implements OnInit {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
-    this.elementRef.nativeElement.style.backgroundColor = 'green'
+    this.elementRef.nativeElement.style.backgroundColor =
+      'green'
   }
 }
 ```
@@ -43,9 +48,7 @@ import { BasicHighlightDirective } from './basic-highlight/basic-highlight.direc
 Теперь директиву атрибута можно использовать в шаблонах:
 
 ```html
-<p appBasicHighLight>
-  basic highlight style
-</p>
+<p appBasicHighLight>basic highlight style</p>
 ```
 
 ## Создание из командной строки
@@ -57,16 +60,28 @@ import { BasicHighlightDirective } from './basic-highlight/basic-highlight.direc
 Использование класса `Renderer2` для манипуляций с _DOM_:
 
 ```typescript
-import { Directive, OnInit, Renderer2, ElementRef } from '@angular/core'
+import {
+  Directive,
+  OnInit,
+  Renderer2,
+  ElementRef,
+} from '@angular/core'
 
 @Directive({
-  selector: '[appBetterHilight]'
+  selector: '[appBetterHilight]',
 })
 export class BetterHilightDirective implements OnInit {
-  constructor(private elRef: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private elRef: ElementRef,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit() {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red')
+    this.renderer.setStyle(
+      this.elRef.nativeElement,
+      'color',
+      'red'
+    )
   }
 }
 ```

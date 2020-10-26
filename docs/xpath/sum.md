@@ -20,28 +20,33 @@ number sum( node-set )
 
 ```xml
 <list>
-    <item>1</item>
-    <item>3</item>
-    <item>5</item>
-    <item>7</item>
-    <item>9</item>
+  <item>1</item>
+  <item>3</item>
+  <item>5</item>
+  <item>7</item>
+  <item>9</item>
 </list>
 ```
 
 Листинг 6.4. Преобразование
 
 ```xml
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-    <xsl:template match="list">
-        <xsl:copy>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="item">
-        <sum>
-            <xsl:value-of select="sum(preceding-sibling::item|.)"/>
-        </sum>
-    </xsl:template>
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="1.0"
+>
+  <xsl:template match="list">
+    <xsl:copy>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="item">
+    <sum>
+      <xsl:value-of
+        select="sum(preceding-sibling::item|.)"
+      />
+    </sum>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -49,11 +54,11 @@ number sum( node-set )
 
 ```xml
 <list>
-    <sum>1</sum>
-    <sum>4</sum>
-    <sum>9</sum>
-    <sum>16</sum>
-    <sum>25</sum>
+  <sum>1</sum>
+  <sum>4</sum>
+  <sum>9</sum>
+  <sum>16</sum>
+  <sum>25</sum>
 </list>
 ```
 
@@ -63,11 +68,11 @@ number sum( node-set )
 
 ```xml
 <list>
-    <item>1</item>
-    <item>3</item>
-    <item>five</item>
-    <item>7</item>
-    <item>9</item>
+  <item>1</item>
+  <item>3</item>
+  <item>five</item>
+  <item>7</item>
+  <item>9</item>
 </list>
 ```
 
@@ -75,11 +80,11 @@ number sum( node-set )
 
 ```xml
 <list>
-    <sum>1</sum>
-    <sum>4</sum>
-    <sum>NaN</sum>
-    <sum>NaN</sum>
-    <sum>NaN</sum>
+  <sum>1</sum>
+  <sum>4</sum>
+  <sum>NaN</sum>
+  <sum>NaN</sum>
+  <sum>NaN</sum>
 </list>
 ```
 

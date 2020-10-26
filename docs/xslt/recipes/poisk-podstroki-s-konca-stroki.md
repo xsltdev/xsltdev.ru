@@ -10,7 +10,7 @@ XSLT 1.0
 
 С помощью рекурсии можно эмулировать поиск последнего вхождения подстроки `substr`. Эта техника позволяет написать шаблоны `substring-before-last` (выделение строки, предшествующей последнему вхождению) и `substring-after-last` (выделение строки, следующей за последним вхождению):
 
-```xslt
+```xml
 <xsl:template name="str:substring-before-last">
 	<xsl:param name="input"/>
 	<xsl:param name="substr"/>
@@ -50,7 +50,7 @@ XSLT 2.0
 
 В XSLT 2.0 нет вариантов функций `substring-before` / `substring-after`, которые позволяли бы искать от конца строки, но добиться желаемого результата позволяет функция `tokenize()`, основанная на применении регулярных выражений:
 
-```xslt
+```xml
 <xsl:function name="ckbk:substring-before-last">
 	<xsl:param name="input as xs:string"/>
 	<xsl:param name="substr as xs:string"/>
@@ -68,7 +68,7 @@ XSLT 2.0
 
 Можно исправить этот недостаток путем экранирования всех специальных символов, встречающихся в регулярном выражении. И включать или отключать такое поведение с помощью третьего булевского аргумента. Первоначальная версия с двумя аргументами и новая с тремя могут сосуществовать, так как XSLT допускает перегрузку функций (то есть функция полностью определяется своим именем и арностью (количеством аргументов).
 
-```xslt
+```xml
 <xsl:function name="ckbk:substring-before-last">
 	<xsl:param name="input as xs:string"/>
 	<xsl:param name="substr as xs:string"/>
@@ -95,41 +95,51 @@ XSLT 2.0
 
 Есть и другой алгоритм, который называется разделяй и властвуй или деление пополам. Его основная идея заключается в том, чтобы разбить строку на две половинки. Если искомая подстрока находится во второй половине, то первую можно не рассматривать и тем самым свести исходную задачу к другой, вдвое меньшей сложности. Этот процесс повторяется рекурсивно. Но нужно учесть еще случай, когда искомая строка частично находится в первой половине, а частично во второй. Ниже приведено решение для функции `substring-before-last`:
 
-```xslt
+```xml
 <xsl:template name="str:substring-before-last">
-	<xsl:param name="input"/>
-	<xsl:param name="substr"/>
-	<xsl:variable name="mid" select="ceiling(string-length($input) div 2)"/>
-	<xsl:variable name="temp1" select="substring($input,1, $mid)"/>
-	<xsl:variable name="temp2" select="substring($input,$mid +1)"/>
-	<xsl:choose>
-		<xsl:when test="$temp2 and contains($temp2,$substr)">
-			<!--искомая строка во второй половине, поэтому просто добавим
+  <xsl:param name="input" />
+  <xsl:param name="substr" />
+  <xsl:variable
+    name="mid"
+    select="ceiling(string-length($input) div 2)"
+  />
+  <xsl:variable
+    name="temp1"
+    select="substring($input,1, $mid)"
+  />
+  <xsl:variable
+    name="temp2"
+    select="substring($input,$mid +1)"
+  />
+  <xsl:choose>
+    <xsl:when test="$temp2 and contains($temp2,$substr)">
+      <!--искомая строка во второй половине, поэтому просто добавим
 			первую половину и -->
-			<!-- выполним рекурсивный вызов для второй -->
-			<xsl:value-of select="$temp1"/>
-			<xsl:call-template name="str:substring-before-last">
-				<xsl:with-param name="input" select="$temp2"/>
-				<xsl:with-param name="substr" select="$substr"/>
-			</xsl:call-template>
-		</xsl:when>
-
-		<!-- искомая строка на границе, задача решается простым вызовом substring-before -->
-		<xsl:when test="contains(substring($input, $mid - string-length($substr) +1), $substr)">
-			<xsl:value-of select="substring-before($input,$substr)"/>
-		</xsl:when>
-
-		<!--искомая строка в первой половине, поэтому вторую отбрасываем-->
-		<xsl:when test="contains($temp1,$substr)">
-			<xsl:call-template name="str:substring-before-last">
-				<xsl:with-param name="input" select="$temp1"/>
-				<xsl:with-param name="substr" select="$substr"/>
-			</xsl:call-template>
-		</xsl:when>
-
-		<!-- Искомая строка не найдена, завершаемся -->
-		<xsl:otherwise/>
-	</xsl:choose>
+      <!-- выполним рекурсивный вызов для второй -->
+      <xsl:value-of select="$temp1" />
+      <xsl:call-template name="str:substring-before-last">
+        <xsl:with-param name="input" select="$temp2" />
+        <xsl:with-param name="substr" select="$substr" />
+      </xsl:call-template>
+    </xsl:when>
+    <!-- искомая строка на границе, задача решается простым вызовом substring-before -->
+    <xsl:when
+      test="contains(substring($input, $mid - string-length($substr) +1), $substr)"
+    >
+      <xsl:value-of
+        select="substring-before($input,$substr)"
+      />
+    </xsl:when>
+    <!--искомая строка в первой половине, поэтому вторую отбрасываем-->
+    <xsl:when test="contains($temp1,$substr)">
+      <xsl:call-template name="str:substring-before-last">
+        <xsl:with-param name="input" select="$temp1" />
+        <xsl:with-param name="substr" select="$substr" />
+      </xsl:call-template>
+    </xsl:when>
+    <!-- Искомая строка не найдена, завершаемся -->
+    <xsl:otherwise />
+  </xsl:choose>
 </xsl:template>
 ```
 

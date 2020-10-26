@@ -29,7 +29,10 @@
     <form action="handler.php">
       <p>Пожалуйста, укажите ваше имя и возраст.</p>
       <p>Имя: <input name="name" /></p>
-      <p>Возраст: <input type="number" min="18" required name="old" /></p>
+      <p>
+        Возраст:
+        <input type="number" min="18" required name="old" />
+      </p>
       <p><input type="submit" value="Отправить" /></p>
     </form>
   </body>

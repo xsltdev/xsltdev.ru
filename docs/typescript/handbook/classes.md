@@ -336,10 +336,15 @@ if (employee.fullName) {
 ```ts
 class Grid {
   static origin = { x: 0, y: 0 }
-  calculateDistanceFromOrigin(point: { x: number; y: number }) {
+  calculateDistanceFromOrigin(point: {
+    x: number
+    y: number
+  }) {
     let xDist = point.x - Grid.origin.x
     let yDist = point.y - Grid.origin.y
-    return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale
+    return (
+      Math.sqrt(xDist * xDist + yDist * yDist) / this.scale
+    )
   }
   constructor(public scale: number) {}
 }
@@ -347,8 +352,12 @@ class Grid {
 let grid1 = new Grid(1.0) // 1x scale
 let grid2 = new Grid(5.0) // 5x scale
 
-console.log(grid1.calculateDistanceFromOrigin({ x: 10, y: 10 }))
-console.log(grid2.calculateDistanceFromOrigin({ x: 10, y: 10 }))
+console.log(
+  grid1.calculateDistanceFromOrigin({ x: 10, y: 10 })
+)
+console.log(
+  grid2.calculateDistanceFromOrigin({ x: 10, y: 10 })
+)
 ```
 
 ## Абстрактные классы
@@ -388,7 +397,9 @@ class AccountingDepartment extends Department {
   }
 
   printMeeting(): void {
-    console.log('The Accounting Department meets each Monday at 10am.')
+    console.log(
+      'The Accounting Department meets each Monday at 10am.'
+    )
   }
 
   generateReports(): void {
@@ -435,11 +446,11 @@ console.log(greeter.greet())
 Чтобы посмотреть, как это выглядит на практике, давайте посмотрим на код JavaScript, сгенерированный компилятором из примера выше:
 
 ```ts
-let Greeter = (function() {
+let Greeter = (function () {
   function Greeter(message) {
     this.greeting = message
   }
-  Greeter.prototype.greet = function() {
+  Greeter.prototype.greet = function () {
     return 'Hello, ' + this.greeting
   }
   return Greeter

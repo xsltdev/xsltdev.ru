@@ -19,10 +19,12 @@ description:
     <div>
       <h1 #title>Angular tutorial</h1>
     </div>
-  `
+  `,
 })
-export class ViewChildDemoComponent implements AfterViewInit {
-  @ViewChild('title', { read: ElementRef }) title: ElementRef
+export class ViewChildDemoComponent
+  implements AfterViewInit {
+  @ViewChild('title', { read: ElementRef })
+  title: ElementRef
 
   ngAfterViewInit(): void {
     console.log(this.title.nativeElement.textContent)
@@ -43,11 +45,10 @@ export class ViewChildDemoComponent implements AfterViewInit {
 ```ts
 @Component({
   selector: 'element-ref-demo',
-  template: `
-    <h1>ElementRef demo</h1>
-  `
+  template: ` <h1>ElementRef demo</h1> `,
 })
-export class ElementRefDemoComponent implements AfterViewInit {
+export class ElementRefDemoComponent
+  implements AfterViewInit {
   constructor(private host: ElementRef) {}
 
   ngAfterViewInit(): void {
@@ -73,9 +74,10 @@ export class ElementRefDemoComponent implements AfterViewInit {
     <ng-template #tpl>
       <h1>TemplateRef demo</h1>
     </ng-template>
-  `
+  `,
 })
-export class TemplateRefDemoComponent implements AfterViewInit {
+export class TemplateRefDemoComponent
+  implements AfterViewInit {
   @ViewChild('tpl') _tpl: TemplateRef<any>
 
   ngAfterViewInit(): void {
@@ -117,10 +119,12 @@ Embedded и Host Views размещаются в контейнере `ViewConta
         <p>Template description</p>
       </div>
     </ng-template>
-  `
+  `,
 })
-export class ViewContainerRefDemoComponent implements AfterViewInit {
-  @ViewChild('views', { read: ViewContainerRef }) views: ViewContainerRef
+export class ViewContainerRefDemoComponent
+  implements AfterViewInit {
+  @ViewChild('views', { read: ViewContainerRef })
+  views: ViewContainerRef
   @ViewChild('tpl') tpl: TemplateRef<any>
 
   constructor(
@@ -185,11 +189,16 @@ items: any = ['Item 1', 'Item 2', 'Item 3']
 
 ```html
 <div>
-  <ng-container *ngTemplateOutlet="tpl; context: items"></ng-container>
+  <ng-container
+    *ngTemplateOutlet="tpl; context: items"
+  ></ng-container>
 
   <ng-template #tpl let-items="items">
     <ul>
-      <li *ngFor="let item of items" [textContent]="item"></li>
+      <li
+        *ngFor="let item of items"
+        [textContent]="item"
+      ></li>
     </ul>
   </ng-template>
 </div>
@@ -198,5 +207,7 @@ items: any = ['Item 1', 'Item 2', 'Item 3']
 Директива [`ngComponentOutlet`](https://angular.io/api/common/NgComponentOutlet) аналогична `ngTemplateOutlet`. Различие лишь в том, что она формирует представление Host View по переданному ей названию компонента.
 
 ```html
-<ng-container *ngComponentOutlet="ContactItem"></ng-container>
+<ng-container
+  *ngComponentOutlet="ContactItem"
+></ng-container>
 ```

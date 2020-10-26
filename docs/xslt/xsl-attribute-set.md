@@ -9,10 +9,8 @@ description: Элемент xsl:attribute-set определяет именов�
 ## Синтаксис
 
 ```xml
-<xsl:attribute-set
-	name = "имя"
-	use-attribute-sets = "имена">
-	<!-- Содержимое: xsl:attribute* -->
+<xsl:attribute-set name="имя" use-attribute-sets="имена">
+  <!-- Содержимое: xsl:attribute* -->
 </xsl:attribute-set>
 ```
 
@@ -38,14 +36,14 @@ description: Элемент xsl:attribute-set определяет именов�
 
 ```xml
 <xsl:attribute-set name="title-style">
-	<xsl:attribute name="font-size">12pt</xsl:attribute>
-	<xsl:attribute name="font-weight">bold</xsl:attribute>
+  <xsl:attribute name="font-size">12pt</xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:template match="chapter">
-	<p quadding="start" xsl:use-attribute-sets="title-style">
-		<xsl:value-of select="self::node()"/>
-	</p>
+  <p quadding="start" xsl:use-attribute-sets="title-style">
+    <xsl:value-of select="self::node()"/>
+  </p>
 </xsl:template>
 ```
 
@@ -57,54 +55,59 @@ description: Элемент xsl:attribute-set определяет именов�
 
 ```xml
 <a b="1" c="2">
-	<d e="3" f="4" g="5" />
+  <d e="3" f="4" g="5" />
 </a>
 ```
 
 Преобразование:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output indent="yes" />
-
-	<xsl:attribute-set name="attrs">
-		<xsl:attribute name="attr-count">
-			<xsl:value-of select="count(@*)" />
-		</xsl:attribute>
-	</xsl:attribute-set>
-
-	<xsl:attribute-set name="elements">
-		<xsl:attribute name="name">
-			<xsl:value-of select="name()" />
-		</xsl:attribute>
-		<xsl:attribute name="node-count">
-			<xsl:value-of select="count(*)" />
-		</xsl:attribute>
-	</xsl:attribute-set>
-
-	<xsl:template match="*">
-		<xsl:element name="element" use-attribute-sets="elements attrs">
-			<xsl:apply-templates select="*" />
-		</xsl:element>
-	</xsl:template>
-
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output indent="yes" />
+  <xsl:attribute-set name="attrs">
+    <xsl:attribute name="attr-count">
+      <xsl:value-of select="count(@*)" />
+    </xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="elements">
+    <xsl:attribute name="name">
+      <xsl:value-of select="name()" />
+    </xsl:attribute>
+    <xsl:attribute name="node-count">
+      <xsl:value-of select="count(*)" />
+    </xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:template match="*">
+    <xsl:element
+      name="element"
+      use-attribute-sets="elements attrs"
+    >
+      <xsl:apply-templates select="*" />
+    </xsl:element>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Выходной документ:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <element name="a" node-count="1" attr-count="2">
-	<element name="d" node-count="0" attr-count="3"/>
+  <element name="d" node-count="0" attr-count="3" />
 </element>
 ```
 
 В этом преобразовании определение элемента:
 
 ```xml
-<xsl:element name="element" use-attribute-sets="elements attrs">
-	<xsl:apply-templates select="*"/>
+<xsl:element
+  name="element"
+  use-attribute-sets="elements attrs"
+>
+  <xsl:apply-templates select="*" />
 </xsl:element>
 ```
 
@@ -112,29 +115,32 @@ description: Элемент xsl:attribute-set определяет именов�
 
 ```xml
 <xsl:element name="element">
-	<xsl:attribute name="name">
-		<xsl:value-of select="name()"/>
-	</xsl:attribute>
-	<xsl:attribute name="node-count">
-		<xsl:value-of select="count(*)"/>
-	</xsl:attribute>
-	<xsl:attribute name="attr-count">
-		<xsl:value-of select="count(@*)"/>
-	</xsl:attribute>
-	<xsl:apply-templates select="*"/>
+  <xsl:attribute name="name">
+    <xsl:value-of select="name()" />
+  </xsl:attribute>
+  <xsl:attribute name="node-count">
+    <xsl:value-of select="count(*)" />
+  </xsl:attribute>
+  <xsl:attribute name="attr-count">
+    <xsl:value-of select="count(@*)" />
+  </xsl:attribute>
+  <xsl:apply-templates select="*" />
 </xsl:element>
 ```
 
 Как уже было сказано, элемент `xsl:attribute-set` может также использовать другие наборы атрибутов при помощи `use-attribute-sets`. Например, в предыдущем преобразовании набор атрибутов `elements` мог быть определен как:
 
 ```xml
-<xsl:attribute-set name="elements" use-attribute-sets="attrs">
-	<xsl:attribute name="name">
-		<xsl:value-of select="name()" />
-	</xsl:attribute>
-	<xsl:attribute name="node-count">
-		<xsl:value-of select="count(*)" />
-	</xsl:attribute>
+<xsl:attribute-set
+  name="elements"
+  use-attribute-sets="attrs"
+>
+  <xsl:attribute name="name">
+    <xsl:value-of select="name()" />
+  </xsl:attribute>
+  <xsl:attribute name="node-count">
+    <xsl:value-of select="count(*)" />
+  </xsl:attribute>
 </xsl:attribute-set>
 ```
 
@@ -142,60 +148,72 @@ description: Элемент xsl:attribute-set определяет именов�
 
 ```xml
 <xsl:element name="element" use-attribute-sets="elements">
-	<xsl:apply-templates select="*" />
+  <xsl:apply-templates select="*" />
 </xsl:element>
 ```
 
 ### Пример 3
 
-```xml tab="XML"
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="attrset.xsl" ?>
-<book>
-   <chapter>
-      <heading>The First Heading</heading>
-   </chapter>
-   <chapter>
-      <heading>The Next Heading</heading>
-   </chapter>
-</book>
-```
+=== "XML"
 
-```xslt tab="XSLT"
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
+    ```xml
+    <?xml version="1.0" ?>
+    <?xml-stylesheet type="text/xsl" href="attrset.xsl" ?>
+    <book>
+      <chapter>
+        <heading>The First Heading</heading>
+      </chapter>
+      <chapter>
+        <heading>The Next Heading</heading>
+      </chapter>
+    </book>
+    ```
+
+=== "XSLT"
+
+    ```xml
+    <?xml version="1.0" ?>
+    <xsl:stylesheet
+      version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-      xmlns:fo="http://www.w3.org/1999/XSL/Format">
-
-<xsl:template match="chapter/heading">
-  <fo:block quadding="start" xsl:use-attribute-sets="title-style">
-    <xsl:apply-templates/>
-  </fo:block>
-</xsl:template>
-
-<xsl:attribute-set name="title-style">
-  <xsl:attribute name="font-size">12pt</xsl:attribute>
-  <xsl:attribute name="font-weight">bold</xsl:attribute>
-</xsl:attribute-set>
-
-</xsl:stylesheet>
-```
-
-```xml tab="Output"
-<?xml version="1.0"?>
-<fo:block font-size="12pt"
-          font-weight="bold"
+      xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    >
+      <xsl:template match="chapter/heading">
+        <fo:block
           quadding="start"
-          xmlns:fo="http://www.w3.org/1999/XSL/Format">
-The First Heading
-</fo:block>
-<fo:block font-size="12pt"
-          font-weight="bold"
-          quadding="start"
-          xmlns:fo="http://www.w3.org/1999/XSL/Format">
-The Next Heading
-</fo:block>
-```
+          xsl:use-attribute-sets="title-style"
+        >
+          <xsl:apply-templates />
+        </fo:block>
+      </xsl:template>
+      <xsl:attribute-set name="title-style">
+        <xsl:attribute name="font-size">12pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+      </xsl:attribute-set>
+    </xsl:stylesheet>
+    ```
+
+=== "Output"
+
+    ```xml
+    <?xml version="1.0" ?>
+    <fo:block
+      font-size="12pt"
+      font-weight="bold"
+      quadding="start"
+      xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    >
+      The First Heading
+    </fo:block>
+    <fo:block
+      font-size="12pt"
+      font-weight="bold"
+      quadding="start"
+      xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    >
+      The Next Heading
+    </fo:block>
+    ```
 
 ## См. также
 

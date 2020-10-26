@@ -32,17 +32,28 @@ import { NgForm } from '@angular/forms'
       input.ng-touched.ng-valid {
         border: solid green 2px;
       }
-    `
+    `,
   ],
   template: `
     <form #myForm="ngForm" novalidate>
       <div class="form-group">
         <label>Имя</label>
-        <input class="form-control" name="name" [(ngModel)]="name" required />
+        <input
+          class="form-control"
+          name="name"
+          [(ngModel)]="name"
+          required
+        />
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input class="form-control" name="email" ngModel required email />
+        <input
+          class="form-control"
+          name="email"
+          ngModel
+          required
+          email
+        />
       </div>
       <div class="form-group">
         <label>Телефон</label>
@@ -66,7 +77,7 @@ import { NgForm } from '@angular/forms'
     </form>
     <div>Имя: {{ myForm.value.name }}</div>
     <div>Email: {{ myForm.value.email }}</div>
-  `
+  `,
 })
 export class AppComponent {
   submit(form: NgForm) {
@@ -86,7 +97,10 @@ import { NgForm } from '@angular/forms'
 Хотя мы явно не добавляли директиву `NgForm`, Angular 2 автоматически сам добавляет ее в тег формы. Данная директива добавляет элемену `form` ряд дополнительных возможностей. В частности, она инкапсулирует все элементы формы, к которым применяется директива `ngModel`, и позволяет получить доступ к состоянию этих элементов, в том числе проверить введенные данные на корректность. Так, для отслеживания состояния Angular добавляет к тегу форму ряд классов:
 
 ```html
-<form class="ng-pristine ng-untouched ng-valid" novalidate=""></form>
+<form
+  class="ng-pristine ng-untouched ng-valid"
+  novalidate=""
+></form>
 ```
 
 `ng-pristine`, `ng-untouched`, `ng-valid` - это те же классы, которые применяются к элементам управления и которые были рассмотрены в прошлой теме.
@@ -143,17 +157,32 @@ import { NgForm } from '@angular/forms'
       input.ng-touched.ng-valid {
         border: solid green 2px;
       }
-    `
+    `,
   ],
   template: `
-    <form #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)">
+    <form
+      #myForm="ngForm"
+      novalidate
+      (ngSubmit)="onSubmit(myForm)"
+    >
       <div class="form-group">
         <label>Имя</label>
-        <input class="form-control" name="name" ngModel required />
+        <input
+          class="form-control"
+          name="name"
+          ngModel
+          required
+        />
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input class="form-control" name="email" ngModel required email />
+        <input
+          class="form-control"
+          name="email"
+          ngModel
+          required
+          email
+        />
       </div>
       <div class="form-group">
         <label>Телефон</label>
@@ -174,7 +203,7 @@ import { NgForm } from '@angular/forms'
         />
       </div>
     </form>
-  `
+  `,
 })
 export class AppComponent {
   onSubmit(form: NgForm) {

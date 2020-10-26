@@ -19,7 +19,7 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
@@ -31,7 +31,7 @@ app.listen(3000)
 Ниже приводится простой пример промежуточного обработчика "myLogger". Эта функция печатает слово "LOGGED" при прохождении запроса, адресованного приложению, через приложение. Данная функция промежуточного обработчика присвоена переменной с именем `myLogger`.
 
 ```js
-var myLogger = function(req, res, next) {
+var myLogger = function (req, res, next) {
   console.log('LOGGED')
   next()
 }
@@ -47,14 +47,14 @@ var myLogger = function(req, res, next) {
 var express = require('express')
 var app = express()
 
-var myLogger = function(req, res, next) {
+var myLogger = function (req, res, next) {
   console.log('LOGGED')
   next()
 }
 
 app.use(myLogger)
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
@@ -72,7 +72,7 @@ app.listen(3000)
 В следующем примере выполняется добавление свойства `requestTime` в объект запроса. Назовем эту функцию промежуточного обработчика "requestTime".
 
 ```js
-var requestTime = function(req, res, next) {
+var requestTime = function (req, res, next) {
   req.requestTime = Date.now()
   next()
 }
@@ -84,16 +84,17 @@ var requestTime = function(req, res, next) {
 var express = require('express')
 var app = express()
 
-var requestTime = function(req, res, next) {
+var requestTime = function (req, res, next) {
   req.requestTime = Date.now()
   next()
 }
 
 app.use(requestTime)
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   var responseText = 'Hello World!<br>'
-  responseText += '<small>Requested at: ' + req.requestTime + '</small>'
+  responseText +=
+    '<small>Requested at: ' + req.requestTime + '</small>'
   res.send(responseText)
 })
 

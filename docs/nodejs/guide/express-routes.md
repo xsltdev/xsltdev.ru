@@ -17,17 +17,17 @@ const express = require('express')
 const app = express()
 
 // обработка запроса по адресу /about
-app.get('/about', function(request, response) {
+app.get('/about', function (request, response) {
   response.send('<h1>О сайте</h1>')
 })
 
 // обработка запроса по адресу /contact
-app.use('/contact', function(request, response) {
+app.use('/contact', function (request, response) {
   response.send('<h1>Контакты</h1>')
 })
 
 // обработка запроса к корню веб-сайта
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.send('<h1>Главная страница</h1>')
 })
 app.listen(3000)
@@ -44,7 +44,7 @@ app.listen(3000)
 К примеру, символ `?` указывает, что предыдущий символ может встречаться 1 раз или отсутствовать. И мы можем определить следующую функцию:
 
 ```js
-app.get('/bo?k', function(request, response) {
+app.get('/bo?k', function (request, response) {
   response.send(request.url)
 })
 ```
@@ -54,7 +54,7 @@ app.get('/bo?k', function(request, response) {
 Символ `+` указывает, что предыдущий символ может встречаться 1 и более раз:
 
 ```js
-app.get('/bo+k', function(request, response) {
+app.get('/bo+k', function (request, response) {
   response.send(request.url)
 })
 ```
@@ -64,7 +64,7 @@ app.get('/bo+k', function(request, response) {
 Символ звездочка `*` указывает, что на месте данного символа может находиться любое количество символов:
 
 ```js
-app.get('/bo*k', function(request, response) {
+app.get('/bo*k', function (request, response) {
   response.send(request.url)
 })
 ```
@@ -74,7 +74,7 @@ app.get('/bo*k', function(request, response) {
 Скобки `()` позволяют оформить группу символов, которые могут встречаться в запросе:
 
 ```js
-app.get('/book(.html)?', function(request, response) {
+app.get('/book(.html)?', function (request, response) {
   response.send(request.url)
 })
 ```
@@ -84,7 +84,7 @@ app.get('/book(.html)?', function(request, response) {
 Также вместо определения маршрутов мы можем указывать регулярные выражения. Например, необходимо перехватить запрос ко всем файлам html или всем путям, которые в конце имеют `.html`:
 
 ```js
-app.get(/.*(\.)html$/, function(request, response) {
+app.get(/.*(\.)html$/, function (request, response) {
   response.send(request.url)
 })
 ```

@@ -11,9 +11,7 @@ description: Тег figure (от англ. figure - рисунок) исполь
 ## Синтаксис
 
 ```html
-<figure>
-  ...
-</figure>
+<figure>...</figure>
 ```
 
 Закрывающий тег обязателен.

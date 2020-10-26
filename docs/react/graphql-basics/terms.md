@@ -62,7 +62,11 @@ mutation {
       title: "Заголовок"
       content: "..."
       status: DRAFT
-      author: { firstname: "John", lastname: "Smith", status: DRAFT }
+      author: {
+        firstname: "John"
+        lastname: "Smith"
+        status: DRAFT
+      }
     }
   )
 }

@@ -11,7 +11,9 @@ NgRx Meta Reducers это функции, вызываемые сразу пос
 _logs.meta-reducer.ts_
 
 ```ts
-export function log(reducer: ActionReducer<any>): ActionReducer<any> {
+export function log(
+  reducer: ActionReducer<any>
+): ActionReducer<any> {
   return (state, action) => {
     console.log('state', state)
     console.log('action', action)
@@ -28,7 +30,10 @@ import { reducers } from './store/reducers/index'
 import { log } from './store/meta-reducers/log.meta-reducer'
 
 @NgModule({
-  imports: [StoreModule.forRoot(reducers), { metaReducers: [log] }]
+  imports: [
+    StoreModule.forRoot(reducers),
+    { metaReducers: [log] },
+  ],
   // ...
 })
 export class AppModule {}

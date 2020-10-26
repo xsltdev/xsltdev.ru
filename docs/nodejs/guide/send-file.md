@@ -51,12 +51,12 @@ const http = require('http')
 const fs = require('fs')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     console.log(`Запрошенный адрес: ${request.url}`)
     // получаем путь после слеша
     const filePath = request.url.substr(1)
     // смотрим, есть ли такой файл
-    fs.access(filePath, fs.constants.R_OK, err => {
+    fs.access(filePath, fs.constants.R_OK, (err) => {
       // если произошла ошибка - отправляем статусный код 404
       if (err) {
         response.statusCode = 404
@@ -66,7 +66,7 @@ http
       }
     })
   })
-  .listen(3000, function() {
+  .listen(3000, function () {
     console.log('Server started at 3000')
   })
 ```
@@ -106,7 +106,11 @@ body {
   <head>
     <title>Главная</title>
     <meta charset="utf-8" />
-    <link href="public/styles.css" rel="stylesheet" type="text/css" />
+    <link
+      href="public/styles.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
   <body>
     <h1>Главная</h1>
@@ -128,11 +132,11 @@ const http = require('http')
 const fs = require('fs')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     console.log(`Запрошенный адрес: ${request.url}`)
     // получаем путь после слеша
     const filePath = request.url.substr(1)
-    fs.readFile(filePath, function(error, data) {
+    fs.readFile(filePath, function (error, data) {
       if (error) {
         response.statusCode = 404
         response.end('Resourse not found!')
@@ -141,7 +145,7 @@ http
       }
     })
   })
-  .listen(3000, function() {
+  .listen(3000, function () {
     console.log('Server started at 3000')
   })
 ```

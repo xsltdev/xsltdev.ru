@@ -98,7 +98,10 @@ border-radius: 0;
     </style>
   </head>
   <body>
-    <div style="border-radius: 50px 0 0 50px;" class="radius">
+    <div
+      style="border-radius: 50px 0 0 50px;"
+      class="radius"
+    >
       border-radius: 50px 0 0 50px;
     </div>
     <div style="border-radius: 40px 10px" class="radius">
@@ -107,7 +110,10 @@ border-radius: 0;
     <div style="border-radius: 10em/1em;" class="radius">
       border-radius: 13em/3em;
     </div>
-    <div style="border-radius: 13em 0.5em/1em 0.5em;" class="radius">
+    <div
+      style="border-radius: 13em 0.5em/1em 0.5em;"
+      class="radius"
+    >
       border-radius: 13em 0.5em/1em 0.5em;
     </div>
     <div style="border-radius: 8px;" class="radius">

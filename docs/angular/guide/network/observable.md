@@ -79,9 +79,9 @@ export class HttpService {
 
   getUsers(): Observable<User[]> {
     return this.http.get('users.json').pipe(
-      map(data => {
+      map((data) => {
         let usersList = data['userList']
-        return usersList.map(function(user: any) {
+        return usersList.map(function (user: any) {
           return { name: user.userName, age: user.userAge }
         })
       })
@@ -120,7 +120,7 @@ import { User } from './user'
       </li>
     </ul>
   `,
-  providers: [HttpService]
+  providers: [HttpService],
 })
 export class AppComponent implements OnInit {
   users: User[] = []
@@ -128,7 +128,9 @@ export class AppComponent implements OnInit {
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
-    this.httpService.getUsers().subscribe(data => (this.users = data))
+    this.httpService
+      .getUsers()
+      .subscribe((data) => (this.users = data))
   }
 }
 ```

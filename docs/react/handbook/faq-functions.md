@@ -26,7 +26,11 @@ class Foo extends Component {
     console.log('По кнопке кликнули')
   }
   render() {
-    return <button onClick={this.handleClick}>Нажми на меня</button>
+    return (
+      <button onClick={this.handleClick}>
+        Нажми на меня
+      </button>
+    )
   }
 }
 ```
@@ -40,7 +44,11 @@ class Foo extends Component {
     console.log('По кнопке кликнули')
   }
   render() {
-    return <button onClick={this.handleClick}>Нажми на меня</button>
+    return (
+      <button onClick={this.handleClick}>
+        Нажми на меня
+      </button>
+    )
   }
 }
 ```
@@ -53,7 +61,11 @@ class Foo extends Component {
     console.log('По кнопке кликнули')
   }
   render() {
-    return <button onClick={this.handleClick.bind(this)}>Нажми на меня</button>
+    return (
+      <button onClick={this.handleClick.bind(this)}>
+        Нажми на меня
+      </button>
+    )
   }
 }
 ```
@@ -70,7 +82,11 @@ class Foo extends Component {
     console.log('По кнопке кликнули')
   }
   render() {
-    return <button onClick={() => this.handleClick()}>Нажми на меня</button>
+    return (
+      <button onClick={() => this.handleClick()}>
+        Нажми на меня
+      </button>
+    )
   }
 }
 ```
@@ -149,7 +165,9 @@ class Alphabet extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.state = {
       justClicked: null,
-      letters: Array.from({ length: 26 }, (_, i) => String.fromCharCode(A + i))
+      letters: Array.from({ length: 26 }, (_, i) =>
+        String.fromCharCode(A + i)
+      ),
     }
   }
   handleClick(letter) {
@@ -160,8 +178,11 @@ class Alphabet extends React.Component {
       <div>
         Just clicked: {this.state.justClicked}
         <ul>
-          {this.state.letters.map(letter => (
-            <li key={letter} onClick={() => this.handleClick(letter)}>
+          {this.state.letters.map((letter) => (
+            <li
+              key={letter}
+              onClick={() => this.handleClick(letter)}
+            >
               {letter}
             </li>
           ))}
@@ -185,13 +206,15 @@ class Alphabet extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.state = {
       justClicked: null,
-      letters: Array.from({ length: 26 }, (_, i) => String.fromCharCode(A + i))
+      letters: Array.from({ length: 26 }, (_, i) =>
+        String.fromCharCode(A + i)
+      ),
     }
   }
 
   handleClick(e) {
     this.setState({
-      justClicked: e.target.dataset.letter
+      justClicked: e.target.dataset.letter,
     })
   }
 
@@ -200,8 +223,12 @@ class Alphabet extends React.Component {
       <div>
         Just clicked: {this.state.justClicked}
         <ul>
-          {this.state.letters.map(letter => (
-            <li key={letter} data-letter={letter} onClick={this.handleClick}>
+          {this.state.letters.map((letter) => (
+            <li
+              key={letter}
+              data-letter={letter}
+              onClick={this.handleClick}
+            >
               {letter}
             </li>
           ))}
@@ -237,7 +264,10 @@ class LoadMoreButton extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
-    this.handleClickThrottled = throttle(this.handleClick, 1000)
+    this.handleClickThrottled = throttle(
+      this.handleClick,
+      1000
+    )
   }
 
   componentWillUnmount() {
@@ -245,7 +275,11 @@ class LoadMoreButton extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleClickThrottled}>Загрузить ещё</button>
+    return (
+      <button onClick={this.handleClickThrottled}>
+        Загрузить ещё
+      </button>
+    )
   }
 
   handleClick() {
@@ -265,7 +299,10 @@ class Searchbox extends React.Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
-    this.emitChangeDebounced = debounce(this.emitChange, 250)
+    this.emitChangeDebounced = debounce(
+      this.emitChange,
+      250
+    )
   }
 
   componentWillUnmount() {
@@ -273,7 +310,14 @@ class Searchbox extends React.Component {
   }
 
   render() {
-    return <input type="text" onChange={this.handleChange} placeholder="Поиск..." defaultValue={this.props.value} />
+    return (
+      <input
+        type="text"
+        onChange={this.handleChange}
+        placeholder="Поиск..."
+        defaultValue={this.props.value}
+      />
+    )
   }
 
   handleChange(e) {
@@ -307,7 +351,9 @@ class ScrollListener extends React.Component {
     this.handleScroll = this.handleScroll.bind(this)
 
     // Создаём новую функцию для планирования обновлений.
-    this.scheduleUpdate = rafSchedule(point => this.props.onScroll(point))
+    this.scheduleUpdate = rafSchedule((point) =>
+      this.props.onScroll(point)
+    )
   }
 
   handleScroll(e) {
@@ -323,7 +369,10 @@ class ScrollListener extends React.Component {
 
   render() {
     return (
-      <div style={{ overflow: 'scroll' }} onScroll={this.handleScroll}>
+      <div
+        style={{ overflow: 'scroll' }}
+        onScroll={this.handleScroll}
+      >
         <img src="/my-huge-image.jpg" />
       </div>
     )

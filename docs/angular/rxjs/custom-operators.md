@@ -6,17 +6,17 @@
 
 ```ts
 const takeNth = (n: number) => <T>(source: Observable<T>) =>
-  new Observable<T>(observer => {
+  new Observable<T>((observer) => {
     let current = 1
 
     return source.subscribe(
-      vl => {
+      (vl) => {
         if (current++ === n) {
           observer.next(vl)
           observer.complete()
         }
       },
-      err => observer.error(err),
+      (err) => observer.error(err),
       () => observer.complete()
     )
   })
@@ -24,8 +24,8 @@ const takeNth = (n: number) => <T>(source: Observable<T>) =>
 from(['Jack', 'Jane', 'Jim', 'Jason'])
   .pipe(takeNth(3))
   .subscribe(
-    vl => console.log(vl),
-    err => {},
+    (vl) => console.log(vl),
+    (err) => {},
     () => console.log('Completed')
   )
 ```
@@ -41,8 +41,8 @@ const takeNth = (n: number) => <T>(source: Observable<T>) =>
 from(['Jack', 'Jane', 'Jim', 'Jason'])
   .pipe(takeNth(3))
   .subscribe(
-    vl => console.log(vl),
-    err => {},
+    (vl) => console.log(vl),
+    (err) => {},
     () => console.log('Completed')
   )
 ```

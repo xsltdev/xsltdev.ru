@@ -83,12 +83,18 @@ description: Тег track (от англ. track — след, дорожка) п
         label="Русский"
         default
       />
-      <source src="video/jane.ogv" type='video/ogg; codecs="theora, vorbis"' />
+      <source
+        src="video/jane.ogv"
+        type='video/ogg; codecs="theora, vorbis"'
+      />
       <source
         src="video/jane.mp4"
         type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
       />
-      <source src="video/jane.webm" type='video/webm; codecs="vp8, vorbis"' />
+      <source
+        src="video/jane.webm"
+        type='video/webm; codecs="vp8, vorbis"'
+      />
       Элемент video не поддерживается вашим браузером.
     </video>
   </body>

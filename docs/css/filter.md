@@ -189,7 +189,9 @@ filter: none;
     <style>
       .bw {
         -webkit-filter: grayscale(100%);
-        filter: grayscale(100%); /* Чёрно-белое изображение */
+        filter: grayscale(
+          100%
+        ); /* Чёрно-белое изображение */
         transition: 1.5s; /* Плавный переход */
       }
       .bw:hover {

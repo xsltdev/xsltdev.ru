@@ -15,9 +15,9 @@ export const reusableAnimation = animation([
   style({
     backgroundColor: '{{ backgroundColor }}',
     fontSize: '{{ fontSize }}',
-    width: '{{ width }}'
+    width: '{{ width }}',
   }),
-  animate('{{ time }}')
+  animate('{{ time }}'),
 ])
 ```
 
@@ -64,13 +64,19 @@ animations: [
   trigger('appearingItems', [
     transition(':enter', [
       query('ul.users li', [
-        style({ opacity: 0, transform: 'translateY(-100px)' }),
+        style({
+          opacity: 0,
+          transform: 'translateY(-100px)',
+        }),
         stagger(-50, [
-          animate('300ms', style({ opacity: 1, transform: 'none' }))
-        ])
-      ])
-    ])
-  ])
+          animate(
+            '300ms',
+            style({ opacity: 1, transform: 'none' })
+          ),
+        ]),
+      ]),
+    ]),
+  ]),
 ]
 ```
 
@@ -84,13 +90,19 @@ animations: [
 animations: [
   trigger('groupAnimation', [
     transition(':enter', [
-      style({ transform: 'translateX(-100px)', opacity: 0 }),
+      style({
+        transform: 'translateX(-100px)',
+        opacity: 0,
+      }),
       group([
-        animate('0.3s ease', style({ transform: 'translateX(0)' })),
-        animate('0.2s 0.15 ease', style({ opacity: 1 }))
-      ])
-    ])
-  ])
+        animate(
+          '0.3s ease',
+          style({ transform: 'translateX(0)' })
+        ),
+        animate('0.2s 0.15 ease', style({ opacity: 1 })),
+      ]),
+    ]),
+  ]),
 ]
 ```
 
@@ -104,13 +116,19 @@ animations: [
 animations: [
   trigger('sequenceAnimation', [
     transition(':enter', [
-      style({ transform: 'translateX(-100px)', opacity: 0 }),
+      style({
+        transform: 'translateX(-100px)',
+        opacity: 0,
+      }),
       sequence([
-        animate('0.3s ease', style({ transform: 'translateX(0)' })),
-        animate('0.2s 0.15 ease', style({ opacity: 1 }))
-      ])
-    ])
-  ])
+        animate(
+          '0.3s ease',
+          style({ transform: 'translateX(0)' })
+        ),
+        animate('0.2s 0.15 ease', style({ opacity: 1 })),
+      ]),
+    ]),
+  ]),
 ]
 ```
 
@@ -141,7 +159,9 @@ export class AppRoutingModule {}
 _app.component.html_
 
 ```html
-<div [@routeChangeAnimation]="getRouteAnimationState(outlet)">
+<div
+  [@routeChangeAnimation]="getRouteAnimationState(outlet)"
+>
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
 ```
@@ -152,7 +172,7 @@ _app.component.ts_
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  animations: [routeChangeAnimation]
+  animations: [routeChangeAnimation],
 })
 export class AppComponent {
   constructor() {}
@@ -170,26 +190,36 @@ export class AppComponent {
 _change-route-animation.ts_
 
 ```ts
-export const routeChangeAnimation = trigger('routeChangeAnimation', [
-  transition('page1 <=> page2', [
-    style({ position: 'relative' }),
-    query(':enter, :leave', [
-      style({
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%'
-      })
+export const routeChangeAnimation = trigger(
+  'routeChangeAnimation',
+  [
+    transition('page1 <=> page2', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+        }),
+      ]),
+      query(':enter', [style({ left: '-100%' })]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate(
+            '300ms ease-out',
+            style({ left: '100%' })
+          ),
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' })),
+        ]),
+      ]),
+      query(':enter', animateChild()),
     ]),
-    query(':enter', [style({ left: '-100%' })]),
-    query(':leave', animateChild()),
-    group([
-      query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]),
-      query(':enter', [animate('300ms ease-out', style({ left: '0%' }))])
-    ]),
-    query(':enter', animateChild())
-  ])
-])
+  ]
+)
 ```
 
 Теперь по порядку. Для определения анимированной смены представления при смене URL используется свойство `animation` (название может быть другим), указанное в свойстве маршрута `data`. В качестве значения свойству `animation` задается имя состояния анимации.
@@ -207,8 +237,8 @@ style({ position: 'relative' }),
       position: 'absolute',
       top: 0,
       left: 0,
-      width: '100%'
-    })
+      width: '100%',
+    }),
   ])
 ```
 
@@ -240,8 +270,12 @@ query(':leave', animateChild())
 
 ```ts
 group([
-  query(':leave', [animate('300ms ease-out', style({ left: '100%' }))]),
-  query(':enter', [animate('300ms ease-out', style({ left: '0%' }))])
+  query(':leave', [
+    animate('300ms ease-out', style({ left: '100%' })),
+  ]),
+  query(':enter', [
+    animate('300ms ease-out', style({ left: '0%' })),
+  ]),
 ])
 ```
 

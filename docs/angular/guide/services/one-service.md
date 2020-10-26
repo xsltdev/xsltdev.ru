@@ -22,14 +22,21 @@ import { Phone } from './phone'
     <div class="panel">
       <div class="form-inline">
         <div class="form-group">
-          <input class="form-control" [(ngModel)]="name" placeholder="Модель" />
+          <input
+            class="form-control"
+            [(ngModel)]="name"
+            placeholder="Модель"
+          />
           <input
             type="number"
             class="form-control"
             [(ngModel)]="price"
             placeholder="Цена"
           />
-          <button class="btn btn-default" (click)="addItem(name, price)">
+          <button
+            class="btn btn-default"
+            (click)="addItem(name, price)"
+          >
             Добавить
           </button>
         </div>
@@ -41,7 +48,7 @@ import { Phone } from './phone'
       </table>
     </div>
   `,
-  providers: [DataService, LogService]
+  providers: [DataService, LogService],
 })
 export class DataComponent implements OnInit {
   items: Phone[] = []
@@ -71,7 +78,7 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <data-comp></data-comp> <data-comp></data-comp>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -90,7 +97,7 @@ import { DataComponent } from './data.component'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent, DataComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -115,7 +122,7 @@ import { LogService } from './log.service'
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent, DataComponent],
   providers: [DataService, LogService], // регистрация сервисов
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -134,14 +141,21 @@ import { Phone } from './phone'
     <div class="panel">
       <div class="form-inline">
         <div class="form-group">
-          <input class="form-control" [(ngModel)]="name" placeholder="Модель" />
+          <input
+            class="form-control"
+            [(ngModel)]="name"
+            placeholder="Модель"
+          />
           <input
             type="number"
             class="form-control"
             [(ngModel)]="price"
             placeholder="Цена"
           />
-          <button class="btn btn-default" (click)="addItem(name, price)">
+          <button
+            class="btn btn-default"
+            (click)="addItem(name, price)"
+          >
             Добавить
           </button>
         </div>
@@ -152,7 +166,7 @@ import { Phone } from './phone'
         </tr>
       </table>
     </div>
-  `
+  `,
 })
 export class DataComponent implements OnInit {
   items: Phone[] = []

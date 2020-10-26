@@ -71,9 +71,7 @@ background-attachment: scroll;
     </style>
   </head>
   <body>
-    <div style="height:2000px">
-      Пример текста
-    </div>
+    <div style="height:2000px">Пример текста</div>
   </body>
 </html>
 ```

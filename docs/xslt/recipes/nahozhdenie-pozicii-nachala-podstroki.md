@@ -12,26 +12,30 @@ description: Требуется найти индекс позиции, с ко�
 
 XSLT 1.0
 
-```xslt
+```xml
 <xsl:template name="str:index-of">
-	<xsl:param name="input"/>
-	<xsl:param name="substr"/>
-	<xsl:choose>
-		<xsl:when test="contains($input, $substr)">
-			<xsl:value-of select="string-length(substring-before($input, $substr))+1"/>
-		</xsl:when>
-		<xsl:otherwise>0</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="input" />
+  <xsl:param name="substr" />
+  <xsl:choose>
+    <xsl:when test="contains($input, $substr)">
+      <xsl:value-of
+        select="string-length(substring-before($input, $substr))+1"
+      />
+    </xsl:when>
+    <xsl:otherwise>0</xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 XSLT 2.0
 
-```xslt
+```xml
 <xsl:function name="ckbk:string-index-of">
-	<xsl:param name="input"/>
-	<xsl:param name="substr"/>
-	<xsl:sequence select="if (contains($input, $substr)) then string-length(substring-before($input, $substr))+1 else 0"/>
+  <xsl:param name="input" />
+  <xsl:param name="substr" />
+  <xsl:sequence
+    select="if (contains($input, $substr)) then string-length(substring-before($input, $substr))+1 else 0"
+  />
 </xsl:function>
 ```
 

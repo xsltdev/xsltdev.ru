@@ -65,7 +65,9 @@ text-decoration: unset;
     </style>
   </head>
   <body>
-    <p><a href="page/1.html">Стратегическое нападение</a></p>
+    <p>
+      <a href="page/1.html">Стратегическое нападение</a>
+    </p>
   </body>
 </html>
 ```

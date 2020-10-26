@@ -9,8 +9,7 @@ description: Преобразование, включающее внешний �
 ## Синтаксис
 
 ```xml
-<xsl:include
-    href = "URI" />
+<xsl:include href="URI" />
 ```
 
 Атрибуты:
@@ -27,8 +26,11 @@ description: Преобразование, включающее внешний �
 Листинг 4.6. Преобразование a.xsl
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:variable name="date" select="'16.07.2001'"/>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:variable name="date" select="'16.07.2001'" />
 </xsl:stylesheet>
 ```
 
@@ -37,30 +39,36 @@ description: Преобразование, включающее внешний �
 Листинг 4.7. Преобразование b.xsl
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:include href="a.xsl"/>
-    <xsl:template match="/">
-        <content>
-            <xsl:text>Today is </xsl:text>
-            <xsl:value-of select="$date"/>
-            <xsl:text>.</xsl:text>
-        </content>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:include href="a.xsl" />
+  <xsl:template match="/">
+    <content>
+      <xsl:text>Today is</xsl:text>
+      <xsl:value-of select="$date" />
+      <xsl:text>.</xsl:text>
+    </content>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Включение в преобразование `b.xsl` преобразования `a.xsl` эквивалентно замене в `b.xsl` соответствующего элемента `xsl:include` на содержимое преобразования `a.xsl`. В нашем случае будет включено только определение переменной `date`. Преобразование `b.xsl` можно переписать в следующем виде:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:variable name="date" select="'16.07.2001'"/>
-    <xsl:template match="/">
-        <content>
-            <xsl:text>Today is </xsl:text>
-            <xsl:value-of select="$date"/>
-            <xsl:text>.</xsl:text>
-        </content>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:variable name="date" select="'16.07.2001'" />
+  <xsl:template match="/">
+    <content>
+      <xsl:text>Today is</xsl:text>
+      <xsl:value-of select="$date" />
+      <xsl:text>.</xsl:text>
+    </content>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -79,7 +87,7 @@ http://www.xsltdev.ru/examples/a.xsl
 В этом случае элемент
 
 ```xml
-<xsl:include href="b.xsl"/>
+<xsl:include href="b.xsl" />
 ```
 
 будет включать преобразование с URI
@@ -97,7 +105,9 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 то включить его можно элементом
 
 ```xml
-<xsl:include href=" http://www.xsltdev.ru/stylesheets/identity.xsl"/>
+<xsl:include
+  href=" http://www.xsltdev.ru/stylesheets/identity.xsl"
+/>
 ```
 
 Естественно, включаемые модули должны быть доступны процессору во время выполнения преобразования, поэтому если они находятся на других серверах, то всегда будет существовать возможность невыполнения преобразования.
@@ -111,20 +121,26 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 Листинг 4.8. Основное преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:import href="a.xsl"/>
-    <xsl:variable name="a"/>
-    <xsl:include href="b.xsl"/>
-    <!-- Содержимое основного преобразования -->
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:import href="a.xsl" />
+  <xsl:variable name="a" />
+  <xsl:include href="b.xsl" />
+  <!-- Содержимое основного преобразования -->
 </xsl:stylesheet>
 ```
 
 Листинг 4.9. Преобразование b.xsl
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:import href="c.xsl"/>
-    <!-- Содержимое преобразования b.xsl -->
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:import href="c.xsl" />
+  <!-- Содержимое преобразования b.xsl -->
 </xsl:stylesheet>
 ```
 
@@ -133,12 +149,15 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 Листинг 4.10. Основное преобразование после включения b.xsl
 
 ```xml
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-    <xsl:import href="a.xsl"/>
-    <xsl:import href="c.xsl"/>
-    <xsl:variable name="a"/>
-    <!-- Содержимое преобразования b.xsl -->
-    <!-- Содержимое основного преобразования -->
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="1.0"
+>
+  <xsl:import href="a.xsl" />
+  <xsl:import href="c.xsl" />
+  <xsl:variable name="a" />
+  <!-- Содержимое преобразования b.xsl -->
+  <!-- Содержимое основного преобразования -->
 </xsl:stylesheet>
 ```
 
@@ -151,8 +170,11 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 Листинг 4.11. Преобразование simple.xsl
 
 ```xml
-<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:apply-templates/>
+<html
+  xsl:version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:apply-templates />
 </html>
 ```
 
@@ -161,11 +183,14 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 Листинг 4.12. Основное преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:include href="simple.xsl"/>
-    <xsl:template match="a">
-        <xsl:value-of select="."/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:include href="simple.xsl" />
+  <xsl:template match="a">
+    <xsl:value-of select="." />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -174,17 +199,20 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 Листинг 4.13. Основное преобразование после включения simple.xsl
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="/">
-        <!-- начало simple.xsl -->
-        <html>
-            <xsl:apply-templates/>
-        </html>
-        <!-- конец simple.xsl -->
-    </xsl:template>
-    <xsl:template match="a">
-        <xsl:value-of select="."/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <!-- начало simple.xsl -->
+    <html>
+      <xsl:apply-templates />
+    </html>
+    <!-- конец simple.xsl -->
+  </xsl:template>
+  <xsl:template match="a">
+    <xsl:value-of select="." />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

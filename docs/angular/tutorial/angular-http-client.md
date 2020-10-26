@@ -48,7 +48,9 @@ import { HttpParams } from '@angular/common/http'
 Передача значений осуществляется с помощью `set()`. Для передачи множества параметров используется следующая запись.
 
 ```ts
-params: new HttpParams().set(`id`, id).set(`category`, category)
+params: new HttpParams()
+  .set(`id`, id)
+  .set(`category`, category)
 ```
 
 Пример Angular POST-запроса.
@@ -108,23 +110,31 @@ export class ContactsService {
   constructor(private http: HttpClient) {}
 
   getContactsDictionary() {
-    const req = new HttpRequest('GET', '/api/contacts/dictionary', {
-      reportProgress: true,
-      responseType: 'blob'
-    })
-
-    this.http.request(req).subscribe((event: HttpEvent<any>) => {
-      switch (event.type) {
-        case HttpEventType.Sent:
-          console.log('Sent')
-          break
-        case HttpEventType.DownloadProgress:
-          console.log(`Downloading: ${event.loaded / 1024}Kb`)
-          break
-        case HttpEventType.Response:
-          console.log('Finished', event.body)
+    const req = new HttpRequest(
+      'GET',
+      '/api/contacts/dictionary',
+      {
+        reportProgress: true,
+        responseType: 'blob',
       }
-    })
+    )
+
+    this.http
+      .request(req)
+      .subscribe((event: HttpEvent<any>) => {
+        switch (event.type) {
+          case HttpEventType.Sent:
+            console.log('Sent')
+            break
+          case HttpEventType.DownloadProgress:
+            console.log(
+              `Downloading: ${event.loaded / 1024}Kb`
+            )
+            break
+          case HttpEventType.Response:
+            console.log('Finished', event.body)
+        }
+      })
   }
 }
 ```

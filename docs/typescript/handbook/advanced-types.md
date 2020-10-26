@@ -18,7 +18,9 @@ function padLeft(value: string, padding: any) {
   if (typeof padding === 'string') {
     return padding + value
   }
-  throw new Error(`Ожидал строку или число, а получил '${padding}'.`)
+  throw new Error(
+    `Ожидал строку или число, а получил '${padding}'.`
+  )
 }
 
 padLeft('Hello world', 4) // возвращает "    Hello world"
@@ -167,7 +169,9 @@ function padLeft(value: string, padding: string | number) {
   if (isString(padding)) {
     return padding + value
   }
-  throw new Error(`Ожидал строку или число, а получил '${padding}'.`)
+  throw new Error(
+    `Ожидал строку или число, а получил '${padding}'.`
+  )
 }
 ```
 
@@ -183,7 +187,9 @@ function padLeft(value: string, padding: string | number) {
   if (typeof padding === 'string') {
     return padding + value
   }
-  throw new Error(`Ожидал строку или число, а получил '${padding}'.`)
+  throw new Error(
+    `Ожидал строку или число, а получил '${padding}'.`
+  )
 }
 ```
 
@@ -217,7 +223,9 @@ class StringPadder implements Padder {
 }
 
 function getRandomPadder() {
-  return Math.random() < 0.5 ? new SpaceRepeatingPadder(4) : new StringPadder('  ')
+  return Math.random() < 0.5
+    ? new SpaceRepeatingPadder(4)
+    : new StringPadder('  ')
 }
 
 // Тип - 'SpaceRepeatingPadder | StringPadder'

@@ -16,14 +16,10 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <p *ngIf="condition">
-      Привет мир
-    </p>
-    <p *ngIf="!condition">
-      Пока мир
-    </p>
+    <p *ngIf="condition">Привет мир</p>
+    <p *ngIf="!condition">Пока мир</p>
     <button (click)="toggle()">Toggle</button>
-  `
+  `,
 })
 export class AppComponent {
   condition: boolean = true
@@ -46,14 +42,12 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <p *ngIf="condition; else unset">
-      Привет мир
-    </p>
+    <p *ngIf="condition; else unset">Привет мир</p>
     <ng-template #unset>
       <p>Пока мир</p>
     </ng-template>
     <button (click)="toggle()">Toggle</button>
-  `
+  `,
 })
 export class AppComponent {
   condition: boolean = true
@@ -92,14 +86,14 @@ import { Component } from '@angular/core'
     <ul>
       <li *ngFor="let item of items">{{ item }}</li>
     </ul>
-  `
+  `,
 })
 export class AppComponent {
   items = [
     'Apple iPhone 7',
     'Huawei Mate 9',
     'Samsung Galaxy S7',
-    'Motorola Moto Z'
+    'Motorola Moto Z',
   ]
 }
 ```
@@ -110,7 +104,9 @@ export class AppComponent {
 
 ```html
 <div>
-  <p *ngFor="let item of items; let i = index">{{i+1}}.{{item}}</p>
+  <p *ngFor="let item of items; let i = index">
+    {{i+1}}.{{item}}
+  </p>
 </div>
 ```
 
@@ -121,26 +117,18 @@ export class AppComponent {
 Можно заметить, что при использовании директив `ngFor` и `ngIf` перед ними ставится символ звездочка. По факту это не более чем синтаксический сахар, который упрощает применение директивы. Так, определение `ngIf`:
 
 ```html
-<p *ngIf="condition">
-  Привет мир
-</p>
-<p *ngIf="!condition">
-  Пока мир
-</p>
+<p *ngIf="condition">Привет мир</p>
+<p *ngIf="!condition">Пока мир</p>
 ```
 
 по факту будет представлять следующий код:
 
 ```html
 <template [ngIf]="condition">
-  <p>
-    Привет мир
-  </p>
+  <p>Привет мир</p>
 </template>
 <template [ngIf]="!condition">
-  <p>
-    Пока мир
-  </p>
+  <p>Пока мир</p>
 </template>
 ```
 
@@ -177,11 +165,17 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <div [ngSwitch]="count">
-      <ng-template *ngSwitchCase="1">{{ count * 10 }}</ng-template>
-      <ng-template *ngSwitchCase="2">{{ count * 100 }}</ng-template>
-      <ng-template ngSwitchDefault>{{ count * 1000 }}</ng-template>
+      <ng-template *ngSwitchCase="1">{{
+        count * 10
+      }}</ng-template>
+      <ng-template *ngSwitchCase="2">{{
+        count * 100
+      }}</ng-template>
+      <ng-template ngSwitchDefault>{{
+        count * 1000
+      }}</ng-template>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   count: number = 5

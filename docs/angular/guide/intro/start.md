@@ -82,7 +82,7 @@ import { Component } from '@angular/core'
     <label>Введите имя:</label>
     <input [(ngModel)]="name" placeholder="name" />
     <h1>Добро пожаловать {{ name }}!</h1>
-  `
+  `,
 })
 export class AppComponent {
   name = ''
@@ -107,7 +107,7 @@ import { AppComponent } from './app.component'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

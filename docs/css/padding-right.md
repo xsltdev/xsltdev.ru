@@ -49,7 +49,8 @@ padding-right: unset;
     <title>padding-right</title>
     <style>
       .layer {
-        background: #ffe url(/example/image/help.png) no-repeat top right; /* Параметры фона */
+        background: #ffe url(/example/image/help.png)
+          no-repeat top right; /* Параметры фона */
         border: 2px solid black; /* Параметры рамки */
         padding: 5px; /* Поля вокруг текста */
         padding-right: 90px; /* Поле справа */
@@ -60,8 +61,9 @@ padding-right: unset;
   </head>
   <body>
     <div class="layer">
-      Кондуктометрия мягко передает электронный способ получения независимо от
-      последствий проникновения метилкарбиола внутрь.
+      Кондуктометрия мягко передает электронный способ
+      получения независимо от последствий проникновения
+      метилкарбиола внутрь.
     </div>
   </body>
 </html>

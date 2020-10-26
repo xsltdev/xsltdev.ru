@@ -54,7 +54,8 @@ React предоставляет декларативный API, который 
 Обновляя `style`, React также знает, что нужно обновлять только изменившиеся свойства. Например:
 
 ```html
-<div style={{color: 'red', fontWeight: 'bold'}} /> <div style={{color: 'green', fontWeight: 'bold'}} />
+<div style={{color: 'red', fontWeight: 'bold'}} /> <div
+style={{color: 'green', fontWeight: 'bold'}} />
 ```
 
 При конвертации между этими элементами, React знает, что нужно модифицировать только стиль `color`, а `fontWeight` сохранить.

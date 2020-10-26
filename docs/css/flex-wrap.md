@@ -81,9 +81,15 @@ Safari до версии 9 поддерживает свойство `-webkit-fl
   </head>
   <body>
     <ul class="flex-container">
-      <li class="flex-item"><img src="image/aquaria1.jpg" alt="" /></li>
-      <li class="flex-item"><img src="image/aquaria2.jpg" alt="" /></li>
-      <li class="flex-item"><img src="image/aquaria3.jpg" alt="" /></li>
+      <li class="flex-item">
+        <img src="image/aquaria1.jpg" alt="" />
+      </li>
+      <li class="flex-item">
+        <img src="image/aquaria2.jpg" alt="" />
+      </li>
+      <li class="flex-item">
+        <img src="image/aquaria3.jpg" alt="" />
+      </li>
     </ul>
   </body>
 </html>

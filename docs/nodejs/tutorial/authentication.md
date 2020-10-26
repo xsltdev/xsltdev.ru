@@ -61,8 +61,14 @@ app.use(passport.session())
 
 passport.use(
   new localStrategy((user, password, done) => {
-    if (user !== 'test_user') return done(null, false, { message: 'User not found' })
-    else if (password !== 'test_password') return done(null, false, { message: 'Wrong password' })
+    if (user !== 'test_user')
+      return done(null, false, {
+        message: 'User not found',
+      })
+    else if (password !== 'test_password')
+      return done(null, false, {
+        message: 'Wrong password',
+      })
 
     return done(null, { id: 1, name: 'Test', age: 21 })
   })
@@ -82,7 +88,7 @@ app.post(
   passport.authenticate('local', {
     successRedirect: '/home',
     failureRedirect: '/login',
-    failureFlash: true
+    failureFlash: true,
   })
 )
 
@@ -90,7 +96,7 @@ app.get('/home', checkAuth(), (req, res) => {
   res.send("Home page. You're authorized.")
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```
@@ -128,11 +134,17 @@ passport.use(
   new localStrategy(
     {
       usernameField: 'login',
-      passwordField: 'pwd'
+      passwordField: 'pwd',
     },
     (user, password, done) => {
-      if (user !== 'test_user') return done(null, false, { message: 'User not found' })
-      else if (password !== 'test_password') return done(null, false, { message: 'Wrong password' })
+      if (user !== 'test_user')
+        return done(null, false, {
+          message: 'User not found',
+        })
+      else if (password !== 'test_password')
+        return done(null, false, {
+          message: 'Wrong password',
+        })
 
       return done(null, { id: 1, name: 'Test', age: 21 })
     }
@@ -188,7 +200,8 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   session = require('express-session'),
   passport = require('passport'),
-  GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
+  GoogleStrategy = require('passport-google-oauth')
+    .OAuth2Strategy,
   flash = require('connect-flash')
 
 const host = '127.0.0.1'
@@ -216,7 +229,8 @@ passport.use(
     {
       clientID: 90876745, //YOUR GOOGLE_CLIENT_ID
       clientSecret: '35revr-sdv6-3tswa-vzd', //YOUR GOOGLE_CLIENT_SECRET
-      callbackURL: 'http://www.yourdomain.com/auth/google/callback'
+      callbackURL:
+        'http://www.yourdomain.com/auth/google/callback',
     },
     (accessToken, refreshToken, profile, done) => {
       return done(null, profile)
@@ -228,13 +242,18 @@ app.get('/login', (req, res) => {
   res.send('Login page. Please, authorize.')
 })
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }))
+app.get(
+  '/auth/google',
+  passport.authenticate('google', {
+    scope: ['email', 'profile'],
+  })
+)
 
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', {
     failureRedirect: '/login',
-    successRedirect: '/home'
+    successRedirect: '/home',
   })
 )
 
@@ -242,7 +261,7 @@ app.get('/home', checkAuth(), (req, res) => {
   res.send("Home page. You're authorized.")
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```

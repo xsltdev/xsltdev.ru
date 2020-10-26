@@ -32,15 +32,19 @@ object system-property( string )
 
 ```xml
 <xsl:template name="info">
-    <xsl:comment>
-        <xsl:text> | XSLT Version: </xsl:text>
-        <xsl:value-of select="format-number(system-property('xsl:version'), '0.0')"/>
-        <xsl:text> | XSLT Processor: </xsl:text>
-        <xsl:value-of select="system-property('xsl:vendor')"/>
-        <xsl:text> | URL: </xsl:text>
-        <xsl:value-of select="system-property('xsl:vendor-url')"/>
-        <xsl:text> +</xsl:text>
-    </xsl:comment>
+  <xsl:comment>
+    <xsl:text>| XSLT Version:</xsl:text>
+    <xsl:value-of
+      select="format-number(system-property('xsl:version'), '0.0')"
+    />
+    <xsl:text>| XSLT Processor:</xsl:text>
+    <xsl:value-of select="system-property('xsl:vendor')" />
+    <xsl:text>| URL:</xsl:text>
+    <xsl:value-of
+      select="system-property('xsl:vendor-url')"
+    />
+    <xsl:text>+</xsl:text>
+  </xsl:comment>
 </xsl:template>
 ```
 

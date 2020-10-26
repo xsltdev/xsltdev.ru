@@ -32,7 +32,10 @@ class UnControlledForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" ref={input => (this.input = input)} />
+        <input
+          type="text"
+          ref={(input) => (this.input = input)}
+        />
         <button type="submit">Submit</button>
       </form>
     )
@@ -49,7 +52,10 @@ function CustomForm({ handleSubmit }) {
   let inputElement
   return (
     <form onSubmit={() => handleSubmit(inputElement.value)}>
-      <input type="text" ref={input => (inputElement = input)} />
+      <input
+        type="text"
+        ref={(input) => (inputElement = input)}
+      />
       <button type="submit">Submit</button>
     </form>
   )
@@ -78,7 +84,9 @@ render () {
 
 ```jsx
 ;<Twitter username="tylermcginnis33">
-  {user => (user === null ? <Loading /> : <Badge info={user} />)}
+  {(user) =>
+    user === null ? <Loading /> : <Badge info={user} />
+  }
 </Twitter>
 import React, { Component, PropTypes } from 'react'
 import fetchUser from 'twitter'
@@ -98,13 +106,15 @@ import React, { Component, PropTypes } from 'react'
 import fetchUser from 'twitter'
 class Twitter extends Component {
   state = {
-    user: null
+    user: null,
   }
   static propTypes = {
-    username: PropTypes.string.isRequired
+    username: PropTypes.string.isRequired,
   }
   componentDidMount() {
-    fetchUser(this.props.username).then(user => this.setState({ user }))
+    fetchUser(this.props.username).then((user) =>
+      this.setState({ user })
+    )
   }
   render() {
     return this.props.children(this.state.user)
@@ -120,7 +130,9 @@ class Twitter extends Component {
 
 ```jsx
 <Twitter username="tylermcginnis33">
-  {user => (user === null ? <Loading /> : <Profile info={user} />)}
+  {(user) =>
+    user === null ? <Loading /> : <Profile info={user} />
+  }
 </Twitter>
 ```
 
@@ -133,11 +145,11 @@ class Twitter extends Component {
 ```jsx
 class ControlledForm extends Component {
   state = {
-    username: ''
+    username: '',
   }
-  updateUsername = e => {
+  updateUsername = (e) => {
     this.setState({
-      username: e.target.value
+      username: e.target.value,
     })
   }
   handleSubmit = () => {}
@@ -166,7 +178,10 @@ class UnControlledForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" ref={input => (this.input = input)} />
+        <input
+          type="text"
+          ref={(input) => (this.input = input)}
+        />
         <button type="submit">Submit</button>
       </form>
     )
@@ -236,7 +251,9 @@ React отработает с `props.children` только в том случа
 
 ```js
 this.setState({ username: 'tylermcginnis33' }, () =>
-  console.log('setState has finished and the component has re-rendered.')
+  console.log(
+    'setState has finished and the component has re-rendered.'
+  )
 )
 ```
 
@@ -245,7 +262,7 @@ this.setState({ username: 'tylermcginnis33' }, () =>
 ```js
 this.setState((prevState, props) => {
   return {
-    streak: prevState.streak + props.count
+    streak: prevState.streak + props.count,
   }
 })
 ```

@@ -100,13 +100,18 @@ description: Тег td (от англ. table data — данные таблиц�
 ```html
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
     <title>TD</title>
   </head>
   <body>
     <table border="1" cellpadding="7" cellspacing="0">
       <tr>
-        <td colspan="2" bgcolor="#D3EDF6" align="center">Ячейка 1</td>
+        <td colspan="2" bgcolor="#D3EDF6" align="center">
+          Ячейка 1
+        </td>
       </tr>
       <tr>
         <td valign="top" align="center">Ячейка 2</td>

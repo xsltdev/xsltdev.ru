@@ -38,13 +38,16 @@ describe('Users API', () => {
   before(() => {
     const TEST_DATA = {
       1: { id: 1, login: 'login1', password: 'password1' },
-      2: { id: 2, login: 'login2', password: 'password2' }
+      2: { id: 2, login: 'login2', password: 'password2' },
     }
 
-    fs.writeFileSync('data-test.json', JSON.stringify(TEST_DATA))
+    fs.writeFileSync(
+      'data-test.json',
+      JSON.stringify(TEST_DATA)
+    )
   })
 
-  it('should get all users', done => {
+  it('should get all users', (done) => {
     chai
       .request(server)
       .get('/api/users')
@@ -57,7 +60,7 @@ describe('Users API', () => {
       })
   })
 
-  it('should get user by id', done => {
+  it('should get user by id', (done) => {
     chai
       .request(server)
       .get('/api/users')
@@ -72,7 +75,7 @@ describe('Users API', () => {
       })
   })
 
-  it("shouldn't get non-existing user", done => {
+  it("shouldn't get non-existing user", (done) => {
     chai
       .request(server)
       .get('/api/users')
@@ -86,7 +89,7 @@ describe('Users API', () => {
       })
   })
 
-  it('should create user', done => {
+  it('should create user', (done) => {
     chai
       .request(server)
       .post('/api/users')
@@ -94,8 +97,8 @@ describe('Users API', () => {
         user: {
           id: 3,
           login: 'login3',
-          password: 'password3'
-        }
+          password: 'password3',
+        },
       })
       .end((err, res) => {
         expect(err).to.be.null
@@ -106,7 +109,7 @@ describe('Users API', () => {
       })
   })
 
-  it("shouldn't create user with existing id", done => {
+  it("shouldn't create user with existing id", (done) => {
     chai
       .request(server)
       .post('/api/users')
@@ -114,8 +117,8 @@ describe('Users API', () => {
         user: {
           id: 3,
           login: 'login3',
-          password: 'password3'
-        }
+          password: 'password3',
+        },
       })
       .end((err, res) => {
         expect(err).to.be.null
@@ -126,7 +129,7 @@ describe('Users API', () => {
       })
   })
 
-  it('should update user', done => {
+  it('should update user', (done) => {
     chai
       .request(server)
       .put('/api/users')
@@ -134,8 +137,8 @@ describe('Users API', () => {
         user: {
           id: 3,
           login: 'login_3',
-          password: 'password_3'
-        }
+          password: 'password_3',
+        },
       })
       .end((err, res) => {
         expect(err).to.be.null
@@ -146,7 +149,7 @@ describe('Users API', () => {
       })
   })
 
-  it("shouldn't update non-existing user", done => {
+  it("shouldn't update non-existing user", (done) => {
     chai
       .request(server)
       .put('/api/users')
@@ -154,8 +157,8 @@ describe('Users API', () => {
         user: {
           id: 4,
           login: 'login_4',
-          password: 'password_4'
-        }
+          password: 'password_4',
+        },
       })
       .end((err, res) => {
         expect(err).to.be.null
@@ -166,7 +169,7 @@ describe('Users API', () => {
       })
   })
 
-  it('should delete user', done => {
+  it('should delete user', (done) => {
     chai
       .request(server)
       .delete('/api/users')
@@ -180,7 +183,7 @@ describe('Users API', () => {
       })
   })
 
-  it("shouldn't delete non-existing user", done => {
+  it("shouldn't delete non-existing user", (done) => {
     chai
       .request(server)
       .delete('/api/users')
@@ -220,8 +223,11 @@ describe('Users API', () => {
 ```js
 let requester = chai.request(app).keepOpen()
 
-Promise.all([requester.get('/api/users'), requester.get('/api/users').query({ id: 2 })])
-  .then(responses => {}) //массив ответов
+Promise.all([
+  requester.get('/api/users'),
+  requester.get('/api/users').query({ id: 2 }),
+])
+  .then((responses) => {}) //массив ответов
   .then(() => requester.close())
 ```
 

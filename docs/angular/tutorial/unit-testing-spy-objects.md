@@ -27,7 +27,9 @@ appServiceSpy.getData.and.returnValue(8)
 expect(appServiceSpy.getData()).toBe(8)
 expect(appServiceSpy.getData).toHaveBeenCalled()
 expect(appServiceSpy.getData.calls.count()).toBe(1)
-expect(appServiceSpy.getData.calls.mostRecent().returnValue).toBe(8)
+expect(
+  appServiceSpy.getData.calls.mostRecent().returnValue
+).toBe(8)
 ```
 
 Метод `returnValue()` принимает значение, которое будет возвращено методом при следующем его вызове. При этом оригинальный метод не будет вызван.
@@ -52,15 +54,19 @@ expect(appServiceSpy.getData).toHaveBeenCalledWith(3)
 Для вызова при обращении к методу функции, отличной от оригинального определения, используется метод `callFake()`.
 
 ```ts
-appServiceSpy.getData.and.callFake(number => 3 * number)
+appServiceSpy.getData.and.callFake((number) => 3 * number)
 appServiceSpy.getData(3)
-expect(appServiceSpy.getData.calls.mostRecent().returnValue).toBe(9)
+expect(
+  appServiceSpy.getData.calls.mostRecent().returnValue
+).toBe(9)
 ```
 
 Пример проверки на генерацию исключения.
 
 ```ts
-appServiceSpy.getData('two').and.throwError('Argument must be a number')
+appServiceSpy
+  .getData('two')
+  .and.throwError('Argument must be a number')
 expect(appServiceSpy.getData).toThrow()
 ```
 
@@ -109,7 +115,10 @@ expect(getValueSpy.getValue).toHaveBeenCalled()
 Пример создания объекта `Spy` с помощью `jasmine.createSpyObj`:
 
 ```ts
-const exampleSpy = jasmine.createSpyObj('ExampleClass', ['getData', 'getValue'])
+const exampleSpy = jasmine.createSpyObj('ExampleClass', [
+  'getData',
+  'getValue',
+])
 ```
 
 или
@@ -117,7 +126,7 @@ const exampleSpy = jasmine.createSpyObj('ExampleClass', ['getData', 'getValue'])
 ```ts
 const exampleSpy = jasmine.createSpyObj('ExampleClass', {
   getData: 'Hello',
-  getValue: 1
+  getValue: 1,
 })
 ```
 

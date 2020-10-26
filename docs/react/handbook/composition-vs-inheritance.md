@@ -12,7 +12,13 @@ React имеет мощную модель композиции, поэтому 
 
 ```js
 function FancyBorder(props) {
-  return <div className={'FancyBorder FancyBorder-' + props.color}>{props.children}</div>
+  return (
+    <div
+      className={'FancyBorder FancyBorder-' + props.color}
+    >
+      {props.children}
+    </div>
+  )
 }
 ```
 
@@ -23,7 +29,9 @@ function WelcomeDialog() {
   return (
     <FancyBorder color="blue">
       <h1 className="Dialog-title">Добро пожаловать</h1>
-      <p className="Dialog-message">Спасибо, что посетили наш космический корабль!</p>
+      <p className="Dialog-message">
+        Спасибо, что посетили наш космический корабль!
+      </p>
     </FancyBorder>
   )
 }
@@ -67,7 +75,12 @@ function Dialog(props) {
 }
 
 function WelcomeDialog() {
-  return <Dialog title="Добро пожаловать" message="Спасибо, что посетили наш космический корабль!" />
+  return (
+    <Dialog
+      title="Добро пожаловать"
+      message="Спасибо, что посетили наш космический корабль!"
+    />
+  )
 }
 ```
 
@@ -94,9 +107,17 @@ class SignUpDialog extends React.Component {
 
   render() {
     return (
-      <Dialog title="Программа исследования Марса" message="Как к вам обращаться?">
-        <input value={this.state.login} onChange={this.handleChange} />
-        <button onClick={this.handleSignUp}>Запишите меня!</button>
+      <Dialog
+        title="Программа исследования Марса"
+        message="Как к вам обращаться?"
+      >
+        <input
+          value={this.state.login}
+          onChange={this.handleChange}
+        />
+        <button onClick={this.handleSignUp}>
+          Запишите меня!
+        </button>
       </Dialog>
     )
   }

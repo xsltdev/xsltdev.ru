@@ -38,8 +38,10 @@
       .grid-container {
         height: 100vh;
         display: grid;
-        grid-template-columns: 10px repeat(3, [column] 1fr [colgutter] 10px);
-        grid-template-rows: 10px repeat(2, [row] 1fr [rowgutter] 10px);
+        grid-template-columns: 10px repeat(3, [column] 1fr
+              [colgutter] 10px);
+        grid-template-rows: 10px repeat(2, [row] 1fr
+              [rowgutter] 10px);
       }
 
       .grid-item {
@@ -84,7 +86,8 @@
 Возьмем из данного примера определение столбцов:
 
 ```css
-grid-template-columns: 10px repeat(3, [column] 1fr [colgutter] 10px);
+grid-template-columns: 10px repeat(3, [column] 1fr
+      [colgutter] 10px);
 ```
 
 Первый столбец будет иметь ширину в 10 пикселей. Затем происходит тиражирование столбцов с помощью функции repeat. Она создает подряд три копии двух столбцов. Первый столбец имеет ширину 1fr, то есть имеет пропорциональные размеры, и располагается между grid-линиями "column" и "colgutter". После grid-линии "colgutter" идет еще один столбец шириной в 10 пикселей. И эти два столбца будут повторяться три раза. То есть всего в гриде будет 7 столбцов.
@@ -131,7 +134,8 @@ grid-template-columns: 10px repeat(3, [column] 1fr [colgutter] 10px);
         grid-template-columns:
           10px repeat(3, [column] 1fr [colgutter] 10px)
           [sidebarstart] 150px [sidebarend] 10px;
-        grid-template-rows: 10px repeat(2, [row] 1fr [rowgutter] 10px);
+        grid-template-rows: 10px repeat(2, [row] 1fr
+              [rowgutter] 10px);
       }
 
       .grid-item {

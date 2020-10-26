@@ -23,14 +23,25 @@ boolean element-available( string )
 Листинг 10.21. Преобразование, использующее функцию `element-available`
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ext="xalan://de.fzi.xslt.ext" extension-element-prefixes="ext">
-    <xsl:template match="/">
-        <result>
-            <xsl:if test="element-available('ext:date')">
-                <p>This page was generated at <ext:date pattern="HH:mm"/> on <ext:date pattern="dd/MM/yyyy"/>.</p>
-            </xsl:if>
-        </result>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:ext="xalan://de.fzi.xslt.ext"
+  extension-element-prefixes="ext"
+>
+  <xsl:template match="/">
+    <result>
+      <xsl:if test="element-available('ext:date')">
+        <p>
+          This page was generated at
+          <ext:date pattern="HH:mm" />
+          on
+          <ext:date pattern="dd/MM/yyyy" />
+          .
+        </p>
+      </xsl:if>
+    </result>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

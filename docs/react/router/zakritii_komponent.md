@@ -33,13 +33,19 @@ import { connect } from 'react-redux'
 export default function requireAuthentication(Component) {
   class AuthenticatedComponent extends Component {
     render() {
-      return <div>{this.props.user.isAuthenticated === true ? <Component {...this.props} /> : null}</div>
+      return (
+        <div>
+          {this.props.user.isAuthenticated === true ? (
+            <Component {...this.props} />
+          ) : null}
+        </div>
+      )
     }
   }
 
   function mapStateToProps(state) {
     return {
-      user: state.user
+      user: state.user,
     }
   }
 
@@ -101,13 +107,19 @@ import { connect } from 'react-redux'
 export default function requireAuthentication(Component) {
   class AuthenticatedComponent extends React.Component {
     render() {
-      return <div>{this.props.user.isAuthenticated === true ? <Component {...this.props} /> : null}</div>
+      return (
+        <div>
+          {this.props.user.isAuthenticated === true ? (
+            <Component {...this.props} />
+          ) : null}
+        </div>
+      )
     }
   }
 
   function mapStateToProps(state) {
     return {
-      user: state.user
+      user: state.user,
     }
   }
 
@@ -155,19 +167,25 @@ export function requireAuthentication(Component) {
           type: ROUTING,
           payload: {
             method: 'replace',
-            nextUrl: '/login'
-          }
+            nextUrl: '/login',
+          },
         })
       }
     }
     render() {
-      return <div>{this.props.user.isAuthenticated === true ? <Component {...this.props} /> : null}</div>
+      return (
+        <div>
+          {this.props.user.isAuthenticated === true ? (
+            <Component {...this.props} />
+          ) : null}
+        </div>
+      )
     }
   }
 
   function mapStateToProps(state) {
     return {
-      user: state.user
+      user: state.user,
     }
   }
 

@@ -51,7 +51,7 @@ description: Тег source (от англ. source — источник) вста
 
 ```html
 <picture>
-  <source media="<медиа-запрос>"/>
+  <source media="<медиа-запрос>" />
   <picture></picture
 ></picture>
 ```
@@ -151,10 +151,16 @@ sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)"
 
 ```html
 <audio>
-  <source src="<адрес>" type='<MIME-тип>; codecs="<кодек>"' />
+  <source
+    src="<адрес>"
+    type='<MIME-тип>; codecs="<кодек>"'
+  />
 </audio>
 <video>
-  <source src="<адрес>" type='<MIME-тип>; codecs="<кодек>"' />
+  <source
+    src="<адрес>"
+    type='<MIME-тип>; codecs="<кодек>"'
+  />
 </video>
 ```
 
@@ -181,12 +187,18 @@ sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)"
   </head>
   <body>
     <video width="400" height="300" controls="controls">
-      <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"' />
+      <source
+        src="video/duel.ogv"
+        type='video/ogg; codecs="theora, vorbis"'
+      />
       <source
         src="video/duel.mp4"
         type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
       />
-      <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"' />
+      <source
+        src="video/duel.webm"
+        type='video/webm; codecs="vp8, vorbis"'
+      />
       Элемент video не поддерживается вашим браузером.
       <a href="video/duel.mp4">Скачайте видео</a>.
     </video>

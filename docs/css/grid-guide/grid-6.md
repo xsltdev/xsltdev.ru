@@ -74,7 +74,9 @@
   <body>
     <div class="grid-container">
       <div class="grid-item color1">Grid Item 1</div>
-      <div class="grid-item color2 special-item">Grid Item 2</div>
+      <div class="grid-item color2 special-item">
+        Grid Item 2
+      </div>
       <div class="grid-item color3">Grid Item 3</div>
       <div class="grid-item color4">Grid Item 4</div>
       <div class="grid-item color5">Grid Item 5</div>

@@ -91,7 +91,10 @@ class Modal extends React.Component {
   }
 
   render() {
-    return ReactDOM.createPortal(this.props.children, this.el)
+    return ReactDOM.createPortal(
+      this.props.children,
+      this.el
+    )
   }
 }
 
@@ -106,8 +109,8 @@ class Parent extends React.Component {
     // Эта функция будет вызвана при клике на кнопку в компоненте Child,
     // обновляя состояние компонента Parent, несмотря на то,
     // что кнопка не является прямым потомком в DOM.
-    this.setState(state => ({
-      clicks: state.clicks + 1
+    this.setState((state) => ({
+      clicks: state.clicks + 1,
     }))
   }
 
@@ -115,7 +118,11 @@ class Parent extends React.Component {
     return (
       <div onClick={this.handleClick}>
         <p>Количество кликов: {this.state.clicks}</p>
-        <p>Откройте DevTools браузера, чтобы убедиться, что кнопка не является потомком блока div c обработчиком onClick.</p>
+        <p>
+          Откройте DevTools браузера, чтобы убедиться, что
+          кнопка не является потомком блока div c
+          обработчиком onClick.
+        </p>
         <Modal>
           <Child />
         </Modal>

@@ -21,7 +21,7 @@ import { Component } from '@angular/core'
       </nav>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -34,7 +34,7 @@ export class AppComponent {}
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ]
 ```
 
@@ -58,17 +58,21 @@ import { Component } from '@angular/core'
       .active {
         color: red;
       }
-    `
+    `,
   ],
   template: `
     <div>
       <nav>
-        <a routerLink="" routerLinkActive="active">Главная</a>
-        <a routerLink="/about" routerLinkActive="active">О сайте</a>
+        <a routerLink="" routerLinkActive="active"
+          >Главная</a
+        >
+        <a routerLink="/about" routerLinkActive="active"
+          >О сайте</a
+        >
       </nav>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -91,7 +95,9 @@ export class AppComponent {}
     [routerLinkActiveOptions]="{exact:true}"
     >Главная</a
   >
-  <a routerLink="/about" routerLinkActive="active">О сайте</a>
+  <a routerLink="/about" routerLinkActive="active"
+    >О сайте</a
+  >
 </nav>
 ```
 
@@ -117,7 +123,7 @@ import { Component } from '@angular/core'
       .active a {
         color: red;
       }
-    `
+    `,
   ],
   template: `
     <div>
@@ -134,7 +140,7 @@ import { Component } from '@angular/core'
       </ul>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```

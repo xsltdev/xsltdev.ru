@@ -27,11 +27,15 @@ describe('CutTxtPipe', () => {
   let cutTxt = new CutTxtPipe()
 
   it('doesn\'t transform "Hello, World!"', () => {
-    expect(cutTxt.transform('Hello, World!', 50)).toBe('Hello, World!')
+    expect(cutTxt.transform('Hello, World!', 50)).toBe(
+      'Hello, World!'
+    )
   })
 
   it('transforms "Hello, World!" to "Hello..."', () => {
-    expect(cutTxt.transform('Hello, World!', 5)).toBe('Hello...')
+    expect(cutTxt.transform('Hello, World!', 5)).toBe(
+      'Hello...'
+    )
   })
 })
 ```
@@ -46,7 +50,7 @@ _cut-txt-pipe-test.component.ts_
   template: `
     <p id="case-1">{{ 'Hello, World!' | cutTxt: 50 }}</p>
     <p id="case-2">{{ 'Hello, World!' | cutTxt: 5 }}</p>
-  `
+  `,
 })
 export class CutTxtPipeTestComponent {
   constructor() {}
@@ -61,21 +65,27 @@ describe('cutTxt in component template', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CutTxtPipeTestComponent]
+      declarations: [CutTxtPipeTestComponent],
     })
       .compileComponents()
       .then(() => {
-        fixture = TestBed.createComponent(CutTxtPipeTestComponent)
+        fixture = TestBed.createComponent(
+          CutTxtPipeTestComponent
+        )
       })
   }))
 
   it('#case-1 should contain "Hello, World"', () => {
-    const el = fixture.debugElement.nativeElement.query('#case-1')
+    const el = fixture.debugElement.nativeElement.query(
+      '#case-1'
+    )
     expect(el.textContent).toBe('Hello, World!')
   })
 
   it('#case-2 should contain "Hello..."', () => {
-    const el = fixture.debugElement.nativeElement.query('#case-2')
+    const el = fixture.debugElement.nativeElement.query(
+      '#case-2'
+    )
     expect(el.textContent).toBe('Hello...')
   })
 })

@@ -17,8 +17,8 @@ description: Тег datalist (от англ. list of data - список дан�
 ```html
 <input list="<идентификатор>" />
 <datalist id="<идентификатор>">
-  <option value="Текст1"> </option>
-  <option value="Текст2"> </option>
+  <option value="Текст1"></option>
+  <option value="Текст2"></option>
 </datalist>
 ```
 

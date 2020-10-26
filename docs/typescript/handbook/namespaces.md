@@ -51,7 +51,11 @@ validators['Letters only'] = new LettersOnlyValidator()
 for (let s of strings) {
   for (let name in validators) {
     let isMatch = validators[name].isAcceptable(s)
-    console.log(`'${s}' ${isMatch ? 'соответствует' : 'не соответствует'} '${name}'.`)
+    console.log(
+      `'${s}' ${
+        isMatch ? 'соответствует' : 'не соответствует'
+      } '${name}'.`
+    )
   }
 }
 ```
@@ -77,7 +81,8 @@ namespace Validation {
   const lettersRegexp = /^[A-Za-z]+$/
   const numberRegexp = /^[0-9]+$/
 
-  export class LettersOnlyValidator implements StringValidator {
+  export class LettersOnlyValidator
+    implements StringValidator {
     isAcceptable(s: string) {
       return lettersRegexp.test(s)
     }
@@ -94,14 +99,24 @@ namespace Validation {
 let strings = ['Hello', '98052', '101']
 
 // Валидаторы
-let validators: { [s: string]: Validation.StringValidator } = {}
+let validators: {
+  [s: string]: Validation.StringValidator
+} = {}
 validators['ZIP code'] = new Validation.ZipCodeValidator()
-validators['Letters only'] = new Validation.LettersOnlyValidator()
+validators[
+  'Letters only'
+] = new Validation.LettersOnlyValidator()
 
 // Для каждой строки показывает, прошла ли она каждый валидатор
 for (let s of strings) {
   for (var name in validators) {
-    console.log(`"${s}" - ${validators[name].isAcceptable(s) ? 'соответствует' : 'не соответствует'} ${name}`)
+    console.log(
+      `"${s}" - ${
+        validators[name].isAcceptable(s)
+          ? 'соответствует'
+          : 'не соответствует'
+      } ${name}`
+    )
   }
 }
 ```
@@ -133,7 +148,8 @@ namespace Validation {
 /// <reference path="Validation.ts" />
 namespace Validation {
   const lettersRegexp = /^[A-Za-z]+$/
-  export class LettersOnlyValidator implements StringValidator {
+  export class LettersOnlyValidator
+    implements StringValidator {
     isAcceptable(s: string) {
       return lettersRegexp.test(s)
     }

@@ -53,17 +53,30 @@ translate('abcdefgh', 'aceg', 'ACEGBDFH') ? ' AbCdEfGh'
 Листинг 6.6. Преобразование ru.xsl
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:variable name="uppercase" select="concat('АБВГ', 'ДЕЁЖЗ', 'ИЙКЛ', 'МНОП', 'РСТУ', 'ФХЦЧ', 'ШЩЪЫ', 'ЬЭЮЯ')"/>
-    <xsl:variable name="lowercase" select="concat('абвг', 'деёжз', 'ийкл', 'мноп', 'рсту', 'фхцч', 'шщъы', 'ьэюя')"/>
-    <xsl:template name="lower">
-        <xsl:param name="str"/>
-        <xsl:value-of select="translate($str, $uppercase, $lowercase)"/>
-    </xsl:template>
-    <xsl:template name="upper">
-        <xsl:param name="str"/>
-        <xsl:value-of select="translate($str, $lowercase, $uppercase)"/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:variable
+    name="uppercase"
+    select="concat('АБВГ', 'ДЕЁЖЗ', 'ИЙКЛ', 'МНОП', 'РСТУ', 'ФХЦЧ', 'ШЩЪЫ', 'ЬЭЮЯ')"
+  />
+  <xsl:variable
+    name="lowercase"
+    select="concat('абвг', 'деёжз', 'ийкл', 'мноп', 'рсту', 'фхцч', 'шщъы', 'ьэюя')"
+  />
+  <xsl:template name="lower">
+    <xsl:param name="str" />
+    <xsl:value-of
+      select="translate($str, $uppercase, $lowercase)"
+    />
+  </xsl:template>
+  <xsl:template name="upper">
+    <xsl:param name="str" />
+    <xsl:value-of
+      select="translate($str, $lowercase, $uppercase)"
+    />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -80,7 +93,7 @@ translate('Дом', $lowercase, $uppercase) ? 'ДОМ'
 
 ```xml
 <xsl:call-template name="lower">
-    <xsl:with-param name="str" select="'Дом'"/>
+  <xsl:with-param name="str" select="'Дом'" />
 </xsl:call-template>
 ```
 

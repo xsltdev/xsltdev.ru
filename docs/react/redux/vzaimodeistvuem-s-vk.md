@@ -15,10 +15,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="manifest"
+      href="%PUBLIC_URL%/manifest.json"
+    />
+    <link
+      rel="shortcut icon"
+      href="%PUBLIC_URL%/favicon.ico"
+    />
     <title>Redux [RU] Tutorial v2</title>
   </head>
   <body>
@@ -29,8 +38,8 @@
     <script src="https://vk.com/js/api/openapi.js?158"></script>
     <script language="javascript">
       VK.init({
-        apiId: XXXXXX <!-- ваш номер -->
-      });
+        apiId: XXXXXX, <!-- ваш номер -->
+      })
     </script>
   </body>
 </html>
@@ -52,25 +61,25 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export function handleLogin() {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch({
-      type: LOGIN_REQUEST
+      type: LOGIN_REQUEST,
     })
 
     //eslint-disable-next-line no-undef
-    VK.Auth.login(r => {
+    VK.Auth.login((r) => {
       if (r.session) {
         let username = r.session.user.first_name
 
         dispatch({
           type: LOGIN_SUCCESS,
-          payload: username
+          payload: username,
         })
       } else {
         dispatch({
           type: LOGIN_FAIL,
           error: true,
-          payload: new Error('Ошибка авторизации')
+          payload: new Error('Ошибка авторизации'),
         })
       }
     }, 4) // запрос прав на доступ к photo
@@ -103,29 +112,44 @@ import { handleLogin } from '../actions/UserActions'
 class App extends Component {
   render() {
     // вытащили handleLoginAction из this.props
-    const { user, page, getPhotosAction, handleLoginAction } = this.props
+    const {
+      user,
+      page,
+      getPhotosAction,
+      handleLoginAction,
+    } = this.props
     return (
       <div className="app">
-        <Page photos={page.photos} year={page.year} isFetching={page.isFetching} getPhotos={getPhotosAction} />
+        <Page
+          photos={page.photos}
+          year={page.year}
+          isFetching={page.isFetching}
+          getPhotos={getPhotosAction}
+        />
         {/* добавили новые props для User */}
-        <User name={user.name} isFetching={user.isFetching} error={user.error} handleLogin={handleLoginAction} />
+        <User
+          name={user.name}
+          isFetching={user.isFetching}
+          error={user.error}
+          handleLogin={handleLoginAction}
+        />
       </div>
     )
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     user: store.user, // вытащили из стора (из редьюсера user все в переменную thid.props.user)
-    page: store.page
+    page: store.page,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getPhotosAction: year => dispatch(getPhotos(year)),
+    getPhotosAction: (year) => dispatch(getPhotos(year)),
     // "приклеили" в this.props.handleLoginAction функцию, которая умеет диспатчить handleLogin
-    handleLoginAction: () => dispatch(handleLogin())
+    handleLoginAction: () => dispatch(handleLogin()),
   }
 }
 
@@ -147,12 +171,16 @@ export default connect(
 _src/reducers/user.js_
 
 ```js
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL } from '../actions/UserActions'
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+} from '../actions/UserActions'
 
 const initialState = {
   name: '',
   error: '', // добавили для сохранения текста ошибки
-  isFetching: false // добавили для реакции на статус "загружаю" или нет
+  isFetching: false, // добавили для реакции на статус "загружаю" или нет
 }
 
 export function userReducer(state = initialState, action) {
@@ -161,10 +189,18 @@ export function userReducer(state = initialState, action) {
       return { ...state, isFetching: true, error: '' }
 
     case LOGIN_SUCCESS:
-      return { ...state, isFetching: false, name: action.payload }
+      return {
+        ...state,
+        isFetching: false,
+        name: action.payload,
+      }
 
     case LOGIN_FAIL:
-      return { ...state, isFetching: false, error: action.payload.message }
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload.message,
+      }
 
     default:
       return state
@@ -191,7 +227,12 @@ export class User extends React.Component {
     const { name, error, isFetching } = this.props
 
     if (error) {
-      return <p>Во время запроса произошла ошибка, обновите страницу</p>
+      return (
+        <p>
+          Во время запроса произошла ошибка, обновите
+          страницу
+        </p>
+      )
     }
 
     if (isFetching) {
@@ -202,14 +243,19 @@ export class User extends React.Component {
       return <p>Привет, {name}!</p>
     } else {
       return (
-        <button className="btn" onClick={this.props.handleLogin}>
+        <button
+          className="btn"
+          onClick={this.props.handleLogin}
+        >
           Войти
         </button>
       )
     }
   }
   render() {
-    return <div className="ib user">{this.renderTemplate()}</div>
+    return (
+      <div className="ib user">{this.renderTemplate()}</div>
+    )
   }
 }
 
@@ -217,7 +263,7 @@ User.propTypes = {
   name: PropTypes.string.isRequired,
   error: PropTypes.string,
   isFetching: PropTypes.bool.isRequired,
-  handleLogin: PropTypes.func.isRequired
+  handleLogin: PropTypes.func.isRequired,
 }
 ```
 
@@ -252,7 +298,7 @@ function makeYearPhotos(photos, selectedYear) {
   let createdYear,
     yearPhotos = []
 
-  photos.forEach(item => {
+  photos.forEach((item) => {
     createdYear = new Date(item.date * 1000).getFullYear()
     if (createdYear === selectedYear) {
       yearPhotos.push(item)
@@ -266,28 +312,37 @@ function makeYearPhotos(photos, selectedYear) {
 
 function getMorePhotos(offset, count, year, dispatch) {
   //eslint-disable-next-line no-undef
-  VK.Api.call('photos.getAll', { extended: 1, count: count, offset: offset, v: '5.80' }, r => {
-    try {
-      photosArr = photosArr.concat(r.response.items)
-      if (offset <= r.response.count) {
-        offset += 200 // максимальное количество фото которое можно получить за 1 запрос
-        getMorePhotos(offset, count, year, dispatch)
-      } else {
-        let photos = makeYearPhotos(photosArr, year)
-        cached = true
+  VK.Api.call(
+    'photos.getAll',
+    {
+      extended: 1,
+      count: count,
+      offset: offset,
+      v: '5.80',
+    },
+    (r) => {
+      try {
+        photosArr = photosArr.concat(r.response.items)
+        if (offset <= r.response.count) {
+          offset += 200 // максимальное количество фото которое можно получить за 1 запрос
+          getMorePhotos(offset, count, year, dispatch)
+        } else {
+          let photos = makeYearPhotos(photosArr, year)
+          cached = true
+          dispatch({
+            type: GET_PHOTOS_SUCCESS,
+            payload: photos,
+          })
+        }
+      } catch (e) {
         dispatch({
-          type: GET_PHOTOS_SUCCESS,
-          payload: photos
+          type: GET_PHOTOS_FAIL,
+          error: true,
+          payload: new Error(e),
         })
       }
-    } catch (e) {
-      dispatch({
-        type: GET_PHOTOS_FAIL,
-        error: true,
-        payload: new Error(e)
-      })
     }
-  })
+  )
 }
 ```
 
@@ -309,7 +364,7 @@ function makeYearPhotos(photos, selectedYear) {
   let createdYear,
     yearPhotos = []
 
-  photos.forEach(item => {
+  photos.forEach((item) => {
     createdYear = new Date(item.date * 1000).getFullYear()
     if (createdYear === selectedYear) {
       yearPhotos.push(item)
@@ -323,42 +378,51 @@ function makeYearPhotos(photos, selectedYear) {
 
 function getMorePhotos(offset, count, year, dispatch) {
   //eslint-disable-next-line no-undef
-  VK.Api.call('photos.getAll', { extended: 1, count: count, offset: offset, v: '5.80' }, r => {
-    try {
-      photosArr = photosArr.concat(r.response.items)
-      if (offset <= r.response.count) {
-        offset += 200 // максимальное количество фото которое можно получить за 1 запрос
-        getMorePhotos(offset, count, year, dispatch)
-      } else {
-        let photos = makeYearPhotos(photosArr, year)
-        cached = true
+  VK.Api.call(
+    'photos.getAll',
+    {
+      extended: 1,
+      count: count,
+      offset: offset,
+      v: '5.80',
+    },
+    (r) => {
+      try {
+        photosArr = photosArr.concat(r.response.items)
+        if (offset <= r.response.count) {
+          offset += 200 // максимальное количество фото которое можно получить за 1 запрос
+          getMorePhotos(offset, count, year, dispatch)
+        } else {
+          let photos = makeYearPhotos(photosArr, year)
+          cached = true
+          dispatch({
+            type: GET_PHOTOS_SUCCESS,
+            payload: photos,
+          })
+        }
+      } catch (e) {
         dispatch({
-          type: GET_PHOTOS_SUCCESS,
-          payload: photos
+          type: GET_PHOTOS_FAIL,
+          error: true,
+          payload: new Error(e),
         })
       }
-    } catch (e) {
-      dispatch({
-        type: GET_PHOTOS_FAIL,
-        error: true,
-        payload: new Error(e)
-      })
     }
-  })
+  )
 }
 
 export function getPhotos(year) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch({
       type: GET_PHOTOS_REQUEST,
-      payload: year
+      payload: year,
     })
 
     if (cached) {
       let photos = makeYearPhotos(photosArr, year)
       dispatch({
         type: GET_PHOTOS_SUCCESS,
-        payload: photos
+        payload: photos,
       })
     } else {
       getMorePhotos(0, 200, year, dispatch)
@@ -376,25 +440,43 @@ export function getPhotos(year) {
 _src/reducers/page.js_
 
 ```js
-import { GET_PHOTOS_REQUEST, GET_PHOTOS_SUCCESS, GET_PHOTOS_FAIL } from '../actions/PageActions'
+import {
+  GET_PHOTOS_REQUEST,
+  GET_PHOTOS_SUCCESS,
+  GET_PHOTOS_FAIL,
+} from '../actions/PageActions'
 
 const initialState = {
   year: 2018,
   photos: [],
   isFetching: false,
-  error: ''
+  error: '',
 }
 
 export function pageReducer(state = initialState, action) {
   switch (action.type) {
     case GET_PHOTOS_REQUEST:
-      return { ...state, year: action.payload, isFetching: true, error: '' }
+      return {
+        ...state,
+        year: action.payload,
+        isFetching: true,
+        error: '',
+      }
 
     case GET_PHOTOS_SUCCESS:
-      return { ...state, photos: action.payload, isFetching: false, error: '' }
+      return {
+        ...state,
+        photos: action.payload,
+        isFetching: false,
+        error: '',
+      }
 
     case GET_PHOTOS_FAIL:
-      return { ...state, error: action.payload.message, isFetching: false }
+      return {
+        ...state,
+        error: action.payload.message,
+        isFetching: false,
+      }
 
     default:
       return state
@@ -409,7 +491,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export class Page extends React.Component {
-  onBtnClick = e => {
+  onBtnClick = (e) => {
     const year = +e.currentTarget.innerText
     this.props.getPhotos(year) // setYear -> getPhotos
   }
@@ -417,7 +499,11 @@ export class Page extends React.Component {
     const { photos, isFetching, error } = this.props
 
     if (error) {
-      return <p className="error">Во время загрузки фото произошла ошибка</p>
+      return (
+        <p className="error">
+          Во время загрузки фото произошла ошибка
+        </p>
+      )
     }
 
     if (isFetching) {
@@ -472,7 +558,7 @@ Page.propTypes = {
   photos: PropTypes.array.isRequired,
   getPhotos: PropTypes.func.isRequired,
   error: PropTypes.string,
-  isFetching: PropTypes.bool.isRequired
+  isFetching: PropTypes.bool.isRequired,
 }
 ```
 
@@ -484,7 +570,7 @@ Page.propTypes = {
 if (isFetching) {
   return <p>Загрузка...</p>
 } else {
-  return photos.map(entry => (
+  return photos.map((entry) => (
     <div key={entry.id} className="photo">
       <p>
         <img src={entry.sizes[0].url} alt="" />

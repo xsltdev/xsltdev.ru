@@ -45,7 +45,9 @@ app.get('/set-cookie', (req, res) => {
   res.send('Set Cookie')
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 Первым параметром функции промежуточной обработки cookie-parser передается секретный ключ, который используется в целях безопасности для шифрования значений файлов перед их отправкой клиенту. Для получения значений cookie с клиента необходимо обратиться к одноименному свойству объекта запроса.
@@ -62,7 +64,7 @@ app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`
 ```js
 res.cookie('token', '12345ABCDE', {
   maxAge: 3600 * 24,
-  secure: true
+  secure: true,
 })
 ```
 

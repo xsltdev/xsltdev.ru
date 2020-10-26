@@ -265,8 +265,14 @@ MIME-тип
     <title>А</title>
   </head>
   <body>
-    <p><a href="image/xxx.jpg">Посмотрите на мою фотографию!</a></p>
-    <p><a href="page/tip.html">Как сделать такое же фото?</a></p>
+    <p>
+      <a href="image/xxx.jpg"
+        >Посмотрите на мою фотографию!</a
+      >
+    </p>
+    <p>
+      <a href="page/tip.html">Как сделать такое же фото?</a>
+    </p>
   </body>
 </html>
 ```
@@ -326,7 +332,9 @@ MIME-тип
 ### Создания ссылки для написания письма
 
 ```html
-<a href="mailto:nowhere@mozilla.org">Отправить сообщение в никуда</a>
+<a href="mailto:nowhere@mozilla.org"
+  >Отправить сообщение в никуда</a
+>
 ```
 
 Для дополнительных деталей использования `mailto`, таких как тема, текст или другое, смотрите [RFC 6068](http://tools.ietf.org/html/6068).

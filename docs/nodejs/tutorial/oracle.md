@@ -45,10 +45,10 @@ oracledb
   .getConnection({
     user: 'user',
     password: 'password',
-    connectString: 'localhost/XXXDB3'
+    connectString: 'localhost/XXXDB3',
   })
-  .then(conn => (connection = conn))
-  .catch(err => throw err)
+  .then((conn) => (connection = conn))
+  .catch((err) => throw err)
 ```
 
 ## Выполнение запросов
@@ -58,17 +58,19 @@ oracledb
 ```js
 connection
   .execute(`SELECT *  FROM cars`)
-  .then(result => console.log(result))
-  .catch(err => throw err)
+  .then((result) => console.log(result))
+  .catch((err) => throw err)
 ```
 
 Если в запросе вам необходимо использовать переданные с клиента данные, то для безопасности осуществления SQL-инъекции внешние данные передаются в запрос вторым параметром в виде массива.
 
 ```js
 connection
-  .execute(`SELECT *  FROM cars WHERE model = :model`, ['Audi'])
-  .then(result => console.log(result))
-  .catch(err => throw err)
+  .execute(`SELECT *  FROM cars WHERE model = :model`, [
+    'Audi',
+  ])
+  .then((result) => console.log(result))
+  .catch((err) => throw err)
 ```
 
 В самом запросе внешние данные определяются с помощью двоеточия и имени параметра. Но их подстановка будет происходить по порядку: для первой переменной в запросе - первое значение из массива и т. д.

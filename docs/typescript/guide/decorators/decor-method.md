@@ -5,7 +5,11 @@
 Декоратор метода также представляет функцию, которая принимает три параметра:
 
 ```typescript
-function deprecated(target: any, propertyName: string, descriptor: PropertyDescriptor) {
+function deprecated(
+  target: any,
+  propertyName: string,
+  descriptor: PropertyDescriptor
+) {
   console.log('Method is deprecated')
 }
 ```
@@ -34,7 +38,11 @@ interface PropertyDescriptor {
 Определим простейший декоратор для метода:
 
 ```typescript
-function readonly(target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
+function readonly(
+  target: Object,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) {
   descriptor.writable = false
 }
 
@@ -50,7 +58,7 @@ class User {
   }
 }
 let tom = new User('Tom')
-tom.print = function() {
+tom.print = function () {
   console.log('print has been changed')
 }
 tom.print() // Tom
@@ -61,7 +69,7 @@ tom.print() // Tom
 В итоге после применения данного декоратора следующая инструкция
 
 ```typescript
-tom.print = function() {
+tom.print = function () {
   console.log('print has been changed')
 }
 ```
@@ -73,9 +81,13 @@ tom.print = function() {
 Декоратор метода позволяет нам манипулировать параметрами и возвращаемым результатом метода. Например, определим следующий декоратор:
 
 ```typescript
-function log(target: Object, method: string, descriptor: PropertyDescriptor) {
+function log(
+  target: Object,
+  method: string,
+  descriptor: PropertyDescriptor
+) {
   let originalMethod = descriptor.value
-  descriptor.value = function(...args) {
+  descriptor.value = function (...args) {
     console.log(JSON.stringify(args))
     let returnValue = originalMethod.apply(this, args)
     console.log(`${JSON.stringify(args)} => ${returnValue}`)
@@ -104,7 +116,7 @@ let originalMethod = descriptor.value
 Затем происходит переустановка значения `descriptor.value`.
 
 ```typescript
-descriptor.value = function(...args) {}
+descriptor.value = function (...args) {}
 ```
 
 Параметр `...args` - это все те параметры, которые будут передаваться в функцию. И мы можем логгировать эти параметры. Далее вызывается оригинальная функция, которой передаются параметры `args`:
@@ -126,7 +138,11 @@ let returnValue = originalMethod.apply(this, args)
 Декоратор параметра метода представляет функцию, которая принимает три параметра:
 
 ```typescript
-function MyParameterDecorator(target: Object, propertyKey: string, parameterIndex: number) {
+function MyParameterDecorator(
+  target: Object,
+  propertyKey: string,
+  parameterIndex: number
+) {
   // код декоратора
 }
 ```
@@ -136,7 +152,11 @@ function MyParameterDecorator(target: Object, propertyKey: string, parameterInde
 Определим декоратор для параметра метода:
 
 ```typescript
-function logParameter(target: any, key: string, index: number) {
+function logParameter(
+  target: any,
+  key: string,
+  index: number
+) {
   var metadataKey = `__log_${key}_parameters`
 
   if (Array.isArray(target[metadataKey])) {
@@ -147,7 +167,7 @@ function logParameter(target: any, key: string, index: number) {
 }
 function logMethod(target, key, descriptor) {
   var originalMethod = descriptor.value
-  descriptor.value = function(...args: any[]) {
+  descriptor.value = function (...args: any[]) {
     var metadataKey = `__log_${key}_parameters`
     var indices = target[metadataKey]
 
@@ -162,7 +182,9 @@ function logMethod(target, key, descriptor) {
       var result = originalMethod.apply(this, args)
       return result
     } else {
-      var a = args.map(a => JSON.stringify(a) || a.toString()).join()
+      var a = args
+        .map((a) => JSON.stringify(a) || a.toString())
+        .join()
       var result = originalMethod.apply(this, args)
       var r = JSON.stringify(result)
       console.log(`Call: ${key}(${a}) => ${r}`)

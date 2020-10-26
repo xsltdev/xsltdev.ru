@@ -15,7 +15,7 @@ import { Component } from '@angular/core'
     <p #userName>{{ name }}</p>
     <p>{{ userName.textContent }}</p>
     <input type="text" [(ngModel)]="name" />
-  `
+  `,
 })
 export class AppComponent {
   name: string = 'Tom'
@@ -41,9 +41,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'child-comp',
-  template: `
-    <p>{{ counter }}</p>
-  `
+  template: ` <p>{{ counter }}</p> `,
 })
 export class ChildComponent {
   counter: number = 0
@@ -69,7 +67,7 @@ import { Component } from '@angular/core'
     <child-comp #counter></child-comp>
     <button (click)="counter.increment()">+</button>
     <button (click)="counter.decrement()">-</button>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -93,7 +91,7 @@ import { Component } from '@angular/core'
     <child-comp #counter></child-comp>
     <button (click)="increment()">+</button>
     <button (click)="decrement()">-</button>
-  `
+  `,
 })
 export class AppComponent {
   increment() {
@@ -119,7 +117,7 @@ import { ChildComponent } from './child.component'
     <child-comp></child-comp>
     <button (click)="increment()">+</button>
     <button (click)="decrement()">-</button>
-  `
+  `,
 })
 export class AppComponent {
   @ViewChild(ChildComponent)
@@ -141,7 +139,11 @@ export class AppComponent {
 Несмотря на то, что выше мы не использовали переменные, тем не менее с помощью декоратора `ViewChild` также можно связать свойство и переменную из шаблона. Так, изменим код главного компонента:
 
 ```typescript
-import { Component, ViewChild, ElementRef } from '@angular/core'
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+} from '@angular/core'
 
 @Component({
   selector: 'my-app',
@@ -149,7 +151,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core'
     <p #nameText>{{ name }}</p>
     <p>{{ nameText.textContent }}</p>
     <button (click)="change()">Изменить</button>
-  `
+  `,
 })
 export class AppComponent {
   @ViewChild('nameText')
@@ -158,7 +160,9 @@ export class AppComponent {
   name: string = 'Tom'
 
   change() {
-    console.log(this.nameParagraph.nativeElement.textContent)
+    console.log(
+      this.nameParagraph.nativeElement.textContent
+    )
     this.nameParagraph.nativeElement.textContent = 'hell'
   }
 }
@@ -181,7 +185,7 @@ import { Component } from '@angular/core'
     <child-comp>
       <h3 #headerContent>Добро пожаловать {{ name }}!</h3>
     </child-comp>
-  `
+  `,
 })
 export class AppComponent {
   name: string = 'Tom'
@@ -193,13 +197,18 @@ export class AppComponent {
 Причем поскольку данные из родительского компонента передаются в дочерний напрямую, то для получения этих данных в дочернем компоненте будет использоваться элемент `ng-content`:
 
 ```typescript
-import { Component, ContentChild, ElementRef } from '@angular/core'
+import {
+  Component,
+  ContentChild,
+  ElementRef,
+} from '@angular/core'
 
 @Component({
   selector: 'child-comp',
   template: `
-    <ng-content></ng-content> <button (click)="change()">Изменить</button>
-  `
+    <ng-content></ng-content>
+    <button (click)="change()">Изменить</button>
+  `,
 })
 export class ChildComponent {
   @ContentChild('headerContent')

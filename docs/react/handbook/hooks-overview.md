@@ -22,7 +22,9 @@ function Example() {
   return (
     <div>
       <p>Вы нажали {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>Нажми на меня</button>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
     </div>
   )
 }
@@ -41,7 +43,9 @@ function ExampleWithManyStates() {
   // Объявляем несколько переменных состояния!
   const [age, setAge] = useState(42)
   const [fruit, setFruit] = useState('банан')
-  const [todos, setTodos] = useState([{ text: 'Изучить хуки' }])
+  const [todos, setTodos] = useState([
+    { text: 'Изучить хуки' },
+  ])
   // ...
 }
 ```
@@ -81,7 +85,9 @@ function Example() {
   return (
     <div>
       <p>Вы нажали {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>Нажми на меня</button>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
     </div>
   )
 }
@@ -102,10 +108,16 @@ function FriendStatus(props) {
   }
 
   useEffect(() => {
-    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
 
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        props.friend.id,
+        handleStatusChange
+      )
     }
   })
 
@@ -179,9 +191,15 @@ function useFriendStatus(friendID) {
   }
 
   useEffect(() => {
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      friendID,
+      handleStatusChange
+    )
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        friendID,
+        handleStatusChange
+      )
     }
   })
 
@@ -208,7 +226,11 @@ function FriendStatus(props) {
 function FriendListItem(props) {
   const isOnline = useFriendStatus(props.friend.id)
 
-  return <li style={{ color: isOnline ? 'green' : 'black' }}>{props.friend.name}</li>
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      {props.friend.name}
+    </li>
+  )
 }
 ```
 

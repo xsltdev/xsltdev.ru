@@ -30,8 +30,11 @@ _auth.guard.ts_
 
 ```ts
 @Injectable()
-export class AuthGuard implements CanActivate, CanActivateChild {
-  constructor(@Inject(AuthService) private auth: AuthService) {}
+export class AuthGuard
+  implements CanActivate, CanActivateChild {
+  constructor(
+    @Inject(AuthService) private auth: AuthService
+  ) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -61,14 +64,14 @@ const routes: Routes = [
     canActivateChild: [AuthGuard],
     children: [
       { path: 'about', component: AboutComponent },
-      { path: 'contacts', component: ContactsComponent }
-    ]
-  }
+      { path: 'contacts', component: ContactsComponent },
+    ],
+  },
 ]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
 ```
@@ -91,7 +94,8 @@ _can-deactivate.guard.ts_
 
 ```ts
 @Injectable()
-export class DataChangesGuard implements CanDeactivate<BuyTicketFormComponent> {
+export class DataChangesGuard
+  implements CanDeactivate<BuyTicketFormComponent> {
   constructor() {}
 
   canDeactivate(
@@ -101,7 +105,9 @@ export class DataChangesGuard implements CanDeactivate<BuyTicketFormComponent> {
     nextState: RouterStateSnapshot
   ) {
     if (component.buyTicketForm.dirty)
-      return window.confirm('Unsaved data detected. Want to exit?')
+      return window.confirm(
+        'Unsaved data detected. Want to exit?'
+      )
     else return true
   }
 }
@@ -123,14 +129,19 @@ _app-routing.module.ts_
 
 ```ts
 export interface CanComponentDeactivate {
-  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean
+  canDeactivate: () =>
+    | Observable<boolean>
+    | Promise<boolean>
+    | boolean
 }
 
 @Injectable({ providedIn: 'root' })
 export class CanDeactivateGuard
   implements CanDeactivate<CanComponentDeactivate> {
   canDeactivate(component: CanComponentDeactivate) {
-    return component.canDeactivate ? component.canDeactivate() : true
+    return component.canDeactivate
+      ? component.canDeactivate()
+      : true
   }
 }
 ```
@@ -144,13 +155,16 @@ export class CanDeactivateGuard
 ```ts
 @Injectable()
 export class ContactsResovler implements Resolve<any> {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     return this.http.get('/api/contacts').pipe(
       tap(
-        res => of(res),
-        err => {
+        (res) => of(res),
+        (err) => {
           this.router.navigate(['/'])
           return EMPTY
         }

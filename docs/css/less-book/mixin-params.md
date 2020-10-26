@@ -34,7 +34,9 @@
   width: 50px;
   height: 50px;
   -webkit-filter: blur(5px);
-  filter: blur(5px); /* радиус эффекта размытия изображения */
+  filter: blur(
+    5px
+  ); /* радиус эффекта размытия изображения */
 }
 ```
 
@@ -74,13 +76,17 @@
   width: 50px;
   height: 50px;
   -webkit-filter: blur(5px);
-  filter: blur(5px); /* радиус эффекта размытия изображения */
+  filter: blur(
+    5px
+  ); /* радиус эффекта размытия изображения */
 }
 .my-another-element {
   width: 50px;
   height: 50px;
   -webkit-filter: blur(10px);
-  filter: blur(10px); /* радиус эффекта размытия изображения */
+  filter: blur(
+    10px
+  ); /* радиус эффекта размытия изображения */
 }
 ```
 
@@ -270,10 +276,10 @@
   text-shadow: @arguments;
 }
 .my-element {
-  .orangeShadow(2px; 3px) // вызываем примесь с четырьмя параметрами;;;;;;;;;;;
+  .orangeShadow(2px; 3px) // вызываем примесь с четырьмя параметрами;
 }
 .my-another-element {
-  .orangeShadow(-2px; 3px; @color:red) // вызываем примесь с тремя параметрами;;;;;;;;;;;
+  .orangeShadow(-2px; 3px; @color:red) // вызываем примесь с тремя параметрами;
 }
 ```
 
@@ -301,7 +307,7 @@
   text-shadow: @shadow;
 }
 .my-element {
-  .mixin(red; -2px; 3px; 1px; #777) // вызываем примесь с пятью параметрами;;;;;;;;;;;
+  .mixin(red; -2px; 3px; 1px; #777) // вызываем примесь с пятью параметрами;
 }
 ```
 
@@ -332,10 +338,10 @@
 }
 
 .my-element {
-  .mixin(1px; solid; green) // вызываем примесь с тремя параметрами;;;;;;;;;;;
+  .mixin(1px; solid; green) // вызываем примесь с тремя параметрами;
 }
 .my-another-element {
-  .anotherMixin(red; 1px; solid) // вызываем примесь с тремя параметрами;;;;;;;;;;;
+  .anotherMixin(red; 1px; solid) // вызываем примесь с тремя параметрами;
 }
 ```
 

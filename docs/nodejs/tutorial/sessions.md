@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(
   session({
     secret: 'you secret key',
-    saveUninitialized: true
+    saveUninitialized: true,
   })
 )
 
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
   res.sendStatus(200)
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```
@@ -102,10 +102,10 @@ app.use(
     store: new redisStorage({
       host: host,
       port: 6379,
-      client: client
+      client: client,
     }),
     secret: 'you secret key',
-    saveUninitialized: true
+    saveUninitialized: true,
   })
 )
 
@@ -121,7 +121,7 @@ app.get('/', (req, res) => {
   res.sendStatus(200)
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```
@@ -136,8 +136,8 @@ app.listen(port, host, function() {
 app.use(
   session({
     store: new redisStorage({
-      ttl: 3600000
-    })
+      ttl: 3600000,
+    }),
   })
 )
 ```

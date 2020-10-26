@@ -69,40 +69,62 @@ description: Тег template (от англ. template — шаблон) пред
     </table>
     <script>
       var data = [
-        { hardness: 1, mineral: 'Тальк', workability: 'Царапается ногтём' },
-        { hardness: 2, mineral: 'Гипс', workability: 'Царапается ногтём' },
-        { hardness: 3, mineral: 'Кальцит', workability: 'Царапается медью' },
+        {
+          hardness: 1,
+          mineral: 'Тальк',
+          workability: 'Царапается ногтём',
+        },
+        {
+          hardness: 2,
+          mineral: 'Гипс',
+          workability: 'Царапается ногтём',
+        },
+        {
+          hardness: 3,
+          mineral: 'Кальцит',
+          workability: 'Царапается медью',
+        },
         {
           hardness: 4,
           mineral: 'Флюорит',
-          workability: 'Легко царапается ножом, оконным стеклом'
+          workability:
+            'Легко царапается ножом, оконным стеклом',
         },
         {
           hardness: 5,
           mineral: 'Апатит',
-          workability: 'С усилием царапается ножом, оконным стеклом'
+          workability:
+            'С усилием царапается ножом, оконным стеклом',
         },
         {
           hardness: 6,
           mineral: 'Ортоклаз',
-          workability: 'Царапает стекло. Обрабатывается напильником'
+          workability:
+            'Царапает стекло. Обрабатывается напильником',
         },
         {
           hardness: 7,
           mineral: 'Кварц',
-          workability: 'Поддаётся обработке алмазом, царапает стекло'
+          workability:
+            'Поддаётся обработке алмазом, царапает стекло',
         },
         {
           hardness: 8,
           mineral: 'Топаз',
-          workability: 'Поддаётся обработке алмазом, царапает стекло'
+          workability:
+            'Поддаётся обработке алмазом, царапает стекло',
         },
         {
           hardness: 9,
           mineral: 'Корунд',
-          workability: 'Поддаётся обработке алмазом, царапает стекло'
+          workability:
+            'Поддаётся обработке алмазом, царапает стекло',
         },
-        { hardness: 10, mineral: 'Алмаз', workability: 'Царапает стекло' }
+        {
+          hardness: 10,
+          mineral: 'Алмаз',
+          workability: 'Царапает стекло',
+        },
       ]
       var template = document.querySelector('#row')
       for (var i = 0; i < data.length; i++) {

@@ -213,7 +213,8 @@ description: Тег input (от англ. input - ввод) является о�
 **Синтаксис**
 
 ```html
-<input type="radio" checked /> <input type="checkbox" checked />
+<input type="radio" checked />
+<input type="checkbox" checked />
 ```
 
 **Значения**
@@ -406,8 +407,8 @@ description: Тег input (от англ. input - ввод) является о�
 ```html
 <input list="<идентификатор>" />
 <datalist id="<идентификатор>">
-  <option value="Текст1"> </option>
-  <option value="Текст2"> </option>
+  <option value="Текст1"></option>
+  <option value="Текст2"></option>
 </datalist>
 ```
 
@@ -508,7 +509,8 @@ description: Тег input (от англ. input - ввод) является о�
 **Синтаксис**
 
 ```html
-<input type="file" multiple /> <input type="email" multiple />
+<input type="file" multiple />
+<input type="email" multiple />
 ```
 
 **Значения**
@@ -615,7 +617,8 @@ description: Тег input (от англ. input - ввод) является о�
 **Синтаксис**
 
 ```html
-<input type="text" readonly /> <input type="password" readonly />
+<input type="text" readonly />
+<input type="password" readonly />
 ```
 
 **Значения**
@@ -651,7 +654,8 @@ description: Тег input (от англ. input - ввод) является о�
 **Синтаксис**
 
 ```html
-<input type="text" size="<число>" /> <input type="password" size="<число>" />
+<input type="text" size="<число>" />
+<input type="password" size="<число>" />
 ```
 
 **Значения**
@@ -687,7 +691,8 @@ description: Тег input (от англ. input - ввод) является о�
 **Синтаксис**
 
 ```html
-<input type="number" step="<число>" /> <input type="range" step="<число>" />
+<input type="number" step="<число>" />
+<input type="range" step="<число>" />
 ```
 
 **Значения**
@@ -893,13 +898,24 @@ description: Тег input (от англ. input - ввод) является о�
       </p>
       <p>
         <b>Каким браузером в основном пользуетесь:</b><br />
-        <input type="radio" name="browser" value="ie" /> Internet Explorer<br />
-        <input type="radio" name="browser" value="opera" /> Opera<br />
-        <input type="radio" name="browser" value="firefox" /> Firefox<br />
+        <input type="radio" name="browser" value="ie" />
+        Internet Explorer<br />
+        <input type="radio" name="browser" value="opera" />
+        Opera<br />
+        <input
+          type="radio"
+          name="browser"
+          value="firefox"
+        />
+        Firefox<br />
       </p>
       <p>
         Комментарий<br />
-        <textarea name="comment" cols="40" rows="3"></textarea>
+        <textarea
+          name="comment"
+          cols="40"
+          rows="3"
+        ></textarea>
       </p>
       <p>
         <input type="submit" value="Отправить" />

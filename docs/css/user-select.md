@@ -105,8 +105,15 @@ allow typing in the <html> container */
   </head>
   <body>
     <p>Этот текст нельзя выделить</p>
-    <p><input type="text" value="Этот текст можно выделить" /></p>
-    <p class="enable">Этот <b>текст</b> тоже можно выделить</p>
+    <p>
+      <input
+        type="text"
+        value="Этот текст можно выделить"
+      />
+    </p>
+    <p class="enable">
+      Этот <b>текст</b> тоже можно выделить
+    </p>
   </body>
 </html>
 ```

@@ -35,7 +35,7 @@ const app = express()
 
 app.use(express.static(__dirname + '/public'))
 
-app.use('/', function(request, response) {
+app.use('/', function (request, response) {
   response.send('<h1>Главная страница</h1>')
 })
 
@@ -67,7 +67,7 @@ const app = express()
 
 app.use('/static', express.static(__dirname + '/public'))
 
-app.use('/', function(request, response) {
+app.use('/', function (request, response) {
   response.send('<h1>Главная страница</h1>')
 })
 

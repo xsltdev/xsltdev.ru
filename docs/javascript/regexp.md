@@ -525,12 +525,15 @@ new RegExp('hey', 'ig').test('HEy') // ✅
 Вместо строки можно использовать функцию, чтобы делать ещё более интересные вещи. В неё будет передан ряд аргументов, таких как возвращают методы `String.match(RegExp)` или `RegExp.exec(String)`, где количество аргументов зависит от количества групп:
 
 ```js
-'Hello, world!'.replace(/(\w+), (\w+)!/, (matchedString, first, second) => {
-  console.log(first)
-  console.log(second)
+'Hello, world!'.replace(
+  /(\w+), (\w+)!/,
+  (matchedString, first, second) => {
+    console.log(first)
+    console.log(second)
 
-  return `${second.toUpperCase()}: ${first}!!!`
-})
+    return `${second.toUpperCase()}: ${first}!!!`
+  }
+)
 //"WORLD: Hello!!!"
 ```
 
@@ -556,7 +559,9 @@ new RegExp('hey', 'ig').test('HEy') // ✅
 но что если у нас есть больше слов после числа, это отвлекает
 
 ```js
-;/\$(.+)\s?/.exec('This costs $100 and it is less than $200')[1]
+;/\$(.+)\s?/.exec(
+  'This costs $100 and it is less than $200'
+)[1]
 //100 and it is less than $200
 ```
 
@@ -565,7 +570,9 @@ new RegExp('hey', 'ig').test('HEy') // ✅
 Чтобы исправить это, нам нужно указать что регулярное выражение должно быть ленивым и найти наименьшее количество совпадений. Мы можем сделать это с помощью символа `?` после квантификатора:
 
 ```js
-;/\$(.+?)\s/.exec('This costs $100 and it is less than $200')[1]
+;/\$(.+?)\s/.exec(
+  'This costs $100 and it is less than $200'
+)[1]
 //100
 ```
 

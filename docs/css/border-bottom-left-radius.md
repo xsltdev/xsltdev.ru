@@ -70,10 +70,16 @@ border-bottom-left-radius: 0;
     </style>
   </head>
   <body>
-    <div style="border-bottom-left-radius: 20px" class="radius">
+    <div
+      style="border-bottom-left-radius: 20px"
+      class="radius"
+    >
       border-bottom-left-radius: 20px
     </div>
-    <div style="border-bottom-left-radius: 70px 40px" class="radius">
+    <div
+      style="border-bottom-left-radius: 70px 40px"
+      class="radius"
+    >
       border-bottom-left-radius: 70px 40px
     </div>
   </body>

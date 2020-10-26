@@ -58,7 +58,7 @@ _contacts-list.component.ts_
   selector: 'contacts-list',
   template: `
     <contacts-item [name]="'Peter'"></contacts-item>
-  `
+  `,
 })
 export class ContactsListComponent {
   contactPerson: string
@@ -70,9 +70,7 @@ _contacts-item.component.ts_
 ```ts
 @Component({
   selector: 'contacts-item',
-  template: `
-    <p>{{ name }}</p>
-  `
+  template: ` <p>{{ name }}</p> `,
 })
 export class ContactsItemComponent {
   _name: string = null

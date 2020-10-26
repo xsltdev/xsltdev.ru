@@ -95,7 +95,7 @@ let items = [1, 2, 3]
 items.forEach((item, index, array) => console.log(item))
 
 // Все должно работать!
-items.forEach(item => console.log(item))
+items.forEach((item) => console.log(item))
 ```
 
 Теперь посмотрим, как обрабатываются типы возвращаемых значений. Для этого используем две функции, отличающиеся только типами возвращаемых значений:
@@ -119,7 +119,7 @@ y = x // Ошибка, поскольку у x() нет свойства locatio
 ```ts
 enum EventType {
   Mouse,
-  Keyboard
+  Keyboard,
 }
 
 interface Event {
@@ -133,16 +133,25 @@ interface KeyEvent extends Event {
   keyCode: number
 }
 
-function listenEvent(eventType: EventType, handler: (n: Event) => void) {
+function listenEvent(
+  eventType: EventType,
+  handler: (n: Event) => void
+) {
   /* ... */
 }
 
 // Ненадежно, но полезно и часто используется
-listenEvent(EventType.Mouse, (e: MouseEvent) => console.log(e.x + ',' + e.y))
+listenEvent(EventType.Mouse, (e: MouseEvent) =>
+  console.log(e.x + ',' + e.y)
+)
 
 // Альтернативы, нежелательные из-за ненадежности
-listenEvent(EventType.Mouse, (e: Event) => console.log((<MouseEvent>e).x + ',' + (<MouseEvent>e).y))
-listenEvent(EventType.Mouse, <(e: Event) => void>((e: MouseEvent) => console.log(e.x + ',' + e.y)))
+listenEvent(EventType.Mouse, (e: Event) =>
+  console.log((<MouseEvent>e).x + ',' + (<MouseEvent>e).y)
+)
+listenEvent(EventType.Mouse, <(e: Event) => void>(
+  ((e: MouseEvent) => console.log(e.x + ',' + e.y))
+))
 
 // Не допускается (явная ошибка). Требуется безопасность типов для полностью несовместимых типов
 listenEvent(EventType.Mouse, (e: number) => console.log(e))
@@ -160,7 +169,10 @@ listenEvent(EventType.Mouse, (e: number) => console.log(e))
 В пример полезности этого приведем распространенный прием — функцию, которая принимает функцию обратного вызова и вызывает ее с некоторым предсказуемым (для разработчика), но неизвестным (для системы типов) числом аргументов:
 
 ```ts
-function invokeLater(args: any[], callback: (...args: any[]) => void) {
+function invokeLater(
+  args: any[],
+  callback: (...args: any[]) => void
+) {
   /* ... Вызвать функцию в аргументами `args` ... */
 }
 
@@ -183,12 +195,12 @@ invokeLater([1, 2], (x?, y?) => console.log(x + ', ' + y))
 ```ts
 enum Status {
   Ready,
-  Waiting
+  Waiting,
 }
 enum Color {
   Red,
   Blue,
-  Green
+  Green,
 }
 
 let status = Status.Ready

@@ -13,7 +13,9 @@ description: Тег label (от англ. label - метка, ярлык) уст
 ## Синтаксис
 
 ```html
-<input id="<идентификатор>" /><label for="<идентификатор>">Текст</label>
+<input id="<идентификатор>" /><label for="<идентификатор>"
+  >Текст</label
+>
 <label><input /> Текст</label>
 ```
 
@@ -63,11 +65,16 @@ description: Тег label (от англ. label - метка, ярлык) уст
     <form action="handler.php">
       <p><b>Выберите напиток</b></p>
       <p>
-        <input type="checkbox" id="check1" /><label for="check1">Коньяк</label
+        <input type="checkbox" id="check1" /><label
+          for="check1"
+          >Коньяк</label
         ><br />
-        <input type="checkbox" id="check2" /><label for="check2">Арманьяк</label
+        <input type="checkbox" id="check2" /><label
+          for="check2"
+          >Арманьяк</label
         ><br />
-        <input type="checkbox" id="check3" /><label for="check3"
+        <input type="checkbox" id="check3" /><label
+          for="check3"
           >Кальвадос</label
         ><br />
       </p>

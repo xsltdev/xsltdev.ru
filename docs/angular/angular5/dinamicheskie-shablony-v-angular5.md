@@ -9,7 +9,11 @@ description: Создание динамических шаблонов, мен�
 Синтаксис: `[(ngModel)]="serverName"`
 
 ```html
-<input type="text" class="form-control" [(ngModel)]="serverName" />
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+/>
 ```
 
 Для использования `[(ngModel)]` необходимо, чтобы был подключен `FormsModule`.
@@ -19,9 +23,7 @@ description: Создание динамических шаблонов, мен�
 `\app\servers\servers.component.html`:
 
 ```html
-<p *ngIf="serverCreated">
-  Server name: {{ serverName }}
-</p>
+<p *ngIf="serverCreated">Server name: {{ serverName }}</p>
 ```
 
 `\app\servers\servers.component.ts`:

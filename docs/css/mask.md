@@ -82,6 +82,7 @@ mask-composite: add;
 }
 
 .anothertarget {
-  mask: url('resources.svg#c1') 50px 30px/10px 10px repeat-x exclude;
+  mask: url('resources.svg#c1') 50px 30px/10px 10px repeat-x
+    exclude;
 }
 ```

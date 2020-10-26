@@ -83,9 +83,15 @@ description: Тег ul (от англ. unordered list — неупорядоче
         second item second subitem
         <!-- Same for the second nested unordered list! -->
         <ul>
-          <li>second item second subitem first sub-subitem</li>
-          <li>second item second subitem second sub-subitem</li>
-          <li>second item second subitem third sub-subitem</li>
+          <li>
+            second item second subitem first sub-subitem
+          </li>
+          <li>
+            second item second subitem second sub-subitem
+          </li>
+          <li>
+            second item second subitem third sub-subitem
+          </li>
         </ul>
       </li>
       <!-- Closing </li> tag for the li that

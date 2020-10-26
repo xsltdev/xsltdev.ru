@@ -21,8 +21,8 @@ let transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: testEmailAccount.user,
-    pass: testEmailAccount.pass
-  }
+    pass: testEmailAccount.pass,
+  },
 })
 
 let result = await transporter.sendMail({
@@ -30,7 +30,8 @@ let result = await transporter.sendMail({
   to: 'user@example.com, user@example.com',
   subject: 'Message from Node js',
   text: 'This message was sent from Node js server.',
-  html: 'This <i>message</i> was sent from <strong>Node js</strong> server.'
+  html:
+    'This <i>message</i> was sent from <strong>Node js</strong> server.',
 })
 
 console.log(result)
@@ -54,8 +55,8 @@ let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'youremail@gmail.com',
-    pass: 'yourpassword'
-  }
+    pass: 'yourpassword',
+  },
 })
 ```
 
@@ -76,10 +77,14 @@ await transporter.sendMail({
   to: 'user@example.com, user@example.com',
   subject: 'Attachments',
   text: 'This message with attachments.',
-  html: 'This <i>message</i> with <strong>attachments</strong>.',
+  html:
+    'This <i>message</i> with <strong>attachments</strong>.',
   attachments: [
     { filename: 'greetings.txt', path: '/assets/files/' },
-    { filename: 'greetings.txt', content: 'Message from file.' },
+    {
+      filename: 'greetings.txt',
+      content: 'Message from file.',
+    },
     { path: 'data:text/plain;base64,QmFzZTY0IG1lc3NhZ2U=' },
     {
       raw: `
@@ -87,9 +92,9 @@ await transporter.sendMail({
           Content-Disposition: attachment;
 
           Message from file.
-        `
-    }
-  ]
+        `,
+    },
+  ],
 })
 ```
 

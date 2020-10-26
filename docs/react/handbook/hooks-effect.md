@@ -19,7 +19,9 @@ function Example() {
   return (
     <div>
       <p>Вы нажали {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>Нажми на меня</button>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
     </div>
   )
 }
@@ -50,7 +52,7 @@ class Example extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 0
+      count: 0,
     }
   }
 
@@ -66,7 +68,13 @@ class Example extends React.Component {
     return (
       <div>
         <p>Вы нажали {this.state.count} раз</p>
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>Нажми на меня</button>
+        <button
+          onClick={() =>
+            this.setState({ count: this.state.count + 1 })
+          }
+        >
+          Нажми на меня
+        </button>
       </div>
     )
   }
@@ -96,7 +104,9 @@ function Example() {
   return (
     <div>
       <p>Вы нажали {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>Нажми на меня</button>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
     </div>
   )
 }
@@ -142,20 +152,28 @@ class FriendStatus extends React.Component {
   constructor(props) {
     super(props)
     this.state = { isOnline: null }
-    this.handleStatusChange = this.handleStatusChange.bind(this)
+    this.handleStatusChange = this.handleStatusChange.bind(
+      this
+    )
   }
 
   componentDidMount() {
-    ChatAPI.subscribeToFriendStatus(this.props.friend.id, this.handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    )
   }
 
   componentWillUnmount() {
-    ChatAPI.unsubscribeFromFriendStatus(this.props.friend.id, this.handleStatusChange)
+    ChatAPI.unsubscribeFromFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    )
   }
 
   handleStatusChange(status) {
     this.setState({
-      isOnline: status.isOnline
+      isOnline: status.isOnline,
     })
   }
 
@@ -191,10 +209,16 @@ function FriendStatus(props) {
       setIsOnline(status.isOnline)
     }
 
-    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
     // Указываем, как сбросить этот эффект:
     return function cleanup() {
-      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        props.friend.id,
+        handleStatusChange
+      )
     }
   })
 
@@ -223,9 +247,15 @@ useEffect(() => {
     setIsOnline(status.isOnline)
   }
 
-  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+  ChatAPI.subscribeToFriendStatus(
+    props.friend.id,
+    handleStatusChange
+  )
   return () => {
-    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.unsubscribeFromFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
   }
 })
 ```
@@ -306,9 +336,15 @@ function FriendStatusWithCounter(props) {
       setIsOnline(status.isOnline)
     }
 
-    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        props.friend.id,
+        handleStatusChange
+      )
     }
   })
   // ...
@@ -442,9 +478,15 @@ useEffect(() => {
     setIsOnline(status.isOnline)
   }
 
-  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+  ChatAPI.subscribeToFriendStatus(
+    props.friend.id,
+    handleStatusChange
+  )
   return () => {
-    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.unsubscribeFromFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
   }
 }, [props.friend.id]) // Повторно подписаться, только если props.friend.id изменился
 ```

@@ -87,7 +87,8 @@ background-size: auto;
       div {
         height: 200px; /* Высота блока */
         border: 2px solid #000; /* Параметры рамки */
-        background: url('/example/image/mybg.png') 100% 100% no-repeat; /* Добавляем фон */
+        background: url('/example/image/mybg.png') 100% 100%
+          no-repeat; /* Добавляем фон */
         background-size: cover; /* Масштабируем фон */
       }
     </style>

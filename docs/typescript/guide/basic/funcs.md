@@ -28,7 +28,7 @@ console.log(result1)
 Либо мы можем опредить функцию как переменную и затем через переменной вызывать данную функцию:
 
 ```typescript
-let add = function(a: number, b: number): number {
+let add = function (a: number, b: number): number {
   return a + b
 }
 let result1 = add(1, 2)
@@ -137,7 +137,10 @@ console.log(name2) // Вася
 Параметры по умолчанию позволяют задать начальное значение. И если для такого параметра не передается значение, то он использует значение по умолчанию:
 
 ```typescript
-function getName(firstName: string, lastName: string = 'Иванов') {
+function getName(
+  firstName: string,
+  lastName: string = 'Иванов'
+) {
   return firstName + ' ' + lastName
 }
 
@@ -154,7 +157,10 @@ function defaultSurname(): string {
   return 'Smith'
 }
 
-function getName(firstName: string, lastName: string = defaultSurname()) {
+function getName(
+  firstName: string,
+  lastName: string = defaultSurname()
+) {
   return firstName + ' ' + lastName
 }
 
@@ -167,7 +173,10 @@ console.log(name1) // Tom Smith
 Если же необходимо, чтобы функция принимала набор однотипных параметров, то используется знак многоточия, после которого идет массив:
 
 ```typescript
-function addNumbers(firstNumber: number, ...numberArray: number[]): number {
+function addNumbers(
+  firstNumber: number,
+  ...numberArray: number[]
+): number {
   let result = firstNumber
   for (let i = 0; i < numberArray.length; i++) {
     result += numberArray[i]

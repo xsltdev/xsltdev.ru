@@ -85,7 +85,8 @@ animation-duration: 0s;
   </head>
   <body>
     <div class="warn fadeInLeft">
-      Вы не учли, что скалярное поле необходимо и достаточно!
+      Вы не учли, что скалярное поле необходимо и
+      достаточно!
     </div>
   </body>
 </html>

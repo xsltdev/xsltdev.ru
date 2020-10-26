@@ -27,12 +27,14 @@ _books-list.component.ts_
 ```ts
 @Component({
   selector: 'books-list',
-  templateUrl: './books-list.component.html'
+  templateUrl: './books-list.component.html',
 })
 export class AppComponent {
   @ViewChild('book') book
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver
+  ) {}
 
   addBook() {
     this.book.viewContainerRef.clear()
@@ -43,9 +45,11 @@ export class AppComponent {
     let bookItemComponentRef = this.book.viewContainerRef.createComponent(
       bookItemComponent
     )
-    ;(<BookItemComponent>bookItemComponentRef.instance).value = {
+    ;(<BookItemComponent>(
+      bookItemComponentRef.instance
+    )).value = {
       title: 'Great Expectations',
-      author: 'Charles Dickens'
+      author: 'Charles Dickens',
     }
   }
 }
@@ -63,7 +67,10 @@ _book-item.component.html_
 _book-item.component.ts_
 
 ```ts
-@Component({ selector: 'book-item', templateUrl: './book-item.component.html' })
+@Component({
+  selector: 'book-item',
+  templateUrl: './book-item.component.html',
+})
 export class BookItemComponent {
   value: any = null
   constructor() {}

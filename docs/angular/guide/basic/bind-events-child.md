@@ -7,14 +7,19 @@ description: Еще одной формой взаимодействия пре�
 Еще одной формой взаимодействия представляет **привязка к событиям дочернего компонента**. Так, определим следующий дочерний компонент:
 
 ```typescript
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core'
 
 @Component({
   selector: 'child-comp',
   template: `
     <button (click)="change(true)">+</button>
     <button (click)="change(false)">-</button>
-  `
+  `,
 })
 export class ChildComponent {
   @Output() onChanged = new EventEmitter<boolean>()
@@ -37,8 +42,10 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <h2>Количество кликов: {{ clicks }}</h2>
-    <child-comp (onChanged)="onChanged($event)"></child-comp>
-  `
+    <child-comp
+      (onChanged)="onChanged($event)"
+    ></child-comp>
+  `,
 })
 export class AppComponent {
   clicks: number = 0
@@ -59,13 +66,21 @@ export class AppComponent {
 В примере выше мы определяли привязку к событию дочернего компонента: при возникновении события в дочернем компоненте мы обрабатывали это событие в главном компоненте с помощью метода. Но мы также можем использовать двустороннюю привязку между свойствами главного и дочернего компонента. Например, пусть дочерний компонент будет выглядеть следующим образом:
 
 ```typescript
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core'
 
 @Component({
   selector: 'child-comp',
   template: `
-    <input [ngModel]="userName" (ngModelChange)="onNameChange($event)" />
-  `
+    <input
+      [ngModel]="userName"
+      (ngModelChange)="onNameChange($event)"
+    />
+  `,
 })
 export class ChildComponent {
   @Input() userName: string
@@ -95,7 +110,7 @@ import { Component } from '@angular/core'
   template: `
     <child-comp [(userName)]="name"></child-comp>
     <div>Выбранное имя: {{ name }}</div>
-  `
+  `,
 })
 export class AppComponent {
   name: string = 'Tom'

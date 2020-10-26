@@ -11,7 +11,12 @@ description: Структурная директива должна примен
 Этот файл будет содержать директиву. Определим в файле следующий код:
 
 ```typescript
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core'
+import {
+  Directive,
+  Input,
+  TemplateRef,
+  ViewContainerRef,
+} from '@angular/core'
 
 @Directive({ selector: '[while]' })
 export class WhileDirective {
@@ -22,7 +27,9 @@ export class WhileDirective {
 
   @Input() set while(condition: boolean) {
     if (condition) {
-      this.viewContainer.createEmbeddedView(this.templateRef)
+      this.viewContainer.createEmbeddedView(
+        this.templateRef
+      )
     } else {
       this.viewContainer.clear()
     }
@@ -67,14 +74,10 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <p *while="condition">
-      Первый параграф
-    </p>
-    <p *while="!condition">
-      Второй параграф
-    </p>
+    <p *while="condition">Первый параграф</p>
+    <p *while="!condition">Второй параграф</p>
     <button (click)="toggle()">Toggle</button>
-  `
+  `,
 })
 export class AppComponent {
   condition: boolean = true
@@ -96,7 +99,7 @@ import { WhileDirective } from './while.directive'
 @NgModule({
   imports: [BrowserModule],
   declarations: [AppComponent, WhileDirective],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

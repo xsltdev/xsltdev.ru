@@ -119,10 +119,10 @@ yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify
 plugins: [
   // ...
   require('rollup-plugin-replace')({
-    'process.env.NODE_ENV': JSON.stringify('production')
+    'process.env.NODE_ENV': JSON.stringify('production'),
   }),
   require('rollup-plugin-commonjs')(),
-  require('rollup-plugin-uglify')()
+  require('rollup-plugin-uglify')(),
   // ...
 ]
 ```
@@ -142,7 +142,7 @@ plugins: [
 
 ```js
 new webpack.DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify('production')
+  'process.env.NODE_ENV': JSON.stringify('production'),
 }),
   new webpack.optimize.UglifyJsPlugin()
 ```
@@ -273,7 +273,14 @@ class CounterButton extends React.Component {
 
   render() {
     return (
-      <button color={this.props.color} onClick={() => this.setState(state => ({ count: state.count + 1 }))}>
+      <button
+        color={this.props.color}
+        onClick={() =>
+          this.setState((state) => ({
+            count: state.count + 1,
+          }))
+        }
+      >
         Счётчик: {this.state.count}
       </button>
     )
@@ -292,7 +299,14 @@ class CounterButton extends React.PureComponent {
 
   render() {
     return (
-      <button color={this.props.color} onClick={() => this.setState(state => ({ count: state.count + 1 }))}>
+      <button
+        color={this.props.color}
+        onClick={() =>
+          this.setState((state) => ({
+            count: state.count + 1,
+          }))
+        }
+      >
         Счётчик: {this.state.count}
       </button>
     )
@@ -315,7 +329,7 @@ class WordAdder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      words: ['словцо']
+      words: ['словцо'],
     }
     this.handleClick = this.handleClick.bind(this)
   }

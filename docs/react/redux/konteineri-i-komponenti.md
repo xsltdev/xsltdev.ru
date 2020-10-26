@@ -38,7 +38,7 @@ export class User extends React.Component {
 }
 
 User.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 }
 ```
 
@@ -63,7 +63,7 @@ export class Page extends React.Component {
 
 Page.propTypes = {
   year: PropTypes.number.isRequired,
-  photos: PropTypes.array.isRequired
+  photos: PropTypes.array.isRequired,
 }
 ```
 
@@ -94,10 +94,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     user: store.user,
-    page: store.page
+    page: store.page,
   }
 }
 

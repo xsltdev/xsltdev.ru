@@ -40,7 +40,7 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  Router
+  Router,
 } from '@angular/router'
 import { Observable } from 'rxjs/Observable'
 import { Injectable } from '@angular/core'
@@ -48,20 +48,25 @@ import { AuthService } from './auth.service'
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.authService.isAuthenticated().then((authenticated: boolean) => {
-      if (authenticated) {
-        return true
-      } else {
-        this.router.navigate(['/'])
-        return false
-      }
-    })
+    return this.authService
+      .isAuthenticated()
+      .then((authenticated: boolean) => {
+        if (authenticated) {
+          return true
+        } else {
+          this.router.navigate(['/'])
+          return false
+        }
+      })
   }
 }
 ```
@@ -77,9 +82,9 @@ const appRoutes: Routes = [
     component: ServersComponent,
     children: [
       { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent }
-    ]
-  }
+      { path: ':id/edit', component: EditServerComponent },
+    ],
+  },
   //...
 ]
 ```
@@ -122,9 +127,9 @@ const appRoutes: Routes = [
     component: ServersComponent,
     children: [
       { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent }
-    ]
-  }
+      { path: ':id/edit', component: EditServerComponent },
+    ],
+  },
   //...
 ]
 ```

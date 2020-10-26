@@ -10,11 +10,11 @@
 const Emitter = require('events')
 let emitter = new Emitter()
 let eventName = 'greet'
-emitter.on(eventName, function() {
+emitter.on(eventName, function () {
   console.log('Hello all!')
 })
 
-emitter.on(eventName, function() {
+emitter.on(eventName, function () {
   console.log('Привет!')
 })
 
@@ -37,7 +37,7 @@ emitter.emit(eventName)
 const Emitter = require('events')
 let emitter = new Emitter()
 let eventName = 'greet'
-emitter.on(eventName, function(data) {
+emitter.on(eventName, function (data) {
   console.log(data)
 })
 
@@ -56,12 +56,12 @@ function User() {}
 util.inherits(User, EventEmitter)
 
 let eventName = 'greet'
-User.prototype.sayHi = function(data) {
+User.prototype.sayHi = function (data) {
   this.emit(eventName, data)
 }
 let user = new User()
 // добавляем к объекту user обработку события "greet"
-user.on(eventName, function(data) {
+user.on(eventName, function (data) {
   console.log(data)
 })
 
@@ -89,7 +89,7 @@ class User extends EventEmitter {
 
 let user = new User()
 // добавляем к объекту user обработку события "greet"
-user.on(eventName, function(data) {
+user.on(eventName, function (data) {
   console.log(data)
 })
 

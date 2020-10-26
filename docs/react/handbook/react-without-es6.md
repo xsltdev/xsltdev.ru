@@ -15,9 +15,9 @@ class Greeting extends React.Component {
 ```javascript
 var createReactClass = require('create-react-class')
 var Greeting = createReactClass({
-  render: function() {
+  render: function () {
     return <h1>Привет, {this.props.name}</h1>
-  }
+  },
 })
 ```
 
@@ -33,7 +33,7 @@ class Greeting extends React.Component {
 }
 
 Greeting.defaultProps = {
-  name: 'Лиза'
+  name: 'Лиза',
 }
 ```
 
@@ -41,11 +41,11 @@ Greeting.defaultProps = {
 
 ```javascript
 var Greeting = createReactClass({
-  getDefaultProps: function() {
+  getDefaultProps: function () {
     return {
-      name: 'Лиза'
+      name: 'Лиза',
     }
-  }
+  },
 
   // ...
 })
@@ -69,9 +69,9 @@ class Counter extends React.Component {
 
 ```javascript
 var Counter = createReactClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return { count: this.props.initialCount }
-  }
+  },
   // ...
 })
 ```
@@ -95,7 +95,11 @@ class SayHello extends React.Component {
 
   render() {
     // Мы можем использовать `this.handleClick` как обработчик событий, потому что он привязан
-    return <button onClick={this.handleClick}>Поздороваться</button>
+    return (
+      <button onClick={this.handleClick}>
+        Поздороваться
+      </button>
+    )
   }
 }
 ```
@@ -104,17 +108,21 @@ class SayHello extends React.Component {
 
 ```javascript
 var SayHello = createReactClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return { message: 'Привет!' }
   },
 
-  handleClick: function() {
+  handleClick: function () {
     alert(this.state.message)
   },
 
-  render: function() {
-    return <button onClick={this.handleClick}>Поздороваться</button>
-  }
+  render: function () {
+    return (
+      <button onClick={this.handleClick}>
+        Поздороваться
+      </button>
+    )
+  },
 })
 ```
 
@@ -135,7 +143,11 @@ class SayHello extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleClick}>Поздороваться</button>
+    return (
+      <button onClick={this.handleClick}>
+        Поздороваться
+      </button>
+    )
   }
 }
 ```
@@ -164,36 +176,43 @@ class SayHello extends React.Component {
 
 ```javascript
 var SetIntervalMixin = {
-  componentWillMount: function() {
+  componentWillMount: function () {
     this.intervals = []
   },
-  setInterval: function() {
+  setInterval: function () {
     this.intervals.push(setInterval.apply(null, arguments))
   },
-  componentWillUnmount: function() {
+  componentWillUnmount: function () {
     this.intervals.forEach(clearInterval)
-  }
+  },
 }
 
 var createReactClass = require('create-react-class')
 
 var TickTock = createReactClass({
   mixins: [SetIntervalMixin], // Использовать примесь
-  getInitialState: function() {
+  getInitialState: function () {
     return { seconds: 0 }
   },
-  componentDidMount: function() {
+  componentDidMount: function () {
     this.setInterval(this.tick, 1000) // Вызвать метод на примеси
   },
-  tick: function() {
+  tick: function () {
     this.setState({ seconds: this.state.seconds + 1 })
   },
-  render: function() {
-    return <p>React был выполнен за {this.state.seconds} секунд.</p>
-  }
+  render: function () {
+    return (
+      <p>
+        React был выполнен за {this.state.seconds} секунд.
+      </p>
+    )
+  },
 })
 
-ReactDOM.render(<TickTock />, document.getElementById('example'))
+ReactDOM.render(
+  <TickTock />,
+  document.getElementById('example')
+)
 ```
 
 Если компонент использует несколько примесей и они определяют один и тот же метод жизненного цикла (т.е. хотят выполнить некоторую очистку при уничтожении компонента), все методы жизненного цикла гарантированно будут вызваны. Методы, определённые на примесях, запускаются в том порядке, в котором они перечислены, а затем вызывается метод самого компонента.

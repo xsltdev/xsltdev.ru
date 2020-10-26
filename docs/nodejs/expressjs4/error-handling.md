@@ -3,23 +3,23 @@
 Функции промежуточного обработчика для обработки ошибок определяются так же, как и другие функции промежуточной обработки, но с указанием для функции обработки ошибок не трех, а четырех аргументов: `(err, req, res, next)`. Например:
 
 ```js
-app.use(function(err, req, res, next) {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-});
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
 ```
 
 Промежуточный обработчик для обработки ошибок должен быть определен последним, после указания всех `app.use()` и вызовов маршрутов; например:
 
 ```js
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+var bodyParser = require('body-parser')
+var methodOverride = require('method-override')
 
-app.use(bodyParser());
-app.use(methodOverride());
-app.use(function(err, req, res, next) {
+app.use(bodyParser())
+app.use(methodOverride())
+app.use(function (err, req, res, next) {
   // logic
-});
+})
 ```
 
 Ответы, поступающие из функции промежуточной обработки, могут иметь любой формат, в зависимости от ваших предпочтений. Например, это может быть страница сообщения об ошибке HTML, простое сообщение или строка JSON.
@@ -27,22 +27,22 @@ app.use(function(err, req, res, next) {
 В целях упорядочения (и для фреймворков более высокого уровня) можно определить несколько функций промежуточной обработки ошибок, точно так же, как это допускается для обычных функций промежуточной обработки. Например, для того чтобы определить обработчик ошибок для запросов, совершаемых с помощью `XHR`, и для остальных запросов, можно воспользоваться следующими командами:
 
 ```js
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+var bodyParser = require('body-parser')
+var methodOverride = require('method-override')
 
-app.use(bodyParser());
-app.use(methodOverride());
-app.use(logErrors);
-app.use(clientErrorHandler);
-app.use(errorHandler);
+app.use(bodyParser())
+app.use(methodOverride())
+app.use(logErrors)
+app.use(clientErrorHandler)
+app.use(errorHandler)
 ```
 
 В данном примере базовый код `logErrors` может записывать информацию о запросах и ошибках в `stderr`, например:
 
 ```js
 function logErrors(err, req, res, next) {
-  console.error(err.stack);
-  next(err);
+  console.error(err.stack)
+  next(err)
 }
 ```
 
@@ -51,9 +51,9 @@ function logErrors(err, req, res, next) {
 ```js
 function clientErrorHandler(err, req, res, next) {
   if (req.xhr) {
-    res.status(500).send({ error: 'Something failed!' });
+    res.status(500).send({ error: 'Something failed!' })
   } else {
-    next(err);
+    next(err)
   }
 }
 ```
@@ -62,34 +62,36 @@ function clientErrorHandler(err, req, res, next) {
 
 ```js
 function errorHandler(err, req, res, next) {
-  res.status(500);
-  res.render('error', { error: err });
+  res.status(500)
+  res.render('error', { error: err })
 }
 ```
 
 При передаче какого-либо объекта в функцию `next()` (кроме строки `'route'`), Express интерпретирует текущий запрос как ошибку и пропустит все остальные функции маршрутизации и промежуточной обработки, не являющиеся функциями обработки ошибок. Для того чтобы обработать данную ошибку определенным образом, необходимо создать маршрут обработки ошибок, как описано в следующем разделе.
 
-Если задан обработчик ошибок с несколькими функциями обратного вызова, можно воспользоваться параметром `route`, чтобы перейти к следующему обработчику маршрута.  Например:
+Если задан обработчик ошибок с несколькими функциями обратного вызова, можно воспользоваться параметром `route`, чтобы перейти к следующему обработчику маршрута. Например:
 
 ```js
-app.get('/a_route_behind_paywall',
+app.get(
+  '/a_route_behind_paywall',
   function checkIfPaidSubscriber(req, res, next) {
-    if(!req.user.hasPaid) {
-
+    if (!req.user.hasPaid) {
       // continue handling this request
-      next('route');
+      next('route')
     }
-  }, function getPaidContent(req, res, next) {
-    PaidContent.find(function(err, doc) {
-      if(err) return next(err);
-      res.json(doc);
-    });
-  });
+  },
+  function getPaidContent(req, res, next) {
+    PaidContent.find(function (err, doc) {
+      if (err) return next(err)
+      res.json(doc)
+    })
+  }
+)
 ```
 
-В данном примере обработчик `getPaidContent` будет пропущен, но выполнение всех остальных обработчиков в `app` для  `/a_route_behind_paywall` будет продолжено.
+В данном примере обработчик `getPaidContent` будет пропущен, но выполнение всех остальных обработчиков в `app` для `/a_route_behind_paywall` будет продолжено.
 
-Вызовы `next()` и `next(err)` указывают на завершение выполнения текущего обработчика и на его состояние.  `next(err)` пропускает все остальные обработчики в цепочке, кроме заданных для обработки ошибок, как описано выше.
+Вызовы `next()` и `next(err)` указывают на завершение выполнения текущего обработчика и на его состояние. `next(err)` пропускает все остальные обработчики в цепочке, кроме заданных для обработки ошибок, как описано выше.
 
 ## Стандартный обработчик ошибок
 
@@ -107,9 +109,9 @@ app.get('/a_route_behind_paywall',
 ```js
 function errorHandler(err, req, res, next) {
   if (res.headersSent) {
-    return next(err);
+    return next(err)
   }
-  res.status(500);
-  res.render('error', { error: err });
+  res.status(500)
+  res.render('error', { error: err })
 }
 ```

@@ -46,7 +46,7 @@ store.dispatch(new DeleteUser({ id: 7 }))
 export enum UsersActions {
   GetUsers = '[Users Page] GetUsers',
   DeleteUser = '[Users Page] DeleteUser',
-  DeleteAllUsers = '[Users Page] DeleteAllUsers'
+  DeleteAllUsers = '[Users Page] DeleteAllUsers',
 }
 
 export class GetUsers implements Action {
@@ -64,7 +64,10 @@ export class DeleteAllUsers implements Action {
 }
 
 //Смешанный тип
-export type UsersUnion = GetUsers | DeleteUser | DeleteAllUsers
+export type UsersUnion =
+  | GetUsers
+  | DeleteUser
+  | DeleteAllUsers
 ```
 
 Смешанный тип необходим для краткости записи типа в редюсере, который обрабатывает взаимосвязанную группу действий.

@@ -52,7 +52,7 @@ const greeting = require('./greeting')
 let currentDate = new Date()
 module.exports.date = currentDate
 
-module.exports.getMessage = function(name) {
+module.exports.getMessage = function (name) {
   let hour = currentDate.getHours()
   if (hour > 16) return 'Добрый вечер, ' + name
   else if (hour > 10) return 'Добрый день, ' + name
@@ -93,11 +93,11 @@ console.log(greeting.getMessage(userName))
 function User(name, age) {
   this.name = name
   this.age = age
-  this.displayInfo = function() {
+  this.displayInfo = function () {
     console.log(`Имя: ${this.name}  Возраст: ${this.age}`)
   }
 }
-User.prototype.sayHi = function() {
+User.prototype.sayHi = function () {
   console.log(`Привет, меня зовут ${this.name}`)
 }
 

@@ -21,11 +21,11 @@ description: Каждый раз, когда в Angular приложении о�
 ```ts
 @Component({
   selector: 'home-page',
-  templateUrl: './home-page.component.html'
+  templateUrl: './home-page.component.html',
 })
 export class HomePageComponent {
   constructor(private router: Router) {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         console.log('Navigation Start')
       }

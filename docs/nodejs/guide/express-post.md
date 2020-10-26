@@ -41,18 +41,28 @@ const bodyParser = require('body-parser')
 const app = express()
 
 // создаем парсер для данных application/x-www-form-urlencoded
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
+const urlencodedParser = bodyParser.urlencoded({
+  extended: false,
+})
 
-app.get('/register', urlencodedParser, function(request, response) {
+app.get('/register', urlencodedParser, function (
+  request,
+  response
+) {
   response.sendFile(__dirname + '/register.html')
 })
-app.post('/register', urlencodedParser, function(request, response) {
+app.post('/register', urlencodedParser, function (
+  request,
+  response
+) {
   if (!request.body) return response.sendStatus(400)
   console.log(request.body)
-  response.send(`${request.body.userName} - ${request.body.userAge}`)
+  response.send(
+    `${request.body.userName} - ${request.body.userAge}`
+  )
 })
 
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.send('Главная страница')
 })
 
@@ -62,7 +72,9 @@ app.listen(3000)
 Прежде всего для получения отправленных данных необходимо создать парсер:
 
 ```js
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
+const urlencodedParser = bodyParser.urlencoded({
+  extended: false,
+})
 ```
 
 Поскольку данные отправляются с помощью формы, то для создания парсера применяется функция `urlencoded()`. В эту функцию передается объект, устанавливающий параметры парсинга. Значение `extended: false` указывает, что объект - результат парсинга будет представлять набор пар ключ-значение, а каждое значение может быть представлено в виде строки или массива.
@@ -72,10 +84,15 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 Так как данные отправляются с помощью метода `POST`, то для обработки определяем функцию `app.post("/register",...)`. Первый параметр функции - адрес, на который идет отправка - `/register`. Стоит отметить, что в данном случае с одинм адресом `/register` связаны две функции, только одна обрабатывает запросы `get`, а другая - запросы `post`. Второй параметр - выше созданный парсер. Третий параметр - обработчик:
 
 ```js
-app.post('/register', urlencodedParser, function(request, response) {
+app.post('/register', urlencodedParser, function (
+  request,
+  response
+) {
   if (!request.body) return response.sendStatus(400)
   console.log(request.body)
-  response.send(`${request.body.userName} - ${request.body.userAge}`)
+  response.send(
+    `${request.body.userName} - ${request.body.userAge}`
+  )
 })
 ```
 

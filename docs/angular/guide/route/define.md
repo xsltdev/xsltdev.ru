@@ -63,9 +63,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'home-app',
-  template: `
-    <h3>Главная</h3>
-  `
+  template: ` <h3>Главная</h3> `,
 })
 export class HomeComponent {}
 ```
@@ -79,9 +77,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'about-app',
-  template: `
-    <h3>О сайте</h3>
-  `
+  template: ` <h3>О сайте</h3> `,
 })
 export class AboutComponent {}
 ```
@@ -93,9 +89,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'not-found-app',
-  template: `
-    <h3>Страница не найдена</h3>
-  `
+  template: ` <h3>Страница не найдена</h3> `,
 })
 export class NotFoundComponent {}
 ```
@@ -119,7 +113,7 @@ import { NotFoundComponent } from './not-found.component'
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ]
 
 @NgModule({
@@ -128,9 +122,9 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -147,7 +141,7 @@ import { Routes, RouterModule } from '@angular/router'
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ]
 ```
 
@@ -181,7 +175,7 @@ import { Component } from '@angular/core'
       <h1>Маршрутизация в Angular 6</h1>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -205,18 +199,18 @@ var UglifyJSPlugin = require('uglifyjs-webpack-plugin') // плагин мини
 module.exports = {
   entry: {
     polyfills: './src/polyfills.ts',
-    app: './src/main.ts'
+    app: './src/main.ts',
   },
   output: {
     path: path.resolve(__dirname, './public'), // путь к каталогу выходных файлов - папка public
     publicPath: '/public/',
-    filename: '[name].js' // название создаваемого файла
+    filename: '[name].js', // название создаваемого файла
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
@@ -227,13 +221,16 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: path.resolve(__dirname, 'tsconfig.json')
-            }
+              configFileName: path.resolve(
+                __dirname,
+                'tsconfig.json'
+              ),
+            },
           },
-          'angular2-template-loader'
-        ]
-      }
-    ]
+          'angular2-template-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
@@ -241,8 +238,8 @@ module.exports = {
       path.resolve(__dirname, 'src'), // каталог с исходными файлами
       {} // карта маршрутов
     ),
-    new UglifyJSPlugin()
-  ]
+    new UglifyJSPlugin(),
+  ],
 }
 ```
 
@@ -268,7 +265,7 @@ module.exports = {
 const appRoutes: Routes = [
   { path: '**', component: NotFoundComponent },
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
 ]
 ```
 
@@ -288,7 +285,7 @@ const appRoutes: Routes = [
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '/' },
 ]
 ```
 
@@ -300,8 +297,12 @@ const appRoutes: Routes = [
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', redirectTo: '/about', pathMatch: 'full' },
-  { path: '**', redirectTo: '/' }
+  {
+    path: 'contact',
+    redirectTo: '/about',
+    pathMatch: 'full',
+  },
+  { path: '**', redirectTo: '/' },
 ]
 ```
 

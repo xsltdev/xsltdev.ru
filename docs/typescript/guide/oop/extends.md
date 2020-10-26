@@ -21,7 +21,9 @@ class Employee extends User {
   company: string
 
   work(): void {
-    console.log(this.name + ' работает в компании ' + this.company)
+    console.log(
+      this.name + ' работает в компании ' + this.company
+    )
   }
 }
 ```
@@ -54,7 +56,11 @@ let Employee = class extends User {
   company: string
 
   work(): void {
-    console.log(this.name, 'работает в компании', this.company)
+    console.log(
+      this.name,
+      'работает в компании',
+      this.company
+    )
   }
 }
 
@@ -89,7 +95,9 @@ class Employee extends User {
   }
 
   work(): void {
-    console.log(this.name + ' работает в компании ' + this.company)
+    console.log(
+      this.name + ' работает в компании ' + this.company
+    )
   }
 }
 

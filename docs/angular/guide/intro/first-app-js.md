@@ -57,21 +57,26 @@ var AppComponent = ng.core
                 </tr>
             </tbody>
         </table>
-    </div>`
+    </div>`,
   })
   .Class({
-    constructor: function() {
+    constructor: function () {
       this.items = [
         new Item('Хлеб', 15.9),
         new Item('Масло', 60),
         new Item('Картофель', 22.6, true),
-        new Item('Сыр', 310)
+        new Item('Сыр', 310),
       ]
-    }
+    },
   })
 
-AppComponent.prototype.addItem = function(text, price) {
-  if (text == undefined || text.trim() == '' || price == undefined) return
+AppComponent.prototype.addItem = function (text, price) {
+  if (
+    text == undefined ||
+    text.trim() == '' ||
+    price == undefined
+  )
+    return
   this.items.push(new Item(text, price))
 }
 ```
@@ -85,12 +90,15 @@ AppComponent.prototype.addItem = function(text, price) {
 ```javascript
 var AppModule = ng.core
   .NgModule({
-    imports: [ng.platformBrowser.BrowserModule, ng.forms.FormsModule],
+    imports: [
+      ng.platformBrowser.BrowserModule,
+      ng.forms.FormsModule,
+    ],
     declarations: [AppComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
   })
   .Class({
-    constructor: function() {}
+    constructor: function () {},
   })
 ```
 
@@ -101,7 +109,9 @@ var AppModule = ng.core
 И далее создадим в папке `app` новый файл `main.js`:
 
 ```javascript
-ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule)
+ng.platformBrowserDynamic
+  .platformBrowserDynamic()
+  .bootstrapModule(AppModule)
 ```
 
 Этот файл будет загружать основной модуль приложения.
@@ -114,7 +124,10 @@ ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule)
   <head>
     <meta charset="utf-8" />
     <title>Приложение покупок</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"

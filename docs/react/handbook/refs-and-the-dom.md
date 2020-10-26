@@ -81,7 +81,11 @@ class CustomTextInput extends React.Component {
     return (
       <div>
         <input type="text" ref={this.textInput} />
-        <input type="button" value="Фокус на текстовом поле" onClick={this.focusTextInput} />
+        <input
+          type="button"
+          value="Фокус на текстовом поле"
+          onClick={this.focusTextInput}
+        />
       </div>
     )
   }
@@ -157,7 +161,11 @@ function CustomTextInput(props) {
   return (
     <div>
       <input type="text" ref={textInput} />
-      <input type="button" value="Фокус на поле для ввода текста" onClick={handleClick} />
+      <input
+        type="button"
+        value="Фокус на поле для ввода текста"
+        onClick={handleClick}
+      />
     </div>
   )
 }
@@ -190,7 +198,7 @@ class CustomTextInput extends React.Component {
 
     this.textInput = null
 
-    this.setTextInputRef = element => {
+    this.setTextInputRef = (element) => {
       this.textInput = element
     }
 
@@ -211,7 +219,11 @@ class CustomTextInput extends React.Component {
     return (
       <div>
         <input type="text" ref={this.setTextInputRef} />
-        <input type="button" value="Focus the text input" onClick={this.focusTextInput} />
+        <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput}
+        />
       </div>
     )
   }
@@ -233,7 +245,11 @@ function CustomTextInput(props) {
 
 class Parent extends React.Component {
   render() {
-    return <CustomTextInput inputRef={el => (this.inputElement = el)} />
+    return (
+      <CustomTextInput
+        inputRef={(el) => (this.inputElement = el)}
+      />
+    )
   }
 }
 ```

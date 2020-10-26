@@ -17,7 +17,10 @@ import { createStore, applyMiddleware } from 'redux'
 import { rootReducer } from '../reducers'
 import { ping } from './enhancers/ping' // <-- подключаем наш enhancer
 
-export const store = createStore(rootReducer, applyMiddleware(ping)) // <-- добавляем его в цепочку middleware'ов
+export const store = createStore(
+  rootReducer,
+  applyMiddleware(ping)
+) // <-- добавляем его в цепочку middleware'ов
 ```
 
 Напишем усилитель:
@@ -26,7 +29,7 @@ _store/enhancers/ping.js_
 
 ```js
 /* eslint-disable */
-export const ping = store => next => action => {
+export const ping = (store) => (next) => (action) => {
   console.log('ping')
   return next(action)
 }
@@ -37,8 +40,8 @@ export const ping = store => next => action => {
 
 ```js
 var ping = function ping(store) {
-  return function(next) {
-    return function(action) {
+  return function (next) {
+    return function (action) {
       console.log('ping')
       return next(action)
     }
@@ -63,8 +66,10 @@ _store/enhancers/ping.js_
 
 ```js
 /* eslint-disable */
-export const ping = store => next => action => {
-  console.log(`Тип события: ${action.type}, дополнительные данные события: ${action.payload}`)
+export const ping = (store) => (next) => (action) => {
+  console.log(
+    `Тип события: ${action.type}, дополнительные данные события: ${action.payload}`
+  )
   return next(action)
 }
 /* eslint-enable */
@@ -73,7 +78,12 @@ export const ping = store => next => action => {
 Я использовал новый строковый синтаксис. В прошлом, наш `console.log` выглядел бы так:
 
 ```js
-console.log('Тип события: ' + action.type + ', дополнительные данные события: ' + action.payload)
+console.log(
+  'Тип события: ' +
+    action.type +
+    ', дополнительные данные события: ' +
+    action.payload
+)
 ```
 
 Покликайте на кнопки, результат должен быть следующим:
@@ -97,7 +107,10 @@ import { createStore, applyMiddleware } from 'redux'
 import { rootReducer } from '../reducers'
 import logger from 'redux-logger'
 
-export const store = createStore(rootReducer, applyMiddleware(logger))
+export const store = createStore(
+  rootReducer,
+  applyMiddleware(logger)
+)
 ```
 
 Можете проверить - логгер достаточно информативный и удобен в использовании.

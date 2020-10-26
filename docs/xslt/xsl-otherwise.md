@@ -10,7 +10,7 @@ description: При обработке xsl:choose процессор пооче�
 
 ```xml
 <xsl:otherwise>
-    <!-- Content: sequence-constructor -->
+  <!-- Content: sequence-constructor -->
 </xsl:otherwise>
 ```
 
@@ -20,19 +20,11 @@ description: При обработке xsl:choose процессор пооче�
 
 ```xml
 <xsl:choose>
-    <xsl:when test="условие1">
-        шаблон1
-    </xsl:when>
-    <xsl:when test="условие2">
-        шаблон2
-    </xsl:when>
-    <!-- ... -->
-    <xsl:when test="условиеN">
-        шаблонN
-    </xsl:when>
-    <xsl:otherwise>
-        шаблонМ
-    </xsl:otherwise>
+  <xsl:when test="условие1">шаблон1</xsl:when>
+  <xsl:when test="условие2">шаблон2</xsl:when>
+  <!-- ... -->
+  <xsl:when test="условиеN">шаблонN</xsl:when>
+  <xsl:otherwise>шаблонМ</xsl:otherwise>
 </xsl:choose>
 ```
 

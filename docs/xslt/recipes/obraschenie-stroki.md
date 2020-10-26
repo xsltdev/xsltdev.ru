@@ -11,32 +11,38 @@
 Приведенный ниже шаблон обращает строку `$input` неочевидным, но весьма
 эффективным способом.
 
-```xslt
+```xml
 <xsl:template name="reverse">
-	<xsl:param name="input"/>
-	<xsl:variable name="len" select="string-length($input)"/>
-	<xsl:choose>
-		<!-- Строки длиной меньше 2 обращаются тривиально -->
-		<xsl:when test="$len &lt; 2">
-			<xsl:value-of select="$input"/>
-		</xsl:when>
-		<!-- Строки длины 2 также обращаются тривиально -->
-		<xsl:when test="$len = 2">
-			<xsl:value-of select="substring($input,2,1)"/>
-			<xsl:value-of select="substring($input,1,1)"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<!-- Шаблон рекурсивно применяется сначала ко второй,
+  <xsl:param name="input" />
+  <xsl:variable name="len" select="string-length($input)" />
+  <xsl:choose>
+    <!-- Строки длиной меньше 2 обращаются тривиально -->
+    <xsl:when test="$len &lt; 2">
+      <xsl:value-of select="$input" />
+    </xsl:when>
+    <!-- Строки длины 2 также обращаются тривиально -->
+    <xsl:when test="$len = 2">
+      <xsl:value-of select="substring($input,2,1)" />
+      <xsl:value-of select="substring($input,1,1)" />
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Шаблон рекурсивно применяется сначала ко второй,
 			а потом к первой половине входной строки -->
-			<xsl:variable name="mid" select="floor($len div 2)"/>
-			<xsl:call-template name="reverse">
-				<xsl:with-param name="input" select="substring($input,$mid+1,$mid+1)"/>
-			</xsl:call-template>
-			<xsl:call-template name="reverse">
-				<xsl:with-param name="input" select="substring($input,1,$mid)"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+      <xsl:variable name="mid" select="floor($len div 2)" />
+      <xsl:call-template name="reverse">
+        <xsl:with-param
+          name="input"
+          select="substring($input,$mid+1,$mid+1)"
+        />
+      </xsl:call-template>
+      <xsl:call-template name="reverse">
+        <xsl:with-param
+          name="input"
+          select="substring($input,1,$mid)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -44,10 +50,12 @@
 
 В версии 2.0 обращение строки выполняется тривиально.
 
-```xslt
+```xml
 <xsl:function name="ckbk:reverse">
-	<xsl:param name="input" as="xs:string"/>
-	<xsl:sequence select="codepoints-to-string(reverse(string-to-codepoints($input)))"/>
+  <xsl:param name="input" as="xs:string" />
+  <xsl:sequence
+    select="codepoints-to-string(reverse(string-to-codepoints($input)))"
+  />
 </xsl:function>
 ```
 
@@ -69,29 +77,32 @@
 
 Пример 2.1. Очень плохая реализация `reverse`
 
-```xslt
+```xml
 <xsl:template name="reverse">
-	<xsl:param name="input"/>
-	<xsl:variable name="len" select="string-length($input)"/>
-	<xsl:choose>
-		<!-- Строки длиной меньше 2 обращаются тривиально -->
-		<xsl:when test="$len &lt; 2">
-			<xsl:value-of select="$input"/>
-		</xsl:when>
-		<!-- Строки длиной 2 также обращаются тривиально -->
-		<xsl:when test="$len = 2">
-			<xsl:value-of select="substring($input,2,1)"/>
-			<xsl:value-of select="substring($input,1,1)"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<!-- Конкатенировать last + reverse(middle) + first -->
-			<xsl:value-of select="substring($input,$len,1)"/>
-			<xsl:call-template name="reverse">
-				<xsl:with-param name="input" select="substring($input,2,$len - 2)"/>
-			</xsl:call-template>
-			<xsl:value-of select="substring($input,1,1)"/>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="input" />
+  <xsl:variable name="len" select="string-length($input)" />
+  <xsl:choose>
+    <!-- Строки длиной меньше 2 обращаются тривиально -->
+    <xsl:when test="$len &lt; 2">
+      <xsl:value-of select="$input" />
+    </xsl:when>
+    <!-- Строки длиной 2 также обращаются тривиально -->
+    <xsl:when test="$len = 2">
+      <xsl:value-of select="substring($input,2,1)" />
+      <xsl:value-of select="substring($input,1,1)" />
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Конкатенировать last + reverse(middle) + first -->
+      <xsl:value-of select="substring($input,$len,1)" />
+      <xsl:call-template name="reverse">
+        <xsl:with-param
+          name="input"
+          select="substring($input,2,$len - 2)"
+        />
+      </xsl:call-template>
+      <xsl:value-of select="substring($input,1,1)" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -99,28 +110,31 @@
 
 Пример 2.2. Неэффективная реализация с применением хвостовой рекурсии
 
-```xslt
+```xml
 <xsl:template name="reverse">
-	<xsl:param name="input"/>
-	<xsl:variable name="len" select="string-length($input)"/>
-	<xsl:choose>
-		<!-- Строки длиной меньше 2 обращаются тривиально -->
-		<xsl:when test="$len &lt; 2">
-			<xsl:value-of select="$input"/>
-		</xsl:when>
-		<!-- Строки длиной 2 также обращаются тривиально -->
-		<xsl:when test="$len = 2">
-			<xsl:value-of select="substring($input,2,1)"/>
-			<xsl:value-of select="substring($input,1,1)"/>
-		</xsl:when>
-		<!-- Конкатенировать last + reverse(rest) -->
-		<xsl:otherwise>
-			<xsl:value-of select="substring($input,$len,1)"/>
-			<xsl:call-template name="reverse">
-				<xsl:with-param name="input" select="substring($input,1,$len - 1)"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="input" />
+  <xsl:variable name="len" select="string-length($input)" />
+  <xsl:choose>
+    <!-- Строки длиной меньше 2 обращаются тривиально -->
+    <xsl:when test="$len &lt; 2">
+      <xsl:value-of select="$input" />
+    </xsl:when>
+    <!-- Строки длиной 2 также обращаются тривиально -->
+    <xsl:when test="$len = 2">
+      <xsl:value-of select="substring($input,2,1)" />
+      <xsl:value-of select="substring($input,1,1)" />
+    </xsl:when>
+    <!-- Конкатенировать last + reverse(rest) -->
+    <xsl:otherwise>
+      <xsl:value-of select="substring($input,$len,1)" />
+      <xsl:call-template name="reverse">
+        <xsl:with-param
+          name="input"
+          select="substring($input,1,$len - 1)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -130,24 +144,30 @@
 
 Пример 2.3. Эффективная (но не идеальная) реализация
 
-```xslt
+```xml
 <xsl:template name="reverse">
-	<xsl:param name="input"/>
-	<xsl:variable name="len" select="string-length($input)"/>
-	<xsl:choose>
-		<xsl:when test="$len &lt; 2">
-			<xsl:value-of select="$input"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:variable name="mid" select="floor($len div 2)"/>
-			<xsl:call-template name="reverse">
-				<xsl:with-param name="input" select="substring($input,$mid+1,$mid+1)"/>
-			</xsl:call-template>
-			<xsl:call-template name="reverse">
-				<xsl:with-param name="input" select="substring($input,1,$mid)"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="input" />
+  <xsl:variable name="len" select="string-length($input)" />
+  <xsl:choose>
+    <xsl:when test="$len &lt; 2">
+      <xsl:value-of select="$input" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:variable name="mid" select="floor($len div 2)" />
+      <xsl:call-template name="reverse">
+        <xsl:with-param
+          name="input"
+          select="substring($input,$mid+1,$mid+1)"
+        />
+      </xsl:call-template>
+      <xsl:call-template name="reverse">
+        <xsl:with-param
+          name="input"
+          select="substring($input,1,$mid)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 

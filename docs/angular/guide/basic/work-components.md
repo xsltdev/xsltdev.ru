@@ -17,17 +17,15 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'child-comp',
-  template: `
-    <h2>Добро пожаловать {{ name }}!</h2>
-  `,
+  template: ` <h2>Добро пожаловать {{ name }}!</h2> `,
   styles: [
     `
       h2,
       p {
         color: red;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class ChildComponent {
   name = 'Евгений'
@@ -59,8 +57,8 @@ import { Component } from '@angular/core'
       p {
         color: #333;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class AppComponent {
   name = 'Петр'
@@ -82,7 +80,7 @@ import { ChildComponent } from './child.component'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent, ChildComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -102,17 +100,15 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'child-comp',
-  template: `
-    <h2>Добро пожаловать {{ name }}!</h2>
-  `,
+  template: ` <h2>Добро пожаловать {{ name }}!</h2> `,
   styles: [
     `
       h2,
       p {
         color: red;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class ChildComponent {}
 ```
@@ -142,8 +138,8 @@ import { Component } from '@angular/core'
       p {
         color: navy;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class ChildComponent {
   name = 'Евгений'
@@ -170,8 +166,8 @@ import { Component } from '@angular/core'
       p {
         color: #333;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class AppComponent {
   name = 'Tom'

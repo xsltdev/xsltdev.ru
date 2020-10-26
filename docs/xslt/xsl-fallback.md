@@ -14,7 +14,7 @@ description: Элемент xsl:fallback включается в критиче�
 
 ```xml
 <xsl:fallback>
-    <!-- Content: sequence-constructor -->
+  <!-- Content: sequence-constructor -->
 </xsl:fallback>
 ```
 
@@ -26,7 +26,7 @@ description: Элемент xsl:fallback включается в критиче�
 
 ```xml
 <ext:date pattern="HH:mm">
-    <xsl:fallback>unknown time</xsl:fallback>
+  <xsl:fallback>unknown time</xsl:fallback>
 </ext:date>
 ```
 
@@ -34,13 +34,14 @@ description: Элемент xsl:fallback включается в критиче�
 
 ```xml
 <xsl:template match="/">
-    <!-- ... -->
-    <p>This page was generated at
-        <ext:date pattern="HH:yy">
-            <xsl:fallback>unknown time</xsl:fallback>
-        </ext:date>
-        .
-    </p>
+  <!-- ... -->
+  <p>
+    This page was generated at
+    <ext:date pattern="HH:yy">
+      <xsl:fallback>unknown time</xsl:fallback>
+    </ext:date>
+    .
+  </p>
 </xsl:template>
 ```
 
@@ -54,13 +55,15 @@ description: Элемент xsl:fallback включается в критиче�
 
 ```xml
 <xsl:for-each-group select="item" group-by="@number">
-    <!-- ... -->
-    <xsl:fallback>
-        <xsl:for-each select="item[generate-id(.)=
-        generate-id(key('item', @number))]">
-            <!-- ... -->
-        </xsl:for-each>
-    </xsl:fallback>
+  <!-- ... -->
+  <xsl:fallback>
+    <xsl:for-each
+      select="item[generate-id(.)=
+        generate-id(key('item', @number))]"
+    >
+      <!-- ... -->
+    </xsl:for-each>
+  </xsl:fallback>
 </xsl:for-each>
 ```
 

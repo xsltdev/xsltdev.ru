@@ -148,10 +148,14 @@ cursor: auto;
     </style>
   </head>
   <body>
-    <p class="cross">На этом тексте курсор мыши примет вид перекрестья.</p>
+    <p class="cross">
+      На этом тексте курсор мыши примет вид перекрестья.
+    </p>
     <p>
-      <a href="page/help.html" class="help">СПРАВКА 1</a><br />
-      <a href="page/help.html" class="help">СПРАВКА 2</a><br />
+      <a href="page/help.html" class="help">СПРАВКА 1</a
+      ><br />
+      <a href="page/help.html" class="help">СПРАВКА 2</a
+      ><br />
       <a href="page/help.html" class="help">СПРАВКА 3</a>
     </p>
   </body>

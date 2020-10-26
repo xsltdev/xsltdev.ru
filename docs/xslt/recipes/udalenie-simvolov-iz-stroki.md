@@ -50,7 +50,7 @@ translate(normalize-space(translate($input,"C "," C")),"C "," C")
 
 Однако это преобразование будет работать неправильно, если входная строка содержит другие символы пропуска, то есть знаки табуляции (`#x9`), конца строки (`#xA`) и перевода каретки (`#xD`). Причина в том, что это выражение переставляет местами пробел и нормализуемый символ, затем нормализует пробелы и выполняет обратную перестановку. Если после первого преобразования остается символ пропуска, отличный от пробела, то он также нормализуется, хотя вы, возможно, этого и не хотели. Впрочем, нормализация чего-либо, кроме пробелов, встречается редко. Ниже показано, как можно удалить лишние символы `-`:
 
-```xslt
+```xml
 <xsl:template match="/">
 	<xsl:variable name="input" select=" '—this —is— the way we normalize non-whitespace—' "/>
 	<xsl:value-of select="translate(normalize-space(translate($input,'- "," -')),'- "," -')" />
@@ -63,10 +63,15 @@ XSLT 2.0
 в XSLT 2.0 функция `replace()`, основанная на аппарате регулярных выражений. Ниже мы с помощью `replace()` нормализуем отличный от пробела символ
 без особых случаев, возникающих в решении для XSLT 1.0:
 
-```xslt
+```xml
 <xsl:template match="/">
-	<xsl:variable name="input" select=" '—this —is— the way we normalize non-whitespace—' "/>
-	<xsl:value-of select="replace(replace($input,'-+','-'),'^-+|-+$','')" />
+  <xsl:variable
+    name="input"
+    select=" '—this —is— the way we normalize non-whitespace—' "
+  />
+  <xsl:value-of
+    select="replace(replace($input,'-+','-'),'^-+|-+$','')"
+  />
 </xsl:template>
 ```
 

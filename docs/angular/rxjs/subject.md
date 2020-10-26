@@ -9,9 +9,9 @@ RxJS **Subject** является разновидностью объектов 
 ```ts
 const sbj = new Subject<number>()
 
-sbj.subscribe(vl => console.log(`1st: ${vl}`))
+sbj.subscribe((vl) => console.log(`1st: ${vl}`))
 sbj.next(3)
-sbj.subscribe(vl => console.log(`2nd: ${vl}`))
+sbj.subscribe((vl) => console.log(`2nd: ${vl}`))
 sbj.next(9)
 
 /*
@@ -48,8 +48,8 @@ sbj.next(9)
 ```ts
 const sbj = new BehaviorSubject<number>(5)
 
-sbj.subscribe(vl => console.log(`1st: ${vl}`))
-sbj.subscribe(vl => console.log(`2nd: ${vl}`))
+sbj.subscribe((vl) => console.log(`1st: ${vl}`))
+sbj.subscribe((vl) => console.log(`2nd: ${vl}`))
 sbj.next(7)
 
 /*
@@ -71,12 +71,12 @@ const sbj = new ReplaySubject(2)
 
 sbj.next(5)
 
-sbj.subscribe(vl => console.log(`1st: ${vl}`))
+sbj.subscribe((vl) => console.log(`1st: ${vl}`))
 
 sbj.next(6)
 sbj.next(7)
 
-sbj.subscribe(vl => console.log(`2nd: ${vl}`))
+sbj.subscribe((vl) => console.log(`2nd: ${vl}`))
 
 /*
 Результат  в консоли:
@@ -98,7 +98,7 @@ sbj.subscribe(vl => console.log(`2nd: ${vl}`))
 ```ts
 const sbj = new AsyncSubject()
 
-sbj.subscribe(vl => console.log(`Async: ${vl}`))
+sbj.subscribe((vl) => console.log(`Async: ${vl}`))
 
 sbj.next(7)
 sbj.next(8)

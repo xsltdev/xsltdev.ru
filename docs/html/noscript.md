@@ -32,13 +32,18 @@ description: Тег noscript (от англ. no script — без скрипто
 <html>
   <head>
     <title>NOSCRIPT</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
     <script type="text/javascript">
       alert('Hello, world!')
     </script>
   </head>
   <body>
-    <noscript><p>Ваш браузер не поддерживает скрипты!</p></noscript>
+    <noscript
+      ><p>Ваш браузер не поддерживает скрипты!</p></noscript
+    >
   </body>
 </html>
 ```

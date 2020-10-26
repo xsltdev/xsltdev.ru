@@ -45,7 +45,7 @@ export enum CarActionTypes {
 
   DeleteCarRequest = '[Cars list] Delete Car Request',
   CarDeletedSuccess = '[Cars list] Car Deleted Success',
-  CarDeletedError = '[Cars list] Car Deleted Error'
+  CarDeletedError = '[Cars list] Car Deleted Error',
 }
 
 export class AddCarRequest implements Action {
@@ -137,7 +137,7 @@ import {
   CarAddedError,
   DeleteCarRequest,
   CarDeletedSuccess,
-  CarDeletedError
+  CarDeletedError,
 } from '../actions/car.actions'
 
 import { Car } from '../models/car.model'
@@ -151,7 +151,10 @@ export class CarEffects {
     ofType(CarActionTypes.LoadCars),
     mergeMap(() =>
       this.carsService.getCars().pipe(
-        map((cars: Car[]) => new CarsLoadedSuccess({ cars: cars })),
+        map(
+          (cars: Car[]) =>
+            new CarsLoadedSuccess({ cars: cars })
+        ),
         catchError(() => of(new CarsLoadedError()))
       )
     )
@@ -162,7 +165,9 @@ export class CarEffects {
     ofType(CarActionTypes.AddCarRequest),
     mergeMap((action: AddCarRequest) =>
       this.carsService.createCar(action.payload.car).pipe(
-        map((car: Car) => new CarAddedSuccess({ car: car })),
+        map(
+          (car: Car) => new CarAddedSuccess({ car: car })
+        ),
         catchError(() => of(new CarAddedError()))
       )
     )
@@ -173,13 +178,18 @@ export class CarEffects {
     ofType(CarActionTypes.DeleteCarRequest),
     mergeMap((action: DeleteCarRequest) =>
       this.carsService.deleteCar(action.payload.id).pipe(
-        map((id: number) => new CarDeletedSuccess({ id: id })),
+        map(
+          (id: number) => new CarDeletedSuccess({ id: id })
+        ),
         catchError(() => of(new CarDeletedError()))
       )
     )
   )
 
-  constructor(private actions$: Actions, private carsService: CarsService) {}
+  constructor(
+    private actions$: Actions,
+    private carsService: CarsService
+  ) {}
 }
 ```
 
@@ -198,25 +208,42 @@ export interface Car {
 _store/reducers/cars.reducer.ts_
 
 ```ts
-import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity'
+import {
+  createEntityAdapter,
+  EntityAdapter,
+  EntityState,
+} from '@ngrx/entity'
 
 import { Car } from '../models/car.model'
-import { CarActionTypes, CarUnion } from '../actions/car.actions'
+import {
+  CarActionTypes,
+  CarUnion,
+} from '../actions/car.actions'
 
-export const adapter: EntityAdapter<Car> = createEntityAdapter<Car>({
-  selectId: (car: Car) => car.ID
+export const adapter: EntityAdapter<Car> = createEntityAdapter<
+  Car
+>({
+  selectId: (car: Car) => car.ID,
 })
 
 export interface State extends EntityState<Car> {
   pending: boolean
 }
 
-export const initialState: State = adapter.getInitialState({ pending: false })
+export const initialState: State = adapter.getInitialState({
+  pending: false,
+})
 
-export const reducer = (state: State = initialState, action: CarUnion) => {
+export const reducer = (
+  state: State = initialState,
+  action: CarUnion
+) => {
   switch (action.type) {
     case CarActionTypes.AddCarRequest:
-      return adapter.addOne(action.payload.car, { ...state, pending: false })
+      return adapter.addOne(action.payload.car, {
+        ...state,
+        pending: false,
+      })
     case CarActionTypes.CarAddedSuccess:
       return { ...state, pending: true }
     case CarActionTypes.CarAddedError:
@@ -225,21 +252,30 @@ export const reducer = (state: State = initialState, action: CarUnion) => {
     case CarActionTypes.UpdateCarRequest:
       return { ...state, pending: true }
     case CarActionTypes.CarUpdatedSuccess:
-      return adapter.updateOne(action.payload.car, { ...state, pending: false })
+      return adapter.updateOne(action.payload.car, {
+        ...state,
+        pending: false,
+      })
     case CarActionTypes.CarUpdatedError:
       return { ...state, pending: false }
 
     case CarActionTypes.LoadCars:
       return { ...state, pending: true }
     case CarActionTypes.CarsLoadedSuccess:
-      return adapter.addAll(action.payload.cars, { ...state, pending: false })
+      return adapter.addAll(action.payload.cars, {
+        ...state,
+        pending: false,
+      })
     case CarActionTypes.CarsLoadedError:
       return { ...state, pending: false }
 
     case CarActionTypes.DeleteCarRequest:
       return { ...state, pending: true }
     case CarActionTypes.CarDeletedSuccess:
-      return adapter.removeOne(action.payload.id, { ...state, pending: false })
+      return adapter.removeOne(action.payload.id, {
+        ...state,
+        pending: false,
+      })
     case CarActionTypes.CarDeletedError:
       return { ...state, pending: false }
 
@@ -252,7 +288,7 @@ const {
   selectIds,
   selectEntities,
   selectAll,
-  selectTotal
+  selectTotal,
 } = adapter.getSelectors()
 
 export const selectCarsIds = selectIds
@@ -267,7 +303,7 @@ _store/index.ts_
 import {
   ActionReducerMap,
   createFeatureSelector,
-  createSelector
+  createSelector,
 } from '@ngrx/store'
 
 import * as cars from './reducers/car.reducer'
@@ -277,16 +313,21 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
-  cars: cars.reducer
+  cars: cars.reducer,
 }
 
-export const selectAdminState = createFeatureSelector<State>('admin')
+export const selectAdminState = createFeatureSelector<
+  State
+>('admin')
 export const selectCarsState = createSelector(
   selectAdminState,
   (state: State) => state.cars
 )
 
-export const selectAllCars = createSelector(selectCarsState, cars.selectAllCars)
+export const selectAllCars = createSelector(
+  selectCarsState,
+  cars.selectAllCars
+)
 
 export const selectCarsPending = createSelector(
   selectCarsState,
@@ -304,8 +345,8 @@ import { CarEffects } from './store/effects/car.effects'
   imports: [
     //...
     EffectsModule.forFeature([CarEffects]),
-    StoreModule.forFeature('catalog', reducers)
-  ]
+    StoreModule.forFeature('catalog', reducers),
+  ],
   //...
 })
 export class CatalogModule {}
@@ -318,8 +359,8 @@ _app.module.ts_
   imports: [
     //...
     EffectsModule.forRoot([]),
-    StoreModule.forRoot({})
-  ]
+    StoreModule.forRoot({}),
+  ],
   //...
 })
 export class AppModule {}

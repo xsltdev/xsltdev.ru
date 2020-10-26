@@ -7,7 +7,11 @@ description: Привязка входных и вторичных свойст�
 Базовый вариант:
 
 ```html
-<p appBetterHilight [defaultColor]="'green'" [highLightColor]="'yellow'">
+<p
+  appBetterHilight
+  [defaultColor]="'green'"
+  [highLightColor]="'yellow'"
+>
   basic highlight style
 </p>
 ```

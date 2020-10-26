@@ -19,9 +19,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   customSubscription: Subscription
   constructor() {}
   ngOnInit() {
-    const myObservable = Observable.create((observer: Observer<string>) => {
-      //...
-    })
+    const myObservable = Observable.create(
+      (observer: Observer<string>) => {
+        //...
+      }
+    )
 
     this.customSubscription = myObservable
       .subscribe

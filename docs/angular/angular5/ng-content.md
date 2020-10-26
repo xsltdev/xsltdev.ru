@@ -14,7 +14,9 @@ _Angular_ позволяет разместить верстку в теге п�
   [srvElement]="serverElement"
 >
   <p>
-    <strong *ngIf="serverElement.type === 'server'" style="color: red"
+    <strong
+      *ngIf="serverElement.type === 'server'"
+      style="color: red"
       >{{ serverElement.content }}</strong
     >
     <em *ngIf="serverElement.type === 'blueprint'"

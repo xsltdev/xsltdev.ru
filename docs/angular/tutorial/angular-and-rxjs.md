@@ -29,7 +29,7 @@ description: RxJS - это библиотека, реализующая прин
 Создание и использование объекта типа `Observable`.
 
 ```ts
-const values = new Observable(observer => {
+const values = new Observable((observer) => {
   observer.next(8)
   observer.next(9)
 
@@ -45,15 +45,15 @@ const values = new Observable(observer => {
     unsubscribe() {
       console.log('Unsubscribed')
       document.removeEventListener('click', handler)
-    }
+    },
   }
 })
 
 const subscription = values.subscribe(
-  v => {
+  (v) => {
     console.log(v)
   },
-  error => {
+  (error) => {
     console.log(error)
   },
   () => {
@@ -78,7 +78,7 @@ import { of } from 'rxjs'
 
 const values = of([1, 2, 3])
 
-values.subscribe(value => {
+values.subscribe((value) => {
   console.log(value)
 })
 ```
@@ -86,7 +86,7 @@ values.subscribe(value => {
 Оператор `of()` - более краткая запись следующего кода:
 
 ```ts
-const values = new Observable(observer => {
+const values = new Observable((observer) => {
   observer.next([1, 2, 3])
 })
 ```
@@ -100,7 +100,7 @@ const values = new Observable(observer => {
 ```ts
 const values = Observable.of(1, 2, 3)
 
-values.pipe(map(number => number * 2)).subscribe(v => {
+values.pipe(map((number) => number * 2)).subscribe((v) => {
   console.log(v)
 })
 ```
@@ -118,10 +118,10 @@ values.pipe(map(number => number * 2)).subscribe(v => {
 ```ts
 let subject = new Subject()
 
-subject.subscribe(v => {
+subject.subscribe((v) => {
   console.log('Observer 1: ' + v)
 })
-subject.subscribe(v => {
+subject.subscribe((v) => {
   console.log('Observer 2: ' + v)
 })
 
@@ -144,13 +144,13 @@ RxJS Subject в свою очередь также имеет разновидн
 ```ts
 let behaviorSubject = new BehaviorSubject<Number>(3)
 
-behaviorSubject.subscribe(v => {
+behaviorSubject.subscribe((v) => {
   console.log('Observer with value of 3: ' + v)
 })
 
 behaviorSubject.next(9)
 
-behaviorSubject.subscribe(v => {
+behaviorSubject.subscribe((v) => {
   console.log('Observer with value of 9: ' + v)
 })
 ```
@@ -165,7 +165,7 @@ replaySubject.next(6)
 replaySubject.next(9)
 replaySubject.next(12)
 
-replaySubject.subscribe(value => {
+replaySubject.subscribe((value) => {
   console.log('ReplaySubject: ' + value)
 })
 ```
@@ -175,7 +175,7 @@ replaySubject.subscribe(value => {
 ```ts
 let asyncSubject = new AsyncSubject<Number>(3)
 
-asyncSubject.subscribe(value => {
+asyncSubject.subscribe((value) => {
   console.log('AsyncSubject: ' + value)
 })
 

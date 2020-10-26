@@ -25,58 +25,68 @@ exsl:object-type(object)
 
 ## Пример
 
-```xml tab="XML"
-<doc />
-```
+=== "XML"
 
-```xslt tab="XSLT"
-<!--  Test exslt:object-type  -->
-<xsl:variable name="tree">
-	<a>
-		<b>
-			<c>
-				<d />
-			</c>
-		</b>
-	</a>
-</xsl:variable>
-<xsl:variable name="string" select="'fred'" />
-<xsl:variable name="number" select="93.7" />
-<xsl:variable name="boolean" select="true()" />
-<xsl:variable name="node-set" select="//*" />
-<xsl:template match="/">
-	<out>
-	:
-	<xsl:value-of select="exslt:object-type($string)" />
-	;
-	<xsl:value-of select="exslt:object-type($number)" />
-	;
-	<xsl:value-of select="exslt:object-type($boolean)" />
-	;
-	<xsl:value-of select="exslt:object-type($node-set)" />
-	;
-	<xsl:value-of select="exslt:object-type($tree)" />
-	;
-	<xsl:if test="function-available('saxon:expression')"
-	xmlns:saxon="http://icl.com/saxon">
-	<xsl:value-of select="exslt:object-type(saxon:expression('item'))" />
-	</xsl:if>
-	;
+    ```xml
+    <doc />
+    ```
 
-	</out>
-</xsl:template>
-```
+=== "XSLT"
 
-```xml tab="Result"
-<out xmlns:exslt="http://exslt.org/common">:
-	string;
-	number;
-	boolean;
-	node-set;
-	RTF;
-	external;
-</out>
-```
+    ```xml
+    <!--  Test exslt:object-type  -->
+    <xsl:variable name="tree">
+      <a>
+        <b>
+          <c>
+            <d />
+          </c>
+        </b>
+      </a>
+    </xsl:variable>
+    <xsl:variable name="string" select="'fred'" />
+    <xsl:variable name="number" select="93.7" />
+    <xsl:variable name="boolean" select="true()" />
+    <xsl:variable name="node-set" select="//*" />
+    <xsl:template match="/">
+      <out>
+        :
+        <xsl:value-of select="exslt:object-type($string)" />
+        ;
+        <xsl:value-of select="exslt:object-type($number)" />
+        ;
+        <xsl:value-of select="exslt:object-type($boolean)" />
+        ;
+        <xsl:value-of select="exslt:object-type($node-set)" />
+        ;
+        <xsl:value-of select="exslt:object-type($tree)" />
+        ;
+        <xsl:if
+          test="function-available('saxon:expression')"
+          xmlns:saxon="http://icl.com/saxon"
+        >
+          <xsl:value-of
+            select="exslt:object-type(saxon:expression('item'))"
+          />
+        </xsl:if>
+        ;
+      </out>
+    </xsl:template>
+    ```
+
+=== "Результат"
+
+    ```xml
+    <out xmlns:exslt="http://exslt.org/common">
+      :
+        string;
+        number;
+        boolean;
+        node-set;
+        RTF;
+        external;
+    </out>
+    ```
 
 ## Ссылки
 

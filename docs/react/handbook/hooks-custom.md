@@ -17,9 +17,15 @@ function FriendStatus(props) {
       setIsOnline(status.isOnline)
     }
 
-    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        props.friend.id,
+        handleStatusChange
+      )
     }
   })
 
@@ -43,13 +49,23 @@ function FriendListItem(props) {
       setIsOnline(status.isOnline)
     }
 
-    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      props.friend.id,
+      handleStatusChange
+    )
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        props.friend.id,
+        handleStatusChange
+      )
     }
   })
 
-  return <li style={{ color: isOnline ? 'green' : 'black' }}>{props.friend.name}</li>
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      {props.friend.name}
+    </li>
+  )
 }
 ```
 
@@ -74,9 +90,15 @@ function useFriendStatus(friendID) {
       setIsOnline(status.isOnline)
     }
 
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange)
+    ChatAPI.subscribeToFriendStatus(
+      friendID,
+      handleStatusChange
+    )
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange)
+      ChatAPI.unsubscribeFromFriendStatus(
+        friendID,
+        handleStatusChange
+      )
     }
   })
 
@@ -123,7 +145,11 @@ function FriendStatus(props) {
 function FriendListItem(props) {
   const isOnline = useFriendStatus(props.friend.id)
 
-  return <li style={{ color: isOnline ? 'green' : 'black' }}>{props.friend.name}</li>
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      {props.friend.name}
+    </li>
+  )
 }
 ```
 
@@ -142,7 +168,11 @@ function FriendListItem(props) {
 Продемонстрируем это, используя другой компонент из нашего гипотетического примера чата. Это средство выбора получателей сообщений чата, которое показывает, находится ли выбранный в данный момент друг в сети:
 
 ```js
-const friendList = [{ id: 1, name: 'Татьяна' }, { id: 2, name: 'Алла' }, { id: 3, name: 'Лиля' }]
+const friendList = [
+  { id: 1, name: 'Татьяна' },
+  { id: 2, name: 'Алла' },
+  { id: 3, name: 'Лиля' },
+]
 
 function ChatRecipientPicker() {
   const [recipientID, setRecipientID] = useState(1)
@@ -151,8 +181,13 @@ function ChatRecipientPicker() {
   return (
     <>
       <Circle color={isRecipientOnline ? 'green' : 'red'} />
-      <select value={recipientID} onChange={e => setRecipientID(Number(e.target.value))}>
-        {friendList.map(friend => (
+      <select
+        value={recipientID}
+        onChange={(e) =>
+          setRecipientID(Number(e.target.value))
+        }
+      >
+        {friendList.map((friend) => (
           <option key={friend.id} value={friend.id}>
             {friend.name}
           </option>
@@ -190,8 +225,8 @@ function todosReducer(state, action) {
         ...state,
         {
           text: action.text,
-          completed: false
-        }
+          completed: false,
+        },
       ]
     // ... другие действия ...
     default:

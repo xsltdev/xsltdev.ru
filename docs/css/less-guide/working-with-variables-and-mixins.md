@@ -89,7 +89,7 @@
 Самым простым способом получить значения из переменных в Less является следующая функция:
 
 ```js
-;(function(a, b) {
+;(function (a, b) {
   return a + b
 })('@{a}', '@{b}')
 ```
@@ -121,7 +121,7 @@
 Если для проведения операций в выражении требуется большое количество переменных, или их количество неизвестно заранее, то на помощь приходит следующая функция, возвращающая массив всех переданных аргументов:
 
 ```js
-;(function(args) {
+;(function (args) {
   return args
 })('@{arguments}')
 ```
@@ -151,10 +151,10 @@
 В Less с таким результатом сделать ничего не получится (мешают квадратные скобки), поэтому на практике лучше всего использовать следующую модификацию предложенной функции:
 
 ```js
-;(function(args) {
+;(function (args) {
   return args
 })(
-  (function() {
+  (function () {
     var args = '@{arguments}'
     return args.replace(/^\[|\]$/g, '')
   })()
@@ -194,15 +194,15 @@
 В приведённом ниже примере последнему в списке значению добавляется единица измерения `deg`:
 
 ```js
-;(function(args) {
+;(function (args) {
   return (
     (args = args || '0, 0, 0, 0'),
-    (args = args.replace(/,\s*\d+$/, function(args) {
+    (args = args.replace(/,\s*\d+$/, function (args) {
       return args + 'deg'
     }))
   )
 })(
-  (function() {
+  (function () {
     var args = '@{arguments}'
     return (args = args.replace(/^\[|\]$/g, ''))
   })()

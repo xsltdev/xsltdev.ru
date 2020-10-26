@@ -87,7 +87,8 @@ white-space: unset;
         <body>
           <b>Великая теорема Ферма</b><br />
           <i
-            >X <sup><small>n</small></sup> + Y <sup><small>n</small></sup> = Z
+            >X <sup><small>n</small></sup> + Y
+            <sup><small>n</small></sup> = Z
             <sup><small>n</small></sup></i
           ><br />
           где n - целое число > 2

@@ -32,7 +32,10 @@ description: Тег small (от англ. small — маленький) испо
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
     <title>SMALL</title>
   </head>
   <body>
@@ -40,11 +43,13 @@ description: Тег small (от англ. small — маленький) испо
       <big><big>Большая кошка</big></big>
     </p>
     <p>
-      Из семейства кошачьих самая большая кошка это совсем не
-      <small>лев</small>, как можно было бы подумать исходя из титула «царя
-      зверей». А уссурийский тигр, вес которого достигает 300 килограмм. Тигр
-      уступает по <small>размерам</small> и <small>весу</small> только другому
-      наземному хищнику, белому медведю.
+      Из семейства кошачьих самая большая кошка это совсем
+      не
+      <small>лев</small>, как можно было бы подумать исходя
+      из титула «царя зверей». А уссурийский тигр, вес
+      которого достигает 300 килограмм. Тигр уступает по
+      <small>размерам</small> и <small>весу</small> только
+      другому наземному хищнику, белому медведю.
     </p>
   </body>
 </html>

@@ -44,12 +44,15 @@ description: Тег samp (от англ. sample — пример) использ
     </style>
   </head>
   <body>
-    <p>Проверка, поддерживает браузер JavaScript 1.3 или нет.</p>
+    <p>
+      Проверка, поддерживает браузер JavaScript 1.3 или нет.
+    </p>
     <p>
       <code>
         <script language="JavaScript1.3">
-          JS13 = 1</script
-        ><br />
+          JS13 = 1
+        </script>
+        <br />
         <script language="JavaScript">
           <br>
           					if (window.JS13) document.write("Ваш браузер поддерживает JavaScript 1.3");<br>
@@ -58,8 +61,8 @@ description: Тег samp (от англ. sample — пример) использ
     </p>
     <p>
       В результате выполнения скрипта вы увидите текст
-      <samp>Ваш браузер поддерживает JavaScript 1.3</samp>, в том случае, если
-      браузер работает с версией 1.3.
+      <samp>Ваш браузер поддерживает JavaScript 1.3</samp>,
+      в том случае, если браузер работает с версией 1.3.
     </p>
   </body>
 </html>

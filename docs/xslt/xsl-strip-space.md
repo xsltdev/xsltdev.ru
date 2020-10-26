@@ -9,8 +9,7 @@ description: Элемент xsl:strip-space удаляет текстовые у
 ## Синтаксис
 
 ```xml
-<xsl:strip-space
-    elements = "tokens" />
+<xsl:strip-space elements="tokens" />
 ```
 
 Атрибуты:
@@ -34,36 +33,45 @@ description: Элемент xsl:strip-space удаляет текстовые у
 
 ```xml
 <a xmlns:d="urn:d">
-<d:b>        </d:b>
-<d:b>   text     </d:b>
-<c>
-        </c>
-<e>    </e>
+  <d:b>
+
+  </d:b>
+  <d:b>text</d:b>
+  <c>
+
+  </c>
+  <e>
+
+  </e>
 </a>
 ```
 
 Листинг 8.3. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:preserve-space elements="c"/>
-    <xsl:strip-space elements="e t:*" xmlns:t="urn:d"/>
-    <xsl:template match="/">
-        <xsl:copy-of select="/"/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:preserve-space elements="c" />
+  <xsl:strip-space elements="e t:*" xmlns:t="urn:d" />
+  <xsl:template match="/">
+    <xsl:copy-of select="/" />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Листинг 8.4. Выходящий документ
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?><a xmlns:d="urn:d">
-<d:b/>
-<d:b>   text     </d:b>
-<c>
-        </c>
-<e/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<a xmlns:d="urn:d">
+  <d:b />
+  <d:b>text</d:b>
+  <c>
+
+  </c>
+  <e />
 </a>
 ```
 

@@ -16,7 +16,7 @@ Pipes бывают двух типов: `pure` (не допускающие из
 import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
-  name: 'factorial'
+  name: 'factorial',
 })
 export class FactorialPipe implements PipeTransform {
   transform(value: number, args?: any): number {
@@ -42,8 +42,11 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <input [(ngModel)]="fact" name="fact" />
-    <div>Факториал числа {{ fact }} равен {{ fact | factorial }}</div>
-  `
+    <div>
+      Факториал числа {{ fact }} равен
+      {{ fact | factorial }}
+    </div>
+  `,
 })
 export class AppComponent {}
 ```
@@ -58,7 +61,7 @@ export class AppComponent {}
 import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
-  name: 'join'
+  name: 'join',
 })
 export class JoinPipe implements PipeTransform {
   transform(array: any, start?: any, end?: any): any {
@@ -76,7 +79,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
   name: 'join',
-  pure: false
+  pure: false,
 })
 export class JoinPipe implements PipeTransform {
   transform(array: any, start?: any, end?: any): any {
@@ -96,12 +99,20 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <input #phone name="phone" class="form-control" />
-    <button class="btn" (click)="phones.push(phone.value)">Add</button>
+    <button class="btn" (click)="phones.push(phone.value)">
+      Add
+    </button>
     <p>{{ phones | join }}</p>
-  `
+  `,
 })
 export class AppComponent {
-  phones = ['iPhone 7', 'LG G 5', 'Honor 9', 'Idol S4', 'Nexus 6P']
+  phones = [
+    'iPhone 7',
+    'LG G 5',
+    'Honor 9',
+    'Idol S4',
+    'Nexus 6P',
+  ]
 }
 ```
 

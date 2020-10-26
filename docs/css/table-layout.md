@@ -58,8 +58,8 @@ table-layout: unset;
   </head>
   <body>
     <table border="1">
-	  <col class="col1" />
-	  <col span="9" class="coln" />
+      <col class="col1" />
+      <col span="9" class="coln" />
       <tr>
         <td></td>
         <td>2012</td>

@@ -67,7 +67,10 @@ ng build --prod --build-optimizer --deploy-url /test/
 В результате получается:
 
 ```html
-<link rel="stylesheet" href="/test/styles.ddf543754291862b7f90.css" />
+<link
+  rel="stylesheet"
+  href="/test/styles.ddf543754291862b7f90.css"
+/>
 ```
 
 В отличие от `--base-href`, параметр `--deploy-url` не влияет на маршрутизацию Angular.

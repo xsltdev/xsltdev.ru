@@ -58,7 +58,7 @@ flex: unset;
 
 !!! note "Примечание"
 
-	Safari до версии 9 поддерживает свойство `-webkit-flex`.
+    Safari до версии 9 поддерживает свойство `-webkit-flex`.
 
 ## Спецификации
 
@@ -93,7 +93,9 @@ HTML
 
 ```html
 <div id="flex-container">
-  <div class="flex-item" id="flex">Flex box (click to toggle raw box)</div>
+  <div class="flex-item" id="flex">
+    Flex box (click to toggle raw box)
+  </div>
   <div class="raw-item" id="raw">Raw box</div>
 </div>
 ```

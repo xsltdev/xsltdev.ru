@@ -37,10 +37,14 @@ import { AppRoutingModule } from './app-routing.module'
 import { UsersService } from './users.service'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, UserComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UserComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [UsersService], // имя сервиса нужно передать в массив ключа providers
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -49,7 +53,9 @@ export class AppModule {}
 
 ```html
 <p>User with <strong>ID {{ id }}</strong> was loaded</p>
-<button class="btn btn-primary" (click)="onActivate()">Activate!</button>
+<button class="btn btn-primary" (click)="onActivate()">
+  Activate!
+</button>
 ```
 
 Метод `onActivate()` использует метод `next()` для формирования потока:
@@ -62,7 +68,7 @@ import { UsersService } from '../users.service'
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
   id: number
@@ -88,7 +94,7 @@ import { UsersService } from './users.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   user1Activated = false
@@ -97,13 +103,15 @@ export class AppComponent implements OnInit {
   constructor(private usersService: UsersService) {}
 
   ngOnInit() {
-    this.usersService.userActivated.subscribe((id: number) => {
-      if (id === 1) {
-        this.user1Activated = true
-      } else if (id === 2) {
-        this.user2Activated = true
+    this.usersService.userActivated.subscribe(
+      (id: number) => {
+        if (id === 1) {
+          this.user1Activated = true
+        } else if (id === 2) {
+          this.user2Activated = true
+        }
       }
-    })
+    )
   }
 }
 ```

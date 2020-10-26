@@ -10,7 +10,7 @@ export const SET_YEAR = 'SET_YEAR' // положили строку в конс�
 export function setYear(year) {
   return {
     type: SET_YEAR, // изменили строку на константу
-    payload: year
+    payload: year,
   }
 }
 ```
@@ -24,7 +24,7 @@ import { SET_YEAR } from '../actions/PageActions'
 
 const initialState = {
   year: 2018,
-  photos: []
+  photos: [],
 }
 
 export function pageReducer(state = initialState, action) {

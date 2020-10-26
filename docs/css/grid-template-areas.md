@@ -103,13 +103,19 @@ grid-template-areas: none;
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Использование свойств grid-area и grid-template-areas</title>
+    <title>
+      Использование свойств grid-area и grid-template-areas
+    </title>
     <style>
       .grid-container {
         display: grid; /* элемент отображается как блочный   grid-контейнер */
         margin-top: 5px; /* внешний отступ сверху */
         padding: 10px; /* внешний отступ элемента со всех сторон */
-        background: rgb(0, 150, 208); /* цвет заднего фона */
+        background: rgb(
+          0,
+          150,
+          208
+        ); /* цвет заднего фона */
         grid-template-rows: 30px 30px 30px 30px; /* определяем количество и ширину строк в макете сетки */
         grid-template-columns: 25% 25% 25% 25%; /* определяем количество и ширину столбцов в макете сетки */
         grid-template-areas:
@@ -119,7 +125,11 @@ grid-template-areas: none;
           'footer footer footer footer';
       }
       .grid-container > div {
-        background: rgb(241, 101, 41); /* цвет заднего фона */
+        background: rgb(
+          241,
+          101,
+          41
+        ); /* цвет заднего фона */
         border: 1px solid #000; /* сплошная граница размером 1 пиксель черного цвета */
         text-align: center; /* горизонтальное выравнивание текста */
       }

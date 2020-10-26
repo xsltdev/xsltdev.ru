@@ -25,7 +25,10 @@ export const routes = (
       <IndexRedirect to="list" /> {/* INDEX REDIRECT */}
       <Route path="/admin" component={Admin} />
       <Route path="/genre/:genre" component={Genre}>
-        <Route path="/genre/:genre/:release" component={Release} />
+        <Route
+          path="/genre/:genre/:release"
+          component={Release}
+        />
       </Route>
       <Route path="/list" component={List} />
     </Route>

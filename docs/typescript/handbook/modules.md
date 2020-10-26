@@ -157,7 +157,10 @@ $('button.continue').html('Next Step...')
 export default class ZipCodeValidator {
   static numberRegexp = /^[0-9]+$/
   isAcceptable(s: string) {
-    return s.length === 5 && ZipCodeValidator.numberRegexp.test(s)
+    return (
+      s.length === 5 &&
+      ZipCodeValidator.numberRegexp.test(s)
+    )
   }
 }
 ```
@@ -177,7 +180,7 @@ let myValidator = new validator()
 ```ts
 const numberRegexp = /^[0-9]+$/
 
-export default function(s: string) {
+export default function (s: string) {
   return s.length === 5 && numberRegexp.test(s)
 }
 ```
@@ -190,8 +193,10 @@ import validate from './StaticZipCodeValidator'
 let strings = ['Hello', '98052', '101']
 
 // Использование функции validate
-strings.forEach(s => {
-  console.log(`"${s}" ${validate(s) ? ' matches' : ' does not match'}`)
+strings.forEach((s) => {
+  console.log(
+    `"${s}" ${validate(s) ? ' matches' : ' does not match'}`
+  )
 })
 ```
 
@@ -248,8 +253,14 @@ let strings = ['Hello', '98052', '101']
 let validator = new zip()
 
 // Для каждой строки показывает, прошла ли она каждый валидатор
-strings.forEach(s => {
-  console.log(`"${s}" - ${validator.isAcceptable(s) ? 'matches' : 'does not match'}`)
+strings.forEach((s) => {
+  console.log(
+    `"${s}" - ${
+      validator.isAcceptable(s)
+        ? 'matches'
+        : 'does not match'
+    }`
+  )
 })
 ```
 
@@ -270,7 +281,11 @@ export let t = m.something + 1
 **AMD / RequireJS SimpleModule.js**
 
 ```js
-define(['require', 'exports', './mod'], function(require, exports, mod_1) {
+define(['require', 'exports', './mod'], function (
+  require,
+  exports,
+  mod_1
+) {
   exports.t = mod_1.something + 1
 })
 ```
@@ -285,14 +300,17 @@ exports.t = mod_1.something + 1
 **UMD SimpleModule.js**
 
 ```js
-;(function(factory) {
-  if (typeof module === 'object' && typeof module.exports === 'object') {
+;(function (factory) {
+  if (
+    typeof module === 'object' &&
+    typeof module.exports === 'object'
+  ) {
     var v = factory(require, exports)
     if (v !== undefined) module.exports = v
   } else if (typeof define === 'function' && define.amd) {
     define(['require', 'exports', './mod'], factory)
   }
-})(function(require, exports) {
+})(function (require, exports) {
   var mod_1 = require('./mod')
   exports.t = mod_1.something + 1
 })
@@ -301,18 +319,18 @@ exports.t = mod_1.something + 1
 **Система SimpleModule.js**
 
 ```js
-System.register(['./mod'], function(exports_1) {
+System.register(['./mod'], function (exports_1) {
   var mod_1
   var t
   return {
     setters: [
-      function(mod_1_1) {
+      function (mod_1_1) {
         mod_1 = mod_1_1
-      }
+      },
     ],
-    execute: function() {
+    execute: function () {
       exports_1('t', (t = mod_1.something + 1))
-    }
+    },
   }
 })
 ```
@@ -353,7 +371,8 @@ import { StringValidator } from './Validation'
 
 const lettersRegexp = /^[A-Za-z]+$/
 
-export class LettersOnlyValidator implements StringValidator {
+export class LettersOnlyValidator
+  implements StringValidator {
   isAcceptable(s: string) {
     return lettersRegexp.test(s)
   }
@@ -390,9 +409,15 @@ validators['ZIP code'] = new ZipCodeValidator()
 validators['Letters only'] = new LettersOnlyValidator()
 
 // Для каждой строки показывает, прошла ли она каждый валидатор
-strings.forEach(s => {
+strings.forEach((s) => {
   for (let name in validators) {
-    console.log(`"${s}" - ${validators[name].isAcceptable(s) ? 'matches' : 'does not match'} ${name}`)
+    console.log(
+      `"${s}" - ${
+        validators[name].isAcceptable(s)
+          ? 'matches'
+          : 'does not match'
+      } ${name}`
+    )
   }
 })
 ```
@@ -433,12 +458,17 @@ if (needZipValidation) {
 **Пример: динамическая загрузка модулей в require.js**
 
 ```ts
-declare function require(moduleNames: string[], onLoad: (...args: any[]) => void): void
+declare function require(
+  moduleNames: string[],
+  onLoad: (...args: any[]) => void
+): void
 
 import { ZipCodeValidator as Zip } from './ZipCodeValidator'
 
 if (needZipValidation) {
-  require(['./ZipCodeValidator'], (ZipCodeValidator: typeof Zip) => {
+  require(['./ZipCodeValidator'], (
+    ZipCodeValidator: typeof Zip
+  ) => {
     let validator = new ZipCodeValidator()
     if (validator.isAcceptable('...')) {
       /* ... */
@@ -455,12 +485,14 @@ declare const System: any
 import { ZipCodeValidator as Zip } from './ZipCodeValidator'
 
 if (needZipValidation) {
-  System.import('./ZipCodeValidator').then((ZipCodeValidator: typeof Zip) => {
-    var x = new ZipCodeValidator()
-    if (x.isAcceptable('...')) {
-      /* ... */
+  System.import('./ZipCodeValidator').then(
+    (ZipCodeValidator: typeof Zip) => {
+      var x = new ZipCodeValidator()
+      if (x.isAcceptable('...')) {
+        /* ... */
+      }
     }
-  })
+  )
 }
 ```
 
@@ -490,7 +522,11 @@ declare module 'url' {
     pathname?: string
   }
 
-  export function parse(urlStr: string, parseQueryString?, slashesDenoteHost?): Url
+  export function parse(
+    urlStr: string,
+    parseQueryString?,
+    slashesDenoteHost?
+  ): Url
 }
 
 declare module 'path' {
@@ -689,9 +725,15 @@ export class Calculator {
   private memory = 0
   private operator: string
 
-  protected processDigit(digit: string, currentValue: number) {
+  protected processDigit(
+    digit: string,
+    currentValue: number
+  ) {
     if (digit >= '0' && digit <= '9') {
-      return currentValue * 10 + (digit.charCodeAt(0) - '0'.charCodeAt(0))
+      return (
+        currentValue * 10 +
+        (digit.charCodeAt(0) - '0'.charCodeAt(0))
+      )
     }
   }
 
@@ -701,7 +743,11 @@ export class Calculator {
     }
   }
 
-  protected evaluateOperator(operator: string, left: number, right: number): number {
+  protected evaluateOperator(
+    operator: string,
+    left: number,
+    right: number
+  ): number {
     switch (this.operator) {
       case '+':
         return left + right
@@ -716,7 +762,11 @@ export class Calculator {
 
   private evaluate() {
     if (this.operator) {
-      this.memory = this.evaluateOperator(this.operator, this.memory, this.current)
+      this.memory = this.evaluateOperator(
+        this.operator,
+        this.memory,
+        this.current
+      )
     } else {
       this.memory = this.current
     }
@@ -777,18 +827,46 @@ test(c, '1+2*33/11=') // выведет 9
 import { Calculator } from './Calculator'
 
 class ProgrammerCalculator extends Calculator {
-  static digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+  static digits = [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+  ]
 
   constructor(public base: number) {
     super()
-    if (base <= 0 || base > ProgrammerCalculator.digits.length) {
-      throw new Error('base has to be within 0 to 16 inclusive.')
+    if (
+      base <= 0 ||
+      base > ProgrammerCalculator.digits.length
+    ) {
+      throw new Error(
+        'base has to be within 0 to 16 inclusive.'
+      )
     }
   }
 
-  protected processDigit(digit: string, currentValue: number) {
+  protected processDigit(
+    digit: string,
+    currentValue: number
+  ) {
     if (ProgrammerCalculator.digits.indexOf(digit) >= 0) {
-      return currentValue * this.base + ProgrammerCalculator.digits.indexOf(digit)
+      return (
+        currentValue * this.base +
+        ProgrammerCalculator.digits.indexOf(digit)
+      )
     }
   }
 }

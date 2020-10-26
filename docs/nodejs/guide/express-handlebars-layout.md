@@ -11,7 +11,9 @@ npm install express-handlebars
 Пусть в проекте в папке `views/partials` будут определены два частичных представления для меню и футера. Первое представление - `menu.hbs`:
 
 ```html
-<nav><a href="/">Главная</a> | <a href="/contact">Контакты</a></nav>
+<nav>
+  <a href="/">Главная</a> | <a href="/contact">Контакты</a>
+</nav>
 ```
 
 И второе представление - `footer.hbs`:
@@ -71,22 +73,22 @@ app.engine(
   expressHbs({
     layoutsDir: 'views/layouts',
     defaultLayout: 'layout',
-    extname: 'hbs'
+    extname: 'hbs',
   })
 )
 app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + '/views/partials')
 
-app.use('/contact', function(request, response) {
+app.use('/contact', function (request, response) {
   response.render('contact', {
     title: 'Мои контакты',
     emailsVisible: true,
     emails: ['gavgav@mycorp.com', 'mioaw@mycorp.com'],
-    phone: '+1234567890'
+    phone: '+1234567890',
   })
 })
 
-app.use('/', function(request, response) {
+app.use('/', function (request, response) {
   response.render('home.hbs')
 })
 app.listen(3000)
@@ -100,7 +102,7 @@ app.engine(
   expressHbs({
     layoutsDir: 'views/layouts',
     defaultLayout: 'layout',
-    extname: 'hbs'
+    extname: 'hbs',
   })
 )
 ```

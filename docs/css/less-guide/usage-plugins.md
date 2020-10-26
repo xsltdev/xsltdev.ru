@@ -52,7 +52,7 @@ lessc --functions --inline-urls styles.less
 <script src="plugin.js"></script>
 <script>
   less = {
-    plugins: [plugin]
+    plugins: [plugin],
   }
 </script>
 <script src="less.min.js"></script>

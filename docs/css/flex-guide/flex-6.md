@@ -99,7 +99,9 @@
     <h3>Baseline</h3>
     <div class="flex-container baseline">
       <div class="flex-item color1">Flex Item 1</div>
-      <div class="flex-item color2 largest-item">Flex Item 2</div>
+      <div class="flex-item color2 largest-item">
+        Flex Item 2
+      </div>
       <div class="flex-item color3">Flex Item 3</div>
       <div class="flex-item color4">Flex Item 4</div>
     </div>

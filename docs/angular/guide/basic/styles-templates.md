@@ -15,7 +15,10 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <h1>Hello Angular 2</h1>
-    <p>Angular 2 представляет модульную архитектуру приложения</p>
+    <p>
+      Angular 2 представляет модульную архитектуру
+      приложения
+    </p>
   `,
   styles: [
     `
@@ -27,8 +30,8 @@ import { Component } from '@angular/core'
         font-size: 13px;
         font-family: Verdana;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class AppComponent {}
 ```
@@ -63,7 +66,7 @@ styles: [
         font-family: Verdana;
         color: #555;
     }
-`
+`,
 ]
 ```
 
@@ -94,9 +97,12 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <h1>Hello Angular 2</h1>
-    <p>Angular 5 представляет модульную архитектуру приложения</p>
+    <p>
+      Angular 5 представляет модульную архитектуру
+      приложения
+    </p>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {}
 ```
@@ -107,7 +113,9 @@ export class AppComponent {}
 
 ```html
 <h1>Hello Angular 7</h1>
-<p>Angular 7 представляет модульную архитектуру приложения</p>
+<p>
+  Angular 7 представляет модульную архитектуру приложения
+</p>
 ```
 
 То есть здесь определен весь тот же код, что ранее был в шаблоне компонента. И теперь изменим сам компонент:
@@ -118,7 +126,7 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {}
 ```
@@ -175,15 +183,15 @@ var UglifyJSPlugin = require('uglifyjs-webpack-plugin') // плагин мини
 module.exports = {
   entry: {
     polyfills: './src/polyfills.ts',
-    app: './src/main.ts'
+    app: './src/main.ts',
   },
   output: {
     path: path.resolve(__dirname, './public'), // путь к каталогу выходных файлов - папка public
     publicPath: '/public/',
-    filename: '[name].js' // название создаваемого файла
+    filename: '[name].js', // название создаваемого файла
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
@@ -194,22 +202,25 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: path.resolve(__dirname, 'tsconfig.json')
-            }
+              configFileName: path.resolve(
+                __dirname,
+                'tsconfig.json'
+              ),
+            },
           },
-          'angular2-template-loader'
-        ]
+          'angular2-template-loader',
+        ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.css$/,
         include: path.resolve(__dirname, 'src/app'),
-        loader: 'raw-loader'
-      }
-    ]
+        loader: 'raw-loader',
+      },
+    ],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
@@ -217,8 +228,8 @@ module.exports = {
       path.resolve(__dirname, 'src'), // каталог с исходными файлами
       {} // карта маршрутов
     ),
-    new UglifyJSPlugin()
-  ]
+    new UglifyJSPlugin(),
+  ],
 }
 ```
 

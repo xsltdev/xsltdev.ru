@@ -87,7 +87,7 @@ body {
   <!-- Scripts -->
   <script>
     less = {
-      env: 'development'
+      env: 'development',
     }
   </script>
   <script src="less.min.js"></script>

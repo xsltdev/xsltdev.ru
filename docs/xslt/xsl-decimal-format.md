@@ -12,17 +12,18 @@ XSLT позволяет изменять специальные символы, 
 
 ```xml
 <xsl:decimal-format
-    name = "строка"
-    decimal-separator = "символ"
-    grouping-separator = "символ"
-    infinity = "строка"
-    minus-sign = "символ"
-    NaN = "строка"
-    percent = "символ"
-    per-mille = "символ"
-    zero-digit = "символ"
-    digit = "символ"
-    pattern-separator = "символ" />
+  name="строка"
+  decimal-separator="символ"
+  grouping-separator="символ"
+  infinity="строка"
+  minus-sign="символ"
+  NaN="строка"
+  percent="символ"
+  per-mille="символ"
+  zero-digit="символ"
+  digit="символ"
+  pattern-separator="символ"
+/>
 ```
 
 Атрибуты:
@@ -70,15 +71,16 @@ XSLT позволяет изменять специальные символы, 
 
 ```xml
 <xsl:decimal-format
-    name="format1"
-    decimal-separator=","
-    minus-sign="N"
-    grouping-separator=":"
-    infinity="?"
-    NaN="not-a-number"
-    percent="%"
-    digit="$"
-    pattern-separator="|"/>
+  name="format1"
+  decimal-separator=","
+  minus-sign="N"
+  grouping-separator=":"
+  infinity="?"
+  NaN="not-a-number"
+  percent="%"
+  digit="$"
+  pattern-separator="|"
+/>
 ```
 
 Примеры функций format-number:
@@ -97,7 +99,7 @@ format-number(-1 div 0, '$,$', 'format1') ? 'N?'
 Определение десятичного формата:
 
 ```xml
-<xsl:decimal-format name="format2" zero-digit="/"/>
+<xsl:decimal-format name="format2" zero-digit="/" />
 ```
 
 Примеры функций format-number:
@@ -110,7 +112,7 @@ format-number(123456789, '#') ? '123456780'
 Определение десятичного формата:
 
 ```xml
-<xsl:decimal-format name="format3" zero-digit="1"/>
+<xsl:decimal-format name="format3" zero-digit="1" />
 ```
 
 Примеры функций format-number:
@@ -127,12 +129,19 @@ format-number(12345.06789, '#.#####', 'format3') ? '23456.1789:'
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!-- decimal-format2.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    ...
-    <xsl:text>
-    format-number(1 div 0, '###,###.00', 'f2')=</xsl:text>
-    <xsl:value-of version="1.0" select="format-number(1 div 0, '###,###.00', 'f2')"/>
-    ...
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  ...
+  <xsl:text>
+    format-number(1 div 0, '###,###.00', 'f2')=
+  </xsl:text>
+  <xsl:value-of
+    version="1.0"
+    select="format-number(1 div 0, '###,###.00', 'f2')"
+  />
+  ...
 </xsl:stylesheet>
 ```
 

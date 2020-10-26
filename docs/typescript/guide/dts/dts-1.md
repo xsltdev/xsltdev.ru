@@ -104,7 +104,11 @@ class Utility {
 Однако может возникнуть сложность с подключением более сложных объектов. Например, пусть есть такой объект javascript:
 
 ```typescript
-var points = [{ X: 10, Y: 34 }, { X: 24, Y: 65 }, { X: 89, Y: 12 }]
+var points = [
+  { X: 10, Y: 34 },
+  { X: 24, Y: 65 },
+  { X: 89, Y: 12 },
+]
 ```
 
 Для данного массива объектов в файле `globals.d.ts` мы можем определить соответствующий отдельному объекту интерфейс и подключить массив объектов некоторого интерфейса, который содержит два свойства X и Y:
@@ -124,7 +128,13 @@ declare var points: IPoint[]
 
 class Utility {
   static displayGlobalVar() {
-    for (var i = 0; i < points.length; i++) console.log('Точка с координатами X=' + points[i].X + ' Y=' + points[i].Y)
+    for (var i = 0; i < points.length; i++)
+      console.log(
+        'Точка с координатами X=' +
+          points[i].X +
+          ' Y=' +
+          points[i].Y
+      )
   }
 }
 

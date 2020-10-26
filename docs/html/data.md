@@ -32,17 +32,24 @@ description: Тег data (от англ. data - данные) представл
 
 ```html
 <p>
-  <data value="1319898155">14:22</data> <b>egof</b> I'm not that nerdy, I've
-  only seen 30% of the star trek episodes
+  <data value="1319898155">14:22</data> <b>egof</b> I'm not
+  that nerdy, I've only seen 30% of the star trek episodes
 </p>
 <p>
-  <data value="1319898192">14:23</data> <b>kaj</b> if you know what percentage
-  of the star trek episodes you have seen, you are inarguably nerdy
+  <data value="1319898192">14:23</data> <b>kaj</b> if you
+  know what percentage of the star trek episodes you have
+  seen, you are inarguably nerdy
 </p>
-<p><data value="1319898200">14:23</data> <b>egof</b> it's unarguably</p>
-<p><data value="1319898228">14:23</data> <i>* kaj blinks</i></p>
 <p>
-  <data value="1319898260">14:24</data> <b>kaj</b> you are not helping your case
+  <data value="1319898200">14:23</data> <b>egof</b> it's
+  unarguably
+</p>
+<p>
+  <data value="1319898228">14:23</data> <i>* kaj blinks</i>
+</p>
+<p>
+  <data value="1319898260">14:24</data> <b>kaj</b> you are
+  not helping your case
 </p>
 ```
 

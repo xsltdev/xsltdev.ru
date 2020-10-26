@@ -49,7 +49,10 @@ export class Phone {
           [(ngModel)]="phone.company"
           #phoneCompany="ngModel"
         >
-          <option *ngFor="let comp of companies" [value]="comp">
+          <option
+            *ngFor="let comp of companies"
+            [value]="comp"
+          >
             {{ comp }}
           </option>
         </select>
@@ -57,18 +60,26 @@ export class Phone {
       <div class="form-group">
         <button
           class="btn btn-default"
-          (click)="addPhone(phoneTitle, phonePrice, phoneCompany)"
+          (click)="
+            addPhone(phoneTitle, phonePrice, phoneCompany)
+          "
         >
           Добавить
         </button>
       </div>
       <div>
-        <p>{{ phoneTitle.name }} : {{ phoneTitle.model }}</p>
-        <p>{{ phonePrice.name }} : {{ phonePrice.model }}</p>
-        <p>{{ phoneCompany.name }} : {{ phoneCompany.model }}</p>
+        <p>
+          {{ phoneTitle.name }} : {{ phoneTitle.model }}
+        </p>
+        <p>
+          {{ phonePrice.name }} : {{ phonePrice.model }}
+        </p>
+        <p>
+          {{ phoneCompany.name }} : {{ phoneCompany.model }}
+        </p>
       </div>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   phone: Phone = new Phone('', 0, 'Samsung')
@@ -79,7 +90,7 @@ export class AppComponent {
     'Samsung',
     'LG',
     'Motorola',
-    'Alcatel'
+    'Alcatel',
   ]
 
   addPhone(title: NgModel, price: NgModel, comp: NgModel) {

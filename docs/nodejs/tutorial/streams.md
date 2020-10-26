@@ -35,7 +35,13 @@ const fs = require('fs')
 
 let stream = fs.createReadStream('./files/data.txt')
 
-setTimeout(() => stream.on('data', data => console.log(data.toString())), 3000) //выведет содержимое файла
+setTimeout(
+  () =>
+    stream.on('data', (data) =>
+      console.log(data.toString())
+    ),
+  3000
+) //выведет содержимое файла
 ```
 
 В примере поток `Readable` создается с использованием метода `createReadStream()` модуля `fs`.
@@ -53,7 +59,13 @@ let stream = fs.createReadStream('./files/data.txt')
 
 stream.resume()
 
-setTimeout(() => stream.on('data', data => console.log(data.toString())), 3000) //событие не будет вызвано
+setTimeout(
+  () =>
+    stream.on('data', (data) =>
+      console.log(data.toString())
+    ),
+  3000
+) //событие не будет вызвано
 ```
 
 События Node.js потока `Readable`:
@@ -81,13 +93,17 @@ _writable.js_
 ```js
 const fs = require('fs')
 
-let writableStream = fs.createWriteStream('./files/data.txt')
+let writableStream = fs.createWriteStream(
+  './files/data.txt'
+)
 
 writableStream.write('Something important data')
 writableStream.end()
 
-writableStream.on('finish', () => console.log('Data was written.'))
-writableStream.on('error', err => console.log(err))
+writableStream.on('finish', () =>
+  console.log('Data was written.')
+)
+writableStream.on('error', (err) => console.log(err))
 ```
 
 Здесь в примере создание потока `Writable` создается с помощью метода `fs.createWriteStream()`, в котором указывается, что все данные должны быть записаны в файл `data.txt`.
@@ -109,7 +125,7 @@ writableStream.on('error', err => console.log(err))
 Если неправильно указать путь к файлу для записи данных, будет сгенерировано событие `error`, обработчику которого аргументом будет передан объект ошибки.
 
 ```js
-writableStream.on('error', err => console.log(err))
+writableStream.on('error', (err) => console.log(err))
 ```
 
 События Node.js потока `Writable`:

@@ -9,10 +9,8 @@ description: Элемент xsl:attribute служит для создания �
 ## Синтаксис
 
 ```xml
-<xsl:attribute
-	name = "имя"
-	namespace = "пространство имен">
-	<!-- Содержимое: template -->
+<xsl:attribute name="имя" namespace="пространство имен">
+  <!-- Содержимое: template -->
 </xsl:attribute>
 ```
 
@@ -39,8 +37,8 @@ description: Элемент xsl:attribute служит для создания �
 
 ```xml
 <element name="record">
-	<attribute name="fieldcount" value="12" />
-	<attribute name="title" value="Aggregation" />
+  <attribute name="fieldcount" value="12" />
+  <attribute name="title" value="Aggregation" />
 </element>
 ```
 
@@ -49,20 +47,20 @@ description: Элемент xsl:attribute служит для создания �
 Для достижения цели воспользуемся следующим преобразованием:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-	<xsl:template match="element">
-		<xsl:element name="{@name}">
-			<xsl:apply-templates select="attribute"/>
-		</xsl:element>
-	</xsl:template>
-
-	<xsl:template match="attribute">
-		<xsl:attribute name="{@name}">
-			<xsl:value-of select="@value"/>
-		</xsl:attribute>
-	</xsl:template>
-
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="element">
+    <xsl:element name="{@name}">
+      <xsl:apply-templates select="attribute" />
+    </xsl:element>
+  </xsl:template>
+  <xsl:template match="attribute">
+    <xsl:attribute name="{@name}">
+      <xsl:value-of select="@value" />
+    </xsl:attribute>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -85,9 +83,9 @@ description: Элемент xsl:attribute служит для создания �
 
 ```xml
 <а href="http://www.aaa.com">
-	<xsl:attribute name="href">
-		<xsl:text>http://www.bbb.com</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="href">
+    <xsl:text>http://www.bbb.com</xsl:text>
+  </xsl:attribute>
 </a>
 ```
 
@@ -99,17 +97,19 @@ description: Элемент xsl:attribute служит для создания �
 
 ```xml
 <xsl:attribute name="href">
-	<xsl:text>http://</xsl:text>
-	<xsl:value-of select="concat('www', '.', 'bbb')" />
-	<xsl:text>.com</xsl:text>
+  <xsl:text>http://</xsl:text>
+  <xsl:value-of select="concat('www', '.', 'bbb')" />
+  <xsl:text>.com</xsl:text>
 </xsl:attribute>
 ```
 
 В том случае, если текстовое значение атрибута содержит символы перевода строки, при генерации атрибута они будут заменены сущностями, то есть определение
 
 ```xml
-<xsl:attribute name="href">а
-b</xsl:attribute>
+<xsl:attribute name="href">
+  а
+b
+</xsl:attribute>
 ```
 
 создаст атрибут с именем `href` и значением `<code>a&</code><code>#xA;b</code>`:
@@ -139,32 +139,39 @@ b</xsl:attribute>
 Следующий короткий пример демонстрирует применение новых атрибутов `select` и `separator`. В таблице стилей диапазонное выражение XPath 2.0 (выражение "`to`") используется для присваивания последовательности значений атрибуту `example`:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- attribute2.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="xml" omit-xml-declaration="yes"/>
-	<xsl:template match="/">
-		<sampledoc>
-			<xsl:attribute name="example" select="1 to 7" separator=", "/>
-		</sampledoc>
-	</xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="xml" omit-xml-declaration="yes" />
+  <xsl:template match="/">
+    <sampledoc>
+      <xsl:attribute
+        name="example"
+        select="1 to 7"
+        separator=", "
+      />
+    </sampledoc>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Таблица стилей генерирует очень короткий документ:
 
 ```xml
-<sampledoc example="1, 2, 3, 4, 5, 6, 7"/>
+<sampledoc example="1, 2, 3, 4, 5, 6, 7" />
 ```
 
 Благодаря атрибуту XSLT 2.0 `separator` вам не придется самостоятельно реализовывать логику следующего вида:
 
 ```xml
 <xsl:for-each>
-	<xsl:value-of select="."/>
-	<xsl:if test="position() != last()">
-		<xsl:text>, </xsl:text>
-	</xsl:if>
+  <xsl:value-of select="." />
+  <xsl:if test="position() != last()">
+    <xsl:text>,</xsl:text>
+  </xsl:if>
 </xsl:for-each>
 ```
 
@@ -173,64 +180,81 @@ b</xsl:attribute>
 В последнем примере используются схемосовместимые атрибуты `<xsl:attribute>`. Наша таблица стилей содержит импортированную схему, определяющую новый тип данных; атрибут `<xsl:attribute>` используется для создания атрибутов с этим типом данных. Таблица стилей выглядит так:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- attribute3.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:zip="http://www.oreilly.com/xslt/zip" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs">
-	<xsl:output method="xml" indent="yes"/>
-	<xsl:import-schema namespace="http://www.oreilly.com/xslt/zip">
-		<xsd:schema xmlns="http://www.oreilly.com/xslt/zip" targetNamespace="http://www.oreilly.com/xslt/zip" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:simpleType name="zipcode">
-				<xsd:restriction base="xsd:string">
-					<xsd:pattern value="[0-9]{5}(-[0-9]{4})?"/>
-				</xsd:restriction>
-			</xsd:simpleType>
-		</xsd:schema>
-	</xsl:import-schema>
-	<xsl:template match="/">
-		<postcodes>
-			<xsl:for-each select="postcodes/postcode">
-				<postcode>
-					<xsl:choose>
-						<xsl:when test=". castable as zip:zipcode">
-							<xsl:attribute name="zip:zip" type="zip:zipcode">
-								<xsl:value-of select=". cast as zip:zipcode"/>
-							</xsl:attribute>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:attribute name="other" type="xs:string">
-								<xsl:value-of select="."/>
-							</xsl:attribute>
-						</xsl:otherwise>
-					</xsl:choose>
-				</postcode>
-			</xsl:for-each>
-		</postcodes>
-	</xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:zip="http://www.oreilly.com/xslt/zip"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  exclude-result-prefixes="xs"
+>
+  <xsl:output method="xml" indent="yes" />
+  <xsl:import-schema
+    namespace="http://www.oreilly.com/xslt/zip"
+  >
+    <xsd:schema
+      xmlns="http://www.oreilly.com/xslt/zip"
+      targetNamespace="http://www.oreilly.com/xslt/zip"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    >
+      <xsd:simpleType name="zipcode">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="[0-9]{5}(-[0-9]{4})?" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </xsl:import-schema>
+  <xsl:template match="/">
+    <postcodes>
+      <xsl:for-each select="postcodes/postcode">
+        <postcode>
+          <xsl:choose>
+            <xsl:when test=". castable as zip:zipcode">
+              <xsl:attribute
+                name="zip:zip"
+                type="zip:zipcode"
+              >
+                <xsl:value-of
+                  select=". cast as zip:zipcode"
+                />
+              </xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="other" type="xs:string">
+                <xsl:value-of select="." />
+              </xsl:attribute>
+            </xsl:otherwise>
+          </xsl:choose>
+        </postcode>
+      </xsl:for-each>
+    </postcodes>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Таблица стилей используется для обработки следующего документа:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- postcodes.xml -->
 <postcodes>
-	<postcode>3S8 E0X</postcode>
-	<postcode>37174</postcode>
-	<postcode>NSW 3829</postcode>
-	<postcode>27516</postcode>
+  <postcode>3S8 E0X</postcode>
+  <postcode>37174</postcode>
+  <postcode>NSW 3829</postcode>
+  <postcode>27516</postcode>
 </postcodes>
 ```
 
 Таблица стилей использует оператор XPath `castable as` для определения того, может ли значение из исходного документа быть преобразовано в значение `zip:zipcode`. Если проверка дает положительный результат, мы создаем новый атрибут с типом данных `zip:zipcode`. Результат:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <postcodes xmlns:zip="http://www.oreilly.com/xslt/zip">
-	<postcode other="3S8 E0X"/>
-	<postcode zip:zip="37174"/>
-	<postcode other="NSW 3829"/>
-	<postcode zip:zip="27516"/>
+  <postcode other="3S8 E0X" />
+  <postcode zip:zip="37174" />
+  <postcode other="NSW 3829" />
+  <postcode zip:zip="27516" />
 </postcodes>
 ```
 
@@ -238,35 +262,41 @@ b</xsl:attribute>
 
 ### Пример 5
 
-```xml tab="XML"
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="attrcopied.xsl" ?>
-<root>
-   <myElement>My Data</myElement>
-   <myElement>My Other Data</myElement>
-</root>
-```
+=== "XML"
 
-```xslt tab="XSLT"
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+    ```xml
+    <?xml version="1.0" ?>
+    <?xml-stylesheet type="text/xsl" href="attrcopied.xsl" ?>
+    <root>
+      <myElement>My Data</myElement>
+      <myElement>My Other Data</myElement>
+    </root>
+    ```
 
-<xsl:template match="myElement">
-  <xsl:copy>
-    <xsl:attribute name="copied">true</xsl:attribute>
-    <xsl:apply-templates />
-  </xsl:copy>
-</xsl:template>
+=== "XSLT"
 
-</xsl:stylesheet>
-```
+    ```xml
+    <?xml version="1.0" ?>
+    <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    >
+      <xsl:template match="myElement">
+        <xsl:copy>
+          <xsl:attribute name="copied">true</xsl:attribute>
+          <xsl:apply-templates />
+        </xsl:copy>
+      </xsl:template>
+    </xsl:stylesheet>
+    ```
 
-```xml tab="Output"
-<?xml version="1.0"?>
-<myElement copied="true">My Data</myElement>
-<myElement copied="true">My Other Data</myElement>
-```
+=== "Результат"
+
+    ```xml
+    <?xml version="1.0"?>
+    <myElement copied="true">My Data</myElement>
+    <myElement copied="true">My Other Data</myElement>
+    ```
 
 ## См. также
 

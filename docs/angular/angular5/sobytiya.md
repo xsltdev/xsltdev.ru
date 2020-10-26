@@ -39,7 +39,11 @@ export class ServersComponent implements OnInit {
 `\app\servers\servers.component.html`:
 
 ```html
-<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+/>
 <p>{{ serverName }}</p>
 ```
 

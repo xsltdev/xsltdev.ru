@@ -14,26 +14,26 @@
 
 Вот очевидный, но многословный способ получить абсолютное значение числа:
 
-```xslt
+```xml
 <xsl:template name="ckbk:abs">
-	<xsl:param name="x"/>
-	<xsl:choose>
-		<xsl:when test="$x &lt; 0">
-			<xsl:value-of select="$x * -1"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:value-of select="$x"/>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="x" />
+  <xsl:choose>
+    <xsl:when test="$x &lt; 0">
+      <xsl:value-of select="$x * -1" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$x" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 Короткий, но с первого взгляда не понятный способ основан на том факте, что значение `true` преобразуется в число `1`, а `false` – в `0`:
 
-```xslt
+```xml
 <xsl:template name="ckbk:abs">
-	<xsl:param name="x"/>
-	<xsl:value-of select="(1 - 2*($x &lt; 0)) * $x"/>
+  <xsl:param name="x" />
+  <xsl:value-of select="(1 - 2*($x &lt; 0)) * $x" />
 </xsl:template>
 ```
 
@@ -43,52 +43,56 @@
 
 Нэйт Остин (Nate Austin) предложил для проекта EXSLT реализацию квадратного корня на чистом XSLT с помощью метода Ньютона.
 
-```xslt
+```xml
 <xsl:template name="ckbk:sqrt">
-	<!-- Число, из которого извлекается квадратный корень. -->
-	<xsl:param name="number" select="0"/>
-	<!-- Текущее "приближение".
+  <!-- Число, из которого извлекается квадратный корень. -->
+  <xsl:param name="number" select="0" />
+  <!-- Текущее "приближение".
 	Внутренняя переменная. -->
-	<xsl:param name="try" select="1"/>
-	<!-- Номер текущей итерации. Сравнивается с maxiter для ограничения
+  <xsl:param name="try" select="1" />
+  <!-- Номер текущей итерации. Сравнивается с maxiter для ограничения
 	количества повторений цикла. -->
-	<xsl:param name="iter" select="1"/>
-	<!-- Этот параметр предотвращает бесконечный цикл. -->
-	<xsl:param name="maxiter" select="20"/>
-	<!-- Этот шаблон написал Нэйт Остин, применив метод Ньютона для
+  <xsl:param name="iter" select="1" />
+  <!-- Этот параметр предотвращает бесконечный цикл. -->
+  <xsl:param name="maxiter" select="20" />
+  <!-- Этот шаблон написал Нэйт Остин, применив метод Ньютона для
 	извлечения корня. -->
-	<xsl:choose>
-		<xsl:when test="$try * $try = $number or $iter > $maxiter">
-			<xsl:value-of select="$try"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:call-template name="ckbk:sqrt">
-				<xsl:with-param name="number" select="$number"/>
-				<xsl:with-param
-					name="try"
-					select="$try - (($try * $try - $number) div (2 * $try))"/>
-				<xsl:with-param name="iter" select="$iter + 1"/>
-				<xsl:with-param name="maxiter" select="$maxiter"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:choose>
+    <xsl:when
+      test="$try * $try = $number or $iter > $maxiter"
+    >
+      <xsl:value-of select="$try" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="ckbk:sqrt">
+        <xsl:with-param name="number" select="$number" />
+        <xsl:with-param
+          name="try"
+          select="$try - (($try * $try - $number) div (2 * $try))"
+        />
+        <xsl:with-param name="iter" select="$iter + 1" />
+        <xsl:with-param name="maxiter" select="$maxiter" />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 Изменение начального значения параметра `try` может заметно повысить производительность:
 
-```xslt
+```xml
 <xsl:template name="math:sqrt">
-	<!-- Число, из которого извлекается квадратный корень. -->
-	<xsl:param name="number" select="0"/>
-	<!-- Текущее "приближение". Внутренняя переменная. -->
-	<xsl:param
-		name="try"
-		select="($number &lt; 100) +102
+  <!-- Число, из которого извлекается квадратный корень. -->
+  <xsl:param name="number" select="0" />
+  <!-- Текущее "приближение". Внутренняя переменная. -->
+  <xsl:param
+    name="try"
+    select="($number &lt; 100) +102
 		($number >= 100 and $number &lt; 1000) * 10 +
 		($number >= 1000 and $number &lt; 10000) * 31 +
-		($number >= 10000) * 100"/>
-	<!-- Больше ничего не меняется. -->
+		($number >= 10000) * 100"
+  />
+  <!-- Больше ничего не меняется. -->
 </xsl:template>
 ```
 
@@ -105,7 +109,7 @@ ckbk:logN(x,base) = ckbk:logN(x,diffBase) div ckbk:logN(base,diffBase)
 
 К сожалению, ни один из процессоров, перечисленных на сайте EXSLT.org, пока не поддерживает функцию `exsl:log`. Следующий вариант – реализовать расширение на языке Java, воспользовавшись классом `java.lang.Math.log` или функцией `Math.log` в JavaScript. Наконец, можно не прибегать к расширениям вовсе, а написать `log10` на чистом XSLT с приемлемой для большинства приложений точностью и производительностью. Имея реализацию `log10()`, можно вычислять произвольные логарифмы, применяя основное правило.
 
-```xslt
+```xml
 <xsl:template name="ckbk:log10">
 	<xsl:param name="number" select="1"/>
 	<xsl:param name="n" select="0"/>
@@ -244,51 +248,63 @@ ckbk:logN(x,base) = ckbk:logN(x,diffBase) div ckbk:logN(base,diffBase)
 
 В настоящий момент на сайте EXSLT.org не упомянуты процессоры, поддерживающие функцию `ckbk:power()`. Однако она определена в проекте EXSLT и может быть легко реализована на чистом XSLT. Джени Теннисон предлагает такой шаблон:
 
-```xslt
+```xml
 <xsl:template name="ckbk:power">
-	<xsl:param name="base"/>
-	<xsl:param name="power"/>
-	<xsl:choose>
-		<xsl:when test="$power = 0">
-			<xsl:value-of select="$result"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:variable name="temp">
-				<xsl:call-template name="ckbk:power">
-					<xsl:with-param name="base" select="$base"/>
-					<xsl:with-param name="power" select="$power - 1"/>
-				</xsl:call-template>
-			</xsl:variable>
-			<xsl:value-of select="$base * $temp"/>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="base" />
+  <xsl:param name="power" />
+  <xsl:choose>
+    <xsl:when test="$power = 0">
+      <xsl:value-of select="$result" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:variable name="temp">
+        <xsl:call-template name="ckbk:power">
+          <xsl:with-param name="base" select="$base" />
+          <xsl:with-param
+            name="power"
+            select="$power - 1"
+          />
+        </xsl:call-template>
+      </xsl:variable>
+      <xsl:value-of select="$base * $temp" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 Для большинства приложений этот код вполне приемлем. Однако рекурсия в нем не хвостовая и алгоритмически он не самый эффективный. Следующая реализация лишена первого недостатка, а число операций умножения в ней уменьшилось с `O($power)` до `O(log2($power)`. Кроме того, добавлена обработка ошибок, предотвращающая бесконечную рекурсию в случае, когда `$power` равно `NaN`.
 
-```xslt
+```xml
 <xsl:template name="ckbk:power">
-	<xsl:param name="base"/>
-	<xsl:param name="power"/>
-	<xsl:param name="result" select="1"/>
-	<xsl:choose>
-		<xsl:when test="number($base) != $base or number($power) != $power">
-			<xsl:value-of select="'NaN'"/>
-		</xsl:when>
-		<xsl:when test="$power = 0">
-			<xsl:value-of select="$result"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:call-template name="ckbk:power">
-				<xsl:with-param name="base" select="$base * $base"/>
-				<xsl:with-param name="power" select="floor($power div 2)"/>
-				<xsl:with-param
-					name="result"
-					select="$result * $base * ($power mod 2) + $result * not($power mod 2)"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="base" />
+  <xsl:param name="power" />
+  <xsl:param name="result" select="1" />
+  <xsl:choose>
+    <xsl:when
+      test="number($base) != $base or number($power) != $power"
+    >
+      <xsl:value-of select="'NaN'" />
+    </xsl:when>
+    <xsl:when test="$power = 0">
+      <xsl:value-of select="$result" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="ckbk:power">
+        <xsl:with-param
+          name="base"
+          select="$base * $base"
+        />
+        <xsl:with-param
+          name="power"
+          select="floor($power div 2)"
+        />
+        <xsl:with-param
+          name="result"
+          select="$result * $base * ($power mod 2) + $result * not($power mod 2)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -304,7 +320,7 @@ ckbk:logN(x,base) = ckbk:logN(x,diffBase) div ckbk:logN(base,diffBase)
 
 Чтобы не путать его с `power()`, шаблон называется `power-f()`, где `f` происходит от «floating point» (с плавающей точкой). Если хотите, можете назвать более общую версию `power()`, только внесите изменения в код ниже. Впрочем, иметь более специализированную версию в качестве отдельной функции тоже полезно.
 
-```xslt
+```xml
 <xsl:template name="ckbk:power-f">
 	<xsl:param name="base"/>
 	<xsl:param name="power"/>
@@ -385,46 +401,57 @@ ckbk:logN(x,base) = ckbk:logN(x,diffBase) div ckbk:logN(base,diffBase)
 
 Как это ни странно, в проекте EXSLT не определена функция для вычисления факториала. Разумеется, реализовать ее несложно:
 
-```xslt
+```xml
 <xsl:template name="ckbk:fact">
-	<xsl:param name="number" select="0"/>
-	<xsl:param name="result" select="1"/>
-	<xsl:choose>
-		<xsl:when test="$number &lt; 0 or floor($number) != $number">
-			<xsl:value-of select="'NaN'"/>
-		</xsl:when>
-		<xsl:when test="$number &lt; 2">
-			<xsl:value-of select="$result"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:call-template name="ckbk:fact">
-				<xsl:with-param name="number" select="$number - 1"/>
-				<xsl:with-param name="result" select="$number * $result"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="number" select="0" />
+  <xsl:param name="result" select="1" />
+  <xsl:choose>
+    <xsl:when
+      test="$number &lt; 0 or floor($number) != $number"
+    >
+      <xsl:value-of select="'NaN'" />
+    </xsl:when>
+    <xsl:when test="$number &lt; 2">
+      <xsl:value-of select="$result" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="ckbk:fact">
+        <xsl:with-param
+          name="number"
+          select="$number - 1"
+        />
+        <xsl:with-param
+          name="result"
+          select="$number * $result"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 Полезное обобщение факториала – это функция, которая вычисляет произведение всех чисел из заданного диапазона:
 
-```xslt
+```xml
 <xsl:template name="ckbk:prod-range">
-	<xsl:param name="start" select="1"/>
-	<xsl:param name="end" select="1"/>
-	<xsl:param name="result" select="1"/>
-	<xsl:choose>
-		<xsl:when test="$start > $end">
-			<xsl:value-of select="$result"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:call-template name="ckbk:prod-range">
-				<xsl:with-param name="start" select="$start + 1"/>
-				<xsl:with-param name="end" select="$end"/>
-				<xsl:with-param name="result" select="$start * $result"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="start" select="1" />
+  <xsl:param name="end" select="1" />
+  <xsl:param name="result" select="1" />
+  <xsl:choose>
+    <xsl:when test="$start > $end">
+      <xsl:value-of select="$result" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="ckbk:prod-range">
+        <xsl:with-param name="start" select="$start + 1" />
+        <xsl:with-param name="end" select="$end" />
+        <xsl:with-param
+          name="result"
+          select="$start * $result"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -432,7 +459,7 @@ ckbk:logN(x,base) = ckbk:logN(x,diffBase) div ckbk:logN(base,diffBase)
 
 В версии 2.0 функция `abs()` встроена. Прочие можно для пущего удобства реализовать как функции.
 
-```xslt
+```xml
 <!-- Степенная функция -->
 <xsl:function name="ckbk:power" as="xs:double">
 	<xsl:param name="base" as="xs:double"/>

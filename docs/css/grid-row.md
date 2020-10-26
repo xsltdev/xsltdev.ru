@@ -93,19 +93,29 @@ grid-row-end: `auto`;
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Использование свойства grid-row с одним значением</title>
+    <title>
+      Использование свойства grid-row с одним значением
+    </title>
     <style>
       .grid-container,
       .grid-container2 {
         display: grid; /* элемент отображается как блочный   grid-контейнер */
         margin-top: 5px; /* внешний отступ сверху */
         padding: 10px; /* внешний отступ элемента со всех сторон */
-        background: rgb(0, 150, 208); /* цвет заднего фона */
+        background: rgb(
+          0,
+          150,
+          208
+        ); /* цвет заднего фона */
         grid-template-rows: [line1] auto [line2] auto [line3] auto [line4] auto; /* определяем количество, наименование и высоту строк в макете сетки */
       }
       .grid-container > div,
       .grid-container2 > div {
-        background: rgb(241, 101, 41); /* цвет заднего фона */
+        background: rgb(
+          241,
+          101,
+          41
+        ); /* цвет заднего фона */
         border: 1px solid #000; /* сплошная граница размером 1 пиксель черного цвета */
         text-align: center; /* горизонтальное выравнивание текста */
       }
@@ -161,12 +171,20 @@ grid-row-end: `auto`;
         display: grid; /* элемент отображается как блочный   grid-контейнер */
         margin-top: 5px; /* внешний отступ сверху */
         padding: 10px; /* внешний отступ элемента со всех сторон */
-        background: rgb(0, 150, 208); /* цвет заднего фона */
+        background: rgb(
+          0,
+          150,
+          208
+        ); /* цвет заднего фона */
         grid-template-rows: [line1] 20px [line2] 20px [line3] 20px [line4] 20px; /* определяем количество, наименование и высоту строк в макете сетки */
       }
       .grid-container > div,
       .grid-container2 > div {
-        background: rgb(241, 101, 41); /* цвет заднего фона */
+        background: rgb(
+          241,
+          101,
+          41
+        ); /* цвет заднего фона */
         border: 1px solid #000; /* сплошная граница размером 1 пиксель черного цвета */
         text-align: center; /* горизонтальное выравнивание текста */
       }
@@ -215,19 +233,29 @@ grid-row-end: `auto`;
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Использование свойства grid-row и ключевого слова span</title>
+    <title>
+      Использование свойства grid-row и ключевого слова span
+    </title>
     <style>
       .grid-container,
       .grid-container2 {
         display: grid; /* элемент отображается как блочный   grid-контейнер */
         margin-top: 5px; /* внешний отступ сверху */
         padding: 10px; /* внешний отступ элемента со всех сторон */
-        background: rgb(0, 150, 208); /* цвет заднего фона */
+        background: rgb(
+          0,
+          150,
+          208
+        ); /* цвет заднего фона */
         grid-template-rows: [line1] 20px [line2] 20px [line3] 20px [line4] 20px; /* определяем количество, наименование и высоту строк в макете сетки */
       }
       .grid-container > div,
       .grid-container2 > div {
-        background: rgb(241, 101, 41); /* цвет заднего фона */
+        background: rgb(
+          241,
+          101,
+          41
+        ); /* цвет заднего фона */
         border: 1px solid #000; /* сплошная граница размером 1 пиксель черного цвета */
         text-align: center; /* горизонтальное выравнивание текста */
       }

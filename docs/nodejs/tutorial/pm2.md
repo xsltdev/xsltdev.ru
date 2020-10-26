@@ -125,13 +125,13 @@ module.exports = {
       name: 'app',
       script: './app.js',
       env: {
-        NODE_ENV: 'development'
+        NODE_ENV: 'development',
       },
       env_production: {
-        NODE_ENV: 'production'
-      }
-    }
-  ]
+        NODE_ENV: 'production',
+      },
+    },
+  ],
 }
 ```
 
@@ -204,9 +204,9 @@ module.exports = {
       script: './index.js',
       watch: ['server'],
       ignore_watch: ['node_modules', 'client'],
-      watch_delay: 1000
-    }
-  ]
+      watch_delay: 1000,
+    },
+  ],
 }
 ```
 

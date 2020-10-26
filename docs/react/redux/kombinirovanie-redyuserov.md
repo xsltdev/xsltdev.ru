@@ -13,7 +13,7 @@ _src/reducers/user.js_
 
 ```js
 const initialState = {
-  name: 'Аноним'
+  name: 'Аноним',
 }
 
 export function userReducer(state = initialState) {
@@ -26,7 +26,7 @@ _src/reducers/page.js_
 ```js
 const initialState = {
   year: 2018,
-  photos: []
+  photos: [],
 }
 
 export function pageReducer(state = initialState) {
@@ -45,7 +45,7 @@ import { userReducer } from './user'
 
 export const rootReducer = combineReducers({
   page: pageReducer,
-  user: userReducer
+  user: userReducer,
 })
 ```
 
@@ -73,10 +73,10 @@ export const store = createStore(rootReducer)
 Ответ кроется в работе функции `connect` и в функции `mapStateToProps` из нашего файла `App.js`. Сейчас у нас там написано следующее:
 
 ```js
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   console.log(store)
   return {
-    user: store.user
+    user: store.user,
   }
 }
 ```
@@ -102,18 +102,19 @@ class App extends Component {
         </header>
         <p>Привет, {user.name}!</p>
         <p>
-          У тебя {page.photos.length} фото за {page.year} год
+          У тебя {page.photos.length} фото за {page.year}{' '}
+          год
         </p>
       </div>
     )
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   console.log(store)
   return {
     user: store.user,
-    page: store.page
+    page: store.page,
   }
 }
 ```

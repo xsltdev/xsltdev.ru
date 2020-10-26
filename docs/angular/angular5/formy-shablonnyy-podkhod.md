@@ -24,7 +24,13 @@ imports: [
 Добавить директиву `ngModel` в `input` и `select` формы, чтобы указать, что данный инпут это контроллер формы:
 
 ```html
-<input type="text" id="username" class="form-control" name="username" ngModel />
+<input
+  type="text"
+  id="username"
+  class="form-control"
+  name="username"
+  ngModel
+/>
 ```
 
 Чтобы использовать директиву `ngModel` у поля обязательно должен быть указан атрибут `name`. Иначе в консоли будет ошибка.
@@ -44,7 +50,10 @@ imports: [
 Чтобы передать в обработчик не просто локальную ссылку, а js объект, представляющий данные формы и связанный с ней, нужно воспользоваться директивой `NgForm`:
 
 ```html
-<form (ngSubmit)="onSubmit(formdata)" #formdata="ngForm"></form>
+<form
+  (ngSubmit)="onSubmit(formdata)"
+  #formdata="ngForm"
+></form>
 ```
 
 ## Доступ к форме с помощью @ViewChild
@@ -115,7 +124,11 @@ _Angular_ динамически устанавливает css классы у 
 ```html
 <form (ngSubmit)="onSubmit(formdata)" #formdata="ngForm">
   <!-- ... -->
-  <button class="btn btn-primary" type="submit" [disabled]="!formdata.valid">
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!formdata.valid"
+  >
     Submit
   </button>
 </form>
@@ -152,7 +165,12 @@ input.ng-invalid.ng-touched {
 С помощью `[ngModel]="'value_name'"` можно установить дефолтное значение. Если используется значение переменной компонента, то вторые кавычки не нужны: `[ngModel]="value_name_from_component"`.
 
 ```html
-<select id="secret" class="form-control" name="secret" [ngModel]="'teacher'">
+<select
+  id="secret"
+  class="form-control"
+  name="secret"
+  [ngModel]="'teacher'"
+>
   <option value="pet">Your first Pet?</option>
   <option value="teacher">Your first teacher?</option>
 </select>
@@ -202,7 +220,13 @@ genders = ['male', 'female']
 ```html
 <div class="radio" *ngFor="let gender of genders">
   <label>
-    <input type="radio" name="gender" ngModel [value]="gender" required />
+    <input
+      type="radio"
+      name="gender"
+      ngModel
+      [value]="gender"
+      required
+    />
     {{gender}}
   </label>
 </div>

@@ -102,7 +102,9 @@
 }
 
 // Генератор сетки
-.make-grid(@indexCount: 1) when (@indexCount =< @column-count) {
+.make-grid(@indexCount: 1)
+  when
+  (@indexCount =< @column-count) {
   // Вызываем генератор селекторов
   .generate-class(@indexCount);
 
@@ -135,7 +137,7 @@
 var columnOptions = {
   name: 'col',
   count: 4,
-  prefix: ['xs', 'sm', 'md', 'lg']
+  prefix: ['xs', 'sm', 'md', 'lg'],
 }
 ```
 
@@ -181,12 +183,12 @@ console.log(makeGrid(columnOptions))
 
 ```js
 // Генератор сетки
-var makeGrid = function(o) {
+var makeGrid = function (o) {
   var consoleReturn = []
   for (var index = 0; index < o.count; index++) {
     consoleReturn.push({
       name: o.prefix[index],
-      selector: generateSelector(o, index)
+      selector: generateSelector(o, index),
     })
   }
 
@@ -198,7 +200,9 @@ var makeGrid = function(o) {
 
 ```less
 // Генератор сетки
-.make-grid(@indexCount: 1) when (@indexCount =< @column-count) {
+.make-grid(@indexCount: 1)
+  when
+  (@indexCount =< @column-count) {
   // Вызываем генератор селекторов
   .generate-class(@indexCount);
 
@@ -226,14 +230,15 @@ var makeGrid = function(o) {
 
 ```js
 // Функция генерации селекторов
-var generateSelector = function(o, indexCount) {
+var generateSelector = function (o, indexCount) {
   var selectors = []
   for (var index = 0; index < o.prefix.length; index++) {
-    var name = o.name + '-' + o.prefix[indexCount] + '-' + index
+    var name =
+      o.name + '-' + o.prefix[indexCount] + '-' + index
     var width = index * (100 / o.count) + '%'
     selectors.push({
       name: name,
-      width: width
+      width: width,
     })
   }
 

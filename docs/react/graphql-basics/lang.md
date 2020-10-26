@@ -363,7 +363,11 @@ GET /graphql?query=query%20aTest(%24arg1%3A%20String!)%20%7B%20test(who%3A%20%24
 Например, объявим переменную `includeForks`, которая будет отвечать за то, следует ли включать свойство `forks` в запрос или нет. И применим ее в директиве `@include`:
 
 ```graphql
-query getRepository($name: String!, $owner: String!, $includeForks: Boolean!) {
+query getRepository(
+  $name: String!
+  $owner: String!
+  $includeForks: Boolean!
+) {
   graphql: repository(name: $name, owner: $owner) {
     name
     description

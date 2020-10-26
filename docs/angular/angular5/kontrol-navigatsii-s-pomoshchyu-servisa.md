@@ -11,11 +11,14 @@ import { Observable } from 'rxjs/Observable'
 import {
   CanDeactivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router'
 
 export interface CanComponentDeactivate {
-  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean
+  canDeactivate: () =>
+    | Observable<boolean>
+    | Promise<boolean>
+    | boolean
 }
 
 export class CanDeactivateGuard
@@ -26,7 +29,9 @@ export class CanDeactivateGuard
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    return component.canDeactivate ? component.canDeactivate() : true
+    return component.canDeactivate
+      ? component.canDeactivate()
+      : true
   }
 }
 ```
@@ -36,9 +41,13 @@ export class CanDeactivateGuard
 Класс реализует интерфейс `CanComponentDeactivate`:
 
 ```typescript
-export class EditServerComponent implements OnInit, CanComponentDeactivate {
+export class EditServerComponent
+  implements OnInit, CanComponentDeactivate {
   //...
-  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+  canDeactivate():
+    | Observable<boolean>
+    | Promise<boolean>
+    | boolean {
     if (!this.allowEdit) {
       return true
     }
@@ -66,8 +75,8 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
     {
       path: ':id/edit',
       component: EditServerComponent,
-      canDeactivate: [CanDeactivateGuard]
-    }
+      canDeactivate: [CanDeactivateGuard],
+    },
   ]
 }
 ```

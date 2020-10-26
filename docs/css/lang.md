@@ -43,7 +43,9 @@ p:lang(en) {
 
 ```html
 <div lang="en">
-  <q>This English quote has a <q>nested</q> quote inside.</q>
+  <q
+    >This English quote has a <q>nested</q> quote inside.</q
+  >
 </div>
 <div lang="fr">
   <q>This French quote has a <q>nested</q> quote inside.</q>

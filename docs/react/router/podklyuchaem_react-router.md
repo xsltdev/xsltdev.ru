@@ -21,7 +21,12 @@ import Admin from './components/Admin'
 import Genre from './components/Genre'
 import Home from './components/Home'
 
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import {
+  Router,
+  Route,
+  IndexRoute,
+  browserHistory,
+} from 'react-router'
 
 render(
   <Router history={browserHistory}>

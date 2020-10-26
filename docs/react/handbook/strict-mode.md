@@ -65,7 +65,9 @@ class MyComponent extends React.Component {
     this.wrapper = React.createRef()
   }
   render() {
-    return <div ref={this.wrapper}>{this.props.children}</div>
+    return (
+      <div ref={this.wrapper}>{this.props.children}</div>
+    )
   }
 }
 ```

@@ -10,41 +10,41 @@
 
 Умножим на 10 в степени n, где n - требуемое число десятичных знаков, затем округлим и разделим на тот же коэффициент. Предположим, что `$pi = 3.1415926535897932`. Тогда вычисление выражения
 
-```xslt
-<xsl:value-of select="round($pi * 10000) div 10000"/>
+```xml
+<xsl:value-of select="round($pi * 10000) div 10000" />
 ```
 
 дает `3.1416`. Аналогично:
 
-```xslt
-<xsl:value-of select="ceiling($pi * 10000) div 10000"/>
+```xml
+<xsl:value-of select="ceiling($pi * 10000) div 10000" />
 ```
 
 дает `3.1416`, а:
 
-```xslt
-<xsl:value-of select="floor($pi * 10000) div 10000"/>
+```xml
+<xsl:value-of select="floor($pi * 10000) div 10000" />
 ```
 
 дает `3.1415`.
 
 Округлить до заданного числа знаков можно также с помощью функции `format-number()`:
 
-```xslt
-<xsl:value-of select="format-number($pi, '#.####')"/>
+```xml
+<xsl:value-of select="format-number($pi, '#.####')" />
 ```
 
 Получится `3.1416`. Это решение будет работать, даже если в целой части всего одна значащая цифра, поскольку функция format-number никогда не интерпретирует спецификацию формата как указание удалять значащие цифры из целой части:
 
-```xslt
-<xsl:value-of select="format-number($pi * 100, '#.####')"/>
+```xml
+<xsl:value-of select="format-number($pi * 100, '#.####')" />
 ```
 
 В результате получаем `314.1593`.
 
 С помощью функции format-number можно получить эффект отбрасывания вместо округления, если задать в форматной строке на одну цифру больше, чем необходимо, а затем отбросить последний символ:
 
-```xslt
+```xml
 <xsl:variable name="pi-to-5-sig" select="format-number($pi, '#.#####')"/>
 <xsl:value-of select="substring($pi-to-5-sig,1,string-length($pi-to-5-sig) - 1"/>
 ```
@@ -63,23 +63,27 @@
 
 Метод «умножение, округление, деление» хорошо работает, если все промежуточные результаты не выходят за пределы представимости числа с плавающей точкой в формате IEEE. Если вы попробуете сохранить слишком много знаков после запятой, то результат будет искажен вследствие правил работы с числами с плавающей точкой. Например, попытка получить 16 десятичных знаков числа π даст всего 15:
 
-```xslt
-<xsl:value-of select="round($pi * 10000000000000000) div 10000000000000000"/>
+```xml
+<xsl:value-of
+  select="round($pi * 10000000000000000) div 10000000000000000"
+/>
 ```
 
 В результате получим `3.141592653589793`, а не 3.1415926535897932.
 
 Альтернативное решение – обращаться с числом, как со строкой, а затем обрезать лишние цифры:
 
-```xslt
-<xsl:value-of select="concat(substring-before($pi,'.'),'.',substring(substring-after($pi,'.'),1,4))"/>
+```xml
+<xsl:value-of
+  select="concat(substring-before($pi,'.'),'.',substring(substring-after($pi,'.'),1,4))"
+/>
 ```
 
 дает `3.1415`.
 
 Этот прием позволяет добиться того же эффекта, что `ceiling` или `round`, но ценой дополнительной сложности:
 
-```xslt
+```xml
 <xsl:variable name="whole" select="substring-before($pi,'.')"/>
 <xsl:variable name="frac" select="substring-after($pi,'.')"/>
 <xsl:value-of select="concat($whole,'.',substring($frac,1,3)),round(substring($frac,4,2) div 10))"/>

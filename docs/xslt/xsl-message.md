@@ -11,9 +11,8 @@ description: Элемент xsl:message указывает процессору 
 ## Синтаксис
 
 ```xml
-<xsl:message
-    terminate = "yes | no">
-    <!-- Content: template -->
+<xsl:message terminate="yes | no">
+  <!-- Content: template -->
 </xsl:message>
 ```
 
@@ -31,27 +30,36 @@ description: Элемент xsl:message указывает процессору 
 Листинг 8.5. Входящий документ
 
 ```xml
-<a><b><c><d/></c></b></a>
+<a>
+  <b>
+    <c>
+      <d />
+    </c>
+  </b>
+</a>
 ```
 
 Листинг 8.6. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="*">
-        <element name="{name()}">
-            <xsl:message>
-                <xsl:text>Processing element </xsl:text>
-                <xsl:value-of select="name()"/>
-                <xsl:if test="parent::*">
-                    <xsl:text> which has a parent element </xsl:text>
-                    <xsl:value-of select="name(..)"/>
-                </xsl:if>
-                <xsl:text>.</xsl:text>
-            </xsl:message>
-            <xsl:apply-templates/>
-        </element>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="*">
+    <element name="{name()}">
+      <xsl:message>
+        <xsl:text>Processing element</xsl:text>
+        <xsl:value-of select="name()" />
+        <xsl:if test="parent::*">
+          <xsl:text>which has a parent element</xsl:text>
+          <xsl:value-of select="name(..)" />
+        </xsl:if>
+        <xsl:text>.</xsl:text>
+      </xsl:message>
+      <xsl:apply-templates />
+    </element>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -59,11 +67,11 @@ description: Элемент xsl:message указывает процессору 
 
 ```xml
 <element name="a">
-    <element name="b">
-        <element name="c">
-            <element name="d"/>
-        </element>
+  <element name="b">
+    <element name="c">
+      <element name="d" />
     </element>
+  </element>
 </element>
 ```
 
@@ -86,11 +94,13 @@ Processing element d which has a parent element c.
 
 ```xml
 <xsl:template match="/">
-    <xsl:if test="translate(name(*),'html','HTML')!='HTML'">
-        <xsl:message terminate="yes">
-            <xsl:text>Document has no root HTML element.</xsl:text>
-        </xsl:message>
-    </xsl:if>
+  <xsl:if test="translate(name(*),'html','HTML')!='HTML'">
+    <xsl:message terminate="yes">
+      <xsl:text>
+        Document has no root HTML element.
+      </xsl:text>
+    </xsl:message>
+  </xsl:if>
 </xsl:template>
 ```
 
@@ -98,7 +108,7 @@ Processing element d which has a parent element c.
 
 ```xml
 <hTmL>
-    <body/>
+  <body />
 </hTmL>
 ```
 
@@ -106,7 +116,7 @@ Processing element d which has a parent element c.
 
 ```xml
 <ht-ml>
-    <body/>
+  <body />
 </ht-ml>
 ```
 

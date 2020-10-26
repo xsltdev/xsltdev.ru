@@ -20,7 +20,7 @@ description: Атрибутивные директивы меняют повед
 import { Directive, ElementRef } from '@angular/core'
 
 @Directive({
-  selector: '[bold]'
+  selector: '[bold]',
 })
 export class BoldDirective {
   constructor(private elementRef: ElementRef) {
@@ -53,9 +53,12 @@ import { Component } from '@angular/core'
   template: `
     <div>
       <p bold>Hello Angular 2</p>
-      <p>Angular 2 представляет модульную архитектуру приложения</p>
+      <p>
+        Angular 2 представляет модульную архитектуру
+        приложения
+      </p>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -73,7 +76,7 @@ import { BoldDirective } from './bold.directive'
 @NgModule({
   imports: [BrowserModule],
   declarations: [AppComponent, BoldDirective],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -97,14 +100,25 @@ declarations: [ AppComponent, BoldDirective],
 Для управления стилизацией элемента выше этот элемента извлекался через объект `ElementRef` в конструкторе директивы, и у него устанавливались стилевые свойства. Однако гораздо удобнее для управления стилем использовать рендерер. Так, изменим директиву следующим образом:
 
 ```typescript
-import { Directive, ElementRef, Renderer2 } from '@angular/core'
+import {
+  Directive,
+  ElementRef,
+  Renderer2,
+} from '@angular/core'
 
 @Directive({
-  selector: '[bold]'
+  selector: '[bold]',
 })
 export class BoldDirective {
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'font-weight', 'bold')
+  constructor(
+    private elementRef: ElementRef,
+    private renderer: Renderer2
+  ) {
+    this.renderer.setStyle(
+      this.elementRef.nativeElement,
+      'font-weight',
+      'bold'
+    )
   }
 }
 ```

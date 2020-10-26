@@ -135,8 +135,12 @@ export default class Genre extends Component {
   render() {
     return (
       <div className="row">
-        <h3 className="col-md-12">{this.props.params.genre}</h3>
-        <div className="col-md-12">Здесь будет список релизов</div>
+        <h3 className="col-md-12">
+          {this.props.params.genre}
+        </h3>
+        <div className="col-md-12">
+          Здесь будет список релизов
+        </div>
       </div>
     )
   }
@@ -206,15 +210,23 @@ export default class Genre extends Component {
     if (this.props.params.release) {
       template = (
         <div className="row">
-          <h3 className="col-md-12">{this.props.params.genre}</h3>
-          <div className="col-md-12">{this.props.children}</div>
+          <h3 className="col-md-12">
+            {this.props.params.genre}
+          </h3>
+          <div className="col-md-12">
+            {this.props.children}
+          </div>
         </div>
       )
     } else {
       template = (
         <div className="row">
-          <h3 className="col-md-12">{this.props.params.genre}</h3>
-          <div className="col-md-12">Здесь будет список релизов</div>
+          <h3 className="col-md-12">
+            {this.props.params.genre}
+          </h3>
+          <div className="col-md-12">
+            Здесь будет список релизов
+          </div>
         </div>
       )
     }
@@ -234,7 +246,10 @@ export default class Release extends Component {
     {
       /* замени все '-' в параметре (то есть в адресе) на пробелы */
     }
-    const releaseName = this.props.params.release.replace(/-/g, ' ')
+    const releaseName = this.props.params.release.replace(
+      /-/g,
+      ' '
+    )
     return <div className="col-md-12">{releaseName}</div>
   }
 }
@@ -251,7 +266,10 @@ export default class Release extends Component {
   <IndexRoute component={Home} />
   <Route path="/admin" component={Admin} />
   <Route path="/genre/:genre" component={Genre}>
-    <Route path="/genre/:genre/:release" component={Release} />
+    <Route
+      path="/genre/:genre/:release"
+      component={Release}
+    />
   </Route>
   <Route path="/list" component={List} />
 </Route>
@@ -279,7 +297,10 @@ export const routes = (
       <IndexRoute component={Home} />
       <Route path="/admin" component={Admin} />
       <Route path="/genre/:genre" component={Genre}>
-        <Route path="/genre/:genre/:release" component={Release} />
+        <Route
+          path="/genre/:genre/:release"
+          component={Release}
+        />
       </Route>
       <Route path="/list" component={List} />
     </Route>
@@ -301,7 +322,10 @@ import { render } from 'react-dom'
 import { Router, browserHistory } from 'react-router'
 import { routes } from './routes'
 
-render(<Router history={browserHistory} routes={routes} />, document.getElementById('root'))
+render(
+  <Router history={browserHistory} routes={routes} />,
+  document.getElementById('root')
+)
 ```
 
 ## Приберемся

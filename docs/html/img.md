@@ -185,7 +185,10 @@ sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)")
 **Пример**
 
 ```html
-<img src="image-src.png" srcset="image-1x.png 1x, image-2x.png 2x" />
+<img
+  src="image-src.png"
+  srcset="image-1x.png 1x, image-2x.png 2x"
+/>
 ```
 
 **Значение по умолчанию**

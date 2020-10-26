@@ -8,90 +8,108 @@
 
 Римская система счисления не является позиционной. Число в ней записывается путем прибавления или вычитания фиксированного количества римских цифр. Если следующий символ имеет меньшее или такое же значение, то производится добавление, иначе вычитание.
 
-```xslt
+```xml
 <xsl:stylesheet
-	version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:math="http://www.ora.com/XSLTCookbook/math"
-	id="math:math.roman">
-
-	<ckbk:romans>
-		<ckbk:roman value="1">i</ckbk:roman>
-		<ckbk:roman value="1">I</ckbk:roman>
-		<ckbk:roman value="5">v</ckbk:roman>
-		<ckbk:roman value="5">V</ckbk:roman>
-		<ckbk:roman value="10">x</ckbk:roman>
-		<ckbk:roman value="10">X</ckbk:roman>
-		<ckbk:roman value="50">l</ckbk:roman>
-		<ckbk:roman value="50">L</ckbk:roman>
-		<ckbk:roman value="100">c</ckbk:roman>
-		<ckbk:roman value="100">C</ckbk:roman>
-		<ckbk:roman value="500">d</ckbk:roman>
-		<ckbk:roman value="500">D</ckbk:roman>
-		<ckbk:roman value="1000">m</ckbk:roman>
-		<ckbk:roman value="1000">M</ckbk:roman>
-	</ckbk:romans>
-
-	<xsl:variable
-		name="ckbk:roman-nums"
-		select="document('')/*/*/ckbk:roman"/>
-
-	<xsl:template name="ckbk:roman-to-number">
-		<xsl:param name="roman"/>
-		<xsl:variable name="valid-roman-chars">
-			<xsl:value-of select="document('')/*/ckbk:romans"/>
-		</xsl:variable>
-		<xsl:choose>
-		<!-- возвращает true, если в строке есть не-римские цифры -->
-			<xsl:when test="translate($roman,$valid-roman-chars,'')">NaN</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="ckbk:roman-to-number-impl">
-					<xsl:with-param name="roman" select="$roman"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template name="ckbk:roman-to-number-impl">
-		<xsl:param name="roman"/>
-		<xsl:param name="value" select="0"/>
-		<xsl:variable name="len" select="string-length($roman)"/>
-		<xsl:choose>
-			<xsl:when test="not($len)">
-				<xsl:value-of select="$value"/>
-			</xsl:when>
-			<xsl:when test="$len = 1">
-				<xsl:value-of select="$value + $ckbk:roman-nums[. = $roman]/@value"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:variable
-					name="roman-num"
-					select="$ckbk:roman-nums[. = substring($roman, 1, 1)]"/>
-				<xsl:choose>
-					<xsl:when test="$roman-num/following-sibling::ckbk:roman = substring($roman, 2, 1)">
-						<xsl:call-template name="ckbk:roman-to-number-impl">
-						<xsl:with-param
-							name="roman"
-							select="substring($roman,2,$len - 1)"/>
-						<xsl:with-param
-							name="value"
-							select="$value - $roman-num/@value"/>
-						</xsl:call-template>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:call-template name="ckbk:roman-to-number-impl">
-							<xsl:with-param
-								name="roman"
-								select="substring($roman,2,$len - 1)"/>
-							<xsl:with-param
-								name="value"
-								select="$value + $roman-num/@value"/>
-						</xsl:call-template>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:math="http://www.ora.com/XSLTCookbook/math"
+  id="math:math.roman"
+>
+  <ckbk:romans>
+    <ckbk:roman value="1">i</ckbk:roman>
+    <ckbk:roman value="1">I</ckbk:roman>
+    <ckbk:roman value="5">v</ckbk:roman>
+    <ckbk:roman value="5">V</ckbk:roman>
+    <ckbk:roman value="10">x</ckbk:roman>
+    <ckbk:roman value="10">X</ckbk:roman>
+    <ckbk:roman value="50">l</ckbk:roman>
+    <ckbk:roman value="50">L</ckbk:roman>
+    <ckbk:roman value="100">c</ckbk:roman>
+    <ckbk:roman value="100">C</ckbk:roman>
+    <ckbk:roman value="500">d</ckbk:roman>
+    <ckbk:roman value="500">D</ckbk:roman>
+    <ckbk:roman value="1000">m</ckbk:roman>
+    <ckbk:roman value="1000">M</ckbk:roman>
+  </ckbk:romans>
+  <xsl:variable
+    name="ckbk:roman-nums"
+    select="document('')/*/*/ckbk:roman"
+  />
+  <xsl:template name="ckbk:roman-to-number">
+    <xsl:param name="roman" />
+    <xsl:variable name="valid-roman-chars">
+      <xsl:value-of select="document('')/*/ckbk:romans" />
+    </xsl:variable>
+    <xsl:choose>
+      <!-- возвращает true, если в строке есть не-римские цифры -->
+      <xsl:when
+        test="translate($roman,$valid-roman-chars,'')"
+      >
+        NaN
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="ckbk:roman-to-number-impl">
+          <xsl:with-param name="roman" select="$roman" />
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:template name="ckbk:roman-to-number-impl">
+    <xsl:param name="roman" />
+    <xsl:param name="value" select="0" />
+    <xsl:variable
+      name="len"
+      select="string-length($roman)"
+    />
+    <xsl:choose>
+      <xsl:when test="not($len)">
+        <xsl:value-of select="$value" />
+      </xsl:when>
+      <xsl:when test="$len = 1">
+        <xsl:value-of
+          select="$value + $ckbk:roman-nums[. = $roman]/@value"
+        />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:variable
+          name="roman-num"
+          select="$ckbk:roman-nums[. = substring($roman, 1, 1)]"
+        />
+        <xsl:choose>
+          <xsl:when
+            test="$roman-num/following-sibling::ckbk:roman = substring($roman, 2, 1)"
+          >
+            <xsl:call-template
+              name="ckbk:roman-to-number-impl"
+            >
+              <xsl:with-param
+                name="roman"
+                select="substring($roman,2,$len - 1)"
+              />
+              <xsl:with-param
+                name="value"
+                select="$value - $roman-num/@value"
+              />
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template
+              name="ckbk:roman-to-number-impl"
+            >
+              <xsl:with-param
+                name="roman"
+                select="substring($roman,2,$len - 1)"
+              />
+              <xsl:with-param
+                name="value"
+                select="$value + $roman-num/@value"
+              />
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -107,22 +125,24 @@
 
 Если по какой-то причине вам не нравится хранить данных о римских числительных в таблице стилей, то можете воспользоваться следующим выражением на языке XPath 1.0 для декодирования:
 
-```xslt
+```xml
 <xsl:variable
-	name="roman-value"
-	select="($c = 'i' or $c = 'I') * 1 +
+  name="roman-value"
+  select="($c = 'i' or $c = 'I') * 1 +
 			($c = 'v' or $c = 'V') * 5 +
 			($c = 'x' or $c = 'X') * 10 +
 			($c = 'l' or $c = 'L') * 50 +
 			($c = 'c' or $c = 'C') * 100 +
 			($c = 'd' or $c = 'D') * 500 +
-			($c = 'm' or $c = 'M') * 1000)"/>
+			($c = 'm' or $c = 'M') * 1000)"
+/>
 ```
 
 В XSLT 2.0 можно воспользоваться вложенным выражением `if-the-else` или организовать справочную таблицу из последовательности:
 
-```xslt
+```xml
 <xsl:variable
-	name="roman-value"
-	select="(1,5,10,50,100,500,1000)[index-of(('I', 'V', 'X', 'L', 'C', 'D', 'M'), upper-case($c))]"/>
+  name="roman-value"
+  select="(1,5,10,50,100,500,1000)[index-of(('I', 'V', 'X', 'L', 'C', 'D', 'M'), upper-case($c))]"
+/>
 ```

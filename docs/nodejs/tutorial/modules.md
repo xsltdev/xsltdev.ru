@@ -40,7 +40,8 @@ _my-module.js_
 ```js
 let counter = 0
 
-exports.displayCounter = () => console.log(`Count value: ${counter}`)
+exports.displayCounter = () =>
+  console.log(`Count value: ${counter}`)
 
 exports.incrementCounter = (value = 1) => (counter += value)
 

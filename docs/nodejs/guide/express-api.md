@@ -64,13 +64,13 @@ var jsonParser = bodyParser.json()
 
 app.use(express.static(__dirname + '/public'))
 // получение списка данных
-app.get('/api/users', function(req, res) {
+app.get('/api/users', function (req, res) {
   var content = fs.readFileSync('users.json', 'utf8')
   var users = JSON.parse(content)
   res.send(users)
 })
 // получение одного пользователя по id
-app.get('/api/users/:id', function(req, res) {
+app.get('/api/users/:id', function (req, res) {
   var id = req.params.id // получаем id
   var content = fs.readFileSync('users.json', 'utf8')
   var users = JSON.parse(content)
@@ -90,7 +90,7 @@ app.get('/api/users/:id', function(req, res) {
   }
 })
 // получение отправленных данных
-app.post('/api/users', jsonParser, function(req, res) {
+app.post('/api/users', jsonParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
 
   var userName = req.body.name
@@ -103,7 +103,7 @@ app.post('/api/users', jsonParser, function(req, res) {
   // находим максимальный id
   var id = Math.max.apply(
     Math,
-    users.map(function(o) {
+    users.map(function (o) {
       return o.id
     })
   )
@@ -117,7 +117,7 @@ app.post('/api/users', jsonParser, function(req, res) {
   res.send(user)
 })
 // удаление пользователя по id
-app.delete('/api/users/:id', function(req, res) {
+app.delete('/api/users/:id', function (req, res) {
   var id = req.params.id
   var data = fs.readFileSync('users.json', 'utf8')
   var users = JSON.parse(data)
@@ -141,7 +141,7 @@ app.delete('/api/users/:id', function(req, res) {
   }
 })
 // изменение пользователя
-app.put('/api/users', jsonParser, function(req, res) {
+app.put('/api/users', jsonParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
 
   var userId = req.body.id
@@ -169,7 +169,7 @@ app.put('/api/users', jsonParser, function(req, res) {
   }
 })
 
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log('Сервер ожидает подключения...')
 })
 ```
@@ -179,7 +179,7 @@ app.listen(3000, function() {
 Когда приложение получает запрос типа GET по адресу `api/users`, то срабатывает следующий метод:
 
 ```js
-app.get('/api/users', function(req, res) {
+app.get('/api/users', function (req, res) {
   var content = fs.readFileSync('users.json', 'utf8')
   var users = JSON.parse(content)
   res.send(users)
@@ -193,7 +193,7 @@ app.get('/api/users', function(req, res) {
 Аналогично работает другой метод `app.get()`, который срабатывает, когда в адресе указан `id` пользователя:
 
 ```js
-app.get('/api/users/:id', function(req, res) {
+app.get('/api/users/:id', function (req, res) {
   var id = req.params.id // получаем id
   var content = fs.readFileSync('users.json', 'utf8')
   var users = JSON.parse(content)
@@ -220,7 +220,7 @@ app.get('/api/users/:id', function(req, res) {
 
 ```js
 // получение отправленных данных
-app.post('/api/users', jsonParser, function(req, res) {
+app.post('/api/users', jsonParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
 
   var userName = req.body.name
@@ -233,7 +233,7 @@ app.post('/api/users', jsonParser, function(req, res) {
   // находим максимальный id
   var id = Math.max.apply(
     Math,
-    users.map(function(o) {
+    users.map(function (o) {
       return o.id
     })
   )
@@ -253,7 +253,7 @@ app.post('/api/users', jsonParser, function(req, res) {
 При удалении производим похожие действия, только теперь извлекаем из массива удаляемый объект и опять же перезаписываем файл:
 
 ```js
-app.delete('/api/users/:id', function(req, res) {
+app.delete('/api/users/:id', function (req, res) {
   var id = req.params.id
   var data = fs.readFileSync('users.json', 'utf8')
   var users = JSON.parse(data)
@@ -283,7 +283,7 @@ app.delete('/api/users/:id', function(req, res) {
 Если приложению приходит PUT-запрос, то он обрабатывается методом `app.put()`, в котором с помощью `jsonParser` получаем измененные данные:
 
 ```js
-app.put('/api/users', jsonParser, function(req, res) {
+app.put('/api/users', jsonParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
 
   var userId = req.body.id
@@ -326,7 +326,10 @@ app.put('/api/users', jsonParser, function(req, res) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Список пользователей</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body>
@@ -342,11 +345,20 @@ app.put('/api/users', jsonParser, function(req, res) {
         <input class="form-control" name="age" />
       </div>
       <div class="panel-body">
-        <button type="submit" class="btn btn-sm btn-primary">Сохранить</button>
-        <a id="reset" class="btn btn-sm btn-primary">Сбросить</a>
+        <button
+          type="submit"
+          class="btn btn-sm btn-primary"
+        >
+          Сохранить
+        </button>
+        <a id="reset" class="btn btn-sm btn-primary"
+          >Сбросить</a
+        >
       </div>
     </form>
-    <table class="table table-condensed table-striped table-bordered">
+    <table
+      class="table table-condensed table-striped table-bordered"
+    >
       <thead>
         <tr>
           <th>Id</th>
@@ -365,14 +377,14 @@ app.put('/api/users', jsonParser, function(req, res) {
           url: '/api/users',
           type: 'GET',
           contentType: 'application/json',
-          success: function(users) {
+          success: function (users) {
             var rows = ''
-            $.each(users, function(index, user) {
+            $.each(users, function (index, user) {
               // добавляем полученные элементы в таблицу
               rows += row(user)
             })
             $('table tbody').append(rows)
-          }
+          },
         })
       }
       // Получение одного пользователя
@@ -381,12 +393,12 @@ app.put('/api/users', jsonParser, function(req, res) {
           url: '/api/users/' + id,
           type: 'GET',
           contentType: 'application/json',
-          success: function(user) {
+          success: function (user) {
             var form = document.forms['userForm']
             form.elements['id'].value = user.id
             form.elements['name'].value = user.name
             form.elements['age'].value = user.age
-          }
+          },
         })
       }
       // Добавление пользователя
@@ -397,12 +409,12 @@ app.put('/api/users', jsonParser, function(req, res) {
           method: 'POST',
           data: JSON.stringify({
             name: userName,
-            age: userAge
+            age: userAge,
           }),
-          success: function(user) {
+          success: function (user) {
             reset()
             $('table tbody').append(row(user))
-          }
+          },
         })
       }
       // Изменение пользователя
@@ -414,12 +426,14 @@ app.put('/api/users', jsonParser, function(req, res) {
           data: JSON.stringify({
             id: userId,
             name: userName,
-            age: userAge
+            age: userAge,
           }),
-          success: function(user) {
+          success: function (user) {
             reset()
-            $("tr[data-rowid='" + user.id + "']").replaceWith(row(user))
-          }
+            $(
+              "tr[data-rowid='" + user.id + "']"
+            ).replaceWith(row(user))
+          },
         })
       }
 
@@ -436,24 +450,41 @@ app.put('/api/users', jsonParser, function(req, res) {
           url: 'api/users/' + id,
           contentType: 'application/json',
           method: 'DELETE',
-          success: function(user) {
+          success: function (user) {
             console.log(user)
             $("tr[data-rowid='" + user.id + "']").remove()
-          }
+          },
         })
       }
       // создание строки для таблицы
-      var row = function(user) {
-        return "<tr data-rowid='" + user.id + "'><td>" + user.id + '</td>' + '<td>' + user.name + '</td> <td>' + user.age + '</td>' + "<td><a class='editLink' data-id='" + user.id + "'>Изменить</a> | " + "<a class='removeLink' data-id='" + user.id + "'>Удалить</a></td></tr>"
+      var row = function (user) {
+        return (
+          "<tr data-rowid='" +
+          user.id +
+          "'><td>" +
+          user.id +
+          '</td>' +
+          '<td>' +
+          user.name +
+          '</td> <td>' +
+          user.age +
+          '</td>' +
+          "<td><a class='editLink' data-id='" +
+          user.id +
+          "'>Изменить</a> | " +
+          "<a class='removeLink' data-id='" +
+          user.id +
+          "'>Удалить</a></td></tr>"
+        )
       }
       // сброс значений формы
-      $('#reset').click(function(e) {
+      $('#reset').click(function (e) {
         e.preventDefault()
         reset()
       })
 
       // отправка формы
-      $('form').submit(function(e) {
+      $('form').submit(function (e) {
         e.preventDefault()
         var id = this.elements['id'].value
         var name = this.elements['name'].value
@@ -463,12 +494,12 @@ app.put('/api/users', jsonParser, function(req, res) {
       })
 
       // нажимаем на ссылку Изменить
-      $('body').on('click', '.editLink', function() {
+      $('body').on('click', '.editLink', function () {
         var id = $(this).data('id')
         GetUser(id)
       })
       // нажимаем на ссылку Удалить
-      $('body').on('click', '.removeLink', function() {
+      $('body').on('click', '.removeLink', function () {
         var id = $(this).data('id')
         DeleteUser(id)
       })
@@ -488,14 +519,14 @@ function GetUsers() {
     url: '/api/users',
     type: 'GET',
     contentType: 'application/json',
-    success: function(users) {
+    success: function (users) {
       var rows = ''
-      $.each(users, function(index, user) {
+      $.each(users, function (index, user) {
         // добавляем полученные элементы в таблицу
         rows += row(user)
       })
       $('table tbody').append(rows)
-    }
+    },
   })
 }
 ```
@@ -510,12 +541,12 @@ function GetUser(id) {
     url: '/api/users/' + id,
     type: 'GET',
     contentType: 'application/json',
-    success: function(user) {
+    success: function (user) {
       var form = document.forms['userForm']
       form.elements['id'].value = user.id
       form.elements['name'].value = user.name
       form.elements['age'].value = user.age
-    }
+    },
   })
 }
 ```
@@ -530,12 +561,12 @@ function CreateUser(userName, userAge) {
     method: 'POST',
     data: JSON.stringify({
       name: userName,
-      age: userAge
+      age: userAge,
     }),
-    success: function(user) {
+    success: function (user) {
       reset()
       $('table tbody').append(row(user))
-    }
+    },
   })
 }
 ```
@@ -551,12 +582,14 @@ function EditUser(userId, userName, userAge) {
     data: JSON.stringify({
       id: userId,
       name: userName,
-      age: userAge
+      age: userAge,
     }),
-    success: function(user) {
+    success: function (user) {
       reset()
-      $("tr[data-rowid='" + user.id + "']").replaceWith(row(user))
-    }
+      $("tr[data-rowid='" + user.id + "']").replaceWith(
+        row(user)
+      )
+    },
   })
 }
 ```

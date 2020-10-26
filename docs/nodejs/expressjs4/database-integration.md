@@ -2,7 +2,7 @@
 
 Для того чтобы добавить функциональную возможность подключения базы данных к приложению Express, необходимо всего лишь загрузить в ваше приложение драйвер Node.js для соответствующей базы данных. В настоящем документе кратко описан способ добавления и использования в приложении Express некоторых наиболее популярных моделей Node.js для систем баз данных.
 
-Это неполный список доступных драйверов баз данных.  С другими вариантами можно ознакомиться на сайте [npm](https://www.npmjs.com/).
+Это неполный список доступных драйверов баз данных. С другими вариантами можно ознакомиться на сайте [npm](https://www.npmjs.com/).
 
 ## Cassandra
 
@@ -17,13 +17,18 @@ $ npm install cassandra-driver
 **Пример**
 
 ```js
-var cassandra = require('cassandra-driver');
-var client = new cassandra.Client({ contactPoints: ['localhost']});
+var cassandra = require('cassandra-driver')
+var client = new cassandra.Client({
+  contactPoints: ['localhost'],
+})
 
-client.execute('select key from system.local', function(err, result) {
-  if (err) throw err;
-  console.log(result.rows[0]);
-});
+client.execute('select key from system.local', function (
+  err,
+  result
+) {
+  if (err) throw err
+  console.log(result.rows[0])
+})
 ```
 
 ## CouchDB
@@ -39,21 +44,24 @@ $ npm install nano
 **Пример**
 
 ```js
-var nano = require('nano')('http://localhost:5984');
-nano.db.create('books');
-var books = nano.db.use('books');
+var nano = require('nano')('http://localhost:5984')
+nano.db.create('books')
+var books = nano.db.use('books')
 
 //Insert a book document in the books database
-books.insert({name: 'The Art of war'}, null, function(err, body) {
-  if (!err){
-    console.log(body);
+books.insert({ name: 'The Art of war' }, null, function (
+  err,
+  body
+) {
+  if (!err) {
+    console.log(body)
   }
-});
+})
 
 //Get a list of all books
-books.list(function(err, body){
-  console.log(body.rows);
-});
+books.list(function (err, body) {
+  console.log(body.rows)
+})
 ```
 
 ## LevelDB
@@ -69,18 +77,16 @@ $ npm install level levelup leveldown
 **Пример**
 
 ```js
-var levelup = require('levelup');
-var db = levelup('./mydb');
+var levelup = require('levelup')
+var db = levelup('./mydb')
 
 db.put('name', 'LevelUP', function (err) {
-
-  if (err) return console.log('Ooops!', err);
+  if (err) return console.log('Ooops!', err)
   db.get('name', function (err, value) {
-    if (err) return console.log('Ooops!', err);
-    console.log('name=' + value);
-  });
-
-});
+    if (err) return console.log('Ooops!', err)
+    console.log('name=' + value)
+  })
+})
 ```
 
 ## MySQL
@@ -96,21 +102,25 @@ $ npm install mysql
 **Пример**
 
 ```js
-var mysql      = require('mysql');
+var mysql = require('mysql')
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'dbuser',
-  password : 's3kreee7'
-});
+  host: 'localhost',
+  user: 'dbuser',
+  password: 's3kreee7',
+})
 
-connection.connect();
+connection.connect()
 
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
-  console.log('The solution is: ', rows[0].solution);
-});
+connection.query('SELECT 1 + 1 AS solution', function (
+  err,
+  rows,
+  fields
+) {
+  if (err) throw err
+  console.log('The solution is: ', rows[0].solution)
+})
 
-connection.end();
+connection.end()
 ```
 
 ## MongoDB
@@ -126,19 +136,24 @@ $ npm install mongodb
 **Пример**
 
 ```js
-var MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect('mongodb://localhost:27017/animals', function(err, db) {
-  if (err) {
-    throw err;
-  }
-  db.collection('mammals').find().toArray(function(err, result) {
+MongoClient.connect(
+  'mongodb://localhost:27017/animals',
+  function (err, db) {
     if (err) {
-      throw err;
+      throw err
     }
-    console.log(result);
-  });
-});
+    db.collection('mammals')
+      .find()
+      .toArray(function (err, result) {
+        if (err) {
+          throw err
+        }
+        console.log(result)
+      })
+  }
+)
 ```
 
 Если вам необходим драйвер объектной модели для MongoDB, его можно найти на странице [Mongoose](https://github.com/LearnBoost/mongoose).
@@ -156,16 +171,19 @@ $ npm install apoc
 **Пример**
 
 ```js
-var apoc = require('apoc');
+var apoc = require('apoc')
 
-apoc.query('match (n) return n').exec().then(
-  function (response) {
-    console.log(response);
-  },
-  function (fail) {
-    console.log(fail);
-  }
-);
+apoc
+  .query('match (n) return n')
+  .exec()
+  .then(
+    function (response) {
+      console.log(response)
+    },
+    function (fail) {
+      console.log(fail)
+    }
+  )
 ```
 
 ## PostgreSQL
@@ -181,16 +199,18 @@ $ npm install pg-promise
 **Пример**
 
 ```js
-var pgp = require("pg-promise")(/*options*/);
-var db = pgp("postgres://username:password@host:port/database");
+var pgp = require('pg-promise')(/*options*/)
+var db = pgp(
+  'postgres://username:password@host:port/database'
+)
 
-db.one("SELECT $1 AS value", 123)
-    .then(function (data) {
-        console.log("DATA:", data.value);
-    })
-    .catch(function (error) {
-        console.log("ERROR:", error);
-    });
+db.one('SELECT $1 AS value', 123)
+  .then(function (data) {
+    console.log('DATA:', data.value)
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error)
+  })
 ```
 
 ## Redis
@@ -206,26 +226,32 @@ $ npm install redis
 **Пример**
 
 ```js
-var client = require('redis').createClient();
+var client = require('redis').createClient()
 
 client.on('error', function (err) {
-  console.log('Error ' + err);
-});
+  console.log('Error ' + err)
+})
 
-client.set('string key', 'string val', redis.print);
-client.hset('hash key', 'hashtest 1', 'some value', redis.print);
-client.hset(['hash key', 'hashtest 2', 'some other value'], redis.print);
+client.set('string key', 'string val', redis.print)
+client.hset(
+  'hash key',
+  'hashtest 1',
+  'some value',
+  redis.print
+)
+client.hset(
+  ['hash key', 'hashtest 2', 'some other value'],
+  redis.print
+)
 
 client.hkeys('hash key', function (err, replies) {
-
-  console.log(replies.length + ' replies:');
+  console.log(replies.length + ' replies:')
   replies.forEach(function (reply, i) {
-    console.log('    ' + i + ': ' + reply);
-  });
+    console.log('    ' + i + ': ' + reply)
+  })
 
-  client.quit();
-
-});
+  client.quit()
+})
 ```
 
 ## SQLite
@@ -241,26 +267,28 @@ $ npm install sqlite3
 **Пример**
 
 ```js
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database(':memory:');
+var sqlite3 = require('sqlite3').verbose()
+var db = new sqlite3.Database(':memory:')
 
-db.serialize(function() {
-
-  db.run('CREATE TABLE lorem (info TEXT)');
-  var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+db.serialize(function () {
+  db.run('CREATE TABLE lorem (info TEXT)')
+  var stmt = db.prepare('INSERT INTO lorem VALUES (?)')
 
   for (var i = 0; i < 10; i++) {
-    stmt.run('Ipsum ' + i);
+    stmt.run('Ipsum ' + i)
   }
 
-  stmt.finalize();
+  stmt.finalize()
 
-  db.each('SELECT rowid AS id, info FROM lorem', function(err, row) {
-    console.log(row.id + ': ' + row.info);
-  });
-});
+  db.each('SELECT rowid AS id, info FROM lorem', function (
+    err,
+    row
+  ) {
+    console.log(row.id + ': ' + row.info)
+  })
+})
 
-db.close();
+db.close()
 ```
 
 ## ElasticSearch
@@ -276,25 +304,30 @@ $ npm install elasticsearch
 **Пример**
 
 ```js
-var elasticsearch = require('elasticsearch');
+var elasticsearch = require('elasticsearch')
 var client = elasticsearch.Client({
-  host: 'localhost:9200'
-});
+  host: 'localhost:9200',
+})
 
-client.search({
-  index: 'books',
-  type: 'book',
-  body: {
-    query: {
-      multi_match: {
-        query: 'express js',
-        fields: ['title', 'description']
-      }
+client
+  .search({
+    index: 'books',
+    type: 'book',
+    body: {
+      query: {
+        multi_match: {
+          query: 'express js',
+          fields: ['title', 'description'],
+        },
+      },
+    },
+  })
+  .then(
+    function (response) {
+      var hits = response.hits.hits
+    },
+    function (error) {
+      console.trace(error.message)
     }
-  }
-}).then(function(response) {
-  var hits = response.hits.hits;
-}, function(error) {
-  console.trace(error.message);
-});
+  )
 ```

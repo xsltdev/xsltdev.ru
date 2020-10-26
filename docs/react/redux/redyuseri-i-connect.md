@@ -6,7 +6,7 @@ _src/reducers/index.js_
 
 ```js
 export const initialState = {
-  user: 'Unknown User'
+  user: 'Unknown User',
 }
 
 export function rootReducer(state = initialState) {
@@ -54,18 +54,21 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Мой топ фото</h1>
         </header>
-        <p className="App-intro">Здесь будут мои самые залайканые фото</p>
-        <p>Меня зовут: {this.props.user}</p> {/* добавлен вывод из props */}
+        <p className="App-intro">
+          Здесь будут мои самые залайканые фото
+        </p>
+        <p>Меня зовут: {this.props.user}</p>{' '}
+        {/* добавлен вывод из props */}
       </div>
     )
   }
 }
 
 // приклеиваем данные из store
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   console.log(store) // посмотрим, что же у нас в store?
   return {
-    user: store.user
+    user: store.user,
   }
 }
 
@@ -93,8 +96,8 @@ export const initialState = {
     // мы вложили в user вместо строки, объект
     name: 'Василий',
     surname: 'Реактов',
-    age: 27
-  }
+    age: 27,
+  },
 }
 
 export function rootReducer(state = initialState) {

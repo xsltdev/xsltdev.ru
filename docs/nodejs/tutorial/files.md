@@ -66,8 +66,8 @@ try {
 
 ```js
 const stream = fs.createReadStream('files/data.txt', 'utf8')
-stream.on('data', data => console.log(data))
-stream.on('error', err => console.log(`Err: ${err}`))
+stream.on('data', (data) => console.log(data))
+stream.on('error', (err) => console.log(`Err: ${err}`))
 ```
 
 !!! note ""
@@ -122,11 +122,16 @@ try {
 - callback-функция, которая вызывается по завершению операции и единственным аргументом принимает ошибку (в случае успешной записи передается `null`).
 
 ```js
-fs.writeFile('files/data.txt', 'File Content', 'utf8', err => {
-  if (err) throw err
+fs.writeFile(
+  'files/data.txt',
+  'File Content',
+  'utf8',
+  (err) => {
+    if (err) throw err
 
-  console.log('Done')
-})
+    console.log('Done')
+  }
+)
 ```
 
 !!! note ""
@@ -151,11 +156,16 @@ try {
 Методы `writeFile()` и `writeFileSync()` перезаписывают уже имеющуюся в файле информацию новыми данными. Если вам нужно внести новые данные без удаления старых, используйте методы `appendFIle()` и `appendFileAsync()`, которые имеют идентичные параметры.
 
 ```js
-fs.appendFile('files/data.txt', '\nFile Content 2', 'utf8', err => {
-  if (err) throw err
+fs.appendFile(
+  'files/data.txt',
+  '\nFile Content 2',
+  'utf8',
+  (err) => {
+    if (err) throw err
 
-  console.log('Done')
-})
+    console.log('Done')
+  }
+)
 ```
 
 Для записи файла через потока ввода имеется метод `fs.createWriteStream()`, который возвращает поток ввода и принимает два параметра:
@@ -167,9 +177,12 @@ fs.appendFile('files/data.txt', '\nFile Content 2', 'utf8', err => {
   - `autoClose` - если `true`, то при событиях `error` и `finish` поток закроется автоматически (по умолчанию `true`).
 
 ```js
-const stream = fs.createWriteStream('files/data.txt', 'utf8')
+const stream = fs.createWriteStream(
+  'files/data.txt',
+  'utf8'
+)
 
-stream.on('error', err => console.log(`Err: ${err}`))
+stream.on('error', (err) => console.log(`Err: ${err}`))
 stream.on('finish', () => console.log('Done'))
 
 stream.write('First line\n')
@@ -190,7 +203,7 @@ Node.js `mkdir()` работает асинхронно и принимает в
 Вторым параметром можно сразу передать callback-функцию.
 
 ```js
-fs.mkdir('files/dir/subdir', { recursive: true }, err => {
+fs.mkdir('files/dir/subdir', { recursive: true }, (err) => {
   if (err) throw err
 
   console.log('Created')
@@ -215,7 +228,7 @@ try {
 Метод `unlink()` асинхронный и принимает имя файла, который нужно удалить, и callback-функцию с ошибкой в качестве параметра (`null`, если удаление прошло успешно).
 
 ```js
-fs.unlink('files/data.txt', err => {
+fs.unlink('files/data.txt', (err) => {
   if (err) throw err
 
   console.log('Deleted')
@@ -238,7 +251,7 @@ try {
 Пример `rmdir()`.
 
 ```js
-fs.rmdir('files/dir', err => {
+fs.rmdir('files/dir', (err) => {
   if (err) throw err
 
   console.log('Deleted')

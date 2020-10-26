@@ -68,8 +68,17 @@ image-rendering: auto;
   </head>
   <body>
     <p>
-      <img src="image/russia.png" alt="Флаг России" width="200" />
-      <img src="image/russia.png" alt="Флаг России" width="200" class="fast" />
+      <img
+        src="image/russia.png"
+        alt="Флаг России"
+        width="200"
+      />
+      <img
+        src="image/russia.png"
+        alt="Флаг России"
+        width="200"
+        class="fast"
+      />
     </p>
   </body>
 </html>

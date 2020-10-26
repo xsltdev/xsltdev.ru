@@ -55,7 +55,7 @@ function createGreeting(s) {
 Или так:
 
 ```js
-window.createGreeting = function(s) {
+window.createGreeting = function (s) {
   return 'Привет, ' + s
 }
 ```
@@ -156,7 +156,7 @@ console.log(moment.format())
 Это легко заметить, увидев нечто подобное:
 
 ```js
-;(function(root, factory) {
+;(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['libName'], factory)
   } else if (typeof module === 'object' && module.exports) {
@@ -164,7 +164,7 @@ console.log(moment.format())
   } else {
     root.returnExports = factory(root.libName)
   }
-})(this, function(b) {})
+})(this, function (b) {})
 ```
 
 Если в коде библиотеки есть проверки `typeof define`, `typeof window` или `typeof module`, особенно в начале файла, то, скорее всего, это UMD-библиотека.

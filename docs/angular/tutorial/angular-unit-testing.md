@@ -75,7 +75,7 @@ it('expect example', () => {
 ```ts
 beforeEach(async(() => {
   TestBed.configureTestingModule({
-    declarations: [AppComponent]
+    declarations: [AppComponent],
   }).compileComponents()
 }))
 ```

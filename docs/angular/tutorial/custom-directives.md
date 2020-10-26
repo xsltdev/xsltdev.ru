@@ -14,7 +14,7 @@ _zoom.directive.ts (version 1)_
 
 ```ts
 @Directive({
-  selector: '[zoom]'
+  selector: '[zoom]',
 })
 export class ZoomDirective {}
 ```
@@ -29,7 +29,7 @@ _zoom.directive.ts (version 2)_
 
 ```ts
 @Directive({
-  selector: '[zoom]'
+  selector: '[zoom]',
 })
 export class ZoomDirective {
   constructor(private el: ElementRef) {
@@ -53,7 +53,7 @@ _zoom.directive.ts (version 3)_
 
 ```ts
 @Directive({
-  selector: '[zoom]'
+  selector: '[zoom]',
 })
 export class ZoomDirective {
   constructor(private el: ElementRef) {}
@@ -82,7 +82,7 @@ _zoom.directive.ts (version 4)_
 
 ```ts
 @Directive({
-  selector: '[zoom]'
+  selector: '[zoom]',
 })
 export class ZoomDirective {
   @Input('zoomSize') size
@@ -153,7 +153,7 @@ _duplicate-content.directive.ts_
 
 ```ts
 @Directive({
-  selector: '[duplicateContent]'
+  selector: '[duplicateContent]',
 })
 export class DuplicateContentDirective {
   @Input() set duplicateContent(condition: boolean) {
@@ -165,7 +165,10 @@ export class DuplicateContentDirective {
 
   private contentWasDuplicated: boolean = false
 
-  constructor(private tpl: TemplateRef<any>, private vc: ViewContainerRef) {}
+  constructor(
+    private tpl: TemplateRef<any>,
+    private vc: ViewContainerRef
+  ) {}
 }
 ```
 

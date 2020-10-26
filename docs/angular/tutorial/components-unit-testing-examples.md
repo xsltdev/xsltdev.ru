@@ -19,7 +19,7 @@ _info-message.component.ts_
     <h1>Attention!</h1>
 
     <p>{{ appService.message }}</p>
-  `
+  `,
 })
 export class InfoMessageComponent {
   constructor(public appService: AppService) {}
@@ -37,7 +37,9 @@ describe('InfoMessageComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [InfoMessageComponent],
-      providers: [{ provide: AppService, useValue: appServiceStub }]
+      providers: [
+        { provide: AppService, useValue: appServiceStub },
+      ],
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
@@ -45,7 +47,8 @@ describe('InfoMessageComponent', () => {
 
   it('should get message from AppService stub', () => {
     fixture.detectChanges()
-    const infoMessageEl: HTMLElement = fixture.debugElement.nativeElement
+    const infoMessageEl: HTMLElement =
+      fixture.debugElement.nativeElement
     const p = infoMessageEl.querySelector('p')
     expect(p.textContent).toContain('Out of service')
   })
@@ -83,12 +86,12 @@ describe('InfoMessageComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [InfoMessageComponent],
-      providers: [AppService]
+      providers: [AppService],
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
     appService = jasmine.createSpyObj('AppService', {
-      getData: 'Out of service'
+      getData: 'Out of service',
     })
   })
 
@@ -124,19 +127,22 @@ describe('InfoMessageComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [InfoMessageComponent],
-      providers: [AppService]
+      providers: [AppService],
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
     appService = jasmine.createSpyObj('AppService', {
-      getData: 'Out of service'
+      getData: 'Out of service',
     })
   })
 
   it('should get message from AppService getData()', fakeAsync(() => {
     const comp = fixture.componentInstance
 
-    setTimeout(() => (comp.message = appService.getData()), 180)
+    setTimeout(
+      () => (comp.message = appService.getData()),
+      180
+    )
 
     tick(180)
 
@@ -170,7 +176,7 @@ describe('InfoMessageComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [InfoMessageComponent],
-      providers: [AppService]
+      providers: [AppService],
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
@@ -199,8 +205,10 @@ _parent.component.ts_
 @Component({
   selector: 'parent-component',
   template: `
-    <child-component (message)="setMessage($event)"></child-component>
-  `
+    <child-component
+      (message)="setMessage($event)"
+    ></child-component>
+  `,
 })
 export class ParentComponent {
   message: string = ''
@@ -222,10 +230,12 @@ _child.component.ts_
     <div class="child">
       <button (click)="sendMessage()">Send message</button>
     </div>
-  `
+  `,
 })
 export class ChildComponent {
-  @Output() message: EventEmitter<any> = new EventEmitter<any>()
+  @Output() message: EventEmitter<any> = new EventEmitter<
+    any
+  >()
 
   constructor() {}
 
@@ -244,7 +254,7 @@ describe('ParentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ParentComponent, ChildComponent]
+      declarations: [ParentComponent, ChildComponent],
     })
       .compileComponents()
       .then(() => {
@@ -295,11 +305,15 @@ class Page {
   }
 
   private query<T>(selector: string): T {
-    return this.fixture.nativeElement.querySelector(selector)
+    return this.fixture.nativeElement.querySelector(
+      selector
+    )
   }
 
   private queryAll<T>(selector: string): T[] {
-    return this.fixture.nativeElement.querySelectorAll(selector)
+    return this.fixture.nativeElement.querySelectorAll(
+      selector
+    )
   }
 }
 ```
@@ -311,7 +325,7 @@ import { Page } from './page.ts'
 
 beforeEach(async(() => {
   TestBed.configureTestingModule({
-    declarations: [TestComponent]
+    declarations: [TestComponent],
   })
     .compileComponents()
     .then(() => {

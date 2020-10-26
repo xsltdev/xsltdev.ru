@@ -19,9 +19,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'home-app',
-  template: `
-    <h3>Главная</h3>
-  `
+  template: ` <h3>Главная</h3> `,
 })
 export class HomeComponent {}
 ```
@@ -33,9 +31,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'about-app',
-  template: `
-    <h3>О сайте</h3>
-  `
+  template: ` <h3>О сайте</h3> `,
 })
 export class AboutComponent {}
 ```
@@ -46,7 +42,7 @@ export class AboutComponent {}
 import {
   CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router'
 import { Observable } from 'rxjs'
 
@@ -92,7 +88,7 @@ import { Component } from '@angular/core'
       </nav>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -113,14 +109,22 @@ import { AboutGuard } from './about.guard'
 // определение маршрутов
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent, canActivate: [AboutGuard] }
+  {
+    path: 'about',
+    component: AboutComponent,
+    canActivate: [AboutGuard],
+  },
 ]
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, HomeComponent, AboutComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+  ],
   providers: [AboutGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -153,11 +157,14 @@ export interface ComponentCanDeactivate {
   canDeactivate: () => boolean | Observable<boolean>
 }
 
-export class ExitAboutGuard implements CanDeactivate<ComponentCanDeactivate> {
+export class ExitAboutGuard
+  implements CanDeactivate<ComponentCanDeactivate> {
   canDeactivate(
     component: ComponentCanDeactivate
   ): Observable<boolean> | boolean {
-    return component.canDeactivate ? component.canDeactivate() : true
+    return component.canDeactivate
+      ? component.canDeactivate()
+      : true
   }
 }
 ```
@@ -185,11 +192,14 @@ import { Observable } from 'rxjs'
   selector: 'about-app',
   template: `
     <h3>О сайте</h3>
-    <button class="btn btn-default" (click)="save()">Сохранить</button>
+    <button class="btn btn-default" (click)="save()">
+      Сохранить
+    </button>
     <a routerLink="">На главную</a>
-  `
+  `,
 })
-export class AboutComponent implements ComponentCanDeactivate {
+export class AboutComponent
+  implements ComponentCanDeactivate {
   saved: boolean = false
   save() {
     this.saved = true
@@ -231,15 +241,19 @@ const appRoutes: Routes = [
     path: 'about',
     component: AboutComponent,
     canActivate: [AboutGuard],
-    canDeactivate: [ExitAboutGuard]
-  }
+    canDeactivate: [ExitAboutGuard],
+  },
 ]
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, HomeComponent, AboutComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+  ],
   providers: [AboutGuard, ExitAboutGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

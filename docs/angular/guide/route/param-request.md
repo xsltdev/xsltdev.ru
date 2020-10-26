@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs'
     <h3>Модель {{ id }}</h3>
     <div>Товар: {{ product }}</div>
     <div>Цена: {{ price }}</div>
-  `
+  `,
 })
 export class ItemComponent {
   private id: number
@@ -30,12 +30,14 @@ export class ItemComponent {
   private querySubscription: Subscription
   constructor(private route: ActivatedRoute) {
     this.routeSubscription = route.params.subscribe(
-      params => (this.id = params['id'])
+      (params) => (this.id = params['id'])
     )
-    this.querySubscription = route.queryParams.subscribe((queryParam: any) => {
-      this.product = queryParam['product']
-      this.price = queryParam['price']
-    })
+    this.querySubscription = route.queryParams.subscribe(
+      (queryParam: any) => {
+        this.product = queryParam['product']
+        this.price = queryParam['price']
+      }
+    )
   }
 }
 ```
@@ -63,13 +65,15 @@ import { Component } from '@angular/core'
           [queryParams]="{ product: 'phone', price: 200 }"
           >item 5</a
         >
-        <a [routerLink]="['item', '8']" [queryParams]="{ product: 'tablet' }"
+        <a
+          [routerLink]="['item', '8']"
+          [queryParams]="{ product: 'tablet' }"
           >item 8</a
         >
       </nav>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```

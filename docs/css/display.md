@@ -197,14 +197,17 @@ Chrome 32 — Значение `run-in` больше не поддерживае
   <body>
     <p class="exampleTitle">Пример</p>
     <p class="example">
-      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><br />
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <br />
       <html>
         <br />
         <body>
           <br />
           <b>Формула серной кислоты:</b>
           <i
-            >H<sub><small>2</small></sub> SO<sub><small>4</small> </sub></i
+            >H<sub><small>2</small></sub> SO<sub
+              ><small>4</small>
+            </sub></i
           ><br />
         </body>
         <br />

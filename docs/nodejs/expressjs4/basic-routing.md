@@ -1,6 +1,6 @@
 # Основы маршрутизации
 
-*Маршрутизация* определяет, как приложение отвечает на клиентский запрос к конкретному адресу (конечной точке), которым является URI (или путь), и определенному методу запроса HTTP (GET, POST и т. д.).
+_Маршрутизация_ определяет, как приложение отвечает на клиентский запрос к конкретному адресу (конечной точке), которым является URI (или путь), и определенному методу запроса HTTP (GET, POST и т. д.).
 
 Каждый маршрут может иметь одну или несколько функций обработки, которые выполняются при сопоставлении маршрута.
 
@@ -25,32 +25,32 @@ app.METHOD(PATH, HANDLER)
 
 ```js
 app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+  res.send('Hello World!')
+})
 ```
 
 Ответ на запрос POST в корневом маршруте (`/`), на домашней странице приложения:
 
 ```js
 app.post('/', function (req, res) {
-  res.send('Got a POST request');
-});
+  res.send('Got a POST request')
+})
 ```
 
 Ответ на запрос PUT, адресованный маршруту `/user`:
 
 ```js
 app.put('/user', function (req, res) {
-  res.send('Got a PUT request at /user');
-});
+  res.send('Got a PUT request at /user')
+})
 ```
 
 Ответ на запрос DELETE, адресованный маршруту `/user`:
 
 ```js
 app.delete('/user', function (req, res) {
-  res.send('Got a DELETE request at /user');
-});
+  res.send('Got a DELETE request at /user')
+})
 ```
 
 Дополнительная информация о маршрутизации приведена в [руководстве по маршрутизации](routing.md).

@@ -16,7 +16,10 @@
 
 ```json
 {
-  "items": [{ "id": 1, "name": "Яблоки", "price": "$2" }, { "id": 2, "name": "Персики", "price": "$5" }]
+  "items": [
+    { "id": 1, "name": "Яблоки", "price": "$2" },
+    { "id": 2, "name": "Персики", "price": "$5" }
+  ]
 }
 ```
 
@@ -27,26 +30,26 @@ class MyComponent extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
     }
   }
 
   componentDidMount() {
     fetch('https://api.example.com/items')
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
-        result => {
+        (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result.items,
           })
         },
         // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
         // чтобы не перехватывать исключения из ошибок в самих компонентах.
-        error => {
+        (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           })
         }
       )
@@ -61,7 +64,7 @@ class MyComponent extends React.Component {
     } else {
       return (
         <ul>
-          {items.map(item => (
+          {items.map((item) => (
             <li key={item.name}>
               {item.name} {item.price}
             </li>

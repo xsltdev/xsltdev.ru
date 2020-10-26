@@ -44,17 +44,21 @@ console.log(op(6, 4)) // 2
 Тип функции можно использовать как тип переменной, но он также может применяться для определения типа параметра другой функции:
 
 ```typescript
-function mathOp(x: number, y: number, operation: (a: number, b: number) => number): number {
+function mathOp(
+  x: number,
+  y: number,
+  operation: (a: number, b: number) => number
+): number {
   let result = operation(x, y)
   return result
 }
 let operationFunc: (x: number, y: number) => number
-operationFunc = function(a: number, b: number): number {
+operationFunc = function (a: number, b: number): number {
   return a + b
 }
 console.log(mathOp(10, 20, operationFunc)) // 30
 
-operationFunc = function(a: number, b: number): number {
+operationFunc = function (a: number, b: number): number {
   return a * b
 }
 console.log(mathOp(10, 20, operationFunc)) // 200
@@ -85,7 +89,7 @@ console.log(result)
 Если стрелочная функция не требует параметров, то используются пустые круглые скобки. Если передается только один параметр, то скобки можно опустить:
 
 ```typescript
-let square = x => x * x
+let square = (x) => x * x
 let hello = () => 'hello world'
 
 console.log(square(5)) // 25
@@ -107,7 +111,11 @@ console.log(result)
 Стрелочные функции можно передавать в функцию вместо параметра, который представляет собой функцию:
 
 ```typescript
-function mathOp(x: number, y: number, operation: (a: number, b: number) => number): number {
+function mathOp(
+  x: number,
+  y: number,
+  operation: (a: number, b: number) => number
+): number {
   let result = operation(x, y)
   return result
 }

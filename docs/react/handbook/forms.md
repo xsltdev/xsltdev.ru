@@ -46,7 +46,11 @@ class NameForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Имя:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
         </label>
         <input type="submit" value="Отправить" />
       </form>
@@ -82,7 +86,8 @@ class EssayForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 'Будьте любезны, напишите сочинение о вашем любимом DOM-элементе.'
+      value:
+        'Будьте любезны, напишите сочинение о вашем любимом DOM-элементе.',
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -103,7 +108,10 @@ class EssayForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Сочинение:
-          <textarea value={this.state.value} onChange={this.handleChange} />
+          <textarea
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
         </label>
         <input type="submit" value="Отправить" />
       </form>
@@ -153,7 +161,10 @@ class FlavorForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Выберите ваш любимый вкус:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select
+            value={this.state.value}
+            onChange={this.handleChange}
+          >
             <option value="grapefruit">Грейпфрут</option>
             <option value="lime">Лайм</option>
             <option value="coconut">Кокос</option>
@@ -199,19 +210,24 @@ class Reservation extends React.Component {
     super(props)
     this.state = {
       isGoing: true,
-      numberOfGuests: 2
+      numberOfGuests: 2,
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(
+      this
+    )
   }
 
   handleInputChange(event) {
     const target = event.target
-    const value = target.type === 'checkbox' ? target.checked : target.value
+    const value =
+      target.type === 'checkbox'
+        ? target.checked
+        : target.value
     const name = target.name
 
     this.setState({
-      [name]: value
+      [name]: value,
     })
   }
 
@@ -220,12 +236,22 @@ class Reservation extends React.Component {
       <form>
         <label>
           Пойду:
-          <input name="isGoing" type="checkbox" checked={this.state.isGoing} onChange={this.handleInputChange} />
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange}
+          />
         </label>
         <br />
         <label>
           Количество гостей:
-          <input name="numberOfGuests" type="number" value={this.state.numberOfGuests} onChange={this.handleInputChange} />
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange}
+          />
         </label>
       </form>
     )
@@ -237,7 +263,7 @@ class Reservation extends React.Component {
 
 ```js
 this.setState({
-  [name]: value
+  [name]: value,
 })
 ```
 
@@ -260,7 +286,7 @@ this.setState(partialState)
 ```javascript
 ReactDOM.render(<input value="Привет" />, mountNode)
 
-setTimeout(function() {
+setTimeout(function () {
   ReactDOM.render(<input value={null} />, mountNode)
 }, 1000)
 ```

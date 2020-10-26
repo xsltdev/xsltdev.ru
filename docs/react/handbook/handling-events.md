@@ -16,13 +16,18 @@
 В React немного иначе:
 
 ```js
-<button onClick={activateLasers}>Активировать лазеры</button>
+<button onClick={activateLasers}>
+  Активировать лазеры
+</button>
 ```
 
 Ещё одно отличие — в React нельзя предотвратить обработчик события по умолчанию, вернув `false`. Нужно явно вызвать `preventDefault`. Например, в обычном HTML, чтобы отменить выполнение встроенного обработчика события у ссылки, которое открывает новую страницу, можно написать:
 
 ```html
-<a href="#" onclick="console.log('По ссылке кликнули.'); return false">
+<a
+  href="#"
+  onclick="console.log('По ссылке кликнули.'); return false"
+>
   Нажми на меня
 </a>
 ```
@@ -61,13 +66,17 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
     }))
   }
 
   render() {
-    return <button onClick={this.handleClick}>{this.state.isToggleOn ? 'Включено' : 'Выключено'}</button>
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'Включено' : 'Выключено'}
+      </button>
+    )
   }
 }
 
@@ -91,7 +100,11 @@ class LoggingButton extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleClick}>Нажми на меня</button>
+    return (
+      <button onClick={this.handleClick}>
+        Нажми на меня
+      </button>
+    )
   }
 }
 ```
@@ -108,7 +121,11 @@ class LoggingButton extends React.Component {
 
   render() {
     // Такой синтаксис гарантирует, что `this` привязан к handleClick.
-    return <button onClick={e => this.handleClick(e)}>Нажми на меня</button>
+    return (
+      <button onClick={(e) => this.handleClick(e)}>
+        Нажми на меня
+      </button>
+    )
   }
 }
 ```

@@ -125,7 +125,7 @@ var myComponent = new MyComponent()
 
 function MyFactoryFunction() {
   return {
-    render: () => {}
+    render: () => {},
   }
 }
 

@@ -21,25 +21,39 @@
       <button type="submit" id="submit">Отправить</button>
     </form>
     <script>
-      document.getElementById('submit').addEventListener('click', function(e) {
-        e.preventDefault()
-        // получаем данные формы
-        let registerForm = document.forms['registerForm']
-        let userName = registerForm.elements['userName'].value
-        let userAge = registerForm.elements['userAge'].value
-        // сериализуем данные в json
-        let user = JSON.stringify({ userName: userName, userAge: userAge })
-        let request = new XMLHttpRequest()
-        // посылаем запрос на адрес "/user"
-        request.open('POST', '/user', true)
-        request.setRequestHeader('Content-Type', 'application/json')
-        request.addEventListener('load', function() {
-          // получаем и парсим ответ сервера
-          let receivedUser = JSON.parse(request.response)
-          console.log(receivedUser.userName, '-', receivedUser.userAge) // смотрим ответ сервера
+      document
+        .getElementById('submit')
+        .addEventListener('click', function (e) {
+          e.preventDefault()
+          // получаем данные формы
+          let registerForm = document.forms['registerForm']
+          let userName =
+            registerForm.elements['userName'].value
+          let userAge =
+            registerForm.elements['userAge'].value
+          // сериализуем данные в json
+          let user = JSON.stringify({
+            userName: userName,
+            userAge: userAge,
+          })
+          let request = new XMLHttpRequest()
+          // посылаем запрос на адрес "/user"
+          request.open('POST', '/user', true)
+          request.setRequestHeader(
+            'Content-Type',
+            'application/json'
+          )
+          request.addEventListener('load', function () {
+            // получаем и парсим ответ сервера
+            let receivedUser = JSON.parse(request.response)
+            console.log(
+              receivedUser.userName,
+              '-',
+              receivedUser.userAge
+            ) // смотрим ответ сервера
+          })
+          request.send(user)
         })
-        request.send(user)
-      })
     </script>
   </body>
   <html></html>
@@ -57,14 +71,14 @@ const app = express()
 // создаем парсер для данных в формате json
 const jsonParser = express.json()
 
-app.post('/user', jsonParser, function(request, response) {
+app.post('/user', jsonParser, function (request, response) {
   console.log(request.body)
   if (!request.body) return response.sendStatus(400)
 
   response.json(request.body) // отправляем пришедший ответ обратно
 })
 
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.sendFile(__dirname + '/index.html')
 })
 
@@ -82,7 +96,7 @@ const jsonParser = express.json()
 И поскольку с клиентом мы взаимодействуем через формат json, то данные клиенту отправляются с помощью метода `response.json()`:
 
 ```js
-app.post('/user', jsonParser, function(request, response) {
+app.post('/user', jsonParser, function (request, response) {
   console.log(request.body)
   if (!request.body) return response.sendStatus(400)
 

@@ -66,10 +66,16 @@ border-top-right-radius: 0;
     </style>
   </head>
   <body>
-    <div style="border-top-right-radius: 10px" class="radius">
+    <div
+      style="border-top-right-radius: 10px"
+      class="radius"
+    >
       border-top-right-radius: 10px
     </div>
-    <div style="border-top-right-radius: 70px 40px" class="radius">
+    <div
+      style="border-top-right-radius: 70px 40px"
+      class="radius"
+    >
       border-top-right-radius: 70px 40px
     </div>
   </body>

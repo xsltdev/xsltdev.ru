@@ -17,13 +17,17 @@ description: Пользователь всегда взаимодействуе�
 Название события всегда должно быть заключено в круглые скобки или предваряться префиксом `on-`.
 
 ```html
-<button on-click="showContacts()">Show Contacts List</button>
+<button on-click="showContacts()">
+  Show Contacts List
+</button>
 ```
 
 Каждое возникающее событие передает о себе всю информацию в объекте `$event`, который может быть передан методу класса в качестве аргумента.
 
 ```html
-<button on-click="showContacts($event)">Show Contacts List</button>
+<button on-click="showContacts($event)">
+  Show Contacts List
+</button>
 ```
 
 Свойства объекта `$event`:
@@ -72,7 +76,7 @@ _contacts.component.ts_
     <contacts-item
       (saveContactPerson)="catchCustomEvent($event)"
     ></contacts-item>
-  `
+  `,
 })
 export class ContactsComponent {
   catchCustomEvent(ev): void {
@@ -88,7 +92,7 @@ _contacts-item.component.ts_
   selector: 'contacts-item',
   template: `
     <button (click)="showContactPerson()">Show</button>
-  `
+  `,
 })
 export class ContactsItemComponent {
   contactPerson = 'Peter'

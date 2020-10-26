@@ -36,7 +36,10 @@ const handlebars = require('express-handlebars')
 const host = '127.0.0.1'
 const port = 7000
 
-app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
+app.engine(
+  'handlebars',
+  handlebars({ defaultLayout: 'main' })
+)
 app.set('views', './views')
 app.set('view engine', 'handlebars')
 
@@ -44,7 +47,7 @@ app.get('/', (req, res) => {
   res.render('home', { title: 'Greetings form Handlebars' })
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```
@@ -62,7 +65,10 @@ _views/layouts/main.handlebars_
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
 
     <title>Node js Handlebars</title>
   </head>
@@ -93,7 +99,10 @@ _views/layouts/main.handlebars_
 
 ```js
 app.get('/', (req, res) => {
-  res.render('home', { title: 'Greetings form Handlebars', layout: false })
+  res.render('home', {
+    title: 'Greetings form Handlebars',
+    layout: false,
+  })
 })
 ```
 
@@ -115,7 +124,7 @@ app.enable('view cache')
 app.get('/', (req, res) => {
   res.render('home', {
     title: 'Greetings form Handlebars',
-    content: 'Description how to use it handlebars'
+    content: 'Description how to use it handlebars',
   })
 })
 ```
@@ -136,7 +145,7 @@ app.get('/', (req, res) => {
 app.get('/', (req, res) => {
   res.render('home', {
     title: 'Greetings form Handlebars',
-    advantages: ['simple', 'flexible', 'powerful']
+    advantages: ['simple', 'flexible', 'powerful'],
   })
 })
 ```
@@ -189,8 +198,8 @@ app.engine(
   handlebars({
     defaultLayout: 'main',
     helpers: {
-      getTitle: () => 'Greetings form Handlebars'
-    }
+      getTitle: () => 'Greetings form Handlebars',
+    },
   })
 )
 app.set('views', './views')
@@ -199,8 +208,12 @@ app.set('view engine', 'handlebars')
 app.get('/', (req, res) => {
   res.render('home', {
     helpers: {
-      getAdvantages: () => ['simple', 'flexible', 'powerful']
-    }
+      getAdvantages: () => [
+        'simple',
+        'flexible',
+        'powerful',
+      ],
+    },
   })
 })
 ```
@@ -245,7 +258,7 @@ app.get('/', (req, res) => {
   res.render('main', { title: 'Greetings from Pug' })
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```
@@ -314,7 +327,7 @@ Node.js шаблонизатор Pug для реализации условий 
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'Greetings from Pug',
-    content: 'Node js Pug description'
+    content: 'Node js Pug description',
   })
 })
 ```
@@ -339,7 +352,7 @@ html(lang="en")
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'Greetings from Pug',
-    type: 'h3'
+    type: 'h3',
   })
 })
 ```

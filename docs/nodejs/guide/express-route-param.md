@@ -14,7 +14,10 @@ localhost:3000/about/user?id=3&name=Tome
 const express = require('express')
 const app = express()
 
-app.get('/products/:productId', function(request, response) {
+app.get('/products/:productId', function (
+  request,
+  response
+) {
   response.send('productId: ' + request.params['productId'])
 })
 
@@ -32,11 +35,14 @@ app.listen(3000)
 Мы можем использовать более сложные комбинации параметров:
 
 ```js
-app.get('/categories/:categoryId/products/:productId', function(request, response) {
-  let catId = request.params['categoryId']
-  let prodId = request.params['productId']
-  response.send(`Категория: ${catId}  Товар: ${prodId}`)
-})
+app.get(
+  '/categories/:categoryId/products/:productId',
+  function (request, response) {
+    let catId = request.params['categoryId']
+    let prodId = request.params['productId']
+    response.send(`Категория: ${catId}  Товар: ${prodId}`)
+  }
+)
 ```
 
 ![4.16.png](4.16.png)
@@ -44,7 +50,10 @@ app.get('/categories/:categoryId/products/:productId', function(request, respons
 Или к примеру:
 
 ```js
-app.get('/book/:pageName.:pageExt', function(request, response) {
+app.get('/book/:pageName.:pageExt', function (
+  request,
+  response
+) {
   let pageName = request.params['pageName']
   let pageExt = request.params['pageExt']
   response.send(`Запрошенный файл: ${pageName}.${pageExt}`)

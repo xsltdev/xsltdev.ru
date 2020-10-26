@@ -25,7 +25,10 @@ grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
 grid: 200px / auto-flow;
 grid: 30% / auto-flow dense;
 grid: repeat(3, [line1 line2 line3] 200px) / auto-flow 300px;
-grid: [line1] minmax(20em, max-content) / auto-flow dense 40%;
+grid: [line1] minmax(
+    20em,
+    max-content
+  ) / auto-flow dense 40%;
 
 /* [ auto-flow && dense? ] <'grid-auto-rows'>? /
 	<'grid-template-columns'> values */

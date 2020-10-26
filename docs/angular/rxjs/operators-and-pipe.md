@@ -4,8 +4,8 @@
 
 ```ts
 from([7, 21, 10])
-  .pipe(map(num => (num <= 10 ? 1 : 0)))
-  .subscribe(vl => console.log(vl))
+  .pipe(map((num) => (num <= 10 ? 1 : 0)))
+  .subscribe((vl) => console.log(vl))
 ```
 
 Здесь в [`map()`](https://rxjs.dev/api/operators/map) каждое число равное или меньше 10 заменяется на `1`, если больше - на `0`.
@@ -28,10 +28,10 @@ from([7, 21, 10])
 ```ts
 from([30, 41, 60])
   .pipe(
-    filter(num => num % 10 === 0),
-    map(num => num * 2)
+    filter((num) => num % 10 === 0),
+    map((num) => num * 2)
   )
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 ```
 
 !!! note ""
@@ -41,8 +41,9 @@ from([30, 41, 60])
 В RxJS также есть одноименная утилита `pipe()`, используемая для создания переиспользуемых композиций операторов.
 
 ```ts
-const doubleFilter = <T, R>(fn: (value: T, index: number) => R) =>
-  pipe(filter(fn), filter(fn))
+const doubleFilter = <T, R>(
+  fn: (value: T, index: number) => R
+) => pipe(filter(fn), filter(fn))
 ```
 
 Пример приведен только для наглядности. Практическое использование такого оператора не эффективно.

@@ -24,7 +24,8 @@ app.use('/api', proxy('http://example.com'))
 app.use(
   '/api',
   proxy('http://example.com', {
-    filter: (req, res) => req.headers.hasOwnProperty('Authorization')
+    filter: (req, res) =>
+      req.headers.hasOwnProperty('Authorization'),
   })
 )
 ```
@@ -39,7 +40,7 @@ app.use(
       let _data = JSON.parse(proxyResData)
       _data.proxy = true
       return JSON.stringify(_data)
-    }
+    },
   })
 )
 ```
@@ -50,10 +51,10 @@ app.use(
 app.use(
   '/api',
   proxy('http://example.com', {
-    userResHeaderDecorator: hdrs => {
+    userResHeaderDecorator: (hdrs) => {
       hdrs.Proxy = true
       return hdrs
-    }
+    },
   })
 )
 ```
@@ -64,10 +65,10 @@ app.use(
 app.use(
   '/api',
   proxy('http://example.com', {
-    proxyReqPathResolver: req => {
+    proxyReqPathResolver: (req) => {
       console.log(req.url)
       return req.url
-    }
+    },
   })
 )
 ```
@@ -78,10 +79,10 @@ app.use(
 app.use(
   '/api',
   proxy('http://example.com', {
-    proxyReqOptDecorator: reqOpts => {
+    proxyReqOptDecorator: (reqOpts) => {
       reqOpts.method = 'POST'
       return reqOpts
-    }
+    },
   })
 )
 ```
@@ -92,10 +93,10 @@ app.use(
 app.use(
   '/api',
   proxy('http://example.com', {
-    proxyReqBodyDecorator: body => {
+    proxyReqBodyDecorator: (body) => {
       console.log(body)
       return body
-    }
+    },
   })
 )
 ```
@@ -108,7 +109,7 @@ app.use(
   proxy('http://example.com', {
     proxyErrorHandler: (err, res, next) => {
       next(err)
-    }
+    },
   })
 )
 ```
@@ -121,7 +122,7 @@ app.use(
 app.use(
   '/api',
   proxy('http://example.com', {
-    limit: '10mb'
+    limit: '10mb',
   })
 )
 ```
@@ -138,7 +139,7 @@ app.use(
 app.use(
   '/api',
   proxy('http://example.com', {
-    timeout: 2000
+    timeout: 2000,
   })
 )
 ```

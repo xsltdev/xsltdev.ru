@@ -6,7 +6,7 @@
 const express = require('express')
 const app = express()
 
-app.use(function(request, response) {
+app.use(function (request, response) {
   response.send('<h2>Hello</h2>')
 })
 
@@ -41,7 +41,7 @@ response.send(Buffer.from('Hello Express'))
 const express = require('express')
 const app = express()
 
-app.use(function(request, response) {
+app.use(function (request, response) {
   response.send(`<!DOCTYPE html>
   <html>
   <head>
@@ -85,7 +85,7 @@ app.listen(3000)
 const express = require('express')
 const app = express()
 
-app.use(function(request, response) {
+app.use(function (request, response) {
   response.sendFile(__dirname + '/index.html')
 })
 
@@ -104,7 +104,7 @@ app.listen(3000)
 const express = require('express')
 const app = express()
 
-app.use('/home/foo/bar', function(request, response) {
+app.use('/home/foo/bar', function (request, response) {
   response.sendStatus(404)
 })
 
@@ -119,7 +119,7 @@ app.listen(3000)
 const express = require('express')
 const app = express()
 
-app.use('/home/foo/bar', function(request, response) {
+app.use('/home/foo/bar', function (request, response) {
   response.status(404).send(`Ресурс не найден`)
 })
 

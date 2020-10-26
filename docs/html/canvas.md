@@ -40,7 +40,7 @@ description: Тег canvas (от англ. canvas - холст) создаёт �
     <title>canvas</title>
     <meta charset="utf-8" />
     <script>
-      window.onload = function() {
+      window.onload = function () {
         var drawingCanvas = document.getElementById('smile')
         if (drawingCanvas && drawingCanvas.getContext) {
           var context = drawingCanvas.getContext('2d')

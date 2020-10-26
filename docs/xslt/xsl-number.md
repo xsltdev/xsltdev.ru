@@ -10,15 +10,16 @@ description: Элемент xsl:number вычисляет номер узла в
 
 ```xml
 <xsl:number
-    level = "single | multiple | any"
-    count = "паттерн"
-    from = "паттерн"
-    value = "выражение"
-    format = "строка"
-    lang = "токен"
-    letter-value = "alphabetic | traditional"
-    grouping-separator = "символ"
-    grouping-size = "число" />
+  level="single | multiple | any"
+  count="паттерн"
+  from="паттерн"
+  value="выражение"
+  format="строка"
+  lang="токен"
+  letter-value="alphabetic | traditional"
+  grouping-separator="символ"
+  grouping-size="число"
+/>
 ```
 
 Атрибуты:
@@ -66,7 +67,9 @@ description: Элемент xsl:number вычисляет номер узла в
 **Пример 1**
 
 ```xml
-<xsl:value-of select="count(preceding-sibling::chapter)+1" />
+<xsl:value-of
+  select="count(preceding-sibling::chapter)+1"
+/>
 ```
 
 В более сложных ситуациях бывает необходимо подсчитывать узлы, находящиеся на разных уровнях вложенности или удовлетворяющие определенным условиям, начинать отсчет с заданной позиции в документе и использовать при вычислении номера сложные выражения. Использование [XPath](../xpath/index.md) в таких случаях может быть очень неудобным — выражения будут слишком громоздкими и вычислять их придется в несколько этапов.
@@ -89,42 +92,42 @@ description: Элемент xsl:number вычисляет номер узла в
 
 ```xml
 <doc>
-    <chapter title="First chapter">
-        <section title="First section">
-            <para>paragraph 1</para>
-            <para>paragraph 2</para>
-            <para>paragraph 3</para>
-        </section>
-        <section title="Second section">
-            <para>paragraph 4</para>
-            <para>paragraph 5</para>
-        </section>
-    </chapter>
-    <chapter title="Second chapter">
-        <section title="Third section">
-            <para>paragraph 6</para>
-            <para>paragraph 7</para>
-            <para>paragraph 8</para>
-            <para>paragraph 9</para>
-        </section>
-        <section title="Forth section">
-            <para>paragraph 10</para>
-            <para>paragraph 11</para>
-            <para>paragraph 12</para>
-        </section>
-        <section title="Fifth section">
-            <para>paragraph 13</para>
-            <para>paragraph 14</para>
-            <para>paragraph 15</para>
-            <para>paragraph 16</para>
-        </section>
-    </chapter>
-    <chapter title="Third chapter">
-        <section title="Sixth section">
-            <para>paragraph 17</para>
-            <para>paragraph 18</para>
-        </section>
-    </chapter>
+  <chapter title="First chapter">
+    <section title="First section">
+      <para>paragraph 1</para>
+      <para>paragraph 2</para>
+      <para>paragraph 3</para>
+    </section>
+    <section title="Second section">
+      <para>paragraph 4</para>
+      <para>paragraph 5</para>
+    </section>
+  </chapter>
+  <chapter title="Second chapter">
+    <section title="Third section">
+      <para>paragraph 6</para>
+      <para>paragraph 7</para>
+      <para>paragraph 8</para>
+      <para>paragraph 9</para>
+    </section>
+    <section title="Forth section">
+      <para>paragraph 10</para>
+      <para>paragraph 11</para>
+      <para>paragraph 12</para>
+    </section>
+    <section title="Fifth section">
+      <para>paragraph 13</para>
+      <para>paragraph 14</para>
+      <para>paragraph 15</para>
+      <para>paragraph 16</para>
+    </section>
+  </chapter>
+  <chapter title="Third chapter">
+    <section title="Sixth section">
+      <para>paragraph 17</para>
+      <para>paragraph 18</para>
+    </section>
+  </chapter>
 </doc>
 ```
 
@@ -134,10 +137,12 @@ description: Элемент xsl:number вычисляет номер узла в
 
 ```xml
 <xsl:template match="chapter">
-    <xsl:value-of select="position()"/>
-    <xsl:text>. </xsl:text>
-    <xsl:value-of select="@title"/>
-    <xsl:text> </xsl:text>
+  <xsl:value-of select="position()" />
+  <xsl:text>.</xsl:text>
+  <xsl:value-of select="@title" />
+  <xsl:text>
+
+  </xsl:text>
 </xsl:template>
 ```
 
@@ -145,9 +150,11 @@ description: Элемент xsl:number вычисляет номер узла в
 
 ```xml
 <xsl:template match="chapter">
-    <xsl:number value="position()" format="1. "/>
-    <xsl:value-of select="@title"/>
-    <xsl:text> </xsl:text>
+  <xsl:number value="position()" format="1. " />
+  <xsl:value-of select="@title" />
+  <xsl:text>
+
+  </xsl:text>
 </xsl:template>
 ```
 
@@ -192,10 +199,12 @@ description: Элемент xsl:number вычисляет номер узла в
 
 ```xml
 <xsl:template match="para">
-    <xsl:number format="     1." count="section"/>
-    <xsl:number format="1." count="para"/>
-    <xsl:value-of select="."/>
-    <xsl:text> </xsl:text>
+  <xsl:number format="     1." count="section" />
+  <xsl:number format="1." count="para" />
+  <xsl:value-of select="." />
+  <xsl:text>
+
+  </xsl:text>
 </xsl:template>
 ```
 
@@ -206,7 +215,7 @@ description: Элемент xsl:number вычисляет номер узла в
 В качестве первого примера приведем вычисление номера элементом
 
 ```xml
-<xsl:number format="     1." count="section"/>
+<xsl:number format="     1." count="section" />
 ```
 
 На первом шаге нам нужно найти узел уровня дерева. Этим узлом будет первый элемент `section`, являющийся предком текущего узла. На рис. 8.2 он обведен пунктиром.
@@ -222,7 +231,7 @@ description: Элемент xsl:number вычисляет номер узла в
 Проведем такой же разбор для определения
 
 ```xml
-<xsl:number format="1." count="para"/>
+<xsl:number format="1." count="para" />
 ```
 
 В этом случае паттерну, указанному в элементе `count` удовлетворяет сам текущий узел, значит, он и будет являться узлом уровня, как это показано на рис. 8.4.
@@ -260,7 +269,12 @@ description: Элемент xsl:number вычисляет номер узла в
 Для демонстрации вычисления номеров на нескольких уровнях дерева документа проследим за выполнением инструкции
 
 ```xml
-<xsl:number format="     1.1." level="multiple" count="doc|chapter|para" from="doc"/>
+<xsl:number
+  format="     1.1."
+  level="multiple"
+  count="doc|chapter|para"
+  from="doc"
+/>
 ```
 
 при обработке того же элемента `para`.
@@ -300,7 +314,12 @@ description: Элемент xsl:number вычисляет номер узла в
 В качестве примера применения метода `any` вычислим порядковый номер элемента `para` среди всех элементов документа, начиная со второй главы. Инструкцию такого рода мы запишем в виде
 
 ```xml
-<xsl:number format="     1." level="any" count="*" from="chapter[2]"/>
+<xsl:number
+  format="     1."
+  level="any"
+  count="*"
+  from="chapter[2]"
+/>
 ```
 
 При ее выполнении мы сначала определим область, в которой будут подсчитываться узлы (обведены штрих-пунктирной линией на рис. 8.10).
@@ -318,29 +337,46 @@ description: Элемент xsl:number вычисляет номер узла в
 Листинг 8.34. Шаблон, использующий разные методы нумерации
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="doc">
-        <xsl:text>Resulting document </xsl:text>
-        <xsl:text>================== </xsl:text>
-        <xsl:apply-templates select="chapter"/>
-    </xsl:template>
-    <xsl:template match="chapter">
-        <xsl:number format="1. "/>
-        <xsl:value-of select="@title"/>
-        <xsl:text> </xsl:text>
-        <xsl:apply-templates select="section"/>
-    </xsl:template>
-    <xsl:template match="section">
-        <xsl:number format="   1.1 " level="multiple" count="chapter|section"/>
-        <xsl:value-of select="@title"/>
-        <xsl:text> </xsl:text>
-        <xsl:apply-templates select="para"/>
-    </xsl:template>
-    <xsl:template match="para">
-        <xsl:number format="     a) " level="any" count="para"/>
-        <xsl:value-of select="."/>
-        <xsl:text> </xsl:text>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="doc">
+    <xsl:text>Resulting document</xsl:text>
+    <xsl:text>==================</xsl:text>
+    <xsl:apply-templates select="chapter" />
+  </xsl:template>
+  <xsl:template match="chapter">
+    <xsl:number format="1. " />
+    <xsl:value-of select="@title" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:apply-templates select="section" />
+  </xsl:template>
+  <xsl:template match="section">
+    <xsl:number
+      format="   1.1 "
+      level="multiple"
+      count="chapter|section"
+    />
+    <xsl:value-of select="@title" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:apply-templates select="para" />
+  </xsl:template>
+  <xsl:template match="para">
+    <xsl:number
+      format="     a) "
+      level="any"
+      count="para"
+    />
+    <xsl:value-of select="." />
+    <xsl:text>
+
+    </xsl:text>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -407,7 +443,12 @@ Resulting document
 В примере к методу `multiple` мы использовали следующий элемент `xsl:number`:
 
 ```xml
-<xsl:number format="     1.1." level="multiple" count="doc|chapter|para" from="doc"/>
+<xsl:number
+  format="     1.1."
+  level="multiple"
+  count="doc|chapter|para"
+  from="doc"
+/>
 ```
 
 Разберем строение атрибута `format` этого элемента (на рис. 8.12 пробелы обозначены символами "\_"):
@@ -480,7 +521,12 @@ Resulting document
 Для форматирования номеров в последовательности 1.1.а, 1.1.б, 1.1.в, …, 1.2.а и так далее можно использовать объявление вида:
 
 ```xml
-<xsl:number format="1.&#х430;" level="multiple" count="chapter|section" from="doc"/>
+<xsl:number
+  format="1.&#х430;"
+  level="multiple"
+  count="chapter|section"
+  from="doc"
+/>
 ```
 
 Представим теперь себе следующую ситуацию: нам нужно начать нумерацию с латинской буквы i для того, чтобы получить последовательность номеров вида i, j, k, l, m и так далее. Первое, что приходит в голову — это запись вида
@@ -500,7 +546,11 @@ Resulting document
 Элемент `xsl:number` вида
 
 ```xml
-<xsl:number format="[00000001]" grouping-separator="." grouping-size="2"/>
+<xsl:number
+  format="[00000001]"
+  grouping-separator="."
+  grouping-size="2"
+/>
 ```
 
 будет генерировать номера в следующей последовательности:
@@ -521,8 +571,12 @@ Resulting document
 
 ```xml
 <xsl:template match="section">
-    <xsl:number  format="{../@format}-1 "  level="multiple"  count="chapter|section"/>
-    <xsl:value-of select="@title"/>
+  <xsl:number
+    format="{../@format}-1 "
+    level="multiple"
+    count="chapter|section"
+  />
+  <xsl:value-of select="@title" />
 </xsl:template>
 ```
 
@@ -530,11 +584,11 @@ Resulting document
 
 ```xml
 <doc>
-    <chapter format="I" title="First Chapter">
-        <section title="First Section"/>
-        <section title="Second Section"/>
-        <section title="Third Section"/>
-    </chapter>
+  <chapter format="I" title="First Chapter">
+    <section title="First Section" />
+    <section title="Second Section" />
+    <section title="Third Section" />
+  </chapter>
 </doc>
 ```
 
@@ -559,67 +613,96 @@ I-3 Third Section
 Для полноценной демонстрации применения `xsl:number` потребуется документ XML c достаточно большим количеством элементов для нумерации. Мы используем следующий документ:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- items-to-number.xml -->
 <book>
-    <chapter>
-        <title>Alfa Romeo</title>
-        <sect1>
-            <title>Bentley</title>
-        </sect1>
-        <sect1>
-            <title>Chevrolet</title>
-            <sect2>
-                <title>Dodge</title>
-                <sect3>
-                    <title>Eagle</title>
-                </sect3>
-            </sect2>
-        </sect1>
-    </chapter>
-    <chapter>
-        <title>Ford</title>
-        <sect1>
-            <title>GMC</title>
-            <sect2>
-                <title>Honda</title>
-                <sect3><title>Isuzu</title></sect3>
-                <sect3><title>Javelin</title></sect3>
-                <sect3><title>K-Car</title></sect3>
-                <sect3><title>Lincoln</title></sect3>
-            </sect2>
-            <sect2><title>Mercedes</title></sect2>
-            <sect2>
-                <title>Nash</title>
-                <sect3><title>Opel</title></sect3>
-                <sect3><title>Pontiac</title></sect3>
-            </sect2>
-            <sect2>
-                <title>Quantum</title>
-                <sect3><title>Rambler</title></sect3>
-                <sect3><title>Studebaker</title></sect3>
-            </sect2>
-        </sect1>
-        <sect1><title>Toyota</title></sect1>
-    </chapter>
+  <chapter>
+    <title>Alfa Romeo</title>
+    <sect1>
+      <title>Bentley</title>
+    </sect1>
+    <sect1>
+      <title>Chevrolet</title>
+      <sect2>
+        <title>Dodge</title>
+        <sect3>
+          <title>Eagle</title>
+        </sect3>
+      </sect2>
+    </sect1>
+  </chapter>
+  <chapter>
+    <title>Ford</title>
+    <sect1>
+      <title>GMC</title>
+      <sect2>
+        <title>Honda</title>
+        <sect3>
+          <title>Isuzu</title>
+        </sect3>
+        <sect3>
+          <title>Javelin</title>
+        </sect3>
+        <sect3>
+          <title>K-Car</title>
+        </sect3>
+        <sect3>
+          <title>Lincoln</title>
+        </sect3>
+      </sect2>
+      <sect2>
+        <title>Mercedes</title>
+      </sect2>
+      <sect2>
+        <title>Nash</title>
+        <sect3>
+          <title>Opel</title>
+        </sect3>
+        <sect3>
+          <title>Pontiac</title>
+        </sect3>
+      </sect2>
+      <sect2>
+        <title>Quantum</title>
+        <sect3>
+          <title>Rambler</title>
+        </sect3>
+        <sect3>
+          <title>Studebaker</title>
+        </sect3>
+      </sect2>
+    </sect1>
+    <sect1>
+      <title>Toyota</title>
+    </sect1>
+  </chapter>
 </book>
 ```
 
 Для сокращения объема выходных данных мы будем подсчитывать только элементы `sect2`. Начнем с использования атрибута `ordinal`:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- number8.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="text"/>
-    <xsl:template match="book">
-        <xsl:for-each select=".//sect2">
-            <xsl:number level="any" count="chapter|sect1|sect2|sect3" format="Ww - " ordinal="yes"/>
-            <xsl:value-of select="title"/>
-            <xsl:text>
-</xsl:text>
-        </xsl:for-each>
-    </xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="text" />
+  <xsl:template match="book">
+    <xsl:for-each select=".//sect2">
+      <xsl:number
+        level="any"
+        count="chapter|sect1|sect2|sect3"
+        format="Ww - "
+        ordinal="yes"
+      />
+      <xsl:value-of select="title" />
+      <xsl:text>
+
+      </xsl:text>
+    </xsl:for-each>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -636,18 +719,27 @@ Seventeenth - Quantum
 Теперь мы воспользуемся комбинацией `format` и `lang`:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- number9.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="text"/>
-    <xsl:template match="book">
-        <xsl:for-each select=".//sect2">
-            <xsl:number level="any" count="chapter|sect1|sect2|sect3" format="w - " lang="de"/>
-            <xsl:value-of select="title"/>
-            <xsl:text>
-</xsl:text>
-        </xsl:for-each>
-    </xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="text" />
+  <xsl:template match="book">
+    <xsl:for-each select=".//sect2">
+      <xsl:number
+        level="any"
+        count="chapter|sect1|sect2|sect3"
+        format="w - "
+        lang="de"
+      />
+      <xsl:value-of select="title" />
+      <xsl:text>
+
+      </xsl:text>
+    </xsl:for-each>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -664,18 +756,27 @@ siebzehn - Quantum
 Если запросить комбинацию атрибутов `format`, `ordinal` и `lang`, не поддерживаемую процессором XSLT, процессор возвращается к стандартному поведению. Таблица стилей показывает, что делает Saxon при запросе нумерации на польском языке:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- number10.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="text"/>
-    <xsl:template match="book">
-        <xsl:for-each select=".//sect2">
-            <xsl:number level="any" count="chapter|sect1|sect2|sect3" format="w - " lang="pl"/>
-            <xsl:value-of select="title"/>
-            <xsl:text>
-</xsl:text>
-        </xsl:for-each>
-    </xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="text" />
+  <xsl:template match="book">
+    <xsl:for-each select=".//sect2">
+      <xsl:number
+        level="any"
+        count="chapter|sect1|sect2|sect3"
+        format="w - "
+        lang="pl"
+      />
+      <xsl:value-of select="title" />
+      <xsl:text>
+
+      </xsl:text>
+    </xsl:for-each>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -692,27 +793,34 @@ seventeen - Quantum
 В последнем примере используются атрибуты `format="๑"` (тайская нумерация) и `ordinal="yes"`:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- number11.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="html"/>
-    <xsl:template match="book">
-        <html>
-            <head>
-                <title>Thai numbering</title>
-            </head>
-            <body style="font-family: sans-serif;">
-                <h1>Thai numbering</h1>
-                <p style="font-size: 150%">
-                    <xsl:for-each select=".//sect2">
-                        <xsl:number level="any" count="sect2" format="๑ "/>
-                        <xsl:value-of select="title"/>
-                        <br/>
-                    </xsl:for-each>
-                </p>
-            </body>
-        </html>
-    </xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="html" />
+  <xsl:template match="book">
+    <html>
+      <head>
+        <title>Thai numbering</title>
+      </head>
+      <body style="font-family: sans-serif;">
+        <h1>Thai numbering</h1>
+        <p style="font-size: 150%">
+          <xsl:for-each select=".//sect2">
+            <xsl:number
+              level="any"
+              count="sect2"
+              format="๑ "
+            />
+            <xsl:value-of select="title" />
+            <br />
+          </xsl:for-each>
+        </p>
+      </body>
+    </html>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

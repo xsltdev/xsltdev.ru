@@ -58,9 +58,7 @@ description: Тег fieldset (от англ. field set - набор полей) 
 **Синтаксис**
 
 ```html
-<fieldset form="<идентификатор>">
-  ...
-</fieldset>
+<fieldset form="<идентификатор>">...</fieldset>
 ```
 
 **Значения**
@@ -90,11 +88,13 @@ description: Тег fieldset (от англ. field set - набор полей) 
     <form action="handler.php">
       <fieldset>
         <legend>Работа со временем</legend>
-        <input type="checkbox" /> создание пунктуальности (никогда не будете
-        никуда опаздывать);<br />
-        <input type="checkbox" /> излечение от пунктуальности (никогда никуда не
-        будете торопиться);<br />
-        <input type="checkbox" /> изменение восприятия времени и часов.
+        <input type="checkbox" /> создание пунктуальности
+        (никогда не будете никуда опаздывать);<br />
+        <input type="checkbox" /> излечение от
+        пунктуальности (никогда никуда не будете
+        торопиться);<br />
+        <input type="checkbox" /> изменение восприятия
+        времени и часов.
         <p><input type="submit" /></p>
       </fieldset>
     </form>

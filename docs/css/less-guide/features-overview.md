@@ -92,7 +92,8 @@
 
 // Компилируется в
 .test-js {
-  content: '{' rss ':23982080,' heapTotal ':15454976,' heapUsed ':8824096}';
+  content: '{' rss ':23982080,' heapTotal ':15454976,'
+    heapUsed ':8824096}';
 }
 ```
 
@@ -100,7 +101,10 @@
 
 ```less
 .test-js {
-  content: `(function() {var a = 2; var b = Math.pow(a, 4) ; return a + b;}) () `;
+  content: `(
+      function() {var a = 2; var b = Math.pow(a, 4) ; return
+        a + b;}
+    ) () `;
 }
 ```
 

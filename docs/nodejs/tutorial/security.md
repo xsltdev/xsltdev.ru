@@ -31,8 +31,8 @@ app.use(
   helmet.csp({
     directives: {
       objectSrc: ['none'],
-      workerSrc: false //значение не задается
-    }
+      workerSrc: false, //значение не задается
+    },
   })
 )
 ```
@@ -53,7 +53,7 @@ app.use(
   helmet.expectCt({
     enforce: true,
     maxAge: 90, //задается в днях
-    reportUri: 'http://example.com/report'
+    reportUri: 'http://example.com/report',
   })
 )
 ```
@@ -66,8 +66,8 @@ app.use(
     features: {
       camera: ['none'], //запрет использования web-камеры
       fullscreen: ['none'], //запрет использования Fullscreen API
-      geolocation: ['none'] //запрет использования геолокации
-    }
+      geolocation: ['none'], //запрет использования геолокации
+    },
   })
 )
 ```
@@ -88,7 +88,7 @@ app.use(
   helmet.hsts({
     maxAge: 31536000, //задается в секундах
     includeSubdomains: true,
-    preload: true
+    preload: true,
   })
 )
 ```
@@ -117,7 +117,7 @@ app.use(helmet.noSniff())
 app.use(
   helmet.frameguard({
     action: 'deny',
-    domain: 'http://example.com'
+    domain: 'http://example.com',
   })
 )
 ```
@@ -126,14 +126,22 @@ app.use(
 
 ```js
 app.use(helmet.permittedCrossDomainPolicies()) //по умолчанию none
-app.use(helmet.permittedCrossDomainPolicies({ permittedPolicies: 'all' }))
+app.use(
+  helmet.permittedCrossDomainPolicies({
+    permittedPolicies: 'all',
+  })
+)
 ```
 
 `referrerPolicy` - управляет заголовком `Referrer` задавая заголовок `Referrer-Policy`;
 
 ```js
 app.use(helmet.referrerPolicy({ policy: 'no-referrer' }))
-app.use(helmet.referrerPolicy({ policy: ['no-referrer', 'unsafe-url'] }))
+app.use(
+  helmet.referrerPolicy({
+    policy: ['no-referrer', 'unsafe-url'],
+  })
+)
 ```
 
 `xssFilter` - устанавливает заголовок `X-XSS-Protection`, активируя тем самым фильтр межсайтового скриптинга.
@@ -142,7 +150,7 @@ app.use(helmet.referrerPolicy({ policy: ['no-referrer', 'unsafe-url'] }))
 app.use(
   helmet.xssFilter({
     setOnOldIE: true,
-    reportUri: 'http://example.com/report'
+    reportUri: 'http://example.com/report',
   })
 )
 ```
@@ -153,7 +161,7 @@ app.use(
 app.use(
   helmet({
     ieNoOpen: false,
-    hidePoweredBy: false
+    hidePoweredBy: false,
   })
 )
 ```
@@ -164,11 +172,11 @@ app.use(
 app.use(
   helmet({
     xssFilter: {
-      setOnOldIE: true
+      setOnOldIE: true,
     },
     hidePoweredBy: {
-      setTo: 'PHP X.X.X'
-    }
+      setTo: 'PHP X.X.X',
+    },
   })
 )
 ```

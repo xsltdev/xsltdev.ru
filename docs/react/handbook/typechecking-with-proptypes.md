@@ -18,7 +18,7 @@ class Greeting extends React.Component {
 }
 
 Greeting.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
 }
 ```
 
@@ -59,7 +59,11 @@ MyComponent.propTypes = {
   optionalEnum: PropTypes.oneOf(['News', 'Photos']),
 
   // Объект, одного из нескольких типов
-  optionalUnion: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Message)]),
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message),
+  ]),
 
   // Массив объектов конкретного типа
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
@@ -70,7 +74,7 @@ MyComponent.propTypes = {
   // Объект с определённой структурой
   optionalObjectWithShape: PropTypes.shape({
     color: PropTypes.string,
-    fontSize: PropTypes.number
+    fontSize: PropTypes.number,
   }),
 
   // Можно добавить`isRequired` к любому из приведённому выше типу,
@@ -85,9 +89,16 @@ MyComponent.propTypes = {
   // Он должен возвращать объект `Error` при ошибке валидации.
   // Не используйте `console.warn` или `throw`
   // - это не будет работать внутри `oneOfType`
-  customProp: function(props, propName, componentName) {
+  customProp: function (props, propName, componentName) {
     if (!/matchme/.test(props[propName])) {
-      return new Error('Проп `' + propName + '` компонента' + ' `' + componentName + '` имеет неправильное значение')
+      return new Error(
+        'Проп `' +
+          propName +
+          '` компонента' +
+          ' `' +
+          componentName +
+          '` имеет неправильное значение'
+      )
     }
   },
 
@@ -97,11 +108,24 @@ MyComponent.propTypes = {
   // или для каждого свойства объекта.
   // Первые два параметра валидатора
   // - это массив или объект и ключ текущего элемента
-  customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+  customArrayProp: PropTypes.arrayOf(function (
+    propValue,
+    key,
+    componentName,
+    location,
+    propFullName
+  ) {
     if (!/matchme/.test(propValue[key])) {
-      return new Error('Проп `' + propFullName + '` компонента' + ' `' + componentName + '` имеет неправильное значение')
+      return new Error(
+        'Проп `' +
+          propFullName +
+          '` компонента' +
+          ' `' +
+          componentName +
+          '` имеет неправильное значение'
+      )
     }
-  })
+  }),
 }
 ```
 
@@ -122,7 +146,7 @@ class MyComponent extends React.Component {
 }
 
 MyComponent.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 }
 ```
 
@@ -139,11 +163,14 @@ class Greeting extends React.Component {
 
 // Задание значений по умолчанию для пропсов:
 Greeting.defaultProps = {
-  name: 'Незнакомец'
+  name: 'Незнакомец',
 }
 
 // Отрендерит "Привет, Незнакомец":
-ReactDOM.render(<Greeting />, document.getElementById('example'))
+ReactDOM.render(
+  <Greeting />,
+  document.getElementById('example')
+)
 ```
 
 Если вы используете один из Babel-плагинов по преобразованию кода, вроде [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/), то можете объявить `defaultProps` как статическое свойство класса (для компонента-наследника от `React.Component`). Этот синтаксис ещё не утверждён, так что для его работы в браузере нужна компиляция. Подробнее смотрите в [предложении о полях класса](https://github.com/tc39/proposal-class-fields).
@@ -151,7 +178,7 @@ ReactDOM.render(<Greeting />, document.getElementById('example'))
 ```javascript
 class Greeting extends React.Component {
   static defaultProps = {
-    name: 'незнакомец'
+    name: 'незнакомец',
   }
 
   render() {

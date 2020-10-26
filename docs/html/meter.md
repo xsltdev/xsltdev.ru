@@ -172,9 +172,15 @@ description: Тег meter (от англ. meter — счетчик, измери
   </head>
   <body>
     <p>Температура воды</p>
-    <meter value="0" max="100" low="10" high="60">Низкая</meter>
-    <meter value="30" max="100" low="10" high="60">Нормальная</meter>
-    <meter value="80" max="100" low="10" high="60">Горячая</meter>
+    <meter value="0" max="100" low="10" high="60">
+      Низкая
+    </meter>
+    <meter value="30" max="100" low="10" high="60">
+      Нормальная
+    </meter>
+    <meter value="80" max="100" low="10" high="60">
+      Горячая
+    </meter>
     <meter value="100" max="100">Кипяток</meter>
   </body>
 </html>

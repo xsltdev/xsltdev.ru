@@ -223,7 +223,7 @@ alert(buildLabel('Sam Smith'))
 enum Color {
   red = 1,
   green = 2,
-  blue = 4
+  blue = 4,
 }
 
 namespace Color {
@@ -261,7 +261,7 @@ export class Observable<T> {
 
 // map.js
 import { Observable } from './observable'
-Observable.prototype.map = function(f) {
+Observable.prototype.map = function (f) {
   // ... еще одно упражнение для читателя
 }
 ```
@@ -313,7 +313,7 @@ declare global {
   }
 }
 
-Array.prototype.toObservable = function() {
+Array.prototype.toObservable = function () {
   // ...
 }
 ```

@@ -5,10 +5,10 @@
 Например, пусть в проекте будет модуль `operations.js`:
 
 ```js
-module.exports.multiply = function(x, y) {
+module.exports.multiply = function (x, y) {
   return x * y
 }
-module.exports.add = function(x, y) {
+module.exports.add = function (x, y) {
   return x + y
 }
 ```
@@ -19,13 +19,13 @@ module.exports.add = function(x, y) {
 var assert = require('assert')
 var operations = require('./operations')
 
-describe('Operation Tests', function() {
-  it('should multiply two numbers', function() {
+describe('Operation Tests', function () {
+  it('should multiply two numbers', function () {
     var expected = 15
     var result = operations.multiply(3, 5)
     assert.equal(result, expected)
   })
-  it('should add two numbers', function() {
+  it('should add two numbers', function () {
     var expected = 16
     var result = operations.add(9, 7)
     assert.equal(result, expected)
@@ -41,15 +41,15 @@ describe('Operation Tests', function() {
 const express = require('express')
 var app = express()
 
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.send('Hello Test')
 })
 
-app.get('/error', function(request, response) {
+app.get('/error', function (request, response) {
   response.status(404).send('NotFound')
 })
 
-app.get('/user', function(request, response) {
+app.get('/user', function (request, response) {
   response.send({ name: 'Tom', age: 22 })
 })
 
@@ -66,15 +66,12 @@ const assert = require('assert')
 
 var app = require('./app').app
 
-describe('Express Tests', function() {
-  it('should return Hello Test', function(done) {
-    request(app)
-      .get('/')
-      .expect('Hello Test')
-      .end(done)
+describe('Express Tests', function () {
+  it('should return Hello Test', function (done) {
+    request(app).get('/').expect('Hello Test').end(done)
   })
 
-  it('should return NotFound with status 404', function(done) {
+  it('should return NotFound with status 404', function (done) {
     request(app)
       .get('/error')
       .expect(404)
@@ -82,11 +79,14 @@ describe('Express Tests', function() {
       .end(done)
   })
 
-  it('should return user with name Tom and age 22', function(done) {
+  it('should return user with name Tom and age 22', function (done) {
     request(app)
       .get('/user')
-      .expect(function(response) {
-        assert.deepEqual(response.body, { name: 'Tom', age: 22 })
+      .expect(function (response) {
+        assert.deepEqual(response.body, {
+          name: 'Tom',
+          age: 22,
+        })
       })
       .end(done)
   })

@@ -25,10 +25,12 @@ _parent-example.component.ts_
       [title]="'Title'"
       (dataChanged)="dataChangeHandler($event)"
     ></child-example>
-  `
+  `,
 })
-export class ParentExampleComponent implements AfterViewInit {
-  @ViewChild(ChildExampleComponent) viewChild: ChildExampleComponent
+export class ParentExampleComponent
+  implements AfterViewInit {
+  @ViewChild(ChildExampleComponent)
+  viewChild: ChildExampleComponent
 
   constructor() {}
 
@@ -50,20 +52,28 @@ _child-example.component.ts_
   template: `
     <div>
       <h1 [textContent]="title"></h1>
-      <a href="#" (click)="sendMessage()" [textContent]="label"></a>
+      <a
+        href="#"
+        (click)="sendMessage()"
+        [textContent]="label"
+      ></a>
     </div>
-  `
+  `,
 })
 export class ChildExampleComponent {
   @Input() title: string
-  @Output() dataChanged: EventEmitter<any> = new EventEmitter<any>()
+  @Output() dataChanged: EventEmitter<
+    any
+  > = new EventEmitter<any>()
 
   label: string = 'Send message'
 
   constructor() {}
 
   sendMessage(data) {
-    this.dataChanged.emit({ msg: 'Message from ChildExample' })
+    this.dataChanged.emit({
+      msg: 'Message from ChildExample',
+    })
   }
 }
 ```
@@ -109,9 +119,7 @@ _first.component.ts_
 ```ts
 @Component({
   selector: 'the-first',
-  template: `
-    <p>First</p>
-  `
+  template: ` <p>First</p> `,
 })
 export class FirstComponent {
   constructor(private someSrv: SomeDataService) {
@@ -126,9 +134,7 @@ _second.component.ts_
 ```ts
 @Component({
   selector: 'the-second',
-  template: `
-    <p>Second</p>
-  `
+  template: ` <p>Second</p> `,
 })
 export class SecondComponent {
   constructor(private someSrv: SomeDataService) {

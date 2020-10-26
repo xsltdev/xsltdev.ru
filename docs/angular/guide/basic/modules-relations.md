@@ -23,7 +23,7 @@ import { Component } from '@angular/core'
     <div>
       <h3>{{ message }}</h3>
     </div>
-  `
+  `,
 })
 export class DataComponent {
   message: string = 'DataModule'
@@ -40,7 +40,7 @@ import { DataComponent } from './data.component'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [DataComponent],
-  exports: [DataComponent] // экспортируем компонент
+  exports: [DataComponent], // экспортируем компонент
 })
 export class DataModule {}
 ```
@@ -60,7 +60,7 @@ import { DataModule } from './data/data.module'
 @NgModule({
   imports: [BrowserModule, DataModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -79,7 +79,7 @@ import { Component } from '@angular/core'
       <h1>AppModule</h1>
       <data-comp></data-comp>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```

@@ -71,12 +71,19 @@ description: Тег param (от англ. parameter — параметр) пре
 ```html
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
     <title>PARAM</title>
   </head>
   <body>
     <p>
-      <object classid="animation.class" width="500" height="200">
+      <object
+        classid="animation.class"
+        width="500"
+        height="200"
+      >
         <param name="bgcolor" value="#000000" />
         <param name="delay" value="1000" />
         <param name="loop" value="5" />

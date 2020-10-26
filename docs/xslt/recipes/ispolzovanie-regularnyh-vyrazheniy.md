@@ -10,7 +10,7 @@
 
 Важнейшее применение регулярные выражения находят при сопоставлении с текстовыми образцами. Воспользовавшись функцией `matches()` в правиле шаблона, можно выполнить сопоставление с текстом узла:
 
-```xslt
+```xml
 <!-- -->
 <!-- Дата в формате May 3, 1964 -->
 <xsl:template match="birthday[matches(.,'^[A-Z][a-z]+\s[0-9]+,\s[0-9]+$')]">
@@ -30,14 +30,21 @@
 
 Можно также выполнять сопоставление в командах `xsl:if` и `xsl:choose`:
 
-```xslt
+```xml
 <xsl:choose>
-	<xsl:when test="matches($date,'^[A-Z][a-z]+\s[0-9]+,\s[0-9]+$')">
-	</xsl:when>
-	<xsl:when test="matches($date,'^[0-9]+-[0-9]+-[0-9]+$')">
-	</xsl:when>
-	<xsl:when test="matches($date,'^[0-9]+\s[A-Z][a-z]+\s[0-9]+$')">
-	</xsl:when>
+  <xsl:when
+    test="matches($date,'^[A-Z][a-z]+\s[0-9]+,\s[0-9]+$')"
+  >
+
+  </xsl:when>
+  <xsl:when test="matches($date,'^[0-9]+-[0-9]+-[0-9]+$')">
+
+  </xsl:when>
+  <xsl:when
+    test="matches($date,'^[0-9]+\s[A-Z][a-z]+\s[0-9]+$')"
+  >
+
+  </xsl:when>
 </xsl:choose>
 ```
 

@@ -58,7 +58,9 @@ _app.component.ts_
 ```ts
 if (typeof Worker !== 'undefined') {
   // Create a new
-  const worker = new Worker('./app.worker', { type: 'module' })
+  const worker = new Worker('./app.worker', {
+    type: 'module',
+  })
   worker.onmessage = ({ data }) => {
     console.log(`page got message: ${data}`)
   }
@@ -100,8 +102,10 @@ worker.onmessage = ({ data }) => {
 _untitled.ts_
 
 ```ts
-worker.onerror = err => {
-  console.log(`${err.filename}:${err.lineno} ${err.message}`)
+worker.onerror = (err) => {
+  console.log(
+    `${err.filename}:${err.lineno} ${err.message}`
+  )
 }
 ```
 
@@ -136,17 +140,24 @@ _app.component.ts_
   selector: 'app-root',
   template: `
     <button (click)="getData()">Get data</button>
-  `
+  `,
 })
 export class AppComponent {
   worker: Worker
 
   constructor() {
     if (typeof Worker !== 'undefined') {
-      this.worker = new Worker('./app.worker', { type: 'module' })
+      this.worker = new Worker('./app.worker', {
+        type: 'module',
+      })
 
-      this.worker.addEventListener('message', (message: MessageEvent) =>
-        console.log('Got data from worker: ', message.data)
+      this.worker.addEventListener(
+        'message',
+        (message: MessageEvent) =>
+          console.log(
+            'Got data from worker: ',
+            message.data
+          )
       )
     } else alert('Web Worker is not supported.')
   }

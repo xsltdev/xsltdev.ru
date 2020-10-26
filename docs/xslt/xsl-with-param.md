@@ -9,10 +9,8 @@ description: Элемент xsl:with-param тоже связывает с име
 ## Синтаксис
 
 ```xml
-<xsl:with-param
-    name = "имя"
-    select = "выражение">
-    <!-- Содержимое: шаблон -->
+<xsl:with-param name="имя" select="выражение">
+  <!-- Содержимое: шаблон -->
 </xsl:with-param>
 ```
 
@@ -41,17 +39,17 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:template name="day-name">
-    <xsl:param name="day-number" select="0"/>
-    <xsl:choose>
-        <xsl:when test="$day-number=1">Mon</xsl:when>
-        <xsl:when test="$day-number=2">Tue</xsl:when>
-        <xsl:when test="$day-number=3">Wed</xsl:when>
-        <xsl:when test="$day-number=4">Thu</xsl:when>
-        <xsl:when test="$day-number=5">Fri</xsl:when>
-        <xsl:when test="$day-number=6">Sat</xsl:when>
-        <xsl:when test="$day-number=7">Sun</xsl:when>
-        <xsl:otherwise>Hmm...</xsl:otherwise>
-    </xsl:choose>
+  <xsl:param name="day-number" select="0" />
+  <xsl:choose>
+    <xsl:when test="$day-number=1">Mon</xsl:when>
+    <xsl:when test="$day-number=2">Tue</xsl:when>
+    <xsl:when test="$day-number=3">Wed</xsl:when>
+    <xsl:when test="$day-number=4">Thu</xsl:when>
+    <xsl:when test="$day-number=5">Fri</xsl:when>
+    <xsl:when test="$day-number=6">Sat</xsl:when>
+    <xsl:when test="$day-number=7">Sun</xsl:when>
+    <xsl:otherwise>Hmm...</xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -59,14 +57,14 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:call-template name="day-name">
-    <xsl:with-param name="day-number" select="1"/>
+  <xsl:with-param name="day-number" select="1" />
 </xsl:call-template>
 ```
 
 будет текстовый узел "`Mon`". Рассмотрим теперь случай, когда параметра передано не было:
 
 ```xml
-<xsl:call-template name="day-name"/>
+<xsl:call-template name="day-name" />
 ```
 
 Шаблон выведет задумчивое `Hmm...`, поскольку значение параметра `day-number` будет по умолчанию нулем (атрибут `select` имеет вид `select="0"`) и в операторе выбора `xsl:choose` сработает условие `xsl:otherwise`.
@@ -79,10 +77,10 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <menu>
-    <menuitem index="1" name="Home" href="home.htm"/>
-    <menuitem index="2" name="News" href="news.htm"/>
-    <menuitem index="3" name="Profile" href="profile.htm"/>
-    <menuitem index="4" name="Contact" href="contact.htm"/>
+  <menuitem index="1" name="Home" href="home.htm" />
+  <menuitem index="2" name="News" href="news.htm" />
+  <menuitem index="3" name="Profile" href="profile.htm" />
+  <menuitem index="4" name="Contact" href="contact.htm" />
 </menu>
 ```
 
@@ -90,19 +88,19 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:template match="menuitem">
-    <xsl:param name="current" select="1"/>
-    <xsl:choose>
-        <xsl:when test="$current=@index">
-            <b>
-                <xsl:value-of select="@name"/>
-            </b>
-        </xsl:when>
-        <xsl:otherwise>
-            <a href="{@href}">
-                <xsl:value-of select="@name"/>
-            </a>
-        </xsl:otherwise>
-    </xsl:choose>
+  <xsl:param name="current" select="1" />
+  <xsl:choose>
+    <xsl:when test="$current=@index">
+      <b>
+        <xsl:value-of select="@name" />
+      </b>
+    </xsl:when>
+    <xsl:otherwise>
+      <a href="{@href}">
+        <xsl:value-of select="@name" />
+      </a>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -110,9 +108,9 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:template match="menu">
-    <xsl:apply-templates select="menuitem">
-        <xsl:with-param name="current" select="3"/>
-    </xsl:apply-templates>
+  <xsl:apply-templates select="menuitem">
+    <xsl:with-param name="current" select="3" />
+  </xsl:apply-templates>
 </xsl:template>
 ```
 
@@ -129,7 +127,7 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:template match="menu">
-    <xsl:apply-templates select="menuitem"/>
+  <xsl:apply-templates select="menuitem" />
 </xsl:template>
 ```
 
@@ -145,7 +143,7 @@ description: Элемент xsl:with-param тоже связывает с име
 Этот фрагмент выходящего документа легко объяснить. Вследствие определения:
 
 ```xml
-<xsl:param name="current" select="1"/>
+<xsl:param name="current" select="1" />
 ```
 
 значением параметра `current` по умолчанию является `1`, и поэтому в меню был выбран пункт с индексом `1`.
@@ -156,34 +154,34 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:template name="html">
-    <xsl:param name="head">
-        <head>
-            <title>Title one</title>
-        </head>
-    </xsl:param>
-    <html>
-        <xsl:copy-of select="$head"/>
-        <body>
-            <xsl:text>content</xsl:text>
-        </body>
-    </html>
+  <xsl:param name="head">
+    <head>
+      <title>Title one</title>
+    </head>
+  </xsl:param>
+  <html>
+    <xsl:copy-of select="$head" />
+    <body>
+      <xsl:text>content</xsl:text>
+    </body>
+  </html>
 </xsl:template>
 ```
 
 Параметр `head` по умолчанию будет содержать дерево, состоящее из элемента `head` и его дочернего элемента `title`, который содержит текст "Title one". Результат выполнения вызова
 
 ```xml
-<xsl:call-template name="html"/>
+<xsl:call-template name="html" />
 ```
 
 мы можем видеть на следующем листинге:
 
 ```xml
 <html>
-    <head>
-        <title>Title one</title>
-    </head>
-    <body>content</body>
+  <head>
+    <title>Title one</title>
+  </head>
+  <body>content</body>
 </html>
 ```
 
@@ -193,12 +191,16 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:template name="head">
-    <head>
-        <title>Title two</title>
-        <style type="text/css">
-            H1 {border-width: 1; border: solid; text-align: center}
-        </style>
-    </head>
+  <head>
+    <title>Title two</title>
+    <style type="text/css">
+H1 {
+  border-width: 1;
+  border: solid;
+  text-align: center;
+}
+    </style>
+  </head>
 </xsl:template>
 ```
 
@@ -206,9 +208,9 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <xsl:call-template name="html">
-    <xsl:with-param name="head">
-        <xsl:call-template name="head"/>
-    </xsl:with-param>
+  <xsl:with-param name="head">
+    <xsl:call-template name="head" />
+  </xsl:with-param>
 </xsl:call-template>
 ```
 
@@ -216,13 +218,17 @@ description: Элемент xsl:with-param тоже связывает с име
 
 ```xml
 <html>
-    <head>
-        <title>Title two</title>
-        <style type="text/css">
-            H1 {border-width: 1; border: solid; text-align: center}
-        </style>
-    </head>
-    <body>content</body>
+  <head>
+    <title>Title two</title>
+    <style type="text/css">
+H1 {
+  border-width: 1;
+  border: solid;
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>content</body>
 </html>
 ```
 

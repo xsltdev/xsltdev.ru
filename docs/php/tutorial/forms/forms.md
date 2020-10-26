@@ -26,9 +26,13 @@ PHP содержит множество средств для работы с ф
 
 ```html
 <form name="feedback" method="POST" action="form.php">
-  <label>Ваше имя: <input type="text" name="name"/></label>
-  <label>Ваш email: <input type="text" name="email"/></label>
-  <label>Сообщение: <textarea name="message"></textarea></label>
+  <label>Ваше имя: <input type="text" name="name" /></label>
+  <label
+    >Ваш email: <input type="text" name="email"
+  /></label>
+  <label
+    >Сообщение: <textarea name="message"></textarea>
+  </label>
 
   <input type="submit" name="send" value="Отправить" />
 </form>
@@ -85,7 +89,9 @@ if (isset($_POST)) {
   action="form.php"
   enctype="multipart/form-data"
 >
-  <label>Ваш аватар: <input type="file" name="avatar"/></label>
+  <label
+    >Ваш аватар: <input type="file" name="avatar"
+  /></label>
   <input type="submit" name="send" value="Отправить файл" />
 </form>
 ```

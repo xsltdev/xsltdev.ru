@@ -27,7 +27,7 @@ sym2 === sym3 // false, символы уникальны
 let sym = Symbol()
 
 let obj = {
-  [sym]: 'value'
+  [sym]: 'value',
 }
 
 console.log(obj[sym]) // "value"

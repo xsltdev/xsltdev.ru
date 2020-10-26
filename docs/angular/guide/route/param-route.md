@@ -16,9 +16,7 @@ import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'item-info',
-  template: `
-    <h3>Модель {{ id }}</h3>
-  `
+  template: ` <h3>Модель {{ id }}</h3> `,
 })
 export class ItemComponent {
   id: number
@@ -55,19 +53,23 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'item/:id', component: ItemComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ]
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
     NotFoundComponent,
-    ItemComponent
+    ItemComponent,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -94,7 +96,7 @@ import { NgModel } from '@angular/forms'
       </nav>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -127,16 +129,14 @@ import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'item-info',
-  template: `
-    <h3>Модель {{ id }}</h3>
-  `
+  template: ` <h3>Модель {{ id }}</h3> `,
 })
 export class ItemComponent {
   private id: number
   private subscription: Subscription
   constructor(private activateRoute: ActivatedRoute) {
     this.subscription = activateRoute.params.subscribe(
-      params => (this.id = params['id'])
+      (params) => (this.id = params['id'])
     )
   }
 }

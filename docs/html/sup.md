@@ -36,7 +36,8 @@ description: Тег sup (от англ. superscript — надстрочный �
     <p><b>Великая теорема Ферма</b></p>
     <p>
       <i
-        >X <sup><small>n</small></sup> + Y <sup><small>n</small></sup> = Z
+        >X <sup><small>n</small></sup> + Y
+        <sup><small>n</small></sup> = Z
         <sup><small>n</small></sup></i
       >
     </p>

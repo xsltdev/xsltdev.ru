@@ -23,7 +23,7 @@ function add(x, y) {
 }
 
 // Анонимная функция
-let myAdd = function(x, y) {
+let myAdd = function (x, y) {
   return x + y
 }
 ```
@@ -51,7 +51,7 @@ function add(x: number, y: number): number {
   return x + y
 }
 
-let myAdd = function(x: number, y: number): number {
+let myAdd = function (x: number, y: number): number {
   return x + y
 }
 ```
@@ -64,7 +64,10 @@ TypeScript умеет сам выводить тип возвращаемого 
 Теперь, когда мы добавили к функции типы, можно описать ее полный тип, собрав его по кусочкам из определения:
 
 ```ts
-let myAdd: (x: number, y: number) => number = function(x: number, y: number): number {
+let myAdd: (x: number, y: number) => number = function (
+  x: number,
+  y: number
+): number {
   return x + y
 }
 ```
@@ -75,7 +78,10 @@ let myAdd: (x: number, y: number) => number = function(x: number, y: number): nu
 Имена здесь нужны только для удобства чтения, можно было бы написать, к примеру, вот так:
 
 ```ts
-let myAdd: (baseValue: number, increment: number) => number = function(x: number, y: number): number {
+let myAdd: (
+  baseValue: number,
+  increment: number
+) => number = function (x: number, y: number): number {
   return x + y
 }
 ```
@@ -96,12 +102,15 @@ let myAdd: (baseValue: number, increment: number) => number = function(x: number
 
 ```ts
 // myAdd имеет полный тип функции
-let myAdd = function(x: number, y: number): number {
+let myAdd = function (x: number, y: number): number {
   return x + y
 }
 
 // У параметров 'x' и 'y' — тип "number"
-let myAdd: (baseValue: number, increment: number) => number = function(x, y) {
+let myAdd: (
+  baseValue: number,
+  increment: number
+) => number = function (x, y) {
   return x + y
 }
 ```
@@ -204,11 +213,19 @@ let result4 = buildName(undefined, 'Adams') // подходит, возврат�
 В TypeScript можно собрать аргументы в одну переменную:
 
 ```ts
-function buildName(firstName: string, ...restOfName: string[]) {
+function buildName(
+  firstName: string,
+  ...restOfName: string[]
+) {
   return firstName + ' ' + restOfName.join(' ')
 }
 
-let employeeName = buildName('Joseph', 'Samuel', 'Lucas', 'MacKinzie')
+let employeeName = buildName(
+  'Joseph',
+  'Samuel',
+  'Lucas',
+  'MacKinzie'
+)
 ```
 
 _Остаточные параметры_ (rest parameters) можно понимать как неограниченное число необязательных параметров.
@@ -218,11 +235,17 @@ _Остаточные параметры_ (rest parameters) можно пони�
 Многоточие используется и при описании типа функции с остаточными параметрами:
 
 ```ts
-function buildName(firstName: string, ...restOfName: string[]) {
+function buildName(
+  firstName: string,
+  ...restOfName: string[]
+) {
   return firstName + ' ' + restOfName.join(' ')
 }
 
-let buildNameFun: (fname: string, ...rest: string[]) => string = buildName
+let buildNameFun: (
+  fname: string,
+  ...rest: string[]
+) => string = buildName
 ```
 
 ## `this`
@@ -247,14 +270,17 @@ let buildNameFun: (fname: string, ...rest: string[]) => string = buildName
 let deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamonds'],
   cards: Array(52),
-  createCardPicker: function() {
-    return function() {
+  createCardPicker: function () {
+    return function () {
       let pickedCard = Math.floor(Math.random() * 52)
       let pickedSuit = Math.floor(pickedCard / 13)
 
-      return { suit: this.suits[pickedSuit], card: pickedCard % 13 }
+      return {
+        suit: this.suits[pickedSuit],
+        card: pickedCard % 13,
+      }
     }
-  }
+  },
 }
 
 let cardPicker = deck.createCardPicker()
@@ -279,15 +305,18 @@ alert('card: ' + pickedCard.card + ' of ' + pickedCard.suit)
 let deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamonds'],
   cards: Array(52),
-  createCardPicker: function() {
+  createCardPicker: function () {
     // ВНИМАНИЕ: строка ниже — стрелочная функция, которая захватывает значение 'this' из этого места
     return () => {
       let pickedCard = Math.floor(Math.random() * 52)
       let pickedSuit = Math.floor(pickedCard / 13)
 
-      return { suit: this.suits[pickedSuit], card: pickedCard % 13 }
+      return {
+        suit: this.suits[pickedSuit],
+        card: pickedCard % 13,
+      }
     }
-  }
+  },
 }
 
 let cardPicker = deck.createCardPicker()
@@ -327,14 +356,17 @@ let deck: Deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamonds'],
   cards: Array(52),
   // ВНИМАНИЕ: Сейчас функция явно указывает на то, что она должна вызываться на объекте типа Deck
-  createCardPicker: function(this: Deck) {
+  createCardPicker: function (this: Deck) {
     return () => {
       let pickedCard = Math.floor(Math.random() * 52)
       let pickedSuit = Math.floor(pickedCard / 13)
 
-      return { suit: this.suits[pickedSuit], card: pickedCard % 13 }
+      return {
+        suit: this.suits[pickedSuit],
+        card: pickedCard % 13,
+      }
     }
-  }
+  },
 }
 
 let cardPicker = deck.createCardPicker()
@@ -355,7 +387,9 @@ alert('card: ' + pickedCard.card + ' of ' + pickedCard.suit)
 
 ```ts
 interface UIElement {
-  addClickListener(onclick: (this: void, e: Event) => void): void
+  addClickListener(
+    onclick: (this: void, e: Event) => void
+  ): void
 }
 ```
 
@@ -429,12 +463,20 @@ function pickCard(x): any {
   }
 }
 
-let myDeck = [{ suit: 'diamonds', card: 2 }, { suit: 'spades', card: 10 }, { suit: 'hearts', card: 4 }]
+let myDeck = [
+  { suit: 'diamonds', card: 2 },
+  { suit: 'spades', card: 10 },
+  { suit: 'hearts', card: 4 },
+]
 let pickedCard1 = myDeck[pickCard(myDeck)]
-alert('card: ' + pickedCard1.card + ' of ' + pickedCard1.suit)
+alert(
+  'card: ' + pickedCard1.card + ' of ' + pickedCard1.suit
+)
 
 let pickedCard2 = pickCard(15)
-alert('card: ' + pickedCard2.card + ' of ' + pickedCard2.suit)
+alert(
+  'card: ' + pickedCard2.card + ' of ' + pickedCard2.suit
+)
 ```
 
 В этом примере функция `pickCard` возвращает две разные вещи в зависимости от того, что было ей передано.
@@ -449,7 +491,9 @@ alert('card: ' + pickedCard2.card + ' of ' + pickedCard2.suit)
 ```ts
 let suits = ['hearts', 'spades', 'clubs', 'diamonds']
 
-function pickCard(x: { suit: string; card: number }[]): number
+function pickCard(
+  x: { suit: string; card: number }[]
+): number
 function pickCard(x: number): { suit: string; card: number }
 function pickCard(x): any {
   // Работаем с объектом/массивом?
@@ -465,12 +509,20 @@ function pickCard(x): any {
   }
 }
 
-let myDeck = [{ suit: 'diamonds', card: 2 }, { suit: 'spades', card: 10 }, { suit: 'hearts', card: 4 }]
+let myDeck = [
+  { suit: 'diamonds', card: 2 },
+  { suit: 'spades', card: 10 },
+  { suit: 'hearts', card: 4 },
+]
 let pickedCard1 = myDeck[pickCard(myDeck)]
-alert('card: ' + pickedCard1.card + ' of ' + pickedCard1.suit)
+alert(
+  'card: ' + pickedCard1.card + ' of ' + pickedCard1.suit
+)
 
 let pickedCard2 = pickCard(15)
-alert('card: ' + pickedCard2.card + ' of ' + pickedCard2.suit)
+alert(
+  'card: ' + pickedCard2.card + ' of ' + pickedCard2.suit
+)
 ```
 
 Изменив код таким образом, мы получаем возможность вызывать функцию `pickCard`, совершая проверку типов.

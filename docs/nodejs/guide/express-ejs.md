@@ -17,15 +17,15 @@ const app = express()
 
 app.set('view engine', 'ejs')
 
-app.use('/contact', function(request, response) {
+app.use('/contact', function (request, response) {
   response.render('contact', {
     title: 'Мои контакты',
     emailsVisible: true,
     emails: ['gavgav@mycorp.com', 'mioaw@mycorp.com'],
-    phone: '+1234567890'
+    phone: '+1234567890',
   })
 })
-app.use('/', function(request, response) {
+app.use('/', function (request, response) {
   response.send('Главная страница')
 })
 app.listen(3000)
@@ -82,7 +82,9 @@ app.set('view engine', 'ejs')
 EJS позволяет вставлять код одних представлений в другие с помощью функции `include`. Например, определим в папке `views` каталог `partials`, в который добавим два файла. Первый файл - `menu.ejs` будет иметь следующий код:
 
 ```html
-<nav><a href="/">Главная</a> | <a href="/contact">Контакты</a></nav>
+<nav>
+  <a href="/">Главная</a> | <a href="/contact">Контакты</a>
+</nav>
 ```
 
 И второй файл - `footer.ejs` будет предствлять футер:

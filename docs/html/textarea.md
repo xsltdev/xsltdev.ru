@@ -352,7 +352,13 @@ description: Тег textarea (от англ. text area — область тек
   <body>
     <form action="textarea1.php" method="post">
       <p><b>Введите ваш отзыв:</b></p>
-      <p><textarea rows="10" cols="45" name="text"></textarea></p>
+      <p>
+        <textarea
+          rows="10"
+          cols="45"
+          name="text"
+        ></textarea>
+      </p>
       <p><input type="submit" value="Отправить" /></p>
     </form>
   </body>

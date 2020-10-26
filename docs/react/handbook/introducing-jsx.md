@@ -43,7 +43,7 @@ function formatName(user) {
 
 const user = {
   firstName: 'Марья',
-  lastName: 'Моревна'
+  lastName: 'Моревна',
 }
 
 const element = <h1>Здравствуй, {formatName(user)}!</h1>
@@ -132,7 +132,11 @@ const element = <h1 className="greeting">Привет, мир!</h1>
 ```
 
 ```js
-const element = React.createElement('h1', { className: 'greeting' }, 'Привет, мир!')
+const element = React.createElement(
+  'h1',
+  { className: 'greeting' },
+  'Привет, мир!'
+)
 ```
 
 `React.createElement()` проводит некоторые проверки с целью выявить баги в коде, но главное — создаёт объект похожий на такой:
@@ -143,8 +147,8 @@ const element = {
   type: 'h1',
   props: {
     className: 'greeting',
-    children: 'Привет, мир!'
-  }
+    children: 'Привет, мир!',
+  },
 }
 ```
 

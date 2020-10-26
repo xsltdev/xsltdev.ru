@@ -21,7 +21,11 @@ string name( node-set? )
 Для следующего элемента
 
 ```xml
-<a:body xmlns:a="http://www.a.com" xmlns:b="http://www.a.com" xmlns:c="http://www.a.com"/>
+<a:body
+  xmlns:a="http://www.a.com"
+  xmlns:b="http://www.a.com"
+  xmlns:c="http://www.a.com"
+/>
 ```
 
 функция `name` может вернуть `a:body`, `b:body` или `c:body`.
@@ -43,32 +47,51 @@ string name( node-set? )
 
 ```xml
 <a:a xmlns:a="http://www.a.com" xmlns:b="http://www.b.com">
-    <b:b>
-        <c/>
-    </b:b>
+  <b:b>
+    <c />
+  </b:b>
 </a:a>
 ```
 
 Листинг 6.11. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http: //www.w3.org/1999/XSL/Transform" xmlns:a="http://www.a.com" xmlns:b="http://www.b.com">
-    <xsl:output indent="yes"/>
-    <xsl:template match="*">
-        <element name="{name()}" namespace-uri="{namespace-uri()}" local-name="{local-name()}">
-            <xsl:apply-templates/>
-        </element>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http: //www.w3.org/1999/XSL/Transform"
+  xmlns:a="http://www.a.com"
+  xmlns:b="http://www.b.com"
+>
+  <xsl:output indent="yes" />
+  <xsl:template match="*">
+    <element
+      name="{name()}"
+      namespace-uri="{namespace-uri()}"
+      local-name="{local-name()}"
+    >
+      <xsl:apply-templates />
+    </element>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Листинг 6.12. Выходящий документ
 
 ```xml
-<element xmlns:a="http://www.a.com" xmlns:b="http://www.b.com" name="a:a" namespace-uri="http://www.a.com" local-name="a">
-    <element name="b:b" namespace-uri="http://www.b.com" local-name="b">
-        <element name="c" namespace-uri="" local-name="c"/>
-    </element>
+<element
+  xmlns:a="http://www.a.com"
+  xmlns:b="http://www.b.com"
+  name="a:a"
+  namespace-uri="http://www.a.com"
+  local-name="a"
+>
+  <element
+    name="b:b"
+    namespace-uri="http://www.b.com"
+    local-name="b"
+  >
+    <element name="c" namespace-uri="" local-name="c" />
+  </element>
 </element>
 ```
 

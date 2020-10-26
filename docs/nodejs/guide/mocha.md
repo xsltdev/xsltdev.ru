@@ -22,7 +22,7 @@ npm install mocha --save-dev
 Для тестирования определим простейший модуль. Для этого добавим в проект файл `operations.js` со следующим содержимым:
 
 ```js
-module.exports.multiply = function(x, y) {
+module.exports.multiply = function (x, y) {
   return x * y
 }
 ```
@@ -34,11 +34,13 @@ module.exports.multiply = function(x, y) {
 ```js
 var operations = require('./operations')
 
-it('should multiply two numbers', function() {
+it('should multiply two numbers', function () {
   var expectedResult = 15
   var result = operations.multiply(3, 5)
   if (result !== expectedResult) {
-    throw new Error(`Expected ${expectedResult}, but got ${result}`)
+    throw new Error(
+      `Expected ${expectedResult}, but got ${result}`
+    )
   }
 })
 ```
@@ -83,11 +85,13 @@ npm test
 ```js
 var operations = require('./operations')
 
-it('should multiply two numbers', function() {
+it('should multiply two numbers', function () {
   var expectedResult = 16
   var result = operations.multiply(3, 5)
   if (result !== expectedResult) {
-    throw new Error(`Expected ${expectedResult}, but got ${result}`)
+    throw new Error(
+      `Expected ${expectedResult}, but got ${result}`
+    )
   }
 })
 ```
@@ -99,10 +103,10 @@ it('should multiply two numbers', function() {
 Подобным образом мы можем определять и другие тесты. Например, изменим файл модуля `operations.js`:
 
 ```js
-module.exports.multiply = function(x, y) {
+module.exports.multiply = function (x, y) {
   return x * y
 }
-module.exports.add = function(x, y) {
+module.exports.add = function (x, y) {
   return x + y
 }
 ```
@@ -112,18 +116,22 @@ module.exports.add = function(x, y) {
 ```js
 var operations = require('./operations')
 
-it('should multiply two numbers', function() {
+it('should multiply two numbers', function () {
   var expectedResult = 15
   var result = operations.multiply(3, 5)
   if (result !== expectedResult) {
-    throw new Error(`Expected ${expectedResult}, but got ${result}`)
+    throw new Error(
+      `Expected ${expectedResult}, but got ${result}`
+    )
   }
 })
-it('should add two numbers', function() {
+it('should add two numbers', function () {
   var expectedResult = 16
   var result = operations.add(9, 7)
   if (result !== expectedResult) {
-    throw new Error(`Expected ${expectedResult}, but got ${result}`)
+    throw new Error(
+      `Expected ${expectedResult}, but got ${result}`
+    )
   }
 })
 ```
@@ -137,15 +145,15 @@ it('should add two numbers', function() {
 Немного отличается тестирование асинхронных функций. Например, определим в модуле `operations.js` асинхронную функцию:
 
 ```js
-module.exports.multiply = function(x, y) {
+module.exports.multiply = function (x, y) {
   return x * y
 }
-module.exports.add = function(x, y) {
+module.exports.add = function (x, y) {
   return x + y
 }
 
-module.exports.multiplyAsync = function(a, b, callback) {
-  setTimeout(function() {
+module.exports.multiplyAsync = function (a, b, callback) {
+  setTimeout(function () {
     callback(a * b)
   }, 1000)
 }
@@ -156,26 +164,32 @@ module.exports.multiplyAsync = function(a, b, callback) {
 ```js
 var operations = require('./operations')
 
-it('should multiply two numbers', function() {
+it('should multiply two numbers', function () {
   var expectedResult = 15
   var result = operations.multiply(3, 5)
   if (result !== expectedResult) {
-    throw new Error(`Expected ${expectedResult}, but got ${result}`)
+    throw new Error(
+      `Expected ${expectedResult}, but got ${result}`
+    )
   }
 })
-it('should add two numbers', function() {
+it('should add two numbers', function () {
   var expectedResult = 16
   var result = operations.add(9, 7)
   if (result !== expectedResult) {
-    throw new Error(`Expected ${expectedResult}, but got ${result}`)
+    throw new Error(
+      `Expected ${expectedResult}, but got ${result}`
+    )
   }
 })
 
-it('shoud async multiply two numbers', function(done) {
+it('shoud async multiply two numbers', function (done) {
   var expectedResult = 12
-  operations.multiplyAsync(4, 3, function(result) {
+  operations.multiplyAsync(4, 3, function (result) {
     if (result !== expectedResult) {
-      throw new Error(`Expected ${expectedResult}, but got ${result}`)
+      throw new Error(
+        `Expected ${expectedResult}, but got ${result}`
+      )
     }
     done()
   })

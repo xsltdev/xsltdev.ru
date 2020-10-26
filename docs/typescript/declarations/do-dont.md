@@ -65,7 +65,9 @@ _Не используйте_ необязательные параметры в
 ```ts
 /* НЕПРАВИЛЬНО */
 interface Fetcher {
-  getObject(done: (data: any, elapsedTime?: number) => void): void
+  getObject(
+    done: (data: any, elapsedTime?: number) => void
+  ): void
 }
 ```
 
@@ -77,7 +79,9 @@ interface Fetcher {
 ```ts
 /* ПРАВИЛЬНО */
 interface Fetcher {
-  getObject(done: (data: any, elapsedTime: number) => void): void
+  getObject(
+    done: (data: any, elapsedTime: number) => void
+  ): void
 }
 ```
 
@@ -87,15 +91,24 @@ _Не создавайте_ отдельных перегрузок, разли�
 
 ```ts
 /* НЕПРАВИЛЬНО */
-declare function beforeAll(action: () => void, timeout?: number): void
-declare function beforeAll(action: (done: DoneFn) => void, timeout?: number): void
+declare function beforeAll(
+  action: () => void,
+  timeout?: number
+): void
+declare function beforeAll(
+  action: (done: DoneFn) => void,
+  timeout?: number
+): void
 ```
 
 _Создавайте_ одну общую перегрузку с максимальным числом аргументов:
 
 ```ts
 /* ПРАВИЛЬНО */
-declare function beforeAll(action: (done: DoneFn) => void, timeout?: number): void
+declare function beforeAll(
+  action: (done: DoneFn) => void,
+  timeout?: number
+): void
 ```
 
 _Почему_: функция с меньшим числом параметров всегда допустима, поэтому необходимости в более короткой перегрузке нет.
@@ -141,7 +154,11 @@ _Не создавайте_ несколько перегрузок, отлич�
 interface Moment {
   diff(b: MomentComparable): number
   diff(b: MomentComparable, unitOfTime: string): number
-  diff(b: MomentComparable, unitOfTime: string, round: boolean): number
+  diff(
+    b: MomentComparable,
+    unitOfTime: string,
+    round: boolean
+  ): number
 }
 ```
 
@@ -150,7 +167,11 @@ _Используйте_ необязательные параметры, есл
 ```ts
 /* ПРАВИЛЬНО */
 interface Moment {
-  diff(b: MomentComparable, unitOfTime?: string, round?: boolean): number
+  diff(
+    b: MomentComparable,
+    unitOfTime?: string,
+    round?: boolean
+  ): number
 }
 ```
 

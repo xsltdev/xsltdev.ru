@@ -3,15 +3,27 @@
 Как React, так и ReactDOM доступны через CDN.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react@16/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+></script>
 ```
 
 Указанные выше версии предназначены только при разработке приложения и не подходят для использования в продакшен-окружении. Минифицированные и оптимизированные для продакшена версии React перечислены ниже:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react@16/umd/react.production.min.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+></script>
 ```
 
 Для загрузки конкретной версии `react` и `react-dom`, замените `16` на номер нужной версии.

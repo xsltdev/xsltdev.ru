@@ -14,7 +14,7 @@ import { Component } from '@angular/core'
   template: `
     <div>Без форматирования: {{ myDate }}</div>
     <div>С форматированием: {{ myDate | date }}</div>
-  `
+  `,
 })
 export class AppComponent {
   myDate = new Date(1961, 3, 12)
@@ -49,7 +49,7 @@ import { Component } from '@angular/core'
     <div>{{ welcome | lowercase }}</div>
     <div>{{ persentage | percent }}</div>
     <div>{{ persentage | currency }}</div>
-  `
+  `,
 })
 export class AppComponent {
   welcome: string = 'Hello World!'
@@ -71,7 +71,7 @@ import { Component } from '@angular/core'
   template: `
     <div>{{ welcome | slice: 3 }}</div>
     <div>{{ welcome | slice: 6:11 }}</div>
-  `
+  `,
 })
 export class AppComponent {
   welcome: string = 'Hello World!'
@@ -93,7 +93,7 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <div>{{ myDate | date: 'dd/MM/yyyy' }}</div>
-  `
+  `,
 })
 export class AppComponent {
   myDate = Date.now()
@@ -123,7 +123,7 @@ import { Component } from '@angular/core'
   template: `
     <div>{{ pi | number: '2.1-2' }}</div>
     <div>{{ pi | number: '3.5-5' }}</div>
-  `
+  `,
 })
 export class AppComponent {
   pi: number = 3.1415
@@ -158,10 +158,19 @@ import { Component } from '@angular/core'
   template: `
     <div>{{ money | currency: 'RUB':'code' }}</div>
     <div>{{ money | currency: 'RUB':'symbol-narrow' }}</div>
-    <div>{{ money | currency: 'RUB':'symbol':'1.1-1' }}</div>
-    <div>{{ money | currency: 'RUB':'symbol-narrow':'1.1-1':'ru-RU' }}</div>
-    <div>{{ money | currency: 'RUB':'тока седня по цене ' }}</div>
-  `
+    <div>
+      {{ money | currency: 'RUB':'symbol':'1.1-1' }}
+    </div>
+    <div>
+      {{
+        money
+          | currency: 'RUB':'symbol-narrow':'1.1-1':'ru-RU'
+      }}
+    </div>
+    <div>
+      {{ money | currency: 'RUB':'тока седня по цене ' }}
+    </div>
+  `,
 })
 export class AppComponent {
   money: number = 23.45
@@ -181,7 +190,7 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <div>{{ message | slice: 6:11 | uppercase }}</div>
-  `
+  `,
 })
 export class AppComponent {
   message = 'Hello World!'

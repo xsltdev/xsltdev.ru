@@ -12,7 +12,7 @@ description: Разрешение динамических данных пере
 import {
   Resolve,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router'
 import { Observable } from 'rxjs/Observable'
 import { Injectable } from '@angular/core'
@@ -33,7 +33,9 @@ export class ServerResolver implements Resolve<Server> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<Server> | Promise<Server> | Server {
-    return this.serversService.getServer(+route.params['id'])
+    return this.serversService.getServer(
+      +route.params['id']
+    )
   }
 }
 ```

@@ -42,9 +42,21 @@ dialog::backdrop {
     <button id="openDialog">Вход на сайт</button>
     <dialog>
       <form id="authentication" action="handler.php">
-        <p><input name="login" required autofocus placeholder="Логин" /></p>
         <p>
-          <input type="password" name="pass" required placeholder="Пароль" />
+          <input
+            name="login"
+            required
+            autofocus
+            placeholder="Логин"
+          />
+        </p>
+        <p>
+          <input
+            type="password"
+            name="pass"
+            required
+            placeholder="Пароль"
+          />
         </p>
         <p>
           <button type="submit">Войти</button>
@@ -54,10 +66,14 @@ dialog::backdrop {
     </dialog>
     <script>
       var dialog = document.querySelector('dialog')
-      document.querySelector('#openDialog').onclick = function () {
+      document.querySelector(
+        '#openDialog'
+      ).onclick = function () {
         dialog.showModal()
       }
-      document.querySelector('#closeDialog').onclick = function () {
+      document.querySelector(
+        '#closeDialog'
+      ).onclick = function () {
         dialog.close()
       }
     </script>

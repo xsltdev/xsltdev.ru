@@ -12,8 +12,9 @@ description: Элемент xsl:namespace-alias назначает простр�
 
 ```xml
 <xsl:namespace-alias
-    stylesheet-prefix = "префикс | #default"
-    result-prefix = "префикс | #default" />
+  stylesheet-prefix="префикс | #default"
+  result-prefix="префикс | #default"
+/>
 ```
 
 Атрибуты:
@@ -36,9 +37,9 @@ description: Элемент xsl:namespace-alias назначает простр�
 
 ```xml
 <transform>
-    <remove select="a"/>
-    <replace select="b" with="B"/>
-    <replace select="c" with="C"/>
+  <remove select="a" />
+  <replace select="b" with="B" />
+  <replace select="c" with="C" />
 </transform>
 ```
 
@@ -47,24 +48,26 @@ description: Элемент xsl:namespace-alias назначает простр�
 Листинг 8.14. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="a"/>
-    <xsl:template match="b">
-        <xsl:element name="B">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="c">
-        <xsl:element name="C">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="@*|node()">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="a" />
+  <xsl:template match="b">
+    <xsl:element name="B">
+      <xsl:apply-templates />
+    </xsl:element>
+  </xsl:template>
+  <xsl:template match="c">
+    <xsl:element name="C">
+      <xsl:apply-templates />
+    </xsl:element>
+  </xsl:template>
+  <xsl:template match="@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" />
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -72,17 +75,17 @@ description: Элемент xsl:namespace-alias назначает простр�
 
 ```xml
 <xsl:template match="replace">
-    <xsl:element name="xsl:template">
-        <xsl:attribute name="match">
-            <xsl:value-of select="@select"/>
-        </xsl:attribute>
-        <xsl:element name="xsl:element">
-            <xsl:attribute name="name">
-                <xsl:value-of select="@with"/>
-            </xsl:attribute>
-            <xsl:element name="xsl:apply-templates"/>
-        </xsl:element>
+  <xsl:element name="xsl:template">
+    <xsl:attribute name="match">
+      <xsl:value-of select="@select" />
+    </xsl:attribute>
+    <xsl:element name="xsl:element">
+      <xsl:attribute name="name">
+        <xsl:value-of select="@with" />
+      </xsl:attribute>
+      <xsl:element name="xsl:apply-templates" />
     </xsl:element>
+  </xsl:element>
 </xsl:template>
 ```
 
@@ -90,11 +93,11 @@ description: Элемент xsl:namespace-alias назначает простр�
 
 ```xml
 <xsl:template match="replace">
-    <xsl:template match="{@select}">
-        <xsl:element name="{@with}">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
+  <xsl:template match="{@select}">
+    <xsl:element name="{@with}">
+      <xsl:apply-templates />
+    </xsl:element>
+  </xsl:template>
 </xsl:template>
 ```
 
@@ -111,30 +114,35 @@ description: Элемент xsl:namespace-alias назначает простр�
 Листинг 8.15. Преобразование, использующее псевдонимы пространств имен
 
 ```xml
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:axsl="http://www.w3.org/1999/XSL/Transform/Alias">
-    <xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl"/>
-    <xsl:template match="replace">
-        <axsl:template match="{@select}">
-            <axsl:element name="{@with}">
-                <axsl:apply-templates/>
-            </axsl:element>
-        </axsl:template>
-    </xsl:template>
-    <xsl:template match="remove">
-        <axsl:template match="{@select}"/>
-    </xsl:template>
-    <xsl:template match="transform">
-        <axsl:stylesheet version="1.0">
-            <xsl:apply-templates/>
-            <axsl:template match="@*|node()">
-                <axsl:copy>
-                    <axsl:apply-templates select="@*|node()"/>
-                </axsl:copy>
-            </axsl:template>
-        </axsl:stylesheet>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:axsl="http://www.w3.org/1999/XSL/Transform/Alias"
+>
+  <xsl:namespace-alias
+    stylesheet-prefix="axsl"
+    result-prefix="xsl"
+  />
+  <xsl:template match="replace">
+    <axsl:template match="{@select}">
+      <axsl:element name="{@with}">
+        <axsl:apply-templates />
+      </axsl:element>
+    </axsl:template>
+  </xsl:template>
+  <xsl:template match="remove">
+    <axsl:template match="{@select}" />
+  </xsl:template>
+  <xsl:template match="transform">
+    <axsl:stylesheet version="1.0">
+      <xsl:apply-templates />
+      <axsl:template match="@*|node()">
+        <axsl:copy>
+          <axsl:apply-templates select="@*|node()" />
+        </axsl:copy>
+      </axsl:template>
+    </axsl:stylesheet>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -153,25 +161,27 @@ description: Элемент xsl:namespace-alias назначает простр�
 Листинг 8.16. Выходящее преобразование
 
 ```xml
-<axsl:stylesheet version="1.0"
-    xmlns:axsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <axsl:template match="a"/>
-    <axsl:template match="b">
-        <axsl:element name="B">
-            <axsl:apply-templates/>
-        </axsl:element>
-    </axsl:template>
-    <axsl:template match="c">
-        <axsl:element name="C">
-            <axsl:apply-templates/>
-        </axsl:element>
-    </axsl:template>
-    <axsl:template match="@*|node()">
-        <axsl:copy>
-            <axsl:apply-templates select="@*|node()"/>
-        </axsl:copy>
-    </axsl:template>
+<axsl:stylesheet
+  version="1.0"
+  xmlns:axsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <axsl:template match="a" />
+  <axsl:template match="b">
+    <axsl:element name="B">
+      <axsl:apply-templates />
+    </axsl:element>
+  </axsl:template>
+  <axsl:template match="c">
+    <axsl:element name="C">
+      <axsl:apply-templates />
+    </axsl:element>
+  </axsl:template>
+  <axsl:template match="@*|node()">
+    <axsl:copy>
+      <axsl:apply-templates select="@*|node()" />
+    </axsl:copy>
+  </axsl:template>
 </axsl:stylesheet>
 ```
 
@@ -180,13 +190,19 @@ description: Элемент xsl:namespace-alias назначает простр�
 Атрибуты `stylesheet-prefix` и `result-prefix` элемента `xsl:namespace-alias` могут иметь значения "`#default`". Определение вида
 
 ```xml
-<xsl:namespace-alias stylesheet-prefix="a" result-prefix="#default"/>
+<xsl:namespace-alias
+  stylesheet-prefix="a"
+  result-prefix="#default"
+/>
 ```
 
 означает, что элементы, принадлежащие в преобразовании пространству имен `a`, в выходящем документе должны принадлежать пространству имен по умолчанию. Определение вида
 
 ```xml
-<xsl:namespace-alias stylesheet-prefix="#default" result-prefix="a"/>
+<xsl:namespace-alias
+  stylesheet-prefix="#default"
+  result-prefix="a"
+/>
 ```
 
 означает, что элементы, принадлежащие в преобразовании пространству имен по умолчанию, в выходящем документе должны принадлежать пространству имен `a`.
@@ -196,16 +212,25 @@ description: Элемент xsl:namespace-alias назначает простр�
 Листинг 8.17. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:a="urn:a" xmlns="urn:b">
-    <xsl:namespace-alias stylesheet-prefix="#default" result-prefix="a"/>
-    <xsl:namespace-alias stylesheet-prefix="a" result-prefix="#default"/>
-    <xsl:template match="root">
-        <result>
-            <a:element/>
-        </result>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:a="urn:a"
+  xmlns="urn:b"
+>
+  <xsl:namespace-alias
+    stylesheet-prefix="#default"
+    result-prefix="a"
+  />
+  <xsl:namespace-alias
+    stylesheet-prefix="a"
+    result-prefix="#default"
+  />
+  <xsl:template match="root">
+    <result>
+      <a:element />
+    </result>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -213,7 +238,7 @@ description: Элемент xsl:namespace-alias назначает простр�
 
 ```xml
 <result xmlns="urn:a" xmlns:a="urn:b">
-    <a:element/>
+  <a:element />
 </result>
 ```
 
@@ -226,13 +251,19 @@ description: Элемент xsl:namespace-alias назначает простр�
 Если преобразование `a.xsl` содержит определение
 
 ```xml
-<xsl:namespace-alias stylesheet-prefix="x" result-prefix="a"/>
+<xsl:namespace-alias
+  stylesheet-prefix="x"
+  result-prefix="a"
+/>
 ```
 
 а преобразование `b.xsl` — определение
 
 ```xml
-<xsl:namespace-alias stylesheet-prefix="x" result-prefix="b"/>
+<xsl:namespace-alias
+  stylesheet-prefix="x"
+  result-prefix="b"
+/>
 ```
 
 где в обоих преобразованиях префикс `x` представляет одно пространство имен, а пространства имен `a` и `b` — разные, то преобразование `a.xsl` не сможет [включать](xsl-include.md) преобразование `b.xsl` и наоборот, потому что они будут иметь одинаковый порядок импорта и содержать элементы `xsl:namespace-alias`, назначающие разным пространствам имен одинаковые псевдонимы. В одном преобразовании такие псевдонимы также не имеют права встречаться. Если же подобное все же случилось, процессор может сигнализировать ошибку или использовать определение, которое было дано в преобразовании последним.
@@ -244,33 +275,41 @@ description: Элемент xsl:namespace-alias назначает простр�
 Чтобы продемонстрировать использование пространства имен по умолчанию с элементом `<xsl:namespace-alias>`, мы рассмотрим две таблицы стилей; в одной используется атрибут `result-prefix="#default"`, а в другой – атрибут `stylesheet-prefix="#default"`. Первая таблица стилей:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- namespace-alias2.xsl -->
-<stylesheet version="2.0"
-    xmlns="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xslout="[что угодно, кроме пространства имен XSL]">
-    <output method="xml" indent="yes"/>
-    <namespace-alias stylesheet-prefix="xslout" result-prefix="#default"/>
-    <template match="/">
-        <xslout:stylesheet version="1.0">
-            <xslout:output method="xml"/>
-            <xslout:template match="/">
-                <xslout:copy-of select="."/>
-            </xslout:template>
-        </xslout:stylesheet>
-    </template>
+<stylesheet
+  version="2.0"
+  xmlns="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xslout="[что угодно, кроме пространства имен XSL]"
+>
+  <output method="xml" indent="yes" />
+  <namespace-alias
+    stylesheet-prefix="xslout"
+    result-prefix="#default"
+  />
+  <template match="/">
+    <xslout:stylesheet version="1.0">
+      <xslout:output method="xml" />
+      <xslout:template match="/">
+        <xslout:copy-of select="." />
+      </xslout:template>
+    </xslout:stylesheet>
+  </template>
 </stylesheet>
 ```
 
 Таблица стилей выдает следующий результат:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" version="1.0">
-    <output method="xml"/>
-    <template match="/">
-        <copy-of select="."/>
-    </template>
+<?xml version="1.0" encoding="UTF-8" ?>
+<stylesheet
+  xmlns="http://www.w3.org/1999/XSL/Transform"
+  version="1.0"
+>
+  <output method="xml" />
+  <template match="/">
+    <copy-of select="." />
+  </template>
 </stylesheet>
 ```
 
@@ -279,34 +318,41 @@ description: Элемент xsl:namespace-alias назначает простр�
 Вторая таблица стилей:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- namespace-alias3.xsl -->
-<xsl:stylesheet version="2.0"
-    xmlns="[что угодно, кроме пространства имен XSL]"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="xml" indent="yes"/>
-    <xsl:namespace-alias stylesheet-prefix="#default" result-prefix="xsl"/>
-    <xsl:template match="/">
-        <stylesheet version="1.0">
-            <output method="xml"/>
-            <template match="/">
-                <copy-of select="."/>
-            </template>
-        </stylesheet>
-    </xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns="[что угодно, кроме пространства имен XSL]"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="xml" indent="yes" />
+  <xsl:namespace-alias
+    stylesheet-prefix="#default"
+    result-prefix="xsl"
+  />
+  <xsl:template match="/">
+    <stylesheet version="1.0">
+      <output method="xml" />
+      <template match="/">
+        <copy-of select="." />
+      </template>
+    </stylesheet>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 Выходные данные этой таблицы стилей выглядят более типично:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="xml"/>
-    <xsl:template match="/">
-        <xsl:copy-of select="."/>
-    </xsl:template>
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="xml" />
+  <xsl:template match="/">
+    <xsl:copy-of select="." />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

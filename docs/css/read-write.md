@@ -50,7 +50,11 @@ input:read-write {
       </p>
 
       <p>
-        <input type="text" size="40" value="Этот текст может изменяться" />
+        <input
+          type="text"
+          size="40"
+          value="Этот текст может изменяться"
+        />
       </p>
 
       <p>

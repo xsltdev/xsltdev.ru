@@ -76,9 +76,17 @@ Interval execution
 ```js
 console.log('Before')
 
-let timeout = setTimeout(() => console.log('Delayed execution'), 3000)
-let immediate = setImmediate(() => console.log('Immediate execution'))
-let interval = setInterval(() => console.log('Interval execution'), 1000)
+let timeout = setTimeout(
+  () => console.log('Delayed execution'),
+  3000
+)
+let immediate = setImmediate(() =>
+  console.log('Immediate execution')
+)
+let interval = setInterval(
+  () => console.log('Interval execution'),
+  1000
+)
 
 clearTimeout(timeout)
 clearImmediate(immediate)

@@ -42,7 +42,11 @@ let zoo = [new Rhino(), new Elephant(), new Snake()]
 Чтобы исправить это, придется явно указать тип, если ни один объект не имеет тип, базовый для всех остальных:
 
 ```ts
-let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()]
+let zoo: Animal[] = [
+  new Rhino(),
+  new Elephant(),
+  new Snake(),
+]
 ```
 
 Если компилятору не удается найти наилучший общий тип, результатом выведения будет тип пустого объекта, то есть `{}`.
@@ -55,7 +59,7 @@ let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()]
 Это называется "контекстной типизацией". Контекстная типизация происходит, когда о типе выражения можно сделать догадку на основании его положения. К примеру:
 
 ```ts
-window.onmousedown = function(mouseEvent) {
+window.onmousedown = function (mouseEvent) {
   console.log(mouseEvent.buton) //<- Ошибка
 }
 ```
@@ -68,7 +72,7 @@ window.onmousedown = function(mouseEvent) {
 То есть, если бы предыдущий пример был записан как:
 
 ```ts
-window.onmousedown = function(mouseEvent: any) {
+window.onmousedown = function (mouseEvent: any) {
   console.log(mouseEvent.buton) //<- Теперь ошибка не выдается
 }
 ```

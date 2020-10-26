@@ -132,7 +132,8 @@
 ```less
 @media screen {
   .one {
-    &:extend(.three, .two);
+    &:extend(.three,
+    .two);
     background-color: #fff;
   }
 
@@ -185,7 +186,8 @@
 }
 
 .test {
-  &:extend(.one, .two);
+  &:extend(.one,
+  .two);
   border-right: 1px solid #000;
 }
 ```

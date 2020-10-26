@@ -24,9 +24,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core'
 
 @Component({
   selector: 'my-app',
-  template: `
-    <p>Hello Angular 2</p>
-  `
+  template: ` <p>Hello Angular 2</p> `,
 })
 export class AppComponent implements OnInit, OnDestroy {
   name: string = 'Tom'
@@ -68,14 +66,12 @@ import {
   Input,
   OnInit,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core'
 
 @Component({
   selector: 'child-comp',
-  template: `
-    <p>Привет {{ name }}</p>
-  `
+  template: ` <p>Привет {{ name }}</p> `,
 })
 export class ChildComponent implements OnInit, OnChanges {
   @Input() name: string
@@ -92,7 +88,9 @@ export class ChildComponent implements OnInit, OnChanges {
       let chng = changes[propName]
       let cur = JSON.stringify(chng.currentValue)
       let prev = JSON.stringify(chng.previousValue)
-      this.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`)
+      this.log(
+        `${propName}: currentValue = ${cur}, previousValue = ${prev}`
+      )
     }
   }
   private log(msg: string) {
@@ -104,7 +102,11 @@ export class ChildComponent implements OnInit, OnChanges {
 И пусть этот компонент используется в главном компоненте:
 
 ```typescript
-import { Component, OnChanges, SimpleChanges } from '@angular/core'
+import {
+  Component,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core'
 
 @Component({
   selector: 'my-app',
@@ -112,7 +114,7 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core'
     <child-comp [name]="name"></child-comp>
     <input type="text" [(ngModel)]="name" />
     <input type="number" [(ngModel)]="age" />
-  `
+  `,
 })
 export class AppComponent implements OnChanges {
   name: string = 'Tom'
@@ -122,7 +124,9 @@ export class AppComponent implements OnChanges {
       let chng = changes[propName]
       let cur = JSON.stringify(chng.currentValue)
       let prev = JSON.stringify(chng.previousValue)
-      this.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`)
+      this.log(
+        `${propName}: currentValue = ${cur}, previousValue = ${prev}`
+      )
     }
   }
 
@@ -154,14 +158,12 @@ import {
   AfterContentInit,
   AfterContentChecked,
   AfterViewChecked,
-  AfterViewInit
+  AfterViewInit,
 } from '@angular/core'
 
 @Component({
   selector: 'child-comp',
-  template: `
-    <p>Привет {{ name }}</p>
-  `
+  template: ` <p>Привет {{ name }}</p> `,
 })
 export class ChildComponent
   implements
@@ -214,7 +216,7 @@ import { Component } from '@angular/core'
   template: `
     <child-comp [name]="name"></child-comp>
     <input type="text" [(ngModel)]="name" />
-  `
+  `,
 })
 export class AppComponent {
   name: string = 'Tom'

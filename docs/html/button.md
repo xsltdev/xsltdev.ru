@@ -195,7 +195,11 @@ description: Тег button (от англ. button - кнопка) создаёт
 **Синтаксис**
 
 ```html
-<button formtarget="<имя фрейма> | _blank | _self | _parent | _top">...</button>
+<button
+  formtarget="<имя фрейма> | _blank | _self | _parent | _top"
+>
+  ...
+</button>
 ```
 
 **Значения**

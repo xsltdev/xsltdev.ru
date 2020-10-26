@@ -12,11 +12,12 @@ description: Элементы xsl:for-each и xsl:apply-templates могут с�
 
 ```xml
 <xsl:sort
-    select = "string-expression"
-    lang = "nmtoken"
-    data-type = "text | number | qname-but-not-ncname"
-    order = "ascending | descending"
-    case-order = "upper-first | lower-first" />
+  select="string-expression"
+  lang="nmtoken"
+  data-type="text | number | qname-but-not-ncname"
+  order="ascending | descending"
+  case-order="upper-first | lower-first"
+/>
 ```
 
 Атрибуты:
@@ -53,18 +54,18 @@ description: Элементы xsl:for-each и xsl:apply-templates могут с�
 
 ```xml
 <list>
-    <person>
-        <name>William</name>
-        <surname>Gibson</surname>
-    </person>
-    <person>
-        <name>William</name>
-        <surname>Blake</surname>
-    </person>
-    <person>
-        <name>John</name>
-        <surname>Fowles</surname>
-    </person>
+  <person>
+    <name>William</name>
+    <surname>Gibson</surname>
+  </person>
+  <person>
+    <name>William</name>
+    <surname>Blake</surname>
+  </person>
+  <person>
+    <name>John</name>
+    <surname>Fowles</surname>
+  </person>
 </list>
 ```
 
@@ -72,13 +73,13 @@ description: Элементы xsl:for-each и xsl:apply-templates могут с�
 
 ```xml
 <xsl:template match="list">
-    <xsl:copy>
-        <xsl:for-each select="person">
-            <xsl:sort select="name" order="descending"/>
-            <xsl:sort select="surname"/>
-            <xsl:copy-of select="."/>
-        </xsl:for-each>
-    </xsl:copy>
+  <xsl:copy>
+    <xsl:for-each select="person">
+      <xsl:sort select="name" order="descending" />
+      <xsl:sort select="surname" />
+      <xsl:copy-of select="." />
+    </xsl:for-each>
+  </xsl:copy>
 </xsl:template>
 ```
 
@@ -86,18 +87,18 @@ description: Элементы xsl:for-each и xsl:apply-templates могут с�
 
 ```xml
 <list>
-    <person>
-        <name>William</name>
-        <surname>Blake</surname>
-    </person>
-    <person>
-        <name>William</name>
-        <surname>Gibson</surname>
-    </person>
-    <person>
-        <name>John</name>
-        <surname>Fowles</surname>
-    </person>
+  <person>
+    <name>William</name>
+    <surname>Blake</surname>
+  </person>
+  <person>
+    <name>William</name>
+    <surname>Gibson</surname>
+  </person>
+  <person>
+    <name>John</name>
+    <surname>Fowles</surname>
+  </person>
 </list>
 ```
 

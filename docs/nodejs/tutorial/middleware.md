@@ -24,7 +24,9 @@ app.get('/', (req, res) => {
   res.send('Home page')
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 Здесь для всех поступающих запросов добавляется HTTP-заголовок `From-Middleware` со значением `1`.

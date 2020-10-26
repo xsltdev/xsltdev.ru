@@ -25,9 +25,7 @@ http://www.htmlbook.ru/handler.php?nick=%C2%E0%ED%FF+%D8%E0%EF%EE%F7%EA%E8%ED&pa
 ## Синтаксис
 
 ```html
-<form>
-  ...
-</form>
+<form>...</form>
 ```
 
 Закрывающий тег обязателен.
@@ -259,11 +257,28 @@ http://www.htmlbook.ru/handler.php?nick=%C2%E0%ED%FF+%D8%E0%EF%EE%F7%EA%E8%ED&pa
   </head>
   <body>
     <form action="handler.php">
-      <p><b>Как по вашему мнению расшифровывается аббревиатура "ОС"?</b></p>
       <p>
-        <input type="radio" name="answer" value="a1" />Офицерский состав<br />
-        <input type="radio" name="answer" value="a2" />Операционная система<br />
-        <input type="radio" name="answer" value="a3" />Большой полосатый мух
+        <b
+          >Как по вашему мнению расшифровывается
+          аббревиатура "ОС"?</b
+        >
+      </p>
+      <p>
+        <input
+          type="radio"
+          name="answer"
+          value="a1"
+        />Офицерский состав<br />
+        <input
+          type="radio"
+          name="answer"
+          value="a2"
+        />Операционная система<br />
+        <input
+          type="radio"
+          name="answer"
+          value="a3"
+        />Большой полосатый мух
       </p>
       <p><input type="submit" /></p>
     </form>

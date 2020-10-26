@@ -31,9 +31,7 @@ description: Отслеживание изменений - это механиз
 @Component({
   selector: 'book-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <h1>{{ book }}</h1>
-  `
+  template: ` <h1>{{ book }}</h1> `,
 })
 export class BookItemComponent implements OnChanges {
   @Input() book: string = null
@@ -69,7 +67,7 @@ export class BookItemComponent implements OnChanges {
     <h1>{{ book }}</h1>
 
     <button (click)="applyChanges()">Apply</button>
-  `
+  `,
 })
 export class ManualDetectionComponent {
   book: string = 'Great Expectations'

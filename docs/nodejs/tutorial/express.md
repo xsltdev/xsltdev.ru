@@ -43,7 +43,7 @@ app.use((req, res, next) => {
   res.send('Not found')
 })
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```

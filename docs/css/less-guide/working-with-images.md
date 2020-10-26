@@ -133,7 +133,10 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
   background-image: data-uri('image.jpg');
   // url("data:image/jpeg;base64,/9j/7gAOQWRvYmUAZAAAAAAA/9sAQwA...")
 
-  background-image: data-uri('image/jpeg;base64', 'image.jpg');
+  background-image: data-uri(
+    'image/jpeg;base64',
+    'image.jpg'
+  );
   // url("data:image/jpeg;base64,/9j/7gAOQWRvYmUAZAAAAAAA/9sAQwA...")
 
   background-image: data-uri('image.png');
@@ -145,7 +148,10 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
   background-image: data-uri('image.svg');
   // url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20e...")
 
-  background-image: data-uri('image/svg+xml;charset=UTF-8', 'image.svg');
+  background-image: data-uri(
+    'image/svg+xml;charset=UTF-8',
+    'image.svg'
+  );
   // url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3...")
 }
 ```
@@ -158,7 +164,11 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
 
 ```less
 .gradient {
-  background-image: svg-gradient(ellipse at center, blue, red 15%);
+  background-image: svg-gradient(
+    ellipse at center,
+    blue,
+    red 15%
+  );
 }
 ```
 
@@ -174,14 +184,31 @@ C:\<-- path -->\chapter_4\examples\4.3.2\styles\less\components\_styles.less on 
 
 ```xml
 <?xml version="1.0" ?>
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">
-  <radialGradient id="gradient" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="75%">
-    <stop offset="0%" stop-color="#0000ff"/>
-    <stop offset="15%" stop-color="#ff0000"/>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  width="100%"
+  height="100%"
+  viewBox="0 0 1 1"
+  preserveAspectRatio="none"
+>
+  <radialGradient
+    id="gradient"
+    gradientUnits="userSpaceOnUse"
+    cx="50%"
+    cy="50%"
+    r="75%"
+  >
+    <stop offset="0%" stop-color="#0000ff" />
+    <stop offset="15%" stop-color="#ff0000" />
   </radialGradient>
-
-  <rect x="-50" y="-50" width="101" height="101" fill="url(#gradient)" />
+  <rect
+    x="-50"
+    y="-50"
+    width="101"
+    height="101"
+    fill="url(#gradient)"
+  />
 </svg>
 ```
 

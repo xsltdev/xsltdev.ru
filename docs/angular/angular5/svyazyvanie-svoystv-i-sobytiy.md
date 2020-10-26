@@ -12,7 +12,11 @@ description: Создание кастомных событий и их обра
 import { Component, OnInit, Input } from '@angular/core'
 
 export class ServerElementComponent implements OnInit {
-  @Input() element: { type: string; name: string; content: string }
+  @Input() element: {
+    type: string
+    name: string
+    content: string
+  }
   //..
 }
 ```
@@ -42,7 +46,12 @@ export class ServerElementComponent implements OnInit {
 Компонент откуда всплывает событие:
 
 ```typescript
-import { Component, OnInit, EventEmitter, Output } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+} from '@angular/core'
 
 export class CockpitComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<{
@@ -60,14 +69,14 @@ export class CockpitComponent implements OnInit {
   onAddServer() {
     this.serverCreated.emit({
       serverName: this.newServerName,
-      serverContent: this.newServerContent
+      serverContent: this.newServerContent,
     })
   }
 
   onAddBlueprint() {
     this.blueprintCreated.emit({
       serverName: this.newServerName,
-      serverContent: this.newServerContent
+      serverContent: this.newServerContent,
     })
   }
 }
@@ -91,12 +100,17 @@ export class CockpitComponent implements OnInit {
 
 ```typescript
 export class AppComponent {
-  serverElements = [{ type: 'server', name: 'fedora', content: 'secret' }]
-  onServerAdded(serverData: { serverName: string; serverContent: string }) {
+  serverElements = [
+    { type: 'server', name: 'fedora', content: 'secret' },
+  ]
+  onServerAdded(serverData: {
+    serverName: string
+    serverContent: string
+  }) {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
-      content: serverData.serverContent
+      content: serverData.serverContent,
     })
   }
   onBlueprintAdded(blueprintData: {
@@ -106,7 +120,7 @@ export class AppComponent {
     this.serverElements.push({
       type: 'blueprint',
       name: blueprintData.serverName,
-      content: blueprintData.serverContent
+      content: blueprintData.serverContent,
     })
   }
 }

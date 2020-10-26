@@ -166,7 +166,7 @@ enum Season {
   Winter,
   Spring,
   Summer,
-  Autumn
+  Autumn,
 }
 ```
 
@@ -177,7 +177,7 @@ enum Season {
   Winter,
   Spring,
   Summer,
-  Autumn
+  Autumn,
 }
 let current: Season = Season.Summer
 console.log(current)
@@ -191,7 +191,7 @@ enum Season {
   Winter = 0,
   Spring = 1,
   Summer = 2,
-  Autumn = 3
+  Autumn = 3,
 }
 ```
 
@@ -202,13 +202,13 @@ enum Season {
   Winter = 5,
   Spring,
   Summer,
-  Autumn
+  Autumn,
 } // 5, 6, 7, 8
 enum Season {
   Winter = 4,
   Spring = 8,
   Summer = 16,
-  Autumn = 32
+  Autumn = 32,
 } // 4, 8, 16, 32
 ```
 
@@ -219,7 +219,7 @@ enum Season {
   Winter = 0,
   Spring = 1,
   Summer = 2,
-  Autumn = 3
+  Autumn = 3,
 }
 var current: string = Season[2] // 2 - числовое значение Summer
 console.log(current) // Summer

@@ -25,7 +25,14 @@ React поддерживает создание сайтов c доступны�
 Нужно отметить, что все HTML-атрибуты `aria-*` полностью поддерживаются в JSX. Несмотря на то, что большинство DOM-свойств и атрибутов в React пишутся в стиле camelCase, атрибуты `aria-*` должны быть написаны с разделением дефисами. Такой стиль ещё известен как шашлычная нотация (kebab-case) или в стиле языка Лисп (lisp-case). Вот как выглядит такое оформление в JSX:
 
 ```javascript
-<input type="text" aria-label={labelText} aria-required="true" onChange={onchangeHandler} value={inputValue} name="name" />
+<input
+  type="text"
+  aria-label={labelText}
+  aria-required="true"
+  onChange={onchangeHandler}
+  value={inputValue}
+  name="name"
+/>
 ```
 
 ## Семантическая вёрстка {#semantic-html}
@@ -51,7 +58,7 @@ function ListItem({ item }) {
 function Glossary(props) {
   return (
     <dl>
-      {props.items.map(item => (
+      {props.items.map((item) => (
         <ListItem item={item} key={item.id} />
       ))}
     </dl>
@@ -65,7 +72,7 @@ function Glossary(props) {
 function Glossary(props) {
   return (
     <dl>
-      {props.items.map(item => (
+      {props.items.map((item) => (
         // При отображении коллекций фрагменты обязательно должны иметь атрибут `key`
         <Fragment key={item.id}>
           <dt>{item.term}</dt>
@@ -235,25 +242,36 @@ class OuterClickExample extends React.Component {
     this.toggleContainer = React.createRef()
 
     this.onClickHandler = this.onClickHandler.bind(this)
-    this.onClickOutsideHandler = this.onClickOutsideHandler.bind(this)
+    this.onClickOutsideHandler = this.onClickOutsideHandler.bind(
+      this
+    )
   }
 
   componentDidMount() {
-    window.addEventListener('click', this.onClickOutsideHandler)
+    window.addEventListener(
+      'click',
+      this.onClickOutsideHandler
+    )
   }
 
   componentWillUnmount() {
-    window.removeEventListener('click', this.onClickOutsideHandler)
+    window.removeEventListener(
+      'click',
+      this.onClickOutsideHandler
+    )
   }
 
   onClickHandler() {
-    this.setState(currentState => ({
-      isOpen: !currentState.isOpen
+    this.setState((currentState) => ({
+      isOpen: !currentState.isOpen,
     }))
   }
 
   onClickOutsideHandler(event) {
-    if (this.state.isOpen && !this.toggleContainer.current.contains(event.target)) {
+    if (
+      this.state.isOpen &&
+      !this.toggleContainer.current.contains(event.target)
+    ) {
       this.setState({ isOpen: false })
     }
   }
@@ -261,7 +279,9 @@ class OuterClickExample extends React.Component {
   render() {
     return (
       <div ref={this.toggleContainer}>
-        <button onClick={this.onClickHandler}>Select an option</button>
+        <button onClick={this.onClickHandler}>
+          Select an option
+        </button>
         {this.state.isOpen && (
           <ul>
             <li>Option 1</li>
@@ -295,8 +315,8 @@ class BlurExample extends React.Component {
   }
 
   onClickHandler() {
-    this.setState(currentState => ({
-      isOpen: !currentState.isOpen
+    this.setState((currentState) => ({
+      isOpen: !currentState.isOpen,
     }))
   }
 
@@ -306,7 +326,7 @@ class BlurExample extends React.Component {
   onBlurHandler() {
     this.timeOutId = setTimeout(() => {
       this.setState({
-        isOpen: false
+        isOpen: false,
       })
     })
   }
@@ -320,8 +340,15 @@ class BlurExample extends React.Component {
     // React assists us by bubbling the blur and
     // focus events to the parent.
     return (
-      <div onBlur={this.onBlurHandler} onFocus={this.onFocusHandler}>
-        <button onClick={this.onClickHandler} aria-haspopup="true" aria-expanded={this.state.isOpen}>
+      <div
+        onBlur={this.onBlurHandler}
+        onFocus={this.onFocusHandler}
+      >
+        <button
+          onClick={this.onClickHandler}
+          aria-haspopup="true"
+          aria-expanded={this.state.isOpen}
+        >
           Select an option
         </button>
         {this.state.isOpen && (

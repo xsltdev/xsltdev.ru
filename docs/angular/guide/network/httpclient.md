@@ -41,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -84,7 +84,7 @@ import { User } from './user'
       <p>Имя пользователя: {{ user?.name }}</p>
       <p>Возраст пользователя: {{ user?.age }}</p>
     </div>
-  `
+  `,
 })
 export class AppComponent implements OnInit {
   user: User
@@ -92,7 +92,9 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('user.json').subscribe((data: User) => (this.user = data))
+    this.http
+      .get('user.json')
+      .subscribe((data: User) => (this.user = data))
   }
 }
 ```
@@ -152,7 +154,7 @@ import { User } from './user'
       <p>Возраст пользователя: {{ user?.age }}</p>
     </div>
   `,
-  providers: [HttpService]
+  providers: [HttpService],
 })
 export class AppComponent implements OnInit {
   user: User
@@ -160,7 +162,9 @@ export class AppComponent implements OnInit {
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
-    this.httpService.getData().subscribe((data: User) => (this.user = data))
+    this.httpService
+      .getData()
+      .subscribe((data: User) => (this.user = data))
   }
 }
 ```
@@ -213,7 +217,7 @@ import { User } from './user'
       </li>
     </ul>
   `,
-  providers: [HttpService]
+  providers: [HttpService],
 })
 export class AppComponent implements OnInit {
   users: User[] = []
@@ -223,7 +227,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.httpService
       .getData()
-      .subscribe(data => (this.users = data['userList']))
+      .subscribe((data) => (this.users = data['userList']))
   }
 }
 ```

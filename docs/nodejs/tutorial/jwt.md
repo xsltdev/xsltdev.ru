@@ -83,13 +83,20 @@ const tokenKey = '1a2b-3c4d-5e6f-7g8h'
 app.use(bodyParser.json())
 app.use((req, res, next) => {
   if (req.headers.authorization) {
-    let tokenParts = req.headers.authorization.split(' ')[1].split('.')
+    let tokenParts = req.headers.authorization
+      .split(' ')[1]
+      .split('.')
     let signature = crypto
       .createHmac('SHA256', tokenKey)
       .update(`${tokenParts[0]}.${tokenParts[1]}`)
       .digest('base64')
 
-    if (signature === tokenParts[2]) req.user = JSON.parse(Buffer.from(tokenParts[1], 'base64').toString('utf8'))
+    if (signature === tokenParts[2])
+      req.user = JSON.parse(
+        Buffer.from(tokenParts[1], 'base64').toString(
+          'utf8'
+        )
+      )
 
     next()
   }
@@ -99,9 +106,16 @@ app.use((req, res, next) => {
 
 app.post('/api/auth', (req, res) => {
   for (let user of users) {
-    if (req.body.login === user.login && req.body.password === user.password) {
-      let head = Buffer.from(JSON.stringify({ alg: 'HS256', typ: 'jwt' })).toString('base64')
-      let body = Buffer.from(JSON.stringify(user)).toString('base64')
+    if (
+      req.body.login === user.login &&
+      req.body.password === user.password
+    ) {
+      let head = Buffer.from(
+        JSON.stringify({ alg: 'HS256', typ: 'jwt' })
+      ).toString('base64')
+      let body = Buffer.from(JSON.stringify(user)).toString(
+        'base64'
+      )
       let signature = crypto
         .createHmac('SHA256', tokenKey)
         .update(`${head}.${body}`)
@@ -110,7 +124,7 @@ app.post('/api/auth', (req, res) => {
       return res.status(200).json({
         id: user.id,
         login: user.login,
-        token: `${head}.${body}.${signature}`
+        token: `${head}.${body}.${signature}`,
       })
     }
   }
@@ -120,10 +134,15 @@ app.post('/api/auth', (req, res) => {
 
 app.get('/user', (req, res) => {
   if (req.user) return res.status(200).json(req.user)
-  else return res.status(401).json({ message: 'Not authorized' })
+  else
+    return res
+      .status(401)
+      .json({ message: 'Not authorized' })
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 В приведенном примере при вводе логина и пароля пользователя отправляется запрос на авторизацию. Если логин и пароль верны, создается JWT и отправляется клиентской стороне. При любом следующем запросе на маршруты, требующие авторизации, будет выполняться проверка в функции промежуточной обработки на валидность токена.
@@ -147,19 +166,23 @@ const tokenKey = '1a2b-3c4d-5e6f-7g8h'
 app.use(bodyParser.json())
 app.use((req, res, next) => {
   if (req.headers.authorization) {
-    jwt.verify(req.headers.authorization.split(' ')[1], tokenKey, (err, payload) => {
-      if (err) next()
-      else if (payload) {
-        for (let user of users) {
-          if (user.id === payload.id) {
-            req.user = user
-            next()
+    jwt.verify(
+      req.headers.authorization.split(' ')[1],
+      tokenKey,
+      (err, payload) => {
+        if (err) next()
+        else if (payload) {
+          for (let user of users) {
+            if (user.id === payload.id) {
+              req.user = user
+              next()
+            }
           }
-        }
 
-        if (!req.user) next()
+          if (!req.user) next()
+        }
       }
-    })
+    )
   }
 
   next()
@@ -167,11 +190,14 @@ app.use((req, res, next) => {
 
 app.post('/api/auth', (req, res) => {
   for (let user of users) {
-    if (req.body.login === user.login && req.body.password === user.password) {
+    if (
+      req.body.login === user.login &&
+      req.body.password === user.password
+    ) {
       return res.status(200).json({
         id: user.id,
         login: user.login,
-        token: jwt.sign({ id: user.id }, tokenKey)
+        token: jwt.sign({ id: user.id }, tokenKey),
       })
     }
   }
@@ -181,8 +207,13 @@ app.post('/api/auth', (req, res) => {
 
 app.get('/user', (req, res) => {
   if (req.user) return res.status(200).json(req.user)
-  else return res.status(401).json({ message: 'Not authorized' })
+  else
+    return res
+      .status(401)
+      .json({ message: 'Not authorized' })
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```

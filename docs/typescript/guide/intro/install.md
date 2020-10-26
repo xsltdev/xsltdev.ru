@@ -84,7 +84,7 @@ tsc app.ts
 
 ```javascript
 var el = this.document.getElementById('content')
-var User = (function() {
+var User = (function () {
   function User(_name, _age) {
     this.name = _name
     this.age = _age

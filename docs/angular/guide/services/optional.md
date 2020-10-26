@@ -22,7 +22,11 @@ import { LogService } from './log.service'
 
 @Injectable()
 export class DataService {
-  private data: string[] = ['Apple iPhone XR', 'Samsung Galaxy S9', 'Nokia 9']
+  private data: string[] = [
+    'Apple iPhone XR',
+    'Samsung Galaxy S9',
+    'Nokia 9',
+  ]
   constructor(private logService: LogService) {}
 
   getData(): string[] {
@@ -57,7 +61,7 @@ import { DataService } from './data.service'
       </table>
     </div>
   `,
-  providers: [DataService] // Добавлен только сервис DataService
+  providers: [DataService], // Добавлен только сервис DataService
 })
 export class AppComponent {
   items: string[] = []
@@ -80,16 +84,22 @@ import { LogService } from './log.service'
 
 @Injectable()
 export class DataService {
-  private data: string[] = ['Apple iPhone XR', 'Samsung Galaxy S9', 'Nokia 9']
+  private data: string[] = [
+    'Apple iPhone XR',
+    'Samsung Galaxy S9',
+    'Nokia 9',
+  ]
   constructor(@Optional() private logService: LogService) {}
 
   getData(): string[] {
-    if (this.logService) this.logService.write('операция получения данных')
+    if (this.logService)
+      this.logService.write('операция получения данных')
     return this.data
   }
   addData(name: string) {
     this.data.push(name)
-    if (this.logService) this.logService.write('операция добавления данных')
+    if (this.logService)
+      this.logService.write('операция добавления данных')
   }
 }
 ```
@@ -103,5 +113,6 @@ constructor(@Optional() private logService: LogService){}
 Далее при обращении к сервису мы можем проверить, установлен ли он, и если он установлен, использовать его:
 
 ```ts
-if (this.logService) this.logService.write('операция получения данных')
+if (this.logService)
+  this.logService.write('операция получения данных')
 ```

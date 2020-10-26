@@ -11,9 +11,7 @@ description: Элемент xsl:apply-templates применяет шаблон�
 ## Синтаксис
 
 ```xml
-<xsl:apply-templates
-  select = "выражение"
-  mode = "режим">
+<xsl:apply-templates select="выражение" mode="режим">
   <!-- Content: (xsl:sort | xsl:with-param)* -->
 </xsl:apply-templates>
 ```
@@ -71,8 +69,12 @@ description: Элемент xsl:apply-templates применяет шаблон�
 ```xml
 <xsl:template match="employee">
   <fo:block>
-    Employee <xsl:apply-templates select="name" /> belongs to group
-    <xsl:apply-templates select="ancestor::department/group" />
+    Employee
+    <xsl:apply-templates select="name" />
+    belongs to group
+    <xsl:apply-templates
+      select="ancestor::department/group"
+    />
   </fo:block>
 </xsl:template>
 ```
@@ -100,61 +102,77 @@ description: Элемент xsl:apply-templates применяет шаблон�
 В XSLT 2.0 возможности атрибута mode были расширены. В следующей таблице стилей используются значения `#default`, `#current` и `#all` атрибута `mode`:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- apply-templates2.xsl -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-  <xsl:output method="html"/>
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0"
+>
+  <xsl:output method="html" />
   <xsl:template match="/">
     <html>
-    <head>
-      <title>Using the mode attribute</title>
-    </head>
-    <body style="font-family: sans-serif;">
-      <table style="text-align: center;" border="1">
-        <tr style="font-weight: bold; font-size: 150%;">
-          <td width="30%">Default mode</td>
-          <td width="30%">Blue mode</td>
-          <td width="30%">Red mode</td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <xsl:apply-templates mode="#default" select="/cars/manufacturer"/>
-            </p>
-          </td>
-          <td>
-            <p>
-              <xsl:apply-templates mode="blue" select="/cars/manufacturer"/>
-            </p>
-          </td>
-          <td>
-            <p>
-              <xsl:apply-templates mode="red" select="/cars/manufacturer"/>
-            </p>
-          </td>
-        </tr>
-      </table>
-    </body>
+      <head>
+        <title>Using the mode attribute</title>
+      </head>
+      <body style="font-family: sans-serif;">
+        <table style="text-align: center;" border="1">
+          <tr style="font-weight: bold; font-size: 150%;">
+            <td width="30%">Default mode</td>
+            <td width="30%">Blue mode</td>
+            <td width="30%">Red mode</td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                <xsl:apply-templates
+                  mode="#default"
+                  select="/cars/manufacturer"
+                />
+              </p>
+            </td>
+            <td>
+              <p>
+                <xsl:apply-templates
+                  mode="blue"
+                  select="/cars/manufacturer"
+                />
+              </p>
+            </td>
+            <td>
+              <p>
+                <xsl:apply-templates
+                  mode="red"
+                  select="/cars/manufacturer"
+                />
+              </p>
+            </td>
+          </tr>
+        </table>
+      </body>
     </html>
   </xsl:template>
   <xsl:template match="manufacturer">
-    <div style="color: green; font-style: italic; font-size: 125%">
-      <xsl:apply-templates select="car" mode="#current"/>
+    <div
+      style="color: green; font-style: italic; font-size: 125%"
+    >
+      <xsl:apply-templates select="car" mode="#current" />
     </div>
   </xsl:template>
   <xsl:template match="manufacturer" mode="blue red">
     <div style="color: blue; font-weight: bold;">
-      <xsl:apply-templates select="car" mode="#current"/>
+      <xsl:apply-templates select="car" mode="#current" />
     </div>
   </xsl:template>
   <xsl:template match="car" mode="#all">
-    <xsl:value-of select="."/>
-    <br/>
+    <xsl:value-of select="." />
+    <br />
   </xsl:template>
   <xsl:template match="car" mode="red" priority="1">
-    <div style="color: red; font-size: 125%; font-family: serif;">
-      <xsl:value-of select="."/>
-      <br/>
+    <div
+      style="color: red; font-size: 125%; font-family: serif;"
+    >
+      <xsl:value-of select="." />
+      <br />
     </div>
   </xsl:template>
 </xsl:stylesheet>
@@ -173,126 +191,137 @@ description: Элемент xsl:apply-templates применяет шаблон�
 
 ### Пример 6
 
-```xml tab="XML"
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="applyt.xsl" ?>
-<customers>
-   <customer>
-      <name>John Smith</name>
-      <address>123 Oak St.</address>
-      <state>WA</state>
-      <phone>(206) 123-4567</phone>
-   </customer>
-   <customer>
-      <name>Zack Zwyker</name>
-      <address>368 Elm St.</address>
-      <state>WA</state>
-      <phone>(206) 423-4537</phone>
-   </customer>
-   <customer>
-      <name>Albert Aikens</name>
-      <address>368 Elm St.</address>
-      <state>WA</state>
-      <phone>(206) 423-4537</phone>
-   </customer>
-   <customer>
-      <name>Albert Gandy</name>
-      <address>6984 4th St.</address>
-      <state>WA</state>
-      <phone>(206) 433-4547</phone>
-   </customer>
-   <customer>
-      <name>Peter Furst</name>
-      <address>456 Pine Av.</address>
-      <state>CA</state>
-      <phone>(209) 765-4321</phone>
-   </customer>
-   <customer>
-      <name>Dan Russell</name>
-      <address>9876 Main St.</address>
-      <state>PA</state>
-      <phone>(323) 321-7654</phone>
-   </customer>
-</customers>
-```
+=== "XML"
 
-```xslt tab="XSLT"
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+    ```xml
+    <?xml version="1.0" ?>
+    <?xml-stylesheet type="text/xsl" href="applyt.xsl" ?>
+    <customers>
+      <customer>
+        <name>John Smith</name>
+        <address>123 Oak St.</address>
+        <state>WA</state>
+        <phone>(206) 123-4567</phone>
+      </customer>
+      <customer>
+        <name>Zack Zwyker</name>
+        <address>368 Elm St.</address>
+        <state>WA</state>
+        <phone>(206) 423-4537</phone>
+      </customer>
+      <customer>
+        <name>Albert Aikens</name>
+        <address>368 Elm St.</address>
+        <state>WA</state>
+        <phone>(206) 423-4537</phone>
+      </customer>
+      <customer>
+        <name>Albert Gandy</name>
+        <address>6984 4th St.</address>
+        <state>WA</state>
+        <phone>(206) 433-4547</phone>
+      </customer>
+      <customer>
+        <name>Peter Furst</name>
+        <address>456 Pine Av.</address>
+        <state>CA</state>
+        <phone>(209) 765-4321</phone>
+      </customer>
+      <customer>
+        <name>Dan Russell</name>
+        <address>9876 Main St.</address>
+        <state>PA</state>
+        <phone>(323) 321-7654</phone>
+      </customer>
+    </customers>
+    ```
 
-<xsl:template match="/">
-   <HTML>
-      <BODY>
-         <TABLE border="1" cellspacing="0" cellpadding="2">
-            <xsl:apply-templates select="customers/customer">
-               <xsl:sort select="state"/>
-               <xsl:sort select="name"/>
-            </xsl:apply-templates>
-         </TABLE>
-      </BODY>
-   </HTML>
-</xsl:template>
+=== "XSLT"
 
-<xsl:template match="customer">
-   <TR>
-      <xsl:apply-templates select="name" />
-      <xsl:apply-templates select="address" />
-      <xsl:apply-templates select="state" />
-      <xsl:apply-templates select="phone" />
-      <xsl:apply-templates select="phone" mode="accountNumber"/>
-   </TR>
-</xsl:template>
+    ```xml
+    <?xml version="1.0" ?>
+    <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    >
+      <xsl:template match="/">
+        <HTML>
+          <BODY>
+            <TABLE border="1" cellspacing="0" cellpadding="2">
+              <xsl:apply-templates select="customers/customer">
+                <xsl:sort select="state" />
+                <xsl:sort select="name" />
+              </xsl:apply-templates>
+            </TABLE>
+          </BODY>
+        </HTML>
+      </xsl:template>
+      <xsl:template match="customer">
+        <TR>
+          <xsl:apply-templates select="name" />
+          <xsl:apply-templates select="address" />
+          <xsl:apply-templates select="state" />
+          <xsl:apply-templates select="phone" />
+          <xsl:apply-templates
+            select="phone"
+            mode="accountNumber"
+          />
+        </TR>
+      </xsl:template>
+      <xsl:template match="name">
+        <TD STYLE="font-size:14pt font-family:serif">
+          <xsl:apply-templates />
+        </TD>
+      </xsl:template>
+      <xsl:template match="address">
+        <TD>
+          <xsl:apply-templates />
+        </TD>
+      </xsl:template>
+      <xsl:template match="state">
+        <TD>
+          <xsl:apply-templates />
+        </TD>
+      </xsl:template>
+      <xsl:template match="phone">
+        <TD>
+          <xsl:apply-templates />
+        </TD>
+      </xsl:template>
+      <xsl:template match="phone" mode="accountNumber">
+        <TD STYLE="font-style:italic">
+          1-
+          <xsl:value-of select="." />
+          -001
+        </TD>
+      </xsl:template>
+    </xsl:stylesheet>
+    ```
 
-<xsl:template match="name">
-   <TD STYLE="font-size:14pt font-family:serif">
-      <xsl:apply-templates />
-   </TD>
-</xsl:template>
+=== "Результат"
 
-<xsl:template match="address">
-   <TD> <xsl:apply-templates /> </TD>
-</xsl:template>
-
-<xsl:template match="state">
-   <TD> <xsl:apply-templates /> </TD>
-</xsl:template>
-
-<xsl:template match="phone">
-   <TD> <xsl:apply-templates /> </TD>
-</xsl:template>
-
-<xsl:template match="phone" mode="accountNumber">
-   <TD STYLE="font-style:italic">
-      1-<xsl:value-of select="."/>-001
-   </TD>
-</xsl:template>
-
-</xsl:stylesheet>
-```
-
-```html tab="Output"
-<html>
-  <body>
-    <table border="1" cellspacing="0" cellpadding="2">
-      <tr>
-        <td style="font-size:14pt; font-family:serif">Peter Furst</td>
-        <td>456 Pine Av.</td>
-        <td>CA</td>
-        <td>(209) 765-4321</td>
-        <td style="font-style:italic">
-          1-(209) 765-4321-001
-        </td>
-      </tr>
-      <tr>
-        <td style="font-size:14pt; font-family:serif">Dan Russell</td>
-        <td>9876 Main St.</td>
-        ...
-      </tr>
-    </table>
-  </body>
-</html>
-```
+    ```html
+    <html>
+      <body>
+        <table border="1" cellspacing="0" cellpadding="2">
+          <tr>
+            <td style="font-size:14pt; font-family:serif">Peter Furst</td>
+            <td>456 Pine Av.</td>
+            <td>CA</td>
+            <td>(209) 765-4321</td>
+            <td style="font-style:italic">
+              1-(209) 765-4321-001
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:14pt; font-family:serif">Dan Russell</td>
+            <td>9876 Main St.</td>
+            ...
+          </tr>
+        </table>
+      </body>
+    </html>
+    ```
 
 ## См. также
 

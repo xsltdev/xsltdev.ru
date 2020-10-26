@@ -17,7 +17,7 @@ http.createServer().listen(3000)
 const http = require('http')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     response.end('Hello world!')
   })
   .listen(3000)
@@ -42,10 +42,12 @@ http
 var http = require('http')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     console.log('Url: ' + request.url)
     console.log('Тип запроса: ' + request.method)
-    console.log('User-Agent: ' + request.headers['user-agent'])
+    console.log(
+      'User-Agent: ' + request.headers['user-agent']
+    )
     console.log('Все заголовки')
     console.log(request.headers)
 
@@ -75,9 +77,12 @@ http
 const http = require('http')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     response.setHeader('UserId', 12)
-    response.setHeader('Content-Type', 'text/html; charset=utf-8;')
+    response.setHeader(
+      'Content-Type',
+      'text/html; charset=utf-8;'
+    )
     response.write('<h2>hello world</h2>')
     response.end()
   })
@@ -94,7 +99,7 @@ http
 const http = require('http')
 
 http
-  .createServer(function(request, response) {
+  .createServer(function (request, response) {
     response.setHeader('Content-Type', 'text/html')
     response.write('<!DOCTYPE html>')
     response.write('<html>')
@@ -117,8 +122,11 @@ http
 const http = require('http')
 
 http
-  .createServer(function(request, response) {
-    response.setHeader('Content-Type', 'text/html; charset=utf-8;')
+  .createServer(function (request, response) {
+    response.setHeader(
+      'Content-Type',
+      'text/html; charset=utf-8;'
+    )
 
     if (request.url === '/home' || request.url === '/') {
       response.write('<h2>Home</h2>')
@@ -148,8 +156,11 @@ http
 const http = require('http')
 
 http
-  .createServer(function(request, response) {
-    response.setHeader('Content-Type', 'text/html; charset=utf-8;')
+  .createServer(function (request, response) {
+    response.setHeader(
+      'Content-Type',
+      'text/html; charset=utf-8;'
+    )
 
     if (request.url === '/') {
       response.statusCode = 302 // временная переадресация

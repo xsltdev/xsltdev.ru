@@ -13,7 +13,10 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(<Hello toWhat="мир" />, document.getElementById('root'))
+ReactDOM.render(
+  <Hello toWhat="мир" />,
+  document.getElementById('root')
+)
 ```
 
 Он может быть превращён в код без JSX:
@@ -21,11 +24,18 @@ ReactDOM.render(<Hello toWhat="мир" />, document.getElementById('root'))
 ```js
 class Hello extends React.Component {
   render() {
-    return React.createElement('div', null, `Привет, ${this.props.toWhat}`)
+    return React.createElement(
+      'div',
+      null,
+      `Привет, ${this.props.toWhat}`
+    )
   }
 }
 
-ReactDOM.render(React.createElement(Hello, { toWhat: 'мир' }, null), document.getElementById('root'))
+ReactDOM.render(
+  React.createElement(Hello, { toWhat: 'мир' }, null),
+  document.getElementById('root')
+)
 ```
 
 Компонент может быть представлен в виде строки, класса-наследника от `React.Component` или обычной функции в случае компонента без состояния.
@@ -35,7 +45,10 @@ ReactDOM.render(React.createElement(Hello, { toWhat: 'мир' }, null), document
 ```js
 const e = React.createElement
 
-ReactDOM.render(e('div', null, 'Привет, мир!'), document.getElementById('root'))
+ReactDOM.render(
+  e('div', null, 'Привет, мир!'),
+  document.getElementById('root')
+)
 ```
 
 Если вы примените эту сокращённую форму для `React.createElement`, то использование React без JSX станет почти таким же удобным, как вы привыкли.

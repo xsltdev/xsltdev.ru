@@ -17,9 +17,7 @@ description: Создание Angular приложения просто нево
 ```ts
 @Component({
   selector: 'private-error',
-  template: `
-    <div>{{ message }}</div>
-  `
+  template: ` <div>{{ message }}</div> `,
 })
 export class PrivateErrorComponent {
   private message: string = 'Variable should be public'
@@ -93,15 +91,13 @@ _my-orders.component.ts_
 ```ts
 @Component({
   selector: 'my-orders',
-  template: `
-    <orders-item [order]="item"></orders-item>
-  `
+  template: ` <orders-item [order]="item"></orders-item> `,
 })
 export class MyOrdersComponent {
   item: any = {
     id: 1,
     name: 'Box',
-    count: 3
+    count: 3,
   }
 
   constructor() {
@@ -120,7 +116,7 @@ _order-item.component.ts_
       <p>Name: {{ item?.name }}</p>
       <p>Count: {{ item?.count }}</p>
     </div>
-  `
+  `,
 })
 export class OrderItemComponent implements OnChanges {
   @Input() item: any = null
@@ -134,7 +130,10 @@ export class OrderItemComponent implements OnChanges {
 Получается, что для вызова функции в `ngOnChanges()` нужно вернуть новый объект. Это можно сделать, например, так:
 
 ```ts
-setTimeout(() => (this.item = { ...this.item, ...{ count: 4 } }), 3000)
+setTimeout(
+  () => (this.item = { ...this.item, ...{ count: 4 } }),
+  3000
+)
 ```
 
 ## Дублирование подписчиков в RxJS
@@ -196,9 +195,10 @@ ngOnDestroy(){
       <p>Client: {{ client?.name }}</p>
       <p>Address: {{ client?.address }}</p>
     </div>
-  `
+  `,
 })
-export class ClientProfileComponent implements AfterViewInit {
+export class ClientProfileComponent
+  implements AfterViewInit {
   @Input() client: any = null
 
   ngAfterViewInit() {

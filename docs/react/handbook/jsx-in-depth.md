@@ -11,7 +11,11 @@ JSX — синтаксический сахар для функции `React.cre
 Скомпилируется в:
 
 ```js
-React.createElement(MyButton, { color: 'blue', shadowSize: 2 }, 'Нажми меня')
+React.createElement(
+  MyButton,
+  { color: 'blue', shadowSize: 2 },
+  'Нажми меня'
+)
 ```
 
 Вы также можете использовать самозакрывающийся тег, если отсутствуют дочерние элементы. Поэтому код:
@@ -59,8 +63,13 @@ import React from 'react'
 
 const MyComponents = {
   DatePicker: function DatePicker(props) {
-    return <div>Представьте, что здесь цвет {props.color} виджета выбора даты.</div>
-  }
+    return (
+      <div>
+        Представьте, что здесь цвет {props.color} виджета
+        выбора даты.
+      </div>
+    )
+  },
 }
 
 function BlueDatePicker() {
@@ -137,7 +146,7 @@ import { PhotoStory, VideoStory } from './stories'
 
 const components = {
   photo: PhotoStory,
-  video: VideoStory
+  video: VideoStory,
 }
 
 function Story(props) {
@@ -231,16 +240,20 @@ function App2() {
 Вы так же можете выбрать конкретные пропсы, которые ваш компонент будет использовать, передавая все остальные пропсы с помощью оператора расширения.
 
 ```js
-const Button = props => {
+const Button = (props) => {
   const { kind, ...other } = props
-  const className = kind === 'primary' ? 'PrimaryButton' : 'SecondaryButton'
+  const className =
+    kind === 'primary' ? 'PrimaryButton' : 'SecondaryButton'
   return <button className={className} {...other} />
 }
 
 const App = () => {
   return (
     <div>
-      <Button kind="primary" onClick={() => console.log('Кнопка нажата!')}>
+      <Button
+        kind="primary"
+        onClick={() => console.log('Кнопка нажата!')}
+      >
         Привет, мир!
       </Button>
     </div>
@@ -346,10 +359,14 @@ function Item(props) {
 }
 
 function TodoList() {
-  const todos = ['закончить документацию', 'отправить пулреквест', 'снова напомнить Дэну про ревью']
+  const todos = [
+    'закончить документацию',
+    'отправить пулреквест',
+    'снова напомнить Дэну про ревью',
+  ]
   return (
     <ul>
-      {todos.map(message => (
+      {todos.map((message) => (
         <Item key={message} message={message} />
       ))}
     </ul>
@@ -380,7 +397,15 @@ function Repeat(props) {
 }
 
 function ListOfTenThings() {
-  return <Repeat numTimes={10}>{index => <div key={index}>Это элемент списка с ключом {index}</div>}</Repeat>
+  return (
+    <Repeat numTimes={10}>
+      {(index) => (
+        <div key={index}>
+          Это элемент списка с ключом {index}
+        </div>
+      )}
+    </Repeat>
+  )
 }
 ```
 
@@ -416,13 +441,21 @@ function ListOfTenThings() {
 Есть один нюанс в том, что React будет рендерить [«ложные» (falsy) значения](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), такие как число `0`. Код ниже ведёт себя не так, как вы могли ожидать, так как `0` будет отображён, если массив `props.messages` пуст:
 
 ```js
-<div>{props.messages.length && <MessageList messages={props.messages} />}</div>
+<div>
+  {props.messages.length && (
+    <MessageList messages={props.messages} />
+  )}
+</div>
 ```
 
 Чтобы исправить это, убедитесь что выражение перед оператором `&&` всегда является boolean:
 
 ```js
-<div>{props.messages.length > 0 && <MessageList messages={props.messages} />}</div>
+<div>
+  {props.messages.length > 0 && (
+    <MessageList messages={props.messages} />
+  )}
+</div>
 ```
 
 И наоборот, если вы хотите, чтобы такие значения как `false`, `true`, `null` или `undefined` отрисовались, то сначала вы должны [преобразовать их в строку](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#Example:_String_conversion):

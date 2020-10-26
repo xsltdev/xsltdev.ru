@@ -119,7 +119,7 @@ class Columns extends React.Component {
 function Glossary(props) {
   return (
     <dl>
-      {props.items.map(item => (
+      {props.items.map((item) => (
         // Без указания атрибута `key`, React выдаст предупреждение об его отсутствии
         <React.Fragment key={item.id}>
           <dt>{item.term}</dt>

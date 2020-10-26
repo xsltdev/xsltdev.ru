@@ -13,7 +13,7 @@ description: Начнем с изучения тестирования серв�
 ```ts
 beforeEach(() => {
   TestBed.configureTestingModule({
-    providers: [AppService]
+    providers: [AppService],
   })
 })
 ```
@@ -26,7 +26,7 @@ beforeEach(() => {
 describe('AppService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AppService]
+      providers: [AppService],
     })
 
     appService = TestBed.get(AppService)
@@ -59,12 +59,17 @@ describe('AppService', () => {
 ```ts
 describe('AppService', () => {
   beforeEach(() => {
-    const appServiceSpy = jasmine.createSpyObj('AppService', {
-      getData: [1, 2, 3]
-    })
+    const appServiceSpy = jasmine.createSpyObj(
+      'AppService',
+      {
+        getData: [1, 2, 3],
+      }
+    )
 
     TestBed.configureTestingModule({
-      providers: [{ provide: AppService, useValue: appServiceSpy }]
+      providers: [
+        { provide: AppService, useValue: appServiceSpy },
+      ],
     })
 
     appService = TestBed.get(AppService)
@@ -75,7 +80,10 @@ describe('AppService', () => {
 
     appService.getData.and.returnValue(data)
 
-    expect(appService.getData().length).toBe(data.length, 'length should be 3')
+    expect(appService.getData().length).toBe(
+      data.length,
+      'length should be 3'
+    )
   })
 })
 ```
@@ -86,7 +94,7 @@ describe('AppService', () => {
 
 ```ts
 const appServiceSpy = jasmine.createSpyObj('AppService', {
-  getData: [1, 2, 3]
+  getData: [1, 2, 3],
 })
 ```
 
@@ -115,7 +123,7 @@ _app.service.spec.ts_
 ```ts
 import {
   HttpClientTestingModule,
-  HttpTestingController
+  HttpTestingController,
 } from '@angular/common/http/testing'
 import { TestBed } from '@angular/core/testing'
 
@@ -125,17 +133,21 @@ describe('AppService - testing HTTP request method getData()', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [AppService]
+      providers: [AppService],
     })
 
     appService = TestBed.get(AppService)
-    httpTestingController = TestBed.get(HttpTestingController)
+    httpTestingController = TestBed.get(
+      HttpTestingController
+    )
   })
 
   it('can test HttpClient.get', () => {
     const data = [1, 2, 3]
 
-    appService.getData().subscribe(response => expect(response).toBe(data))
+    appService
+      .getData()
+      .subscribe((response) => expect(response).toBe(data))
 
     const req = httpTestingController.expectOne('/api/data')
 
@@ -169,7 +181,7 @@ it('can test HttpClient.get', () => {
   const message = 'Session expired'
 
   appService.getData().subscribe(
-    response => fail('should fail with the 401 error'),
+    (response) => fail('should fail with the 401 error'),
     (err: HttpErrorResponse) => {
       expect(err.status).toBe(401, 'status')
       expect(err.error).toBe(message, 'message')
@@ -180,7 +192,10 @@ it('can test HttpClient.get', () => {
 
   expect(req.request.method).toBe('GET')
 
-  req.flush(message, { status: 401, statusText: 'Unauthorized' })
+  req.flush(message, {
+    status: 401,
+    statusText: 'Unauthorized',
+  })
 })
 ```
 
@@ -188,7 +203,7 @@ it('can test HttpClient.get', () => {
 
 ```ts
 const error = new ErrorEvent('Network error', {
-  message: 'Something wrong with network'
+  message: 'Something wrong with network',
 })
 
 req.error(error)

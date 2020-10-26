@@ -12,7 +12,7 @@ const hbs = require('hbs')
 
 const app = express()
 
-hbs.registerHelper('getTime', function() {
+hbs.registerHelper('getTime', function () {
   var myDate = new Date()
   var hour = myDate.getHours()
   var minute = myDate.getMinutes()
@@ -23,12 +23,14 @@ hbs.registerHelper('getTime', function() {
   if (second < 10) {
     second = '0' + second
   }
-  return 'Текущее время: ' + hour + ':' + minute + ':' + second
+  return (
+    'Текущее время: ' + hour + ':' + minute + ':' + second
+  )
 })
 
 app.set('view engine', 'hbs')
 
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.render('home.hbs')
 })
 
@@ -65,7 +67,7 @@ const hbs = require('hbs')
 
 const app = express()
 
-hbs.registerHelper('getTime', function() {
+hbs.registerHelper('getTime', function () {
   var myDate = new Date()
   var hour = myDate.getHours()
   var minute = myDate.getMinutes()
@@ -76,10 +78,12 @@ hbs.registerHelper('getTime', function() {
   if (second < 10) {
     second = '0' + second
   }
-  return 'Текущее время: ' + hour + ':' + minute + ':' + second
+  return (
+    'Текущее время: ' + hour + ':' + minute + ':' + second
+  )
 })
 
-hbs.registerHelper('createStringList', function(array) {
+hbs.registerHelper('createStringList', function (array) {
   var result = ''
   for (var i = 0; i < array.length; i++) {
     result += '<li>' + array[i] + '</li>'
@@ -89,9 +93,9 @@ hbs.registerHelper('createStringList', function(array) {
 
 app.set('view engine', 'hbs')
 
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.render('home.hbs', {
-    fruit: ['apple', 'lemon', 'banana', 'grape']
+    fruit: ['apple', 'lemon', 'banana', 'grape'],
   })
 })
 app.listen(3000)

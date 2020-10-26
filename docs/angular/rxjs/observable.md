@@ -5,13 +5,13 @@
 Пример с оператором `of()`.
 
 ```ts
-of('Hello').subscribe(vl => console.log(vl))
+of('Hello').subscribe((vl) => console.log(vl))
 ```
 
 Пример с `new Observable`.
 
 ```ts
-const obs = new Observable(sub => {
+const obs = new Observable((sub) => {
   sub.next(1)
 
   setTimeout(() => {
@@ -20,7 +20,7 @@ const obs = new Observable(sub => {
   }, 500)
 })
 
-obs.subscribe(vl => console.log(vl))
+obs.subscribe((vl) => console.log(vl))
 ```
 
 Каждый `Observable` может отправлять своим "потребителям" уведомления вызовом одного из трех методов:
@@ -32,7 +32,7 @@ obs.subscribe(vl => console.log(vl))
 Но исполнение RxJS Observable начнется только после вызова у него метода `subscribe()`, который принимает функцию с передаваемыми данными в качестве аргумента. Вторым и третьим необязательными параметрами методу `subscribe()` можно передать функции, которые будут вызваны в случае ошибки или (и) завершения `Observable`.
 
 ```ts
-const obs = new Observable(sub => {
+const obs = new Observable((sub) => {
   sub.next(1)
 
   setTimeout(() => {
@@ -41,8 +41,8 @@ const obs = new Observable(sub => {
 })
 
 obs.subscribe(
-  vl => console.log(vl),
-  err => console.log('Error: ', err),
+  (vl) => console.log(vl),
+  (err) => console.log('Error: ', err),
   () => console.log('Completed')
 )
 ```

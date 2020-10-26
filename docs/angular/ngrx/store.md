@@ -20,7 +20,10 @@ _users.reducer.ts_
 export interface State {
   /* ... */
 }
-export function usersReducer(state: State = initialState, action: UsersUnion) {
+export function usersReducer(
+  state: State = initialState,
+  action: UsersUnion
+) {
   /* ... */
 }
 ```
@@ -52,7 +55,7 @@ export interface State {
 
 export const reducers: ActionReducerMap<State> = {
   users: Users.usersReducer,
-  articles: Articles.articlesReducer
+  articles: Articles.articlesReducer,
 }
 ```
 
@@ -62,7 +65,7 @@ _app.module.ts_
 import { reducers } from './store/reducers/index'
 
 @NgModule({
-  imports: [StoreModule.forRoot(reducers)]
+  imports: [StoreModule.forRoot(reducers)],
 })
 export class AppModule {}
 ```
@@ -77,7 +80,10 @@ _users.module.ts_
 import { usersReducer } from './reducers/users.reducer'
 
 @NgModule({
-  imports: [StoreModule.forFeature('users', usersReducer), UsersModule]
+  imports: [
+    StoreModule.forFeature('users', usersReducer),
+    UsersModule,
+  ],
 })
 export class UsersModule {}
 ```
@@ -86,7 +92,7 @@ _app.module.ts_
 
 ```ts
 @NgModule({
-  imports: [StoreModule.forRoot({}), UsersModule]
+  imports: [StoreModule.forRoot({}), UsersModule],
   // ...
 })
 export class AppModule {}
@@ -105,7 +111,7 @@ import { Action } from '@ngrx/store'
 
 export enum ArticlesActions {
   LoadArticle = '[Articles Page] LoadArticle',
-  PublishArticle = '[Articles Page] PublishArticle'
+  PublishArticle = '[Articles Page] PublishArticle',
 }
 
 export interface Article {
@@ -166,15 +172,19 @@ _app.component.ts_
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   constructor(private store: Store) {
-    this.store.subscribe(state => console.log(state))
+    this.store.subscribe((state) => console.log(state))
 
     this.store.dispatch(
       new LoadArticle({
-        article: { id: 1, title: 'Learn NgRx', publish: false }
+        article: {
+          id: 1,
+          title: 'Learn NgRx',
+          publish: false,
+        },
       })
     )
 

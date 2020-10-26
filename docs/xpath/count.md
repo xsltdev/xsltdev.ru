@@ -19,49 +19,54 @@ number count( node-set )
 XML-файл (test.xml)
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <test>
-    <x a="1">
-        <x a="2">
-        <x>
-            <y>y31</y>
-            <y>y32</y>
-        </x>
-        </x>
+  <x a="1">
+    <x a="2">
+      <x>
+        <y>y31</y>
+        <y>y32</y>
+      </x>
     </x>
-    <x a="1">
-        <x a="2">
-        <y>y21</y>
-        <y>y22</y>
-        </x>
+  </x>
+  <x a="1">
+    <x a="2">
+      <y>y21</y>
+      <y>y22</y>
     </x>
-    <x a="1">
-        <y>y11</y>
-        <y>y12</y>
-    </x>
-    <x>
-        <y>y03</y>
-        <y>y04</y>
-    </x>
+  </x>
+  <x a="1">
+    <y>y11</y>
+    <y>y12</y>
+  </x>
+  <x>
+    <y>y03</y>
+    <y>y04</y>
+  </x>
 </test>
 ```
 
 XSLT-файл (test.xsl)
 
 ```xml
-<?xml version='1.0'?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-    <xsl:output method="text" />
-
-    <xsl:template match="/">
-        //x,         <xsl:value-of select="count(//x)"/>
-        //x[1],      <xsl:value-of select="count(//x[1])"/>
-        //x/y,       <xsl:value-of select="count(//x/y)"/>
-        //x/y[1],    <xsl:value-of select="count(//x/y[1])"/>
-        //x[1]/y[1], <xsl:value-of select="count(//x[1]/y[1])"/>
-    </xsl:template>
-
+<?xml version='1.0' ?>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="text" />
+  <xsl:template match="/">
+    //x,
+    <xsl:value-of select="count(//x)" />
+    //x[1],
+    <xsl:value-of select="count(//x[1])" />
+    //x/y,
+    <xsl:value-of select="count(//x/y)" />
+    //x/y[1],
+    <xsl:value-of select="count(//x/y[1])" />
+    //x[1]/y[1],
+    <xsl:value-of select="count(//x[1]/y[1])" />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

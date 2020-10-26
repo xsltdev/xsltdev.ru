@@ -96,7 +96,10 @@ export class HttpService {
   // http://localhost:60820/api/values        ASP NET Wep API 2
   postData(user: User) {
     const body = { name: user.name, age: user.age }
-    return this.http.post('http://localhost:60820/api/values', body)
+    return this.http.post(
+      'http://localhost:60820/api/values',
+      body
+    )
   }
 }
 ```
@@ -117,7 +120,11 @@ import { User } from './user'
   template: `
     <div class="form-group">
       <label>Имя</label>
-      <input class="form-control" name="username" [(ngModel)]="user.name" />
+      <input
+        class="form-control"
+        name="username"
+        [(ngModel)]="user.name"
+      />
     </div>
     <div class="form-group">
       <label>Возраст</label>
@@ -129,7 +136,12 @@ import { User } from './user'
       />
     </div>
     <div class="form-group">
-      <button class="btn btn-default" (click)="submit(user)">Отправить</button>
+      <button
+        class="btn btn-default"
+        (click)="submit(user)"
+      >
+        Отправить
+      </button>
     </div>
     <div *ngIf="done">
       <div>Получено от сервера:</div>
@@ -137,7 +149,7 @@ import { User } from './user'
       <div>Возраст: {{ receivedUser.age }}</div>
     </div>
   `,
-  providers: [HttpService]
+  providers: [HttpService],
 })
 export class AppComponent {
   user: User = new User() // данные вводимого пользователя
@@ -151,7 +163,7 @@ export class AppComponent {
         this.receivedUser = data
         this.done = true
       },
-      error => console.log(error)
+      (error) => console.log(error)
     )
   }
 }
@@ -178,7 +190,10 @@ export class HttpService {
   //http://localhost:8080/angular/setUser.php     PHP
   // http://localhost:60820/api/values
   postData(user: User) {
-    return this.http.post('http://localhost:60820/api/values', user)
+    return this.http.post(
+      'http://localhost:60820/api/values',
+      user
+    )
   }
 }
 ```
@@ -187,7 +202,10 @@ export class HttpService {
 
 ```typescript
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import {
+  HttpClient,
+  HttpHeaders,
+} from '@angular/common/http'
 import { User } from './user'
 
 @Injectable()
@@ -198,11 +216,18 @@ export class HttpService {
   //http://localhost:8080/angular/setUser.php     PHP
   // http://localhost:60820/api/post
   postData(user: User) {
-    const myHeaders = new HttpHeaders().set('Authorization', 'my-auth-token')
+    const myHeaders = new HttpHeaders().set(
+      'Authorization',
+      'my-auth-token'
+    )
 
-    return this.http.post('http://localhost:60820/api/values', user, {
-      headers: myHeaders
-    })
+    return this.http.post(
+      'http://localhost:60820/api/values',
+      user,
+      {
+        headers: myHeaders,
+      }
+    )
   }
 }
 ```

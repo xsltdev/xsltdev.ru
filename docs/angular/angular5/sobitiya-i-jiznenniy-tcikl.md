@@ -26,10 +26,11 @@ import {
   EventEmitter,
   Output,
   ViewChild,
-  ElementRef
+  ElementRef,
 } from '@angular/core'
 
-export class CockpitComponent implements OnInit, ngOnChanges {
+export class CockpitComponent
+  implements OnInit, ngOnChanges {
   //...
 }
 ```

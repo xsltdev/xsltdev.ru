@@ -35,21 +35,21 @@ node-set id( object )
 ```xml
 <!DOCTYPE vertices SYSTEM "gemini.dtd">
 <vertices>
-    <vertex name="alpha" connects="tau"/>
-    <vertex name="beta" connects="upsilon"/>
-    <vertex name="gamma" connects="zeta"/>
-    <vertex name="delta" connects="zeta lambda upsilon"/>
-    <vertex name="epsilon" connects="nu mu tau"/>
-    <vertex name="zeta" connects="delta gamma"/>
-    <vertex name="theta" connects="tau"/>
-    <vertex name="iota" connects="tau upsilon"/>
-    <vertex name="kappa" connects="upsilon"/>
-    <vertex name="lambda" connects="delta xi"/>
-    <vertex name="mu" connects="epsilon"/>
-    <vertex name="nu" connects="epsilon"/>
-    <vertex name="xi" connects="lambda"/>
-    <vertex name="tau" connects="alpha theta iota epsilon"/>
-    <vertex name="upsilon" connects="beta iota kappa delta"/>
+  <vertex name="alpha" connects="tau" />
+  <vertex name="beta" connects="upsilon" />
+  <vertex name="gamma" connects="zeta" />
+  <vertex name="delta" connects="zeta lambda upsilon" />
+  <vertex name="epsilon" connects="nu mu tau" />
+  <vertex name="zeta" connects="delta gamma" />
+  <vertex name="theta" connects="tau" />
+  <vertex name="iota" connects="tau upsilon" />
+  <vertex name="kappa" connects="upsilon" />
+  <vertex name="lambda" connects="delta xi" />
+  <vertex name="mu" connects="epsilon" />
+  <vertex name="nu" connects="epsilon" />
+  <vertex name="xi" connects="lambda" />
+  <vertex name="tau" connects="alpha theta iota epsilon" />
+  <vertex name="upsilon" connects="beta iota kappa delta" />
 </vertices>
 ```
 
@@ -80,23 +80,30 @@ id(@connects)|id(id(@connects)/@connects)
 Листинг 6.15. Преобразование `gemini.xsl`
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output doctype-system="gemini.dtd"/>
-    <xsl:template match="vertices">
-        <xsl:copy>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="vertex">
-        <vertex name="{@name}" connects="{@connects}">
-            <xsl:comment>
-                <xsl:for-each select="id(@connects)|id(id@connects)/@connects)">
-                    <xsl:text> </xsl:text>
-                    <xsl:value-of select="@name"/>
-                </xsl:for-each>
-            </xsl:comment>
-        </vertex>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output doctype-system="gemini.dtd" />
+  <xsl:template match="vertices">
+    <xsl:copy>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="vertex">
+    <vertex name="{@name}" connects="{@connects}">
+      <xsl:comment>
+        <xsl:for-each
+          select="id(@connects)|id(id@connects)/@connects)"
+        >
+          <xsl:text>
+
+          </xsl:text>
+          <xsl:value-of select="@name" />
+        </xsl:for-each>
+      </xsl:comment>
+    </vertex>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -105,51 +112,51 @@ id(@connects)|id(id(@connects)/@connects)
 ```xml
 <!DOCTYPE vertices SYSTEM "gemini.dtd">
 <vertices>
-    <vertex name="alpha" connects="tau">
-        <!-- alpha epsilon theta iota tau-->
-    </vertex>
-    <vertex name="beta" connects="upsilon">
-        <!-- beta delta iota kappa upsilon-->
-    </vertex>
-    <vertex name="gamma" connects="zeta">
-        <!-- gamma delta zeta-->
-    </vertex>
-    <vertex name="delta" connects="zeta lambda upsilon">
-        <!-- beta gamma delta zeta iota kappa lambda xi upsilon-->
-    </vertex>
-    <vertex name="epsilon" connects="nu mu tau">
-        <!-- alpha epsilon theta iota mu nu tau-->
-    </vertex>
-    <vertex name="zeta" connects="delta gamma">
-        <!-- gamma delta zeta lambda upsilon-->
-    </vertex>
-    <vertex name="theta" connects="tau">
-        <!-- alpha epsilon theta iota tau-->
-    </vertex>
-    <vertex name="iota" connects="tau upsilon">
-        <!-- alpha beta delta epsilon theta iota kappa tau upsilon-->
-    </vertex>
-    <vertex name="kappa" connects="upsilon">
-        <!-- beta delta iota kappa upsilon-->
-    </vertex>
-    <vertex name="lambda" connects="delta xi">
-        <!-- delta zeta lambda xi upsilon-->
-    </vertex>
-    <vertex name="mu" connects="epsilon">
-        <!-- epsilon mu nu tau-->
-    </vertex>
-    <vertex name="nu" connects="epsilon">
-        <!-- epsilon mu nu tau-->
-    </vertex>
-    <vertex name="xi" connects="lambda">
-        <!-- delta lambda xi-->
-    </vertex>
-    <vertex name="tau" connects="alpha theta iota epsilon">
-        <!-- alpha epsilon theta iota mu nu tau upsilon-->
-    </vertex>
-    <vertex name="upsilon" connects="beta iota kappa delta">
-        <!-- beta delta zeta iota kappa lambda tau upsilon-->
-    </vertex>
+  <vertex name="alpha" connects="tau">
+    <!-- alpha epsilon theta iota tau-->
+  </vertex>
+  <vertex name="beta" connects="upsilon">
+    <!-- beta delta iota kappa upsilon-->
+  </vertex>
+  <vertex name="gamma" connects="zeta">
+    <!-- gamma delta zeta-->
+  </vertex>
+  <vertex name="delta" connects="zeta lambda upsilon">
+    <!-- beta gamma delta zeta iota kappa lambda xi upsilon-->
+  </vertex>
+  <vertex name="epsilon" connects="nu mu tau">
+    <!-- alpha epsilon theta iota mu nu tau-->
+  </vertex>
+  <vertex name="zeta" connects="delta gamma">
+    <!-- gamma delta zeta lambda upsilon-->
+  </vertex>
+  <vertex name="theta" connects="tau">
+    <!-- alpha epsilon theta iota tau-->
+  </vertex>
+  <vertex name="iota" connects="tau upsilon">
+    <!-- alpha beta delta epsilon theta iota kappa tau upsilon-->
+  </vertex>
+  <vertex name="kappa" connects="upsilon">
+    <!-- beta delta iota kappa upsilon-->
+  </vertex>
+  <vertex name="lambda" connects="delta xi">
+    <!-- delta zeta lambda xi upsilon-->
+  </vertex>
+  <vertex name="mu" connects="epsilon">
+    <!-- epsilon mu nu tau-->
+  </vertex>
+  <vertex name="nu" connects="epsilon">
+    <!-- epsilon mu nu tau-->
+  </vertex>
+  <vertex name="xi" connects="lambda">
+    <!-- delta lambda xi-->
+  </vertex>
+  <vertex name="tau" connects="alpha theta iota epsilon">
+    <!-- alpha epsilon theta iota mu nu tau upsilon-->
+  </vertex>
+  <vertex name="upsilon" connects="beta iota kappa delta">
+    <!-- beta delta zeta iota kappa lambda tau upsilon-->
+  </vertex>
 </vertices>
 ```
 

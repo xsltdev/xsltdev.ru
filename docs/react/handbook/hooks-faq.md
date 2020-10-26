@@ -115,7 +115,9 @@ function Example() {
   return (
     <div>
       <p>Вы кликнули {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>Кликни меня</button>
+      <button onClick={() => setCount(count + 1)}>
+        Кликни меня
+      </button>
     </div>
   )
 }
@@ -153,7 +155,9 @@ it('can render and update a counter', () => {
 
   // Тестируем второй рендер и эффект
   act(() => {
-    button.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    button.dispatchEvent(
+      new MouseEvent('click', { bubbles: true })
+    )
   })
   expect(label.textContent).toBe('Вы кликнули 1 раз')
   expect(document.title).toBe('Вы кликнули 1 раз')
@@ -234,7 +238,12 @@ function handleCancelClick() {
 
 ```js
 function Box() {
-  const [state, setState] = useState({ left: 0, top: 0, width: 100, height: 100 })
+  const [state, setState] = useState({
+    left: 0,
+    top: 0,
+    width: 100,
+    height: 100,
+  })
   // ...
 }
 ```
@@ -246,11 +255,22 @@ function Box() {
 useEffect(() => {
   function handleWindowMouseMove(e) {
     // Использование "...state" гарантирует, что мы не потеряем width и height
-    setState(state => ({ ...state, left: e.pageX, top: e.pageY }))
+    setState((state) => ({
+      ...state,
+      left: e.pageX,
+      top: e.pageY,
+    }))
   }
   // Примечание: эта реализация немного упрощена
-  window.addEventListener('mousemove', handleWindowMouseMove)
-  return () => window.removeEventListener('mousemove', handleWindowMouseMove)
+  window.addEventListener(
+    'mousemove',
+    handleWindowMouseMove
+  )
+  return () =>
+    window.removeEventListener(
+      'mousemove',
+      handleWindowMouseMove
+    )
 }, [])
 // ...
 ```
@@ -278,12 +298,18 @@ function Box() {
 ```js
 function Box() {
   const position = useWindowPosition()
-  const [size, setSize] = useState({ width: 100, height: 100 })
+  const [size, setSize] = useState({
+    width: 100,
+    height: 100,
+  })
   // ...
 }
 
 function useWindowPosition() {
-  const [position, setPosition] = useState({ left: 0, top: 0 })
+  const [position, setPosition] = useState({
+    left: 0,
+    top: 0,
+  })
   useEffect(() => {
     // ...
   }, [])
@@ -375,8 +401,12 @@ function Example() {
   return (
     <div>
       <p>Вы кликнули {count} раз(а)</p>
-      <button onClick={() => setCount(count + 1)}>Кликни меня</button>
-      <button onClick={handleAlertClick}>Показать предупреждение</button>
+      <button onClick={() => setCount(count + 1)}>
+        Кликни меня
+      </button>
+      <button onClick={handleAlertClick}>
+        Показать предупреждение
+      </button>
     </div>
   )
 }
@@ -401,7 +431,9 @@ function Example() {
 
 ```js
 function ScrollView({ row }) {
-  let [isScrollingDown, setIsScrollingDown] = useState(false)
+  let [isScrollingDown, setIsScrollingDown] = useState(
+    false
+  )
   let [prevRow, setPrevRow] = useState(null)
 
   if (row !== prevRow) {
@@ -423,7 +455,7 @@ function ScrollView({ row }) {
 Обычно, вы не должны мутировать внутреннее состояние в React. Однако, в качестве лазейки, вы можете использовать увеличивающийся счётчик, чтобы заставить компонент повторно рендериться, если состояние не изменилось:
 
 ```js
-const [ignored, forceUpdate] = useReducer(x => x + 1, 0)
+const [ignored, forceUpdate] = useReducer((x) => x + 1, 0)
 
 function handleClick() {
   forceUpdate()
@@ -444,7 +476,7 @@ function handleClick() {
 function MeasureExample() {
   const [height, setHeight] = useState(0)
 
-  const measuredRef = useCallback(node => {
+  const measuredRef = useCallback((node) => {
     if (node !== null) {
       setHeight(node.getBoundingClientRect().height)
     }
@@ -453,7 +485,10 @@ function MeasureExample() {
   return (
     <>
       <h1 ref={measuredRef}>Привет, мир</h1>
-      <h2>Заголовок выше имеет высоту {Math.round(height)} пикселей</h2>
+      <h2>
+        Заголовок выше имеет высоту {Math.round(height)}{' '}
+        пикселей
+      </h2>
     </>
   )
 }
@@ -471,14 +506,19 @@ function MeasureExample() {
   return (
     <>
       <h1 ref={ref}>Привет, мир</h1>
-      {rect !== null && <h2>Заголовок выше имеет высоту {Math.round(rect.height)} пикселей</h2>}
+      {rect !== null && (
+        <h2>
+          Заголовок выше имеет высоту{' '}
+          {Math.round(rect.height)} пикселей
+        </h2>
+      )}
     </>
   )
 }
 
 function useClientRect() {
   const [rect, setRect] = useState(null)
-  const ref = useCallback(node => {
+  const ref = useCallback((node) => {
     if (node !== null) {
       setRect(node.getBoundingClientRect())
     }
@@ -557,7 +597,9 @@ function ProductPage({ productId }) {
   const [product, setProduct] = useState(null)
 
   async function fetchProduct() {
-    const response = await fetch('http://myapi/product' + productId) // Использует проп productId
+    const response = await fetch(
+      'http://myapi/product' + productId
+    ) // Использует проп productId
     const json = await response.json()
     setProduct(json)
   }
@@ -578,7 +620,9 @@ function ProductPage({ productId }) {
   useEffect(() => {
     // Переместив эту функцию внутрь эффекта, мы ясно видим, какие значения она использует.
     async function fetchProduct() {
-      const response = await fetch('http://myapi/product' + productId)
+      const response = await fetch(
+        'http://myapi/product' + productId
+      )
       const json = await response.json()
       setProduct(json)
     }
@@ -595,7 +639,9 @@ function ProductPage({ productId }) {
 useEffect(() => {
   let ignore = false
   async function fetchProduct() {
-    const response = await fetch('http://myapi/product/' + productId)
+    const response = await fetch(
+      'http://myapi/product/' + productId
+    )
     const json = await response.json()
     if (!ignore) setProduct(json)
   }
@@ -664,7 +710,7 @@ function Counter() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setCount(c => c + 1) // ✅ Эта строчка не зависит от внешней переменной `count`
+      setCount((c) => c + 1) // ✅ Эта строчка не зависит от внешней переменной `count`
     }, 1000)
     return () => clearInterval(id)
   }, []) // ✅ Наш эффект не использует никаких переменных из области видимости компонента
@@ -706,7 +752,7 @@ function Example(props) {
 Вы можете обернуть функциональный компонент в вызов `React.memo` для поверхностного сравнения его пропсов:
 
 ```js
-const Button = React.memo(props => {
+const Button = React.memo((props) => {
   // ваш компонент
 })
 ```
@@ -720,7 +766,10 @@ const Button = React.memo(props => {
 Хук [`useMemo`](hooks-reference.md#usememo) позволяет вам закешировать вычисления между несколькими рендерами, путём запоминания прошлого результата:
 
 ```js
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
+const memoizedValue = useMemo(
+  () => computeExpensiveValue(a, b),
+  [a, b]
+)
 ```
 
 Этот код вызовет `computeExpensiveValue(a, b)`. Но если зависимости `[a, b]` не изменились с прошлого рендера, `useMemo` пропустит повторный вызов и повторно использует значения, которые он вернул в прошлый раз.
@@ -767,7 +816,9 @@ function Table(props) {
 ```js
 function Table(props) {
   // ✅ createRows() будет вызван только один раз
-  const [rows, setRows] = useState(() => createRows(props.count))
+  const [rows, setRows] = useState(() =>
+    createRows(props.count)
+  )
   // ...
 }
 ```
@@ -862,7 +913,9 @@ function DeepChild(props) {
     dispatch({ type: 'add', text: 'Привет' })
   }
 
-  return <button onClick={handleClick}>Добавить задание</button>
+  return (
+    <button onClick={handleClick}>Добавить задание</button>
+  )
 }
 ```
 
@@ -896,7 +949,10 @@ function Form() {
 
   return (
     <>
-      <input value={text} onChange={e => updateText(e.target.value)} />
+      <input
+        value={text}
+        onChange={(e) => updateText(e.target.value)}
+      />
       <ExpensiveTree onSubmit={handleSubmit} />
     </>
   )
@@ -915,7 +971,10 @@ function Form() {
 
   return (
     <>
-      <input value={text} onChange={e => updateText(e.target.value)} />
+      <input
+        value={text}
+        onChange={(e) => updateText(e.target.value)}
+      />
       <ExpensiveTree onSubmit={handleSubmit} />
     </>
   )
@@ -923,7 +982,9 @@ function Form() {
 
 function useEventCallback(fn, dependencies) {
   const ref = useRef(() => {
-    throw new Error('Невозможно вызвать обработчик события во время рендера.')
+    throw new Error(
+      'Невозможно вызвать обработчик события во время рендера.'
+    )
   })
 
   useEffect(() => {

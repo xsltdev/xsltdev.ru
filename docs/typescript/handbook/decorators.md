@@ -54,7 +54,7 @@ _Фабрика Декораторов_ — это функция, возвра�
 ```ts
 function color(value: string) {
   // это фабрика декораторов
-  return function(target) {
+  return function (target) {
     // это декоратор
     // сделать что-то с переменными 'target' и 'value'...
   }
@@ -93,14 +93,22 @@ function color(value: string) {
 ```ts
 function f() {
   console.log('f(): вычисляется')
-  return function(target, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (
+    target,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
     console.log('f(): вызван')
   }
 }
 
 function g() {
   console.log('g(): вычисляется')
-  return function(target, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (
+    target,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
     console.log('g(): вызван')
   }
 }
@@ -207,7 +215,11 @@ class Greeter {
 
 ```ts
 function enumerable(value: boolean) {
-  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
     descriptor.enumerable = value
   }
 }
@@ -265,7 +277,11 @@ class Point {
 
 ```ts
 function configurable(value: boolean) {
-  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
     descriptor.configurable = value
   }
 }
@@ -318,7 +334,11 @@ function format(formatString: string) {
 }
 
 function getFormat(target: any, propertyKey: string) {
-  return Reflect.getMetadata(formatMetadataKey, target, propertyKey)
+  return Reflect.getMetadata(
+    formatMetadataKey,
+    target,
+    propertyKey
+  )
 }
 ```
 
@@ -369,20 +389,47 @@ import 'reflect-metadata'
 
 const requiredMetadataKey = Symbol('required')
 
-function required(target: Object, propertyKey: string | symbol, parameterIndex: number) {
-  let existingRequiredParameters: number[] = Reflect.getOwnMetadata(requiredMetadataKey, target, propertyKey) || []
+function required(
+  target: Object,
+  propertyKey: string | symbol,
+  parameterIndex: number
+) {
+  let existingRequiredParameters: number[] =
+    Reflect.getOwnMetadata(
+      requiredMetadataKey,
+      target,
+      propertyKey
+    ) || []
   existingRequiredParameters.push(parameterIndex)
-  Reflect.defineMetadata(requiredMetadataKey, existingRequiredParameters, target, propertyKey)
+  Reflect.defineMetadata(
+    requiredMetadataKey,
+    existingRequiredParameters,
+    target,
+    propertyKey
+  )
 }
 
-function validate(target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) {
+function validate(
+  target: any,
+  propertyName: string,
+  descriptor: TypedPropertyDescriptor<Function>
+) {
   let method = descriptor.value
-  descriptor.value = function() {
-    let requiredParameters: number[] = Reflect.getOwnMetadata(requiredMetadataKey, target, propertyName)
+  descriptor.value = function () {
+    let requiredParameters: number[] = Reflect.getOwnMetadata(
+      requiredMetadataKey,
+      target,
+      propertyName
+    )
     if (requiredParameters) {
       for (let parameterIndex of requiredParameters) {
-        if (parameterIndex >= arguments.length || arguments[parameterIndex] === undefined) {
-          throw new Error('Отсутствуют требуемые аргументы.')
+        if (
+          parameterIndex >= arguments.length ||
+          arguments[parameterIndex] === undefined
+        ) {
+          throw new Error(
+            'Отсутствуют требуемые аргументы.'
+          )
         }
       }
     }
@@ -464,10 +511,18 @@ class Line {
   }
 }
 
-function validate<T>(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<T>) {
+function validate<T>(
+  target: any,
+  propertyKey: string,
+  descriptor: TypedPropertyDescriptor<T>
+) {
   let set = descriptor.set
-  descriptor.set = function(value: T) {
-    let type = Reflect.getMetadata('design:type', target, propertyKey)
+  descriptor.set = function (value: T) {
+    let type = Reflect.getMetadata(
+      'design:type',
+      target,
+      propertyKey
+    )
     if (!(value instanceof type)) {
       throw new TypeError('Недопустимый тип.')
     }

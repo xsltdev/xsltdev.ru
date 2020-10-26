@@ -9,7 +9,7 @@
 
 ## Сборка справочника
 
-Для сборки справочника нужно [установить MKDocs](https://www.mkdocs.org/#installation), 
+Для сборки справочника нужно [установить MKDocs](https://www.mkdocs.org/#installation),
 [расширения PyMdown](https://facelessuser.github.io/pymdown-extensions/installation/) и тему [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/):
 
 ```

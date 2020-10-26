@@ -125,7 +125,7 @@ import { AppComponent } from './app.component'
   declarations: [AppComponent],
   imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -148,7 +148,7 @@ _app.component.ts_
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'app'

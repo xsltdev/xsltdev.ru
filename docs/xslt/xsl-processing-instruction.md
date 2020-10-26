@@ -9,9 +9,8 @@ description: Элемент xsl:processing-instruction создает в рез�
 ## Синтаксис
 
 ```xml
-<xsl:processing-instruction
-    name = "ncname">
-    <!-- Содержимое: шаблон -->
+<xsl:processing-instruction name="ncname">
+  <!-- Содержимое: шаблон -->
 </xsl:processing-instruction>
 ```
 
@@ -28,7 +27,9 @@ description: Элемент xsl:processing-instruction создает в рез�
 
 ```xml
 <xsl:processing-instruction name="servlet">
-    <xsl:text>links="follow" session-timeout="7200000"</xsl:text>
+  <xsl:text>
+    links="follow" session-timeout="7200000"
+  </xsl:text>
 </xsl:processing-instruction>
 ```
 
@@ -48,7 +49,7 @@ description: Элемент xsl:processing-instruction создает в рез�
 
 ```xml
 <xsl:processing-instruction name="_">
-    <xsl:text>logout _</xsl:text>
+  <xsl:text>logout _</xsl:text>
 </xsl:processing-instruction>
 ```
 
@@ -62,7 +63,7 @@ description: Элемент xsl:processing-instruction создает в рез�
 
 ```xml
 <xsl:processing-instruction name="xml-stylesheet">
-    <xsl:text>href="style.xsl" type="text/xsl"</xsl:text>
+  <xsl:text>href="style.xsl" type="text/xsl"</xsl:text>
 </xsl:processing-instruction>
 ```
 

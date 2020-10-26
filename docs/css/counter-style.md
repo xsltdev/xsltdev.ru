@@ -128,7 +128,8 @@ symbols: indic-numbers;
 ```css
 @counter-style winners-list {
   system: fixed;
-  symbols: url('gold-medal.svg') url('silver-medal.svg') url('bronze-medal.svg');
+  symbols: url('gold-medal.svg') url('silver-medal.svg')
+    url('bronze-medal.svg');
   suffix: ' ';
 }
 ```

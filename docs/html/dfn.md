@@ -41,8 +41,8 @@ description: Тег dfn (от англ. definition - термин, опреде�
   </head>
   <body>
     <p>
-      <dfn>Капителью</dfn> в типографике называется текст, набранный прописными
-      буквами уменьшенного размера.
+      <dfn>Капителью</dfn> в типографике называется текст,
+      набранный прописными буквами уменьшенного размера.
     </p>
   </body>
 </html>
@@ -53,9 +53,10 @@ description: Тег dfn (от англ. definition - термин, опреде�
 ```html
 <!-- Define "The Internet" -->
 <p>
-  <dfn id="def-internet">The Internet</dfn> is a global system of interconnected
-  networks that use the Internet Protocol Suite (TCP/IP) to serve billions of
-  users worldwide.
+  <dfn id="def-internet">The Internet</dfn> is a global
+  system of interconnected networks that use the Internet
+  Protocol Suite (TCP/IP) to serve billions of users
+  worldwide.
 </p>
 ```
 
@@ -71,8 +72,9 @@ description: Тег dfn (от англ. definition - термин, опреде�
     </dfn>
   </dt>
   <dd>
-    The World-Wide Web (WWW) is a system of interlinked hypertext documents
-    accessed on <a href="#def-internet">the Internet</a>.
+    The World-Wide Web (WWW) is a system of interlinked
+    hypertext documents accessed on
+    <a href="#def-internet">the Internet</a>.
   </dd>
 </dl>
 ```

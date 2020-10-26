@@ -75,8 +75,9 @@ width: unset;
   <body>
     <div class="layer1">
       <p class="layer2">
-        Lorem ipsum dolor sit amet,consectetuer adipiscing elit,seddiem nonummy
-        nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.
+        Lorem ipsum dolor sit amet,consectetuer adipiscing
+        elit,seddiem nonummy nibh euismod tincidunt ut
+        lacreet dolore magna aliguam erat volutpat.
       </p>
     </div>
   </body>

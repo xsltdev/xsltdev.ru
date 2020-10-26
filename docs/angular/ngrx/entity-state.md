@@ -46,7 +46,9 @@ export interface State extends EntityState<Article> {
 Доступ к API для работы с сущностями предоставляет экземпляр класса `EntityAdapter`, который создается с явным указанием типа сущности.
 
 ```ts
-export const adapter: EntityAdapter<Article> = createEntityAdapter<Article>()
+export const adapter: EntityAdapter<Article> = createEntityAdapter<
+  Article
+>()
 ```
 
 Метод `createEntityAdapter()` принимает необязательный параметр - объект с свойствами:
@@ -55,9 +57,11 @@ export const adapter: EntityAdapter<Article> = createEntityAdapter<Article>()
 - `sortComparer` - функция для сортировки сущностей в массива, но помните, что CRUD операции будут выполняться быстрее, если не придется сортировать массив.
 
 ```ts
-export const adapter: EntityAdapter<Article> = createEntityAdapter<Article>({
-  selectId: item => item.id,
-  sortComparer: false //явное указание, что сортировать массив не нужно
+export const adapter: EntityAdapter<Article> = createEntityAdapter<
+  Article
+>({
+  selectId: (item) => item.id,
+  sortComparer: false, //явное указание, что сортировать массив не нужно
 })
 ```
 
@@ -80,7 +84,7 @@ NgRx Entity Adapter имеет обширное API для работы с су�
 
 ```ts
 export const initialState: State = adapter.getInitialState({
-  currentArticle: null
+  currentArticle: null,
 })
 ```
 
@@ -100,7 +104,7 @@ export enum ArticleActionTypes {
   MapArticles = '[Articles Page] Map Articles',
   DeleteArticle = '[Articles Page] Delete Article',
   DeleteArticles = '[Articles Page] Delete Articles',
-  DeleteAllArticles = '[Articles Page] Delete All Articles'
+  DeleteAllArticles = '[Articles Page] Delete All Articles',
 }
 
 export class LoadArticles implements Action {
@@ -136,19 +140,25 @@ export class UpsertArticles implements Action {
 export class UpdateArticle implements Action {
   readonly type = ArticleActionTypes.UpdateArticle
 
-  constructor(public payload: { article: Update<Article> }) {}
+  constructor(
+    public payload: { article: Update<Article> }
+  ) {}
 }
 
 export class UpdateArticles implements Action {
   readonly type = ArticleActionTypes.UpdateArticles
 
-  constructor(public payload: { articles: Update<Article>[] }) {}
+  constructor(
+    public payload: { articles: Update<Article>[] }
+  ) {}
 }
 
 export class MapArticles implements Action {
   readonly type = ArticleActionTypes.MapArticles
 
-  constructor(public payload: { entityMap: EntityMap<Article> }) {}
+  constructor(
+    public payload: { entityMap: EntityMap<Article> }
+  ) {}
 }
 
 export class DeleteArticle implements Action {
@@ -194,10 +204,12 @@ export interface State extends EntityState<Article> {
   currentArticle: number | null
 }
 
-export const adapter: EntityAdapter<Article> = createEntityAdapter<Article>()
+export const adapter: EntityAdapter<Article> = createEntityAdapter<
+  Article
+>()
 
 export const initialState: State = adapter.getInitialState({
-  currentArticle: null
+  currentArticle: null,
 })
 
 export function articlesReducer(
@@ -214,7 +226,10 @@ export function articlesReducer(
     }
 
     case ArticleActionTypes.UpsertArticle: {
-      return adapter.upsertOne(action.payload.article, state)
+      return adapter.upsertOne(
+        action.payload.article,
+        state
+      )
     }
 
     case ArticleActionTypes.AddArticles: {
@@ -222,15 +237,24 @@ export function articlesReducer(
     }
 
     case ArticleActionTypes.UpsertArticles: {
-      return adapter.upsertMany(action.payload.articles, state)
+      return adapter.upsertMany(
+        action.payload.articles,
+        state
+      )
     }
 
     case ArticleActionTypes.UpdateArticle: {
-      return adapter.updateOne(action.payload.article, state)
+      return adapter.updateOne(
+        action.payload.article,
+        state
+      )
     }
 
     case ArticleActionTypes.UpdateArticles: {
-      return adapter.updateMany(action.payload.articles, state)
+      return adapter.updateMany(
+        action.payload.articles,
+        state
+      )
     }
 
     case ArticleActionTypes.MapArticles: {
@@ -246,7 +270,10 @@ export function articlesReducer(
     }
 
     case ArticleActionTypes.DeleteAllArticles: {
-      return adapter.removeAll({ ...state, currentArticle: null })
+      return adapter.removeAll({
+        ...state,
+        currentArticle: null,
+      })
     }
 
     default: {
@@ -268,7 +295,7 @@ const {
   selectIds,
   selectEntities,
   selectAll,
-  selectTotal
+  selectTotal,
 } = adapter.getSelectors()
 
 export const selectArticleIds = selectIds

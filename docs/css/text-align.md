@@ -97,10 +97,16 @@ text-align: unset;
     </style>
   </head>
   <body>
-    <div id="left"><div class="content">Выравнивание по левому краю</div></div>
-    <div id="center"><div class="content">Выравнивание по центру</div></div>
+    <div id="left">
+      <div class="content">Выравнивание по левому краю</div>
+    </div>
+    <div id="center">
+      <div class="content">Выравнивание по центру</div>
+    </div>
     <div id="right">
-      <div class="content">Выравнивание по правому краю</div>
+      <div class="content">
+        Выравнивание по правому краю
+      </div>
     </div>
   </body>
 </html>

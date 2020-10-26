@@ -38,7 +38,9 @@ app.get('/', (req, res) => {
   res.send('Node js inspector')
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 После запуска приведенного примера командой `inspect`, отладчик остановится на первой строке и предложит ввести команду. Список возможных команд:

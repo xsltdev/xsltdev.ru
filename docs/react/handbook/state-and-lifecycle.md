@@ -33,7 +33,10 @@ function Clock(props) {
   )
 }
 function tick() {
-  ReactDOM.render(<Clock date={new Date()} />, document.getElementById('root'))
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  )
 }
 setInterval(tick, 1000)
 ```
@@ -72,7 +75,9 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Привет, мир!</h1>
-        <h2>Сейчас {this.props.date.toLocaleTimeString()}.</h2>
+        <h2>
+          Сейчас {this.props.date.toLocaleTimeString()}.
+        </h2>
       </div>
     )
   }
@@ -97,7 +102,9 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Привет, мир!</h1>
-        <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>
+          Сейчас {this.state.date.toLocaleTimeString()}.
+        </h2>
       </div>
     )
   }
@@ -116,7 +123,9 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Привет, мир!</h1>
-        <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>
+          Сейчас {this.state.date.toLocaleTimeString()}.
+        </h2>
       </div>
     )
   }
@@ -154,7 +163,9 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Привет, мир!</h1>
-        <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>
+          Сейчас {this.state.date.toLocaleTimeString()}.
+        </h2>
       </div>
     )
   }
@@ -188,7 +199,9 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Привет, мир!</h1>
-        <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>
+          Сейчас {this.state.date.toLocaleTimeString()}.
+        </h2>
       </div>
     )
   }
@@ -238,14 +251,16 @@ class Clock extends React.Component {
   }
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(),
     })
   }
   render() {
     return (
       <div>
         <h1>Привет, мир!</h1>
-        <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>
+          Сейчас {this.state.date.toLocaleTimeString()}.
+        </h2>
       </div>
     )
   }
@@ -302,7 +317,7 @@ React может сгруппировать несколько вызовов `s
 ```js
 // Неправильно
 this.setState({
-  counter: this.state.counter + this.props.increment
+  counter: this.state.counter + this.props.increment,
 })
 ```
 
@@ -311,7 +326,7 @@ this.setState({
 ```js
 // Правильно
 this.setState((state, props) => ({
-  counter: state.counter + props.increment
+  counter: state.counter + props.increment,
 }))
 ```
 
@@ -319,9 +334,9 @@ this.setState((state, props) => ({
 
 ```js
 // Правильно
-this.setState(function(state, props) {
+this.setState(function (state, props) {
   return {
-    counter: state.counter + props.increment
+    counter: state.counter + props.increment,
   }
 })
 ```

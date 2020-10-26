@@ -42,7 +42,7 @@ import { Component } from '@angular/core'
   template: `
     <p>Имя: {{ name }}</p>
     <p>Возраст: {{ age }}</p>
-  `
+  `,
 })
 export class AppComponent {
   name = 'Tom'
@@ -65,9 +65,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'my-app',
-  template: `
-    <input type="text" [value]="name" />
-  `
+  template: ` <input type="text" [value]="name" /> `,
 })
 export class AppComponent {
   name = 'Tom'
@@ -100,7 +98,7 @@ import { Component } from '@angular/core'
   template: `
     <p>Количество кликов {{ count }}</p>
     <button (click)="increase()">Click</button>
-  `
+  `,
 })
 export class AppComponent {
   count: number = 0
@@ -133,7 +131,7 @@ import { Component } from '@angular/core'
   template: `
     <p>Количество кликов {{ count }}</p>
     <button (click)="increase($event)">Click</button>
-  `
+  `,
 })
 export class AppComponent {
   count: number = 0
@@ -159,7 +157,7 @@ import { Component } from '@angular/core'
     <p>Привет {{ name }}</p>
     <input type="text" [(ngModel)]="name" /> <br /><br />
     <input type="text" [(ngModel)]="name" />
-  `
+  `,
 })
 export class AppComponent {
   name: string = 'Tom'

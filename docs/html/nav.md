@@ -39,7 +39,8 @@ description: Тег nav (от англ. navigation — навигация) за�
       <h1>Чебурашка и крокодил Гена</h1>
     </header>
     <nav>
-      <a href="page/1.html">Чебурашка</a> | <a href="page/2.html">Гена</a> |
+      <a href="page/1.html">Чебурашка</a> |
+      <a href="page/2.html">Гена</a> |
       <a href="page/3.html">Шапокляк</a> |
       <a href="page/4.html">Лариска</a>
     </nav>

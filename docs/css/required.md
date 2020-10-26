@@ -51,16 +51,21 @@ input:required {
   <body>
     <form id="comment">
       <p>
-        <label for="user">Имя</label> <input id="user" type="text" required />
+        <label for="user">Имя</label>
+        <input id="user" type="text" required />
       </p>
 
-      <p><label for="email">E-mail</label><input id="email" type="text" /></p>
+      <p>
+        <label for="email">E-mail</label
+        ><input id="email" type="text" />
+      </p>
       <p>
         <label for="text">Комментарий</label>
         <textarea cols="40" rows="10" id="text"></textarea>
       </p>
       <p>
-        <label>&nbsp;</label><input type="submit" id="send" value="Отправить" />
+        <label>&nbsp;</label
+        ><input type="submit" id="send" value="Отправить" />
       </p>
     </form>
   </body>

@@ -38,7 +38,9 @@ customElements.define(
       let divElem = document.createElement('div')
       divElem.textContent = this.getAttribute('text')
 
-      let shadowRoot = this.attachShadow({ mode: 'open' }).appendChild(divElem)
+      let shadowRoot = this.attachShadow({
+        mode: 'open',
+      }).appendChild(divElem)
     }
   }
 )
@@ -47,7 +49,9 @@ customElements.define(
 Затем мы используем короткий HTML код с элементом `<simple-custom>` и стандартным элементом `<p>`:
 
 ```html
-<simple-custom text="Текст пользовательского элемента"></simple-custom>
+<simple-custom
+  text="Текст пользовательского элемента"
+></simple-custom>
 
 <p>Пример текста стандартного параграфа</p>
 ```

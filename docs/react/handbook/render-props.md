@@ -5,7 +5,9 @@
 Компонент с рендер-пропом берёт функцию, которая возвращает React-элемент, и вызывает её вместо реализации собственного рендера.
 
 ```jsx
-<DataProvider render={data => <h1>Привет, {data.target}</h1>} />
+<DataProvider
+  render={(data) => <h1>Привет, {data.target}</h1>}
+/>
 ```
 
 Такой подход, в частности, применяется в библиотеках [React Router](https://reacttraining.com/react-router/web/api/Route/render-func) и [Downshift](https://github.com/paypal/downshift).
@@ -29,16 +31,20 @@ class MouseTracker extends React.Component {
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
-      y: event.clientY
+      y: event.clientY,
     })
   }
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div
+        style={{ height: '100%' }}
+        onMouseMove={this.handleMouseMove}
+      >
         <h1>Перемещайте курсор мыши!</h1>
         <p>
-          Текущее положение курсора мыши: ({this.state.x}, {this.state.y})
+          Текущее положение курсора мыши: ({this.state.x},{' '}
+          {this.state.y})
         </p>
       </div>
     )
@@ -64,16 +70,20 @@ class Mouse extends React.Component {
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
-      y: event.clientY
+      y: event.clientY,
     })
   }
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div
+        style={{ height: '100%' }}
+        onMouseMove={this.handleMouseMove}
+      >
         {/* ...но как можно отрендерить что-то, кроме <p>? */}
         <p>
-          Текущее положение курсора мыши: ({this.state.x}, {this.state.y})
+          Текущее положение курсора мыши: ({this.state.x},{' '}
+          {this.state.y})
         </p>
       </div>
     )
@@ -102,7 +112,16 @@ class MouseTracker extends React.Component {
 class Cat extends React.Component {
   render() {
     const mouse = this.props.mouse
-    return <img src="/cat.jpg" style={{ position: 'absolute', left: mouse.x, top: mouse.y }} />
+    return (
+      <img
+        src="/cat.jpg"
+        style={{
+          position: 'absolute',
+          left: mouse.x,
+          top: mouse.y,
+        }}
+      />
+    )
   }
 }
 
@@ -116,13 +135,16 @@ class MouseWithCat extends React.Component {
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
-      y: event.clientY
+      y: event.clientY,
     })
   }
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div
+        style={{ height: '100%' }}
+        onMouseMove={this.handleMouseMove}
+      >
         {/*
           Мы могли бы просто поменять <p> на <Cat>... но тогда
           нам нужно создать отдельный компонент <MouseWithSomethingElse>
@@ -155,7 +177,16 @@ class MouseTracker extends React.Component {
 class Cat extends React.Component {
   render() {
     const mouse = this.props.mouse
-    return <img src="/cat.jpg" style={{ position: 'absolute', left: mouse.x, top: mouse.y }} />
+    return (
+      <img
+        src="/cat.jpg"
+        style={{
+          position: 'absolute',
+          left: mouse.x,
+          top: mouse.y,
+        }}
+      />
+    )
   }
 }
 
@@ -169,13 +200,16 @@ class Mouse extends React.Component {
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
-      y: event.clientY
+      y: event.clientY,
     })
   }
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div
+        style={{ height: '100%' }}
+        onMouseMove={this.handleMouseMove}
+      >
         {/*
           Вместо статического представления того, что рендерит <Mouse>,
           используем рендер-проп для динамического определения, что надо отрендерить.
@@ -191,7 +225,7 @@ class MouseTracker extends React.Component {
     return (
       <div>
         <h1>Перемещайте курсор мыши!</h1>
-        <Mouse render={mouse => <Cat mouse={mouse} />} />
+        <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
     )
   }
@@ -212,7 +246,13 @@ class MouseTracker extends React.Component {
 function withMouse(Component) {
   return class extends React.Component {
     render() {
-      return <Mouse render={mouse => <Component {...this.props} mouse={mouse} />} />
+      return (
+        <Mouse
+          render={(mouse) => (
+            <Component {...this.props} mouse={mouse} />
+          )}
+        />
+      )
     }
   }
 }
@@ -228,7 +268,7 @@ function withMouse(Component) {
 
 ```js
 <Mouse
-  children={mouse => (
+  children={(mouse) => (
     <p>
       Текущее положение курсора мыши: {mouse.x}, {mouse.y}
     </p>
@@ -240,7 +280,7 @@ function withMouse(Component) {
 
 ```js
 <Mouse>
-  {mouse => (
+  {(mouse) => (
     <p>
       Текущее положение курсора мыши: {mouse.x}, {mouse.y}
     </p>
@@ -254,7 +294,7 @@ function withMouse(Component) {
 
 ```js
 Mouse.propTypes = {
-  children: PropTypes.func.isRequired
+  children: PropTypes.func.isRequired,
 }
 ```
 
@@ -281,7 +321,7 @@ class MouseTracker extends React.Component {
           Это плохо! Значение рендер-пропа будет
           разным при каждом рендере.
         */}
-        <Mouse render={mouse => <Cat mouse={mouse} />} />
+        <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
     )
   }

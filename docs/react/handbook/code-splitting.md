@@ -76,7 +76,7 @@ console.log(add(16, 26))
 **После:**
 
 ```js
-import('./math').then(math => {
+import('./math').then((math) => {
   console.log(math.add(16, 26))
 })
 ```
@@ -125,7 +125,9 @@ function MyComponent() {
 **После:**
 
 ```js
-const OtherComponent = React.lazy(() => import('./OtherComponent'))
+const OtherComponent = React.lazy(() =>
+  import('./OtherComponent')
+)
 
 function MyComponent() {
   return (
@@ -145,7 +147,9 @@ function MyComponent() {
 Если модуль, содержащий `OtherComponent`, ещё не загружен к моменту рендеринга `MyComponent`, пока ожидаем, мы должны показать запасное содержимое, например индикатор загрузки. Это можно сделать с помощью компонента `Suspense`.
 
 ```js
-const OtherComponent = React.lazy(() => import('./OtherComponent'))
+const OtherComponent = React.lazy(() =>
+  import('./OtherComponent')
+)
 
 function MyComponent() {
   return (
@@ -161,8 +165,12 @@ function MyComponent() {
 Проп `fallback` принимает любой React-элемент, который вы хотите показать, пока происходит загрузка компонента. Компонент `Suspense` можно разместить в любом месте над ленивым компонентом. Кроме того, можно обернуть несколько ленивых компонентов одним компонентом `Suspense`.
 
 ```js
-const OtherComponent = React.lazy(() => import('./OtherComponent'))
-const AnotherComponent = React.lazy(() => import('./AnotherComponent'))
+const OtherComponent = React.lazy(() =>
+  import('./OtherComponent')
+)
+const AnotherComponent = React.lazy(() =>
+  import('./AnotherComponent')
+)
 
 function MyComponent() {
   return (
@@ -184,8 +192,12 @@ function MyComponent() {
 
 ```js
 import MyErrorBoundary from './MyErrorBoundary'
-const OtherComponent = React.lazy(() => import('./OtherComponent'))
-const AnotherComponent = React.lazy(() => import('./AnotherComponent'))
+const OtherComponent = React.lazy(() =>
+  import('./OtherComponent')
+)
+const AnotherComponent = React.lazy(() =>
+  import('./AnotherComponent')
+)
 
 const MyComponent = () => (
   <div>
@@ -210,7 +222,11 @@ const MyComponent = () => (
 Вот пример того, как организовать разделение кода на основе маршрутов с помощью `React.lazy` и таких библиотек как [React Router](https://reacttraining.com/react-router/).
 
 ```js
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom'
 import React, { Suspense, lazy } from 'react'
 
 const Home = lazy(() => import('./routes/Home'))

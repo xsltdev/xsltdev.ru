@@ -48,22 +48,25 @@ string unparsed-entity-uri( string )
 Листинг 8.68. Преобразование, использующее функцию `unparsed-entity-uri`
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="html" indent="yes"/>
-    <xsl:template match="menu">
-        <table>
-            <xsl:apply-templates select="menuitem"/>
-        </table>
-    </xsl:template>
-    <xsl:template match="menuitem">
-        <tr>
-            <td>
-                <A alt="{@title}" href="{@href}">
-                    <img src="{unparsed-entity-uri(@image)}"/>
-                </A>
-            </td>
-        </tr>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="html" indent="yes" />
+  <xsl:template match="menu">
+    <table>
+      <xsl:apply-templates select="menuitem" />
+    </table>
+  </xsl:template>
+  <xsl:template match="menuitem">
+    <tr>
+      <td>
+        <A alt="{@title}" href="{@href}">
+          <img src="{unparsed-entity-uri(@image)}" />
+        </A>
+      </td>
+    </tr>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -73,27 +76,27 @@ string unparsed-entity-uri( string )
 
 ```xml
 <table>
-    <tr>
-        <td>
-            <A alt="News" href="news.htm">
-                <img src="file:/C:/XML/news.gif"/>
-            </A>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <A alt="Products" href="prods.htm">
-                <img src="file:/C:/XML/prod.jpg"/>
-            </A>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <A alt="Support" href="support.htm">
-                <img src="file:/С:/XML/support.gif"/>
-            </A>
-        </td>
-    </tr>
+  <tr>
+    <td>
+      <A alt="News" href="news.htm">
+        <img src="file:/C:/XML/news.gif" />
+      </A>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <A alt="Products" href="prods.htm">
+        <img src="file:/C:/XML/prod.jpg" />
+      </A>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <A alt="Support" href="support.htm">
+        <img src="file:/С:/XML/support.gif" />
+      </A>
+    </td>
+  </tr>
 </table>
 ```
 

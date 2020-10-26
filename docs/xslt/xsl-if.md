@@ -9,8 +9,8 @@ description: Инструкция xsl:if позволяет создавать �
 ## Синтаксис
 
 ```xml
-<xsl:if test = "выражение">
-    <!-- Content: sequence-constructor -->
+<xsl:if test="выражение">
+  <!-- Content: sequence-constructor -->
 </xsl:if>
 ```
 
@@ -32,7 +32,7 @@ description: Инструкция xsl:if позволяет создавать �
 будет с точки зрения синтаксиса XML некорректным. Вместо него следует использовать эквивалентное объявление
 
 ```xml
-<xsl:if test="a &lt; b"/>
+<xsl:if test="a &lt; b" />
 ```
 
 Следует заметить, что символ "больше" ("`>`") заменять сущностью необязательно. Однако из соображений единообразия принято заменять и его.
@@ -43,9 +43,9 @@ description: Инструкция xsl:if позволяет создавать �
 
 ```xml
 <list active="Bravo">
-    <item>Alpha</item>
-    <item>Bravo</item>
-    <item>Charlie</item>
+  <item>Alpha</item>
+  <item>Bravo</item>
+  <item>Charlie</item>
 </list>
 ```
 
@@ -55,17 +55,19 @@ description: Инструкция xsl:if позволяет создавать �
 
 ```xml
 <xsl:template match="item">
-    <option>
-        <!--
+  <option>
+    <!--
         | Если текстовое значение элемента равно
         | значению атрибута active его родительского элемента
         +-->
-        <xsl:if test=". = ../@active">
-            <!-- To выводим атрибут selected -->
-            <xsl:attribute name="selected">selected</xsl:attribute>
-        </xsl:if>
-        <xsl:value-of select="."/>
-    </option>
+    <xsl:if test=". = ../@active">
+      <!-- To выводим атрибут selected -->
+      <xsl:attribute name="selected">
+        selected
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:value-of select="." />
+  </option>
 </xsl:template>
 ```
 
@@ -100,15 +102,16 @@ description: Инструкция xsl:if позволяет создавать �
 </namelist>
 ```
 
-```XSLT tab=
-<?xml version='1.0'?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
-
-<xsl:template match="namelist/name">
-	<xsl:apply-templates/>
-	<xsl:if test="position()!=last()">, </xsl:if>
-</xsl:template>
-
+```xml tab=
+<?xml version='1.0' ?>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="namelist/name">
+    <xsl:apply-templates />
+    <xsl:if test="position()!=last()">,</xsl:if>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -136,15 +139,16 @@ Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
 </namelist>
 ```
 
-```XSLT tab=
-<?xml version='1.0'?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
-
-<xsl:template match="namelist/name">
-	<xsl:if test="position()!=1">, </xsl:if>
-	<xsl:apply-templates/>
-</xsl:template>
-
+```xml tab=
+<?xml version='1.0' ?>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="namelist/name">
+    <xsl:if test="position()!=1">,</xsl:if>
+    <xsl:apply-templates />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -173,30 +177,29 @@ Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
 </items>
 ```
 
-```XSLT tab=
-<?xml version='1.0'?>
-<xsl:stylesheet version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
-
-<xsl:template match="/">
-<html>
-<body>
-<table border="1">
-<xsl:apply-templates/>
-</table>
-</body>
-</html>
-</xsl:template>
-
-<xsl:template match="item">
-  <tr>
-    <xsl:if test="position() mod 2 = 0">
-       <xsl:attribute name="bgcolor">yellow</xsl:attribute>
-    </xsl:if>
-    <xsl:apply-templates/>
-  </tr>
-</xsl:template>
-
+```xml tab=
+<?xml version='1.0' ?>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <html>
+      <body>
+        <table border="1">
+          <xsl:apply-templates />
+        </table>
+      </body>
+    </html>
+  </xsl:template>
+  <xsl:template match="item">
+    <tr>
+      <xsl:if test="position() mod 2 = 0">
+        <xsl:attribute name="bgcolor">yellow</xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates />
+    </tr>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -231,23 +234,26 @@ Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
 </stocks>
 ```
 
-```XSLT tab=
-<?xml version='1.0'?>
-<xsl:stylesheet version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
-
-<xsl:template match="/">
-   <html><body>
-   <xsl:apply-templates/>
-   </body></html>
-</xsl:template>
-
-<xsl:template match="stock">
-   <p/>
-   <xsl:if test="@international">International Stock </xsl:if>
-   <xsl:apply-templates />
-</xsl:template>
-
+```xml tab=
+<?xml version='1.0' ?>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <html>
+      <body>
+        <xsl:apply-templates />
+      </body>
+    </html>
+  </xsl:template>
+  <xsl:template match="stock">
+    <p />
+    <xsl:if test="@international">
+      International Stock
+    </xsl:if>
+    <xsl:apply-templates />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

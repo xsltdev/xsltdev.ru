@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -84,7 +84,11 @@ export class Phone {
     <div class="col-xs-8">
       <div class="form-group">
         <label>Название модели</label>
-        <input class="form-control" name="title" [(ngModel)]="title" />
+        <input
+          class="form-control"
+          name="title"
+          [(ngModel)]="title"
+        />
       </div>
       <div class="form-group">
         <label>Цена</label>
@@ -97,8 +101,15 @@ export class Phone {
       </div>
       <div class="form-group">
         <label>Производитель</label>
-        <select class="form-control" name="company" [(ngModel)]="company">
-          <option *ngFor="let comp of companies" [value]="comp">
+        <select
+          class="form-control"
+          name="company"
+          [(ngModel)]="company"
+        >
+          <option
+            *ngFor="let comp of companies"
+            [value]="comp"
+          >
             {{ comp }}
           </option>
         </select>
@@ -115,10 +126,12 @@ export class Phone {
     <div>
       <h3>Добавленные элементы</h3>
       <ul *ngFor="let p of phones">
-        <li>{{ p.title }} ({{ p.company }}) - {{ p.price }}</li>
+        <li>
+          {{ p.title }} ({{ p.company }}) - {{ p.price }}
+        </li>
       </ul>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   phones: Phone[] = []
@@ -129,7 +142,7 @@ export class AppComponent {
     'Samsung',
     'LG',
     'Motorola',
-    'Alcatel'
+    'Alcatel',
   ]
 
   addPhone(title: string, price: number, company: string) {
@@ -165,7 +178,11 @@ export class Phone {
     <div class="col-xs-10">
       <div class="form-group">
         <label>Название модели</label>
-        <input class="form-control" name="title" [(ngModel)]="phone.title" />
+        <input
+          class="form-control"
+          name="title"
+          [(ngModel)]="phone.title"
+        />
       </div>
       <div class="form-group">
         <label>Цена</label>
@@ -178,23 +195,37 @@ export class Phone {
       </div>
       <div class="form-group">
         <label>Производитель</label>
-        <select class="form-control" name="company" [(ngModel)]="phone.company">
-          <option *ngFor="let comp of companies" [value]="comp">
+        <select
+          class="form-control"
+          name="company"
+          [(ngModel)]="phone.company"
+        >
+          <option
+            *ngFor="let comp of companies"
+            [value]="comp"
+          >
             {{ comp }}
           </option>
         </select>
       </div>
       <div class="form-group">
-        <button class="btn btn-default" (click)="addPhone()">Добавить</button>
+        <button
+          class="btn btn-default"
+          (click)="addPhone()"
+        >
+          Добавить
+        </button>
       </div>
     </div>
     <div>
       <h3>Добавленные элементы</h3>
       <ul *ngFor="let p of phones">
-        <li>{{ p.title }} ({{ p.company }}) - {{ p.price }}</li>
+        <li>
+          {{ p.title }} ({{ p.company }}) - {{ p.price }}
+        </li>
       </ul>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   phone: Phone = new Phone('', 0, 'Huawei')
@@ -206,12 +237,16 @@ export class AppComponent {
     'Samsung',
     'LG',
     'Motorola',
-    'Alcatel'
+    'Alcatel',
   ]
 
   addPhone() {
     this.phones.push(
-      new Phone(this.phone.title, this.phone.price, this.phone.company)
+      new Phone(
+        this.phone.title,
+        this.phone.price,
+        this.phone.company
+      )
     )
   }
 }

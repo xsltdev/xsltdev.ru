@@ -25,9 +25,24 @@ background-color: #11ffeeff; /* ff - fully opaque */
 background-color: rgb(255, 255, 128);
 
 /* RGBA value or RGB with alpha channel */
-background-color: rgba(117, 190, 218, 0); /* 0.0 - fully transparent */
-background-color: rgba(117, 190, 218, 0.5); /* 0.5 - semi-transparent */
-background-color: rgba(117, 190, 218, 1); /* 1.0 - fully opaque */
+background-color: rgba(
+  117,
+  190,
+  218,
+  0
+); /* 0.0 - fully transparent */
+background-color: rgba(
+  117,
+  190,
+  218,
+  0.5
+); /* 0.5 - semi-transparent */
+background-color: rgba(
+  117,
+  190,
+  218,
+  1
+); /* 1.0 - fully opaque */
 
 /* HSLA value */
 background-color: hsla(50, 33%, 25%, 0.75);
@@ -77,7 +92,11 @@ background-color: transparent;
         background-color: #3366cc; /* Цвет фона веб-страницы */
       }
       h1 {
-        background-color: RGB(249, 201, 16); /* Цвет фона под заголовком */
+        background-color: RGB(
+          249,
+          201,
+          16
+        ); /* Цвет фона под заголовком */
       }
       p {
         background-color: maroon; /* Цвет фона под текстом параграфа */
@@ -88,8 +107,9 @@ background-color: transparent;
   <body>
     <h1>Lorem ipsum dolor sit amet</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy
-      nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.
+      Lorem ipsum dolor sit amet, consectetuer adipiscing
+      elit, sed diem nonummy nibh euismod tincidunt ut
+      lacreet dolore magna aliguam erat volutpat.
     </p>
   </body>
 </html>

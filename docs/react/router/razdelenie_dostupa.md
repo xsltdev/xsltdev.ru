@@ -22,8 +22,13 @@ export default class Login extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-12">Пожалуйста, введите логин:</div>
-        <form className="col-md-4" onSubmit={this.handleSubmit}>
+        <div className="col-md-12">
+          Пожалуйста, введите логин:
+        </div>
+        <form
+          className="col-md-4"
+          onSubmit={this.handleSubmit}
+        >
           <input type="text" placeholder="login" />
           <button type="submit">Войти</button>
         </form>
@@ -189,9 +194,16 @@ export const routes = (
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       {/* в качестве хука на onEnter - статический метод класса Admin */}
-      <Route path="/admin" component={Admin} onEnter={Admin.onEnter} />
+      <Route
+        path="/admin"
+        component={Admin}
+        onEnter={Admin.onEnter}
+      />
       <Route path="/genre/:genre" component={Genre}>
-        <Route path="/genre/:genre/:release" component={Release} />
+        <Route
+          path="/genre/:genre/:release"
+          component={Release}
+        />
       </Route>
       <Route path="/list" component={List} />
       <Route path="/login" component={Login} />
@@ -233,8 +245,13 @@ export default class Login extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-12">Пожалуйста, введите логин:</div>
-        <form className="col-md-4" onSubmit={this.handleSubmit}>
+        <div className="col-md-12">
+          Пожалуйста, введите логин:
+        </div>
+        <form
+          className="col-md-4"
+          onSubmit={this.handleSubmit}
+        >
           <input type="text" placeholder="login" />
           <button type="submit">Войти</button>
         </form>
@@ -244,7 +261,7 @@ export default class Login extends Component {
 }
 
 Login.contextTypes = {
-  router: PropTypes.object.isRequired
+  router: PropTypes.object.isRequired,
 }
 ```
 

@@ -46,9 +46,12 @@ description: Тег output (от англ. output — вывод) определ
   <body>
     <form oninput="result.value=(cm.value/2.54).toFixed(2)">
       <p>
-        Введите длину в сантиметрах: <input type="number" name="cm" autofocus />
+        Введите длину в сантиметрах:
+        <input type="number" name="cm" autofocus />
       </p>
-      <p>Длина в дюймах: <output name="result">0</output></p>
+      <p>
+        Длина в дюймах: <output name="result">0</output>
+      </p>
     </form>
   </body>
 </html>

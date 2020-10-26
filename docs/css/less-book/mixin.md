@@ -117,8 +117,10 @@
   }
 }
 button {
-  .my-mixin-collection .hidden(); // вызываем примесь из класса .my-mixin-collection
-  .my-mixin-collection .bordered(); // вызываем примесь из класса .my-mixin-collection
+  .my-mixin-collection
+    .hidden(); // вызываем примесь из класса .my-mixin-collection
+  .my-mixin-collection
+    .bordered(); // вызываем примесь из класса .my-mixin-collection
 }
 ```
 

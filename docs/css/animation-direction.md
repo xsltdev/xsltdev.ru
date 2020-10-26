@@ -116,7 +116,9 @@ animation-direction: normal;
     <div class="box normal">normal</div>
     <div class="box alternate">alternate</div>
     <div class="box reverse">reverse</div>
-    <div class="box alternate-reverse">alternate-reverse</div>
+    <div class="box alternate-reverse">
+      alternate-reverse
+    </div>
   </body>
 </html>
 ```

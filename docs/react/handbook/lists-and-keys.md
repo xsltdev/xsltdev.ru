@@ -6,7 +6,7 @@
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5]
-const doubled = numbers.map(number => number * 2)
+const doubled = numbers.map((number) => number * 2)
 console.log(doubled)
 ```
 
@@ -22,13 +22,16 @@ console.log(doubled)
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5]
-const listItems = numbers.map(number => <li>{number}</li>)
+const listItems = numbers.map((number) => <li>{number}</li>)
 ```
 
 Теперь мы включим массив `listItems` внутрь элемента `<ul>` и [отрендерим его в DOM](rendering-elements.md#rendering-an-element-into-the-dom):
 
 ```javascript
-ReactDOM.render(<ul>{listItems}</ul>, document.getElementById('root'))
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -44,12 +47,17 @@ ReactDOM.render(<ul>{listItems}</ul>, document.getElementById('root'))
 ```javascript
 function NumberList(props) {
   const numbers = props.numbers
-  const listItems = numbers.map(number => <li>{number}</li>)
+  const listItems = numbers.map((number) => (
+    <li>{number}</li>
+  ))
   return <ul>{listItems}</ul>
 }
 
 const numbers = [1, 2, 3, 4, 5]
-ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'))
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+)
 ```
 
 Когда вы запустите данный код, то увидите предупреждение о том, что у каждого элемента массива должен быть ключ (key). «Ключ» – это специальный строковый атрибут, который нужно указывать при создании списка элементов. Мы обсудим, почему это важно, ниже на странице.
@@ -59,12 +67,17 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 ```javascript
 function NumberList(props) {
   const numbers = props.numbers
-  const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
+  const listItems = numbers.map((number) => (
+    <li key={number.toString()}>{number}</li>
+  ))
   return <ul>{listItems}</ul>
 }
 
 const numbers = [1, 2, 3, 4, 5]
-ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'))
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -75,13 +88,17 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 
 ```js
 const numbers = [1, 2, 3, 4, 5]
-const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
+const listItems = numbers.map((number) => (
+  <li key={number.toString()}>{number}</li>
+))
 ```
 
 Лучший способ выбрать ключ – это использовать строку, которая будет явно отличать элемент списка от его соседей. Чаще всего вы будете использовать ID из ваших данных как ключи:
 
 ```js
-const todoItems = todos.map(todo => <li key={todo.id}>{todo.text}</li>)
+const todoItems = todos.map((todo) => (
+  <li key={todo.id}>{todo.text}</li>
+))
 ```
 
 Когда у вас нет заданных ID для списка, то в крайнем случае можно использовать индекс элемента как ключ:
@@ -116,7 +133,7 @@ function ListItem(props) {
 
 function NumberList(props) {
   const numbers = props.numbers
-  const listItems = numbers.map(number => (
+  const listItems = numbers.map((number) => (
     // Неправильно! Ключ необходимо определить здесь:
     <ListItem value={number} />
   ))
@@ -124,7 +141,10 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5]
-ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'))
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+)
 ```
 
 **Пример правильного использования ключей**
@@ -137,7 +157,7 @@ function ListItem(props) {
 
 function NumberList(props) {
   const numbers = props.numbers
-  const listItems = numbers.map(number => (
+  const listItems = numbers.map((number) => (
     // Правильно! Ключ нужно определять внутри массива:
     <ListItem key={number.toString()} value={number} />
   ))
@@ -145,7 +165,10 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5]
-ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'))
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -160,12 +183,12 @@ ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'
 function Blog(props) {
   const sidebar = (
     <ul>
-      {props.posts.map(post => (
+      {props.posts.map((post) => (
         <li key={post.id}>{post.title}</li>
       ))}
     </ul>
   )
-  const content = props.posts.map(post => (
+  const content = props.posts.map((post) => (
     <div key={post.id}>
       <h3>{post.title}</h3>
       <p>{post.content}</p>
@@ -180,8 +203,22 @@ function Blog(props) {
   )
 }
 
-const posts = [{ id: 1, title: 'Привет, мир', content: 'Добро пожаловать в документацию React!' }, { id: 2, title: 'Установка', content: 'React можно установить из npm.' }]
-ReactDOM.render(<Blog posts={posts} />, document.getElementById('root'))
+const posts = [
+  {
+    id: 1,
+    title: 'Привет, мир',
+    content: 'Добро пожаловать в документацию React!',
+  },
+  {
+    id: 2,
+    title: 'Установка',
+    content: 'React можно установить из npm.',
+  },
+]
+ReactDOM.render(
+  <Blog posts={posts} />,
+  document.getElementById('root')
+)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
@@ -189,7 +226,9 @@ ReactDOM.render(<Blog posts={posts} />, document.getElementById('root'))
 Ключи служат подсказками для React, но они никогда не передаются в ваши компоненты. Если в компоненте нужно то же самое значение, то передайте его явно через проп с другим именем:
 
 ```js
-const content = posts.map(post => <Post key={post.id} id={post.id} title={post.title} />)
+const content = posts.map((post) => (
+  <Post key={post.id} id={post.id} title={post.title} />
+))
 ```
 
 В примере выше компонент `Post` может прочитать значение `props.id`, но не `props.key`.
@@ -201,7 +240,9 @@ const content = posts.map(post => <Post key={post.id} id={post.id} title={post.t
 ```js
 function NumberList(props) {
   const numbers = props.numbers
-  const listItems = numbers.map(number => <ListItem key={number.toString()} value={number} />)
+  const listItems = numbers.map((number) => (
+    <ListItem key={number.toString()} value={number} />
+  ))
   return <ul>{listItems}</ul>
 }
 ```
@@ -213,7 +254,7 @@ function NumberList(props) {
   const numbers = props.numbers
   return (
     <ul>
-      {numbers.map(number => (
+      {numbers.map((number) => (
         <ListItem key={number.toString()} value={number} />
       ))}
     </ul>

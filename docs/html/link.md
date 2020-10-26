@@ -139,7 +139,10 @@ description: Тег link (от англ. link - ссылка, связь) уст
 
 ```html
 <link rel="icon" sizes="<ширина>X<высота>" />
-<link rel="icon" sizes="<ширина1>X<высота1> <ширина2>X<высота2>* | any" />
+<link
+  rel="icon"
+  sizes="<ширина1>X<высота1> <ширина2>X<высота2>* | any"
+/>
 ```
 
 **Значения**
@@ -192,7 +195,10 @@ description: Тег link (от англ. link - ссылка, связь) уст
       title="Статьи с сайта xsltdev.ru"
       href="http://xsltdev.ru/rss.xml"
     />
-    <link rel="shortcut icon" href="http://xsltdev.ru/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      href="http://xsltdev.ru/favicon.ico"
+    />
   </head>
   <body>
     <p>...</p>

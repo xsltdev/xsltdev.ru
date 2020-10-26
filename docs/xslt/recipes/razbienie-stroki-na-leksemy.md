@@ -10,7 +10,7 @@
 
 Само решение принадлежит Джени Теннисон (мои лишь комментарии). Каждая лексема возвращается в виде узла, состоящего из элемента `token`, содержащего текст. Если строка разделителей пуста, то по умолчанию исходная строка разбивается на отдельные символы.
 
-```xslt
+```xml
 <xsl:template name="tokenize">
 	<xsl:param name="string" select="''" />
 	<xsl:param name="delimiters" select="' &#x9;&#xA;'" />
@@ -96,25 +96,39 @@
 
 Если же вам больше нравится подход XSLT, но ваш процессор не оптимизирует хвостовую рекурсию, то в шаблоне `_tokenize-characters` можно воспользоваться алгоритмом «разделяй и властвуй»:
 
-```xslt
+```xml
 <xsl:template name="_tokenize-characters">
-	<xsl:param name="string" />
-	<xsl:param name="len" select="string-length($string)"/>
-	<xsl:choose>
-		<xsl:when test="$len = 1">
-			<token><xsl:value-of select="$string"/></token>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:call-template name="_tokenize-characters">
-				<xsl:with-param name="string" select="substring($string, 1, floor($len div 2))" />
-				<xsl:with-param name="len" select="floor($len div 2)"/>
-			</xsl:call-template>
-			<xsl:call-template name="_tokenize-characters">
-				<xsl:with-param name="string" select="substring($string, floor($len div 2) + 1)" />
-				<xsl:with-param name="len" select="ceiling($len div 2)"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="string" />
+  <xsl:param name="len" select="string-length($string)" />
+  <xsl:choose>
+    <xsl:when test="$len = 1">
+      <token>
+        <xsl:value-of select="$string" />
+      </token>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="_tokenize-characters">
+        <xsl:with-param
+          name="string"
+          select="substring($string, 1, floor($len div 2))"
+        />
+        <xsl:with-param
+          name="len"
+          select="floor($len div 2)"
+        />
+      </xsl:call-template>
+      <xsl:call-template name="_tokenize-characters">
+        <xsl:with-param
+          name="string"
+          select="substring($string, floor($len div 2) + 1)"
+        />
+        <xsl:with-param
+          name="len"
+          select="ceiling($len div 2)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 

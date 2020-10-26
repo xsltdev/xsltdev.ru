@@ -22,7 +22,10 @@ const host = '127.0.0.1'
 const port = 7000
 
 app.use((req, res, next) => {
-  if (cluster.isWorker) console.log(`Worker ${cluster.worker.id} handle request`)
+  if (cluster.isWorker)
+    console.log(
+      `Worker ${cluster.worker.id} handle request`
+    )
 
   next()
 })
@@ -35,11 +38,18 @@ if (cluster.isMaster) {
   for (let i = 0; i < cpus; i++) cluster.fork()
 
   cluster.on('exit', (worker, code) => {
-    console.log(`Worker ${worker.id} finished. Exit code: ${code}`)
+    console.log(
+      `Worker ${worker.id} finished. Exit code: ${code}`
+    )
 
-    app.listen(port, host, () => console.log(`Worker ${cluster.worker.id} launched`))
+    app.listen(port, host, () =>
+      console.log(`Worker ${cluster.worker.id} launched`)
+    )
   })
-} else app.listen(port, host, () => console.log(`Worker ${cluster.worker.id} launched`))
+} else
+  app.listen(port, host, () =>
+    console.log(`Worker ${cluster.worker.id} launched`)
+  )
 ```
 
 Для кластеризации используется встроенный в Node.js модуль `cluster`. При запуске сервера проверяется, является ли текущий процесс основным. Если да, то на основании данных о процессоре, полученных с помощью модуля `os`, запускаются дополнительные экземпляры, которые при запуске попадают в ветку `else`.
@@ -61,9 +71,13 @@ Worker 4 launched
 
 ```js
 cluster.on('exit', (worker, code) => {
-  console.log(`Worker ${worker.id} finished. Exit code: ${code}`)
+  console.log(
+    `Worker ${worker.id} finished. Exit code: ${code}`
+  )
 
-  app.listen(port, host, () => console.log(`Worker ${cluster.worker.id} launched`))
+  app.listen(port, host, () =>
+    console.log(`Worker ${cluster.worker.id} launched`)
+  )
 })
 ```
 
@@ -71,7 +85,10 @@ cluster.on('exit', (worker, code) => {
 
 ```js
 app.use((req, res, next) => {
-  if (cluster.isWorker) console.log(`Worker ${cluster.worker.id} handle request`)
+  if (cluster.isWorker)
+    console.log(
+      `Worker ${cluster.worker.id} handle request`
+    )
 
   next()
 })

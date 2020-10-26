@@ -48,8 +48,8 @@
 @font-face {
   font-family: 'FontAwesome';
   src: url('@{icon-font-path}/@{icon-font-name}.eot?v=4.3.0');
-  src: url('@{icon-font-path}/@{icon-font-name}.eot?#iefix&v=4.3.0') format('embedded-opentype'),
-    ...;
+  src: url('@{icon-font-path}/@{icon-font-name}.eot?#iefix&v=4.3.0')
+      format('embedded-opentype'), ...;
 }
 ```
 
@@ -59,8 +59,8 @@
 @font-face {
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
-    ...;
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0')
+      format('embedded-opentype'), ...;
 }
 ```
 
@@ -70,8 +70,8 @@
 @font-face {
   font-family: 'FontAwesome';
   src: url('@icon-font-path/fontawesome-webfont.eot?v=4.3.0');
-  src: url('@icon-font-path/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
-    ...;
+  src: url('@icon-font-path/fontawesome-webfont.eot?#iefix&v=4.3.0')
+      format('embedded-opentype'), ...;
 }
 ```
 

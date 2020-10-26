@@ -58,7 +58,9 @@ description: Независимо от выбранной технологии �
       required
     />
 
-    <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
+    <div
+      *ngIf="amount.invalid && (amount.dirty || amount.touched)"
+    >
       <div *ngIf="amount.errors.required">
         Required field
       </div>
@@ -89,7 +91,7 @@ _reactive-form-validation.ts_
 ```ts
 @Component({
   selector: 'reactive-form-validation',
-  templateUrl: './reactive-form-validation.component.html'
+  templateUrl: './reactive-form-validation.component.html',
 })
 export class ReactiveFormValidationComponent {
   clientForm: FormGroup
@@ -106,9 +108,9 @@ export class ReactiveFormValidationComponent {
         [
           Validators.required,
           Validators.min(16),
-          Validators.pattern(/^[0-9]+(?!.)/)
-        ]
-      ]
+          Validators.pattern(/^[0-9]+(?!.)/),
+        ],
+      ],
     })
   }
 
@@ -129,21 +131,30 @@ _reactive-form-validation.html_
   <div>
     <label>Client</label>
     <input type="text" formControlName="client" />
-    <div *ngIf="_client.invalid && (_client.touched || _client.dirty)">
-      <span *ngIf="_client.errors?.required">Field is required</span>
+    <div
+      *ngIf="_client.invalid && (_client.touched || _client.dirty)"
+    >
+      <span *ngIf="_client.errors?.required"
+        >Field is required</span
+      >
     </div>
   </div>
 
   <div>
     <label>Age</label>
     <input type="text" formControlName="clientAge" />
-    <div *ngIf="_clientAge.invalid && (_clientAge.touched || _clientAge.dirty)">
-      <span *ngIf="_clientAge.errors?.required">Обязательное поле</span>
+    <div
+      *ngIf="_clientAge.invalid && (_clientAge.touched || _clientAge.dirty)"
+    >
+      <span *ngIf="_clientAge.errors?.required"
+        >Обязательное поле</span
+      >
       <span *ngIf="_clientAge.errors?.min"
         >Значение должно быть больше или равно
         {{_clientAge.errors?.min.min}}</span
       >
-      <span *ngIf="_clientAge.errors?.pattern?['/^[0-9]+(?!.)/']"
+      <span
+        *ngIf="_clientAge.errors?.pattern?['/^[0-9]+(?!.)/']"
         >Разрешаются только цифры</span
       >
     </div>
@@ -180,7 +191,9 @@ this.clientForm.get('client').hasError('required')
 Для динамического добавления полю валидаторов используется метод `setValidators()`.
 
 ```ts
-this.clientForm.get('client').setValidators([Validators.maxLength(100)])
+this.clientForm
+  .get('client')
+  .setValidators([Validators.maxLength(100)])
 ```
 
 Чтобы удалить все привязанные к полю Angular validators, необходимо вызвать метод `clearValidators()`.
@@ -201,9 +214,12 @@ _account.validator.ts_
 
 ```ts
 export function accountValidator(): ValidatorFn {
-  return (control: AbstractControl): { [key: string]: boolean } | null => {
+  return (
+    control: AbstractControl
+  ): { [key: string]: boolean } | null => {
     let accountRgEx: RegExp = /^[0-9]{20}(?!.)/
-    let valid = !control.value || accountRgEx.test(control.value)
+    let valid =
+      !control.value || accountRgEx.test(control.value)
     return valid ? null : { account: true }
   }
 }
@@ -245,9 +261,11 @@ export class GoodsService {
 _check-goods-left.validator.ts_
 
 ```ts
-export function checkGoodsLeftValidator(control: AbstractControl) {
+export function checkGoodsLeftValidator(
+  control: AbstractControl
+) {
   return this.checkGoodsLeft(control.value).pipe(
-    tap(response => {
+    tap((response) => {
       return response ? null : { goodsLeft: true }
     })
   )
@@ -259,12 +277,16 @@ _check-goods-left-validator-example.component.ts_
 ```ts
 @Component({
   selector: 'check-goods-left-validator-example',
-  templateUrl: './check-goods-left-validator-example.component.html'
+  templateUrl:
+    './check-goods-left-validator-example.component.html',
 })
 export class CheckGoodsLeftValidatorExampleComponent {
   orderForm: FormGroup
 
-  constructor(private fb: FormBuilder, private goodsService: GoodsService) {
+  constructor(
+    private fb: FormBuilder,
+    private goodsService: GoodsService
+  ) {
     this._createForm()
   }
 
@@ -274,8 +296,8 @@ export class CheckGoodsLeftValidatorExampleComponent {
       goodsCount: [
         '',
         [Validators.required],
-        [checkGoodsLeftValidator.bind(this.goodsService)]
-      ]
+        [checkGoodsLeftValidator.bind(this.goodsService)],
+      ],
     })
   }
 }

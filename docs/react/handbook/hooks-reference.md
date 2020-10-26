@@ -53,9 +53,17 @@ function Counter({ initialCount }) {
   return (
     <>
       Счёт: {count}
-      <button onClick={() => setCount(initialCount)}>Сбросить</button>
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
-      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+      <button onClick={() => setCount(initialCount)}>
+        Сбросить
+      </button>
+      <button
+        onClick={() =>
+          setCount((prevCount) => prevCount + 1)
+        }
+      >
+        +
+      </button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
     </>
   )
 }
@@ -68,7 +76,7 @@ function Counter({ initialCount }) {
 > В отличие от метода `setState`, который вы можете найти в классовых компонентах, `setState` не объединяет объекты обновления автоматически. Вы можете повторить это поведение, комбинируя форму функции обновления с синтаксисом расширения объекта:
 >
 > ```js
-> setState(prevState => {
+> setState((prevState) => {
 >   // Object.assign также будет работать
 >   return { ...prevState, ...updatedValues }
 > })
@@ -193,7 +201,11 @@ const value = useContext(MyContext)
 ### useReducer {#usereducer}
 
 ```js
-const [state, dispatch] = useReducer(reducer, initialArg, init)
+const [state, dispatch] = useReducer(
+  reducer,
+  initialArg,
+  init
+)
 ```
 
 Альтернатива для [`useState`](#usestate). Принимает редюсер типа `(state, action) => newState` и возвращает текущее состояние в паре с методом `dispatch`. (Если вы знакомы с Redux, вы уже знаете, как это работает.)
@@ -217,12 +229,23 @@ function reducer(state, action) {
 }
 
 function Counter() {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(
+    reducer,
+    initialState
+  )
   return (
     <>
       Count: {state.count}
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <button
+        onClick={() => dispatch({ type: 'increment' })}
+      >
+        +
+      </button>
+      <button
+        onClick={() => dispatch({ type: 'decrement' })}
+      >
+        -
+      </button>
     </>
   )
 }
@@ -237,7 +260,9 @@ function Counter() {
 Существует два разных способа инициализации состояния `useReducer`. Вы можете выбрать любой из них в зависимости от ситуации. Самый простой способ — передать начальное состояние в качестве второго аргумента:
 
 ```js
-const [state, dispatch] = useReducer(reducer, { count: initialCount })
+const [state, dispatch] = useReducer(reducer, {
+  count: initialCount,
+})
 ```
 
 > Примечание
@@ -269,12 +294,26 @@ function reducer(state, action) {
 }
 
 function Counter({ initialCount }) {
-  const [state, dispatch] = useReducer(reducer, initialCount, init)
+  const [state, dispatch] = useReducer(
+    reducer,
+    initialCount,
+    init
+  )
   return (
     <>
       Count: {state.count}
-      <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</button>
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button
+        onClick={() =>
+          dispatch({ type: 'reset', payload: initialCount })
+        }
+      >
+        Reset
+      </button>
+      <button
+        onClick={() => dispatch({ type: 'increment' })}
+      >
+        +
+      </button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
     </>
   )
@@ -310,7 +349,10 @@ const memoizedCallback = useCallback(() => {
 ### useMemo {#usememo}
 
 ```js
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
+const memoizedValue = useMemo(
+  () => computeExpensiveValue(a, b),
+  [a, b]
+)
 ```
 
 Возвращает [мемоизированное](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BC%D0%BE%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F) значение.
@@ -349,7 +391,9 @@ function TextInputWithFocusButton() {
   return (
     <>
       <input ref={inputEl} type="text" />
-      <button onClick={onButtonClick}>Установить фокус на поле ввода</button>
+      <button onClick={onButtonClick}>
+        Установить фокус на поле ввода
+      </button>
     </>
   )
 }
@@ -439,5 +483,5 @@ function useFriendStatus(friendID) {
 Например, пользовательский хук, который возвратил значение `Date`, может избежать ненужного вызова функции `toDateString`, передав следующую функцию форматирования:
 
 ```js
-useDebugValue(date, date => date.toDateString())
+useDebugValue(date, (date) => date.toDateString())
 ```

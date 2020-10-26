@@ -72,16 +72,16 @@ const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS'
 function getPhotos(year) {
   return {
     type: GET_PHOTOS,
-    payload: year
+    payload: year,
   }
 }
 
 // я буду использовать синтаксис function внутри actions, так как не вижу смысла
 // в изменении его на такую запись:
 
-const getPhotos = year => ({
+const getPhotos = (year) => ({
   type: GET_PHOTOS,
-  payload: year
+  payload: year,
 })
 ```
 
@@ -113,7 +113,7 @@ function page(state = initialState, action) {
   switch (action.type) {
     case GET_PHOTO_SUCCESS:
       return Object.assign({}, state, {
-        photos: action.payload
+        photos: action.payload,
       })
     default:
       return state

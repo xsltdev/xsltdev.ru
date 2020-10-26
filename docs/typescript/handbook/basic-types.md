@@ -47,7 +47,13 @@ I'll be ${age + 1} years old next month.`
 Эквивалент этого объявления `sentence`:
 
 ```ts
-let sentence: string = 'Hello, my name is ' + name + '.\n\n' + "I'll be " + (age + 1) + ' years old next month.'
+let sentence: string =
+  'Hello, my name is ' +
+  name +
+  '.\n\n' +
+  "I'll be " +
+  (age + 1) +
+  ' years old next month.'
 ```
 
 ## Array
@@ -107,7 +113,7 @@ x[6] = true // Ошибка, boolean это не (string | number)
 enum Color {
   Red,
   Green,
-  Blue
+  Blue,
 }
 let c: Color = Color.Green
 ```
@@ -120,7 +126,7 @@ let c: Color = Color.Green
 enum Color {
   Red = 1,
   Green,
-  Blue
+  Blue,
 }
 let c: Color = Color.Green
 ```
@@ -131,7 +137,7 @@ let c: Color = Color.Green
 enum Color {
   Red = 1,
   Green = 2,
-  Blue = 4
+  Blue = 4,
 }
 let c: Color = Color.Green
 ```
@@ -143,7 +149,7 @@ let c: Color = Color.Green
 enum Color {
   Red = 1,
   Green,
-  Blue
+  Blue,
 }
 let colorName: string = Color[2]
 

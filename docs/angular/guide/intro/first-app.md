@@ -80,15 +80,15 @@ var UglifyJSPlugin = require('uglifyjs-webpack-plugin') // плагин мини
 module.exports = {
   entry: {
     polyfills: './src/polyfills.ts',
-    app: './src/main.ts'
+    app: './src/main.ts',
   },
   output: {
     path: path.resolve(__dirname, './public'), // путь к каталогу выходных файлов - папка public
     publicPath: '/public/',
-    filename: '[name].js' // название создаваемого файла
+    filename: '[name].js', // название создаваемого файла
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
@@ -99,13 +99,16 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: path.resolve(__dirname, 'tsconfig.json')
-            }
+              configFileName: path.resolve(
+                __dirname,
+                'tsconfig.json'
+              ),
+            },
           },
-          'angular2-template-loader'
-        ]
-      }
-    ]
+          'angular2-template-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
@@ -113,8 +116,8 @@ module.exports = {
       path.resolve(__dirname, 'src'), // каталог с исходными файлами
       {} // карта маршрутов
     ),
-    new UglifyJSPlugin()
-  ]
+    new UglifyJSPlugin(),
+  ],
 }
 ```
 
@@ -180,7 +183,10 @@ class Item {
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-8">
-            <button class="btn btn-default" (click)="addItem(text, price)">
+            <button
+              class="btn btn-default"
+              (click)="addItem(text, price)"
+            >
               Добавить
             </button>
           </div>
@@ -198,22 +204,28 @@ class Item {
           <tr *ngFor="let item of items">
             <td>{{ item.purchase }}</td>
             <td>{{ item.price }}</td>
-            <td><input type="checkbox" [(ngModel)]="item.done" /></td>
+            <td>
+              <input
+                type="checkbox"
+                [(ngModel)]="item.done"
+              />
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   items: Item[] = [
     { purchase: 'Хлеб', done: false, price: 15.9 },
     { purchase: 'Масло', done: false, price: 60 },
     { purchase: 'Картофель', done: true, price: 22.6 },
-    { purchase: 'Сыр', done: false, price: 310 }
+    { purchase: 'Сыр', done: false, price: 310 },
   ]
   addItem(text: string, price: number): void {
-    if (text == null || text.trim() == '' || price == null) return
+    if (text == null || text.trim() == '' || price == null)
+      return
     this.items.push(new Item(text, price))
   }
 }
@@ -266,7 +278,7 @@ import { AppComponent } from './app.component'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -298,7 +310,10 @@ import 'zone.js/dist/zone'
   <head>
     <meta charset="utf-8" />
     <title>Приложение покупок</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"

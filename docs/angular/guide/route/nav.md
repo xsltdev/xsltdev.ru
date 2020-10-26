@@ -23,7 +23,7 @@ import { Router } from '@angular/router'
       <router-outlet></router-outlet>
       <button (click)="goHome()">На главную</button>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   constructor(private router: Router) {}
@@ -76,11 +76,13 @@ export class Item {
           class="form-control"
           placeholder="Товар"
         /><br />
-        <button (click)="goToItem(item)" class="btn">Перейти</button>
+        <button (click)="goToItem(item)" class="btn">
+          Перейти
+        </button>
       </div>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   item: Item = new Item()
@@ -91,8 +93,8 @@ export class AppComponent {
     this.router.navigate(['/item', myItem.id], {
       queryParams: {
         product: myItem.product,
-        price: myItem.price
-      }
+        price: myItem.price,
+      },
     })
   }
 }

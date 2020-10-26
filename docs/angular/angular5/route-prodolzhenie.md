@@ -107,7 +107,7 @@ ngOnInit() {
 const appRoutes: Routes = [
   //...
   { path: 'page404', component: Page404Component },
-  { path: '**', redirectTo: '/page404' }
+  { path: '**', redirectTo: '/page404' },
 ]
 ```
 

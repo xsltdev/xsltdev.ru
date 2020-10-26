@@ -39,7 +39,7 @@ export class DataService {
   private data: Phone[] = [
     { name: 'Apple iPhone 7', price: 56000 },
     { name: 'HP Elite x3', price: 56000 },
-    { name: 'Alcatel Idol S4', price: 25000 }
+    { name: 'Alcatel Idol S4', price: 25000 },
   ]
   getData(): Phone[] {
     return this.data
@@ -85,7 +85,10 @@ import { Phone } from './phone'
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-8">
-            <button class="btn btn-default" (click)="addItem(name, price)">
+            <button
+              class="btn btn-default"
+              (click)="addItem(name, price)"
+            >
               Добавить
             </button>
           </div>
@@ -107,7 +110,7 @@ import { Phone } from './phone'
       </table>
     </div>
   `,
-  providers: [DataService]
+  providers: [DataService],
 })
 export class AppComponent implements OnInit {
   items: Phone[] = []
@@ -153,7 +156,7 @@ import { AppComponent } from './app.component'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

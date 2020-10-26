@@ -9,9 +9,8 @@ description: При обработке xsl:choose процессор пооче�
 ## Синтаксис
 
 ```xml
-<xsl:when
-    test = "выражение">
-    <!-- Содержимое: шаблон -->
+<xsl:when test="выражение">
+  <!-- Содержимое: шаблон -->
 </xsl:when>
 ```
 
@@ -28,26 +27,29 @@ description: При обработке xsl:choose процессор пооче�
 
 ```xml
 <xsl:template match="orderedlist/listitem">
-    <fo:list-item indent-start='2pi'>
-        <fo:list-item-label>
-            <xsl:variable name="level" select="count( ancestor::orderedlist ) mod 3" />
-            <xsl:choose>
-                <xsl:when test="$level = 1">
-                    <xsl:number format="i" />
-                </xsl:when>
-                <xsl:when test="$level = 2">
-                    <xsl:number format="a" />
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:number format="1" />
-                </xsl:otherwise>
-            </xsl:choose>
-            <xsl:text>. </xsl:text>
-        </fo:list-item-label>
-        <fo:list-item-body>
-            <xsl:apply-templates />
-        </fo:list-item-body>
-    </fo:list-item>
+  <fo:list-item indent-start='2pi'>
+    <fo:list-item-label>
+      <xsl:variable
+        name="level"
+        select="count( ancestor::orderedlist ) mod 3"
+      />
+      <xsl:choose>
+        <xsl:when test="$level = 1">
+          <xsl:number format="i" />
+        </xsl:when>
+        <xsl:when test="$level = 2">
+          <xsl:number format="a" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:number format="1" />
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:text>.</xsl:text>
+    </fo:list-item-label>
+    <fo:list-item-body>
+      <xsl:apply-templates />
+    </fo:list-item-body>
+  </fo:list-item>
 </xsl:template>
 ```
 

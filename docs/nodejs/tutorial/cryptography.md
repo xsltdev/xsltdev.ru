@@ -94,20 +94,31 @@ const crypto = require('crypto')
 const iv = crypto.randomBytes(16) //генерация вектора инициализации
 const key = crypto.scryptSync('secret', 'salt', 32) //генерация ключа
 
-let cipherStream = crypto.createCipheriv('aes-256-cbc', key, iv)
+let cipherStream = crypto.createCipheriv(
+  'aes-256-cbc',
+  key,
+  iv
+)
 
 let encryptedData = ''
 
-cipherStream.on('data', data => (encryptedData += data.toString('hex')))
+cipherStream.on(
+  'data',
+  (data) => (encryptedData += data.toString('hex'))
+)
 
 cipherStream.write('Any data')
 cipherStream.end()
 
-let decipherStream = crypto.createDecipheriv('aes-256-cbc', key, iv)
+let decipherStream = crypto.createDecipheriv(
+  'aes-256-cbc',
+  key,
+  iv
+)
 
 let decryptedData = ''
 
-decipherStream.on('data', data => (decryptedData += data))
+decipherStream.on('data', (data) => (decryptedData += data))
 decipherStream.on('end', () => console.log(decryptedData)) //'Any data'
 
 cipherStream.write(encryptedData, 'hex')

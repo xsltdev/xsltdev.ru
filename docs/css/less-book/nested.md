@@ -216,7 +216,9 @@ body {
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Использование правил @keyframes и @font-face в LESS</title>
+    <title>
+      Использование правил @keyframes и @font-face в LESS
+    </title>
     <link rel="stylesheet/less" href="8.less" />
     <!-- подключаем less файл к документу -->
     <script src="less.min.js"></script>

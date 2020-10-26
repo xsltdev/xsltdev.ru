@@ -17,7 +17,8 @@ import { Component } from '@angular/core'
     <div [ngClass]="{ verdanaFont: true }">
       <h1>Hello Angular 2</h1>
       <p [ngClass]="{ segoePrintFont: true }">
-        Angular 5 представляет модульную архитектуру приложения
+        Angular 5 представляет модульную архитектуру
+        приложения
       </p>
     </div>
   `,
@@ -31,8 +32,8 @@ import { Component } from '@angular/core'
         font-size: 14px;
         font-family: 'Segoe Print';
       }
-    `
-  ]
+    `,
+  ],
 })
 export class AppComponent {}
 ```
@@ -50,7 +51,10 @@ export class AppComponent {}
 ```html
 <div [class.verdanaFont]="true">
   <h1>Hello Angular 5</h1>
-  <p [class.verdanaFont]="false" [class.segoePrintFont]="true">
+  <p
+    [class.verdanaFont]="false"
+    [class.segoePrintFont]="true"
+  >
     Angular 7 представляет модульную архитектуру приложения
   </p>
 </div>
@@ -68,10 +72,21 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div [ngStyle]="{ 'font-size': '13px', 'font-family': 'Verdana' }">
+    <div
+      [ngStyle]="{
+        'font-size': '13px',
+        'font-family': 'Verdana'
+      }"
+    >
       <h1>Hello Angular 5</h1>
-      <p [ngStyle]="{ 'font-size': '14px', 'font-family': 'Segoe Print' }">
-        Angular 5 представляет модульную архитектуру приложения
+      <p
+        [ngStyle]="{
+          'font-size': '14px',
+          'font-family': 'Segoe Print'
+        }"
+      >
+        Angular 5 представляет модульную архитектуру
+        приложения
       </p>
     </div>
   `,
@@ -85,8 +100,8 @@ import { Component } from '@angular/core'
         font-size: 14px;
         font-family: 'Segoe Print';
       }
-    `
-  ]
+    `,
+  ],
 })
 export class AppComponent {}
 ```
@@ -94,9 +109,15 @@ export class AppComponent {}
 Аналогично для установки стилей можно применять свойства объекта `style`:
 
 ```html
-<div [style.fontSize]="'13px'" [style.fontFamily]="'Verdana'">
+<div
+  [style.fontSize]="'13px'"
+  [style.fontFamily]="'Verdana'"
+>
   <h1>Hello Angular 7</h1>
-  <p [style.fontSize]="'14px'" [style.fontFamily]="'Segoe Print'">
+  <p
+    [style.fontSize]="'14px'"
+    [style.fontFamily]="'Segoe Print'"
+  >
     Angular 7 представляет модульную архитектуру приложения
   </p>
 </div>
@@ -115,7 +136,8 @@ import { Component } from '@angular/core'
     <div [ngClass]="{ invisible: visibility }">
       <h1>Hello Angular 5</h1>
       <p>
-        Angular 5 представляет модульную архитектуру приложения
+        Angular 5 представляет модульную архитектуру
+        приложения
       </p>
     </div>
     <button (click)="toggle()">Toggle</button>
@@ -125,8 +147,8 @@ import { Component } from '@angular/core'
       .invisible {
         display: none;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class AppComponent {
   visibility: boolean = true
@@ -148,5 +170,7 @@ export class AppComponent {
 Либо также можно было бы написать так:
 
 ```html
-<div [style.display]="visibility==true?'block':'none'"></div>
+<div
+  [style.display]="visibility==true?'block':'none'"
+></div>
 ```

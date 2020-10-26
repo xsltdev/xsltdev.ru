@@ -19,11 +19,19 @@ import { map } from 'rxjs/operators'
   selector: 'my-app',
   template: `
     <p>Модель: {{ phone | async }}</p>
-    <button (click)="showPhones()">Посмотреть модели</button>
-  `
+    <button (click)="showPhones()">
+      Посмотреть модели
+    </button>
+  `,
 })
 export class AppComponent {
-  phones = ['iPhone 7', 'LG G 5', 'Honor 9', 'Idol S4', 'Nexus 6P']
+  phones = [
+    'iPhone 7',
+    'LG G 5',
+    'Honor 9',
+    'Idol S4',
+    'Nexus 6P',
+  ]
 
   phone: Observable<string>
   constructor() {
@@ -31,7 +39,9 @@ export class AppComponent {
   }
 
   showPhones() {
-    this.phone = interval(500).pipe(map((i: number) => this.phones[i]))
+    this.phone = interval(500).pipe(
+      map((i: number) => this.phones[i])
+    )
   }
 }
 ```
@@ -99,7 +109,7 @@ import { User } from './user'
       </li>
     </ul>
   `,
-  providers: [HttpService]
+  providers: [HttpService],
 })
 export class AppComponent implements OnInit {
   users: Observable<Object>
@@ -131,7 +141,7 @@ import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   imports: [BrowserModule, HttpClientModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

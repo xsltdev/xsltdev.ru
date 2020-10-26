@@ -26,14 +26,19 @@ const host = '127.0.0.1'
 const port = 7000
 
 app.get('/', (req, res) => {
-  request('http://example.com/api', (err, response, body) => {
-    if (err) return res.status(500).send({ message: err })
+  request(
+    'http://example.com/api',
+    (err, response, body) => {
+      if (err) return res.status(500).send({ message: err })
 
-    return res.send(body)
-  })
+      return res.send(body)
+    }
+  )
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 Метод `get()` принимает аргументами URL, к которому необходимо выполнить запрос, и callback-функцию.
@@ -54,8 +59,8 @@ request.post(
     url: 'http://example.com/api',
     form: {
       login: 'login1',
-      password: 'password1'
-    }
+      password: 'password1',
+    },
   },
   (err, response, body) => {
     if (err) return res.status(500).send({ message: err })
@@ -76,18 +81,25 @@ request.post(
   {
     url: 'http://example.com/api',
     formData: {
-      profile_image: fs.createReadStream('/static/images/user.png'),
+      profile_image: fs.createReadStream(
+        '/static/images/user.png'
+      ),
       //детальная конфигурация
       profile_image2: {
-        value: fs.createReadStream('/static/images/user.png'),
+        value: fs.createReadStream(
+          '/static/images/user.png'
+        ),
         options: {
           filename: 'my-photo.png',
-          contentType: 'image/png'
-        }
+          contentType: 'image/png',
+        },
       },
       //передача множества файлов
-      attachments: [fs.createReadStream('/static/images/user1.png'), fs.createReadStream('/static/images/user2.png')]
-    }
+      attachments: [
+        fs.createReadStream('/static/images/user1.png'),
+        fs.createReadStream('/static/images/user2.png'),
+      ],
+    },
   },
   (err, response, body) => {
     if (err) return res.status(500).send({ message: err })
@@ -105,7 +117,7 @@ _post-headers.js_
 request.post(
   {
     url: 'http://example.com/api',
-    headers: { 'X-Custom-Header': 1 }
+    headers: { 'X-Custom-Header': 1 },
   },
   (err, response, body) => {
     if (err) return res.status(500).send({ message: err })
@@ -123,7 +135,7 @@ _delete.js_
 request(
   {
     method: 'DELETE',
-    url: 'http://example.com/api'
+    url: 'http://example.com/api',
   },
   (err, response, body) => {
     if (err) return res.status(500).send({ message: err })

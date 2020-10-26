@@ -53,7 +53,11 @@ opacity: 1;
   <body>
     <p>
       <img src="image/igels.png" alt="Обычный рисунок" />
-      <img src="image/igels.png" alt="Полупрозрачный рисунок" class="semi" />
+      <img
+        src="image/igels.png"
+        alt="Полупрозрачный рисунок"
+        class="semi"
+      />
     </p>
   </body>
 </html>

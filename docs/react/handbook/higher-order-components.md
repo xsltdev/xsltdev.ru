@@ -5,7 +5,9 @@
 Говоря просто, **компонент высшего порядка — это функция, которая принимает компонент и возвращает новый компонент.**
 
 ```js
-const EnhancedComponent = higherOrderComponent(WrappedComponent)
+const EnhancedComponent = higherOrderComponent(
+  WrappedComponent
+)
 ```
 
 Если обычный компонент преобразует пропсы в UI, то компонент высшего порядка преобразует компонент в другой компонент.
@@ -31,7 +33,7 @@ class CommentList extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.state = {
       // "DataSource" — произвольный глобальный источник данных
-      comments: DataSource.getComments()
+      comments: DataSource.getComments(),
     }
   }
 
@@ -48,14 +50,14 @@ class CommentList extends React.Component {
   handleChange() {
     // Сохранить комментарии из внешнего источника в локальном состоянии
     this.setState({
-      comments: DataSource.getComments()
+      comments: DataSource.getComments(),
     })
   }
 
   render() {
     return (
       <div>
-        {this.state.comments.map(comment => (
+        {this.state.comments.map((comment) => (
           <Comment comment={comment} key={comment.id} />
         ))}
       </div>
@@ -72,7 +74,7 @@ class BlogPost extends React.Component {
     super(props)
     this.handleChange = this.handleChange.bind(this)
     this.state = {
-      blogPost: DataSource.getBlogPost(props.id)
+      blogPost: DataSource.getBlogPost(props.id),
     }
   }
 
@@ -86,7 +88,7 @@ class BlogPost extends React.Component {
 
   handleChange() {
     this.setState({
-      blogPost: DataSource.getBlogPost(this.props.id)
+      blogPost: DataSource.getBlogPost(this.props.id),
     })
   }
 
@@ -107,9 +109,15 @@ class BlogPost extends React.Component {
 Давайте реализуем функцию `withSubscription` — она будет создавать компоненты и подписывать их на обновления `DataSource` (наподобие `CommentList` и `BlogPost`). Функция будет принимать оборачиваемый компонент и через пропсы передавать ему новые данные:
 
 ```js
-const CommentListWithSubscription = withSubscription(CommentList, DataSource => DataSource.getComments())
+const CommentListWithSubscription = withSubscription(
+  CommentList,
+  (DataSource) => DataSource.getComments()
+)
 
-const BlogPostWithSubscription = withSubscription(BlogPost, (DataSource, props) => DataSource.getBlogPost(props.id))
+const BlogPostWithSubscription = withSubscription(
+  BlogPost,
+  (DataSource, props) => DataSource.getBlogPost(props.id)
+)
 ```
 
 Первый параметр — это оборачиваемый компонент. Второй — функция, которая извлекает нужные нам данные, она получает `DataSource` и текущие пропсы.
@@ -125,7 +133,7 @@ function withSubscription(WrappedComponent, selectData) {
       super(props)
       this.handleChange = this.handleChange.bind(this)
       this.state = {
-        data: selectData(DataSource, props)
+        data: selectData(DataSource, props),
       }
     }
 
@@ -140,14 +148,19 @@ function withSubscription(WrappedComponent, selectData) {
 
     handleChange() {
       this.setState({
-        data: selectData(DataSource, this.props)
+        data: selectData(DataSource, this.props),
       })
     }
 
     render() {
       // ... и рендерит оборачиваемый компонент со свежими данными!
       // Обратите внимание, что мы передаём остальные пропсы
-      return <WrappedComponent data={this.state.data} {...this.props} />
+      return (
+        <WrappedComponent
+          data={this.state.data}
+          {...this.props}
+        />
+      )
     }
   }
 }
@@ -167,7 +180,9 @@ function withSubscription(WrappedComponent, selectData) {
 
 ```js
 function logProps(InputComponent) {
-  InputComponent.prototype.componentWillReceiveProps = function(nextProps) {
+  InputComponent.prototype.componentWillReceiveProps = function (
+    nextProps
+  ) {
     console.log('Текущие пропсы: ', this.props)
     console.log('Следующие пропсы: ', nextProps)
   }
@@ -241,7 +256,10 @@ const NavbarWithRouter = withRouter(Navbar)
 Обычно HOC принимают несколько аргументов. В данном примере из Relay, мы используем объект конфигурации с описанием данных для компонента:
 
 ```js
-const CommentWithRelay = Relay.createContainer(Comment, config)
+const CommentWithRelay = Relay.createContainer(
+  Comment,
+  config
+)
 ```
 
 Самый распространённый способ вызова HOC выглядит так:
@@ -273,7 +291,9 @@ const ConnectedComment = enhance(CommentList)
 
 ```js
 // Вместо этого...
-const EnhancedComponent = withRouter(connect(commentSelector)(WrappedComponent))
+const EnhancedComponent = withRouter(
+  connect(commentSelector)(WrappedComponent)
+)
 
 // ... вы можете воспользоваться вспомогательной совмещающей функцией
 // compose(f, g, h) идентичен (...args) => f(g(h(...args)))
@@ -300,12 +320,18 @@ function withSubscription(WrappedComponent) {
   class WithSubscription extends React.Component {
     /* ... */
   }
-  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`
+  WithSubscription.displayName = `WithSubscription(${getDisplayName(
+    WrappedComponent
+  )})`
   return WithSubscription
 }
 
 function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+  return (
+    WrappedComponent.displayName ||
+    WrappedComponent.name ||
+    'Component'
+  )
 }
 ```
 
@@ -343,7 +369,7 @@ render() {
 
 ```js
 // Определим статический метод
-WrappedComponent.staticMethod = function() {
+WrappedComponent.staticMethod = function () {
   /*...*/
 }
 // Теперь применим HOC

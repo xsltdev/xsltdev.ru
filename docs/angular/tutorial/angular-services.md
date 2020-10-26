@@ -12,12 +12,12 @@ export class StatesService {
   private _filtersState: any = {
     accounts: {
       all: true,
-      opened: false
+      opened: false,
     },
     deposits: {
       all: true,
-      opened: false
-    }
+      opened: false,
+    },
   }
 
   getFilters(): any {
@@ -76,7 +76,7 @@ export class AccountsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AccountsModule,
-      providers: [AccountsHttpService]
+      providers: [AccountsHttpService],
     }
   }
 }
@@ -92,10 +92,14 @@ export class AccountsModule {
 
 ```ts
 export class AccountsModule {
-  static forRoot(acc: AccountsHttpService): ModuleWithProviders {
+  static forRoot(
+    acc: AccountsHttpService
+  ): ModuleWithProviders {
     return {
       ngModule: AccountsModule,
-      providers: [{ provide: AccountsHttpService, useValue: acc }]
+      providers: [
+        { provide: AccountsHttpService, useValue: acc },
+      ],
     }
   }
 }

@@ -88,7 +88,8 @@ background-position-y: top;
     <title>background-position-y</title>
     <style>
       .heart {
-        background: url('/example/image/heart-sprite.png') no-repeat;
+        background: url('/example/image/heart-sprite.png')
+          no-repeat;
         width: 64px;
         height: 64px;
       }

@@ -71,10 +71,13 @@ Safari до версии 9 поддерживает свойство `-webkit-fl
   </head>
   <body>
     <div class="flex-container">
-      <div class="flex-item flex1"><img src="aquaria.jpg" alt="" /></div>
+      <div class="flex-item flex1">
+        <img src="aquaria.jpg" alt="" />
+      </div>
       <div class="flex-item flex2">
-        Понравились готовые инсталляции, некоторые даже без рыбок смотрятся так,
-        что хочется фотографию на рабочий стол поставить и любоваться.
+        Понравились готовые инсталляции, некоторые даже без
+        рыбок смотрятся так, что хочется фотографию на
+        рабочий стол поставить и любоваться.
       </div>
     </div>
   </body>

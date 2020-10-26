@@ -25,7 +25,7 @@ _src/actions/PageActions.js_
 export function setYear(year) {
   return {
     type: 'SET_YEAR',
-    payload: year
+    payload: year,
   }
 }
 ```
@@ -39,7 +39,7 @@ _src/reducers/page.js_
 ```js
 const initialState = {
   year: 2018,
-  photos: []
+  photos: [],
 }
 
 export function pageReducer(state = initialState, action) {
@@ -89,22 +89,26 @@ class App extends Component {
           <h1 className="App-title">Мой топ фото</h1>
         </header>
         <User name={user.name} />
-        <Page photos={page.photos} year={page.year} setYear={setYearAction} />
+        <Page
+          photos={page.photos}
+          year={page.year}
+          setYear={setYearAction}
+        />
       </div>
     )
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     user: store.user,
-    page: store.page
+    page: store.page,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setYearAction: year => dispatch(setYear(year)) // [1]
+    setYearAction: (year) => dispatch(setYear(year)), // [1]
   }
 }
 
@@ -125,8 +129,8 @@ export default connect(
 Так же я пишу `return`, для того, чтобы вы могли удобно сконсолить значения аргументов, если вам что-то не понятно. Без `return`, можно написать так:
 
 ```js
-const mapDispatchToProps = dispatch => ({
-  setYearAction: year => dispatch(setYear(year))
+const mapDispatchToProps = (dispatch) => ({
+  setYearAction: (year) => dispatch(setYear(year)),
 })
 ```
 
@@ -145,7 +149,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export class Page extends React.Component {
-  onBtnClick = e => {
+  onBtnClick = (e) => {
     const year = +e.currentTarget.innerText
     this.props.setYear(year)
   }
@@ -171,7 +175,7 @@ export class Page extends React.Component {
 Page.propTypes = {
   year: PropTypes.number.isRequired,
   photos: PropTypes.array.isRequired,
-  setYear: PropTypes.func.isRequired // добавили новое свойство в propTypes
+  setYear: PropTypes.func.isRequired, // добавили новое свойство в propTypes
 }
 ```
 
@@ -191,11 +195,11 @@ p.s. в коде было использовано свойство DOM-элем
 p.p.s. можете добавить `console.log(store)` в `mapStateToProps` и посмотреть есть ли новые данные.
 
 ```js
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   console.log(store)
   return {
     user: store.user,
-    page: store.page
+    page: store.page,
   }
 }
 ```

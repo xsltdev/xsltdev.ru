@@ -10,73 +10,111 @@
 
 Следующий рекурсивный шаблон заменяет все вхождения искомой строки на строку замены.
 
-```xslt
+```xml
 <xsl:template name="search-and-replace">
-	<xsl:param name="input"/>
-	<xsl:param name="search-string"/>
-	<xsl:param name="replace-string"/>
-	<xsl:choose>
-		<!-- Смотрим, содержит ли входная строка искомую -->
-		<xsl:when test="$search-string and contains($input,$search-string)">
-			<!-- Если да, конкатенируем подстроку, предшествующую искомой,
+  <xsl:param name="input" />
+  <xsl:param name="search-string" />
+  <xsl:param name="replace-string" />
+  <xsl:choose>
+    <!-- Смотрим, содержит ли входная строка искомую -->
+    <xsl:when
+      test="$search-string and contains($input,$search-string)"
+    >
+      <!-- Если да, конкатенируем подстроку, предшествующую искомой,
 			со строкой замены, и со строкой, являющейся результатом
 			рекурсивного применения шаблона к оставшейся подстроке -->
-			<xsl:value-of select="substring-before($input,$search-string)"/>
-			<xsl:value-of select="$replace-string"/>
-			<xsl:call-template name="search-and-replace">
-				<xsl:with-param name="input" select="substring-after($input,$search-string)"/>
-				<xsl:with-param name="search-string" select="$search-string"/>
-				<xsl:with-param name="replace-string" select="$replace-string"/>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:otherwise>
-			<!-- Больше вхождений искомой строки нет, поэтому возвращаем
+      <xsl:value-of
+        select="substring-before($input,$search-string)"
+      />
+      <xsl:value-of select="$replace-string" />
+      <xsl:call-template name="search-and-replace">
+        <xsl:with-param
+          name="input"
+          select="substring-after($input,$search-string)"
+        />
+        <xsl:with-param
+          name="search-string"
+          select="$search-string"
+        />
+        <xsl:with-param
+          name="replace-string"
+          select="$replace-string"
+        />
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Больше вхождений искомой строки нет, поэтому возвращаем
 			текущую входную строку -->
-			<xsl:value-of select="$input"/>
-		</xsl:otherwise>
-	</xsl:choose>
+      <xsl:value-of select="$input" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 Если вы хотите заменять только слова целиком, то следует проверять, что непосредственно до и после искомой строки находятся символы, принадлежащие классу разделителей слов. Мы будем считать, что разделителями являются символы, хранящиеся в переменной `$punc`, а также все символы пропуска.
 
-```xslt
+```xml
 <xsl:template name="search-and-replace-whole-words-only">
-	<xsl:param name="input"/>
-	<xsl:param name="search-string"/>
-	<xsl:param name="replace-string"/>
-	<xsl:variable name="punc" select="concat('.,;:()[]!?$@&amp;&quot;',&quot;&apos;&quot;)"/>
-	<xsl:choose>
-		<!-- Смотрим, содержит ли входная строка искомую -->
-		<xsl:when test="contains($input,$search-string)">
-			<!-- Если да, проверяем, что до и после нее находятся
+  <xsl:param name="input" />
+  <xsl:param name="search-string" />
+  <xsl:param name="replace-string" />
+  <xsl:variable
+    name="punc"
+    select="concat('.,;:()[]!?$@&amp;&quot;',&quot;&apos;&quot;)"
+  />
+  <xsl:choose>
+    <!-- Смотрим, содержит ли входная строка искомую -->
+    <xsl:when test="contains($input,$search-string)">
+      <!-- Если да, проверяем, что до и после нее находятся
 			разделители слов -->
-			<xsl:variable name="before" select="substring-before($input,$search-string)"/>
-			<xsl:variable name="before-char" select="substring(concat(' ',$before),
-			string-length($before) + 1,1)"/>
-			<xsl:variable name="after" select="substring-after($input,$search-string)"/>
-			<xsl:variable name="after-char" select="substring($after,1,1)"/>
-			<xsl:value-of select="$before"/>
-			<xsl:choose>
-				<xsl:when test="(not(normalize-space($before-char)) or contains($punc,$before-char)) and (not(normalize-space($after-char)) or contains($punc,$after-char))">
-					<xsl:value-of select="$replace-string"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$search-string"/>
-				</xsl:otherwise>
-			</xsl:choose>
-			<xsl:call-template name="search-and-replace-whole-words-only">
-				<xsl:with-param name="input" select="$after"/>
-				<xsl:with-param name="search-string" select="$search-string"/>
-				<xsl:with-param name="replace-string" select="$replace-string"/>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:otherwise>
-			<!-- Больше вхождений искомой строки нет, поэтому возвращаем
+      <xsl:variable
+        name="before"
+        select="substring-before($input,$search-string)"
+      />
+      <xsl:variable
+        name="before-char"
+        select="substring(concat(' ',$before),
+			string-length($before) + 1,1)"
+      />
+      <xsl:variable
+        name="after"
+        select="substring-after($input,$search-string)"
+      />
+      <xsl:variable
+        name="after-char"
+        select="substring($after,1,1)"
+      />
+      <xsl:value-of select="$before" />
+      <xsl:choose>
+        <xsl:when
+          test="(not(normalize-space($before-char)) or contains($punc,$before-char)) and (not(normalize-space($after-char)) or contains($punc,$after-char))"
+        >
+          <xsl:value-of select="$replace-string" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$search-string" />
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:call-template
+        name="search-and-replace-whole-words-only"
+      >
+        <xsl:with-param name="input" select="$after" />
+        <xsl:with-param
+          name="search-string"
+          select="$search-string"
+        />
+        <xsl:with-param
+          name="replace-string"
+          select="$replace-string"
+        />
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Больше вхождений искомой строки нет, поэтому возвращаем
 			текущую входную строку -->
-			<xsl:value-of select="$input"/>
-		</xsl:otherwise>
-	</xsl:choose>
+      <xsl:value-of select="$input" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -86,12 +124,16 @@
 
 Функциональность шаблона `search-and-replace` в версии 2.0 встроена в функцию `replace()`. Функциональность шаблона `search-and-replace-whole-words-only` можно имитировать с помощью регулярных выражений для сопоставления со словами:
 
-```xslt
-<xsl:function name="ckbk:search-and-replace-whole-words-only">
-	<xsl:param name="input" as="xs:string"/>
-	<xsl:param name="search-string" as="xs:string"/>
-	<xsl:param name="replace-string" as="xs:string"/>
-	<xsl:sequence select="replace($input, concat('(^|\W)',$search-string,'(\W|$)'),concat('$1',$replace-string,'$2'))"/>
+```xml
+<xsl:function
+  name="ckbk:search-and-replace-whole-words-only"
+>
+  <xsl:param name="input" as="xs:string" />
+  <xsl:param name="search-string" as="xs:string" />
+  <xsl:param name="replace-string" as="xs:string" />
+  <xsl:sequence
+    select="replace($input, concat('(^|\W)',$search-string,'(\W|$)'),concat('$1',$replace-string,'$2'))"
+  />
 </xsl:function>
 ```
 
@@ -107,66 +149,96 @@
 
 Пример 2.4. Использование временной строки в неудачной попытке улучшить производительность поиска и замены
 
-```xslt
+```xml
 <xsl:template name="search-and-replace">
-	<xsl:param name="input"/>
-	<xsl:param name="search-string"/>
-	<xsl:param name="replace-string"/>
-	<!-- Найти подстроку, предшествующую искомой строке,
+  <xsl:param name="input" />
+  <xsl:param name="search-string" />
+  <xsl:param name="replace-string" />
+  <!-- Найти подстроку, предшествующую искомой строке,
 	и сохранить ее в переменной -->
-	<xsl:variable name="temp" select="substring-before($input,$search-string)"/>
-	<xsl:choose>
-		<!-- Если $temp не пуста или входная строка начинается с искомой
+  <xsl:variable
+    name="temp"
+    select="substring-before($input,$search-string)"
+  />
+  <xsl:choose>
+    <!-- Если $temp не пуста или входная строка начинается с искомой
 		подстроки, то необходимо произвести замену. Тем самым мы
 		избегаем вызова функции contains(). -->
-		<xsl:when test="$temp or starts-with($input,$search-string)">
-			<xsl:value-of select="concat($temp,$replace-string)"/>
-			<xsl:call-template name="search-and-replace">
-				<!-- Вызова substring-after избегаем за счет
+    <xsl:when
+      test="$temp or starts-with($input,$search-string)"
+    >
+      <xsl:value-of
+        select="concat($temp,$replace-string)"
+      />
+      <xsl:call-template name="search-and-replace">
+        <!-- Вызова substring-after избегаем за счет
 				использования длины temp и искомой строки
 				для извлечения остатка строки в рекурсивном вызове. -->
-				<xsl:with-param name="input" select="substring($input,string-length($temp)+ string-length($search-string)+1)"/>
-				<xsl:with-param name="search-string" select="$search-string"/>
-				<xsl:with-param name="replace-string" select="$replace-string"/>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:value-of select="$input"/>
-		</xsl:otherwise>
-	</xsl:choose>
+        <xsl:with-param
+          name="input"
+          select="substring($input,string-length($temp)+ string-length($search-string)+1)"
+        />
+        <xsl:with-param
+          name="search-string"
+          select="$search-string"
+        />
+        <xsl:with-param
+          name="replace-string"
+          select="$replace-string"
+        />
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$input" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
 Пример 2.5. Использование временного целого в неудачной попытке улучшить производительность поиска и замены
 
-```xslt
+```xml
 <xsl:template name="search-and-replace">
-	<xsl:param name="input"/>
-	<xsl:param name="search-string"/>
-	<xsl:param name="replace-string"/>
-	<!-- Найти длину подстроки, предшествующей искомой строке,
+  <xsl:param name="input" />
+  <xsl:param name="search-string" />
+  <xsl:param name="replace-string" />
+  <!-- Найти длину подстроки, предшествующей искомой строке,
 	и сохранить ее в переменной -->
-	<xsl:variable name="temp" select="string-length(substring-before($input,$search-string))"/>
-	<xsl:choose>
-		<!-- Если $temp не равно 0 или входная строка начинается
+  <xsl:variable
+    name="temp"
+    select="string-length(substring-before($input,$search-string))"
+  />
+  <xsl:choose>
+    <!-- Если $temp не равно 0 или входная строка начинается
 		с искомой подстроки, то необходимо произвести замену.
 		Тем самым мы избегаем вызова функции contains(). -->
-		<xsl:when test="$temp or starts-with($input,$search-string)">
-			<xsl:value-of select="substring($input,1,$temp)"/>
-			<xsl:value-of select="$replace-string"/>
-			<!-- Вызова substring-after избегаем за счет
+    <xsl:when
+      test="$temp or starts-with($input,$search-string)"
+    >
+      <xsl:value-of select="substring($input,1,$temp)" />
+      <xsl:value-of select="$replace-string" />
+      <!-- Вызова substring-after избегаем за счет
 			использования temp и длины искомой строки для
 			извлечения остатка строки в рекурсивном вызове. -->
-			<xsl:call-template name="search-and-replace">
-				<xsl:with-param name="input" select="substring($input,$temp+string-length($search-string)+1)"/>
-				<xsl:with-param name="search-string" select="$search-string"/>
-				<xsl:with-param name="replace-string" select="$replace-string"/>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:value-of select="$input"/>
-		</xsl:otherwise>
-	</xsl:choose>
+      <xsl:call-template name="search-and-replace">
+        <xsl:with-param
+          name="input"
+          select="substring($input,$temp+string-length($search-string)+1)"
+        />
+        <xsl:with-param
+          name="search-string"
+          select="$search-string"
+        />
+        <xsl:with-param
+          name="replace-string"
+          select="$replace-string"
+        />
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$input" />
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 

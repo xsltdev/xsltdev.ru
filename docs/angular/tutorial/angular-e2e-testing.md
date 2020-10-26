@@ -141,7 +141,7 @@ element(by.tagName('sidebar')).isVisible()
 ```ts
 element(by.input('login'))
   .getSize()
-  .then(function(size) {
+  .then(function (size) {
     console.log('Width: ' + size.width)
     console.log('Height: ' + size.height)
   })
@@ -178,7 +178,10 @@ browser.wait(EC.titleIs('Home'))
 let EC = protractor.expectedConditions
 let btn = element(by.id('confirm'))
 
-let textContain = EC.textToBePresentInElement(btn, 'Confirm')
+let textContain = EC.textToBePresentInElement(
+  btn,
+  'Confirm'
+)
 let titleCheck = EC.titleIs('Home')
 
 browser.wait(EC.and(textContain, titleCheck))

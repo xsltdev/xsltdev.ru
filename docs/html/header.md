@@ -9,9 +9,7 @@ description: Тег header (от англ. header - заголовок) зада
 ## Синтаксис
 
 ```html
-<header>
-  ...
-</header>
+<header>...</header>
 ```
 
 Закрывающий тег обязателен.
@@ -42,9 +40,7 @@ description: Тег header (от англ. header - заголовок) зада
       <h2>Добро пожаловать!</h2>
       <p>Рада приветствовать вас на своем сайте.</p>
     </article>
-    <footer>
-      Copyright Кристина Ветрова
-    </footer>
+    <footer>Copyright Кристина Ветрова</footer>
   </body>
 </html>
 ```

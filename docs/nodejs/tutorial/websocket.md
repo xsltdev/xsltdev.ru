@@ -34,13 +34,15 @@ const port = 7000
 
 let clients = []
 
-io.on('connection', socket => {
+io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   clients.push(socket.id)
 
   socket.emit('message', "I'm server")
 
-  socket.on('message', message => console.log('Message: ', message))
+  socket.on('message', (message) =>
+    console.log('Message: ', message)
+  )
 
   socket.on('disconnect', () => {
     clients.splice(clients.indexOf(socket.id), 1)
@@ -54,18 +56,32 @@ app.get('/', (req, res) => res.render('index'))
 
 //получение количества активных клиентов
 app.get('/clients-count', (req, res) => {
-  res.json({ count: io.clients().server.engine.clientsCount })
+  res.json({
+    count: io.clients().server.engine.clientsCount,
+  })
 })
 
 //отправка сообщения конкретному клиенту по его id
 app.post('/client/:id', (req, res) => {
   if (clients.indexOf(req.params.id) !== -1) {
-    io.sockets.connected[req.params.id].emit('private message', `Message to client with id ${req.params.id}`)
-    return res.status(200).json({ message: `Message was sent to client with id ${req.params.id}` })
-  } else return res.status(404).json({ message: 'Client not found' })
+    io.sockets.connected[req.params.id].emit(
+      'private message',
+      `Message to client with id ${req.params.id}`
+    )
+    return res
+      .status(200)
+      .json({
+        message: `Message was sent to client with id ${req.params.id}`,
+      })
+  } else
+    return res
+      .status(404)
+      .json({ message: 'Client not found' })
 })
 
-http.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+http.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 _index.html_
@@ -80,8 +96,15 @@ _index.html_
     <script>
       let socket = io()
 
-      socket.on('message', message => console.log('Message from server: ', message))
-      socket.on('private message', message => console.log('Private message from server: ', message))
+      socket.on('message', (message) =>
+        console.log('Message from server: ', message)
+      )
+      socket.on('private message', (message) =>
+        console.log(
+          'Private message from server: ',
+          message
+        )
+      )
 
       function sendMessageToServer() {
         socket.emit('message', "I'm client")
@@ -89,7 +112,9 @@ _index.html_
     </script>
   </head>
   <body>
-    <button onclick="sendMessageToServer()">Send message to server</button>
+    <button onclick="sendMessageToServer()">
+      Send message to server
+    </button>
   </body>
 </html>
 ```
@@ -99,7 +124,7 @@ _index.html_
 При установке соединения между клиентом и сервером Node.js по WebSocket генерируется событие `connection`, которое обрабатывается с помощью метода `on()` модуля `socket.io`. Передаваемая вторым параметром методу `on()` callback-функция единственным параметром принимает экземпляр соединения (далее просто сокет).
 
 ```js
-io.on('connection', socket => {})
+io.on('connection', (socket) => {})
 ```
 
 Каждое соединение имеет свой уникальный идентификатор, зная который можно отправить сообщение конкретному клиенту (см. в примере маршрут `/client/:id`).
@@ -122,10 +147,12 @@ socket.on('disconnect', () => {})
 //получатель
 let socket = io()
 
-socket.on('message', message => console.log('Message from server: ', message))
+socket.on('message', (message) =>
+  console.log('Message from server: ', message)
+)
 
 //отправитель
-io.on('connection', socket => {
+io.on('connection', (socket) => {
   socket.emit('message', "I'm server")
 })
 ```
@@ -160,19 +187,25 @@ const port = 7000
 const nmspc1 = io.of('/your-namespace1')
 const nmspc2 = io.of('/your-namespace2')
 
-nmspc1.on('connection', socket => {
-  console.log(`Client ${socket.id} connected to /your-namespace1`)
+nmspc1.on('connection', (socket) => {
+  console.log(
+    `Client ${socket.id} connected to /your-namespace1`
+  )
 })
 
-nmspc2.on('connection', socket => {
-  console.log(`Client ${socket.id} connected to /your-namespace2`)
+nmspc2.on('connection', (socket) => {
+  console.log(
+    `Client ${socket.id} connected to /your-namespace2`
+  )
 })
 
 app.use(express.static(__dirname))
 
 app.get('/', (req, res) => res.render('index'))
 
-http.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+http.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 ```js
@@ -184,7 +217,7 @@ let socket = io('/your-namespace1')
 Также и в пределах пространства можно распределять сокеты по так называемым "комнатам".
 
 ```js
-io.on('connection', socket => {
+io.on('connection', (socket) => {
   socket.join('Room №1')
 })
 ```
@@ -200,5 +233,7 @@ io.to('Room №1').emit('message', 'Message form Room №1')
 Обработка инициируемых в пределах "комнаты" событий осуществляется с использованием метода `in()`.
 
 ```js
-io.in('Room №1').on('message', message => console.log('Room №1. Message: ', message))
+io.in('Room №1').on('message', (message) =>
+  console.log('Room №1. Message: ', message)
+)
 ```

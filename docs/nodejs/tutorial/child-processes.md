@@ -16,13 +16,19 @@ const child_process = require('child_process')
 //Переход в директорию /srv/app
 const cd = child_process.spawn('cd'['/srv/app'])
 
-cd.on('error', error => console.log('Cannot change dir: \n', error))
+cd.on('error', (error) =>
+  console.log('Cannot change dir: \n', error)
+)
 
 //Получение списка файлов и директорий для Linux
 const ls = child_process.spawn('ls')
 
-ls.stdout.on('data', data => console.log('Files list: \n', data))
-ls.stderr.on('error', error => console.log('Error: \n', error))
+ls.stdout.on('data', (data) =>
+  console.log('Files list: \n', data)
+)
+ls.stderr.on('error', (error) =>
+  console.log('Error: \n', error)
+)
 ```
 
 !!! note ""
@@ -41,8 +47,12 @@ const child_process = require('child_process')
 const child_3 = child_process.fork('child.js', [3])
 const child_9 = child_process.fork('child.js', [9])
 
-child_3.on('close', code => console.log(`Child process 3 exited. Code: ${code}`))
-child_9.on('close', code => console.log(`Child process 9 exited. Code: ${code}`))
+child_3.on('close', (code) =>
+  console.log(`Child process 3 exited. Code: ${code}`)
+)
+child_9.on('close', (code) =>
+  console.log(`Child process 9 exited. Code: ${code}`)
+)
 ```
 
 _child.js_
@@ -77,9 +87,13 @@ const child = child_process.fork('child.js')
 
 child.send('Ping child')
 
-child.on('message', code => console.log(`Message to parent: ${code}`))
+child.on('message', (code) =>
+  console.log(`Message to parent: ${code}`)
+)
 
-child.on('close', code => console.log(`Child process exited. Code: ${code}`))
+child.on('close', (code) =>
+  console.log(`Child process exited. Code: ${code}`)
+)
 ```
 
 _child.js_
@@ -87,7 +101,9 @@ _child.js_
 ```js
 console.log(`Child process is running`)
 
-process.on('message', message => console.log('Message to child: ', message))
+process.on('message', (message) =>
+  console.log('Message to child: ', message)
+)
 
 process.send('Ping parent')
 ```
@@ -107,7 +123,9 @@ Message to parent: Ping parent
 ```js
 console.log(`Child process is running`)
 
-process.on('message', message => console.log('Message to child: ', message))
+process.on('message', (message) =>
+  console.log('Message to child: ', message)
+)
 
 process.send('Ping parent')
 process.exit()

@@ -12,11 +12,12 @@ description: Корневым элементом XSLT-документа все�
 
 ```xml
 <xsl:stylesheet
-    id = "id"
-    extension-element-prefixes = "tokens"
-    exclude-result-prefixes = "tokens"
-    version = "number">
-    <!-- Содержимое: (xsl:import*, top-level-elements) -->
+  id="id"
+  extension-element-prefixes="tokens"
+  exclude-result-prefixes="tokens"
+  version="number"
+>
+  <!-- Содержимое: (xsl:import*, top-level-elements) -->
 </xsl:stylesheet>
 ```
 
@@ -80,14 +81,16 @@ description: Корневым элементом XSLT-документа все�
 Листинг 4.1. Преобразование с элементом верхнего уровня, не принадлежащим XSLT
 
 ```xml
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <source xmlns="http://www.a.com/XSL/source">
-        Simple stylesheet
-    </source>
-    <xsl:template match="/">
-        <root/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <source xmlns="http://www.a.com/XSL/source">
+    Simple stylesheet
+  </source>
+  <xsl:template match="/">
+    <root />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

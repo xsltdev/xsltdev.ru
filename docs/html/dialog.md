@@ -36,9 +36,7 @@ color: black;
 ## Синтаксис
 
 ```html
-<dialog open>
-  ...
-</dialog>
+<dialog open>...</dialog>
 ```
 
 Закрывающий тег обязателен.
@@ -83,17 +81,22 @@ color: black;
     <button id="openDialog">Открыть окно</button>
     <dialog>
       <p>
-        Полинезийцы называют Млечный путь Манго-Роа-И-Ата, что в переводе с
-        маори означает «Длинная акула на рассвете».
+        Полинезийцы называют Млечный путь Манго-Роа-И-Ата,
+        что в переводе с маори означает «Длинная акула на
+        рассвете».
       </p>
       <p><button id="closeDialog">Закрыть окно</button></p>
     </dialog>
     <script>
       var dialog = document.querySelector('dialog')
-      document.querySelector('#openDialog').onclick = function() {
+      document.querySelector(
+        '#openDialog'
+      ).onclick = function () {
         dialog.show() // Показываем диалоговое окно
       }
-      document.querySelector('#closeDialog').onclick = function() {
+      document.querySelector(
+        '#closeDialog'
+      ).onclick = function () {
         dialog.close() // Прячем диалоговое окно
       }
     </script>
@@ -138,18 +141,20 @@ color: black;
 </menu>
 
 <script>
-  ;(function() {
-    var updateButton = document.getElementById('updateDetails')
+  ;(function () {
+    var updateButton = document.getElementById(
+      'updateDetails'
+    )
     var cancelButton = document.getElementById('cancel')
     var favDialog = document.getElementById('favDialog')
 
     // Update button opens a modal dialog
-    updateButton.addEventListener('click', function() {
+    updateButton.addEventListener('click', function () {
       favDialog.showModal()
     })
 
     // Form cancel button closes the dialog box
-    cancelButton.addEventListener('click', function() {
+    cancelButton.addEventListener('click', function () {
       favDialog.close()
     })
   })()

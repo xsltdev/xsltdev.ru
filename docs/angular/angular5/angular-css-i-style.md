@@ -22,7 +22,8 @@ constructor() {
 
 ```html
 <p [ngStyle]="{backgroundColor: getColor()}">
-  {{ 'Server' }} id is {{ getServerID() }} and status is {{ serverStatus }}
+  {{ 'Server' }} id is {{ getServerID() }} and status is {{
+  serverStatus }}
 </p>
 ```
 

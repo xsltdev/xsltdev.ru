@@ -30,7 +30,7 @@ class SomePlugin extends React.Component {
   }
 
   render() {
-    return <div ref={el => (this.el = el)} />
+    return <div ref={(el) => (this.el = el)} />
   }
 }
 ```
@@ -54,7 +54,7 @@ class SomePlugin extends React.Component {
 ```js
 function Example() {
   return (
-    <Chosen onChange={value => console.log(value)}>
+    <Chosen onChange={(value) => console.log(value)}>
       <option>ваниль</option>
       <option>шоколад</option>
       <option>клубника</option>
@@ -72,7 +72,10 @@ class Chosen extends React.Component {
   render() {
     return (
       <div>
-        <select className="Chosen-select" ref={el => (this.el = el)}>
+        <select
+          className="Chosen-select"
+          ref={(el) => (this.el = el)}
+        >
           {this.props.children}
         </select>
       </div>
@@ -173,7 +176,10 @@ class Chosen extends React.Component {
   render() {
     return (
       <div>
-        <select className="Chosen-select" ref={el => (this.el = el)}>
+        <select
+          className="Chosen-select"
+          ref={(el) => (this.el = el)}
+        >
           {this.props.children}
         </select>
       </div>
@@ -199,8 +205,10 @@ class Chosen extends React.Component {
 Итак, есть текущая реализация на jQuery...
 
 ```js
-$('#container').html('<button id="btn">Сказать «Привет»</button>')
-$('#btn').click(function() {
+$('#container').html(
+  '<button id="btn">Сказать «Привет»</button>'
+)
+$('#btn').click(function () {
   alert('Привет!')
 })
 ```
@@ -212,18 +220,26 @@ function Button() {
   return <button id="btn">Сказать «Привет»</button>
 }
 
-ReactDOM.render(<Button />, document.getElementById('container'), function() {
-  $('#btn').click(function() {
-    alert('Привет!')
-  })
-})
+ReactDOM.render(
+  <Button />,
+  document.getElementById('container'),
+  function () {
+    $('#btn').click(function () {
+      alert('Привет!')
+    })
+  }
+)
 ```
 
 А дальше вы можете начать переносить логику внутрь компонента и использовать остальные React-подходы. Например, в компонентах лучше не полагаться на идентификаторы, потому что один и тот же компонент может быть отрендерен несколько раз. Вместо этого мы используем [событийную систему React](handling-events.md) и зарегистрируем обработчик непосредственно на React-элементе `<button>`:
 
 ```js
 function Button(props) {
-  return <button onClick={props.onClick}>Сказать «Привет»</button>
+  return (
+    <button onClick={props.onClick}>
+      Сказать «Привет»
+    </button>
+  )
 }
 
 function HelloButton() {
@@ -233,7 +249,10 @@ function HelloButton() {
   return <Button onClick={handleClick} />
 }
 
-ReactDOM.render(<HelloButton />, document.getElementById('container'))
+ReactDOM.render(
+  <HelloButton />,
+  document.getElementById('container')
+)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/RVKbvW?editors=1010)
@@ -260,7 +279,7 @@ const ParagraphView = Backbone.View.extend({
   remove() {
     ReactDOM.unmountComponentAtNode(this.el)
     Backbone.View.prototype.remove.call(this)
-  }
+  },
 })
 ```
 
@@ -317,17 +336,25 @@ class List extends React.Component {
   }
 
   componentDidMount() {
-    this.props.collection.on('add', 'remove', this.handleChange)
+    this.props.collection.on(
+      'add',
+      'remove',
+      this.handleChange
+    )
   }
 
   componentWillUnmount() {
-    this.props.collection.off('add', 'remove', this.handleChange)
+    this.props.collection.off(
+      'add',
+      'remove',
+      this.handleChange
+    )
   }
 
   render() {
     return (
       <ul>
-        {this.props.collection.map(model => (
+        {this.props.collection.map((model) => (
           <Item key={model.cid} model={model} />
         ))}
       </ul>
@@ -364,7 +391,9 @@ function connectToBackboneModel(WrappedComponent) {
     }
 
     componentWillReceiveProps(nextProps) {
-      this.setState(Object.assign({}, nextProps.model.attributes))
+      this.setState(
+        Object.assign({}, nextProps.model.attributes)
+      )
       if (nextProps.model !== this.props.model) {
         this.props.model.off('change', this.handleChange)
         nextProps.model.on('change', this.handleChange)
@@ -382,7 +411,12 @@ function connectToBackboneModel(WrappedComponent) {
     render() {
       const propsExceptModel = Object.assign({}, this.props)
       delete propsExceptModel.model
-      return <WrappedComponent {...propsExceptModel} {...this.state} />
+      return (
+        <WrappedComponent
+          {...propsExceptModel}
+          {...this.state}
+        />
+      )
     }
   }
 }
@@ -394,7 +428,10 @@ function connectToBackboneModel(WrappedComponent) {
 function NameInput(props) {
   return (
     <p>
-      <input value={props.firstName} onChange={props.handleChange} />
+      <input
+        value={props.firstName}
+        onChange={props.handleChange}
+      />
       <br />
       Моё имя - {props.firstName}.
     </p>
@@ -408,11 +445,19 @@ function Example(props) {
     props.model.set('firstName', e.target.value)
   }
 
-  return <BackboneNameInput model={props.model} handleChange={handleChange} />
+  return (
+    <BackboneNameInput
+      model={props.model}
+      handleChange={handleChange}
+    />
+  )
 }
 
 const model = new Backbone.Model({ firstName: 'Фродо' })
-ReactDOM.render(<Example model={model} />, document.getElementById('root'))
+ReactDOM.render(
+  <Example model={model} />,
+  document.getElementById('root')
+)
 ```
 
 [**Посмотреть на CodePen**](https://codepen.io/gaearon/pen/PmWwwa?editors=0010)

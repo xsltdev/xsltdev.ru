@@ -7,7 +7,9 @@ description: Навигация в Angular5 на основе событий.
 Главный копонент обрабатывает событие клика по навигации:
 
 ```html
-<app-header (selectItem)="onSelectItem($event)"></app-header>
+<app-header
+  (selectItem)="onSelectItem($event)"
+></app-header>
 ```
 
 Код обрабочика:
@@ -23,15 +25,27 @@ onSelectItem(item: string) {
 И в зависимости от данного состояния отображает компоненты:
 
 ```html
-<app-recipes *ngIf="selectedItem === 'recipes'"></app-recipes>
-<app-shopping-list *ngIf="selectedItem === 'shopping-list'"></app-shopping-list>
+<app-recipes
+  *ngIf="selectedItem === 'recipes'"
+></app-recipes>
+<app-shopping-list
+  *ngIf="selectedItem === 'shopping-list'"
+></app-shopping-list>
 ```
 
 Шаблон навигации привязывает клики к своему методу `selectFromMenu()`:
 
 ```html
-<li><a href="#" (click)="selectFromMenu('recipes')">Recipes</a></li>
-<li><a href="#" (click)="selectFromMenu('shopping-list')">Shopping List</a></li>
+<li>
+  <a href="#" (click)="selectFromMenu('recipes')"
+    >Recipes</a
+  >
+</li>
+<li>
+  <a href="#" (click)="selectFromMenu('shopping-list')"
+    >Shopping List</a
+  >
+</li>
 ```
 
 Метод `selectFromMenu` выводит наружу объект `EventEmitter`:

@@ -11,8 +11,7 @@ description: Импорт преобразований, который обес�
 ## Синтаксис
 
 ```xml
-<xsl:import
-	href = "URI" />
+<xsl:import href="URI" />
 ```
 
 Атрибуты:
@@ -44,11 +43,14 @@ description: Импорт преобразований, который обес�
 Листинг 4.14. Фрагмент преобразования `alpha.xsl`
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:import href="bravo.xsl"/>
-    <xsl:import href="charlie.xsl"/>
-    <xsl:include href="delta.xsl"/>
-    <!-- ... -->
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:import href="bravo.xsl" />
+  <xsl:import href="charlie.xsl" />
+  <xsl:include href="delta.xsl" />
+  <!-- ... -->
 </xsl:stylesheet>
 ```
 

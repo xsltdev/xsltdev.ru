@@ -66,7 +66,8 @@ background-origin: padding-box;
         border: 20px solid #fc0;
         padding: 20px;
         height: 200px;
-        background: url('/example/image/figure.jpg') no-repeat;
+        background: url('/example/image/figure.jpg')
+          no-repeat;
         background-origin: content-box;
       }
     </style>

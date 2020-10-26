@@ -27,7 +27,10 @@ _Ангулар_ использует инкапсуляцию стилей ко
 Использовать эту переменную можно только в шаблоне, например:
 
 ```html
-<button class="btn btn-primary" (click)="onAddServer(serverNameInput)">
+<button
+  class="btn btn-primary"
+  (click)="onAddServer(serverNameInput)"
+>
   Add Server
 </button>
 ```
@@ -70,7 +73,9 @@ export class CockpitComponent implements OnInit {
   [srvElement]="serverElement"
 >
   <p #contentParagraph>
-    <strong *ngIf="serverElement.type === 'server'" style="color: red"
+    <strong
+      *ngIf="serverElement.type === 'server'"
+      style="color: red"
       >{{ serverElement.content }}</strong
     >
     <em *ngIf="serverElement.type === 'blueprint'"

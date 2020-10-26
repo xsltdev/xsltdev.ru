@@ -39,7 +39,7 @@ export const SET_YEAR = 'SET_YEAR'
 export function setYear(year) {
   return {
     type: SET_YEAR,
-    payload: year
+    payload: year,
   }
 }
 ```
@@ -48,23 +48,23 @@ export function setYear(year) {
 
 ```js
 export function getPhotos(year) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch({
-      type: GET_PHOTOS_REQUEST
+      type: GET_PHOTOS_REQUEST,
     })
 
     $.ajax(url)
       .success(
         dispatch({
           type: GET_PHOTOS_SUCCESS,
-          payload: response.photos
+          payload: response.photos,
         })
       )
       .error(
         dispatch({
           type: GET_PHOTOS_FAILURE,
           payload: response.error,
-          error: true
+          error: true,
         })
       )
   }
@@ -79,7 +79,7 @@ export function getPhotos(year) {
 
 ```js
 function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => next => action => {
+  return ({ dispatch, getState }) => (next) => (action) => {
     if (typeof action === 'function') {
       return action(dispatch, getState, extraArgument)
     }
@@ -108,7 +108,10 @@ import { rootReducer } from '../reducers'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 
-export const store = createStore(rootReducer, applyMiddleware(thunk, logger))
+export const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk, logger)
+)
 ```
 
 Для практики, предлагаю написать следующее:
@@ -130,7 +133,7 @@ export const store = createStore(rootReducer, applyMiddleware(thunk, logger))
 const initialState = {
   year: 2016,
   photos: [],
-  isFetching: false
+  isFetching: false,
 }
 ```
 
@@ -142,12 +145,12 @@ const initialState = {
 export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST'
 export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS'
 export function getPhotos(year) {
-  return dispatch => {
+  return (dispatch) => {
     // экшен с типом REQUEST (запрос начался)
     // диспатчится сразу, как будто-бы перед реальным запросом
     dispatch({
       type: GET_PHOTOS_REQUEST,
-      payload: year
+      payload: year,
     })
 
     // а экшен внутри setTimeout
@@ -157,7 +160,7 @@ export function getPhotos(year) {
     setTimeout(() => {
       dispatch({
         type: GET_PHOTOS_SUCCESS,
-        payload: [1, 2, 3, 4, 5]
+        payload: [1, 2, 3, 4, 5],
       })
     }, 1000)
   }
@@ -167,22 +170,33 @@ export function getPhotos(year) {
 Изменим reducer: `src/reducers/page.js`
 
 ```js
-import { GET_PHOTOS_REQUEST, GET_PHOTOS_SUCCESS } from '../actions/PageActions'
+import {
+  GET_PHOTOS_REQUEST,
+  GET_PHOTOS_SUCCESS,
+} from '../actions/PageActions'
 
 const initialState = {
   year: 2018,
   photos: [],
-  isFetching: false // изначально статус загрузки - ложь
+  isFetching: false, // изначально статус загрузки - ложь
   // так как он станет true, когда запрос начнет выполнение
 }
 
 export function pageReducer(state = initialState, action) {
   switch (action.type) {
     case GET_PHOTOS_REQUEST:
-      return { ...state, year: action.payload, isFetching: true }
+      return {
+        ...state,
+        year: action.payload,
+        isFetching: true,
+      }
 
     case GET_PHOTOS_SUCCESS:
-      return { ...state, photos: action.payload, isFetching: false }
+      return {
+        ...state,
+        photos: action.payload,
+        isFetching: false,
+      }
 
     default:
       return state
@@ -208,23 +222,28 @@ class App extends Component {
     const { user, page, getPhotosAction } = this.props
     return (
       <div className="app">
-        <Page photos={page.photos} year={page.year} isFetching={page.isFetching} getPhotos={getPhotosAction} />
+        <Page
+          photos={page.photos}
+          year={page.year}
+          isFetching={page.isFetching}
+          getPhotos={getPhotosAction}
+        />
         <User name={user.name} />
       </div>
     )
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     user: store.user,
-    page: store.page
+    page: store.page,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getPhotosAction: year => dispatch(getPhotos(year))
+    getPhotosAction: (year) => dispatch(getPhotos(year)),
   }
 }
 
@@ -243,7 +262,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export class Page extends React.Component {
-  onBtnClick = e => {
+  onBtnClick = (e) => {
     const year = +e.currentTarget.innerText
     this.props.getPhotos(year) // setYear -> getPhotos
   }
@@ -270,7 +289,11 @@ export class Page extends React.Component {
         </p>
         <h3>{year} год</h3>
         {/_ добавили отрисовку по условию _/}
-        {isFetching ? <p>Загрузка...</p> : <p>У тебя {photos.length} фото.</p>}
+        {isFetching ? (
+          <p>Загрузка...</p>
+        ) : (
+          <p>У тебя {photos.length} фото.</p>
+        )}
       </div>
     )
   }
@@ -281,7 +304,7 @@ Page.propTypes = {
   photos: PropTypes.array.isRequired,
   getPhotos: PropTypes.func.isRequired, // setYear -> getPhotos
   // добавили новое свойство - isFetching, причем в propTypes нет boolean, есть bool
-  isFetching: PropTypes.bool.isRequired
+  isFetching: PropTypes.bool.isRequired,
 }
 ```
 

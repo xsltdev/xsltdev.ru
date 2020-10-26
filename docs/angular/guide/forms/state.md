@@ -15,7 +15,11 @@ description: Применение директивы ngModel не только �
 Например, при запуске веб-страницы для элемента ввода:
 
 ```html
-<input class="form-control" name="title" [(ngModel)]="title" />
+<input
+  class="form-control"
+  name="title"
+  [(ngModel)]="title"
+/>
 ```
 
 Будет генерироваться следующая разметка html:
@@ -59,7 +63,10 @@ export class User {
           #name="ngModel"
           required
         />
-        <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+        <div
+          [hidden]="name.valid || name.untouched"
+          class="alert alert-danger"
+        >
           Не указано имя
         </div>
       </div>
@@ -98,10 +105,12 @@ export class User {
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-default" (click)="addUser()">Добавить</button>
+        <button class="btn btn-default" (click)="addUser()">
+          Добавить
+        </button>
       </div>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   user: User = new User()
@@ -114,7 +123,10 @@ export class AppComponent {
 Для работы с данными определен класс `User`. Каждое поле ввода связано с определенным свойством объекта `User`. И также для каждого поля определены правила валидации в виде атрибутов `required` и `pattern`. И рядом с каждым полем ввода определен специальный блок для вывода ошибки:
 
 ```html
-<div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+<div
+  [hidden]="email.valid || email.untouched"
+  class="alert alert-danger"
+>
   Некорректный email
 </div>
 ```
@@ -164,7 +176,7 @@ export class User {
       input.ng-touched.ng-valid {
         border: solid green 2px;
       }
-    `
+    `,
   ],
   template: `
     <div>
@@ -203,7 +215,9 @@ export class User {
       </div>
       <div class="form-group">
         <button
-          [disabled]="name.invalid || email.invalid || phone.invalid"
+          [disabled]="
+            name.invalid || email.invalid || phone.invalid
+          "
           class="btn btn-default"
           (click)="addUser()"
         >
@@ -211,7 +225,7 @@ export class User {
         </button>
       </div>
     </div>
-  `
+  `,
 })
 export class AppComponent {
   user: User = new User()

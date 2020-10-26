@@ -9,14 +9,26 @@ description: Кроме простой установки значений ат�
 Возьмем директиву `BoldDirective` и добавим в нее взаимодействие с пользователем:
 
 ```typescript
-import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core'
+import {
+  Directive,
+  ElementRef,
+  Renderer2,
+  HostListener,
+} from '@angular/core'
 
 @Directive({
-  selector: '[bold]'
+  selector: '[bold]',
 })
 export class BoldDirective {
-  constructor(private element: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.element.nativeElement, 'cursor', 'pointer')
+  constructor(
+    private element: ElementRef,
+    private renderer: Renderer2
+  ) {
+    this.renderer.setStyle(
+      this.element.nativeElement,
+      'cursor',
+      'pointer'
+    )
   }
 
   @HostListener('mouseenter') onMouseEnter() {
@@ -28,7 +40,11 @@ export class BoldDirective {
   }
 
   private setFontWeight(val: string) {
-    this.renderer.setStyle(this.element.nativeElement, 'font-weight', val)
+    this.renderer.setStyle(
+      this.element.nativeElement,
+      'font-weight',
+      val
+    )
   }
 }
 ```
@@ -42,10 +58,14 @@ export class BoldDirective {
 Еще один декоратор - `@HostBinding` позволяет связать обычное свойство класса со свойством элемента, к которому применяется директива. Например, изменим код директивы следующим образом:
 
 ```typescript
-import { Directive, HostListener, HostBinding } from '@angular/core'
+import {
+  Directive,
+  HostListener,
+  HostBinding,
+} from '@angular/core'
 
 @Directive({
-  selector: '[bold]'
+  selector: '[bold]',
 })
 export class BoldDirective {
   private fontWeight = 'normal'
@@ -75,18 +95,29 @@ export class BoldDirective {
 Вместо применения декораторов `@HostListener` и `@HostBinding` для реагирования директивы на действия пользователя мы можем определить обработчики событий в декораторе `@Directive` с помощью его свойства `host`. Перепишем директиву:
 
 ```typescript
-import { Directive, ElementRef, Renderer2 } from '@angular/core'
+import {
+  Directive,
+  ElementRef,
+  Renderer2,
+} from '@angular/core'
 
 @Directive({
   selector: '[bold]',
   host: {
     '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()'
-  }
+    '(mouseleave)': 'onMouseLeave()',
+  },
 })
 export class BoldDirective {
-  constructor(private element: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.element.nativeElement, 'cursor', 'pointer')
+  constructor(
+    private element: ElementRef,
+    private renderer: Renderer2
+  ) {
+    this.renderer.setStyle(
+      this.element.nativeElement,
+      'cursor',
+      'pointer'
+    )
   }
 
   onMouseEnter() {
@@ -96,7 +127,11 @@ export class BoldDirective {
     this.setFontWeight('normal')
   }
   private setFontWeight(val: string) {
-    this.renderer.setStyle(this.element.nativeElement, 'font-weight', val)
+    this.renderer.setStyle(
+      this.element.nativeElement,
+      'font-weight',
+      val
+    )
   }
 }
 ```

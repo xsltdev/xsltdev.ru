@@ -40,7 +40,7 @@ _hooks-example.component.ts_
     <contacts-list [title]="'Managers'">
       <contacts-item [name]="'Peter'"></contacts-item>
     </contacts-list>
-  `
+  `,
 })
 export class HooksExampleComponent {}
 ```
@@ -55,7 +55,7 @@ _contacts-list.component.ts_
     <ng-content></ng-content>
     <contacts-item [name]="'Jack'"></contacts-item>
     <contacts-item [name]="'Daniel'"></contacts-item>
-  `
+  `,
 })
 export class ContactsListComponent
   implements
@@ -70,8 +70,10 @@ export class ContactsListComponent
 
   company: string = 'Google Inc.'
 
-  @ViewChild(ContactsItemComponent) vwCh: ContactsItemComponent
-  @ContentChild(ContactsItemComponent) cntCh: ContactsItemComponent
+  @ViewChild(ContactsItemComponent)
+  vwCh: ContactsItemComponent
+  @ContentChild(ContactsItemComponent)
+  cntCh: ContactsItemComponent
 
   ngOnChanges(obj: SimpleChanges) {
     console.log('OnChanges', obj)
@@ -108,9 +110,7 @@ _contacts-item.component.ts_
 ```ts
 @Component({
   selector: 'contacts-item',
-  template: `
-    <p>{{ name }}</p>
-  `
+  template: ` <p>{{ name }}</p> `,
 })
 export class ContactsItemComponent {
   @Input() name: string = null

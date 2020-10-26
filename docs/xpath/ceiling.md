@@ -44,56 +44,56 @@ ceiling(-1 div (-1 div 0)) ? 0
 Следующая таблица стилей демонстрирует результаты вызова функции `ceiling()` для разных значений. В качестве входных данных будет использоваться следующий документ XML:
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- chocolate.xml -->
 <report month="8" year="2006">
-	<title>Chocolate bar sales</title>
-	<brand>
-		<name>Lindt</name>
-		<units>27408</units>
-	</brand>
-	<brand>
-		<name>Callebaut</name>
-		<units>8203</units>
-	</brand>
-	<brand>
-		<name>Valrhona</name>
-		<units>22101</units>
-	</brand>
-	<brand>
-		<name>Perugina</name>
-		<units>14336</units>
-	</brand>
-	<brand>
-		<name>Ghirardelli</name>
-		<units>19268</units>
-	</brand>
+  <title>Chocolate bar sales</title>
+  <brand>
+    <name>Lindt</name>
+    <units>27408</units>
+  </brand>
+  <brand>
+    <name>Callebaut</name>
+    <units>8203</units>
+  </brand>
+  <brand>
+    <name>Valrhona</name>
+    <units>22101</units>
+  </brand>
+  <brand>
+    <name>Perugina</name>
+    <units>14336</units>
+  </brand>
+  <brand>
+    <name>Ghirardelli</name>
+    <units>19268</units>
+  </brand>
 </report>
 ```
 
 Таблица стилей, использующая функцию `ceiling()`:
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- ceiling.xsl -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="text"/>
-	<xsl:template match="/">
-		<xsl:text>
-Tests of the ceiling() function:
-</xsl:text>
-		<xsl:text> ceiling(7.983) = </xsl:text>
-		<xsl:value-of select="ceiling(7.983)"/>
-		<xsl:text>
-ceiling(-7.893) = </xsl:text>
-		<xsl:value-of select="ceiling(-7.893)"/>
-		<xsl:text>
-ceiling(avg(/report/brand/units)) = </xsl:text>
-		<xsl:value-of select="ceiling(avg(/report/brand/units))"/>
-		<xsl:text>
-ceiling('blue') = </xsl:text>
-		<xsl:value-of version="1.0" select="ceiling('blue')"/>
-	</xsl:template>
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="text" />
+  <xsl:template match="/">
+    <xsl:text>Tests of the ceiling() function:</xsl:text>
+    <xsl:text>ceiling(7.983) =</xsl:text>
+    <xsl:value-of select="ceiling(7.983)" />
+    <xsl:text>ceiling(-7.893) =</xsl:text>
+    <xsl:value-of select="ceiling(-7.893)" />
+    <xsl:text>ceiling(avg(/report/brand/units)) =</xsl:text>
+    <xsl:value-of
+      select="ceiling(avg(/report/brand/units))"
+    />
+    <xsl:text>ceiling('blue') =</xsl:text>
+    <xsl:value-of version="1.0" select="ceiling('blue')" />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

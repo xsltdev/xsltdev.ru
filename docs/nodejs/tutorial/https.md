@@ -25,11 +25,11 @@ https
   .createServer(
     {
       key: fs.readFileSync('/cert/key.pem'),
-      cert: fs.readFileSync('/cert/cert.pem')
+      cert: fs.readFileSync('/cert/cert.pem'),
     },
     app
   )
-  .listen(port, host, function() {
+  .listen(port, host, function () {
     console.log(`Server listens https://${host}:${port}`)
   })
 ```

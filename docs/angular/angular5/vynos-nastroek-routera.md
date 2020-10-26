@@ -22,23 +22,25 @@ const appRoutes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
-    children: [{ path: ':id/:name', component: UserComponent }]
+    children: [
+      { path: ':id/:name', component: UserComponent },
+    ],
   },
   {
     path: 'servers',
     component: ServersComponent,
     children: [
       { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent }
-    ]
+      { path: ':id/edit', component: EditServerComponent },
+    ],
   },
   { path: 'page404', component: Page404Component },
-  { path: '**', redirectTo: '/page404' }
+  { path: '**', redirectTo: '/page404' },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
 ```
@@ -71,11 +73,16 @@ import { AppRoutingModule } from './app-routing.module'
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    Page404Component
+    Page404Component,
   ],
-  imports: [BrowserModule, FormsModule, HttpModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule,
+  ],
   providers: [ServersService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -85,7 +92,7 @@ export class AppModule {}
 ```typescript
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
 ```

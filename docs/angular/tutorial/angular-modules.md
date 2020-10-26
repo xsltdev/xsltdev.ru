@@ -41,10 +41,10 @@ Angular приложение имеет модульную архитектур�
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
     //
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -60,8 +60,8 @@ export class AppModule {}
     AccountsComponent,
     CreditsComponent,
     DepositsComponent,
-    CreditsFilterDirective
-  ]
+    CreditsFilterDirective,
+  ],
   //
 })
 export class AppModule {}
@@ -81,13 +81,17 @@ _core.module.ts_
 @NgModule({
   imports: [],
   declarations: [],
-  providers: []
+  providers: [],
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [AuthService, LoggerService, SettingsService]
+      providers: [
+        AuthService,
+        LoggerService,
+        SettingsService,
+      ],
     }
   }
 }
@@ -105,7 +109,7 @@ _shared.module.ts_
     ImageCropperModule,
     ScrollbarModule,
     SlickModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
   ],
   exports: [
     CommonModule,
@@ -115,14 +119,14 @@ _shared.module.ts_
     AppLangsComponent,
     AppTabFilterComponent,
     AppFileUploadComponent,
-    ComponentPreloaderDirective
+    ComponentPreloaderDirective,
   ],
   declarations: [
     AppLangsComponent,
     AppTabFilterComponent,
     AppFileUploadComponent,
-    ComponentPreloaderDirective
-  ]
+    ComponentPreloaderDirective,
+  ],
 })
 export class SharedModule {}
 ```

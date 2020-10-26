@@ -17,9 +17,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'item-details',
-  template: `
-    <h3>Информация о товаре</h3>
-  `
+  template: ` <h3>Информация о товаре</h3> `,
 })
 export class ItemDetailsComponent {}
 ```
@@ -31,9 +29,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'item-stat',
-  template: `
-    <h3>Статистика товара</h3>
-  `
+  template: ` <h3>Статистика товара</h3> `,
 })
 export class ItemStatComponent {}
 ```
@@ -65,13 +61,17 @@ import { ItemDetailsComponent } from './item.details.component'
 // определение дочерних маршрутов
 const itemRoutes: Routes = [
   { path: 'details', component: ItemDetailsComponent },
-  { path: 'stat', component: ItemStatComponent }
+  { path: 'stat', component: ItemStatComponent },
 ]
 
 const appRoutes: Routes = [
   { path: 'item/:id', component: ItemComponent },
-  { path: 'item/:id', component: ItemComponent, children: itemRoutes },
-  { path: '', component: HomeComponent }
+  {
+    path: 'item/:id',
+    component: ItemComponent,
+    children: itemRoutes,
+  },
+  { path: '', component: HomeComponent },
 ]
 
 @NgModule({
@@ -81,9 +81,9 @@ const appRoutes: Routes = [
     HomeComponent,
     ItemComponent,
     ItemDetailsComponent,
-    ItemStatComponent
+    ItemStatComponent,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -106,7 +106,7 @@ import { Subscription } from 'rxjs/Subscription'
   template: `
     <h2>Товар {{ id }}</h2>
     <router-outlet></router-outlet>
-  `
+  `,
 })
 export class ItemComponent {
   private id: number
@@ -114,7 +114,7 @@ export class ItemComponent {
 
   constructor(private route: ActivatedRoute) {
     this.routeSubscription = route.params.subscribe(
-      params => (this.id = params['id'])
+      (params) => (this.id = params['id'])
     )
   }
 }
@@ -133,12 +133,15 @@ import { Component } from '@angular/core'
     <div>
       <nav>
         <a routerLink="">Главная</a> |
-        <a routerLink="/item/5/details">Информация о товаре</a> |
+        <a routerLink="/item/5/details"
+          >Информация о товаре</a
+        >
+        |
         <a routerLink="/item/5/stat">Статистика товара</a>
       </nav>
       <router-outlet></router-outlet>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```

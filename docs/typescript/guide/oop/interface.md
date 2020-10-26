@@ -16,7 +16,7 @@ interface IUser {
 ```typescript
 let employee: IUser = {
   id: 1,
-  name: 'Tom'
+  name: 'Tom',
 }
 
 console.log('id: ' + employee.id)
@@ -35,7 +35,7 @@ interface IUser {
 
 let employee: IUser = {
   id: 1,
-  name: 'Alice'
+  name: 'Alice',
 }
 
 function getEmployeeInfo(user: IUser): void {
@@ -56,7 +56,10 @@ interface IUser {
   name: string
 }
 
-function buildUser(userId: number, userName: string): IUser {
+function buildUser(
+  userId: number,
+  userName: string
+): IUser {
   return { id: userId, name: userName }
 }
 
@@ -79,12 +82,12 @@ interface IUser {
 let employee: IUser = {
   id: 1,
   name: 'Alice',
-  age: 23
+  age: 23,
 }
 
 let manager: IUser = {
   id: 2,
-  name: 'Tom'
+  name: 'Tom',
 }
 ```
 
@@ -117,9 +120,9 @@ interface IUser {
 let employee: IUser = {
   id: 1,
   name: 'Alice',
-  getFullName: function(surname: string): string {
+  getFullName: function (surname: string): string {
     return this.name + ' ' + surname
-  }
+  },
 }
 
 let fullName = employee.getFullName('Tompson')
@@ -144,7 +147,11 @@ class User implements IUser {
   name: string
   age: number
 
-  constructor(userId: number, userName: string, userAge: number) {
+  constructor(
+    userId: number,
+    userName: string,
+    userAge: number
+  ) {
     this.id = userId
     this.name = userName
     this.age = userAge
@@ -186,7 +193,9 @@ interface ICar extends IMovable {
 class Car implements ICar {
   speed: number
   move(): void {
-    console.log('Машина едет со скоростью ' + this.speed + ' км/ч')
+    console.log(
+      'Машина едет со скоростью ' + this.speed + ' км/ч'
+    )
   }
 
   fill(): void {
@@ -211,7 +220,10 @@ interface FullNameBuilder {
   (name: string, surname: string): string
 }
 
-let simpleBuilder: FullNameBuilder = function(name: string, surname: string): string {
+let simpleBuilder: FullNameBuilder = function (
+  name: string,
+  surname: string
+): string {
   return 'Mr. ' + name + ' ' + surname
 }
 
@@ -267,11 +279,17 @@ interface PersonInfo {
 }
 
 function personBuilder(): PersonInfo {
-  let person = <PersonInfo>function(name: string, surname: string): void {
-    person.fullName = name + ' ' + surname
-  }
-  person.authenticate = function() {
-    console.log(person.fullName + ' входит в систему с паролем ' + person.password)
+  let person = <PersonInfo>(
+    function (name: string, surname: string): void {
+      person.fullName = name + ' ' + surname
+    }
+  )
+  person.authenticate = function () {
+    console.log(
+      person.fullName +
+        ' входит в систему с паролем ' +
+        person.password
+    )
   }
   return person
 }

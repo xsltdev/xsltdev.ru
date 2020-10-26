@@ -56,19 +56,21 @@ class User {
 
 ```typescript
 Object.defineProperty(User, 'age', {
-  value: 17
+  value: 17,
 })
 ```
 
 Также декораторы могут изменять результат работы конструктора. В этом случае определение функции декоратора немного меняется, но она также в качестве параметра принимает конструктор класса:
 
 ```typescript
-function logger<TFunction extends Function>(target: TFunction): TFunction {
-  let newConstructor: Function = function(name: string) {
+function logger<TFunction extends Function>(
+  target: TFunction
+): TFunction {
+  let newConstructor: Function = function (name: string) {
     console.log('Creating new instance')
     this.name = name
     this.age = 23
-    this.print = function(): void {
+    this.print = function (): void {
       console.log(this.name, this.age)
     }
   }

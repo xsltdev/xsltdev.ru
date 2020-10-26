@@ -68,8 +68,11 @@ export class C {}
 **amdModule.js**
 
 ```js
-define('NamedModule', ['require', 'exports'], function(require, exports) {
-  var C = (function() {
+define('NamedModule', ['require', 'exports'], function (
+  require,
+  exports
+) {
+  var C = (function () {
     function C() {}
     return C
   })()
@@ -94,7 +97,11 @@ moduleA.callStuff()
 Сгенерированный JS-код:
 
 ```js
-define(['require', 'exports', 'legacy/moduleA'], function(require, exports, moduleA) {
+define(['require', 'exports', 'legacy/moduleA'], function (
+  require,
+  exports,
+  moduleA
+) {
   moduleA.callStuff()
 })
 ```

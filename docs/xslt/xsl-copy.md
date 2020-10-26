@@ -11,9 +11,8 @@ description: Элемент xsl:copy создает копию текущего 
 ## Синтаксис
 
 ```xml
-<xsl:copy
-    use-attribute-sets = "наборы атрибутов">
-    <!-- Содержимое: шаблон -->
+<xsl:copy use-attribute-sets="наборы атрибутов">
+  <!-- Содержимое: шаблон -->
 </xsl:copy>
 ```
 
@@ -28,46 +27,46 @@ description: Элемент xsl:copy создает копию текущего 
 
 Предположим, что в каждый элемент преобразовываемого документа нам нужно добавить атрибут `element-count` со значением, равным количеству его дочерних элементов, а все остальные узлы оставить, как есть.
 
-Входящий документ:
+=== "XML"
 
-```xml
-<a>
-    text
-    <b attr="value" />
-    <c />
-    <d>
+    ```xml
+    <a>
+      text
+      <b attr="value" />
+      <c />
+      <d>
         text
         <e />
-    </d>
-</a>
-```
+      </d>
+    </a>
+    ```
 
-Шаблон преобразования:
+=== "XSLT"
 
-```xml
-<xsl:template match="@*|node()">
-    <xsl:copy>
+    ```xml
+    <xsl:template match="@*|node()">
+      <xsl:copy>
         <xsl:attribute name="element-count">
-            <xsl:value-of select="count(*) " />
+          <xsl:value-of select="count(*) " />
         </xsl:attribute>
         <xsl:apply-templates select="@*|node()" />
-    </xsl:copy>
-</xsl:template>
-```
+      </xsl:copy>
+    </xsl:template>
+    ```
 
-Выходящий элемент:
+=== "Результат"
 
-```xml
-<a element-count="3">
-    text
-    <b element-count="0" attr="value" />
-    <c element-count="0" />
-    <d element-count="1">
+    ```xml
+    <a element-count="3">
+      text
+      <b element-count="0" attr="value" />
+      <c element-count="0" />
+      <d element-count="1">
         text
         <e element-count="0" />
-    </d>
-</a>
-```
+      </d>
+    </a>
+    ```
 
 ### Пример 2
 
@@ -77,15 +76,14 @@ description: Элемент xsl:copy создает копию текущего 
 
 ```xml
 <xsl:attribute-set name="elements">
-    <xsl:attribute name="element-count">
-        <xsl:value-of select="count(*)" />
-    </xsl:attribute>
+  <xsl:attribute name="element-count">
+    <xsl:value-of select="count(*)" />
+  </xsl:attribute>
 </xsl:attribute-set>
-
 <xsl:template match="@*|node()">
-    <xsl:copy use-attribute-sets="elements">
-        <xsl:apply-templates select="@*|node()" />
-    </xsl:copy>
+  <xsl:copy use-attribute-sets="elements">
+    <xsl:apply-templates select="@*|node()" />
+  </xsl:copy>
 </xsl:template>
 ```
 
@@ -97,10 +95,10 @@ description: Элемент xsl:copy создает копию текущего 
 
 ```xml
 <xsl:template name="apply-templates-copy-lang">
-    <xsl:for-each select="@xml:lang">
-        <xsl:copy />
-    </xsl:for-each>
-    <xsl:apply-templates />
+  <xsl:for-each select="@xml:lang">
+    <xsl:copy />
+  </xsl:for-each>
+  <xsl:apply-templates />
 </xsl:template>
 ```
 
@@ -120,67 +118,80 @@ description: Элемент xsl:copy создает копию текущего 
 
 ### Пример 4
 
-```xml tab="XML"
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="identityxfm.xsl"?>
-<catalog>
-    <book id="bk101">
+=== "XML"
+
+    ```xml
+    <?xml version="1.0" ?>
+    <?xml-stylesheet type="text/xsl" href="identityxfm.xsl"?>
+    <catalog>
+      <book id="bk101">
         <author>Gambardella, Matthew</author>
         <title>XML Developer's Guide</title>
         <genre>Computer</genre>
         <price>44.95</price>
         <publish_date>2000-10-01</publish_date>
-        <description>An in-depth look at creating applications with
- XML.</description>
-    </book>
-    <book id="bk102">
+        <description>
+          An in-depth look at creating applications with
+     XML.
+        </description>
+      </book>
+      <book id="bk102">
         <author>Ralls, Kim</author>
         <title>Midnight Rain</title>
         <genre>Fantasy</genre>
         <price>5.95</price>
         <publish_date>2000-12-16</publish_date>
-        <description>A former architect battles corporate zombies,
- an evil sorceress, and her own childhood to become queen of the
- world.</description>
-    </book>
-    <book id="bk103">
+        <description>
+          A former architect battles corporate zombies,
+     an evil sorceress, and her own childhood to become queen of
+          the
+     world.
+        </description>
+      </book>
+      <book id="bk103">
         <author>Corets, Eva</author>
         <title>Maeve Ascendant</title>
         <genre>Fantasy</genre>
         <price>5.95</price>
         <publish_date>2000-11-17</publish_date>
-        <description>After the collapse of a nanotechnology society
- in England, the young survivors lay the foundation for a new
-society.</description>
-    </book>
-</catalog>
-```
+        <description>
+          After the collapse of a nanotechnology society
+     in England, the young survivors lay the foundation for a new
+    society.
+        </description>
+      </book>
+    </catalog>
+    ```
 
-```xslt tab="XSLT"
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+=== "XSLT"
 
-  <xsl:template match="/ | @* | node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()"/>
-    </xsl:copy>
-  </xsl:template>
+    ```xml
+    <?xml version="1.0" ?>
+    <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    >
+      <xsl:template match="/ | @* | node()">
+        <xsl:copy>
+          <xsl:apply-templates select="@* | node()" />
+        </xsl:copy>
+      </xsl:template>
+    </xsl:stylesheet>
+    ```
 
-</xsl:stylesheet>
-```
+=== "Output"
 
-```xml tab="Output"
-<?xml version="1.0"?><?xml-stylesheet type="text/xsl"
-href="identityxfm.xsl"?><catalog><book id="bk101"><author>Gambardella,
-Matthew</author><title>XML Developer's
-Guide</title><genre>Computer</genre><price>44.95</price><publish_date>2000
--10-01</publish_date><description>An in-depth look at creating
-applications with
-XML.</description></book><book id="bk102">
-...
-</book></catalog>
-```
+    ```xml
+    <?xml version="1.0"?><?xml-stylesheet type="text/xsl"
+    href="identityxfm.xsl"?><catalog><book id="bk101"><author>Gambardella,
+    Matthew</author><title>XML Developer's
+    Guide</title><genre>Computer</genre><price>44.95</price><publish_date>2000
+    -10-01</publish_date><description>An in-depth look at creating
+    applications with
+    XML.</description></book><book id="bk102">
+    ...
+    </book></catalog>
+    ```
 
 ## См. также
 

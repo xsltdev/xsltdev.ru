@@ -73,18 +73,18 @@ const webpack = require('webpack')
 module.exports = {
   entry: {
     polyfills: './src/polyfills.ts',
-    app: './src/main.ts'
+    app: './src/main.ts',
   },
   output: {
     path: path.resolve(__dirname, './public'), // путь к каталогу выходных файлов - папка public
     publicPath: '/public/',
-    filename: '[name].js' // название создаваемого файла
+    filename: '[name].js', // название создаваемого файла
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
@@ -95,25 +95,28 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: path.resolve(__dirname, 'tsconfig.json')
-            }
+              configFileName: path.resolve(
+                __dirname,
+                'tsconfig.json'
+              ),
+            },
           },
-          'angular2-template-loader'
-        ]
+          'angular2-template-loader',
+        ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
-      }
-    ]
+        loader: 'html-loader',
+      },
+    ],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core/,
       path.resolve(__dirname, 'src'), // каталог с исходными файлами
       {} // карта маршрутов
-    )
-  ]
+    ),
+  ],
 }
 ```
 
@@ -121,7 +124,11 @@ module.exports = {
 
 ```ts
 export class User {
-  constructor(public id: number, public name: string, public age: number) {}
+  constructor(
+    public id: number,
+    public name: string,
+    public age: number
+  ) {}
 }
 ```
 
@@ -131,7 +138,10 @@ export class User {
 
 ```ts
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpParams } from '@angular/common/http'
+import {
+  HttpClient,
+  HttpParams,
+} from '@angular/common/http'
 import { User } from './user'
 
 @Injectable()
@@ -147,8 +157,13 @@ export class UserService {
     return this.http.post(this.url, user)
   }
   updateUser(id: number, user: User) {
-    const urlParams = new HttpParams().set('id', id.toString())
-    return this.http.put(this.url, user, { params: urlParams })
+    const urlParams = new HttpParams().set(
+      'id',
+      id.toString()
+    )
+    return this.http.put(this.url, user, {
+      params: urlParams,
+    })
   }
   deleteUser(id: number) {
     return this.http.delete(this.url + '/' + id)
@@ -170,13 +185,14 @@ import { Observable } from 'rxjs'
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  providers: [UserService]
+  providers: [UserService],
 })
 export class AppComponent implements OnInit {
   //типы шаблонов
   @ViewChild('readOnlyTemplate', { static: false })
   readOnlyTemplate: TemplateRef<any>
-  @ViewChild('editTemplate', { static: false }) editTemplate: TemplateRef<any>
+  @ViewChild('editTemplate', { static: false })
+  editTemplate: TemplateRef<any>
 
   editedUser: User
   users: Array<User>
@@ -220,17 +236,23 @@ export class AppComponent implements OnInit {
   saveUser() {
     if (this.isNewRecord) {
       // добавляем пользователя
-      this.serv.createUser(this.editedUser).subscribe(data => {
-        ;(this.statusMessage = 'Данные успешно добавлены'), this.loadUsers()
-      })
+      this.serv
+        .createUser(this.editedUser)
+        .subscribe((data) => {
+          ;(this.statusMessage =
+            'Данные успешно добавлены'),
+            this.loadUsers()
+        })
       this.isNewRecord = false
       this.editedUser = null
     } else {
       // изменяем пользователя
       this.serv
         .updateUser(this.editedUser.id, this.editedUser)
-        .subscribe(data => {
-          ;(this.statusMessage = 'Данные успешно обновлены'), this.loadUsers()
+        .subscribe((data) => {
+          ;(this.statusMessage =
+            'Данные успешно обновлены'),
+            this.loadUsers()
         })
       this.editedUser = null
     }
@@ -246,8 +268,9 @@ export class AppComponent implements OnInit {
   }
   // удаление пользователя
   deleteUser(user: User) {
-    this.serv.deleteUser(user.id).subscribe(data => {
-      ;(this.statusMessage = 'Данные успешно удалены'), this.loadUsers()
+    this.serv.deleteUser(user.id).subscribe((data) => {
+      ;(this.statusMessage = 'Данные успешно удалены'),
+        this.loadUsers()
     })
   }
 }
@@ -338,10 +361,18 @@ export class AppComponent implements OnInit {
     />
   </td>
   <td>
-    <input type="text" [(ngModel)]="editedUser.name" class="form-control" />
+    <input
+      type="text"
+      [(ngModel)]="editedUser.name"
+      class="form-control"
+    />
   </td>
   <td>
-    <input type="text" [(ngModel)]="editedUser.age" class="form-control" />
+    <input
+      type="text"
+      [(ngModel)]="editedUser.age"
+      class="form-control"
+    />
   </td>
   <td>
     <input
@@ -393,7 +424,7 @@ import { AppComponent } from './app.component'
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -422,7 +453,10 @@ import 'zone.js/dist/zone'
   <head>
     <title>Hello Angular 8</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"

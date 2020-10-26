@@ -34,7 +34,7 @@ console.log('Platform: ', process.platform) //win32 | linux | freebsd
 _cpu-usage.js_
 
 ```js
-const ns2ms = ns => ns * 1000000
+const ns2ms = (ns) => ns * 1000000
 
 let startTime = process.hrtime()
 let startCpuUsage = process.cpuUsage()
@@ -47,7 +47,9 @@ let diffUsage = process.cpuUsage(startCpuUsage)
 let diffTimeMs = diffTime[1] * 1000 + ns2ms(diffTime[1])
 let diffUsageUserMs = ns2ms(diffUsage.user)
 let diffUsageSystemMS = ns2ms(diffUsage.system)
-let cpuUsage = Math.round((100 * (diffUsageUserMs + diffUsageSystemMS)) / diffTimeMs)
+let cpuUsage = Math.round(
+  (100 * (diffUsageUserMs + diffUsageSystemMS)) / diffTimeMs
+)
 
 console.log('CPU usage, %: ', cpuUsage)
 ```
@@ -85,7 +87,9 @@ nonExistingFunction()
 - `12` - возникает в режиме отладки при некорректном указании порта.
 
 ```js
-process.on('exit', code => console.log(`Exit code: ${code}`))
+process.on('exit', (code) =>
+  console.log(`Exit code: ${code}`)
+)
 
 nonExistingFunction()
 ```

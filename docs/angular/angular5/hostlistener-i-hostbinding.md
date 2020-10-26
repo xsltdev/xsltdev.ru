@@ -9,20 +9,28 @@ description: Использование декораторов HostListener и H
 ```typescript
 import {
   //...
-  HostListener
+  HostListener,
 } from '@angular/core'
 //...
 @Directive({
-  selector: '[appBetterHilight]'
+  selector: '[appBetterHilight]',
 })
 export class BetterHilightDirective implements OnInit {
   //...
   @HostListener('mouseenter') onmouseenter() {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red')
+    this.renderer.setStyle(
+      this.elRef.nativeElement,
+      'color',
+      'red'
+    )
   }
 
   @HostListener('mouseleave') onmouseleave() {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'black')
+    this.renderer.setStyle(
+      this.elRef.nativeElement,
+      'color',
+      'black'
+    )
   }
 }
 ```
@@ -32,14 +40,15 @@ export class BetterHilightDirective implements OnInit {
 ```typescript
 import {
   //...,
-  HostBinding
+  HostBinding,
 } from '@angular/core'
 
 @Directive({
-  selector: '[appBetterHilight]'
+  selector: '[appBetterHilight]',
 })
 export class BetterHilightDirective implements OnInit {
-  @HostBinding('style.backgroundColor') backgroundColor: string = 'transperent'
+  @HostBinding('style.backgroundColor')
+  backgroundColor: string = 'transperent'
   //...
   @HostListener('mouseenter') onmouseenter() {
     this.backgroundColor = 'red'

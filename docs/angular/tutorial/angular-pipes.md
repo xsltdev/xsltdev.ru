@@ -16,8 +16,11 @@ _date-pipe-example.component.ts_
 @Component({
   selector: 'date-pipe-example',
   template: `
-    <p>Transformed date: {{ exampleDate | date: 'dd.MM.yyyy' }}</p>
-  `
+    <p>
+      Transformed date:
+      {{ exampleDate | date: 'dd.MM.yyyy' }}
+    </p>
+  `,
 })
 export class DatePipeExampleComponent {
   exampleDate = new Date(2000, 12, 12)
@@ -44,7 +47,7 @@ _slice-pipe-example.component.ts_
   selector: 'slice-pipe-example',
   template: `
     <p *ngFor="let user of list | slice: 0:1">{{ user }}</p>
-  `
+  `,
 })
 export class SlicePipeExampleComponent {
   list = ['Jack', 'Alice', 'Michael']
@@ -70,8 +73,12 @@ _cut-text.pipe.ts_
 ```ts
 @Pipe({ name: 'cutText' })
 export class CutTextPipe implements PipeTransform {
-  transform(value: string, maxLength: number = 200): string {
-    if (value.length > maxLength) return `${value.substring(0, maxLength)}...`
+  transform(
+    value: string,
+    maxLength: number = 200
+  ): string {
+    if (value.length > maxLength)
+      return `${value.substring(0, maxLength)}...`
     else return value
   }
 }

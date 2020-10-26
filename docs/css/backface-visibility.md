@@ -64,7 +64,9 @@ CSS Transform 3D:
         transition: 1s; /* Время вращения */
       }
       .flip:hover {
-        transform: rotateY(180deg); /* При наведении вращаем фото */
+        transform: rotateY(
+          180deg
+        ); /* При наведении вращаем фото */
       }
       .flip-face {
         position: absolute;
@@ -87,8 +89,8 @@ CSS Transform 3D:
         <img src="image/squirrel.jpg" alt="Белка" />
       </div>
       <figcaption class="flip-face back">
-        Вот такие белки живут в красноярских лесах — с серой шерсткой,
-        любопытные и падкие на печенюшки.
+        Вот такие белки живут в красноярских лесах — с серой
+        шерсткой, любопытные и падкие на печенюшки.
       </figcaption>
     </figure>
   </body>

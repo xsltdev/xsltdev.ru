@@ -200,7 +200,7 @@ class GenericNumber<T> {
 
 let myGenericNumber = new GenericNumber<number>()
 myGenericNumber.zeroValue = 0
-myGenericNumber.add = function(x, y) {
+myGenericNumber.add = function (x, y) {
   return x + y
 }
 ```
@@ -211,7 +211,7 @@ myGenericNumber.add = function(x, y) {
 ```ts
 let stringNumeric = new GenericNumber<string>()
 stringNumeric.zeroValue = ''
-stringNumeric.add = function(x, y) {
+stringNumeric.add = function (x, y) {
   return x + y
 }
 
@@ -270,7 +270,10 @@ loggingIdentity({ length: 10, value: 3 })
 Нужно удостовериться, что мы случайно не добавим какое-либо лишнее свойство, поэтому добавим ограничение между двумя типами:
 
 ```ts
-function copyFields<T extends U, U>(target: T, source: U): T {
+function copyFields<T extends U, U>(
+  target: T,
+  source: U
+): T {
   for (let id in source) {
     target[id] = source[id]
   }
@@ -316,7 +319,10 @@ class Lion extends Animal {
   keeper: ZooKeeper
 }
 
-function findKeeper<A extends Animal, K>(a: { new (): A; prototype: { keeper: K } }): K {
+function findKeeper<A extends Animal, K>(a: {
+  new (): A
+  prototype: { keeper: K }
+}): K {
   return a.prototype.keeper
 }
 

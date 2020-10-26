@@ -220,7 +220,10 @@ description: Тег audio (от англ. audio - звук, аудио) доба
   <body>
     <p>Александр Клименков - Четырнадцать</p>
     <audio controls>
-      <source src="audio/music.ogg" type="audio/ogg; codecs=vorbis" />
+      <source
+        src="audio/music.ogg"
+        type="audio/ogg; codecs=vorbis"
+      />
       <source src="audio/music.mp3" type="audio/mpeg" />
       Тег audio не поддерживается вашим браузером.
       <a href="audio/music.mp3">Скачайте музыку</a>.
@@ -242,8 +245,18 @@ description: Тег audio (от англ. audio - звук, аудио) доба
 
 <!-- Audio playback with captions -->
 <audio src="foo.ogg">
-  <track kind="captions" src="foo.en.vtt" srclang="en" label="English" />
-  <track kind="captions" src="foo.sv.vtt" srclang="sv" label="Svenska" />
+  <track
+    kind="captions"
+    src="foo.en.vtt"
+    srclang="en"
+    label="English"
+  />
+  <track
+    kind="captions"
+    src="foo.sv.vtt"
+    srclang="sv"
+    label="Svenska"
+  />
 </audio>
 ```
 

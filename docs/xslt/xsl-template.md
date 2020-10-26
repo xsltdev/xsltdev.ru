@@ -10,11 +10,12 @@ description: Элемент верхнего уровня xsl:template опре�
 
 ```xml
 <xsl:template
-    match = "pattern"
-    name = "qname"
-    priority = "number"
-    mode = "qname">
-    <!-- Содержимое: (xsl:param*, template) -->
+  match="pattern"
+  name="qname"
+  priority="number"
+  mode="qname"
+>
+  <!-- Содержимое: (xsl:param*, template) -->
 </xsl:template>
 ```
 
@@ -40,7 +41,9 @@ description: Элемент верхнего уровня xsl:template опре�
 
 ```xml
 <xsl:template match="bold">
-    <b><xsl:value-of select="."/></b>
+  <b>
+    <xsl:value-of select="." />
+  </b>
 </xsl:template>
 ```
 
@@ -52,7 +55,9 @@ description: Элемент верхнего уровня xsl:template опре�
 
 ```xml
 <xsl:template name="bold">
-    <b><xsl:value-of select="."/></b>
+  <b>
+    <xsl:value-of select="." />
+  </b>
 </xsl:template>
 ```
 

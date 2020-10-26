@@ -10,7 +10,7 @@ description: Если нам потребуется некоторая пред�
 import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
-  name: 'factorial'
+  name: 'factorial',
 })
 export class FactorialPipe implements PipeTransform {
   transform(value: number, args?: any): number {
@@ -43,8 +43,10 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-    <div>Факториал числа {{ x }} равен {{ x | factorial }}</div>
-  `
+    <div>
+      Факториал числа {{ x }} равен {{ x | factorial }}
+    </div>
+  `,
 })
 export class AppComponent {
   x: number = 5
@@ -62,7 +64,7 @@ import { FactorialPipe } from './factorial.pipe'
 @NgModule({
   imports: [BrowserModule],
   declarations: [AppComponent, FactorialPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -77,7 +79,7 @@ export class AppModule {}
 import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
-  name: 'join'
+  name: 'join',
 })
 export class JoinPipe implements PipeTransform {
   transform(array: any, start?: any, end?: any): any {
@@ -109,10 +111,16 @@ import { Component } from '@angular/core'
     <div>{{ phones | join }}</div>
     <div>{{ phones | join: 1 }}</div>
     <div>{{ phones | join: 1:3 }}</div>
-  `
+  `,
 })
 export class AppComponent {
-  phones = ['iPhone 7', 'LG G 5', 'Honor 9', 'Idol S4', 'Nexus 6P']
+  phones = [
+    'iPhone 7',
+    'LG G 5',
+    'Honor 9',
+    'Idol S4',
+    'Nexus 6P',
+  ]
 }
 ```
 
@@ -128,7 +136,7 @@ import { JoinPipe } from './join.pipe'
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent, FactorialPipe, JoinPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

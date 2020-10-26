@@ -137,7 +137,14 @@ class Employee extends User {
   }
 
   getInfo() {
-    console.log('id: ' + this._id + '; name: ' + this._name + '; company:' + this._company)
+    console.log(
+      'id: ' +
+        this._id +
+        '; name: ' +
+        this._name +
+        '; company:' +
+        this._company
+    )
   }
 }
 ```

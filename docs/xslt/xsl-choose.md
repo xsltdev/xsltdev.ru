@@ -12,7 +12,7 @@ description: Элемент xsl:choose содержит один или неск
 
 ```xml
 <xsl:choose>
-    <!-- Содержимое: (xsl:when+, xsl:otherwise?) -->
+  <!-- Содержимое: (xsl:when+, xsl:otherwise?) -->
 </xsl:choose>
 ```
 
@@ -24,84 +24,87 @@ description: Элемент xsl:choose содержит один или неск
 
 ```xml
 <xsl:template match="orderedlist/listitem">
-    <fo:list-item indent-start='2pi'>
-        <fo:list-item-label>
-            <xsl:variable name="level" select="count( ancestor::orderedlist ) mod 3" />
-            <xsl:choose>
-                <xsl:when test="$level = 1">
-                    <xsl:number format="i" />
-                </xsl:when>
-                <xsl:when test="$level = 2">
-                    <xsl:number format="a" />
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:number format="1" />
-                </xsl:otherwise>
-            </xsl:choose>
-            <xsl:text>. </xsl:text>
-        </fo:list-item-label>
-        <fo:list-item-body>
-            <xsl:apply-templates />
-        </fo:list-item-body>
-    </fo:list-item>
+  <fo:list-item indent-start='2pi'>
+    <fo:list-item-label>
+      <xsl:variable
+        name="level"
+        select="count( ancestor::orderedlist ) mod 3"
+      />
+      <xsl:choose>
+        <xsl:when test="$level = 1">
+          <xsl:number format="i" />
+        </xsl:when>
+        <xsl:when test="$level = 2">
+          <xsl:number format="a" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:number format="1" />
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:text>.</xsl:text>
+    </fo:list-item-label>
+    <fo:list-item-body>
+      <xsl:apply-templates />
+    </fo:list-item-body>
+  </fo:list-item>
 </xsl:template>
 ```
 
 ### Пример 2
 
-```xml tab="XML"
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="refchoose.xsl" ?>
-<orders>
-   <order>
-      <lineitem/>
-      <lineitem/>
-      <total>9</total>
-   </order>
-   <order>
-      <lineitem/>
-      <lineitem/>
-      <total>19</total>
-   </order>
-   <order>
-      <lineitem/>
-      <lineitem/>
-      <total>29</total>
-   </order>
-</orders>
-```
+=== "XML"
 
-```xslt tab="XSLT"
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+    ```xml
+    <?xml version="1.0" ?>
+    <?xml-stylesheet type="text/xsl" href="refchoose.xsl" ?>
+    <orders>
+      <order>
+        <lineitem />
+        <lineitem />
+        <total>9</total>
+      </order>
+      <order>
+        <lineitem />
+        <lineitem />
+        <total>19</total>
+      </order>
+      <order>
+        <lineitem />
+        <lineitem />
+        <total>29</total>
+      </order>
+    </orders>
+    ```
 
-<xsl:template match="order">
-   <xsl:choose>
-      <xsl:when test="total &lt; 10">
-         (small)
-      </xsl:when>
-      <xsl:when test="total &lt; 20">
-         (medium)
-      </xsl:when>
-      <xsl:otherwise>
-         (large)
-      </xsl:otherwise>
-   </xsl:choose>
-   <xsl:apply-templates />
-   <BR/>
-</xsl:template>
+=== "XSLT"
 
-</xsl:stylesheet>
-```
+    ```xml
+    <?xml version="1.0" ?>
+    <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    >
+      <xsl:template match="order">
+        <xsl:choose>
+          <xsl:when test="total &lt; 10">(small)</xsl:when>
+          <xsl:when test="total &lt; 20">(medium)</xsl:when>
+          <xsl:otherwise>(large)</xsl:otherwise>
+        </xsl:choose>
+        <xsl:apply-templates />
+        <BR />
+      </xsl:template>
+    </xsl:stylesheet>
+    ```
 
-```xml tab="Output"
-(small) 9
+=== "Output"
 
-(medium) 19
+    ```
+    (small) 9
 
-(large) 29
-```
+    (medium) 19
+
+    (large) 29
+    ```
 
 ## См. также
 

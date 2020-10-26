@@ -107,7 +107,7 @@ Angular директивы [`*ngSwitchCase`](https://angular.io/api/common/NgSwi
 ```ts
 elementStyles: any = {
   color: 'red',
-  opacity: 0.5
+  opacity: 0.5,
 }
 ```
 
@@ -118,7 +118,9 @@ elementStyles: any = {
 Объект стилей можно определить прямо в шаблоне, причем можно использовать выражения и условия.
 
 ```html
-<div [ngStyle]="{color: 5 < 10 ? 'green' ? 'red' }">Some text</div>
+<div [ngStyle]="{color: 5 < 10 ? 'green' ? 'red' }">
+  Some text
+</div>
 ```
 
 **`[ngClass]`** также принимает объект, но ключами здесь служат наименования классов, а значениями - выражения типа `Boolean`. Если выражение истинно, класс будет добавлен к списку уже имеющихся классов.

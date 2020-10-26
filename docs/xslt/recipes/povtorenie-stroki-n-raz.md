@@ -10,30 +10,36 @@
 
 Задачу можно решить красиво, применив рекурсивный алгоритм, который удваивает строку, пока не будет достигнута нужная длина. Надо только аккуратно рассмотреть случай, когда значение `$count` нечетно.
 
-```xslt
+```xml
 <xsl:template name="dup">
-	<xsl:param name="input"/>
-	<xsl:param name="count" select="2"/>
-	<xsl:choose>
-		<xsl:when test="not($count) or not($input)"/>
-		<xsl:when test="$count = 1">
-			<xsl:value-of select="$input"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<!-- Если $count нечетно, добавить еще одну копию
+  <xsl:param name="input" />
+  <xsl:param name="count" select="2" />
+  <xsl:choose>
+    <xsl:when test="not($count) or not($input)" />
+    <xsl:when test="$count = 1">
+      <xsl:value-of select="$input" />
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Если $count нечетно, добавить еще одну копию
 			входной строки -->
-			<xsl:if test="$count mod 2">
-				<xsl:value-of select="$input"/>
-			</xsl:if>
-			<!-- Рекурсивно применяем шаблон, предварительно удвоив
+      <xsl:if test="$count mod 2">
+        <xsl:value-of select="$input" />
+      </xsl:if>
+      <!-- Рекурсивно применяем шаблон, предварительно удвоив
 			входную строку и вдвое -->
-			<!-- уменьшив счетчик -->
-			<xsl:call-template name="dup">
-				<xsl:with-param name="input" select="concat($input,$input)"/>
-				<xsl:with-param name="count" select="floor($count div 2)"/>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+      <!-- уменьшив счетчик -->
+      <xsl:call-template name="dup">
+        <xsl:with-param
+          name="input"
+          select="concat($input,$input)"
+        />
+        <xsl:with-param
+          name="count"
+          select="floor($count div 2)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -41,7 +47,7 @@
 
 В версии 2.0 дублирование легко реализуется с помощью выражения `for`. Мы перегружаем функцию `dup` с целью имитировать имеющий значение по умолчанию аргумент в реализации для версии XSLT 1.0.
 
-```xslt
+```xml
 <xsl:function name="ckbk:dup">
 	<xsl:param name="input" as="xs:string"/>
 	<xsl:sequence select="ckbk:dup($input,2)"/>
@@ -60,24 +66,27 @@
 
 Самый очевидный способ продублировать строку `$count` раз – конкатенировать ее саму с собой `$count - 1` раз. Это можно сделать рекурсивно, как показано ниже, но такой код работает неэффективно для сколько-нибудь большого числа повторений, поэтому применять его не рекомендуется.
 
-```xslt
+```xml
 <xsl:template name="slow-dup">
-	<xsl:param name="input" />
-	<xsl:param name="count" select="1" />
-	<xsl:param name="work" select="$input" />
-	<xsl:choose>
-		<xsl:when test="not($count) or not($input)" />
-		<xsl:when test="$count=1">
-			<xsl:value-of select="$work" />
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:call-template name="slow-dup">
-				<xsl:with-param name="input" select="$input" />
-				<xsl:with-param name="count" select="$count - 1" />
-				<xsl:with-param name="work" select="concat($work,$input)" />
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="input" />
+  <xsl:param name="count" select="1" />
+  <xsl:param name="work" select="$input" />
+  <xsl:choose>
+    <xsl:when test="not($count) or not($input)" />
+    <xsl:when test="$count=1">
+      <xsl:value-of select="$work" />
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="slow-dup">
+        <xsl:with-param name="input" select="$input" />
+        <xsl:with-param name="count" select="$count - 1" />
+        <xsl:with-param
+          name="work"
+          select="concat($work,$input)"
+        />
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 
@@ -87,27 +96,37 @@
 
 Ниже приведено еще одно решение, основанное на идее функции `str:padding` из проекта EXSLT, но не совпадающее с ней дословно:
 
-```xslt
+```xml
 <xsl:template name="dup">
-	<xsl:param name="input"/>
-	<xsl:param name="count" select="1"/>
-	<xsl:choose>
-		<xsl:when test="not($count) or not($input)" />
-		<xsl:otherwise>
-			<xsl:variable name="string" select="concat($input, $input, $input, $input,	$input, $input, $input, $input,	$input, $input)" />
-			<xsl:choose>
-				<xsl:when test="string-length($string) >= $count * string-length($input)">
-					<xsl:value-of select="substring($string, 1, $count * string-length($input))" />
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:call-template name="dup">
-						<xsl:with-param name="input" select="$string" />
-						<xsl:with-param name="count" select="$count div 10" />
-					</xsl:call-template>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:param name="input" />
+  <xsl:param name="count" select="1" />
+  <xsl:choose>
+    <xsl:when test="not($count) or not($input)" />
+    <xsl:otherwise>
+      <xsl:variable
+        name="string"
+        select="concat($input, $input, $input, $input,	$input, $input, $input, $input,	$input, $input)"
+      />
+      <xsl:choose>
+        <xsl:when
+          test="string-length($string) >= $count * string-length($input)"
+        >
+          <xsl:value-of
+            select="substring($string, 1, $count * string-length($input))"
+          />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="dup">
+            <xsl:with-param name="input" select="$string" />
+            <xsl:with-param
+              name="count"
+              select="$count div 10"
+            />
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 ```
 

@@ -40,7 +40,7 @@ ng build ngx-custom-lib
 
 ```ts
 NgModule({
-  imports: [NgxCustomLibModule]
+  imports: [NgxCustomLibModule],
 })
 ```
 

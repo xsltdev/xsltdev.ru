@@ -39,7 +39,9 @@ app.get('/set-flash', (req, res) => {
   res.send('Set Flash')
 })
 
-app.listen(port, host, () => console.log(`Server listens http://${host}:${port}`))
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+)
 ```
 
 Управление сообщениями осуществляется с помощью метода `flash()` объекта запроса. Для создания сообщения методу необходимо передать два параметра:

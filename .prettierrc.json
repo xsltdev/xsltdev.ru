@@ -4,6 +4,7 @@
 	"tabWidth": 4,
 	"semi": false,
 	"singleQuote": true,
+	"xmlWhitespaceSensitivity": "ignore",
 	"overrides": [
 		{
 			"files": "*.md",

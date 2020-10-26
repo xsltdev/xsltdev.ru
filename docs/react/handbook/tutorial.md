@@ -143,7 +143,12 @@ class ShoppingList extends React.Component {
 Метод `render` возвращает _описание_ того, что вы хотите увидеть на экране. React берёт это описание и отображает результат. Если точнее, `render` возвращает **React-элемент**, который является легковесным описанием того, что нужно отрендерить. Большинство React-разработчиков используют специальный синтаксис под названием «JSX» для упрощения описания структуры. Во время компиляции синтаксис `<div />` преобразовывается в `React.createElement('div')`. Пример выше равнозначен вот этому:
 
 ```javascript
-return React.createElement('div', { className: 'shopping-list' }, React.createElement('h1' /* ... h1 children ... */), React.createElement('ul' /* ... ul children ... */))
+return React.createElement(
+  'div',
+  { className: 'shopping-list' },
+  React.createElement('h1' /* ... h1 children ... */),
+  React.createElement('ul' /* ... ul children ... */)
+)
 ```
 
 Если вам интересно, то `createElement()` более подробно описан в справочнике API, однако, мы не будем им пользоваться в этом введении. Вместо этого мы продолжим использовать JSX.
@@ -184,7 +189,9 @@ class Board extends React.Component {
 ```js
 class Square extends React.Component {
   render() {
-    return <button className="square">{this.props.value}</button>
+    return (
+      <button className="square">{this.props.value}</button>
+    )
   }
 }
 ```
@@ -213,7 +220,7 @@ class Square extends React.Component {
     return (
       <button
         className="square"
-        onClick={function() {
+        onClick={function () {
           alert('клик')
         }}
       >
@@ -234,7 +241,10 @@ class Square extends React.Component {
 > class Square extends React.Component {
 >   render() {
 >     return (
->       <button className="square" onClick={() => alert('клик')}>
+>       <button
+>         className="square"
+>         onClick={() => alert('клик')}
+>       >
 >         {this.props.value}
 >       </button>
 >     )
@@ -256,13 +266,16 @@ class Square extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: null
+      value: null,
     }
   }
 
   render() {
     return (
-      <button className="square" onClick={() => alert('клик')}>
+      <button
+        className="square"
+        onClick={() => alert('клик')}
+      >
         {this.props.value}
       </button>
     )
@@ -287,13 +300,16 @@ class Square extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: null
+      value: null,
     }
   }
 
   render() {
     return (
-      <button className="square" onClick={() => this.setState({ value: 'X' })}>
+      <button
+        className="square"
+        onClick={() => this.setState({ value: 'X' })}
+      >
         {this.state.value}
       </button>
     )
@@ -413,7 +429,10 @@ class Board extends React.Component {
 class Square extends React.Component {
   render() {
     return (
-      <button className="square" onClick={() => this.props.onClick()}>
+      <button
+        className="square"
+        onClick={() => this.props.onClick()}
+      >
         {this.props.value}
       </button>
     )
@@ -440,7 +459,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      squares: Array(9).fill(null)
+      squares: Array(9).fill(null),
     }
   }
 
@@ -451,7 +470,12 @@ class Board extends React.Component {
   }
 
   renderSquare(i) {
-    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    )
   }
 
   render() {
@@ -609,7 +633,7 @@ class Board extends React.Component {
     super(props)
     this.state = {
       squares: Array(9).fill(null),
-      xIsNext: true
+      xIsNext: true,
     }
   }
 
@@ -618,16 +642,22 @@ class Board extends React.Component {
     squares[i] = this.state.xIsNext ? 'X' : 'O'
     this.setState({
       squares: squares,
-      xIsNext: !this.state.xIsNext
+      xIsNext: !this.state.xIsNext,
     })
   }
 
   renderSquare(i) {
-    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    )
   }
 
   render() {
-    const status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O')
+    const status =
+      'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O')
 
     return (
       <div>
@@ -661,10 +691,23 @@ class Board extends React.Component {
 
 ```javascript
 function calculateWinner(squares) {
-  const lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ]
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i]
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+    if (
+      squares[a] &&
+      squares[a] === squares[b] &&
+      squares[a] === squares[c]
+    ) {
       return squares[a]
     }
   }
@@ -726,16 +769,46 @@ function calculateWinner(squares) {
 history = [
   // Перед первым ходом
   {
-    squares: [null, null, null, null, null, null, null, null, null]
+    squares: [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
   },
   // После первого хода
   {
-    squares: [null, null, null, null, 'X', null, null, null, null]
+    squares: [
+      null,
+      null,
+      null,
+      null,
+      'X',
+      null,
+      null,
+      null,
+      null,
+    ],
   },
   // После второго хода
   {
-    squares: [null, null, null, null, 'X', null, null, null, 'O']
-  }
+    squares: [
+      null,
+      null,
+      null,
+      null,
+      'X',
+      null,
+      null,
+      null,
+      'O',
+    ],
+  },
   // ...
 ]
 ```
@@ -757,10 +830,10 @@ class Game extends React.Component {
     this.state = {
       history: [
         {
-          squares: Array(9).fill(null)
-        }
+          squares: Array(9).fill(null),
+        },
       ],
-      xIsNext: true
+      xIsNext: true,
     }
   }
 
@@ -798,12 +871,17 @@ class Board extends React.Component {
     squares[i] = this.state.xIsNext ? 'X' : 'O'
     this.setState({
       squares: squares,
-      xIsNext: !this.state.xIsNext
+      xIsNext: !this.state.xIsNext,
     })
   }
 
   renderSquare(i) {
-    return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />
+    return (
+      <Square
+        value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}
+      />
+    )
   }
 
   render() {
@@ -812,7 +890,8 @@ class Board extends React.Component {
     if (winner) {
       status = 'Выиграл ' + winner
     } else {
-      status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O')
+      status =
+        'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O')
     }
 
     return (
@@ -935,7 +1014,7 @@ class Board extends React.Component {
 
 ```js
 const numbers = [1, 2, 3]
-const doubled = numbers.map(x => x * 2) // [2, 4, 6]
+const doubled = numbers.map((x) => x * 2) // [2, 4, 6]
 ```
 
 Используя метод `map`, мы можем отобразить историю наших ходов в React-элементы, представленные кнопками на экране, и отрисовать список кнопок для «перехода» к прошлым ходам.
@@ -1019,7 +1098,9 @@ const doubled = numbers.map(x => x * 2) // [2, 4, 6]
 В дополнении к изменённым цифрам, человек, читающий это, вероятно, сказал бы что Алекс и Бен поменялись местами, а между ними вставили Клаву. Но React — это компьютерная программа, и она не знает чего мы хотим, поэтому нам нужно указать свойство _key_ для каждого элемента списка, чтобы отличать каждый элемент от остальных. Один из вариантов – использовать строки `Алекс`, `Бен`, `Клава`. Если мы показываем информацию из базы данных, то в качестве ключей мы могли бы использовать идентификаторы из базы.
 
 ```html
-<li key="{user.id}">{user.name}: {user.taskCount} задач осталось</li>
+<li key="{user.id}">
+  {user.name}: {user.taskCount} задач осталось
+</li>
 ```
 
 При повторном рендеринге списка, React берёт у каждого элемента списка ключ и ищет его в элементах прошлого списка. Если в новом списке есть ключ, которого раньше не было, React создаёт новый компонент. Если в текущем списке отсутствует ключ, который был в прошлом списке, React уничтожает предыдущий компонент. Если два ключа совпадают, соответствующий компонент перемещается. Ключи в React работают как идентификаторы для каждого компонента, что помогает React поддерживать состояние между повторными рендерингами. Если у компонента меняется ключ, компонент будет уничтожен и создан вновь с новым состоянием.
@@ -1040,10 +1121,14 @@ const doubled = numbers.map(x => x * 2) // [2, 4, 6]
 
 ```js
 const moves = history.map((step, move) => {
-  const desc = move ? 'Перейти к ходу #' + move : 'К началу игры'
+  const desc = move
+    ? 'Перейти к ходу #' + move
+    : 'К началу игры'
   return (
     <li key={move}>
-      <button onClick={() => this.jumpTo(move)}>{desc}</button>
+      <button onClick={() => this.jumpTo(move)}>
+        {desc}
+      </button>
     </li>
   )
 })

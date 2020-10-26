@@ -32,20 +32,27 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeRouteComponent,
-    children: [{ path: 'profile', component: ProfileRouteComponent }]
+    children: [
+      { path: 'profile', component: ProfileRouteComponent },
+    ],
   },
   {
     path: 'contacts',
     redirectTo: '/home',
     pathMatch: 'full',
-    children: [{ path: 'director', component: DirectorContactsRouteComponent }]
+    children: [
+      {
+        path: 'director',
+        component: DirectorContactsRouteComponent,
+      },
+    ],
   },
-  { path: '**', component: LoginRouteComponent }
+  { path: '**', component: LoginRouteComponent },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
 ```
@@ -137,13 +144,21 @@ _app-nav.component.html_
 ```html
 <ul>
   <li>
-    <a routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a routerLink="/home" routerLinkActive="active-link"
+      >Home</a
+    >
   </li>
   <li>
-    <a routerLink="/home/profile" routerLinkActive="active-link">Profile</a>
+    <a
+      routerLink="/home/profile"
+      routerLinkActive="active-link"
+      >Profile</a
+    >
   </li>
   <li>
-    <a routerLink="/contacts/director" routerLinkActive="active-link"
+    <a
+      routerLink="/contacts/director"
+      routerLinkActive="active-link"
       >Director contacts</a
     >
   </li>
@@ -160,7 +175,9 @@ _app-nav.component.html_
 
 ```html
 <li>
-  <a routerLink="profile" routerLinkActive="active-link">Profile</a>
+  <a routerLink="profile" routerLinkActive="active-link"
+    >Profile</a
+  >
 </li>
 ```
 
@@ -173,7 +190,7 @@ _app-nav.component.html_
 ```ts
 this.router.navigate(['profile', 3], {
   queryParams: { id: 3 },
-  fragment: 'address'
+  fragment: 'address',
 })
 ```
 
@@ -203,7 +220,7 @@ _profile.component.ts_
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
   constructor(private route: ActivatedRoute) {
@@ -229,11 +246,15 @@ export class ProfileComponent {
 Параметры строки запроса и `hash` имеют следующую запись:
 
 ```html
-<a [routerLink]="['profile']" [queryParams]="{id: 3}">Profile</a>
+<a [routerLink]="['profile']" [queryParams]="{id: 3}"
+  >Profile</a
+>
 ```
 
 ```html
-<a [routerLink]="['profile']" [fragment]="address">Profile</a>
+<a [routerLink]="['profile']" [fragment]="address"
+  >Profile</a
+>
 ```
 
 ## Множественная маршрутизация (named outlets)
@@ -277,9 +298,13 @@ export class ProfileComponent {
 Теперь в приложении в правой колонке будет отображаться информация о скидках. Чтобы отобразить/скрыть значение второстепенного маршрута, можно выполнить следующее:
 
 ```html
-<a [routerLink]="[{outlets: {discount: null}}]">Hide discount</a>
+<a [routerLink]="[{outlets: {discount: null}}]"
+  >Hide discount</a
+>
 
-<a [routerLink]="[{outlets: {discount: 'discount-info'}}]">Show discount</a>
+<a [routerLink]="[{outlets: {discount: 'discount-info'}}]"
+  >Show discount</a
+>
 ```
 
 Или из контроллера:
@@ -287,7 +312,9 @@ export class ProfileComponent {
 ```ts
 this.router.navigate([{ outlets: { discount: null } }])
 
-this.router.navigate([{ outlets: { discount: 'discount-info' } }])
+this.router.navigate([
+  { outlets: { discount: 'discount-info' } },
+])
 ```
 
 При отображении/скрытии обратите внимание на значение адресной строки браузера. В конце URL должна появляться/исчезать приписка.

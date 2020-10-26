@@ -24,7 +24,24 @@ transform: rotate(0.5turn);
 transform: skew(30deg, 20deg);
 transform: skewX(30deg);
 transform: skewY(1.07rad);
-transform: matrix3d(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+transform: matrix3d(
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+);
 transform: translate3d(12px, 50%, 3em);
 transform: translateZ(2px);
 transform: scale3d(2.5, 1.2, 0.3);

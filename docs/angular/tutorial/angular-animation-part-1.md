@@ -22,9 +22,9 @@ _example-panel.component.ts_
     trigger('expandedPanel', [
       state('initial', style({ height: 0 })),
       state('expanded', style({ height: '*' })),
-      transition('initial <=> expanded', animate('0.3s'))
-    ])
-  ]
+      transition('initial <=> expanded', animate('0.3s')),
+    ]),
+  ],
 })
 export class ExamplePanelComponent {
   isExpanded: boolean = false
@@ -83,9 +83,11 @@ transition('* => *', animate('0.3s'))
 trigger('animationTriggerName', [
   transition('void => *', [
     style({ opacity: 0 }),
-    animate('1.2s', style({ opacity: 1 }))
+    animate('1.2s', style({ opacity: 1 })),
   ]),
-  transition('* => void', [animate('1.2s', style({ opacity: 0 }))])
+  transition('* => void', [
+    animate('1.2s', style({ opacity: 0 })),
+  ]),
 ])
 ```
 
@@ -98,7 +100,7 @@ trigger('animationTriggerName', [
   ]),
   transition(':leave', [
     // code
-  ])
+  ]),
 ])
 ```
 
@@ -134,7 +136,7 @@ animate(
   keyframes([
     style({ fontSize: '12px', offset: 0 }),
     style({ fontSize: '18px', offset: 0.67 }),
-    style({ fontSize: '16px', offset: 1 })
+    style({ fontSize: '16px', offset: 1 }),
   ])
 )
 ```

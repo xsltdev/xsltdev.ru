@@ -44,7 +44,8 @@ description: Правило @supports позволяет проверить, п�
 Объединить несколько условий можно через логический оператор `and`. Если хотя бы одно из условий не поддерживается, то стили не применяются.
 
 ```css
-@supports (transform-origin: 50% 100%) and (transform: perspective(300px)) {
+@supports (transform-origin: 50% 100%) and
+  (transform: perspective(300px)) {
   /* Браузер одновременно поддерживает свойства transform-origin И
 	transform с функцией perspective() */
 }
@@ -53,7 +54,8 @@ description: Правило @supports позволяет проверить, п�
 Для выбора одного из условий используется логический оператор `or`. Если поддерживается хотя бы одно из условий, то применяются стили.
 
 ```css
-@supports (perspective: 300px) or (transform: perspective(300px)) {
+@supports (perspective: 300px) or
+  (transform: perspective(300px)) {
   /* Браузер поддерживает свойство perspective ИЛИ
 	свойство transform с функцией perspective() */
 }
@@ -83,8 +85,9 @@ description: Правило @supports позволяет проверить, п�
 
 ```css
 @supports (
-  (perspective: 10px) or (-moz-perspective: 10px) or (-webkit-perspective: 10px)
-    or (-ms-perspective: 10px) or (-o-perspective: 10px)
+  (perspective: 10px) or (-moz-perspective: 10px) or
+    (-webkit-perspective: 10px) or (-ms-perspective: 10px)
+    or (-o-perspective: 10px)
 ) {
   /* CSS applied when 3D transforms, prefixed or not, are supported */
 }
@@ -93,7 +96,10 @@ description: Правило @supports позволяет проверить, п�
 Тестирование на отсутствие поддержки определенного свойства CSS:
 
 ```css
-@supports not ((text-align-last: justify) or (-moz-text-align-last: justify)) {
+@supports not (
+  (text-align-last: justify) or
+    (-moz-text-align-last: justify)
+) {
   /* CSS to provide fallback alternative for text-align-last: justify */
 }
 ```
@@ -159,8 +165,12 @@ description: Правило @supports позволяет проверить, п�
     </style>
   </head>
   <body>
-    <p class="yes">Ваш браузер поддерживает display: flex.</p>
-    <p class="no">Ваш браузер не поддерживает display: flex.</p>
+    <p class="yes">
+      Ваш браузер поддерживает display: flex.
+    </p>
+    <p class="no">
+      Ваш браузер не поддерживает display: flex.
+    </p>
   </body>
 </html>
 ```

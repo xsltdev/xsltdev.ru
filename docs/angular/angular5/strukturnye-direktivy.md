@@ -11,9 +11,7 @@ _Ангулар_ имеет встроенные _структурные дир�
 _Структурные директивы_ имеют удобную форму записи со звездой, которая является сахаром для конструкций вида:
 
 ```html
-<ng-template [ngIf]="...">
-  ...
-</ng-template>
+<ng-template [ngIf]="..."> ... </ng-template>
 ```
 
 Примеры работы со встроенными структурными директивами:
@@ -38,10 +36,15 @@ _Структурные директивы_ имеют удобную форму
 Создадим файл `unless.directive.ts`:
 
 ```typescript
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core'
+import {
+  Directive,
+  Input,
+  TemplateRef,
+  ViewContainerRef,
+} from '@angular/core'
 
 @Directive({
-  selector: '[appUnless]'
+  selector: '[appUnless]',
 })
 export class UnlessDirective {
   @Input() set appUnless(condition: boolean) {
@@ -64,7 +67,10 @@ export class UnlessDirective {
 
 ```html
 <ul *appUnless="onlyOdd" class="list-group">
-  <li *ngFor="let even of evenNumbers" class="list-group-item">
+  <li
+    *ngFor="let even of evenNumbers"
+    class="list-group-item"
+  >
     {{even}}
   </li>
 </ul>
@@ -75,10 +81,14 @@ export class UnlessDirective {
 Рассмотрим пример использования структурной директивы для создания выпадающих списков. Для списка используем элемент бутстрапа, у открытого списка добавляется каласс `open`:
 
 ```typescript
-import { Directive, HostListener, HostBinding } from '@angular/core'
+import {
+  Directive,
+  HostListener,
+  HostBinding,
+} from '@angular/core'
 
 @Directive({
-  selector: '[appDropdown]'
+  selector: '[appDropdown]',
 })
 export class DropdownDirective {
   @HostBinding('class.open') isOpen = false

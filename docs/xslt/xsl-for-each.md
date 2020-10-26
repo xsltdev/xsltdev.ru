@@ -11,9 +11,8 @@ description: Элемент xsl:for-each используется для соз�
 ## Синтаксис
 
 ```xml
-<xsl:for-each
-    select = "выражение">
-    <!-- Содержимое: (xsl:sort*, шаблон) -->
+<xsl:for-each select="выражение">
+  <!-- Содержимое: (xsl:sort*, шаблон) -->
 </xsl:for-each>
 ```
 
@@ -32,15 +31,23 @@ description: Элемент xsl:for-each используется для соз�
 
 ```xml
 <html>
-    <head>
-        <title>I'm just a simple page...</title>
-    </head>
-    <body>
-        Please visit <a href="http://www.aaa.com">this link</a>.
-        Or <a href="http://www.bbb.com">this one</a>.
-        Or visit <a href="http://www.ccc.com">this site</a>.
-        Or click <a href="http://www.ddd.com">here</a>.
-    </body>
+  <head>
+    <title>I'm just a simple page...</title>
+  </head>
+  <body>
+    Please visit
+    <a href="http://www.aaa.com">this link</a>
+    .
+        Or
+    <a href="http://www.bbb.com">this one</a>
+    .
+        Or visit
+    <a href="http://www.ccc.com">this site</a>
+    .
+        Or click
+    <a href="http://www.ddd.com">here</a>
+    .
+  </body>
 </html>
 ```
 
@@ -50,13 +57,13 @@ description: Элемент xsl:for-each используется для соз�
 
 ```xml
 <xsl:template match="/">
-    <links>
-        <xsl:for-each select="/html/body//a">
-            <a href="{@href}">
-                <xsl:value-of select = "@href"/>
-            </a>
-        </xsl:for-each>
-    </links>
+  <links>
+    <xsl:for-each select="/html/body//a">
+      <a href="{@href}">
+        <xsl:value-of select="@href" />
+      </a>
+    </xsl:for-each>
+  </links>
 </xsl:template>
 ```
 
@@ -64,10 +71,10 @@ description: Элемент xsl:for-each используется для соз�
 
 ```xml
 <links>
-    <a href="http://www.aaa.com">http://www.aaa.com</a>
-    <a href="http://www.bbb.com">http://www.bbb.com</a>
-    <a href="http://www.ccc.com">http://www.ccc.com</a>
-    <a href="http://www.ddd.com">http://www.ddd.com</a>
+  <a href="http://www.aaa.com">http://www.aaa.com</a>
+  <a href="http://www.bbb.com">http://www.bbb.com</a>
+  <a href="http://www.ccc.com">http://www.ccc.com</a>
+  <a href="http://www.ddd.com">http://www.ddd.com</a>
 </links>
 ```
 

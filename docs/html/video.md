@@ -225,13 +225,24 @@ description: Тег video (от англ. video — видео) добавляе
     <title>video</title>
   </head>
   <body>
-    <video width="400" height="300" controls="controls" poster="video/duel.jpg">
-      <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"' />
+    <video
+      width="400"
+      height="300"
+      controls="controls"
+      poster="video/duel.jpg"
+    >
+      <source
+        src="video/duel.ogv"
+        type='video/ogg; codecs="theora, vorbis"'
+      />
       <source
         src="video/duel.mp4"
         type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
       />
-      <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"' />
+      <source
+        src="video/duel.webm"
+        type='video/webm; codecs="vp8, vorbis"'
+      />
       Элемент video не поддерживается вашим браузером.
       <a href="video/duel.mp4">Скачайте видео</a>.
     </video>
@@ -245,8 +256,13 @@ description: Тег video (от англ. video — видео) добавляе
 
 ```html
 <!-- Простой пример с видео -->
-<video src="videofile.ogg" autoplay poster="posterimage.jpg">
-  Sorry, your browser doesn't support embedded videos, but don't worry, you can
+<video
+  src="videofile.ogg"
+  autoplay
+  poster="posterimage.jpg"
+>
+  Sorry, your browser doesn't support embedded videos, but
+  don't worry, you can
   <a href="videofile.ogg">download it</a>
   and watch it with your favorite video player!
 </video>
@@ -257,8 +273,18 @@ description: Тег video (от англ. video — видео) добавляе
 ```html
 <!-- Видео с субтитрами -->
 <video src="foo.ogg">
-  <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English" />
-  <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska" />
+  <track
+    kind="subtitles"
+    src="foo.en.vtt"
+    srclang="en"
+    label="English"
+  />
+  <track
+    kind="subtitles"
+    src="foo.sv.vtt"
+    srclang="sv"
+    label="Svenska"
+  />
 </video>
 ```
 

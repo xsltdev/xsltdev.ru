@@ -34,14 +34,22 @@ description: Тег tr (от англ. table row — строка таблицы
 ```html
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
     <title>TR</title>
   </head>
   <body>
     <table width="100%" border="0" cellpadding="4">
       <tr align="right" valign="top">
         <td>
-          <img src="image/book.png" width="199" height="133" alt="Книга" />
+          <img
+            src="image/book.png"
+            width="199"
+            height="133"
+            alt="Книга"
+          />
         </td>
         <td>Lorem ipsum dolor sit amet...</td>
       </tr>

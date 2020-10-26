@@ -25,8 +25,14 @@ http://127.0.0.1/img/logo.svg
 Express `static()` может использоваться неограниченное количество раз. Например, если у вас имеется две директории со статическими файлами и обращение к ним должно происходить в зависимости от запрашиваемого URL, то используется следующая запись.
 
 ```js
-app.use('/photos', express.static(`${__dirname}/assets/img`))
-app.use('/styles', express.static(`${__dirname}/assets/css`))
+app.use(
+  '/photos',
+  express.static(`${__dirname}/assets/img`)
+)
+app.use(
+  '/styles',
+  express.static(`${__dirname}/assets/css`)
+)
 ```
 
 Здесь первым параметром методу `use()` передается начало URL, по которому будут запрашиваться файлы, а вторым параметром - место, где нужно будет его искать.
@@ -51,10 +57,13 @@ const app = express()
 const host = '127.0.0.1'
 const port = 7000
 
-app.use('/uploads', express.static(`${__dirname}/assets/images`))
+app.use(
+  '/uploads',
+  express.static(`${__dirname}/assets/images`)
+)
 app.use('/styles', express.static(`${__dirname}/css`))
 
-app.listen(port, host, function() {
+app.listen(port, host, function () {
   console.log(`Server listens http://${host}:${port}`)
 })
 ```

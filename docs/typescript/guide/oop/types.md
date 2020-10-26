@@ -116,7 +116,9 @@ let alice: User = new Employee('Microsoft', 'Alice')
 console.log(getUserName(alice))
 
 console.log(getUserName({ name: 'Tom' }))
-console.log(getUserName({ name: 'Bob', company: 'Microsoft' })) // ошибка
+console.log(
+  getUserName({ name: 'Bob', company: 'Microsoft' })
+) // ошибка
 ```
 
 Ни класс `User`, ни класс `Employee` не применяют интерфейс `IUser`, однако мы можем их использовать, так как они имеют все те же свойства и методы, что интерфейс `IUser` (в данном случае только свойство `name`).
@@ -124,7 +126,12 @@ console.log(getUserName({ name: 'Bob', company: 'Microsoft' })) // ошибка
 Объект `{ name: "Tom" }` также является объектом интерфейса, так как он имеет свойство `name`. В то же время при передаче объекта `{ name: "Bob", company:"Microsoft" }` мы получим ошибку, так как он уже расширяет возможности `IUser`, добавляя свойство `company` и напрямую интерфейсу `IUser` не соответствует. Но даже в этом случае мы его можем вполне использовать, применив преобразование типов:
 
 ```typescript
-console.log(getUserName({ name: 'Bob', company: 'Microsoft' } as IUser)) // Bob
+console.log(
+  getUserName({
+    name: 'Bob',
+    company: 'Microsoft',
+  } as IUser)
+) // Bob
 ```
 
 ## Оператор instanceOf

@@ -279,7 +279,12 @@ HTML-код содержимого, включая необходимые тег
     <title>IFRAME</title>
   </head>
   <body>
-    <iframe src="page/banner.html" width="468" height="60" align="left">
+    <iframe
+      src="page/banner.html"
+      width="468"
+      height="60"
+      align="left"
+    >
       Ваш браузер не поддерживает встроенные фреймы!
     </iframe>
   </body>

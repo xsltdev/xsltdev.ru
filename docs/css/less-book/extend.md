@@ -75,7 +75,8 @@
   border: 1px solid red;
 }
 .myAnotherElement {
-  &:extend(.myElement1, .myElement2); // используем псевдокласс extend с несколькими селекторами
+  &:extend(.myElement1,
+  .myElement2); // используем псевдокласс extend с несколькими селекторами
   font-size: 2em;
 }
 ```

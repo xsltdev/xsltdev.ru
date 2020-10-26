@@ -10,8 +10,8 @@
 const subject = new Subject()
 const multicasted = from([2, 4, 6]).pipe(multicast(subject))
 
-multicasted.subscribe(vl => console.log(`1st: ${vl}`))
-multicasted.subscribe(vl => console.log(`2nd: ${vl}`))
+multicasted.subscribe((vl) => console.log(`1st: ${vl}`))
+multicasted.subscribe((vl) => console.log(`2nd: ${vl}`))
 
 multicasted.connect()
 ```
@@ -34,15 +34,23 @@ RxJS `multicast(`) принимает `Subject`, который регистри
 
 ```ts
 const subject = new Subject()
-const refCounted = interval(3).pipe(multicast(subject), refCount())
+const refCounted = interval(3).pipe(
+  multicast(subject),
+  refCount()
+)
 
 let sub1, sub2
 
 //выполнение Observable начинается
-sub1 = refCounted.subscribe(vl => console.log(`1st: ${vl}`))
+sub1 = refCounted.subscribe((vl) =>
+  console.log(`1st: ${vl}`)
+)
 
 setTimeout(
-  () => (sub2 = refCounted.subscribe(vl => console.log(`2nd: ${vl}`))),
+  () =>
+    (sub2 = refCounted.subscribe((vl) =>
+      console.log(`2nd: ${vl}`)
+    )),
   500
 )
 

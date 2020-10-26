@@ -28,7 +28,7 @@ description: Dependency Injection - широко распространенны�
 @Component({
   selector: 'deposits',
   templateUrl: './deposits.component.html',
-  styleUrls: ['./deposits.component.scss']
+  styleUrls: ['./deposits.component.scss'],
 })
 export class DepositsComponent {
   constructor(
@@ -78,7 +78,9 @@ export class DepositsService {}
 Конфигурационный объект позволяет переопределить значение для конкретного injection token.
 
 ```ts
-providers: [{ provide: DepositsService, useClass: OtherService }]
+providers: [
+  { provide: DepositsService, useClass: OtherService },
+]
 ```
 
 Так при обращении к `DepositsService` будет использован `OtherService`.
@@ -115,8 +117,8 @@ providers: [
   {
     provide: UserService,
     useFactory: userServiceFactory,
-    deps: [AuthService]
-  }
+    deps: [AuthService],
+  },
 ]
 ```
 
@@ -131,9 +133,12 @@ _default-settings-injection-token.ts_
 ```ts
 import { InjectionToken } from '@angular/core'
 
-export const DEFAULT_SETTINGS = new InjectionToken<string>('settings', {
-  providedIn: 'root'
-})
+export const DEFAULT_SETTINGS = new InjectionToken<string>(
+  'settings',
+  {
+    providedIn: 'root',
+  }
+)
 ```
 
 _app.module.ts_
@@ -144,8 +149,8 @@ import { DEFAULT_SETTINGS } from './default-settings-injection-token.ts'
 providers: [
   {
     provide: DEFAULT_SETTINGS,
-    useValue: { logging: true, requireAuth: false }
-  }
+    useValue: { logging: true, requireAuth: false },
+  },
 ]
 ```
 

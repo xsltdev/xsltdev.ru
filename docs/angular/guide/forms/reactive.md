@@ -17,7 +17,7 @@ myForm: FormGroup = new FormGroup()
 ```typescript
 myForm: FormGroup = new FormGroup({
   userName: new FormControl(),
-  userEmail: new FormControl()
+  userEmail: new FormControl(),
 })
 ```
 
@@ -30,8 +30,10 @@ myForm: FormGroup = new FormGroup({
   userName: new FormControl('Tom', Validators.required),
   userEmail: new FormControl('', [
     Validators.required,
-    Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
-  ])
+    Validators.pattern(
+      '[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}'
+    ),
+  ]),
 })
 ```
 
@@ -55,7 +57,11 @@ myForm: FormGroup = new FormGroup({
 
 ```typescript
 import { Component } from '@angular/core'
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+} from '@angular/forms'
 
 @Component({
   selector: 'my-app',
@@ -67,13 +73,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
       input.ng-touched.ng-valid {
         border: solid green 2px;
       }
-    `
+    `,
   ],
   template: `
-    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+    <form
+      [formGroup]="myForm"
+      novalidate
+      (ngSubmit)="submit()"
+    >
       <div class="form-group">
         <label>Имя</label>
-        <input class="form-control" name="name" formControlName="userName" />
+        <input
+          class="form-control"
+          name="name"
+          formControlName="userName"
+        />
 
         <div
           class="alert alert-danger"
@@ -87,7 +101,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input class="form-control" name="email" formControlName="userEmail" />
+        <input
+          class="form-control"
+          name="email"
+          formControlName="userEmail"
+        />
 
         <div
           class="alert alert-danger"
@@ -101,15 +119,22 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
       </div>
       <div class="form-group">
         <label>Телефон</label>
-        <input class="form-control" name="phone" formControlName="userPhone" />
+        <input
+          class="form-control"
+          name="phone"
+          formControlName="userPhone"
+        />
       </div>
       <div class="form-group">
-        <button class="btn btn-default" [disabled]="myForm.invalid">
+        <button
+          class="btn btn-default"
+          [disabled]="myForm.invalid"
+        >
           Отправить
         </button>
       </div>
     </form>
-  `
+  `,
 })
 export class AppComponent {
   myForm: FormGroup
@@ -118,9 +143,11 @@ export class AppComponent {
       userName: new FormControl('Tom', Validators.required),
       userEmail: new FormControl('', [
         Validators.required,
-        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+        Validators.pattern(
+          '[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}'
+        ),
       ]),
-      userPhone: new FormControl()
+      userPhone: new FormControl(),
     })
   }
 
@@ -148,9 +175,13 @@ import { AppComponent } from './app.component'
 
 import { ReactiveFormsModule } from '@angular/forms'
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -168,20 +199,24 @@ export class AppComponent {
     this.myForm = new FormGroup({
       userName: new FormControl('Tom', [
         Validators.required,
-        this.userNameValidator
+        this.userNameValidator,
       ]),
       userEmail: new FormControl('', [
         Validators.required,
-        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+        Validators.pattern(
+          '[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}'
+        ),
       ]),
-      userPhone: new FormControl()
+      userPhone: new FormControl(),
     })
   }
   submit() {
     console.log(this.myForm)
   }
   // валидатор
-  userNameValidator(control: FormControl): { [s: string]: boolean } {
+  userNameValidator(
+    control: FormControl
+  ): { [s: string]: boolean } {
     if (control.value === 'нет') {
       return { userName: true }
     }
@@ -212,7 +247,12 @@ export class AppComponent {
 
 ```typescript
 import { Component } from '@angular/core'
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormArray,
+} from '@angular/forms'
 
 @Component({
   selector: 'my-app',
@@ -224,13 +264,21 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'
       input.ng-touched.ng-valid {
         border: solid green 2px;
       }
-    `
+    `,
   ],
   template: `
-    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+    <form
+      [formGroup]="myForm"
+      novalidate
+      (ngSubmit)="submit()"
+    >
       <div class="form-group">
         <label>Имя</label>
-        <input class="form-control" name="name" formControlName="userName" />
+        <input
+          class="form-control"
+          name="name"
+          formControlName="userName"
+        />
 
         <div
           class="alert alert-danger"
@@ -244,7 +292,11 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input class="form-control" name="email" formControlName="userEmail" />
+        <input
+          class="form-control"
+          name="email"
+          formControlName="userEmail"
+        />
 
         <div
           class="alert alert-danger"
@@ -265,30 +317,45 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'
           "
         >
           <label>Телефон</label>
-          <input class="form-control" formControlName="{{ i }}" />
+          <input
+            class="form-control"
+            formControlName="{{ i }}"
+          />
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-default" (click)="addPhone()">
+        <button
+          class="btn btn-default"
+          (click)="addPhone()"
+        >
           Добавить телефон
         </button>
-        <button class="btn btn-default" [disabled]="myForm.invalid">
+        <button
+          class="btn btn-default"
+          [disabled]="myForm.invalid"
+        >
           Отправить
         </button>
       </div>
     </form>
-  `
+  `,
 })
 export class AppComponent {
   myForm: FormGroup
   constructor() {
     this.myForm = new FormGroup({
-      userName: new FormControl('Tom', [Validators.required]),
+      userName: new FormControl('Tom', [
+        Validators.required,
+      ]),
       userEmail: new FormControl('', [
         Validators.required,
-        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
+        Validators.pattern(
+          '[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}'
+        ),
       ]),
-      phones: new FormArray([new FormControl('+7', Validators.required)])
+      phones: new FormArray([
+        new FormControl('+7', Validators.required),
+      ]),
     })
   }
   addPhone() {
@@ -353,7 +420,7 @@ import {
   FormControl,
   Validators,
   FormArray,
-  FormBuilder
+  FormBuilder,
 } from '@angular/forms'
 
 @Component({
@@ -366,13 +433,21 @@ import {
       input.ng-touched.ng-valid {
         border: solid green 2px;
       }
-    `
+    `,
   ],
   template: `
-    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+    <form
+      [formGroup]="myForm"
+      novalidate
+      (ngSubmit)="submit()"
+    >
       <div class="form-group">
         <label>Имя</label>
-        <input class="form-control" name="name" formControlName="userName" />
+        <input
+          class="form-control"
+          name="name"
+          formControlName="userName"
+        />
 
         <div
           class="alert alert-danger"
@@ -386,7 +461,11 @@ import {
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input class="form-control" name="email" formControlName="userEmail" />
+        <input
+          class="form-control"
+          name="email"
+          formControlName="userEmail"
+        />
 
         <div
           class="alert alert-danger"
@@ -407,19 +486,28 @@ import {
           "
         >
           <label>Телефон</label>
-          <input class="form-control" formControlName="{{ i }}" />
+          <input
+            class="form-control"
+            formControlName="{{ i }}"
+          />
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-default" (click)="addPhone()">
+        <button
+          class="btn btn-default"
+          (click)="addPhone()"
+        >
           Добавить телефон
         </button>
-        <button class="btn btn-default" [disabled]="myForm.invalid">
+        <button
+          class="btn btn-default"
+          [disabled]="myForm.invalid"
+        >
           Отправить
         </button>
       </div>
     </form>
-  `
+  `,
 })
 export class AppComponent {
   myForm: FormGroup
@@ -430,10 +518,14 @@ export class AppComponent {
         '',
         [
           Validators.required,
-          Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}')
-        ]
+          Validators.pattern(
+            '[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}'
+          ),
+        ],
       ],
-      phones: formBuilder.array([['+7', Validators.required]])
+      phones: formBuilder.array([
+        ['+7', Validators.required],
+      ]),
     })
   }
   addPhone() {

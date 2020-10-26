@@ -108,7 +108,7 @@ XSLT создавался для применения в XSL, языке сти�
     16.3 [Метод вывода Text](#section-Text-Output-Method)  
     16.4 [Запрет маскирования при выводе](#disable-output-escaping)  
 17 [Соответствие спецификации](#conformance)  
-18 [Нотация](#notation)  
+18 [Нотация](#notation)
 
 ### Приложения
 
@@ -186,24 +186,24 @@ XSLT оставляет две "зацепки" для дальнейших ра
 <a name="element-stylesheet"></a>
 
 ```
-<xsl:stylesheet  
-  id = id  
+<xsl:stylesheet
+  id = id
   extension-element-prefixes = tokens
-  exclude-result-prefixes = tokens  
-  version = number>  
-  <!-- Content: ([xsl:import](#element-import)*, top-level-elements) -->  
+  exclude-result-prefixes = tokens
+  version = number>
+  <!-- Content: ([xsl:import](#element-import)*, top-level-elements) -->
 </xsl:stylesheet>
 ```
 
 <a name="element-transform"></a>
 
 ```
-<xsl:transform  
-  id = id  
-  extension-element-prefixes = tokens  
-  exclude-result-prefixes = tokens  
-  **version** = number>  
-  <!-- Content: ([xsl:import](#element-import)*, top-level-elements) -->  
+<xsl:transform
+  id = id
+  extension-element-prefixes = tokens
+  exclude-result-prefixes = tokens
+  **version** = number>
+  <!-- Content: ([xsl:import](#element-import)*, top-level-elements) -->
 </xsl:transform>
 ```
 
@@ -230,41 +230,27 @@ XSLT оставляет две "зацепки" для дальнейших ра
 
 Следующий пример показывает структуру стиля. Многоточием (`...`) обозначены те места, где опущено значение атрибута или содержимое. Хотя в этом примере показано по одному элементу для каждого разрешенного типа, стиль может не содержать какой-либо из этих элементов, либо содержать сразу несколько его экземпляров.
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:import href="..."/>
-
-	<xsl:include href="..."/>
-
-	<xsl:strip-space elements="..."/>
-
-	<xsl:preserve-space elements="..."/>
-
-	<xsl:output method="..."/>
-
-	<xsl:key name="..." match="..." use="..."/>
-
-	<xsl:decimal-format name="..."/>
-
-	<xsl:namespace-alias stylesheet-prefix="..." result-prefix="..."/>
-
-	<xsl:attribute-set name="...">
-	...
-	</xsl:attribute-set>
-
-	<xsl:variable name="...">...</xsl:variable>
-
-	<xsl:param name="...">...</xsl:param>
-
-	<xsl:template match="...">
-	...
-	</xsl:template>
-
-	<xsl:template name="...">
-	...
-	</xsl:template>
-
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:import href="..." />
+  <xsl:include href="..." />
+  <xsl:strip-space elements="..." />
+  <xsl:preserve-space elements="..." />
+  <xsl:output method="..." />
+  <xsl:key name="..." match="..." use="..." />
+  <xsl:decimal-format name="..." />
+  <xsl:namespace-alias
+    stylesheet-prefix="..."
+    result-prefix="..."
+  />
+  <xsl:attribute-set name="...">...</xsl:attribute-set>
+  <xsl:variable name="...">...</xsl:variable>
+  <xsl:param name="...">...</xsl:param>
+  <xsl:template match="...">...</xsl:template>
+  <xsl:template name="...">...</xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -284,35 +270,45 @@ XSLT оставляет две "зацепки" для дальнейших ра
 
 Для стилей, состоящих из единственного шаблона, для корневого узла можно использовать упрощенный синтаксис. Данный стиль может содержать только один фиксированный конечный элемент (literal result element, см. главу [7.1.1 Фиксированные конечные элементы](#literal-result-element)). Такой стиль равнозначен стилю с элементом `xsl:stylesheet`, содержащим правило шаблона с фиксированным конечным элементом, которое для сравнения использует образец `/`. Например:
 
-```xslt
-<html xsl:version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns="http://www.w3.org/TR/xhtml1/strict">
-	<head>
-		<title>Expense Report Summary</title>
-	</head>
-	<body>
-		<p>Total Amount: <xsl:value-of select="expense-report/total"/></p>
-	</body>
+```xml
+<html
+  xsl:version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns="http://www.w3.org/TR/xhtml1/strict"
+>
+  <head>
+    <title>Expense Report Summary</title>
+  </head>
+  <body>
+    <p>
+      Total Amount:
+      <xsl:value-of select="expense-report/total" />
+    </p>
+  </body>
 </html>
 ```
 
 что равнозначно
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns="http://www.w3.org/TR/xhtml1/strict">
-<xsl:template match="/">
-<html>
-	<head>
-	<title>Expense Report Summary</title>
-	</head>
-	<body>
-	<p>Total Amount: <xsl:value-of select="expense-report/total"/></p>
-	</body>
-</html>
-</xsl:template>
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns="http://www.w3.org/TR/xhtml1/strict"
+>
+  <xsl:template match="/">
+    <html>
+      <head>
+        <title>Expense Report Summary</title>
+      </head>
+      <body>
+        <p>
+          Total Amount:
+          <xsl:value-of select="expense-report/total" />
+        </p>
+      </body>
+    </html>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -346,50 +342,56 @@ XSLT оставляет две "зацепки" для дальнейших ра
 
 Таким образом, любой процессор XSLT 1.0 должен уметь обработать представленный далее стиль без ошибок, даже несмотря на то, что тот содержит элементы из пространства имен XSLT, которые не были заданы в этой спецификации:
 
-```xslt
-<xsl:stylesheet version="1.1"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-	<xsl:template match="/">
-	<xsl:choose>
-		<xsl:when test="system-property('xsl:version') >= 1.1">
-		<xsl:exciting-new-1.1-feature/>
-		</xsl:when>
-		<xsl:otherwise>
-		<html>
-		<head>
-			<title>XSLT 1.1 required</title>
-		</head>
-		<body>
-			<p>Sorry, this stylesheet requires XSLT 1.1.</p>
-		</body>
-		</html>
-		</xsl:otherwise>
-	</xsl:choose>
-	</xsl:template>
+```xml
+<xsl:stylesheet
+  version="1.1"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <xsl:choose>
+      <xsl:when
+        test="system-property('xsl:version') >= 1.1"
+      >
+        <xsl:exciting-new-1.1-feature />
+      </xsl:when>
+      <xsl:otherwise>
+        <html>
+          <head>
+            <title>XSLT 1.1 required</title>
+          </head>
+          <body>
+            <p>Sorry, this stylesheet requires XSLT 1.1.</p>
+          </body>
+        </html>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 > **Замечание:** Если стиль опосредованно зависит от элемента верхнего уровня, объявленного в XSL более старшей версии чем 1.0, то тогда в этом стиле можно использовать элемент `xsl:message` с атрибутом `terminate="yes"` (см. [13 Сообщения](#message)) чтобы гарантировать, что XSLT процессоры, реализующие более ранние версии XSL, не будут втихую игнорировать указанный элемент верхнего уровня. Например,
 
-```xslt
-<xsl:stylesheet version="1.5" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-	<xsl:important-new-1.1-declaration/>
-
-	<xsl:template match="/">
-	<xsl:choose>
-		<xsl:when test="system-property('xsl:version') &lt; 1.1">
-		<xsl:message terminate="yes">
-			<xsl:text>Sorry, this stylesheet requires XSLT 1.1.</xsl:text>
-		</xsl:message>
-		</xsl:when>
-		<xsl:otherwise>
-		...
-		</xsl:otherwise>
-	</xsl:choose>
-	</xsl:template>
-	...
+```xml
+<xsl:stylesheet
+  version="1.5"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:important-new-1.1-declaration />
+  <xsl:template match="/">
+    <xsl:choose>
+      <xsl:when
+        test="system-property('xsl:version') &lt; 1.1"
+      >
+        <xsl:message terminate="yes">
+          <xsl:text>
+            Sorry, this stylesheet requires XSLT 1.1.
+          </xsl:text>
+        </xsl:message>
+      </xsl:when>
+      <xsl:otherwise>...</xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  ...
 </xsl:stylesheet>
 ```
 
@@ -415,8 +417,8 @@ XSLT оставляет две "зацепки" для дальнейших ра
 <a name="element-include"></a>
 
 ```
-<!-- Category: top-level-element -->  
-<xsl:include  
+<!-- Category: top-level-element -->
+<xsl:include
   **href** = uri-reference />
 ```
 
@@ -439,7 +441,7 @@ XSLT оставляет две "зацепки" для дальнейших ра
 <a name="element-import"></a>
 
 ```
-<xsl:import  
+<xsl:import
   **href** = uri-reference />
 ```
 
@@ -449,14 +451,16 @@ XSLT оставляет две "зацепки" для дальнейших ра
 
 Например,
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:import href="article.xsl"/>
-	<xsl:import href="bigfont.xsl"/>
-	<xsl:attribute-set name="note-style">
-	<xsl:attribute name="font-style">italic</xsl:attribute>
-	</xsl:attribute-set>
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:import href="article.xsl" />
+  <xsl:import href="bigfont.xsl" />
+  <xsl:attribute-set name="note-style">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
 </xsl:stylesheet>
 ```
 
@@ -495,32 +499,32 @@ XSLT оставляет две "зацепки" для дальнейших ра
 
 Следующий пример показывает, каким образом можно использовать инструкцию обработки `xml-stylesheet` [Стиль XML](#XMLSTYLE) чтобы позволить документу содержать свой собственный стиль. Чтобы найти элемент `xsl:stylesheet`, ссылка URI использует относительный URI с идентификатором фрагмента:
 
-```xslt
+```xml
 <?xml-stylesheet type="text/xml" href="#style1"?>
-	<!DOCTYPE doc SYSTEM "doc.dtd">
-	<doc>
-		<head>
-		<xsl:stylesheet id="style1"
-			version="1.0"
-			xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-			xmlns:fo="http://www.w3.org/1999/XSL/Format">
-		<xsl:import href="doc.xsl"/>
-		<xsl:template match="id('foo')">
-		<fo:block font-weight="bold">
-			<xsl:apply-templates/>
-		</fo:block>
-		</xsl:template>
-		<xsl:template match="xsl:stylesheet">
-		<!-- игнорируется -->
-		</xsl:template>
-		</xsl:stylesheet>
-		</head>
-		<body>
-		<para id="foo">
-		...
-		</para>
-		</body>
-	</doc>
+<!DOCTYPE doc SYSTEM "doc.dtd">
+<doc>
+  <head>
+    <xsl:stylesheet
+      id="style1"
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+      xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    >
+      <xsl:import href="doc.xsl" />
+      <xsl:template match="id('foo')">
+        <fo:block font-weight="bold">
+          <xsl:apply-templates />
+        </fo:block>
+      </xsl:template>
+      <xsl:template match="xsl:stylesheet">
+        <!-- игнорируется -->
+      </xsl:template>
+    </xsl:stylesheet>
+  </head>
+  <body>
+    <para id="foo">...</para>
+  </body>
+</doc>
 ```
 
 > **Замечание:** Стиль, который вложен в документ, к которому должен быть применен, либо стиль, включенный или импортированный в такой стиль, как правило, должен иметь правило шаблона, сообщающее, что элементы `xsl:stylesheet` должны быть проигнорированы.
@@ -575,15 +579,15 @@ XSLT оставляет две "зацепки" для дальнейших ра
 
 <a name="element-strip-space"></a>
 
-```<!-- Category: top-level-element -->  
-<xsl:strip-space  
+```<!-- Category: top-level-element -->
+<xsl:strip-space
   **elements** = tokens />
 ```
 
 <a name="element-preserve-space"></a>
 
-```<!-- Category: top-level-element -->  
-<xsl:preserve-space  
+```<!-- Category: top-level-element -->
+<xsl:preserve-space
   **elements** = tokens />
 ```
 
@@ -780,13 +784,13 @@ appendix//ulist/item[position()=1]
 
 <a name="element-template"></a>
 
-```<!-- Category: top-level-element -->  
-<xsl:template  
-  match = pattern  
-  name = qname  
-  priority = number  
-  mode = qname>  
-  <!-- Content: ([xsl:param](#element-param)*, template) -->  
+```<!-- Category: top-level-element -->
+<xsl:template
+  match = pattern
+  name = qname
+  priority = number
+  mode = qname>
+  <!-- Content: ([xsl:param](#element-param)*, template) -->
 </xsl:template>
 ```
 
@@ -800,11 +804,11 @@ This is an <emph>important</emph> point.
 
 Приведенное далее правило шаблона соответствует элементам `emph` и создает объект форматирования `fo:inline-sequence`, имеющий свойство `font-weight` со значением `bold`.
 
-```xslt
+```xml
 <xsl:template match="emph">
-	<fo:inline-sequence font-weight="bold">
-		<xsl:apply-templates/>
-	</fo:inline-sequence>
+  <fo:inline-sequence font-weight="bold">
+    <xsl:apply-templates />
+  </fo:inline-sequence>
 </xsl:template>
 ```
 
@@ -818,21 +822,21 @@ This is an <emph>important</emph> point.
 
 <a name="element-apply-templates"></a>
 
-```<!-- Category: instruction -->  
-<xsl:apply-templates  
-  select = node-set-expression  
-  mode = qname>  
-  <!-- Content: ([xsl:sort](#element-sort) | [xsl:with-param](#element-with-param))* -->  
+```<!-- Category: instruction -->
+<xsl:apply-templates
+  select = node-set-expression
+  mode = qname>
+  <!-- Content: ([xsl:sort](#element-sort) | [xsl:with-param](#element-with-param))* -->
 </xsl:apply-templates>
 ```
 
 В данном примере для элемента `chapter` создается блок, а затем обрабатывается его непосредственный потомок.
 
-```xslt
+```xml
 <xsl:template match="chapter">
-	<fo:block>
-	  <xsl:apply-templates/>
-	</fo:block>
+  <fo:block>
+    <xsl:apply-templates />
+  </fo:block>
 </xsl:template>
 ```
 
@@ -840,55 +844,59 @@ This is an <emph>important</emph> point.
 
 Чтобы обрабатывать не все непосредственные потомки, а лишь узлы, отобранные по некому выражению, может использоваться атрибут `select`. Значением атрибута `select` является [выражение](#dt-expression). После обработки этого выражения должен получиться набор узлов. Если нет указаний по сортировке (см. [10 Сортировка](#sorting)), собранный перечень узлов обрабатывается в том порядке, как они следуют в документе. В следующем примере обрабатываются все непосредственные потомки `author` для этого элемента `author-group`:
 
-```xslt
+```xml
 <xsl:template match="author-group">
-	<fo:inline-sequence>
-		<xsl:apply-templates select="author"/>
-	</fo:inline-sequence>
+  <fo:inline-sequence>
+    <xsl:apply-templates select="author" />
+  </fo:inline-sequence>
 </xsl:template>
 ```
 
 В следующем примере обрабатываются все содержащиеся в `author` элементы `given-name`, которые являются непосредственным потомком `author-group`:
 
-```xslt
+```xml
 <xsl:template match="author-group">
-	<fo:inline-sequence>
-		<xsl:apply-templates select="author/given-name"/>
-	</fo:inline-sequence>
+  <fo:inline-sequence>
+    <xsl:apply-templates select="author/given-name" />
+  </fo:inline-sequence>
 </xsl:template>
 ```
 
 В данном примере обрабатываются все элементы `heading`, являющиеся потомками элемента `book`.
 
-```xslt
+```xml
 <xsl:template match="book">
-	<fo:block>
-		<xsl:apply-templates select=".//heading"/>
-	</fo:block>
+  <fo:block>
+    <xsl:apply-templates select=".//heading" />
+  </fo:block>
 </xsl:template>
 ```
 
 Есть также возможность обрабатывать элементы, которые не являются потомками текущего узла. В данном примере предполагается, что элемент `department` имеет непосредственный потомок `group` и потомки `employee`. Сперва находится отдел employee, а затем обрабатывается непосредственный потомок `group` элемента `department`.
 
-```xslt
+```xml
 <xsl:template match="employee">
-	<fo:block>
-		Employee <xsl:apply-templates select="name"/> belongs to group
-		<xsl:apply-templates select="ancestor::department/group"/>
-	</fo:block>
+  <fo:block>
+    Employee
+    <xsl:apply-templates select="name" />
+    belongs to group
+    <xsl:apply-templates
+      select="ancestor::department/group"
+    />
+  </fo:block>
 </xsl:template>
 ```
 
 Для выполнения простого переупорядочения в пределах одного шаблона можно использовать сразу несколько элементов `xsl:apply-templates`. В следующем примере создаются две таблицы HTML. Первая таблица заполняется отечественными продажами, вторая - международными.
 
-```xslt
+```xml
 <xsl:template match="product">
-	<table>
-		<xsl:apply-templates select="sales/domestic"/>
-	</table>
-	<table>
-		<xsl:apply-templates select="sales/foreign"/>
-	</table>
+  <table>
+    <xsl:apply-templates select="sales/domestic" />
+  </table>
+  <table>
+    <xsl:apply-templates select="sales/foreign" />
+  </table>
 </xsl:template>
 ```
 
@@ -897,16 +905,16 @@ This is an <emph>important</emph> point.
 ```xml
 <doc>
   <div>
-    <div></div>
+    <div />
   </div>
 </doc>
 ```
 
 правило
 
-```xslt
+```xml
 <xsl:template match="doc">
-	<xsl:apply-templates select=".//div"/>
+  <xsl:apply-templates select=".//div" />
 </xsl:template>
 ```
 
@@ -916,9 +924,9 @@ This is an <emph>important</emph> point.
 
 Например,
 
-```xslt
+```xml
 <xsl:template match="foo">
-	<xsl:apply-templates select="."/>
+  <xsl:apply-templates select="." />
 </xsl:template>
 ```
 
@@ -953,7 +961,7 @@ This is an <emph>important</emph> point.
 <a name="element-apply-imports"></a>
 
 ```
-<!-- Category: instruction -->  
+<!-- Category: instruction -->
 <xsl:apply-imports />
 ```
 
@@ -965,15 +973,17 @@ This is an <emph>important</emph> point.
 
 Например, предположим что стиль `doc.xsl` содержит правило шаблона для элементов `example`:
 
-```xslt
+```xml
 <xsl:template match="example">
-	<pre><xsl:apply-templates/></pre>
+  <pre>
+    <xsl:apply-templates />
+  </pre>
 </xsl:template>
 ```
 
 Другой стиль может импортировать `doc.xsl` и поменять обработку элементов `example` следующим образом:
 
-```xslt
+```xml
 <xsl:import href="doc.xsl"/>
 
 <xsl:template match="example">
@@ -1003,32 +1013,32 @@ This is an <emph>important</emph> point.
 
 Имеется встроенное правило шаблона, позволяющее рекурсивно продолжать обработку в отсутствии успешного сравнения с явным правилом шаблона в стиле. Это правило шаблона используется как для узлов элементов, так и для корневого узла. Далее приведен эквивалент встроенного правила шаблона:
 
-```xslt
+```xml
 <xsl:template match="*|/">
-	<xsl:apply-templates/>
+  <xsl:apply-templates />
 </xsl:template>
 ```
 
 Для каждого метода также есть встроенное правило шаблона, позволяющее рекурсивно продолжать обработку в том же самом режиме, в отсутствии успешного сравнения с образцом из явного правила шаблона в этом стиле. Это правило шаблона применяется как для узлов элементов, так и для корневого узла. Далее приведен эквивалент встроенного правила шаблона для режима `m`.
 
-```xslt
+```xml
 <xsl:template match="*|/" mode="m">
-  <xsl:apply-templates mode="m"/>
+  <xsl:apply-templates mode="m" />
 </xsl:template>
 ```
 
 Также есть встроенное правило шаблона для текстовых узлов и узлов атрибутов, которое просто копирует текст:
 
-```xslt
+```xml
 <xsl:template match="text()|@*">
-	<xsl:value-of select="."/>
+  <xsl:value-of select="." />
 </xsl:template>
 ```
 
 Для инструкций обработки и комментариев встроенное правило шаблона не должно делать ничего.
 
-```xslt
-<xsl:template match="processing-instruction()|comment()"/>
+```xml
+<xsl:template match="processing-instruction()|comment()" />
 ```
 
 Встроенное правило шаблона для узлов пространства имен также не должно делать ничего. Нет образца, который бы мог соответствовать узлу пространства имен, поэтому встроенное правило шаблона является единственным правилом шаблона, которое применяется к узлам пространства имен.
@@ -1042,10 +1052,10 @@ This is an <emph>important</emph> point.
 <a name="element-call-template"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:call-template  
-  **name** = qname>  
-  <!-- Content: [xsl:with-param](#element-with-param)* -->  
+<!-- Category: instruction -->
+<xsl:call-template
+  **name** = qname>
+  <!-- Content: [xsl:with-param](#element-with-param)* -->
 </xsl:call-template>
 ```
 
@@ -1086,9 +1096,9 @@ This is an <emph>important</emph> point.
 <a name="element-namespace-alias"></a>
 
 ```
-<!-- Category: top-level-element -->  
-<xsl:namespace-alias  
-  **stylesheet-prefix** = prefix | "#default"  
+<!-- Category: top-level-element -->
+<xsl:namespace-alias
+  **stylesheet-prefix** = prefix | "#default"
   **result-prefix** = prefix | "#default" />
 ```
 
@@ -1096,25 +1106,29 @@ This is an <emph>important</emph> point.
 
 Если фиксированные конечные элементы используются для создания узлов элементов, атрибутов или пространств имен, использующих URI пространства имен XSLT, такой стиль должен использовать синоним. Например, стиль
 
-```xslt
+```xml
 <xsl:stylesheet
-	  version="1.0"
-	  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	  xmlns:fo="http://www.w3.org/1999/XSL/Format"
-	  xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias">
-
-	<xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl"/>
-	 <xsl:template match="/">
-	  <axsl:stylesheet>
-		<xsl:apply-templates/>
-	  </axsl:stylesheet>
-	</xsl:template>
-	 <xsl:template match="block">
-	  <axsl:template match="{.}">
-		 <fo:block><axsl:apply-templates/></fo:block>
-	  </axsl:template>
-	</xsl:template>
-
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"
+  xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias"
+>
+  <xsl:namespace-alias
+    stylesheet-prefix="axsl"
+    result-prefix="xsl"
+  />
+  <xsl:template match="/">
+    <axsl:stylesheet>
+      <xsl:apply-templates />
+    </axsl:stylesheet>
+  </xsl:template>
+  <xsl:template match="block">
+    <axsl:template match="{.}">
+      <fo:block>
+        <axsl:apply-templates />
+      </fo:block>
+    </axsl:template>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -1122,11 +1136,11 @@ This is an <emph>important</emph> point.
 
 ```xml
 <elements>
-	<block>p</block>
-	<block>h1</block>
-	<block>h2</block>
-	<block>h3</block>
-	<block>h4</block>
+  <block>p</block>
+  <block>h1</block>
+  <block>h2</block>
+  <block>h3</block>
+  <block>h4</block>
 </elements>
 ```
 
@@ -1139,12 +1153,12 @@ This is an <emph>important</emph> point.
 <a name="element-element"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:element  
-  **name** = { qname }  
-  namespace = { uri-reference }  
-  use-attribute-sets = qnames>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:element
+  **name** = { qname }
+  namespace = { uri-reference }
+  use-attribute-sets = qnames>
+  <!-- Content: template -->
 </xsl:element>
 ```
 
@@ -1163,11 +1177,11 @@ This is an <emph>important</emph> point.
 <a name="element-attribute"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:attribute  
-  **name** = { qname }  
-  namespace = { uri-reference }>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:attribute
+  **name** = { qname }
+  namespace = { uri-reference }>
+  <!-- Content: template -->
 </xsl:attribute>
 ```
 
@@ -1179,10 +1193,10 @@ This is an <emph>important</emph> point.
 
 При выборе префикса для вывода созданного атрибута в виде XML XSLT процессоры могут воспользоваться префиксом [QName](http://www.w3.org/TR/REC-xml-names#NT-QName), указанным в атрибуте `name`. Однако процессоры не обязаны делать именно так, а если префиксом является `xmlns`, то им так делать и не разрешается. Таким образом, хотя следующая инструкция ошибки не вызовет
 
-```xslt
-<xsl:attribute
-	name="xmlns:xsl"
-	namespace="whatever">http://www.w3.org/1999/XSL/Transform</xsl:attribute>
+```xml
+<xsl:attribute name="xmlns:xsl" namespace="whatever">
+  http://www.w3.org/1999/XSL/Transform
+</xsl:attribute>
 ```
 
 она не приведет к появлению декларации пространства имен.
@@ -1199,9 +1213,11 @@ This is an <emph>important</emph> point.
 
 Например,
 
-```xslt
-<xsl:attribute name="a">x
-	y</xsl:attribute>
+```xml
+<xsl:attribute name="a">
+  x
+	y
+</xsl:attribute>
 ```
 
 будет давать на выходе
@@ -1226,11 +1242,11 @@ a="x
 <a name="element-attribute-set"></a>
 
 ```
-<!-- Category: top-level-element -->  
-<xsl:attribute-set  
-  **name** = qname  
-  use-attribute-sets = qnames>  
-  <!-- Content: [xsl:attribute](#element-attribute)* -->  
+<!-- Category: top-level-element -->
+<xsl:attribute-set
+  **name** = qname
+  use-attribute-sets = qnames>
+  <!-- Content: [xsl:attribute](#element-attribute)* -->
 </xsl:attribute-set>
 ```
 
@@ -1244,7 +1260,7 @@ a="x
 
 В следующем примере сперва создается именованный набор атрибутов `title-style`, а затем используется в правиле шаблона.
 
-```xslt
+```xml
 <xsl:template match="chapter/heading">
 	<fo:block quadding="start" xsl:use-attribute-sets="title-style">
 	<xsl:apply-templates/>
@@ -1270,10 +1286,10 @@ a="x
 <a name="element-text"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:text  
-  disable-output-escaping = "yes" | "no">  
-  <!-- Content: #PCDATA -->  
+<!-- Category: instruction -->
+<xsl:text
+  disable-output-escaping = "yes" | "no">
+  <!-- Content: #PCDATA -->
 </xsl:text>
 ```
 
@@ -1293,10 +1309,10 @@ a="x
 <a name="element-processing-instruction"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:processing-instruction  
-  **name** = { ncname }>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:processing-instruction
+  **name** = { ncname }>
+  <!-- Content: template -->
 </xsl:processing-instruction>
 ```
 
@@ -1304,14 +1320,16 @@ a="x
 
 Например,
 
-```xslt
-<xsl:processing-instruction name="xml-stylesheet">href="book.css"
-	 type="text/css"</xsl:processing-instruction>
+```xml
+<xsl:processing-instruction name="xml-stylesheet">
+  href="book.css"
+	 type="text/css"
+</xsl:processing-instruction>
 ```
 
 создаст инструкцию обработки
 
-```xslt
+```xml
 <?xml-stylesheet href="book.css" type="text/css"?>
 ```
 
@@ -1330,9 +1348,9 @@ a="x
 <a name="element-comment"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:comment>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:comment>
+  <!-- Content: template -->
 </xsl:comment>
 ```
 
@@ -1340,8 +1358,10 @@ a="x
 
 Например,
 
-```xslt
-<xsl:comment>This file is automatically generated. Do not edit!</xsl:comment>
+```xml
+<xsl:comment>
+  This file is automatically generated. Do not edit!
+</xsl:comment>
 ```
 
 создаст следующий комментарий
@@ -1361,10 +1381,10 @@ a="x
 <a name="element-copy"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:copy  
-  use-attribute-sets = qnames>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:copy
+  use-attribute-sets = qnames>
+  <!-- Content: template -->
 </xsl:copy>
 ```
 
@@ -1376,11 +1396,11 @@ a="x
 
 Например, тождественное преобразование может быть записано с помощью `xsl:copy` следующим образом:
 
-```xslt
+```xml
 <xsl:template match="@*|node()">
-	<xsl:copy>
-	<xsl:apply-templates select="@*|node()"/>
-	</xsl:copy>
+  <xsl:copy>
+    <xsl:apply-templates select="@*|node()" />
+  </xsl:copy>
 </xsl:template>
 ```
 
@@ -1388,25 +1408,25 @@ a="x
 
 Следующий пример показывает как атрибуты `xml:lang` могут быть легко скопированы из исходного дерева в конечное. Если в стиле определен следующий именованный шаблон:
 
-```xslt
+```xml
 <xsl:template name="apply-templates-copy-lang">
-	<xsl:for-each select="@xml:lang">
-		<xsl:copy/>
-	</xsl:for-each>
-	<xsl:apply-templates/>
+  <xsl:for-each select="@xml:lang">
+    <xsl:copy />
+  </xsl:for-each>
+  <xsl:apply-templates />
 </xsl:template>
 ```
 
 то вместо
 
-```xslt
-<xsl:apply-templates/>
+```xml
+<xsl:apply-templates />
 ```
 
 можно легко сделать
 
-```xslt
-<xsl:call-template name="apply-templates-copy-lang"/>
+```xml
+<xsl:call-template name="apply-templates-copy-lang" />
 ```
 
 если необходимо скопировать атрибут `xml:lang`.
@@ -1424,9 +1444,9 @@ a="x
 <a name="element-value-of"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:value-of  
-  **select** = string-expression  
+<!-- Category: instruction -->
+<xsl:value-of
+  **select** = string-expression
   disable-output-escaping = "yes" | "no" />
 ```
 
@@ -1436,36 +1456,42 @@ a="x
 
 Например, в следующем примере из элемента `person` с атрибутами `given-name` и `family-name` создается параграф HTML. Этот параграф будет содержать значение атрибута `given-name` из текущего узла, за которым следуют пробел и значение атрибута `family-name` того же текущего узла.
 
-```xslt
+```xml
 <xsl:template match="person">
-	<p>
-		<xsl:value-of select="@given-name"/>
-		<xsl:text> </xsl:text>
-		<xsl:value-of select="@family-name"/>
-	</p>
+  <p>
+    <xsl:value-of select="@given-name" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:value-of select="@family-name" />
+  </p>
 </xsl:template>
 ```
 
 В другом примере параграф HTML создается из элемента `person`, имеющего непосредственными потомками элементы `given-name` и `family-name`. Полученный параграф будет содержать строковое значение первого элемента `given-name` - непосредственного потомка текущего узла, затем последует пробел и строковое значение первого встретившегося элемента `family-name`, являющегося непосредственным потомком текущего узла.
 
-```xslt
+```xml
 <xsl:template match="person">
-	<p>
-		<xsl:value-of select="given-name"/>
-		<xsl:text> </xsl:text>
-		<xsl:value-of select="family-name"/>
-	</p>
+  <p>
+    <xsl:value-of select="given-name" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:value-of select="family-name" />
+  </p>
 </xsl:template>
 ```
 
 В следующем примере каждому элементу `procedure` предшествует параграф, содержащий уровень безопасности для этой процедуры. Предполагается, что уровень безопасности, соответствующий процедуре, определяется атрибутом `security` в данном элементе процедуры или в элементе, который является предком этой процедуры. Предполагается также, что если несколько таких элементов имеет атрибут `security`, то уровень безопасности определяется элементом, самым близким к этой процедуре.
 
-```xslt
+```xml
 <xsl:template match="procedure">
-	<fo:block>
-		<xsl:value-of select="ancestor-or-self::*[@security][1]/@security"/>
-	</fo:block>
-	<xsl:apply-templates/>
+  <fo:block>
+    <xsl:value-of
+      select="ancestor-or-self::*[@security][1]/@security"
+    />
+  </fo:block>
+  <xsl:apply-templates />
 </xsl:template>
 ```
 
@@ -1479,7 +1505,7 @@ a="x
 
 В следующем примере из исходного элемента `photograph` создается конечный элемент `img`, значение атрибута `src` в элементе `img` вычисляется по значению переменной `image-dir` и строковому значению непосредственного потомка `href` элемента `photograph`, значение атрибута `width` в элементе `img` вычисляется по значению атрибута `width` непосредственного потомка `size` элемента `photograph`:
 
-```xslt
+```xml
 <xsl:variable name="image-dir">/images</xsl:variable>
 	<xsl:template match="photograph">
 	<img src="{$image-dir}/{href}" width="{size/@width}"/>
@@ -1490,28 +1516,28 @@ a="x
 
 ```xml
 <photograph>
-	<href>headquarters.jpg</href>
-	<size width="300"/>
+  <href>headquarters.jpg</href>
+  <size width="300" />
 </photograph>
 ```
 
 будет получено
 
 ```html
-<img src="/images/headquarters.jpg" width="300"/>
+<img src="/images/headquarters.jpg" width="300" />
 ```
 
 При обработке шаблона значения атрибута двойная левая или правая фигурные скобки за пределами выражения будут заменены на одинарную фигурную скобку. Если в шаблоне значения атрибута за пределами выражения обнаружена правая фигурная скобка, но за ней нет второй правой фигурной скобки, фиксируется ошибка. В выражении внутри [Literal](http://www.w3.org/TR/xpath#NT-Literal) правая фигурная скобка не воспринимается как завершающая это выражение.
 
 В выражении фигурные скобки рекурсивно _не_ обрабатываются. Например, использовать:
 
-```xslt
+```xml
 <a href="#{id({@ref})/title}">
 ```
 
 _не_ разрешается. Вместо этого воспользуйтесь просто:
 
-```xslt
+```xml
 <a href="#{id(@ref)/title}">
 ```
 
@@ -1522,30 +1548,30 @@ _не_ разрешается. Вместо этого воспользуйте�
 <a name="element-number"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:number  
-  level = "single" | "multiple" | "any"  
-  count = pattern  
-  from = pattern  
-  value = number-expression  
-  format = { string }  
-  lang = { nmtoken }  
-  letter-value = { "alphabetic" | "traditional" }  
-  grouping-separator = { char }  
+<!-- Category: instruction -->
+<xsl:number
+  level = "single" | "multiple" | "any"
+  count = pattern
+  from = pattern
+  value = number-expression
+  format = { string }
+  lang = { nmtoken }
+  letter-value = { "alphabetic" | "traditional" }
+  grouping-separator = { char }
   grouping-size = { number } />
 ```
 
 Чтобы поместить в конечное дерево форматированное число, используется элемент `xsl:number`. Подставляемое число может быть задано выражением. Атрибут `value` содержит [выражение](#dt-expression), которое обрабатывается, а полученный объект преобразуется в число, как при вызове функции **[number](http://www.w3.org/TR/xpath#function-number)**. Затем это число округляется до целого и преобразуется в строку с помощью атрибутов, описанных в [7.7.1 Атрибуты преобразования числа в строку](#convert). В данном контексте значение каждого из этих атрибутов интерпретируется как [шаблон значения атрибута](#dt-attribute-value-template). После преобразования полученная строка подставляется в конечное дерево. Например, в следующем примере требуется отсортированный набор чисел:
 
-```xslt
+```xml
 <xsl:template match="items">
-	<xsl:for-each select="item">
-	<xsl:sort select="."/>
-	<p>
-		<xsl:number value="position()" format="1. "/>
-		<xsl:value-of select="."/>
-	</p>
-	</xsl:for-each>
+  <xsl:for-each select="item">
+    <xsl:sort select="." />
+    <p>
+      <xsl:number value="position()" format="1. " />
+      <xsl:value-of select="." />
+    </p>
+  </xsl:for-each>
 </xsl:template>
 ```
 
@@ -1567,7 +1593,7 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Следующий пример будет нумеровать записи в упорядоченном списке:
 
-```xslt
+```xml
 <xsl:template match="ol/item">
 	<fo:block>
 	<xsl:number/><xsl:text>. </xsl:text><xsl:apply-templates/>
@@ -1577,7 +1603,7 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Следующие два правила будут нумеровать элементы `title`. Правила предназначаются для документа, в котором есть несколько глав, затем следует несколько приложений, причем и главы, и приложения имеют разделы, а те, в свою очередь, содержат подразделы. Главы нумеруются как 1, 2, 3, приложения нумеруются как A, B, C, разделы нумеруются 1.1, 1.2, 1.3, разделы в приложениях нумеруются A.1, A.2, A.3.
 
-```xslt
+```xml
 <xsl:template match="title">
 	<fo:block>
 		<xsl:number level="multiple"
@@ -1599,28 +1625,30 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Следующий пример последовательно нумерует примечания в главе:
 
-```xslt
+```xml
 <xsl:template match="note">
-	<fo:block>
-		<xsl:number level="any" from="chapter" format="(1) "/>
-		<xsl:apply-templates/>
-	</fo:block>
+  <fo:block>
+    <xsl:number level="any" from="chapter" format="(1) " />
+    <xsl:apply-templates />
+  </fo:block>
 </xsl:template>
 ```
 
 Следующий пример в HTML документе будет нумеровать элементы `H4`, используя метки, состоящие из трех частей:
 
-```xslt
+```xml
 <xsl:template match="H4">
-	<fo:block>
-	<xsl:number level="any" from="H1" count="H2"/>
-	<xsl:text>.</xsl:text>
-	<xsl:number level="any" from="H2" count="H3"/>
-	<xsl:text>.</xsl:text>
-	<xsl:number level="any" from="H3" count="H4"/>
-	<xsl:text> </xsl:text>
-	<xsl:apply-templates/>
-	</fo:block>
+  <fo:block>
+    <xsl:number level="any" from="H1" count="H2" />
+    <xsl:text>.</xsl:text>
+    <xsl:number level="any" from="H2" count="H3" />
+    <xsl:text>.</xsl:text>
+    <xsl:number level="any" from="H3" count="H4" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:apply-templates />
+  </fo:block>
 </xsl:template>
 ```
 
@@ -1669,10 +1697,10 @@ _не_ разрешается. Вместо этого воспользуйте�
 <a name="element-for-each"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:for-each  
-  **select** = node-set-expression>  
-  <!-- Content: ([xsl:sort](#element-sort)*, template) -->  
+<!-- Category: instruction -->
+<xsl:for-each
+  **select** = node-set-expression>
+  <!-- Content: ([xsl:sort](#element-sort)*, template) -->
 </xsl:for-each>
 ```
 
@@ -1682,46 +1710,46 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 ```xml
 <customers>
-	<customer>
-		<name>...</name>
-		<order>...</order>
-		<order>...</order>
-	</customer>
-	<customer>
-		<name>...</name>
-		<order>...</order>
-		<order>...</order>
-	</customer>
+  <customer>
+    <name>...</name>
+    <order>...</order>
+    <order>...</order>
+  </customer>
+  <customer>
+    <name>...</name>
+    <order>...</order>
+    <order>...</order>
+  </customer>
 </customers>
 ```
 
 Следующий пример должен создать HTML документ, содержащий таблицу, где каждому элементу `customer` отводится отдельная строка.
 
-```xslt
+```xml
 <xsl:template match="/">
-	<html>
-	<head>
-		<title>Customers</title>
-	</head>
-	<body>
-		<table>
-	<tbody>
-		<xsl:for-each select="customers/customer">
-		<tr>
-			<th>
-		<xsl:apply-templates select="name"/>
-			</th>
-			<xsl:for-each select="order">
-		<td>
-			<xsl:apply-templates/>
-		</td>
-			</xsl:for-each>
-		</tr>
-		</xsl:for-each>
-	</tbody>
-		</table>
-	</body>
-	</html>
+  <html>
+    <head>
+      <title>Customers</title>
+    </head>
+    <body>
+      <table>
+        <tbody>
+          <xsl:for-each select="customers/customer">
+            <tr>
+              <th>
+                <xsl:apply-templates select="name" />
+              </th>
+              <xsl:for-each select="order">
+                <td>
+                  <xsl:apply-templates />
+                </td>
+              </xsl:for-each>
+            </tr>
+          </xsl:for-each>
+        </tbody>
+      </table>
+    </body>
+  </html>
 </xsl:template>
 ```
 
@@ -1738,32 +1766,32 @@ _не_ разрешается. Вместо этого воспользуйте�
 <a name="element-if"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:if  
-  **test** = boolean-expression>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:if
+  **test** = boolean-expression>
+  <!-- Content: template -->
 </xsl:if>
 ```
 
 Элемент `xsl:if` имеет атрибут `test`, который определяет некое [выражение](#dt-expression). Содержимое элемента является шаблоном. Указанное выражение обрабатывается, а полученный объект преобразуется в булево значение как при вызове функции **[boolean](http://www.w3.org/TR/xpath#function-boolean)**. Если результатом является true, то подставляется шаблон, имеющийся в выражении. В противном случае не создается ничего. В следующем примере группа имен оформляется в виде списка через запятую:
 
-```xslt
+```xml
 <xsl:template match="namelist/name">
-	<xsl:apply-templates/>
-	<xsl:if test="not(position()=last())">, </xsl:if>
+  <xsl:apply-templates />
+  <xsl:if test="not(position()=last())">,</xsl:if>
 </xsl:template>
 ```
 
 В следующем примере каждый второй ряд таблицы раскрашивается желтым:
 
-```xslt
+```xml
 <xsl:template match="item">
-	<tr>
-	<xsl:if test="position() mod 2 = 0">
-		<xsl:attribute name="bgcolor">yellow</xsl:attribute>
-	</xsl:if>
-	<xsl:apply-templates/>
-	</tr>
+  <tr>
+    <xsl:if test="position() mod 2 = 0">
+      <xsl:attribute name="bgcolor">yellow</xsl:attribute>
+    </xsl:if>
+    <xsl:apply-templates />
+  </tr>
 </xsl:template>
 ```
 
@@ -1774,26 +1802,26 @@ _не_ разрешается. Вместо этого воспользуйте�
 <a name="element-choose"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:choose>  
-  <!-- Content: ([xsl:when](#element-when)+, [xsl:otherwise](#element-otherwise)?) -->  
+<!-- Category: instruction -->
+<xsl:choose>
+  <!-- Content: ([xsl:when](#element-when)+, [xsl:otherwise](#element-otherwise)?) -->
 </xsl:choose>
 ```
 
 <a name="element-when"></a>
 
 ```
-<xsl:when  
-  **test** = boolean-expression>  
-  <!-- Content: template -->  
+<xsl:when
+  **test** = boolean-expression>
+  <!-- Content: template -->
 </xsl:when>
 ```
 
 <a name="element-otherwise"></a>
 
 ```
-<xsl:otherwise>  
-  <!-- Content: template -->  
+<xsl:otherwise>
+  <!-- Content: template -->
 </xsl:otherwise>
 ```
 
@@ -1801,29 +1829,31 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 В следующем примере пункты в упорядоченном списке нумеруются с помощью арабских цифр, букв или римских цифр в зависимости от глубины вложенности упорядоченных списков.
 
-```xslt
+```xml
 <xsl:template match="orderedlist/listitem">
-	<fo:list-item indent-start='2pi'>
-	<fo:list-item-label>
-		<xsl:variable name="level"
-			select="count(ancestor::orderedlist) mod 3"/>
-		<xsl:choose>
-		<xsl:when test='$level=1'>
-			<xsl:number format="i"/>
-		</xsl:when>
-		<xsl:when test='$level=2'>
-			<xsl:number format="a"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:number format="1"/>
-		</xsl:otherwise>
-		</xsl:choose>
-		<xsl:text>. </xsl:text>
-	</fo:list-item-label>
-	<fo:list-item-body>
-		<xsl:apply-templates/>
-	</fo:list-item-body>
-	</fo:list-item>
+  <fo:list-item indent-start='2pi'>
+    <fo:list-item-label>
+      <xsl:variable
+        name="level"
+        select="count(ancestor::orderedlist) mod 3"
+      />
+      <xsl:choose>
+        <xsl:when test='$level=1'>
+          <xsl:number format="i" />
+        </xsl:when>
+        <xsl:when test='$level=2'>
+          <xsl:number format="a" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:number format="1" />
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:text>.</xsl:text>
+    </fo:list-item-label>
+    <fo:list-item-body>
+      <xsl:apply-templates />
+    </fo:list-item-body>
+  </fo:list-item>
 </xsl:template>
 ```
 
@@ -1834,11 +1864,11 @@ _не_ разрешается. Вместо этого воспользуйте�
 <a name="element-sort"></a>
 
 ```
-<xsl:sort  
-  select = string-expression  
-  lang = { nmtoken }  
-  data-type = { "text" | "number" | qname-but-not-ncname }  
-  order = { "ascending" | "descending" }  
+<xsl:sort
+  select = string-expression
+  lang = { nmtoken }
+  data-type = { "text" | "number" | qname-but-not-ncname }
+  order = { "ascending" | "descending" }
   case-order = { "upper-first" | "lower-first" } />
 ```
 
@@ -1866,20 +1896,19 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 ```xml
 <employees>
-	<employee>
-	<name>
-		<given>James</given>
-		<family>Clark</family>
-		</name>
-	...
-
-	</employee>
+  <employee>
+    <name>
+      <given>James</given>
+      <family>Clark</family>
+    </name>
+    ...
+  </employee>
 </employees>
 ```
 
 в таком случае список служащих можно отсортировать по имени с помощью:
 
-```xslt
+```xml
 <xsl:template match="employees">
 	<ul>
 	<xsl:apply-templates select="employee">
@@ -1904,23 +1933,23 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 <a name="element-variable"></a>
 
-```<!-- Category: top-level-element -->  
-<!-- Category: instruction -->  
-<xsl:variable  
-  **name** = qname  
-  select = expression>  
-  <!-- Content: template -->  
+```<!-- Category: top-level-element -->
+<!-- Category: instruction -->
+<xsl:variable
+  **name** = qname
+  select = expression>
+  <!-- Content: template -->
 </xsl:variable>
 ```
 
 <a name="element-param"></a>
 
 ```
-<!-- Category: top-level-element -->  
-<xsl:param  
-  **name** = qname  
-  select = expression>  
-  <!-- Content: template -->  
+<!-- Category: top-level-element -->
+<xsl:param
+  **name** = qname
+  select = expression>
+  <!-- Content: template -->
 </xsl:param>
 ```
 
@@ -1952,19 +1981,19 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Таким образом
 
-```xslt
-<xsl:variable name="x"/>
+```xml
+<xsl:variable name="x" />
 ```
 
 равнозначно
 
-```xslt
-<xsl:variable name="x" select="''"/>
+```xml
+<xsl:variable name="x" select="''" />
 ```
 
 Если переменная используется для нахождения узла по номеру позиции, то не следует делать следующего:
 
-```xslt
+```xml
 <xsl:variable name="n">2</xsl:variable>
 	...
 <xsl:value-of select="item[$n]"/>
@@ -1972,7 +2001,7 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Результатом будет значение первого элемента item, поскольку переменная `n` будет привязана к фрагменту конечного дерева, а не к числу. Вместо этого делайте либо
 
-```xslt
+```xml
 <xsl:variable name="n" select="2"/>
 	...
 <xsl:value-of select="item[$n]"/>
@@ -1980,7 +2009,7 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 либо
 
-```xslt
+```xml
 <xsl:variable name="n">2</xsl:variable>
 	...
 <xsl:value-of select="item[position()=$n]"/>
@@ -1988,8 +2017,8 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Удобный прием, позволяющий задать пустой набор узлов в качестве значение по умолчанию для параметра:
 
-```xslt
-<xsl:param name="x" select="/.."/>
+```xml
+<xsl:param name="x" select="/.." />
 ```
 
 <a name="copy-of"></a>
@@ -1999,8 +2028,8 @@ _не_ разрешается. Вместо этого воспользуйте�
 <a name="element-copy-of"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:copy-of  
+<!-- Category: instruction -->
+<xsl:copy-of
   **select** = expression />
 ```
 
@@ -2014,7 +2043,7 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 Данный пример декларирует глобальную переменную `para-font-size`, с помощью которой в шаблоне значения атрибута делается ссылка.
 
-```xslt
+```xml
 <xsl:variable name="para-font-size">12pt</xsl:variable>
 
 <xsl:template match="para">
@@ -2032,16 +2061,16 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 <a name="dt-shadows"></a>Одна привязка переменной **маскирует** другую, если она появляется в точке, где вторая привязка была видна и обе они имеют одно и то же имя. Если привязка переменной, задаваемая в шаблоне элементом `xsl:variable` или `xsl:param`, [маскируется](#dt-shadows) другой привязкой, заданной в том же шаблоне элементом `xsl:variable` или `xsl:param`, фиксируется ошибка. Однако если привязка переменной, заданная в шаблоне элементом `xsl:variable` или `xsl:param`, [маскирует](#dt-shadows) другую привязку, заданную элементом [верхнего уровня](#dt-top-level)`xsl:variable` или `xsl:param`, ошибка не фиксируется. Таким образом, в следующем примере содержится ошибка:
 
-```xslt
+```xml
 <xsl:template name="foo">
-	<xsl:param name="x" select="1"/>
-	<xsl:variable name="x" select="2"/>
+  <xsl:param name="x" select="1" />
+  <xsl:variable name="x" select="2" />
 </xsl:template>
 ```
 
 Однако допустим другой вариант:
 
-```xslt
+```xml
 <xsl:param name="x" select="1"/>
 	<xsl:template name="foo">
 	<xsl:variable name="x" select="2"/>
@@ -2050,8 +2079,8 @@ _не_ разрешается. Вместо этого воспользуйте�
 
 В Java ближайшим эквивалентом элемента `xsl:variable` в шаблоне является декларация переменной типа final local с инициализацией. Например,
 
-```xslt
-<xsl:variable name="x" select="'value'"/>
+```xml
+<xsl:variable name="x" select="'value'" />
 ```
 
 имеет семантику, похожую на
@@ -2075,10 +2104,10 @@ x = "value";
 <a name="element-with-param"></a>
 
 ```
-<xsl:with-param  
-  **name** = qname  
-  select = expression>  
-  <!-- Content: template -->  
+<xsl:with-param
+  **name** = qname
+  select = expression>
+  <!-- Content: template -->
 </xsl:with-param>
 ```
 
@@ -2086,7 +2115,7 @@ x = "value";
 
 В данном примере определяется именованный шаблон `numbered-block` с аргументом, задающий формат числа.
 
-```xslt
+```xml
 <xsl:template name="numbered-block">
 	<xsl:param name="format">1. </xsl:param>
 	<fo:block>
@@ -2175,10 +2204,10 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 <a name="element-key"></a>
 
-```<!-- Category: top-level-element -->  
-<xsl:key  
-  **name** = qname  
-  **match** = pattern  
+```<!-- Category: top-level-element -->
+<xsl:key
+  **name** = qname
+  **match** = pattern
   **use** = expression />
 ```
 
@@ -2200,8 +2229,8 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 Например, дана декларация
 
-```xslt
-<xsl:key name="idkey" match="div" use="@id"/>
+```xml
+<xsl:key name="idkey" match="div" use="@id" />
 ```
 
 выражение `key("idkey",@ref)` возвратит тот же набор узлов, что и `id(@ref)`, при условии, что в исходном XML-документе был декларирован единственный атрибут ID:
@@ -2216,8 +2245,8 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 ```xml
 <prototype name="key" return-type="node-set">
-	<arg type="string"/>
-	<arg type="object"/>
+  <arg type="string" />
+  <arg type="object" />
 </prototype>
 ```
 
@@ -2229,7 +2258,7 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 В таком случае представленный стиль может генерировать гиперссылки между указанными ссылками и определениями следующим образом:
 
-```xslt
+```xml
 <xsl:key name="func" match="prototype" use="@name"/>
 <xsl:template match="function">
 	<b>
@@ -2255,7 +2284,7 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 В этом случае в стиле можно использовать следующий вариант преобразования элементов `bibref`:
 
-```xslt
+```xml
 <xsl:key name="bib" match="entry" use="@name"/>
 
 <xsl:template match="bibref">
@@ -2281,18 +2310,18 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 <a name="element-decimal-format"></a>
 
 ```
-<!-- Category: top-level-element -->  
-<xsl:decimal-format  
-  name = qname  
-  decimal-separator = char  
-  grouping-separator = char  
-  infinity = string  
-  minus-sign = char  
-  NaN = string  
-  percent = char  
-  per-mille = char  
-  zero-digit = char  
-  digit = char  
+<!-- Category: top-level-element -->
+<xsl:decimal-format
+  name = qname
+  decimal-separator = char
+  grouping-separator = char
+  infinity = string
+  minus-sign = char
+  NaN = string
+  percent = char
+  per-mille = char
+  zero-digit = char
+  digit = char
   pattern-separator = char />
 ```
 
@@ -2329,32 +2358,36 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 Функция **[current](#function-current)** возвращает набор узлов, состоящий из единственного члена - [текущего узла](#dt-current-node). Для внешнего выражения (выражения, которое не является частью другого выражения), текущий узел всегда тот же самый, что и узел контекста. Таким образом,
 
-```xslt
-<xsl:value-of select="current()"/>
+```xml
+<xsl:value-of select="current()" />
 ```
 
 означает то же самое, что и
 
-```xslt
-<xsl:value-of select="."/>
+```xml
+<xsl:value-of select="." />
 ```
 
 Однако внутри квадратных скобок текущий узел обычно отличается от узла контекста. Например,
 
-```xslt
-<xsl:apply-templates select="//glossary/item[@name=current()/@ref]"/>
+```xml
+<xsl:apply-templates
+  select="//glossary/item[@name=current()/@ref]"
+/>
 ```
 
 будет обрабатывать все элементы `item`, которые имеют родителем элемент `glossary`, а также имеют атрибут `name`, значение которого равно значению атрибута `ref` текущего узла. Этот вариант отличается от
 
-```xslt
-<xsl:apply-templates select="//glossary/item[@name=./@ref]"/>
+```xml
+<xsl:apply-templates
+  select="//glossary/item[@name=./@ref]"
+/>
 ```
 
 который означает то же самое, что
 
-```xslt
-<xsl:apply-templates select="//glossary/item[@name=@ref]"/>
+```xml
+<xsl:apply-templates select="//glossary/item[@name=@ref]" />
 ```
 
 а потому будет обрабатывать все элементы `item`, которые имеют родителем элемент `glossary`, а также имеют атрибуты `name` и `ref` с одинаковыми значениями.
@@ -2392,10 +2425,10 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 <a name="element-message"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:message  
-  terminate = "yes" | "no">  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:message
+  terminate = "yes" | "no">
+  <!-- Content: template -->
 </xsl:message>
 ```
 
@@ -2409,14 +2442,14 @@ generate-id(document("foo.xml"))=generate-id(document("foo.xml"))
 
 ```xml
 <messages>
-	<message name="problem">A problem was detected.</message>
-	<message name="error">An error was detected.</message>
+  <message name="problem">A problem was detected.</message>
+  <message name="error">An error was detected.</message>
 </messages>
 ```
 
 В этом случае для локализации сообщений стиль может использовать следующий прием:
 
-```xslt
+```xml
 <xsl:param name="lang" select="en"/>
 <xsl:variable name="messages"
 	select="document(concat('resources/', $lang, '.xml'))/messages"/>
@@ -2474,9 +2507,9 @@ XSLT допускает два типа расширений: элементы �
 <a name="element-fallback"></a>
 
 ```
-<!-- Category: instruction -->  
-<xsl:fallback>  
-  <!-- Content: template -->  
+<!-- Category: instruction -->
+<xsl:fallback>
+  <!-- Content: template -->
 </xsl:fallback>
 ```
 
@@ -2503,17 +2536,17 @@ XSLT допускает два типа расширений: элементы �
 <a name="element-output"></a>
 
 ```
-<!-- Category: top-level-element -->  
-<xsl:output  
-  method = "xml" | "html" | "text" | qname-but-not-ncname  
-  version = nmtoken  
-  encoding = string  
-  omit-xml-declaration = "yes" | "no"  
-  standalone = "yes" | "no"  
-  doctype-public = string  
-  doctype-system = string  
-  cdata-section-elements = qnames  
-  indent = "yes" | "no"  
+<!-- Category: top-level-element -->
+<xsl:output
+  method = "xml" | "html" | "text" | qname-but-not-ncname
+  version = nmtoken
+  encoding = string
+  omit-xml-declaration = "yes" | "no"
+  standalone = "yes" | "no"
+  doctype-public = string
+  doctype-system = string
+  cdata-section-elements = qnames
+  indent = "yes" | "no"
   media-type = string />
 ```
 
@@ -2551,7 +2584,7 @@ XSLT процессор может выводить конечное дерев�
 
 Метод вывода `xml` выводит конечное дерево как корректную внешнюю общую разобранную сущность XML. Если корневой узел конечного дерева имеет непосредственным потомком только один узел элемента и не имеет непосредственными потомками текстовые узлы, то эта сущность также должна быть корректной сущностью документа XML. Если на сущность ссылается простой упаковщик XML документа, такой как
 
-```xslt
+```xml
 <!DOCTYPE doc [
 	<!ENTITY e SYSTEM "entity-URI">
 ]>
@@ -2577,8 +2610,8 @@ XSLT процессор может выводить конечное дерев�
 
 Атрибут `cdata-section-elements` содержит список [QName](http://www.w3.org/TR/REC-xml-names#NT-QName) (разделенных пробельными символами). Каждый [QName](http://www.w3.org/TR/REC-xml-names#NT-QName) приводится к расширенному имени с помощью деклараций пространства имен, в области действия которых находится элемент `xsl:output` с данным [QName](http://www.w3.org/TR/REC-xml-names#NT-QName). Если имеется пространство имен по умолчанию, то оно используется для тех [QName](http://www.w3.org/TR/REC-xml-names#NT-QName), которые своего префикса не имеют. Расширение выполняется до того, как несколько элементов `xsl:output` будут объединены в один эффективный элемент `xsl:output`. Если членом данного переченя является расширенное имя родителя текстового узла, то сам текстовый узел должен быть представлен в виде блока CDATA. Например,
 
-```xslt
-<xsl:output cdata-section-elements="example"/>
+```xml
+<xsl:output cdata-section-elements="example" />
 ```
 
 приведет к тому, что фиксированный конечный элемент, записанный в стиле как
@@ -2627,19 +2660,18 @@ XSLT процессор может выводить конечное дерев�
 
 Метод вывода `html` представляет конечное дерево в виде HTML. Например,
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-<xsl:output method="html"/>
-	<xsl:template match="/">
-	<html>
-	<xsl:apply-templates/>
-	</html>
-</xsl:template>
-
-...
-
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:output method="html" />
+  <xsl:template match="/">
+    <html>
+      <xsl:apply-templates />
+    </html>
+  </xsl:template>
+  ...
 </xsl:stylesheet>
 ```
 
@@ -2733,7 +2765,7 @@ XSLT процессор может выводить конечное дерев�
 
 Обычно метод вывода `xml`, представляя текстовые узлы, маскирует & и < (а также, возможно, и другие символы). Тем самым обеспечивается вывод корректного XML документа. Иногда однако бывает удобно иметь возможность показывать почти, но не совсем корректный документ XML. Например, вывод может содержать некорректные разделы, которые будут преобразованы в корректный XML последующей процедурой, не связанной с XML. По этой причине XSLT предоставляет механизм запрета маскирования при выводе. Элементы `xsl:value-of` или `xsl:text` могут содержать атрибут `disable-output-escaping`, который может иметь значения `yes` или `no`. По умолчанию подразумевается значение `no`. Если значение атрибута `yes`, текстовый узел, полученный обработкой элемента `xsl:value-of` или `xsl:text`, должен быть представлен без маскирования. Например,
 
-```xslt
+```xml
 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
 ```
 
@@ -2835,10 +2867,10 @@ XSL
 
 - [xsl:apply-imports](#element-apply-imports)
 - [xsl:apply-templates](#element-apply-templates)
-- [xsl:attribute](#element-attribute)  
+- [xsl:attribute](#element-attribute)
 - [xsl:attribute-set](#element-attribute-set)
 - [xsl:call-template](#element-call-template)
-- [xsl:choose](#element-choose)  
+- [xsl:choose](#element-choose)
 - [xsl:comment](#element-comment)
 - [xsl:copy](#element-copy)
 - [xsl:copy-of](#element-copy-of)
@@ -2891,7 +2923,7 @@ DTD может определить сущность параметра `non-xsl
 Использование префикса `xsl:` в этом DTD не означает, что стили XSLT обязаны использовать этот префикс. Любой из элементов, декларированных в этом DTD, в дополнение к атрибутам, декларированным в этом же DTD, может иметь атрибуты, имена которых начинаются с `xmlns:` или равны `xmlns`.
 
 ```
-<!ENTITY % char-instructions "  
+<!ENTITY % char-instructions "
 	| xsl:apply-templates
 	| xsl:call-template
 	| xsl:apply-imports
@@ -3219,113 +3251,119 @@ any non-whitespace character -->
 
 Содержимое стиля:
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns="http://www.w3.org/TR/xhtml1/strict">
-
-	<xsl:strip-space elements="doc chapter section"/>
-	<xsl:output
-	   method="xml"
-	   indent="yes"
-	   encoding="iso-8859-1"
-	/>
-
-	<xsl:template match="doc">
-	 <html>
-	   <head>
-		 <title>
-		   <xsl:value-of select="title"/>
-		 </title>
-		</head>
-	   <body>
-		 <xsl:apply-templates/>
-	   </body>
-	  </html>
-	 </xsl:template>
-
-	<xsl:template match="doc/title">
-	  <h1>
-		 <xsl:apply-templates/>
-	  </h1>
-	</xsl:template>
-
-	<xsl:template match="chapter/title">
-	  <h2>
-		<xsl:apply-templates/>
-	  </h2>
-	</xsl:template>
-
-	<xsl:template match="section/title">
-	  <h3>
-		<xsl:apply-templates/>
-	  </h3>
-	</xsl:template>
-
-	<xsl:template match="para">
-	  <p>
-		<xsl:apply-templates/>
-	  </p>
-	</xsl:template>
-
-	<xsl:template match="note">
-	  <p class="note">
-		<b>NOTE: </b>
-		<xsl:apply-templates/>
-	   </p>
-	</xsl:template>
-
-	<xsl:template match="emph">
-	   <em>
-		<xsl:apply-templates/>
-	  </em>
-	</xsl:template>
-
-	</xsl:stylesheet>
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns="http://www.w3.org/TR/xhtml1/strict"
+>
+  <xsl:strip-space elements="doc chapter section" />
+  <xsl:output
+    method="xml"
+    indent="yes"
+    encoding="iso-8859-1"
+  />
+  <xsl:template match="doc">
+    <html>
+      <head>
+        <title>
+          <xsl:value-of select="title" />
+        </title>
+      </head>
+      <body>
+        <xsl:apply-templates />
+      </body>
+    </html>
+  </xsl:template>
+  <xsl:template match="doc/title">
+    <h1>
+      <xsl:apply-templates />
+    </h1>
+  </xsl:template>
+  <xsl:template match="chapter/title">
+    <h2>
+      <xsl:apply-templates />
+    </h2>
+  </xsl:template>
+  <xsl:template match="section/title">
+    <h3>
+      <xsl:apply-templates />
+    </h3>
+  </xsl:template>
+  <xsl:template match="para">
+    <p>
+      <xsl:apply-templates />
+    </p>
+  </xsl:template>
+  <xsl:template match="note">
+    <p class="note">
+      <b>NOTE:</b>
+      <xsl:apply-templates />
+    </p>
+  </xsl:template>
+  <xsl:template match="emph">
+    <em>
+      <xsl:apply-templates />
+    </em>
+  </xsl:template>
+</xsl:stylesheet>
 ```
 
 Со следующим входным документом
 
 ```xml
 <!DOCTYPE doc SYSTEM "doc.dtd">
-	<doc>
-	<title>Document Title</title>
-	<chapter>
-	<title>Chapter Title</title>
-	<section>
-	<title>Section Title</title>
-	<para>This is a test.</para>
-	<note>This is a note.</note>
-	</section>
-	<section>
-	<title>Another Section Title</title>
-	<para>This is <emph>another</emph> test.</para>
-	<note>This is another note.</note>
-	</section>
-	</chapter>
-	</doc>
+<doc>
+  <title>Document Title</title>
+  <chapter>
+    <title>Chapter Title</title>
+    <section>
+      <title>Section Title</title>
+      <para>This is a test.</para>
+      <note>This is a note.</note>
+    </section>
+    <section>
+      <title>Another Section Title</title>
+      <para>
+        This is
+        <emph>another</emph>
+        test.
+      </para>
+      <note>This is another note.</note>
+    </section>
+  </chapter>
+</doc>
 ```
 
 стиль должен дать следующий результат
 
 ```xml
-<?xml version="1.0" encoding="iso-8859-1"?>
-	<html xmlns="http://www.w3.org/TR/xhtml1/strict">
-	<head> <title>Document Title</title>
-	</head>
-	<body>
-	<h1>Document Title</h1>
-	<h2>Chapter Title</h2>
-	<h3>Section Title</h3>
-	<p>This is a test.</p>
-	<p class="note">
-	<b>NOTE: </b>This is a note.</p>
-	<h3>Another Section Title</h3>
-	<p>This is <em>another</em> test.</p>
-	<p class="note">
-	<b>NOTE: </b>This is another note.</p>
-	</body>
-	</html>
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<html xmlns="http://www.w3.org/TR/xhtml1/strict">
+  <head>
+    <title>Document Title</title>
+  </head>
+  <body>
+    <h1>Document Title</h1>
+    <h2>Chapter Title</h2>
+    <h3>Section Title</h3>
+    <p>This is a test.</p>
+    <p class="note">
+      <b>NOTE:</b>
+      This is a note.
+    </p>
+    <h3>Another Section Title</h3>
+    <p>
+      This is
+      <em>another</em>
+      test.
+    </p>
+    <p class="note">
+      <b>NOTE:</b>
+      This is another note.
+    </p>
+  </body>
+</html>
 ```
 
 <a name="data-example"></a>
@@ -3338,73 +3376,75 @@ any non-whitespace character -->
 
 ```xml
 <sales>
-
-	<division id="North">
-		<revenue>10</revenue>
-		<growth>9</growth>
-		<bonus>7</bonus>
-	</division>
-
-	<division id="South">
-		<revenue>4</revenue>
-		<growth>3</growth>
-		<bonus>4</bonus>
-	</division>
-
-	<division id="West">
-		<revenue>6</revenue>
-		<growth>-1.5</growth>
-		<bonus>2</bonus>
-	</division>
-
+  <division id="North">
+    <revenue>10</revenue>
+    <growth>9</growth>
+    <bonus>7</bonus>
+  </division>
+  <division id="South">
+    <revenue>4</revenue>
+    <growth>3</growth>
+    <bonus>4</bonus>
+  </division>
+  <division id="West">
+    <revenue>6</revenue>
+    <growth>-1.5</growth>
+    <bonus>2</bonus>
+  </division>
 </sales>
 ```
 
 Далее приводится стиль, который, используя упрощенный синтаксис, описанный в главе [2.3 Фиксированный конечный элемент как стиль](#result-element-stylesheet), преобразует эти данные в формат HTML:
 
 ```xml
-<html xsl:version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	lang="en">
-	<head>
-	<title>Sales Results By Division</title>
-	</head>
-	<body>
-	<table border="1">
-		<tr>
-			<th>Division</th>
-			<th>Revenue</th>
-			<th>Growth</th>
-			<th>Bonus</th>
-		</tr>
-		<xsl:for-each select="sales/division">
-		<!-- order the result by revenue -->
-		<xsl:sort select="revenue"
-			data-type="number"
-			order="descending"/>
-		<tr>
-			<td>
-			<em><xsl:value-of select="@id"/></em>
-			</td>
-			<td>
-			<xsl:value-of select="revenue"/>
-			</td>
-			<td>
-				<!-- highlight negative growth in red -->
-			<xsl:if test="growth &lt; 0">
-				<xsl:attribute name="style">
-				<xsl:text>color:red</xsl:text>
-				</xsl:attribute>
-			</xsl:if>
-			<xsl:value-of select="growth"/>
-			</td>
-			<td>
-			<xsl:value-of select="bonus"/>
-			</td>
-		</tr>
-		</xsl:for-each>
-	</table>
-	</body>
+<html
+  xsl:version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  lang="en"
+>
+  <head>
+    <title>Sales Results By Division</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>Division</th>
+        <th>Revenue</th>
+        <th>Growth</th>
+        <th>Bonus</th>
+      </tr>
+      <xsl:for-each select="sales/division">
+        <!-- order the result by revenue -->
+        <xsl:sort
+          select="revenue"
+          data-type="number"
+          order="descending"
+        />
+        <tr>
+          <td>
+            <em>
+              <xsl:value-of select="@id" />
+            </em>
+          </td>
+          <td>
+            <xsl:value-of select="revenue" />
+          </td>
+          <td>
+            <!-- highlight negative growth in red -->
+            <xsl:if test="growth &lt; 0">
+              <xsl:attribute name="style">
+                <xsl:text>color:red</xsl:text>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="growth" />
+          </td>
+          <td>
+            <xsl:value-of select="bonus" />
+          </td>
+        </tr>
+      </xsl:for-each>
+    </table>
+  </body>
 </html>
 ```
 
@@ -3412,138 +3452,166 @@ any non-whitespace character -->
 
 ```html
 <html lang="en">
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<title>Sales Results By Division</title>
-	</head>
-	<body>
-	<table border="1">
-	<tr>
-	<th>Division</th><th>Revenue</th><th>Growth</th><th>Bonus</th>
-	</tr>
-	<tr>
-	<td><em>North</em></td><td>10</td><td>9</td><td>7</td>
-	</tr>
-	<tr>
-	<td><em>West</em></td><td>6</td><td style="color:red">-1.5</td><td>2</td>
-	</tr>
-	<tr> <td><em>South</em></td><td>4</td><td>3</td><td>4</td>
-	</tr>
-	</table>
-	</body>
-	</html>
+  <head>
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=iso-8859-1"
+    />
+    <title>Sales Results By Division</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>Division</th>
+        <th>Revenue</th>
+        <th>Growth</th>
+        <th>Bonus</th>
+      </tr>
+      <tr>
+        <td><em>North</em></td>
+        <td>10</td>
+        <td>9</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><em>West</em></td>
+        <td>6</td>
+        <td style="color:red">-1.5</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><em>South</em></td>
+        <td>4</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </table>
+  </body>
+</html>
 ```
 
 Следующий стиль преобразует данные в SVG:
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns="http://www.w3.org/Graphics/SVG/SVG-19990812.dtd">
-
-	<xsl:output method="xml" indent="yes" media-type="image/svg"/>
-
-	<xsl:template match="/">
-
-	<svg width = "3in" height="3in">
-		<g style = "stroke: #000000">
-			<!-- draw the axes -->
-			<line x1="0" x2="150" y1="150" y2="150"/>
-			<line x1="0" x2="0" y1="0" y2="150"/>
-			<text x="0" y="10">Revenue</text>
-			<text x="150" y="165">Division</text>
-			<xsl:for-each select="sales/division">
-			<!-- define some useful variables -->
-
-			<!-- the bar's x position -->
-			<xsl:variable name="pos"
-						  select="(position()*40)-30"/>
-
-			<!-- the bar's height -->
-			 <xsl:variable name="height"
-						  select="revenue*10"/>
-
-			<!-- the rectangle -->
-			<rect x="{$pos}" y="{150-$height}"
-					  width="20" height="{$height}"/>
-
-			 <!-- the text label -->
-			<text x="{$pos}" y="165">
-				<xsl:value-of select="@id"/>
-			 </text>
-
-			<!-- the bar value -->
-			<text x="{$pos}" y="{145-$height}">
-				<xsl:value-of select="revenue"/>
-			</text>
-			</xsl:for-each>
-		</g>
-	</svg>
-
-	</xsl:template>
-	</xsl:stylesheet>
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns="http://www.w3.org/Graphics/SVG/SVG-19990812.dtd"
+>
+  <xsl:output
+    method="xml"
+    indent="yes"
+    media-type="image/svg"
+  />
+  <xsl:template match="/">
+    <svg width="3in" height="3in">
+      <g style="stroke: #000000">
+        <!-- draw the axes -->
+        <line x1="0" x2="150" y1="150" y2="150" />
+        <line x1="0" x2="0" y1="0" y2="150" />
+        <text x="0" y="10">Revenue</text>
+        <text x="150" y="165">Division</text>
+        <xsl:for-each select="sales/division">
+          <!-- define some useful variables -->
+          <!-- the bar's x position -->
+          <xsl:variable
+            name="pos"
+            select="(position()*40)-30"
+          />
+          <!-- the bar's height -->
+          <xsl:variable name="height" select="revenue*10" />
+          <!-- the rectangle -->
+          <rect
+            x="{$pos}"
+            y="{150-$height}"
+            width="20"
+            height="{$height}"
+          />
+          <!-- the text label -->
+          <text x="{$pos}" y="165">
+            <xsl:value-of select="@id" />
+          </text>
+          <!-- the bar value -->
+          <text x="{$pos}" y="{145-$height}">
+            <xsl:value-of select="revenue" />
+          </text>
+        </xsl:for-each>
+      </g>
+    </svg>
+  </xsl:template>
+</xsl:stylesheet>
 ```
 
 Полученный SVG документ:
 
 ```xml
-<svg width="3in" height="3in"
-		xmlns="http://www.w3.org/Graphics/SVG/svg-19990412.dtd">
-	<g style="stroke: #000000">
-	<line x1="0" x2="150" y1="150" y2="150"/>
-		<line x1="0" x2="0" y1="0" y2="150"/>
-	<text x="0" y="10">Revenue</text>
-	<text x="150" y="165">Division</text>
-	<rect x="10" y="50" width="20" height="100"/>
-	<text x="10" y="165">North</text>
-	<text x="10" y="45">10</text>
-	<rect x="50" y="110" width="20" height="40"/>
-	<text x="50" y="165">South</text>
-		<text x="50" y="105">4</text>
-	<rect x="90" y="90" width="20" height="60"/>
-	<text x="90" y="165">West</text>
-	<text x="90" y="85">6</text>
-	</g>
+<svg
+  width="3in"
+  height="3in"
+  xmlns="http://www.w3.org/Graphics/SVG/svg-19990412.dtd"
+>
+  <g style="stroke: #000000">
+    <line x1="0" x2="150" y1="150" y2="150" />
+    <line x1="0" x2="0" y1="0" y2="150" />
+    <text x="0" y="10">Revenue</text>
+    <text x="150" y="165">Division</text>
+    <rect x="10" y="50" width="20" height="100" />
+    <text x="10" y="165">North</text>
+    <text x="10" y="45">10</text>
+    <rect x="50" y="110" width="20" height="40" />
+    <text x="50" y="165">South</text>
+    <text x="50" y="105">4</text>
+    <rect x="90" y="90" width="20" height="60" />
+    <text x="90" y="165">West</text>
+    <text x="90" y="85">6</text>
+  </g>
 </svg>
 ```
 
 Следующий стиль преобразует данные в VRML:
 
-```xslt
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-	<!-- generate text output as mime type model/vrml, using default charset -->
-	<xsl:output method="text" encoding="UTF-8" media-type="model/vrml"/>  
-
-		<xsl:template match="/">#VRML V2.0 utf8
+```xml
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <!-- generate text output as mime type model/vrml, using default charset -->
+  <xsl:output
+    method="text"
+    encoding="UTF-8"
+    media-type="model/vrml"
+  />
+  <xsl:template match="/">
+    #VRML V2.0 utf8
 
 	# externproto definition of a single bar element
 	EXTERNPROTO bar [
-	  field SFInt32 x  
-	  field SFInt32 y  
-	  field SFInt32 z  
-	  field SFString name  
+	  field SFInt32 x
+	  field SFInt32 y
+	  field SFInt32 z
+	  field SFString name
 	  ]
 	  "http://www.vrml.org/WorkingGroups/dbwork/barProto.wrl"
 
 	# inline containing the graph axes
-	Inline {  
+	Inline {
 			url "http://www.vrml.org/WorkingGroups/dbwork/barAxes.wrl"
 			}
-
-					 <xsl:for-each select="sales/division">
-	bar {
-			x <xsl:value-of select="revenue"/>
-			y <xsl:value-of select="growth"/>
-			z <xsl:value-of select="bonus"/>
-			name "<xsl:value-of select="@id"/>"
+    <xsl:for-each select="sales/division">
+      bar {
+			x
+      <xsl:value-of select="revenue" />
+      y
+      <xsl:value-of select="growth" />
+      z
+      <xsl:value-of select="bonus" />
+      name "
+      <xsl:value-of select="@id" />
+      "
 			}
-					</xsl:for-each>
-
-			</xsl:template>
-
-	</xsl:stylesheet>
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>
 ```
 
 Полученный VRML документ:
@@ -3552,15 +3620,15 @@ any non-whitespace character -->
 #VRML V2.0 utf8
 
 	# externproto definition of a single bar element  EXTERNPROTO bar [
-	  field SFInt32 x  
-	  field SFInt32 y  
-	  field SFInt32 z  
-	  field SFString name  
+	  field SFInt32 x
+	  field SFInt32 y
+	  field SFInt32 z
+	  field SFString name
 	  ]
 	  "http://www.vrml.org/WorkingGroups/dbwork/barProto.wrl"
 
 	# inline containing the graph axes
-	Inline {  
+	Inline {
 			url "http://www.vrml.org/WorkingGroups/dbwork/barAxes.wrl"
 			}
 
@@ -3646,40 +3714,40 @@ Sharon Adler, IBM (сопредседатель); Anders Berglund, IBM; Perin Bl
 
 При переводе спецификации на русский язык для ряда терминов был выбран следующий вариант перевода.
 
-- attribute value template - _именованный набор атрибутов_  
-- child - _непосредственный потомок_  
-- conditional processing - _обработка при условии_  
-- conformance - _соответствие спецификации_  
-- context node - _узел контекста_  
-- context node list - _контекстный набор узлов_  
-- context position - _положение в контексте_  
-- document element - _элемент документа_  
-- document type declaration - _декларация типа документа, DTD_  
-- DTD subset - _набор DTD (внутренний, внешний)_  
-- element node - _узел элемента_  
-- escape character - _маскировать символ_  
-- expanded name - _расширенное имя_  
-- extension namespace - _пространство имен расширений_  
-- fallback - _откат_  
-- forward-compatible processing - _обработка в режиме совместимости с последующими - версиями_  
-- literal result element - _фиксированный конечный элемент_  
-- location path - _путь адресации_  
-- named attribute set - _именованный набор атрибутов_  
-- node set - _набор узлов_  
-- parsed entity - _разобранная сущность_  
-- pattern - _образец (правила шаблона)_  
-- processing instruction - _инструкция обработки_  
-- production - _сценарий (языков XML, XPath)_  
-- qualified name - _полное имя_  
-- result tree - _конечное дерево (результат выполнения преобразования)_  
-- source tree - _начальное дерево (объект преобразования)_  
-- standalone document - _одиночный документ_  
-- stylesheet - _стиль оформления_  
-- template rule - _правило шаблона_  
-- top-level element - _элемент верхнего уровня_  
-- unparsed entity - _неразобранная сущность_  
-- value-binding element - _элемент привязки переменной_  
-- variable binding - _привязка переменной контекста_  
-- vocabulary - _словарь форматирования_  
-- well-formed - _корректный_  
-- whitespace - _пробельный символ_  
+- attribute value template - _именованный набор атрибутов_
+- child - _непосредственный потомок_
+- conditional processing - _обработка при условии_
+- conformance - _соответствие спецификации_
+- context node - _узел контекста_
+- context node list - _контекстный набор узлов_
+- context position - _положение в контексте_
+- document element - _элемент документа_
+- document type declaration - _декларация типа документа, DTD_
+- DTD subset - _набор DTD (внутренний, внешний)_
+- element node - _узел элемента_
+- escape character - _маскировать символ_
+- expanded name - _расширенное имя_
+- extension namespace - _пространство имен расширений_
+- fallback - _откат_
+- forward-compatible processing - _обработка в режиме совместимости с последующими - версиями_
+- literal result element - _фиксированный конечный элемент_
+- location path - _путь адресации_
+- named attribute set - _именованный набор атрибутов_
+- node set - _набор узлов_
+- parsed entity - _разобранная сущность_
+- pattern - _образец (правила шаблона)_
+- processing instruction - _инструкция обработки_
+- production - _сценарий (языков XML, XPath)_
+- qualified name - _полное имя_
+- result tree - _конечное дерево (результат выполнения преобразования)_
+- source tree - _начальное дерево (объект преобразования)_
+- standalone document - _одиночный документ_
+- stylesheet - _стиль оформления_
+- template rule - _правило шаблона_
+- top-level element - _элемент верхнего уровня_
+- unparsed entity - _неразобранная сущность_
+- value-binding element - _элемент привязки переменной_
+- variable binding - _привязка переменной контекста_
+- vocabulary - _словарь форматирования_
+- well-formed - _корректный_
+- whitespace - _пробельный символ_

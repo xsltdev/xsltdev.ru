@@ -5,7 +5,10 @@
 Декоратор свойства представляет функцию, которая принимает два параметра:
 
 ```typescript
-function MyPropertyDecorator(target: Object, propertyKey: string) {
+function MyPropertyDecorator(
+  target: Object,
+  propertyKey: string
+) {
   // код декоратора
 }
 ```
@@ -19,12 +22,12 @@ function format(target: Object, propertyKey: string) {
   let _val = this[propertyKey] // получаем значение свойства
 
   // геттер
-  var getter = function() {
+  var getter = function () {
     return 'Mr./Ms.' + _val
   }
 
   // сеттер
-  var setter = function(newVal) {
+  var setter = function (newVal) {
     _val = newVal
   }
 
@@ -33,7 +36,7 @@ function format(target: Object, propertyKey: string) {
     // И создаем новое свойство с геттером и сеттером
     Object.defineProperty(target, propertyKey, {
       get: getter,
-      set: setter
+      set: setter,
     })
   }
 }
@@ -63,7 +66,11 @@ tom.print()
 Декоратор метода доступа принимает три параметра:
 
 ```typescript
-function decorator(target: Object, propertyName: string, descriptor: PropertyDescriptor) {
+function decorator(
+  target: Object,
+  propertyName: string,
+  descriptor: PropertyDescriptor
+) {
   // код декоратора
 }
 ```
@@ -77,10 +84,14 @@ function decorator(target: Object, propertyName: string, descriptor: PropertyDes
 Определим простейший декоратор метода доступа:
 
 ```typescript
-function validator(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+function validator(
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) {
   const oldSet = descriptor.set
 
-  descriptor.set = function(value: string) {
+  descriptor.set = function (value: string) {
     if (value === 'admin') {
       throw new Error('Invalid value')
     }

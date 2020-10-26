@@ -36,9 +36,12 @@ _articles.component.ts_
   selector: 'app-articles',
   template: `
     <ul>
-      <li *ngFor="let item of articles" [textContent]="item.title"></li>
+      <li
+        *ngFor="let item of articles"
+        [textContent]="item.title"
+      ></li>
     </ul>
-  `
+  `,
 })
 export class ArticlesComponent {
   articles: Article[] = []
@@ -51,8 +54,8 @@ export class ArticlesComponent {
     this.articles = []
 
     this.articlesService.getArticles().subscribe(
-      items => (this.articles = items),
-      err => console.log(err)
+      (items) => (this.articles = items),
+      (err) => console.log(err)
     )
   }
 }
@@ -67,12 +70,17 @@ _articles.component.ts_
   selector: 'app-articles',
   template: `
     <ul>
-      <li *ngFor="let item of articles" [textContent]="item.title"></li>
+      <li
+        *ngFor="let item of articles"
+        [textContent]="item.title"
+      ></li>
     </ul>
-  `
+  `,
 })
 export class ArticlesComponent {
-  articles$: Observable = this.store.pipe(select(selectArticlesList))
+  articles$: Observable = this.store.pipe(
+    select(selectArticlesList)
+  )
 
   constructor(private store: Store) {
     this.store.dispatch(new LoadArticles())
@@ -86,7 +94,7 @@ _articles.actions.ts_
 export enum ArticlesActions {
   LoadArticles = '[Articles Page] Load Articles',
   ArticlesLoadedSuccess = '[Articles Page] Articles Loaded Success',
-  ArticlesLoadedError = '[Articles Page] Articles Loaded Error'
+  ArticlesLoadedError = '[Articles Page] Articles Loaded Error',
 }
 
 export interface Article {
@@ -123,7 +131,7 @@ export interface ArticlesState {
 }
 
 const initialState: ArticlesState = {
-  list: []
+  list: [],
 }
 
 export function articlesReducer(
@@ -134,12 +142,12 @@ export function articlesReducer(
     case ArticlesActions.ArticlesLoadedSuccess:
       return {
         ...state,
-        list: action.payload.articles
+        list: action.payload.articles,
       }
     case ArticlesActions.ArticlesLoadedError:
       return {
         ...state,
-        list: []
+        list: [],
       }
     default:
       return state
@@ -164,7 +172,12 @@ export class ArticlesEffects {
     ofType(ArticlesActions.LoadArticles),
     mergeMap(() =>
       this.articlesService.getArticles().pipe(
-        map(articles => new ArticlesLoadedSuccess({ articles: articles })),
+        map(
+          (articles) =>
+            new ArticlesLoadedSuccess({
+              articles: articles,
+            })
+        ),
         catchError(() => of(new ArticlesLoadedError()))
       )
     )
@@ -181,7 +194,7 @@ _app.module.ts_
 
 ```ts
 @NgModule({
-  imports: [EffectsModule.forRoot([ArtilcesEffects])]
+  imports: [EffectsModule.forRoot([ArtilcesEffects])],
 })
 export class AppModule {}
 ```
@@ -234,14 +247,20 @@ NgRx предоставляет возможность управлять жиз
 
 ```ts
 @Injectable()
-export class ArticlesEffects implements OnInitEffects, OnRunEffects {
+export class ArticlesEffects
+  implements OnInitEffects, OnRunEffects {
   @Effect()
   loadArticles$ = this.actions$.pipe(
     ofType(ArticlesActions.LoadArticles),
     startWith(new LoadArticles()),
     mergeMap(() =>
       this.articlesService.getArticles().pipe(
-        map(articles => new ArticlesLoadedSuccess({ articles: articles })),
+        map(
+          (articles) =>
+            new ArticlesLoadedSuccess({
+              articles: articles,
+            })
+        ),
         catchError(() => of(new ArticlesLoadedError()))
       )
     )
@@ -256,13 +275,17 @@ export class ArticlesEffects implements OnInitEffects, OnRunEffects {
     return new ArticlesEffectsInit()
   }
 
-  ngrxOnRunEffects(resolvedEffects$: Observable<EffectNotification>) {
+  ngrxOnRunEffects(
+    resolvedEffects$: Observable<EffectNotification>
+  ) {
     return this.actions$.pipe(
       ofType(ArticlesActions.ArticlesEffectsInit),
       exhaustMap(() =>
         resolvedEffects$.pipe(
           takeUntil(
-            this.actions$.pipe(ofType(ArticlesActions.ArticlesLoadedSuccess))
+            this.actions$.pipe(
+              ofType(ArticlesActions.ArticlesLoadedSuccess)
+            )
           )
         )
       )

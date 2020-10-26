@@ -13,7 +13,7 @@ import { Action } from '@ngrx/store'
 
 export enum UsersActions {
   LoadUsers = '[Users Page] LoadUsers',
-  DeleteUsers = '[Users Page] DeleteUsers'
+  DeleteUsers = '[Users Page] DeleteUsers',
 }
 
 export interface User {
@@ -38,7 +38,10 @@ export type UsersUnion = LoadUsers | DeleteUsers
 _users.reducer.ts_
 
 ```ts
-import { UsersUnion, UserActions } from '../actions/users.actions'
+import {
+  UsersUnion,
+  UserActions,
+} from '../actions/users.actions'
 
 export interface State {
   users: User[]
@@ -47,20 +50,23 @@ export interface State {
 
 const initialState: State = {
   users: [],
-  count: 0
+  count: 0,
 }
 
-export function usersReducer(state: State = initialState, action: UsersUnion) {
+export function usersReducer(
+  state: State = initialState,
+  action: UsersUnion
+) {
   switch (action.type) {
     case UsersActions.LoadUsers:
       return {
         ...state,
-        users: action.payload.users
+        users: action.payload.users,
       }
     case UsersActions.DeleteUsers:
       return {
         ...state,
-        users: []
+        users: [],
       }
     default:
       return state
@@ -91,10 +97,13 @@ export interface State {
 
 const initialState: State = {
   users: [],
-  count: 0
+  count: 0,
 }
 
-export function usersReducer(state: State = initialState, action: UsersUnion) {
+export function usersReducer(
+  state: State = initialState,
+  action: UsersUnion
+) {
   /* ... */
 }
 ```

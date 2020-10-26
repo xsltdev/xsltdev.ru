@@ -91,7 +91,9 @@ object-fit: fill;
     </style>
   </head>
   <body>
-    <p class="dolphin"><img src="image/dolphin.jpg" alt="Дельфин" /></p>
+    <p class="dolphin">
+      <img src="image/dolphin.jpg" alt="Дельфин" />
+    </p>
   </body>
 </html>
 ```

@@ -30,7 +30,7 @@ RxJS оперирует объектами `Observable`, которые суще
 ```ts
 import { fromEvent } from 'rxjs'
 
-fromEvent(document, 'mousemove').subscribe(ev => {
+fromEvent(document, 'mousemove').subscribe((ev) => {
   console.log('Mouse event: ', ev)
 })
 ```

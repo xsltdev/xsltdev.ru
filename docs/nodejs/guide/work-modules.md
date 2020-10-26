@@ -3,7 +3,11 @@
 Рассмотрим некоторые аспекты работы с модулями в Node.js. Прежде всего надо отметить, что подключаемые модули кэшируются. В частности, в файле [https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js) есть такие строки:
 
 ```js
-var filename = Module._resolveFilename(request, parent, isMain)
+var filename = Module._resolveFilename(
+  request,
+  parent,
+  isMain
+)
 
 var cachedModule = Module._cache[filename]
 if (cachedModule) {
@@ -76,12 +80,12 @@ const morning = require('./morning')
 const evening = require('./evening')
 
 module.exports = {
-  getMorningMessage: function() {
+  getMorningMessage: function () {
     console.log(morning)
   },
-  getEveningMessage: function() {
+  getEveningMessage: function () {
     console.log(evening)
-  }
+  },
 }
 ```
 

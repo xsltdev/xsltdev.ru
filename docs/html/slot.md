@@ -32,7 +32,8 @@ description: Элемент slot является частью набора те
 <template id="element-details-template">
   <style>
     details {
-      font-family: 'Open Sans Light', Helvetica, Arial, sans-serif;
+      font-family: 'Open Sans Light', Helvetica, Arial,
+        sans-serif;
     }
     .name {
       font-weight: bold;
@@ -59,9 +60,12 @@ description: Элемент slot является частью набора те
   <details>
     <summary>
       <code class="name"
-        >&lt;<slot name="element-name">NEED NAME</slot>&gt;</code
+        >&lt;<slot name="element-name">NEED NAME</slot
+        >&gt;</code
       >
-      <i class="desc"><slot name="description">NEED DESCRIPTION</slot></i>
+      <i class="desc"
+        ><slot name="description">NEED DESCRIPTION</slot></i
+      >
     </summary>
     <div class="attributes">
       <h4>Attributes</h4>

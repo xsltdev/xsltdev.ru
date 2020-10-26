@@ -14,7 +14,9 @@ function Example() {
   return (
     <div>
       <p>Вы кликнули {count} раз(а)</p>
-      <button onClick={() => setCount(count + 1)}>Нажми на меня</button>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
     </div>
   )
 }
@@ -31,7 +33,7 @@ class Example extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 0
+      count: 0,
     }
   }
 
@@ -39,7 +41,13 @@ class Example extends React.Component {
     return (
       <div>
         <p>Вы кликнули {this.state.count} раз(а)</p>
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>Нажми на меня</button>
+        <button
+          onClick={() =>
+            this.setState({ count: this.state.count + 1 })
+          }
+        >
+          Нажми на меня
+        </button>
       </div>
     )
   }
@@ -57,7 +65,7 @@ class Example extends React.Component {
 Напоминаем, что функциональные компоненты в React выглядят так:
 
 ```js
-const Example = props => {
+const Example = (props) => {
   // Тут мог бы быть ваш хук!
   return <div />
 }
@@ -163,13 +171,21 @@ function Example() {
 В классе мы вызываем `this.setState()`, когда надо обновить состояние `count`:
 
 ```js
-<button onClick={() => this.setState({ count: this.state.count + 1 })}>Нажми на меня</button>
+<button
+  onClick={() =>
+    this.setState({ count: this.state.count + 1 })
+  }
+>
+  Нажми на меня
+</button>
 ```
 
 В функции нам не нужен `this`, потому что `setCount` и `count` уже доступны как переменные:
 
 ```js
-<button onClick={() => setCount(count + 1)}>Нажми на меня</button>
+<button onClick={() => setCount(count + 1)}>
+  Нажми на меня
+</button>
 ```
 
 ## Резюме {#recap}
@@ -177,10 +193,10 @@ function Example() {
 Давайте **построчно пробежимся по тому, что мы выучили** и проверим наши знания:
 
 ```js
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 function Example() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <div>
@@ -189,7 +205,7 @@ function Example() {
         Нажми на меня
       </button>
     </div>
-  );
+  )
 }
 ```
 

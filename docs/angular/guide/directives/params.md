@@ -12,11 +12,11 @@ import {
   HostListener,
   Input,
   HostBinding,
-  OnInit
+  OnInit,
 } from '@angular/core'
 
 @Directive({
-  selector: '[bold]'
+  selector: '[bold]',
 })
 export class BoldDirective implements OnInit {
   @Input() selectedSize = '18px'
@@ -73,10 +73,19 @@ import { Component } from '@angular/core'
   selector: 'my-app',
   template: `
     <div>
-      <p bold [selectedSize]="'28px'" [defaultSize]="'14px'">Hello Angular 2</p>
-      <p>Angular 2 представляет модульную архитектуру приложения</p>
+      <p
+        bold
+        [selectedSize]="'28px'"
+        [defaultSize]="'14px'"
+      >
+        Hello Angular 2
+      </p>
+      <p>
+        Angular 2 представляет модульную архитектуру
+        приложения
+      </p>
     </div>
-  `
+  `,
 })
 export class AppComponent {}
 ```
@@ -84,7 +93,9 @@ export class AppComponent {}
 При применении директивы мы можем указать все входные параметры и их значения:
 
 ```html
-<p bold [selectedSize]="'28px'" [defaultSize]="'14px'">Hello Angular 2</p>
+<p bold [selectedSize]="'28px'" [defaultSize]="'14px'">
+  Hello Angular 2
+</p>
 ```
 
 При этом названия параметров заключаются в квадратные скобки, а их значения дополнительно заключаются в одинарные кавычки.
@@ -102,5 +113,7 @@ export class AppComponent {}
 Здесь в декоратор `@Input` передается селектор директивы - `bold`. Поэтому чтобы установить этот параметр в шаблоне компонента мы можем напрямую использовать имя директивы:
 
 ```html
-<p [bold]="'28px'" [defaultSize]="'14px'">Hello Angular 2</p>
+<p [bold]="'28px'" [defaultSize]="'14px'">
+  Hello Angular 2
+</p>
 ```

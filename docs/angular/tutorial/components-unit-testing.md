@@ -19,20 +19,32 @@ _login-form.component.ts_
   selector: 'login-form',
   template: `
     <form>
-      <input type="text" name="name" [value]="loginForm.name" />
-      <input type="password" name="password" [value]="loginForm.password" />
+      <input
+        type="text"
+        name="name"
+        [value]="loginForm.name"
+      />
+      <input
+        type="password"
+        name="password"
+        [value]="loginForm.password"
+      />
     </form>
 
-    <button (click)="send()" [disabled]="!active">Send</button>
-  `
+    <button (click)="send()" [disabled]="!active">
+      Send
+    </button>
+  `,
 })
 export class LoginFormComponent implements OnInit {
   @Input() active: boolean
-  @Output() validate: EventEmitter<any> = new EventEmitter<any>()
+  @Output() validate: EventEmitter<any> = new EventEmitter<
+    any
+  >()
 
   loginForm: any = {
     name: '',
-    password: ''
+    password: '',
   }
 
   constructor() {}
@@ -61,14 +73,17 @@ describe('LoginForm component', () => {
   it('should set LoginForm values in OnInit', () => {
     comp.ngOnInit()
     expect(comp.loginForm.name).toBe('Bob', 'name value')
-    expect(comp.loginForm.password).toBe('qwerty', 'password value')
+    expect(comp.loginForm.password).toBe(
+      'qwerty',
+      'password value'
+    )
   })
 
   it('send() should raise LoginForm values', () => {
     comp.ngOnInit()
     comp.active = true
 
-    comp.validate.subscribe(credentials => {
+    comp.validate.subscribe((credentials) => {
       expect(comp.active).toBe(true, 'active')
       expect(credentials).toBe(comp.loginForm, 'send event')
     })
@@ -99,7 +114,7 @@ _info-message.component.ts_
     <h1>Message title</h1>
 
     <p>Message content</p>
-  `
+  `,
 })
 export class InfoMessageComponent {
   constructor() {}
@@ -114,7 +129,7 @@ describe('InfoMessage component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InfoMessageComponent]
+      declarations: [InfoMessageComponent],
     })
 
     fixture = TestBed.createComponent(InfoMessageComponent)
@@ -148,14 +163,16 @@ const h1 = infoMessageEl.querySelector('h1')
 Свойства объекта `nativeElement` напрямую зависят от среды выполнения теста. Например, вне браузера DOM-эмуляция просто невозможна, например, в приложении Angular Universal, именно поэтому имеется свойство `debugElement` с объектом типа `DebugElement` в качестве значения. В объекте также имеется объект `nativeElement`, который работает универсально независимо от платформы. Поэтому рекомендуется при написании тестов придерживаться следующего формата:
 
 ```ts
-const infoMessageEl: HTMLElement = fixture.debugElement.nativeElement
+const infoMessageEl: HTMLElement =
+  fixture.debugElement.nativeElement
 ```
 
 Правда, если платформа не браузерная, то метод `querySelector()` не сработает. Аналогом являются `query()` и `queryAll()` объекта `debugElement`, принимающего результат, возвращаемый статическим методом `css()` класса `By`. Класс `By` входит в состав библиотеки `@angular/platform-browser`.
 
 ```ts
 it('should contain "title"', () => {
-  const infoMessageEl: HTMLElement = fixture.debugElement.nativeElement
+  const infoMessageEl: HTMLElement =
+    fixture.debugElement.nativeElement
   const h1 = infoMessageEl.query(By.css('h1'))
   expect(h1.textContent).toContain('title')
 })
@@ -172,7 +189,7 @@ it('should contain "title"', () => {
     <h1>{{ title }}</h1>
 
     <p>Message content</p>
-  `
+  `,
 })
 export class InfoMessageComponent {
   title = 'Attention'
@@ -186,7 +203,8 @@ export class InfoMessageComponent {
 ```ts
 it('should contain "title"', () => {
   fixture.detectChanges()
-  const infoMessageEl: HTMLElement = fixture.debugElement.nativeElement
+  const infoMessageEl: HTMLElement =
+    fixture.debugElement.nativeElement
   const h1 = infoMessageEl.querySelector('h1')
   expect(h1.textContent).toContain('Attention')
 })
@@ -199,11 +217,13 @@ it('should contain "title"', () => {
 ```ts
 beforeEach(async(() => {
   TestBed.configureTestingModule({
-    declarations: [InfoMessageComponent]
+    declarations: [InfoMessageComponent],
   })
     .compileComponents()
     .then(() => {
-      fixture = TestBed.createComponent(InfoMessageComponent)
+      fixture = TestBed.createComponent(
+        InfoMessageComponent
+      )
     })
 }))
 ```

@@ -9,10 +9,8 @@ description: Для объявления переменных в XSLT служи
 ## Синтаксис
 
 ```xml
-<xsl:variable
-    name = "qname"
-    select = "expression">
-    <!-- Содержимое: шаблон -->
+<xsl:variable name="qname" select="expression">
+  <!-- Содержимое: шаблон -->
 </xsl:variable>
 ```
 
@@ -59,29 +57,38 @@ following-sibling:node()/descendant-or-self:node()
 Предположим, что мы определяем переменную с именем `ID` и значением `4` следующим образом:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    ...
-    <xsl:variable name="ID" select="4"/>
-    ...
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  ...
+  <xsl:variable name="ID" select="4" />
+  ...
 </xsl:stylesheet>
 ```
 
 Несложно видеть, что здесь мы определили глобальную переменную, а значит, ее значение можно использовать в преобразовании в любом месте. Например, мы можем определить через нее другие глобальные переменные, либо использовать в шаблоне:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    ...
-    <xsl:variable name="leaf" select="//item[@id=$ID]"/>
-    <xsl:variable name="ID" select="4"/>
-    <xsl:variable name="path" select="$leaf/ancestor-or-self::item"/>
-    ...
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  ...
+  <xsl:variable name="leaf" select="//item[@id=$ID]" />
+  <xsl:variable name="ID" select="4" />
+  <xsl:variable
+    name="path"
+    select="$leaf/ancestor-or-self::item"
+  />
+  ...
 </xsl:stylesheet>
 ```
 
 Причем, как уже было сказано, глобальная переменная может быть использована и до объявления: в нашем случае переменная `leaf` определяется через переменную `ID`, а `path` — через `leaf`. Конечно же, не следует забывать и то правило, что переменные не могут объявляться посредством самих себя, явно или неявно. Очевидно, что объявление:
 
 ```xml
-<xsl:variable name="ID" select="$ID - 1"/>
+<xsl:variable name="ID" select="$ID - 1" />
 ```
 
 было бы некорректным ввиду явного использования переменной при собственном определении. Точно так же были бы некорректны определения:
@@ -99,23 +106,21 @@ following-sibling:node()/descendant-or-self:node()
 
 ```xml
 <xsl:stylesheet version="1.0" xmlns:xsl="... ">
-    <xsl:template match="/">
-        <xsl:variable name="i" select="2"/>
-        <xsl:variable name="j" select="$i - 1"/>
-        <xsl:if test="$i > $j">
-            <xsl:variable name="k">
-                <xsl:value-of select="$i"/>
-                <xsl:value-of select="$gt"/>
-                <xsl:value-of select="$j"/>
-            </xsl:variable>
-            <result>
-                <xsl:copy-of select="$k"/>
-            </result>
-        </xsl:if>
-    </xsl:template>
-    <xsl:variable name="gt">
-        is greater than
-    </xsl:variable>
+  <xsl:template match="/">
+    <xsl:variable name="i" select="2" />
+    <xsl:variable name="j" select="$i - 1" />
+    <xsl:if test="$i > $j">
+      <xsl:variable name="k">
+        <xsl:value-of select="$i" />
+        <xsl:value-of select="$gt" />
+        <xsl:value-of select="$j" />
+      </xsl:variable>
+      <result>
+        <xsl:copy-of select="$k" />
+      </result>
+    </xsl:if>
+  </xsl:template>
+  <xsl:variable name="gt">is greater than</xsl:variable>
 </xsl:stylesheet>
 ```
 
@@ -127,25 +132,23 @@ following-sibling:node()/descendant-or-self:node()
 
 ```xml
 <xsl:stylesheet version="1.0" xmlns:xsl="... ">
-    <xsl:template match="/">
-        <xsl:variable name="i" select="2"/>
-        <!-- Область видимости переменной i -->
-        <xsl:variable name="j" select="$i - 1"/>
-        <xsl:if test="$i > $j">
-            <xsl:variable name="k">
-                <xsl:value-of select="$i"/>
-                <xsl:value-of select="$gt"/>
-                <xsl:value-of select="$j"/>
-            </xsl:variable>
-            <result>
-                <xsl:copy-of select="$k"/>
-            </result>
-        </xsl:if>
-        <!-- /Область видимости переменной i -->
-    </xsl:template>
-    <xsl:variable name="gt">
-        is greater than
-    </xsl:variable>
+  <xsl:template match="/">
+    <xsl:variable name="i" select="2" />
+    <!-- Область видимости переменной i -->
+    <xsl:variable name="j" select="$i - 1" />
+    <xsl:if test="$i > $j">
+      <xsl:variable name="k">
+        <xsl:value-of select="$i" />
+        <xsl:value-of select="$gt" />
+        <xsl:value-of select="$j" />
+      </xsl:variable>
+      <result>
+        <xsl:copy-of select="$k" />
+      </result>
+    </xsl:if>
+    <!-- /Область видимости переменной i -->
+  </xsl:template>
+  <xsl:variable name="gt">is greater than</xsl:variable>
 </xsl:stylesheet>
 ```
 
@@ -153,25 +156,23 @@ following-sibling:node()/descendant-or-self:node()
 
 ```xml
 <xsl:stylesheet version="1.0" xmlns:xsl="... ">
-    <xsl:template match="/">
-        <xsl:variable name="i" select="2"/>
-        <xsl:variable name="j" select="$i - 1"/>
-        <!-- Область видимости переменной j -->
-        <xsl:if test="$i > $j">
-            <xsl:variable name="k">
-                <xsl:value-of select="$i"/>
-                <xsl:value-of select="$gt"/>
-                <xsl:value-of select="$j"/>
-            </xsl:variable>
-            <result>
-                <xsl:copy-of select="$k"/>
-            </result>
-        </xsl:if>
-        <!-- /Область видимости переменной j -->
-    </xsl:template>
-    <xsl:variable name="gt">
-        is greater than
-    </xsl:variable>
+  <xsl:template match="/">
+    <xsl:variable name="i" select="2" />
+    <xsl:variable name="j" select="$i - 1" />
+    <!-- Область видимости переменной j -->
+    <xsl:if test="$i > $j">
+      <xsl:variable name="k">
+        <xsl:value-of select="$i" />
+        <xsl:value-of select="$gt" />
+        <xsl:value-of select="$j" />
+      </xsl:variable>
+      <result>
+        <xsl:copy-of select="$k" />
+      </result>
+    </xsl:if>
+    <!-- /Область видимости переменной j -->
+  </xsl:template>
+  <xsl:variable name="gt">is greater than</xsl:variable>
 </xsl:stylesheet>
 ```
 
@@ -179,25 +180,23 @@ following-sibling:node()/descendant-or-self:node()
 
 ```xml
 <xsl:stylesheet version="1.0" xmlns:xsl="... ">
-    <xsl:template match="/">
-        <xsl:variable name="i" select="2"/>
-        <xsl:variable name="j" select="$i - 1"/>
-        <xsl:if test="$i > $j">
-            <xsl:variable name="k">
-                <xsl:value-of select="$i"/>
-                <xsl:value-of select="$gt"/>
-                <xsl:value-of select="$j"/>
-            </xsl:variable>
-            <!-- Область видимости переменной k -->
-            <result>
-                <xsl:copy-of select="$k"/>
-            </result>
-            <!-- /Область видимости переменной k -->
-        </xsl:if>
-    </xsl:template>
-    <xsl:variable name="gt">
-        is greater than
-    </xsl:variable>
+  <xsl:template match="/">
+    <xsl:variable name="i" select="2" />
+    <xsl:variable name="j" select="$i - 1" />
+    <xsl:if test="$i > $j">
+      <xsl:variable name="k">
+        <xsl:value-of select="$i" />
+        <xsl:value-of select="$gt" />
+        <xsl:value-of select="$j" />
+      </xsl:variable>
+      <!-- Область видимости переменной k -->
+      <result>
+        <xsl:copy-of select="$k" />
+      </result>
+      <!-- /Область видимости переменной k -->
+    </xsl:if>
+  </xsl:template>
+  <xsl:variable name="gt">is greater than</xsl:variable>
 </xsl:stylesheet>
 ```
 
@@ -205,25 +204,23 @@ following-sibling:node()/descendant-or-self:node()
 
 ```xml
 <xsl:stylesheet version="1.0" xmlns:xsl="... ">
-    <!-- Область видимости переменной gt -->
-    <xsl:template match="/">
-        <xsl:variable name="i" select="2"/>
-        <xsl:variable name="j" select="$i - 1"/>
-        <xsl:if test="$i > $j">
-            <xsl:variable name="k">
-                <xsl:value-of select="$i"/>
-                <xsl:value-of select="$gt"/>
-                <xsl:value-of select="$j"/>
-            </xsl:variable>
-            <result>
-                <xsl:copy-of select="$k"/>
-            </result>
-        </xsl:if>
-    </xsl:template>
-    <xsl:variable name="gt">
-        is greater than
-    </xsl:variable>
-    <!-- /Область видимости переменной gt -->
+  <!-- Область видимости переменной gt -->
+  <xsl:template match="/">
+    <xsl:variable name="i" select="2" />
+    <xsl:variable name="j" select="$i - 1" />
+    <xsl:if test="$i > $j">
+      <xsl:variable name="k">
+        <xsl:value-of select="$i" />
+        <xsl:value-of select="$gt" />
+        <xsl:value-of select="$j" />
+      </xsl:variable>
+      <result>
+        <xsl:copy-of select="$k" />
+      </result>
+    </xsl:if>
+  </xsl:template>
+  <xsl:variable name="gt">is greater than</xsl:variable>
+  <!-- /Область видимости переменной gt -->
 </xsl:stylesheet>
 ```
 
@@ -268,10 +265,13 @@ following-sibling:node()/descendant-or-self:node()
 Листинг 5.25. Преобразование `de.xsl`
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:import href="en.xsl"/>
-    <xsl:variable name="submit" select="'Senden'"/>
-    <xsl:variable name="reset" select="'Loeschen'"/>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:import href="en.xsl" />
+  <xsl:variable name="submit" select="'Senden'" />
+  <xsl:variable name="reset" select="'Loeschen'" />
 </xsl:stylesheet>
 ```
 
@@ -294,16 +294,21 @@ following-sibling:node()/descendant-or-self:node()
 Возвращаясь к теме совпадений имен переменных, продемонстрируем "скрытие" локальной переменной значения глобальной:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:variable name="i" select="1"/>
-    <xsl:template match="/">
-        <xsl:text>i equals </xsl:text>
-        <xsl:value-of select="$i"/>
-        <xsl:text> </xsl:text>
-        <xsl:variable name="i" select="$i + 1"/>
-        <xsl:text>i equals </xsl:text>
-        <xsl:value-of select="$i"/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:variable name="i" select="1" />
+  <xsl:template match="/">
+    <xsl:text>i equals</xsl:text>
+    <xsl:value-of select="$i" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:variable name="i" select="$i + 1" />
+    <xsl:text>i equals</xsl:text>
+    <xsl:value-of select="$i" />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -319,16 +324,21 @@ i equals 2
 Рассмотрим теперь случай двух локальных переменных. Попробуем объявить две локальные переменные — одну за другой в следующем шаблоне:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="/">
-        <xsl:variable name="i" select="1"/>
-        <xsl:text>i equals </xsl:text>
-        <xsl:value-of select="$i"/>
-        <xsl:text> </xsl:text>
-        <xsl:variable name="i" select="2"/>
-        <xsl:text>i equals </xsl:text>
-        <xsl:value-of select="$i"/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <xsl:variable name="i" select="1" />
+    <xsl:text>i equals</xsl:text>
+    <xsl:value-of select="$i" />
+    <xsl:text>
+
+    </xsl:text>
+    <xsl:variable name="i" select="2" />
+    <xsl:text>i equals</xsl:text>
+    <xsl:value-of select="$i" />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -343,19 +353,22 @@ Variable is already declared in this template
 Приведем теперь другое преобразование, в котором элементы `xsl:variable` принадлежат двум братским элементам:
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="/">
-        <p>
-            <xsl:variable name="i" select="1"/>
-            <xsl:text>i equals </xsl:text>
-            <xsl:value-of select="$i"/>
-        </p>
-        <p>
-            <xsl:variable name="i" select="2"/>
-            <xsl:text>i equals </xsl:text>
-            <xsl:value-of select="$i"/>
-        </p>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <p>
+      <xsl:variable name="i" select="1" />
+      <xsl:text>i equals</xsl:text>
+      <xsl:value-of select="$i" />
+    </p>
+    <p>
+      <xsl:variable name="i" select="2" />
+      <xsl:text>i equals</xsl:text>
+      <xsl:value-of select="$i" />
+    </p>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -391,7 +404,7 @@ Variable is already declared in this template
 гораздо удобней и экономней с точки зрения вычислительных ресурсов объявить переменную вида
 
 ```xml
-<xsl:variable name="a" select="//a[@href]"/>
+<xsl:variable name="a" select="//a[@href]" />
 ```
 
 и использовать ее в преобразовании как `$a`. Фильтрующие выражения языка XPath (продукция FilterExpr) позволяют затем обращаться к узлам выбранного множества так же, как если бы мы работали с изначальным выражением. Например, `$a[1]` будет эквивалентно `//a[@href][1]`, а `$a/@href` — выражению `//a[@href]/@href`. При этом при обращении к `$a` процессор не будет заново искать все элементы `a` с атрибутом `href`, что, по всей вероятности, положительно скажется на производительности.
@@ -399,12 +412,14 @@ Variable is already declared in this template
 Другой иллюстрацией этому же случаю использования переменной может быть следующая ситуация: в некоторых случаях выражения могут быть просты для вычисления, но слишком громоздки для записи. Гораздо элегантней один раз вычислить это громоздкое выражение, сохранить его в переменной и затем обращаться по короткому имени. Например, следующий элемент `xsl:variable` вычисляет и сохраняет в переменной `gv` длинную и громоздкую ссылку:
 
 ```xml
-<xsl:variable name="gv"
-    select="concat('http://host.com:8080/GeoView/GeoView.jsp?',
+<xsl:variable
+  name="gv"
+  select="concat('http://host.com:8080/GeoView/GeoView.jsp?',
     'Language=en&',
     'SearchText=Select&',
     'SearchTarget=mainFrame&',
-    'SearchURL=http://host.com:8080/servlet/upload')"/>
+    'SearchURL=http://host.com:8080/servlet/upload')"
+/>
 ```
 
 После такого определения применение этой ссылки в преобразовании становится удобным и лаконичным:
@@ -417,10 +432,10 @@ Variable is already declared in this template
 
 ```xml
 <xsl:template match="/">
-    <html>
-        <xsl:copy-of select="$head"/>
-        <xsl:copy-of select="$body"/>
-    </html>
+  <html>
+    <xsl:copy-of select="$head" />
+    <xsl:copy-of select="$body" />
+  </html>
 </xsl:template>
 ```
 
@@ -456,12 +471,12 @@ else
 
 ```xml
 <xsl:choose>
-    <xsl:when test="условие1">
-        <xsl:variable name="переменная1" select="значение1"/>
-    </xsl:when>
-    <xsl:otherwise>
-        <xsl:variable name="переменная1" select="значение2"/>
-    </xsl:otherwise>
+  <xsl:when test="условие1">
+    <xsl:variable name="переменная1" select="значение1" />
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:variable name="переменная1" select="значение2" />
+  </xsl:otherwise>
 </xsl:choose>
 ```
 
@@ -483,15 +498,19 @@ else
 Конечно, это не точно то же самое — на самом деле мы получаем не значение, а дерево, содержащее это значение, но для строковых и численных значений особой разницы нет: дерево будет вести себя точно так же, как число или строка. Для булевых значений и множеств узлов приходится изыскивать другие методы. Булевое значение можно выразить через условие, например:
 
 ```xml
-<xsl:variable name="переменная 1"
-    select="(значение 1 and условие1) or (значение2 and not(условие2))"/>
+<xsl:variable
+  name="переменная 1"
+  select="(значение 1 and условие1) or (значение2 and not(условие2))"
+/>
 ```
 
 Для множества узлов можно использовать предикаты и операции над множествами:
 
 ```xml
-<xsl:variable name="переменная1"
-    select="значение1[условие1] | значение2[not(условие2)]"/>
+<xsl:variable
+  name="переменная1"
+  select="значение1[условие1] | значение2[not(условие2)]"
+/>
 ```
 
 Заметим, что шаблон, содержащийся в элементе `xsl:variable`, может включать в себя такие элементы, как `xsl:call-template`, `xsl:apply-templates` и так далее. То есть переменной можно присвоить результат выполнения одного или нескольких шаблонов.
@@ -508,14 +527,15 @@ document('http://www.xmlhost.com/docs/а.xml')/page/request/param
 
 ```xml
 <xsl:variable
-    name="a.xml"
-    select="document('http://www.xmlhost.com/docs/a.xml')"/>
+  name="a.xml"
+  select="document('http://www.xmlhost.com/docs/a.xml')"
+/>
 ```
 
 После этого к документу `http://www.xmlhost.com/docs/a.xml` можно обращаться посредством переменной с именем `a.xml`, например:
 
 ```xml
-<xsl:value-of select="$a.xml/page/request/param"/>
+<xsl:value-of select="$a.xml/page/request/param" />
 ```
 
 ## См. также

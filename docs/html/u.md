@@ -34,7 +34,10 @@ description: Тег u (от англ. underline — подчеркнутый) и
 <html>
   <head>
     <title>U</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=utf-8"
+    />
   </head>
   <body>
     <p><u>Меню</u></p>

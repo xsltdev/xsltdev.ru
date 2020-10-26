@@ -62,16 +62,19 @@ header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Autho
 
 ```xml
 <system.webServer>
-    <httpProtocol>
-      <customHeaders>
-        <clear />
-        <add name="Access-Control-Allow-Origin" value="*"/>
-        <add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type, Accept" />
-        <add name="Access-Control-Allow-Methods" value="*"/>
-      </customHeaders>
-    </httpProtocol>
-    <!-- остальное содержимое узла system.webServer -->
-  </system.webServer>
+  <httpProtocol>
+    <customHeaders>
+      <clear />
+      <add name="Access-Control-Allow-Origin" value="*" />
+      <add
+        name="Access-Control-Allow-Headers"
+        value="Origin, X-Requested-With, Content-Type, Accept"
+      />
+      <add name="Access-Control-Allow-Methods" value="*" />
+    </customHeaders>
+  </httpProtocol>
+  <!-- остальное содержимое узла system.webServer -->
+</system.webServer>
 ```
 
 В других технологиях могут применяться другие способы добавления CORS.
@@ -90,7 +93,8 @@ export class HttpService {
   //http://localhost:8080/angular/getFactorial.php?number=    PHP
   getFactorial(num: number) {
     return this.http.get(
-      'http://localhost:60489/Home/GetFactorial?number=' + num
+      'http://localhost:60489/Home/GetFactorial?number=' +
+        num
     )
   }
 }
@@ -119,20 +123,24 @@ import { User } from './user'
       />
     </div>
     <div class="form-group">
-      <button class="btn btn-default" (click)="submit(num)">Отправить</button>
+      <button class="btn btn-default" (click)="submit(num)">
+        Отправить
+      </button>
     </div>
   `,
-  providers: [HttpService]
+  providers: [HttpService],
 })
 export class AppComponent {
   factorial: number
   done: boolean = false
   constructor(private httpService: HttpService) {}
   submit(num: number) {
-    this.httpService.getFactorial(num).subscribe((data: number) => {
-      this.factorial = data
-      this.done = true
-    })
+    this.httpService
+      .getFactorial(num)
+      .subscribe((data: number) => {
+        this.factorial = data
+        this.done = true
+      })
   }
 }
 ```
@@ -147,7 +155,10 @@ export class AppComponent {
 
 ```typescript
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpParams } from '@angular/common/http'
+import {
+  HttpClient,
+  HttpParams,
+} from '@angular/common/http'
 
 @Injectable()
 export class HttpService {
@@ -156,8 +167,14 @@ export class HttpService {
   //http://localhost:60489/Home/GetFactorial?number=  ASP.NET MVC
   //http://localhost:8080/angular/getFactorial.php?number=    PHP
   getFactorial(num: number) {
-    const params = new HttpParams().set('number', num.toString())
-    return this.http.get('http://localhost:60489/Home/GetFactorial', { params })
+    const params = new HttpParams().set(
+      'number',
+      num.toString()
+    )
+    return this.http.get(
+      'http://localhost:60489/Home/GetFactorial',
+      { params }
+    )
   }
 }
 ```

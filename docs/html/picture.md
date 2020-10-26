@@ -56,7 +56,12 @@ description: Тег picture (от англ. picture — картина, изоб
   <body>
     <picture>
       <source srcset="image/html5-logo.svg" />
-      <img src="image/html5-logo.png" width="256" height="256" alt="HTML5" />
+      <img
+        src="image/html5-logo.png"
+        width="256"
+        height="256"
+        alt="HTML5"
+      />
     </picture>
   </body>
 </html>

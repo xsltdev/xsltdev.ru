@@ -42,7 +42,8 @@ export class ServerComponent {
 `app\server\server.component.html`:
 
 ```html
-{{ 'Server' }} id is {{serverId}} and status is {{ serverStatus }}
+{{ 'Server' }} id is {{serverId}} and status is {{
+serverStatus }}
 ```
 
 `{{ 'Server' }}`, `{{serverId}}`, `{{ serverStatus }}` - будут интерполированы в строки.
@@ -84,7 +85,12 @@ export class ServersComponent implements OnInit {
 В шаблоне `\app\servers\servers.component.html`:
 
 ```html
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+>
+  Add Server
+</button>
 ```
 
 `[disabled]="!allowNewServer"` Связывает атрибут `disabled` с переменной компонента `allowNewServer`. Символ `!` Инвертирует булевое значение.

@@ -8,7 +8,9 @@ HTTP POST https://mysite.com/graphql
 
 ```js
 // отправляем данные через get-запрос
-fetch('https://mysite.com/graphql?query={posts(id: 1){...}}')
+fetch(
+  'https://mysite.com/graphql?query={posts(id: 1){...}}'
+)
 ```
 
 ```js

@@ -78,11 +78,17 @@
 
 ```js
 function mySandwich(param1, param2, callback) {
-  console.log('Мой сэндвич включает в себя ' + param1 + ' и ' + param2 + '.')
+  console.log(
+    'Мой сэндвич включает в себя ' +
+      param1 +
+      ' и ' +
+      param2 +
+      '.'
+  )
   callback()
 }
 
-mySandwich('котлету', 'сыр', function() {
+mySandwich('котлету', 'сыр', function () {
   console.log('А также соус, огурцы и прочие вкусняшки.')
 })
 ```

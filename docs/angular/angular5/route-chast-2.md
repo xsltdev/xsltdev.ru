@@ -55,7 +55,7 @@ export class ServersComponent implements OnInit {
 ```typescript
 const appRoutes: Routes = [
   //...
-  { path: 'users/:id', component: UserComponent }
+  { path: 'users/:id', component: UserComponent },
   //...
 ]
 ```
@@ -66,7 +66,7 @@ const appRoutes: Routes = [
 
 ```typescript
 const appRoutes: Routes = [
-  { path: 'users/:id/:name', component: UserComponent }
+  { path: 'users/:id/:name', component: UserComponent },
   //...
 ]
 ```
@@ -86,7 +86,7 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.user = {
       id: this.route.snapshot.params['id'],
-      name: this.route.snapshot.params['name']
+      name: this.route.snapshot.params['name'],
     }
   }
 }

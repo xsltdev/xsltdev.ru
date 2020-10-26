@@ -55,7 +55,11 @@ var lowQuality = canvas.toDataURL('image/jpeg', 0.1)
 ### Пример 3
 
 ```html
-<img class="grayscale" src="myPicture.png" alt="Description of my picture" />
+<img
+  class="grayscale"
+  src="myPicture.png"
+  alt="Description of my picture"
+/>
 ```
 
 ```js
@@ -72,12 +76,21 @@ function showGrayImg() {
 }
 
 function removeColors() {
-  var aImages = document.getElementsByClassName('grayscale'),
+  var aImages = document.getElementsByClassName(
+      'grayscale'
+    ),
     nImgsLen = aImages.length,
     oCanvas = document.createElement('canvas'),
     oCtx = oCanvas.getContext('2d')
   for (
-    var nWidth, nHeight, oImgData, oGrayImg, nPixel, aPix, nPixLen, nImgId = 0;
+    var nWidth,
+      nHeight,
+      oImgData,
+      oGrayImg,
+      nPixel,
+      aPix,
+      nPixLen,
+      nImgId = 0;
     nImgId < nImgsLen;
     nImgId++
   ) {
@@ -92,7 +105,10 @@ function removeColors() {
     nPixLen = aPix.length
     for (nPixel = 0; nPixel < nPixLen; nPixel += 4) {
       aPix[nPixel + 2] = aPix[nPixel + 1] = aPix[nPixel] =
-        (aPix[nPixel] + aPix[nPixel + 1] + aPix[nPixel + 2]) / 3
+        (aPix[nPixel] +
+          aPix[nPixel + 1] +
+          aPix[nPixel + 2]) /
+        3
     }
     oCtx.putImageData(oImgData, 0, 0)
     oGrayImg = new Image()

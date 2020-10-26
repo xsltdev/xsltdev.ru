@@ -81,7 +81,8 @@ min-height: auto;
     <title>min-height</title>
     <style>
       footer {
-        background: #66806e url(/example/image/clover.png) no-repeat 20px bottom; /* Параметры фона */
+        background: #66806e url(/example/image/clover.png)
+          no-repeat 20px bottom; /* Параметры фона */
         min-height: 80px; /* Минимальная высота */
         color: #e4bc96; /* Цвет текста */
         padding: 5px 5px 5px 140px; /* Поля вокруг текста */

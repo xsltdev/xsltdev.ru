@@ -61,7 +61,9 @@ class LoginControl extends React.Component {
   constructor(props) {
     super(props)
     this.handleLoginClick = this.handleLoginClick.bind(this)
-    this.handleLogoutClick = this.handleLogoutClick.bind(this)
+    this.handleLogoutClick = this.handleLogoutClick.bind(
+      this
+    )
     this.state = { isLoggedIn: false }
   }
 
@@ -78,9 +80,13 @@ class LoginControl extends React.Component {
     let button
 
     if (isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />
+      button = (
+        <LogoutButton onClick={this.handleLogoutClick} />
+      )
     } else {
-      button = <LoginButton onClick={this.handleLoginClick} />
+      button = (
+        <LoginButton onClick={this.handleLoginClick} />
+      )
     }
 
     return (
@@ -92,7 +98,10 @@ class LoginControl extends React.Component {
   }
 }
 
-ReactDOM.render(<LoginControl />, document.getElementById('root'))
+ReactDOM.render(
+  <LoginControl />,
+  document.getElementById('root')
+)
 ```
 
 Нет ничего плохого в том, чтобы объявить переменную и условно рендерить компонент `if`-выражением. Но иногда хочется синтаксис покороче. Давайте посмотрим на несколько других способов писать условия прямо в JSX.
@@ -107,13 +116,21 @@ function Mailbox(props) {
   return (
     <div>
       <h1>Здравствуйте!</h1>
-      {unreadMessages.length > 0 && <h2>У вас {unreadMessages.length} непрочитанных сообщений.</h2>}
+      {unreadMessages.length > 0 && (
+        <h2>
+          У вас {unreadMessages.length} непрочитанных
+          сообщений.
+        </h2>
+      )}
     </div>
   )
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React']
-ReactDOM.render(<Mailbox unreadMessages={messages} />, document.getElementById('root'))
+ReactDOM.render(
+  <Mailbox unreadMessages={messages} />,
+  document.getElementById('root')
+)
 ```
 
 Приведённый выше вариант работает корректно, потому что в JavaScript выражение `true && expression` всегда вычисляется как `expression`, а выражение `false && expression` — как `false`.
@@ -175,12 +192,14 @@ class Page extends React.Component {
   constructor(props) {
     super(props)
     this.state = { showWarning: true }
-    this.handleToggleClick = this.handleToggleClick.bind(this)
+    this.handleToggleClick = this.handleToggleClick.bind(
+      this
+    )
   }
 
   handleToggleClick() {
-    this.setState(state => ({
-      showWarning: !state.showWarning
+    this.setState((state) => ({
+      showWarning: !state.showWarning,
     }))
   }
 
@@ -188,7 +207,9 @@ class Page extends React.Component {
     return (
       <div>
         <WarningBanner warn={this.state.showWarning} />
-        <button onClick={this.handleToggleClick}>{this.state.showWarning ? 'Спрятать' : 'Показать'}</button>
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? 'Спрятать' : 'Показать'}
+        </button>
       </div>
     )
   }

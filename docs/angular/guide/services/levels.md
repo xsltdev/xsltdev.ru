@@ -30,7 +30,7 @@ import { DataService } from './data.service'
   imports: [BrowserModule, FormsModule],
   declarations: [AppComponent],
   providers: [DataService], // регистрация сервисов
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -44,7 +44,11 @@ import { Injectable } from '@angular/core'
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  private data: string[] = ['Apple iPhone XR', 'Samsung Galaxy S9', 'Nokia 9']
+  private data: string[] = [
+    'Apple iPhone XR',
+    'Samsung Galaxy S9',
+    'Nokia 9',
+  ]
   constructor() {}
 
   getData(): string[] {
@@ -72,7 +76,7 @@ import { DataService } from './data.service'
   imports: [BrowserModule, FormsModule],
   declarations: [DataComponent],
   exports: [DataComponent],
-  providers: [DataService] // регистрация сервисов
+  providers: [DataService], // регистрация сервисов
 })
 export class DataModule {}
 ```
@@ -85,7 +89,11 @@ import { DataModule } from './data.module'
 
 @Injectable({ providedIn: DataModule }) // теперь сервис доступен в модуле DataModule
 export class DataService {
-  private data: string[] = ['Apple iPhone XR', 'Samsung Galaxy S9', 'Nokia 9']
+  private data: string[] = [
+    'Apple iPhone XR',
+    'Samsung Galaxy S9',
+    'Nokia 9',
+  ]
   constructor() {}
 
   getData(): string[] {
@@ -111,7 +119,9 @@ import { DataService } from './data.service'
     <div>
       <div>
         <input [(ngModel)]="name" placeholder="Модель" />
-        <button (click)="addItem(name, price)">Добавить</button>
+        <button (click)="addItem(name, price)">
+          Добавить
+        </button>
       </div>
       <table>
         <tr *ngFor="let item of items">
@@ -120,7 +130,7 @@ import { DataService } from './data.service'
       </table>
     </div>
   `,
-  providers: [DataService] // добавление модуля DataService
+  providers: [DataService], // добавление модуля DataService
 })
 export class DataComponent {
   items: string[] = []

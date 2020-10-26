@@ -15,7 +15,7 @@ description: Обновление шаблона при динамическом
 ```typescript
 this.user = {
   id: this.route.snapshot.params['id'],
-  name: this.route.snapshot.params['name']
+  name: this.route.snapshot.params['name'],
 }
 ```
 

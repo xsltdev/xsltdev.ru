@@ -11,7 +11,8 @@ description: Правило @document ограничивает правила с
 ## Синтаксис
 
 ```css
-@document url("https://www.example.com/") {
+@document url("https://www.example.com/")
+{
   h1 {
     color: green;
   }
@@ -95,7 +96,8 @@ description: Правило @document ограничивает правила с
   </head>
   <body>
     <div class="ssl">
-      Для вашей безопасности на сайте мы используем защищённый протокол.
+      Для вашей безопасности на сайте мы используем
+      защищённый протокол.
     </div>
   </body>
 </html>

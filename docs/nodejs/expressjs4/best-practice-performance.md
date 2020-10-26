@@ -91,9 +91,9 @@ app.use(compression())
 Этот промежуточный обработчик принимает параметр поля запроса "params", который является объектом JSON.
 
 ```js
-app.get('/search', function(req, res) {
+app.get('/search', function (req, res) {
   // Simulating async operation
-  setImmediate(function() {
+  setImmediate(function () {
     var jsonStr = req.query.params
     try {
       var jsonObj = JSON.parse(jsonStr)
@@ -112,20 +112,20 @@ app.get('/search', function(req, res) {
 Промисы (promises) обрабатывают любые исключительные ситуации (явные и неявные) в блоках асинхронного кода, в которых используется метод `then()`. Просто добавьте `.catch(next)` в конце цепочки промисов. Например:
 
 ```js
-app.get('/', function(req, res, next) {
+app.get('/', function (req, res, next) {
   // do some sync stuff
   queryDb()
-    .then(function(data) {
+    .then(function (data) {
       // handle data
       return makeCsv(data)
     })
-    .then(function(csv) {
+    .then(function (csv) {
       // handle csv
     })
     .catch(next)
 })
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // handle error
 })
 ```

@@ -20,17 +20,19 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const authReq = req.clone({
-      headers: req.headers.set('Session', '123456789')
+      headers: req.headers.set('Session', '123456789'),
     })
 
     return next.handle(authReq).pipe(
       tap(
-        event => {
-          if (event instanceof HttpResponse) console.log('Server response')
+        (event) => {
+          if (event instanceof HttpResponse)
+            console.log('Server response')
         },
-        err => {
+        (err) => {
           if (err instanceof HttpErrorResponse) {
-            if (err.status == 401) console.log('Unauthorized')
+            if (err.status == 401)
+              console.log('Unauthorized')
           }
         }
       )
@@ -62,8 +64,8 @@ providers: [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
-    multi: true
-  }
+    multi: true,
+  },
 ]
 ```
 

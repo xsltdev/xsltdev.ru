@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     this.testForm = new FormGroup({
       name: new FormControl(null),
       email: new FormControl(null),
-      gender: new FormControl('male')
+      gender: new FormControl('male'),
     })
   }
 
@@ -75,7 +75,12 @@ ngOnInit() {
 В компоненте определена переменная `testForm` класса `FormGroup`, связанная с формой `<form [formGroup]="testForm") ... >`, тогда:
 
 ```html
-<input type="text" id="name" class="form-control" formControlName="name" />
+<input
+  type="text"
+  id="name"
+  class="form-control"
+  formControlName="name"
+/>
 <span
   class="help-block"
   *ngIf="!testForm.get('name').valid && testForm.get('name').touched"
@@ -92,9 +97,12 @@ ngOnInit() {
 this.testForm = new FormGroup({
   userData: new FormGroup({
     name: new FormControl(null, Validators.required),
-    email: new FormControl(null, [Validators.required, Validators.email])
+    email: new FormControl(null, [
+      Validators.required,
+      Validators.email,
+    ]),
   }),
-  gender: new FormControl('male')
+  gender: new FormControl('male'),
 })
 ```
 
@@ -130,11 +138,17 @@ this.testForm = new FormGroup({
   </div>
   <div class="radio" *ngFor="let gender of genders">
     <label>
-      <input type="radio" [value]="gender" formControlName="gender" />
+      <input
+        type="radio"
+        [value]="gender"
+        formControlName="gender"
+      />
       {{ gender }}
     </label>
   </div>
-  <button class="btn btn-primary" type="submit">Submit</button>
+  <button class="btn btn-primary" type="submit">
+    Submit
+  </button>
 </form>
 ```
 
@@ -161,14 +175,22 @@ import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 ```html
 <div formArrayName="hobbies">
   <h4>your hobbies</h4>
-  <button class="btn btn-default" type="button" (click)="onAddHobbie()">
+  <button
+    class="btn btn-default"
+    type="button"
+    (click)="onAddHobbie()"
+  >
     add hobbie
   </button>
   <div
     class="form-group"
     *ngFor="let hobbyControl of testForm.get('hobbies').controls; let i = index;"
   >
-    <input type="text" class="form-control" [formControlName]="i" />
+    <input
+      type="text"
+      class="form-control"
+      [formControlName]="i"
+    />
   </div>
 </div>
 ```
@@ -214,15 +236,24 @@ ngOnInit() {
 ```html
 <div class="form-group">
   <label for="name">Username</label>
-  <input type="text" id="name" class="form-control" formControlName="name" />
+  <input
+    type="text"
+    id="name"
+    class="form-control"
+    formControlName="name"
+  />
   <span
     class="help-block"
     *ngIf="!testForm.get('userData.name').valid && testForm.get('userData.name').touched"
   >
-    <span *ngIf="testForm.get('userData.name').errors['nameIsForbidden']">
+    <span
+      *ngIf="testForm.get('userData.name').errors['nameIsForbidden']"
+    >
       This name is forbidden
     </span>
-    <span *ngIf="testForm.get('userData.name').errors['required']">
+    <span
+      *ngIf="testForm.get('userData.name').errors['required']"
+    >
       This name is required
     </span>
   </span>
@@ -262,8 +293,12 @@ return promise;
 В `ngOnInit`:
 
 ```typescript
-this.signupForm.valueChanges.subscribe(value => console.log(value))
-this.signupForm.statusChanges.subscribe(status => console.log(status))
+this.signupForm.valueChanges.subscribe((value) =>
+  console.log(value)
+)
+this.signupForm.statusChanges.subscribe((status) =>
+  console.log(status)
+)
 ```
 
 ## Полная и частичная установка значений формы
@@ -274,10 +309,10 @@ this.signupForm.statusChanges.subscribe(status => console.log(status))
 this.testForm.setValue({
   userData: {
     name: 'Test',
-    email: 'test@test.com'
+    email: 'test@test.com',
   },
   gender: 'male',
-  hobbies: []
+  hobbies: [],
 })
 ```
 
@@ -286,8 +321,8 @@ this.testForm.setValue({
 ```typescript
 this.testForm.patchValue({
   userData: {
-    name: 'Test2'
-  }
+    name: 'Test2',
+  },
 })
 ```
 

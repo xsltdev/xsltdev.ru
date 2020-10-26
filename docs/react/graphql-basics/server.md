@@ -350,7 +350,13 @@ api.all(
 
 ```graphql
 mutation {
-  createPet(input: { name: "Bobik", species: "dog", birthYear: 2019 }) {
+  createPet(
+    input: {
+      name: "Bobik"
+      species: "dog"
+      birthYear: 2019
+    }
+  ) {
     id
     name
   }
@@ -382,7 +388,12 @@ const api = express()
 
 // класс Pet будет отвечать за корректную инициализацию экземпляра Pet
 class Pet {
-  constructor({ name, species = 'dog', steps = [], birthYear = 2019 } = {}) {
+  constructor({
+    name,
+    species = 'dog',
+    steps = [],
+    birthYear = 2019,
+  } = {}) {
     this.name = name
     this.species = species
     this.birthYear = birthYear
@@ -514,7 +525,9 @@ const schema = require('./schema.js')
 const mongoose = require('mongoose')
 mongoose.Promise = Promise
 mongoose.connect('mongodb://localhost:27017/graphql-intro')
-mongoose.connection.once('open', () => console.log('connect to MongoDB'))
+mongoose.connection.once('open', () =>
+  console.log('connect to MongoDB')
+)
 
 // импортируем модель (mongoose)
 const Pet = require('./model')
@@ -555,7 +568,13 @@ module.exports = api
 
 ```graphql
 mutation createPet {
-  createPet(input: { name: "Bobik", species: "dog", birthYear: 2019 }) {
+  createPet(
+    input: {
+      name: "Bobik"
+      species: "dog"
+      birthYear: 2019
+    }
+  ) {
     id
     name
   }
@@ -564,7 +583,11 @@ mutation createPet {
 mutation updatePet {
   updatePet(
     id: "5c55a389a45bfa12446b9fdf"
-    input: { name: "12Bobik", species: "12dog", birthYear: 122019 }
+    input: {
+      name: "12Bobik"
+      species: "12dog"
+      birthYear: 122019
+    }
   ) {
     id
     name

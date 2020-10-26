@@ -17,7 +17,9 @@ node-set document( object, node-set? )
 Функция `document` возвращает множество узлов. В простейшем случае это множество будет состоять из корневого узла внешнего документа. Функцию `document` можно использовать в более сложных XPath-выражениях, например в выражениях фильтрации. Так функция
 
 ```xml
-<xsl:copy-of select="document('http://www.w3.org')/html/body/a"/>
+<xsl:copy-of
+  select="document('http://www.w3.org')/html/body/a"
+/>
 ```
 
 скопирует все элементы а, находящиеся в теле (`/html/body`) внешнего документа.
@@ -41,15 +43,22 @@ document('')
 Листинг 8.61. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:user="urn:user-namespace">
-    <user:data>
-        <item>1</item>
-        <item>2</item>
-    </user:data>
-    <xsl:variable name="data" select="document('')/xsl:stylesheet/user:data"/>
-    <xsl:template match="/">
-        <xsl:copy-of select="$data/item"/>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:user="urn:user-namespace"
+>
+  <user:data>
+    <item>1</item>
+    <item>2</item>
+  </user:data>
+  <xsl:variable
+    name="data"
+    select="document('')/xsl:stylesheet/user:data"
+  />
+  <xsl:template match="/">
+    <xsl:copy-of select="$data/item" />
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -91,7 +100,7 @@ URI, которые передаются функции `document`, могут �
 Конструкция
 
 ```xml
-<xsl:copy-of select="document('doc.xml')"/>
+<xsl:copy-of select="document('doc.xml')" />
 ```
 
 копирует в выходящий документ `doc.xml`, находящийся в одном каталоге вместе с преобразованием.
@@ -100,7 +109,7 @@ URI, которые передаются функции `document`, могут �
 
 ```xml
 <xsl:for-each select="document('a/data.xml')">
-    <xsl:copy-of select="document('doc.xml')"/>
+  <xsl:copy-of select="document('doc.xml')" />
 </xsl:for-each>
 ```
 
@@ -108,20 +117,22 @@ URI, которые передаются функции `document`, могут �
 
 ```xml
 <xsl:for-each select="document('a/data.xml')">
-    <xsl:copy-of select="document('doc.xml', /)"/>
+  <xsl:copy-of select="document('doc.xml', /)" />
 </xsl:for-each>
 ```
 
 Того же самого эффекта можно достичь следующим образом:
 
 ```xml
-<xsl:copy-of select="document('doc.xml', document('a/data.xml'))"/>
+<xsl:copy-of
+  select="document('doc.xml', document('a/data.xml'))"
+/>
 ```
 
 В следующей конструкции за базовый URI опять принимается URI самого преобразования (вернее, его корневого узла):
 
 ```xml
-<xsl:copy-of select="document('doc.xml', document(''))"/>
+<xsl:copy-of select="document('doc.xml', document(''))" />
 ```
 
 Протестируем теперь все это вместе в одном преобразовании.
@@ -129,20 +140,27 @@ URI, которые передаются функции `document`, могут �
 Листинг 8.63. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="/">
-        <xsl:copy-of select="document('doc.xml')"/>
-        <xsl:for-each select="document('a/data.xml')">
-            <xsl:copy-of select="document('doc.xml')"/>
-        </xsl:for-each>
-        <xsl:for-each select="document('a/data.xml')">
-            <xsl:copy-of select="document('doc.xml', /)"/>
-        </xsl:for-each>
-        <xsl:copy-of select="document('doc.xml', document('a/data.xml'))"/>
-        <xsl:for-each select="document('a/data.xml')">
-            <xsl:copy-of select="document('doc.xml', document(''))"/>
-        </xsl:for-each>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="/">
+    <xsl:copy-of select="document('doc.xml')" />
+    <xsl:for-each select="document('a/data.xml')">
+      <xsl:copy-of select="document('doc.xml')" />
+    </xsl:for-each>
+    <xsl:for-each select="document('a/data.xml')">
+      <xsl:copy-of select="document('doc.xml', /)" />
+    </xsl:for-each>
+    <xsl:copy-of
+      select="document('doc.xml', document('a/data.xml'))"
+    />
+    <xsl:for-each select="document('a/data.xml')">
+      <xsl:copy-of
+        select="document('doc.xml', document(''))"
+      />
+    </xsl:for-each>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 

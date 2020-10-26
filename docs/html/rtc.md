@@ -37,7 +37,8 @@ description: Тег rtc (от англ. ruby text container) обозначае�
   <body>
     <p>
       <ruby>
-        <rb>旧</rb><rb>金</rb><rb>山</rb> <rt>jiù</rt><rt>jīn</rt><rt>shān</rt>
+        <rb>旧</rb><rb>金</rb><rb>山</rb> <rt>jiù</rt
+        ><rt>jīn</rt><rt>shān</rt>
         <rtc>Сан-Франциско</rtc>
       </ruby>
     </p>

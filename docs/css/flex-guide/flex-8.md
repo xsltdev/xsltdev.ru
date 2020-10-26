@@ -298,7 +298,7 @@ flex: [flex-grow] [flex-shrink] [flex-basis];
 - [flex-shrink](../flex-shrink.md)
 - [flex-grow](../flex-grow.md)
 
-----
+---
 
 <small markdown="1">
 

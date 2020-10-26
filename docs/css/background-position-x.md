@@ -88,7 +88,8 @@ background-position-x: left;
     <title>background-position-x</title>
     <style>
       .clock {
-        background: url('/example/image/clock-sprite.png') no-repeat;
+        background: url('/example/image/clock-sprite.png')
+          no-repeat;
         width: 128px;
         height: 128px;
       }

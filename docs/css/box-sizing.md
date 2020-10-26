@@ -80,9 +80,12 @@ box-sizing: content-box;
   </head>
   <body>
     <div class="box1">
-      Ширина с учетом значения свойства width, полей и границ.
+      Ширина с учетом значения свойства width, полей и
+      границ.
     </div>
-    <div class="box2">Ширина равна значению свойства width.</div>
+    <div class="box2">
+      Ширина равна значению свойства width.
+    </div>
   </body>
 </html>
 ```

@@ -71,9 +71,9 @@ description: Тег select (от англ. select — выбрать) позво
 **Синтаксис**
 
 ```html
-<select disabled
-  >...</select
->
+<select disabled>
+  ...
+</select>
 ```
 
 **Значения**
@@ -91,9 +91,9 @@ description: Тег select (от англ. select — выбрать) позво
 **Синтаксис**
 
 ```html
-<select form="<идентификатор>"
-  >...</select
->
+<select form="<идентификатор>">
+  ...
+</select>
 ```
 
 **Значения**
@@ -115,9 +115,9 @@ description: Тег select (от англ. select — выбрать) позво
 **Синтаксис**
 
 ```html
-<select multiple
-  >...</select
->
+<select multiple>
+  ...
+</select>
 ```
 
 **Значения**
@@ -135,9 +135,9 @@ description: Тег select (от англ. select — выбрать) позво
 **Синтаксис**
 
 ```html
-<select name="<имя>"
-  >...</select
->
+<select name="<имя>">
+  ...
+</select>
 ```
 
 **Значения**
@@ -155,9 +155,9 @@ description: Тег select (от англ. select — выбрать) позво
 **Синтаксис**
 
 ```html
-<select required
-  >...</select
->
+<select required>
+  ...
+</select>
 ```
 
 **Значения**
@@ -175,9 +175,9 @@ description: Тег select (от англ. select — выбрать) позво
 **Синтаксис**
 
 ```html
-<select size="<число>"
-  >...</select
->
+<select size="<число>">
+  ...
+</select>
 ```
 
 **Значения**
@@ -214,7 +214,9 @@ description: Тег select (от англ. select — выбрать) позво
         <select size="3" multiple name="hero[]">
           <option disabled>Выберите героя</option>
           <option value="Чебурашка">Чебурашка</option>
-          <option selected value="Крокодил Гена">Крокодил Гена</option>
+          <option selected value="Крокодил Гена">
+            Крокодил Гена
+          </option>
           <option value="Шапокляк">Шапокляк</option>
           <option value="Крыса Лариса">Крыса Лариса</option>
         </select>

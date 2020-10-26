@@ -105,19 +105,27 @@ import { getPhotos } from '../actions/PageActions'
 class PageContainer extends React.Component {
   render() {
     const { page, getPhotos } = this.props
-    return <Page photos={page.photos} year={page.year} isFetching={page.isFetching} error={page.error} getPhotos={getPhotos} />
+    return (
+      <Page
+        photos={page.photos}
+        year={page.year}
+        isFetching={page.isFetching}
+        error={page.error}
+        getPhotos={getPhotos}
+      />
+    )
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
-    page: store.page
+    page: store.page,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getPhotos: year => dispatch(getPhotos(year))
+    getPhotos: (year) => dispatch(getPhotos(year)),
   }
 }
 
@@ -142,19 +150,26 @@ import { handleLogin } from '../actions/UserActions'
 class UserContainer extends React.Component {
   render() {
     const { user, handleLogin } = this.props
-    return <User name={user.name} error={user.error} isFetching={user.isFetching} handleLogin={handleLogin} />
+    return (
+      <User
+        name={user.name}
+        error={user.error}
+        isFetching={user.isFetching}
+        handleLogin={handleLogin}
+      />
+    )
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
-    user: store.user
+    user: store.user,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    handleLogin: () => dispatch(handleLogin())
+    handleLogin: () => dispatch(handleLogin()),
   }
 }
 

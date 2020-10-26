@@ -19,16 +19,19 @@ _connection.js_
 ```js
 const mongo = require('mongodb').MongoClient
 
-mongo.connect('mongodb://localhost:27017', (err, client) => {
-  if (err) {
-    console.log('Connection error: ', err)
-    throw err
+mongo.connect(
+  'mongodb://localhost:27017',
+  (err, client) => {
+    if (err) {
+      console.log('Connection error: ', err)
+      throw err
+    }
+
+    console.log('Connected')
+
+    client.close()
   }
-
-  console.log('Connected')
-
-  client.close()
-})
+)
 ```
 
 Подключение осуществляется с помощью метода `connect()` экземпляра `MongoClient`, который принимает URL, по которому доступна MongoDB (по умолчанию `http://127.0.0.1:27017`), и callback-функцию, которой передается два параметра:
@@ -86,23 +89,42 @@ users.drop((err, result) => {
 Теперь создадим в коллекции `users` первую запись.
 
 ```js
-users.insertOne({ id: 1, login: 'login1', name: 'name1', gender: 'male' }, (err, result) => {
-  if (err) {
-    console.log('Unable insert user: ', err)
-    throw err
+users.insertOne(
+  { id: 1, login: 'login1', name: 'name1', gender: 'male' },
+  (err, result) => {
+    if (err) {
+      console.log('Unable insert user: ', err)
+      throw err
+    }
   }
-})
+)
 ```
 
 Чтобы вставить сразу несколько записей имеется метод `insertMany()`.
 
 ```js
-users.insertMany([{ id: 2, login: 'login2', name: 'name2', gender: 'male' }, { id: 3, login: 'login3', name: 'name3', gender: 'female' }], (err, result) => {
-  if (err) {
-    console.log('Unable insert user: ', err)
-    throw err
+users.insertMany(
+  [
+    {
+      id: 2,
+      login: 'login2',
+      name: 'name2',
+      gender: 'male',
+    },
+    {
+      id: 3,
+      login: 'login3',
+      name: 'name3',
+      gender: 'female',
+    },
+  ],
+  (err, result) => {
+    if (err) {
+      console.log('Unable insert user: ', err)
+      throw err
+    }
   }
-})
+)
 ```
 
 ## Получение записи
@@ -145,7 +167,7 @@ users.find(
   {},
   {
     limit: 5,
-    sort: 1
+    sort: 1,
   }
 )
 ```
@@ -164,9 +186,9 @@ users
         from: 'rooms',
         localField: 'room_id',
         foreignField: 'id',
-        as: 'room_details'
-      }
-    }
+        as: 'room_details',
+      },
+    },
   ])
   .toArray((err, res) => {
     if (err) {
@@ -190,12 +212,16 @@ users
 Обновление записи происходит с помощью метода `updateOne()`, который принимает условие для записей, которые необходимо обновить, и объект со свойством `$set`, в значении которого указываются, какие именно поля нужно изменить.
 
 ```js
-users.updateOne({ id: 1 }, { $set: { gender: 'female' } }, (err, result) => {
-  if (err) {
-    console.log('Unable update user: ', err)
-    throw err
+users.updateOne(
+  { id: 1 },
+  { $set: { gender: 'female' } },
+  (err, result) => {
+    if (err) {
+      console.log('Unable update user: ', err)
+      throw err
+    }
   }
-})
+)
 ```
 
 ## Удаление записи

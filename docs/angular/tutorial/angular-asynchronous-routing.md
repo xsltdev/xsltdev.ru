@@ -46,7 +46,10 @@ description: С ростом приложения увеличивается к�
 ```ts
 import { PreloadAllModules } from '@angular/router'
 
-RouterModule.forRoot({}, { preloadingStrategy: PreloadAllModules })
+RouterModule.forRoot(
+  {},
+  { preloadingStrategy: PreloadAllModules }
+)
 ```
 
 Также возможно создание собственной стратегии предзагрузки, которая используется в том случае, когда загрузка всех модулей нецелесообразна по ряду причин, например, медленная работа приложения на мобильных устройствах или когда выясняется, что пользователи чаще всего посещают конкретный набор модулей.
@@ -57,8 +60,12 @@ _custom-preloading-strategy.service.ts_
 
 ```ts
 @Injectable({ providedIn: 'root' })
-export class CustomPreloadingStrategyService implements PreloadingStrategy {
-  preload(route: Route, load: () => Observable<any>): Observable<any> {
+export class CustomPreloadingStrategyService
+  implements PreloadingStrategy {
+  preload(
+    route: Route,
+    load: () => Observable<any>
+  ): Observable<any> {
     let modules: any = ['contacts', 'orders']
 
     if (modules.includes(route.path)) {

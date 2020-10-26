@@ -47,22 +47,41 @@ function-available('rot:X')
 
 ```xml
 <xsl:choose>
-    <xsl:when test="function-available('saxon:X') ">
-        <line x1="{saxon:X($x1, $y1, $alpha) + 100}" y1="{saxon:Y($x1, $y1, $alpha) + 100}" x2="{saxon:X($x2, $y2, $alpha) + 100}" y2="{saxon:Y($x2, $y2, $alpha) + 100}"/>
-    </xsl:when>
-    <xsl:when test="function-available('xalan:X')">
-        <line x1="{xalan:X($x1, $y1, $alpha) + 100}" y1="{xalan:Y($x1, $y1, $alpha) + 100}" x2="{xalan:X($x2, $y2, $alpha) + 100}" y2="{xalan:Y($x2, $y2, $alpha) + 100}"/>
-    </xsl:when>
-    <xsl:when test="function-available('oracle:X')">
-        <line x1="{oracle:X($x1, $y1, $alpha) + 100}" y1="{oracle:Y($x1, $y1, $alpha) + 100}" x2="{oracle:X($x2, $y2, $alpha) + 100}" y2="{oracle:Y($x2, $y2, $alpha) + 100}"/>
-    </xsl:when>
-    <xsl:otherwise>
-        <xsl:message terminate="yes">
-            <xsl:text>Necessary extension function is not available.</xsl:text>
-            <xsl:text> Supported processors are:</xsl:text>
-            <xsl:text> Saxon, Xalan, Oracle XSLT Processor.</xsl:text>
-        </xsl:message>
-    </xsl:otherwise>
+  <xsl:when test="function-available('saxon:X') ">
+    <line
+      x1="{saxon:X($x1, $y1, $alpha) + 100}"
+      y1="{saxon:Y($x1, $y1, $alpha) + 100}"
+      x2="{saxon:X($x2, $y2, $alpha) + 100}"
+      y2="{saxon:Y($x2, $y2, $alpha) + 100}"
+    />
+  </xsl:when>
+  <xsl:when test="function-available('xalan:X')">
+    <line
+      x1="{xalan:X($x1, $y1, $alpha) + 100}"
+      y1="{xalan:Y($x1, $y1, $alpha) + 100}"
+      x2="{xalan:X($x2, $y2, $alpha) + 100}"
+      y2="{xalan:Y($x2, $y2, $alpha) + 100}"
+    />
+  </xsl:when>
+  <xsl:when test="function-available('oracle:X')">
+    <line
+      x1="{oracle:X($x1, $y1, $alpha) + 100}"
+      y1="{oracle:Y($x1, $y1, $alpha) + 100}"
+      x2="{oracle:X($x2, $y2, $alpha) + 100}"
+      y2="{oracle:Y($x2, $y2, $alpha) + 100}"
+    />
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:message terminate="yes">
+      <xsl:text>
+        Necessary extension function is not available.
+      </xsl:text>
+      <xsl:text>Supported processors are:</xsl:text>
+      <xsl:text>
+        Saxon, Xalan, Oracle XSLT Processor.
+      </xsl:text>
+    </xsl:message>
+  </xsl:otherwise>
 </xsl:choose>
 ```
 

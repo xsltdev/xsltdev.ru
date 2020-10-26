@@ -164,12 +164,18 @@
   <body>
     <div class="grid-container">
       <div class="grid-item color1">Grid Item 1</div>
-      <div class="grid-item color2 last-item">Grid Item 2</div>
-      <div class="grid-item color3 last-item">Grid Item 3</div>
+      <div class="grid-item color2 last-item">
+        Grid Item 2
+      </div>
+      <div class="grid-item color3 last-item">
+        Grid Item 3
+      </div>
       <div class="grid-item color4">Grid Item 4</div>
       <div class="grid-item color1">Grid Item 5</div>
       <div class="grid-item color4">Grid Item 6</div>
-      <div class="grid-item color5 first-item">Grid Item 7</div>
+      <div class="grid-item color5 first-item">
+        Grid Item 7
+      </div>
     </div>
   </body>
 </html>

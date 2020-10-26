@@ -63,7 +63,7 @@ if (req.status == 200) {
 ```js
 var req = getXmlHttp()
 req.open('GET', '/xhr/test.html', true)
-req.onreadystatechange = function() {
+req.onreadystatechange = function () {
   if (req.readyState == 4) {
     if (req.status == 200) {
       alert(req.responseText)
@@ -114,7 +114,7 @@ Firefox дает такой доступ, но для обработки зап�
 var xhr = getXmlHttp()
 xhr.open('POST', '/someurl', true)
 
-xhr.onreadystatechange = function() {
+xhr.onreadystatechange = function () {
   if (xhr.readyState != 4) return
 
   clearTimeout(xhrTimeout) // очистить таймаут при наступлении readyState 4
@@ -131,7 +131,7 @@ xhr.onreadystatechange = function() {
 
 xhr.send('a=5&b=4')
 // Таймаут 10 секунд
-var xhrTimeout = setTimeout(function() {
+var xhrTimeout = setTimeout(function () {
   xhr.abort()
   handleError('Timeout')
 }, 10000)
@@ -182,7 +182,10 @@ URL - адрес запроса. Можно использовать не тол
 Устанавливает заголовок name запроса со значением value. Если заголовок с таким name уже есть - он заменяется. Например,
 
 ```js
-req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+req.setRequestHeader(
+  'Content-Type',
+  'application/x-www-form-urlencoded'
+)
 ```
 
 ### getAllResponseHeaders()
@@ -239,7 +242,10 @@ var authorElem = req.responseXML.getElementById('author')
 
 ```html
 <form method="get">
-  <form method="post" enctype="application/x-www-form-urlencoded">
+  <form
+    method="post"
+    enctype="application/x-www-form-urlencoded"
+  >
     <form method="post"></form>
   </form>
 </form>
@@ -331,8 +337,12 @@ req.send(null)
 if (!req.getResponseHeader('Date')) {
   var cached = req
   req = getXmlHttp()
-  var ifModifiedSince = cached.getResponseHeader('Last-Modified')
-  ifModifiedSince = ifModifiedSince ? ifModifiedSince : new Date(0) // January 1, 1970
+  var ifModifiedSince = cached.getResponseHeader(
+    'Last-Modified'
+  )
+  ifModifiedSince = ifModifiedSince
+    ? ifModifiedSince
+    : new Date(0) // January 1, 1970
   req.open('GET', uri, false)
   req.setRequestHeader('If-Modified-Since', ifModifiedSince)
   req.send('')

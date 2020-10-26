@@ -122,7 +122,7 @@ _Код_
 ```ts
 greet({
   greeting: 'привет, мир',
-  duration: 4000
+  duration: 4000,
 })
 ```
 

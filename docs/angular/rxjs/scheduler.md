@@ -20,19 +20,21 @@
 ```ts
 from(['b', 'c', 'd'])
   .pipe(startWith('Queue scheduler', queue))
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 
 from(['b', 'c', 'd'])
   .pipe(startWith('Asap scheduler', asap))
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 
 from(['b', 'c', 'd'])
   .pipe(startWith('Async scheduler', async))
-  .subscribe(vl => console.log(vl))
+  .subscribe((vl) => console.log(vl))
 
 from(['b', 'c', 'd'])
-  .pipe(startWith('Animation frame scheduler', animationFrame))
-  .subscribe(vl => console.log(vl))
+  .pipe(
+    startWith('Animation frame scheduler', animationFrame)
+  )
+  .subscribe((vl) => console.log(vl))
 ```
 
 В качестве второго необязательного параметра большинству операторов можно передать объект RxJS Scheduler, который переопределяет поведение оператора по умолчанию.
@@ -48,7 +50,7 @@ console.log('Before')
 
 of(9)
   .pipe(observeOn(async))
-  .subscribe(vl => console.log('Value is: ', vl))
+  .subscribe((vl) => console.log('Value is: ', vl))
 
 console.log('After')
 ```
@@ -64,7 +66,7 @@ console.log('Before')
 
 of(9)
   .pipe(subscribeOn(async))
-  .subscribe(vl => console.log('Value is: ', vl))
+  .subscribe((vl) => console.log('Value is: ', vl))
 
 console.log('After')
 ```

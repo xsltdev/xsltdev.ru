@@ -62,7 +62,9 @@ interface SquareConfig {
   width?: number
 }
 
-function createSquare(config: SquareConfig): { color: string; area: number } {
+function createSquare(
+  config: SquareConfig
+): { color: string; area: number } {
   let newSquare = { color: 'white', area: 100 }
   if (config.color) {
     newSquare.color = config.color
@@ -87,7 +89,9 @@ interface SquareConfig {
   width?: number
 }
 
-function createSquare(config: SquareConfig): { color: string; area: number } {
+function createSquare(
+  config: SquareConfig
+): { color: string; area: number } {
   let newSquare = { color: 'white', area: 100 }
   if (config.color) {
     // Ошибка: Property 'collor' does not exist on type 'SquareConfig'
@@ -158,7 +162,9 @@ interface SquareConfig {
   width?: number
 }
 
-function createSquare(config: SquareConfig): { color: string; area: number } {
+function createSquare(
+  config: SquareConfig
+): { color: string; area: number } {
   // ...
 }
 
@@ -184,7 +190,10 @@ let mySquare = createSquare({ colour: 'red', width: 100 })
 Самый простой способ — использовать приведение типов:
 
 ```ts
-let mySquare = createSquare({ width: 100, opacity: 0.5 } as SquareConfig)
+let mySquare = createSquare({
+  width: 100,
+  opacity: 0.5,
+} as SquareConfig)
 ```
 
 Если же вы уверены, что объект может иметь дополнительные свойства, которые будут использоваться каким-то особенным способом, то есть способ еще лучше — добавить строковый индекс.
@@ -233,7 +242,7 @@ interface SearchFunc {
 
 ```ts
 let mySearch: SearchFunc
-mySearch = function(source: string, subString: string) {
+mySearch = function (source: string, subString: string) {
   let result = source.search(subString)
   if (result == -1) {
     return false
@@ -248,7 +257,7 @@ mySearch = function(source: string, subString: string) {
 
 ```ts
 let mySearch: SearchFunc
-mySearch = function(src: string, sub: string): boolean {
+mySearch = function (src: string, sub: string): boolean {
   let result = src.search(sub)
   if (result == -1) {
     return false
@@ -265,7 +274,7 @@ mySearch = function(src: string, sub: string): boolean {
 
 ```ts
 let mySearch: SearchFunc
-mySearch = function(src, sub) {
+mySearch = function (src, sub) {
   let result = src.search(sub)
   if (result == -1) {
     return false
@@ -407,7 +416,11 @@ interface ClockInterface {
   tick()
 }
 
-function createClock(ctor: ClockConstructor, hour: number, minute: number): ClockInterface {
+function createClock(
+  ctor: ClockConstructor,
+  hour: number,
+  minute: number
+): ClockInterface {
   return new ctor(hour, minute)
 }
 
@@ -485,9 +498,9 @@ interface Counter {
 }
 
 function getCounter(): Counter {
-  let counter = <Counter>function(start: number) {}
+  let counter = <Counter>function (start: number) {}
   counter.interval = 123
-  counter.reset = function() {}
+  counter.reset = function () {}
   return counter
 }
 

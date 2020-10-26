@@ -27,7 +27,9 @@ imports: [
 
 ```html
 <div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+  <div
+    class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"
+  >
     <router-outlet></router-outlet>
   </div>
 </div>
@@ -38,15 +40,23 @@ imports: [
 Для ссылок роутера есть специальное свойство `routerLink`, которое в отличие от `href` не перезагружает страницу:
 
 ```html
-<li role="presentation" class="active"><a routerLink="/">Home</a></li>
-<li role="presentation"><a routerLink="/servers">Servers</a></li>
-<li role="presentation"><a routerLink="/users">Users</a></li>
+<li role="presentation" class="active">
+  <a routerLink="/">Home</a>
+</li>
+<li role="presentation">
+  <a routerLink="/servers">Servers</a>
+</li>
+<li role="presentation">
+  <a routerLink="/users">Users</a>
+</li>
 ```
 
 или:
 
 ```html
-<li role="presentation"><a [routerLink]="['/users']">Users</a></li>
+<li role="presentation">
+  <a [routerLink]="['/users']">Users</a>
+</li>
 ```
 
 ## Виды ссылок

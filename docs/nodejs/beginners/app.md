@@ -21,7 +21,9 @@ var http = require('http')
 
 http
   .createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write('Hello World')
     response.end()
   })
@@ -112,7 +114,9 @@ var http = require('http')
 
 http
   .createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write('Hello World')
     response.end()
   })
@@ -244,7 +248,9 @@ var http = require('http')
 function start() {
   function onRequest(request, response) {
     console.log('Request received.')
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write('Hello World')
     response.end()
   }
@@ -320,7 +326,9 @@ function start() {
   function onRequest(request, response) {
     var pathname = url.parse(request.url).pathname
     console.log('Request for ' + pathname + ' received.')
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write('Hello World')
     response.end()
   }
@@ -363,7 +371,9 @@ function start(route) {
 
     route(pathname)
 
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write('Hello World')
     response.end()
   }
@@ -487,7 +497,9 @@ function start(route, handle) {
 
     route(handle, pathname)
 
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write('Hello World')
     response.end()
   }
@@ -597,7 +609,9 @@ function start(route, handle) {
     var pathname = url.parse(request.url).pathname
     console.log('Request for ' + pathname + ' received.')
 
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     var content = route(handle, pathname)
     response.write(content)
     response.end()
@@ -785,7 +799,9 @@ function route(handle, pathname, response) {
     handle[pathname](response)
   } else {
     console.log('No request handler found for ' + pathname)
-    response.writeHead(404, { 'Content-Type': 'text/plain' })
+    response.writeHead(404, {
+      'Content-Type': 'text/plain',
+    })
     response.write('404 Not found')
     response.end()
   }
@@ -807,7 +823,9 @@ function start(response) {
   console.log("Request handler 'start' was called.")
 
   exec('ls -lah', function (error, stdout, stderr) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, {
+      'Content-Type': 'text/plain',
+    })
     response.write(stdout)
     response.end()
   })
@@ -838,15 +856,17 @@ var exec = require('child_process').exec
 function start(response) {
   console.log("Request handler 'start' was called.")
 
-  exec('find /', { timeout: 10000, maxBuffer: 20000 * 1024 }, function (
-    error,
-    stdout,
-    stderr
-  ) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.write(stdout)
-    response.end()
-  })
+  exec(
+    'find /',
+    { timeout: 10000, maxBuffer: 20000 * 1024 },
+    function (error, stdout, stderr) {
+      response.writeHead(200, {
+        'Content-Type': 'text/plain',
+      })
+      response.write(stdout)
+      response.end()
+    }
+  )
 }
 
 function upload(response) {
@@ -964,7 +984,9 @@ function start(route, handle) {
 
     request.addListener('data', function (postDataChunk) {
       postData += postDataChunk
-      console.log("Received POST data chunk '" + postDataChunk + "'.")
+      console.log(
+        "Received POST data chunk '" + postDataChunk + "'."
+      )
     })
 
     request.addListener('end', function () {
@@ -994,7 +1016,9 @@ function route(handle, pathname, response, postData) {
     handle[pathname](response, postData)
   } else {
     console.log('No request handler found for ' + pathname)
-    response.writeHead(404, { 'Content-Type': 'text/plain' })
+    response.writeHead(404, {
+      'Content-Type': 'text/plain',
+    })
     response.write('404 Not found')
     response.end()
   }
@@ -1073,7 +1097,10 @@ function start(response, postData) {
 function upload(response, postData) {
   console.log("Request handler 'upload' was called.")
   response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.write("You've sent the text: " + querystring.parse(postData).text)
+  response.write(
+    "You've sent the text: " +
+      querystring.parse(postData).text
+  )
   response.end()
 }
 
@@ -1123,13 +1150,18 @@ var formidable = require('formidable'),
 
 http
   .createServer(function (req, res) {
-    if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
+    if (
+      req.url == '/upload' &&
+      req.method.toLowerCase() == 'post'
+    ) {
       // parse a file upload
       var form = new formidable.IncomingForm()
       form.parse(req, function (err, fields, files) {
         res.writeHead(200, { 'content-type': 'text/plain' })
         res.write('received upload:\n\n')
-        res.end(sys.inspect({ fields: fields, files: files }))
+        res.end(
+          sys.inspect({ fields: fields, files: files })
+        )
       })
       return
     }
@@ -1206,19 +1238,29 @@ function start(response, postData) {
 function upload(response, postData) {
   console.log("Request handler 'upload' was called.")
   response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.write("You've sent the text: " + querystring.parse(postData).text)
+  response.write(
+    "You've sent the text: " +
+      querystring.parse(postData).text
+  )
   response.end()
 }
 
 function show(response, postData) {
   console.log("Request handler 'show' was called.")
-  fs.readFile('/tmp/test.png', 'binary', function (error, file) {
+  fs.readFile('/tmp/test.png', 'binary', function (
+    error,
+    file
+  ) {
     if (error) {
-      response.writeHead(500, { 'Content-Type': 'text/plain' })
+      response.writeHead(500, {
+        'Content-Type': 'text/plain',
+      })
       response.write(error + '\n')
       response.end()
     } else {
-      response.writeHead(200, { 'Content-Type': 'image/png' })
+      response.writeHead(200, {
+        'Content-Type': 'image/png',
+      })
       response.write(file, 'binary')
       response.end()
     }
@@ -1286,19 +1328,29 @@ function start(response, postData) {
 function upload(response, postData) {
   console.log("Request handler 'upload' was called.")
   response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.write("You've sent the text: " + querystring.parse(postData).text)
+  response.write(
+    "You've sent the text: " +
+      querystring.parse(postData).text
+  )
   response.end()
 }
 
 function show(response, postData) {
   console.log("Request handler 'show' was called.")
-  fs.readFile('/tmp/test.png', 'binary', function (error, file) {
+  fs.readFile('/tmp/test.png', 'binary', function (
+    error,
+    file
+  ) {
     if (error) {
-      response.writeHead(500, { 'Content-Type': 'text/plain' })
+      response.writeHead(500, {
+        'Content-Type': 'text/plain',
+      })
       response.write(error + '\n')
       response.end()
     } else {
-      response.writeHead(200, { 'Content-Type': 'image/png' })
+      response.writeHead(200, {
+        'Content-Type': 'image/png',
+      })
       response.write(file, 'binary')
       response.end()
     }
@@ -1397,7 +1449,9 @@ function upload(response, request) {
     console.log('parsing done')
 
     /* Возможна ошибка в Windows: попытка переименования уже существующего файла */
-    fs.rename(files.upload.path, '/tmp/test.png', function (err) {
+    fs.rename(files.upload.path, '/tmp/test.png', function (
+      err
+    ) {
       if (err) {
         fs.unlink('/tmp/test.png')
         fs.rename(files.upload.path, '/tmp/test.png')
@@ -1412,13 +1466,20 @@ function upload(response, request) {
 
 function show(response) {
   console.log("Request handler 'show' was called.")
-  fs.readFile('/tmp/test.png', 'binary', function (error, file) {
+  fs.readFile('/tmp/test.png', 'binary', function (
+    error,
+    file
+  ) {
     if (error) {
-      response.writeHead(500, { 'Content-Type': 'text/plain' })
+      response.writeHead(500, {
+        'Content-Type': 'text/plain',
+      })
       response.write(error + '\n')
       response.end()
     } else {
-      response.writeHead(200, { 'Content-Type': 'image/png' })
+      response.writeHead(200, {
+        'Content-Type': 'image/png',
+      })
       response.write(file, 'binary')
       response.end()
     }

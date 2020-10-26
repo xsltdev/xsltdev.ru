@@ -4,7 +4,9 @@
 
 ```js
 if (result !== expectedResult) {
-  throw new Error(`Expected ${expectedResult}, but got ${result}`)
+  throw new Error(
+    `Expected ${expectedResult}, but got ${result}`
+  )
 }
 ```
 
@@ -15,7 +17,7 @@ if (result !== expectedResult) {
 Функция `assert.equal()` сравнивает два значения. Если они не равны, то генерируется ошибка. Например, возьмем определенную в модуле `operations.js` функцию умножения двух чисел:
 
 ```js
-module.exports.multiply = function(x, y) {
+module.exports.multiply = function (x, y) {
   return x * y
 }
 ```
@@ -26,7 +28,7 @@ module.exports.multiply = function(x, y) {
 var assert = require('assert')
 var operations = require('./operations')
 
-it('should multiply two numbers', function() {
+it('should multiply two numbers', function () {
   var expected = 15
   var result = operations.multiply(3, 5)
   assert.equal(result, expected)
@@ -42,7 +44,7 @@ it('should multiply two numbers', function() {
 В противоположность этой функции функция `assert.notEqual()` генерирует ошибку, если оба значения равны:
 
 ```js
-it('should multiply two numbers', function() {
+it('should multiply two numbers', function () {
   var expected = 15
   var result = operations.multiply(3, 5)
   assert.notEqual(result, expected)

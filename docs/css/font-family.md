@@ -73,13 +73,17 @@ font-family: unset;
         font-family: Geneva, Arial, Helvetica, sans-serif;
       }
       p {
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: Georgia, 'Times New Roman', Times,
+          serif;
       }
     </style>
   </head>
   <body>
     <h1>Танцы</h1>
-    <p>Венгры страстно любят танцевать, особенно ценятся национальные танцы</p>
+    <p>
+      Венгры страстно любят танцевать, особенно ценятся
+      национальные танцы
+    </p>
   </body>
 </html>
 ```

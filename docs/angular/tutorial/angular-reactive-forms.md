@@ -17,7 +17,7 @@ _reactive-form-example.component.ts_
 ```ts
 @Component({
   selector: 'reactive-form-example',
-  templateUrl: './reactive-form-example.component.html'
+  templateUrl: './reactive-form-example.component.html',
 })
 export class ReactiveFormExampleComponent {
   buyTicketForm: FormGroup
@@ -33,8 +33,8 @@ export class ReactiveFormExampleComponent {
 
       passengerContacts: new FormGroup({
         telegram: new FormControl(null),
-        whatsapp: new FormControl(null)
-      })
+        whatsapp: new FormControl(null),
+      }),
     })
   }
 }
@@ -124,7 +124,7 @@ this.loginForm.get('address.city') //поле вложенной группы
 Отслеживание изменений формы осуществляется через подписку на `valueChanges` `Observable`. Функция обработчик принимает параметром значение формы.
 
 ```ts
-this.loginForm.valueChanges.subscribe(v => {
+this.loginForm.valueChanges.subscribe((v) => {
   console.log(v)
 })
 ```
@@ -132,7 +132,7 @@ this.loginForm.valueChanges.subscribe(v => {
 Использовать `valueChanges` можно применительно к отдельному полю.
 
 ```ts
-this.loginForm.get('login').valueChanges.subscribe(v => {
+this.loginForm.get('login').valueChanges.subscribe((v) => {
   console.log(v)
 })
 ```
@@ -140,7 +140,7 @@ this.loginForm.get('login').valueChanges.subscribe(v => {
 Для отслеживания изменения статуса поля или формы в целом "подписывайтесь" на `statusChanges`.
 
 ```ts
-this.loginForm.statusChanges.subscribe(status => {
+this.loginForm.statusChanges.subscribe((status) => {
   console.log(status)
 })
 ```
@@ -169,7 +169,10 @@ this.loginForm.reset({ login: 'default_login' })
 
 ```ts
 this.loginForm.patchValue({ login: 'user123' })
-this.loginForm.setValue({ login: 'user123', password: 'pwd123' })
+this.loginForm.setValue({
+  login: 'user123',
+  password: 'pwd123',
+})
 ```
 
 Если `setValue()` передать "неполную" модель, будет сгенерирована ошибка.
@@ -177,7 +180,10 @@ this.loginForm.setValue({ login: 'user123', password: 'pwd123' })
 Вторым параметром оба метода принимают объект, с помощью которого, например, можно сделать так, чтобы установка значения Angular reactive forms не инициировала событие `valueChanges`.
 
 ```ts
-this.loginForm.patchValue({ login: 'user123' }, { emitEvent: false })
+this.loginForm.patchValue(
+  { login: 'user123' },
+  { emitEvent: false }
+)
 ```
 
 ## FormArray
@@ -191,7 +197,10 @@ this.loginForm.patchValue({ login: 'user123' }, { emitEvent: false })
 ```ts
 userForm: FormGroup = new FormGroup({
   fullName: new FormControl(''),
-  numbers: new FormArray([new FormControl(''), new FormControl('')])
+  numbers: new FormArray([
+    new FormControl(''),
+    new FormControl(''),
+  ]),
 })
 ```
 
@@ -212,13 +221,13 @@ userForm: FormGroup = new FormGroup({
   children: new FormArray([
     new FormGroup({
       fullName: new FormControl(''),
-      age: new FormControl('')
+      age: new FormControl(''),
     }),
     new FormGroup({
       fullName: new FormControl(''),
-      age: new FormControl('')
-    })
-  ])
+      age: new FormControl(''),
+    }),
+  ]),
 })
 ```
 
@@ -250,7 +259,7 @@ userForm: FormGroup = new FormGroup({
 ```ts
 @Component({
   selector: 'reactive-form-example',
-  templateUrl: './reactive-form-example.component.html'
+  templateUrl: './reactive-form-example.component.html',
 })
 export class ReactiveFormExampleComponent {
   buyTicketForm: FormGroup
@@ -262,7 +271,7 @@ export class ReactiveFormExampleComponent {
   private _createForm() {
     this.buyTicketForm = this.fb.group({
       passenger: '',
-      passengerAge: ''
+      passengerAge: '',
     })
   }
 }
@@ -280,8 +289,8 @@ this.buyTicketForm = this.fb.group({
   passengerAge: '',
   passengerContacts: this.fb.group({
     telegram: '',
-    whatsapp: ''
-  })
+    whatsapp: '',
+  }),
 })
 ```
 

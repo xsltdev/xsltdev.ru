@@ -92,11 +92,11 @@ http-server -p 8080 -c-1 dist/<project-name>
 @Injectable()
 export class AppService {
   constructor(sw: SwUpdate) {
-    this.sw.available.subscribe(ev => {
+    this.sw.available.subscribe((ev) => {
       console.log('Current version: ', ev.current)
       console.log('Available version :', ev.available)
     })
-    this.sw.activated.subscribe(ev => {
+    this.sw.activated.subscribe((ev) => {
       console.log('Previous version: ', ev.previous)
       console.log('Current version: ', ev.current)
     })
@@ -137,11 +137,13 @@ export class AppService {
       this.sw.checkForUpdate()
     })
 
-    this.sw.available.subscribe(event => {
-      this.sw.activateUpdate().then(() => document.location.reload())
+    this.sw.available.subscribe((event) => {
+      this.sw
+        .activateUpdate()
+        .then(() => document.location.reload())
     })
 
-    this.sw.activated.subscribe(ev => {
+    this.sw.activated.subscribe((ev) => {
       console.log('Previous version: ', ev.previous)
       console.log('Current version: ', ev.current)
     })
@@ -173,7 +175,12 @@ export class AppService {
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": ["/favicon.ico", "/index.html", "/*.css", "/*.js"]
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
       }
     },
     {

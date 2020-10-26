@@ -64,7 +64,11 @@ npm i @ngrx/router-store --save
 Рассмотрим пример использования `serializer`.
 
 ```ts
-import { Params, RouterStateSnapshot, Data } from '@angular/router'
+import {
+  Params,
+  RouterStateSnapshot,
+  Data,
+} from '@angular/router'
 import { RouterStateSerializer } from '@ngrx/router-store'
 
 export interface AppRouterStateUrl {
@@ -74,7 +78,8 @@ export interface AppRouterStateUrl {
   data: Data
 }
 
-export class AppSerializer implements RouterStateSerializer<AppRouterStateUrl> {
+export class AppSerializer
+  implements RouterStateSerializer<AppRouterStateUrl> {
   serialize(state: RouterStateSnapshot): AppRouterStateUrl {
     let currentRoute = state.root
 
@@ -84,7 +89,7 @@ export class AppSerializer implements RouterStateSerializer<AppRouterStateUrl> {
 
     const {
       url,
-      root: { queryParams }
+      root: { queryParams },
     } = state
     const { params, data } = currentRoute
 
@@ -97,6 +102,6 @@ export class AppSerializer implements RouterStateSerializer<AppRouterStateUrl> {
 
 ```ts
 StoreRouterConnectingModule.forRoot({
-  serializer: CustomSerializer
+  serializer: CustomSerializer,
 })
 ```

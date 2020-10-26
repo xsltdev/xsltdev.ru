@@ -24,7 +24,7 @@ _contacts.component.ts_
   template: `
     <contacts-item [(name)]="contactPerson"></contacts-item>
     <p>{{ contactPerson }}</p>
-  `
+  `,
 })
 export class ContactsComponent {
   contactPerson: string
@@ -40,7 +40,7 @@ _contacts-item.component.ts_
   selector: 'contacts-item',
   template: `
     <button (click)="showContactPerson()">Show</button>
-  `
+  `,
 })
 export class ContactsItemComponent {
   @Input() name: string = 'Unknown'

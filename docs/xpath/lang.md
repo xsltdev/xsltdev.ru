@@ -17,7 +17,10 @@ boolean lang( string )
 Функция `lang` может использоваться для того, чтобы определить языковой контекст контекстного узла. В элементах XML можно использовать атрибут `lang` пространства имен `xml` для определения языка содержимого узла, например;
 
 ```xml
-<text xml:lang="en-gb">Yet no living human being have been ever blessed with seeing...</text>
+<text xml:lang="en-gb">
+  Yet no living human being have been ever blessed with
+  seeing...
+</text>
 ```
 
 Пространство имен, соответствующее префиксу `xml`, не требуется объявлять. Это служебное пространство имен, которое неявно задано во всех XML-документах.

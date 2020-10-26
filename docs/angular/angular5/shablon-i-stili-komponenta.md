@@ -67,6 +67,6 @@ style: [
   h3 {
     color: blue;
   }
-`
+`,
 ]
 ```

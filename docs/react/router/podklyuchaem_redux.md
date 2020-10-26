@@ -65,18 +65,23 @@ _src/actions/UserActions.js_
 ```js
 /* eslint-disable no-unused-vars */
 
-import { LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../constants/User'
+import {
+  LOGIN_REQUEST,
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+} from '../constants/User'
 
 export function login(payload) {
   // TODO
   return {
-    type: LOGIN_REQUEST
+    type: LOGIN_REQUEST,
   }
 }
 
 export function logout() {
   return {
-    type: LOGOUT_SUCCESS
+    type: LOGOUT_SUCCESS,
   }
 }
 
@@ -88,11 +93,20 @@ export function logout() {
 _src/reducers/user.js_
 
 ```js
-import { LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../constants/User'
+import {
+  LOGIN_REQUEST,
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+} from '../constants/User'
 
-const initialState = JSON.parse(window.localStorage.getItem('rr_user')) || {}
+const initialState =
+  JSON.parse(window.localStorage.getItem('rr_user')) || {}
 
-export default function userstate(state = initialState, action) {
+export default function userstate(
+  state = initialState,
+  action
+) {
   switch (action.type) {
     case LOGIN_REQUEST:
       // TODO
@@ -127,7 +141,7 @@ import popup from './popup'
 
 export const rootReducer = combineReducers({
   user,
-  popup
+  popup,
 })
 ```
 
@@ -136,7 +150,11 @@ export const rootReducer = combineReducers({
 _src/sotre/configureStore_
 
 ```js
-import { createStore, applyMiddleware, compose } from 'redux'
+import {
+  createStore,
+  applyMiddleware,
+  compose,
+} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import { rootReducer } from '../reducers'
@@ -150,7 +168,8 @@ export default function configureStore() {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers').rootReducer
+      const nextRootReducer = require('../reducers')
+        .rootReducer
       store.replaceReducer(nextRootReducer)
     })
   }
@@ -172,15 +191,27 @@ import * as UserActions from '../../actions/UserActions'
 export class LoginPage extends Component {
   handleSubmit(e) {
     e.preventDefault()
-    this.props.actions.login({ name: e.target.elements[0].value })
+    this.props.actions.login({
+      name: e.target.elements[0].value,
+    })
   }
   render() {
     return (
       <div className="row">
         <div className="col-md-12">
-          <form className="form-inline" onSubmit={::this.handleSubmit}>
-            <input className="form-control" type="text" placeholder="login" />{' '}
-            <button className="btn btn-primary" type="submit">
+          <form
+            className="form-inline"
+            onSubmit={::this.handleSubmit}
+          >
+            <input
+              className="form-control"
+              type="text"
+              placeholder="login"
+            />{' '}
+            <button
+              className="btn btn-primary"
+              type="submit"
+            >
               Войти
             </button>
           </form>
@@ -196,7 +227,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(UserActions, dispatch)
+    actions: bindActionCreators(UserActions, dispatch),
   }
 }
 

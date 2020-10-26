@@ -80,7 +80,7 @@ context.drawImage(img, sx, sy, swidth, sheight, x, y, width, height);
 JavaScript:
 
 ```js
-window.onload = function() {
+window.onload = function () {
   var c = document.getElementById('myCanvas')
   var ctx = c.getContext('2d')
   var img = document.getElementById('scream')
@@ -99,7 +99,7 @@ window.onload = function() {
 JavaScript:
 
 ```js
-window.onload = function() {
+window.onload = function () {
   var c = document.getElementById('myCanvas')
   var ctx = c.getContext('2d')
   var img = document.getElementById('scream')
@@ -118,7 +118,7 @@ window.onload = function() {
 JavaScript:
 
 ```js
-window.onload = function() {
+window.onload = function () {
   var c = document.getElementById('myCanvas')
   var ctx = c.getContext('2d')
   var img = document.getElementById('scream')
@@ -152,8 +152,8 @@ var i
 
 v.addEventListener(
   'play',
-  function() {
-    i = window.setInterval(function() {
+  function () {
+    i = window.setInterval(function () {
       ctx.drawImage(v, 5, 5, 260, 125)
     }, 20)
   },
@@ -161,14 +161,14 @@ v.addEventListener(
 )
 v.addEventListener(
   'pause',
-  function() {
+  function () {
     window.clearInterval(i)
   },
   false
 )
 v.addEventListener(
   'ended',
-  function() {
+  function () {
     clearInterval(i)
   },
   false

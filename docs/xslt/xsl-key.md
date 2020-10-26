@@ -11,10 +11,7 @@ description: Элемент xsl:key определяет в преобразов
 ## Синтаксис
 
 ```xml
-<xsl:key
-    name = "имя"
-    match = "паттерн"
-    use = "выражение" />
+<xsl:key name="имя" match="паттерн" use="выражение" />
 ```
 
 Атрибуты:
@@ -36,14 +33,14 @@ description: Элемент xsl:key определяет в преобразов
 
 ```xml
 <items>
-    <item source="a" name="A"/>
-    <item source="b" name="B"/>
-    <item source="a" name="C"/>
-    <item source="c" name="D"/>
-    <item source="b" name="E"/>
-    <item source="b" name="F"/>
-    <item source="c" name="G"/>
-    <item source="a" name="H"/>
+  <item source="a" name="A" />
+  <item source="b" name="B" />
+  <item source="a" name="C" />
+  <item source="c" name="D" />
+  <item source="b" name="E" />
+  <item source="b" name="F" />
+  <item source="c" name="G" />
+  <item source="a" name="H" />
 </items>
 ```
 
@@ -53,20 +50,20 @@ description: Элемент xsl:key определяет в преобразов
 
 ```xml
 <sources>
-    <source name="a">
-        <item source="a" name="A"/>
-        <item source="a" name="C"/>
-        <item source="a" name="H"/>
-    </source>
-    <source name="b">
-        <item source="b" name="B"/>
-        <item source="b" name="E"/>
-        <item source="b" name="F"/>
-    </source>
-    <source name="c">
-        <item source="c" name="D"/>
-        <item source="c" name="G"/>
-    </source>
+  <source name="a">
+    <item source="a" name="A" />
+    <item source="a" name="C" />
+    <item source="a" name="H" />
+  </source>
+  <source name="b">
+    <item source="b" name="B" />
+    <item source="b" name="E" />
+    <item source="b" name="F" />
+  </source>
+  <source name="c">
+    <item source="c" name="D" />
+    <item source="c" name="G" />
+  </source>
 </sources>
 ```
 
@@ -86,9 +83,11 @@ description: Элемент xsl:key определяет в преобразов
 
 ```xml
 <xsl:template match="item">
-    <source name="{@source}">
-        <xsl:copy-of select="/items/item[@source=current()/@source]"/>
-    </source>
+  <source name="{@source}">
+    <xsl:copy-of
+      select="/items/item[@source=current()/@source]"
+    />
+  </source>
 </xsl:template>
 ```
 
@@ -105,22 +104,29 @@ preceding-sibling::item[@source=current()/@source]
 Листинг 8.21. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="items">
-        <sources>
-            <xsl:apply-templates/>
-        </sources>
-    </xsl:template>
-    <xsl:template match="item">
-        <xsl:choose>
-            <xsl:when test="preceding-sibling::item[@source=current()/@source]"/>
-            <xsl:otherwise>
-                <source name="{@source}">
-                    <xsl:copy-of select="self::node() | following-sibling::item[@source=current()/@source]"/>
-                </source>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:template match="items">
+    <sources>
+      <xsl:apply-templates />
+    </sources>
+  </xsl:template>
+  <xsl:template match="item">
+    <xsl:choose>
+      <xsl:when
+        test="preceding-sibling::item[@source=current()/@source]"
+      />
+      <xsl:otherwise>
+        <source name="{@source}">
+          <xsl:copy-of
+            select="self::node() | following-sibling::item[@source=current()/@source]"
+          />
+        </source>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -163,7 +169,7 @@ preceding-sibling::item[@source=current()/@source]
 В нашем примере элементы `item` идентифицируются значениями своих атрибутов `source`. Для их идентификации мы можем определить ключ с именем `src` следующим образом:
 
 ```xml
-<xsl:key name="src" match="item" use="@source"/>
+<xsl:key name="src" match="item" use="@source" />
 ```
 
 Следуя строгому определению, данному в спецификации языка, ключом называется тройка вида `(node, name, value)`, где `node` — узел, `name` — имя и `value` — строковое значение ключа. Тогда элементы `xsl:key`, включенные в преобразование, определяют множество всевозможных ключей обрабатываемого документа. Если этому множеству принадлежит ключ, состоящий из узла `x`, имени `y` и значения `z`, говорят, что узел `x` имеет ключ с именем `y` и значением `z` или что ключ `y` узла `x` равен `z`.
@@ -184,13 +190,13 @@ preceding-sibling::item[@source=current()/@source]
 В соответствии с нашими определениями мы можем сказать, что элемент
 
 ```xml
-<item source="b" name="B"/>
+<item source="b" name="B" />
 ```
 
 имеет ключ с именем "`src`" и значением "`b`" или что ключ "`src`" элемента
 
 ```xml
-<item source="a" name="H"/>
+<item source="a" name="H" />
 ```
 
 равен "`a`".
@@ -220,13 +226,13 @@ node-set key(string, object)
 Не представляет особой сложности определение множества ключей в случае, если в определении они идентифицируются строковыми выражениями. Например, в следующем определении
 
 ```xml
-<xsl:key name="src" match="item" use="string(@source)"/>
+<xsl:key name="src" match="item" use="string(@source)" />
 ```
 
 атрибут `use` показывает, что значением ключа `src` элемента `item` будет значение атрибута `source`. Но что можно сказать о следующем определении:
 
 ```xml
-<xsl:key name="src" match="item" use="@*"/>
+<xsl:key name="src" match="item" use="@*" />
 ```
 
 Очевидно, это уже гораздо более сложный, но, тем не менее, вполне реальный случай, не вписывающийся в определения, которые давались до сих пор. Мы говорили лишь о том, что множество ключей определяется элементами `xsl:key` преобразования, но как именно оно определяется — оставалось доселе загадкой. Восполним этот пробел, дав строгое определение множеству ключей.
@@ -251,7 +257,7 @@ node-set key(string, object)
 Найдем множество ключей, создаваемое определением
 
 ```xml
-<xsl:key name="src" match="item" use="@*"/>
+<xsl:key name="src" match="item" use="@*" />
 ```
 
 Имена всех ключей будут одинаковы и равны "`src`". Множество `x` узлов, удовлетворяющих паттерну `item`, будет содержать все элементы `item` обрабатываемого документа. Значением выражения, заданного в атрибуте `use`, будет множество всех узлов атрибутов каждого из элементов `item`. Таким образом, множество узлов будет иметь следующий вид:
@@ -304,7 +310,12 @@ node-set key(string, object)
 Имя ключа является расширенным именем. Оно может иметь объявленный префикс пространства имен, например
 
 ```xml
-<xsl:key name="data:src" match="item" use="@source" xmlns:data="urn:user-data"/>
+<xsl:key
+  name="data:src"
+  match="item"
+  use="@source"
+  xmlns:data="urn:user-data"
+/>
 ```
 
 В этом случае функция `key(key-name, key-value)` будет возвращать узлы, значение ключа с расширенным именем `key-name` которых равно `key-value`. Совпадение расширенных имен определяется как обычно — по совпадению локальных частей и `URI` пространств имен.
@@ -328,15 +339,15 @@ node-set key(string, object)
 
 ```xml
 <items>
-    <item source="a" name="A"/>
-    <item source="b" name="B"/>
-    <item source="a" name="C"/>
-    <item source="c" name="D"/>
-    ...
-    <item source="a" name="H"/>
-    <item name="I"/>
-    <item name="J"/>
-    <item name="K"/>
+  <item source="a" name="A" />
+  <item source="b" name="B" />
+  <item source="a" name="C" />
+  <item source="c" name="D" />
+  ...
+  <item source="a" name="H" />
+  <item name="I" />
+  <item name="J" />
+  <item name="K" />
 </items>
 ```
 
@@ -359,7 +370,11 @@ node-set key(string, object)
 То, что одни и те же узлы могут иметь разные значения одного ключа, является также очень удобным свойством. Например, два определения ключей, приведенные выше, можно дополнить третьим:
 
 ```xml
-<xsl:key name="src" match="item[not(@source)]" use="'#default'"/>
+<xsl:key
+  name="src"
+  match="item[not(@source)]"
+  use="'#default'"
+/>
 ```
 
 Это определение позволит по значению "`#default`" обращаться к объектам, принадлежащим источнику по умолчанию.
@@ -374,8 +389,8 @@ node-set key(string, object)
 
 ```xml
 <sources>
-    <source name="a"/>
-    <source name="c"/>
+  <source name="a" />
+  <source name="c" />
 </sources>
 ```
 
@@ -393,7 +408,7 @@ key('src', sources/source/@name)
 
 ```xml
 <xsl:for-each select="document('а.xml')">
-    <!-- Теперь текущим документом стал документ а.xml -->
+  <!-- Теперь текущим документом стал документ а.xml -->
 </xsl:for-each>
 ```
 
@@ -404,17 +419,17 @@ key('src', sources/source/@name)
 Листинг 8.22. Входящий документ
 
 ```xml
-<source name="a"/>
+<source name="a" />
 ```
 
 Листинг 8.23. Документ a.xml
 
 ```xml
 <items>
-    <item source="a" name="A"/>
-    <item source="b" name="B"/>
-    <item source="a" name="C"/>
-    <item source="c" name="D"/>
+  <item source="a" name="A" />
+  <item source="b" name="B" />
+  <item source="a" name="C" />
+  <item source="c" name="D" />
 </items>
 ```
 
@@ -422,26 +437,31 @@ key('src', sources/source/@name)
 
 ```xml
 <items>
-    <item source="b" name="E"/>
-    <item source="b" name="F"/>
-    <item source="c" name="G"/>
-    <item source="a" name="H"/>
+  <item source="b" name="E" />
+  <item source="b" name="F" />
+  <item source="c" name="G" />
+  <item source="a" name="H" />
 </items>
 ```
 
 Листинг 8.25. Преобразование
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:key name="src" match="item" use="@source"/>
-    <xsl:template match="source">
-        <xsl:variable name="name" select="@name"/>
-        <xsl:copy>
-            <xsl:for-each select="document('a.xml')|document('b.xml')">
-                <xsl:copy-of select="key('src', $name)"/>
-            </xsl:for-each>
-        </xsl:copy>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:key name="src" match="item" use="@source" />
+  <xsl:template match="source">
+    <xsl:variable name="name" select="@name" />
+    <xsl:copy>
+      <xsl:for-each
+        select="document('a.xml')|document('b.xml')"
+      >
+        <xsl:copy-of select="key('src', $name)" />
+      </xsl:for-each>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -449,9 +469,9 @@ key('src', sources/source/@name)
 
 ```xml
 <source>
-    <item source="a" name="A"/>
-    <item source="a" name="C"/>
-    <item source="a" name="H"/>
+  <item source="a" name="A" />
+  <item source="a" name="C" />
+  <item source="a" name="H" />
 </source>
 ```
 
@@ -477,23 +497,23 @@ key('src', sources/source/@name)
 
 ```xml
 <items>
-    <item source="a" name="A"/>
-    <item source="b" name="B"/>
-    <item source="b" name="E"/>
-    <item source="b" name="F"/>
-    <item source="a" name="C"/>
-    <item source="c" name="G"/>
-    <item source="a" name="H"/>
-    <item source="a" name="B"/>
-    <item source="b" name="G"/>
-    <item source="c" name="H"/>
-    <item source="c" name="C"/>
-    <item source="c" name="D"/>
-    <item source="b" name="A"/>
-    <item source="a" name="B"/>
-    <item source="c" name="D"/>
-    <item source="c" name="E"/>
-    <item source="a" name="F"/>
+  <item source="a" name="A" />
+  <item source="b" name="B" />
+  <item source="b" name="E" />
+  <item source="b" name="F" />
+  <item source="a" name="C" />
+  <item source="c" name="G" />
+  <item source="a" name="H" />
+  <item source="a" name="B" />
+  <item source="b" name="G" />
+  <item source="c" name="H" />
+  <item source="c" name="C" />
+  <item source="c" name="D" />
+  <item source="b" name="A" />
+  <item source="a" name="B" />
+  <item source="c" name="D" />
+  <item source="c" name="E" />
+  <item source="a" name="F" />
 </items>
 ```
 
@@ -502,23 +522,38 @@ key('src', sources/source/@name)
 Листинг 8.28. Входящий документ
 
 ```xml
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:key name="src" match="item" use="concat(@source,'-')"/>
-    <xsl:key name="src" match="item" use="concat('-', @name)"/>
-    <xsl:key name="src" match="item" use="concat(@source, '-', @name)"/>
-    <xsl:template match="/">
-        <result>
-            <items source="a" name="B">
-                <xsl:copy-of select="key('src', 'a-B')"/>
-            </items>
-            <items name="B">
-                <xsl:copy-of select="key('src', '-B')"/>
-            </items>
-            <items source="a">
-                <xsl:copy-of select="key('src', 'a-')"/>
-            </items>
-        </result>
-    </xsl:template>
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <xsl:key
+    name="src"
+    match="item"
+    use="concat(@source,'-')"
+  />
+  <xsl:key
+    name="src"
+    match="item"
+    use="concat('-', @name)"
+  />
+  <xsl:key
+    name="src"
+    match="item"
+    use="concat(@source, '-', @name)"
+  />
+  <xsl:template match="/">
+    <result>
+      <items source="a" name="B">
+        <xsl:copy-of select="key('src', 'a-B')" />
+      </items>
+      <items name="B">
+        <xsl:copy-of select="key('src', '-B')" />
+      </items>
+      <items source="a">
+        <xsl:copy-of select="key('src', 'a-')" />
+      </items>
+    </result>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -526,23 +561,23 @@ key('src', sources/source/@name)
 
 ```xml
 <result>
-    <items source="a" name="B">
-        <item source="a" name="B"/>
-        <item source="a" name="B"/>
-    </items>
-    <items name="B">
-        <item source="b" name="B"/>
-        <item source="a" name="B"/>
-        <item source="a" name="B"/>
-    </items>
-    <items source="a">
-        <item source="a" name="A"/>
-        <item source="a" name="C"/>
-        <item source="a" name="H"/>
-        <item source="a" name="B"/>
-        <item source="a" name="B"/>
-        <item source="a" name="F"/>
-    </items>
+  <items source="a" name="B">
+    <item source="a" name="B" />
+    <item source="a" name="B" />
+  </items>
+  <items name="B">
+    <item source="b" name="B" />
+    <item source="a" name="B" />
+    <item source="a" name="B" />
+  </items>
+  <items source="a">
+    <item source="a" name="A" />
+    <item source="a" name="C" />
+    <item source="a" name="H" />
+    <item source="a" name="B" />
+    <item source="a" name="B" />
+    <item source="a" name="F" />
+  </items>
 </result>
 ```
 
@@ -567,7 +602,7 @@ key('src', sources/source/@name)
 
 ```xml
 <xsl:template match="key('src', 'a')">
-    <!-- Содержимое шаблона -->
+  <!-- Содержимое шаблона -->
 </xsl:template>
 ```
 
