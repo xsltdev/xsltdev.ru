@@ -6,13 +6,17 @@ description: Справочник свойств CSS с примерами ко�
 # ![CSS](../css.svg){: style="height:32px;width:32px;vertical-align:middle;"} Справочник CSS
 
 <div class="col2" markdown="1">
+
 [Руководство LESS](less-guide/index.md)
 : Эта книга поможет вам разобраться со всеми возможностями, которые предоставляет этот замечательный CSS-препроцессор.<br /><small>Источник: [Путеводитель для новичков по CSS-препроцессору Less](https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/content/)</small>
+
 </div>
 
 <div class="col2" markdown="1">
+
 [Учебник LESS](less-book/index.md)
 : LESS — это динамический метаязык на основе каскадных таблиц стилей, предназначенный для упрощения, масштабирования и поддержки большого объёма CSS кода.<br /><small>Источник: [Учебник LESS](https://basicweb.ru/css/less_vvedenie.php)</small>
+
 </div>
 
 Справочник свойств CSS с примерами кода.
@@ -20,10 +24,13 @@ description: Справочник свойств CSS с примерами ко�
 ## @-правила и модификаторы
 
 <div class="col3" markdown="1">
+
 - [!important](important.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [@charset](charset.md)
 - [@import](import.md)
 - [@namespace](namespace.md)
@@ -36,11 +43,13 @@ description: Справочник свойств CSS с примерами ко�
 - [@viewport](viewport.md)
 - [@counter-style](counter-style.md)
 - [@font-feature-values](font-feature-values.md)
+
 </div>
 
 ## Псевдоклассы
 
 <div class="col3" markdown="1">
+
 - [:active](active.md)
 - [:any-link](any-link.md)
 - [:blank](blank.md)
@@ -100,11 +109,13 @@ description: Справочник свойств CSS с примерами ко�
 - [:valid](valid.md)
 - [:visited](visited.md)
 - [:where()](where.md)
+
 </div>
 
 ## Псевдоэлементы
 
 <div class="col3" markdown="1">
+
 - [::after](after.md)
 - [::backdrop](backdrop.md)
 - [::before](before.md)
@@ -118,6 +129,7 @@ description: Справочник свойств CSS с примерами ко�
 - [::selection](selection.md)
 - `::slotted()`
 - `::spelling-error`
+
 </div>
 
 ## Grid
@@ -125,6 +137,7 @@ description: Справочник свойств CSS с примерами ко�
 **Руководство по [Grid Layout](grid-guide/grid-1.md)**
 
 <div class="col3" markdown="1">
+
 - [grid](grid.md)
 - [grid-area](grid-area.md)
 - [grid-auto-columns](grid-auto-columns.md)
@@ -143,6 +156,7 @@ description: Справочник свойств CSS с примерами ко�
 - [grid-template-areas](grid-template-areas.md)
 - [grid-template-columns](grid-template-columns.md)
 - [grid-template-rows](grid-template-rows.md)
+
 </div>
 
 ## Flex
@@ -150,6 +164,7 @@ description: Справочник свойств CSS с примерами ко�
 **Руководство по [Flexbox](flex-guide/flex-1.md)**
 
 <div class="col3" markdown="1">
+
 - [flex](flex.md)
 - [flex-basis](flex-basis.md)
 - [flex-direction](flex-direction.md)
@@ -158,11 +173,13 @@ description: Справочник свойств CSS с примерами ко�
 - [flex-shrink](flex-shrink.md)
 - [flex-wrap](flex-wrap.md)
 - [order](order.md)
+
 </div>
 
 ## Выравнивание
 
 <div class="col3" markdown="1">
+
 - [justify-content](justify-content.md)
 - [align-content](align-content.md)
 - [place-content](place-content.md)
@@ -175,11 +192,13 @@ description: Справочник свойств CSS с примерами ко�
 - [row-gap](row-gap.md)
 - [column-gap](column-gap.md)
 - [gap](gap.md)
+
 </div>
 
 ## Позиционирование
 
 <div class="col3" markdown="1">
+
 - [bottom](bottom.md)
 - [clear](clear.md)
 - [display](display.md)
@@ -189,46 +208,56 @@ description: Справочник свойств CSS с примерами ко�
 - [right](right.md)
 - [top](top.md)
 - [z-index](z-index.md)
+
 </div>
 
 ## Блоки
 
 <div class="col3" markdown="1">
+
 - [height](height.md)
 - [width](width.md)
 - [max-height](max-height.md)
 - [max-width](max-width.md)
 - [min-height](min-height.md)
 - [min-width](min-width.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [margin](margin.md)
 - [margin-bottom](margin-bottom.md)
 - [margin-left](margin-left.md)
 - [margin-right](margin-right.md)
 - [margin-top](margin-top.md)
 - [margin-trim](margin-trim.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [padding](padding.md)
 - [padding-bottom](padding-bottom.md)
 - [padding-left](padding-left.md)
 - [padding-right](padding-right.md)
 - [padding-top](padding-top.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [overflow](overflow.md)
 - [overflow-x](overflow-x.md)
 - [overflow-y](overflow-y.md)
 - [visibility](visibility.md)
+
 </div>
 
 ## Фон и границы
 
 <div class="col3" markdown="1">
+
 - [background](background.md)
 - [background-attachment](background-attachment.md)
 - [background-clip](background-clip.md)
@@ -240,9 +269,11 @@ description: Справочник свойств CSS с примерами ко�
 - [background-position-y](background-position-y.md)
 - [background-repeat](background-repeat.md)
 - [background-size](background-size.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [border](border.md)
 - [border-bottom](border-bottom.md)
 - [border-bottom-color](border-bottom-color.md)
@@ -276,11 +307,13 @@ description: Справочник свойств CSS с примерами ко�
 - [border-top-width](border-top-width.md)
 - [border-width](border-width.md)
 - [box-shadow](box-shadow.md)
+
 </div>
 
 ## Интерфейс
 
 <div class="col3" markdown="1">
+
 - [appearance](appearance.md)
 - [box-sizing](box-sizing.md)
 - [caret-color](caret-color.md)
@@ -293,15 +326,19 @@ description: Справочник свойств CSS с примерами ко�
 - [resize](resize.md)
 - [text-overflow](text-overflow.md)
 - [user-select](user-select.md)
+
 </div>
 
 ## Переходы и Анимации
 
 <div class="col3" markdown="1">
+
 - [@keyframes](keyframes.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [animation](animation.md)
 - [animation-delay](animation-delay.md)
 - [animation-direction](animation-direction.md)
@@ -311,19 +348,23 @@ description: Справочник свойств CSS с примерами ко�
 - [animation-name](animation-name.md)
 - [animation-play-state](animation-play-state.md)
 - [animation-timing-function](animation-timing-function.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [transition](transition.md)
 - [transition-delay](transition-delay.md)
 - [transition-duration](transition-duration.md)
 - [transition-property](transition-property.md)
 - [transition-timing-function](transition-timing-function.md)
+
 </div>
 
 ## Трансформации
 
 <div class="col3" markdown="1">
+
 - [backface-visibility](backface-visibility.md)
 - [perspective](perspective.md)
 - [perspective-origin](perspective-origin.md)
@@ -331,11 +372,13 @@ description: Справочник свойств CSS с примерами ко�
 - [transform-box](transform-box.md)
 - [transform-origin](transform-origin.md)
 - [transform-style](transform-style.md)
+
 </div>
 
 ## Текст
 
 <div class="col3" markdown="1">
+
 - [hanging-punctuation](hanging-punctuation.md)
 - [hyphens](hyphens.md)
 - [letter-spacing](letter-spacing.md)
@@ -352,9 +395,11 @@ description: Справочник свойств CSS с примерами ко�
 - [white-space](white-space.md)
 - [word-break](word-break.md)
 - [word-spacing](word-spacing.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [letter-spacing](letter-spacing.md)
 - [text-decoration](text-decoration.md)
 - `text-decoration-color`
@@ -374,15 +419,19 @@ description: Справочник свойств CSS с примерами ко�
 - [text-transform](text-transform.md)
 - [white-space](white-space.md)
 - [word-spacing](word-spacing.md)
+
 </div>
 
 ## Шрифт и Цвет
 
 <div class="col3" markdown="1">
+
 - [@font-face](font-face.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [font](font.md)
 - [font-family](font-family.md)
 - [font-feature-settings](font-feature-settings.md)
@@ -404,36 +453,44 @@ description: Справочник свойств CSS с примерами ко�
 - `font-variation-settings`
 - [font-weight](font-weight.md)
 - [line-height](line-height.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [color](color.md)
 - [color-adjust](color-adjust.md)
 - [opacity](opacity.md)
+
 </div>
 
 ## Режимы письма
 
 <div class="col3" markdown="1">
+
 - [direction](direction.md)
 - `glyph-orientation-horizontal`
 - `text-combine-upright`
 - `text-orientation`
 - [unicode-bidi](unicode-bidi.md)
 - `writing-mode`
+
 </div>
 
 ## Изображения, фильтры, композиция
 
 <div class="col3" markdown="1">
+
 - `image-orientation`
 - [image-rendering](image-rendering.md)
 - `image-resolution`
 - [object-fit](object-fit.md)
 - `object-position`
+
 </div>
 
 <div class="col3" markdown="1">
+
 - `linear-gradient()`
 - `radial-gradient()`
 - `repeating-linear-gradient()`
@@ -444,28 +501,35 @@ description: Справочник свойств CSS с примерами ко�
 - `element()`
 - `image()`
 - `cross-fade()`
+
 </div>
 
 <div class="col3" markdown="1">
+
 - `backdrop-filter`
 - [filter](filter.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [background-blend-mode](background-blend-mode.md)
 - [isolation](isolation.md)
 - [mix-blend-mode](mix-blend-mode.md)
+
 </div>
 
 ## Списки, счетчики, генерируемый контент
 
 <div class="col3" markdown="1">
+
 - [counter-increment](counter-increment.md)
 - [counter-reset](counter-reset.md)
 - [list-style-image](list-style-image.md)
 - [list-style-type](list-style-type.md)
 - [list-style-position](list-style-position.md)
 - [list-style](list-style.md)
+
 </div>
 
 <!--
@@ -484,13 +548,16 @@ description: Справочник свойств CSS с примерами ко�
 -->
 
 <div class="col3" markdown="1">
+
 - [content](content.md)
 - [quotes](quotes.md)
+
 </div>
 
 ## Колонки и таблицы
 
 <div class="col3" markdown="1">
+
 - [column-count](column-count.md)
 - [column-fill](column-fill.md)
 - [column-gap](column-gap.md)
@@ -501,23 +568,28 @@ description: Справочник свойств CSS с примерами ко�
 - [column-span](column-span.md)
 - [column-width](column-width.md)
 - [columns](columns.md)
+
 </div>
 
 <div class="col3" markdown="1">
+
 - [border-collapse](border-collapse.md)
 - [border-spacing](border-spacing.md)
 - [caption-side](caption-side.md)
 - [empty-cells](empty-cells.md)
 - [table-layout](table-layout.md)
 - [vertical-align](vertical-align.md)
+
 </div>
 
 ## Страницы
 
 <div class="col3" markdown="1">
+
 - [page-break-after](page-break-after.md)
 - [page-break-before](page-break-before.md)
 - [page-break-inside](page-break-inside.md)
+
 </div>
 
 <!--
@@ -536,6 +608,7 @@ description: Справочник свойств CSS с примерами ко�
 ## Маски и фигуры
 
 <div class="col3" markdown="1">
+
 - [clip-path](clip-path.md)
 - `clip-rule`
 - [mask](mask.md)
@@ -555,31 +628,38 @@ description: Справочник свойств CSS с примерами ко�
 - `mask-repeat`
 - `mask-size`
 - `mask-type`
+
 </div>
 
 <div class="col3" markdown="1">
+
 - `shape-image-threshold`
 - `shape-margin`
 - `shape-outside`
+
 </div>
 
 ## Фрагментация
 
 <div class="col3" markdown="1">
+
 - `box-decoration-break`
 - `break-after`
 - `break-before`
 - `break-inside`
 - [orphans](orphans.md)
 - [widows](widows.md)
+
 </div>
 
 ## Pointer Events
 
 <div class="col3" markdown="1">
+
 - [pointer-events](pointer-events.md)
 - `touch-action`
 - `scroll-behavior`
+
 </div>
 
 ---
@@ -587,12 +667,14 @@ description: Справочник свойств CSS с примерами ко�
 ## Логические свойства и значения
 
 <div class="col3" markdown="1">
+
 - [block-size](block-size.md)
 - [inline-size](inline-size.md)
 - [max-block-size](max-block-size.md)
 - `max-inline-size`
 - `min-block-size`
 - `min-inline-size`
+
 </div>
 
 <!--
