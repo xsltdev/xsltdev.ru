@@ -208,4 +208,4 @@ sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)"
 
 ## Ссылки
 
-- [`<source>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/source) на MDN
+- Тег [`<source>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/source) <sup><small>MDN (рус.)</small></sup>

@@ -79,4 +79,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [arcTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/arcTo) на MDN
+- [arcTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/arcTo) <sup><small>MDN (рус.)</small></sup>

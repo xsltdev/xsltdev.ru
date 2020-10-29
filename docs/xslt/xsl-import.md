@@ -114,5 +114,5 @@ description: Импорт преобразований, который обес�
 
 ## Ссылки
 
-- [`xsl:import`](https://developer.mozilla.org/en/XSLT/import) на MDN
-- [`xsl:import`](https://msdn.microsoft.com/en-us/library/ms256126.aspx) на MSDN
+- [`xsl:import`](https://developer.mozilla.org/en/XSLT/import) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:import`](https://msdn.microsoft.com/en-us/library/ms256126.aspx) <sup><small>MSDN (en)</small></sup>

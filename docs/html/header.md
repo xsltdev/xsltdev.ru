@@ -47,4 +47,4 @@ description: Тег header (от англ. header - заголовок) зада
 
 ## Ссылки
 
-- [`<header>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/header) на MDN
+- Тег [`<header>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/header) <sup><small>MDN (рус.)</small></sup>

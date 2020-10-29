@@ -46,4 +46,4 @@ text-rendering: unset;
 
 ## Ссылки
 
-- [text-rendering](https://developer.mozilla.org/ru/docs/Web/CSS/text-rendering) на MDN
+- [text-rendering](https://developer.mozilla.org/ru/docs/Web/CSS/text-rendering) <sup><small>MDN (рус.)</small></sup>

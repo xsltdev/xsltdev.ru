@@ -59,4 +59,4 @@ description: Тег u (от англ. underline — подчеркнутый) и
 
 ## Ссылки
 
-- [`<u>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/u) на MDN
+- Тег [`<u>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/u) <sup><small>MDN (рус.)</small></sup>

@@ -54,4 +54,4 @@ description: Тег ruby предназначен для добавления н
 
 ## Ссылки
 
-- [`<ruby>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ruby) на MDN
+- Тег [`<ruby>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ruby) <sup><small>MDN (рус.)</small></sup>

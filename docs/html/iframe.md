@@ -293,4 +293,4 @@ HTML-код содержимого, включая необходимые тег
 
 ## Ссылки
 
-- [`<iframe>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/iframe) на MDN
+- Тег [`<iframe>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/iframe) <sup><small>MDN (рус.)</small></sup>

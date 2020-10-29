@@ -99,4 +99,4 @@ ctx.fillText('textAlign=right', 150, 140)
 
 ## Ссылки
 
-- [textAlign](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textAlign) на MDN
+- [textAlign](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textAlign) <sup><small>MDN (рус.)</small></sup>

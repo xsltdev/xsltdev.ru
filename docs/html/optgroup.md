@@ -107,4 +107,4 @@ description: Тег optgroup (от англ. option group — группа па�
 
 ## Ссылки
 
-- [`<optgroup>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/optgroup) на MDN
+- Тег [`<optgroup>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/optgroup) <sup><small>MDN (рус.)</small></sup>

@@ -78,4 +78,4 @@ description: Тег dt (от англ. definition term - определение 
 
 ## Ссылки
 
-- [`<dt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dt) на MDN
+- Тег [`<dt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dt) <sup><small>MDN (рус.)</small></sup>

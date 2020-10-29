@@ -102,5 +102,5 @@ description: Корневым элементом XSLT-документа все�
 
 ## Ссылки
 
-- [`xsl:transform`](https://developer.mozilla.org/en/XSLT/transform) на MDN
-- [`xsl:transform`](https://msdn.microsoft.com/en-us/library/ms256040.aspx) на MSDN
+- [`xsl:transform`](https://developer.mozilla.org/en/XSLT/transform) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:transform`](https://msdn.microsoft.com/en-us/library/ms256040.aspx) <sup><small>MSDN (en)</small></sup>

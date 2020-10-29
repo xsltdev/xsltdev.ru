@@ -84,4 +84,4 @@ input:required {
 
 ## Ссылки
 
-- [:required](https://developer.mozilla.org/ru/docs/Web/CSS/:required) на MDN
+- [:required](https://developer.mozilla.org/ru/docs/Web/CSS/:required) <sup><small>MDN (рус.)</small></sup>

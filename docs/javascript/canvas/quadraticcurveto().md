@@ -75,4 +75,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [quadraticCurveTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo) на MDN
+- [quadraticCurveTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo) <sup><small>MDN (рус.)</small></sup>

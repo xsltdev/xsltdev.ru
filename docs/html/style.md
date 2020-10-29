@@ -128,4 +128,4 @@ description: Тег style (от англ. style — стиль) применяе
 
 ## Ссылки
 
-- [`<style>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/style) на MDN
+- Тег [`<style>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/style) <sup><small>MDN (рус.)</small></sup>

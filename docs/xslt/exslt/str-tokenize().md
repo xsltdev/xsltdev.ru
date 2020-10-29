@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [str​:tokenize()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/str/tokenize) на MDN
+- [str​:tokenize()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/str/tokenize) <sup><small>MDN (рус.)</small></sup>

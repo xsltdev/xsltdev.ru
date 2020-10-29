@@ -89,5 +89,5 @@ description: Элемент xsl:for-each используется для соз�
 
 ## Ссылки
 
-- [`xsl:for-each`](https://developer.mozilla.org/en/XSLT/for-each) на MDN
-- [`xsl:for-each`](https://msdn.microsoft.com/en-us/library/ms256166.aspx) на MSDN
+- [`xsl:for-each`](https://developer.mozilla.org/en/XSLT/for-each) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:for-each`](https://msdn.microsoft.com/en-us/library/ms256166.aspx) <sup><small>MSDN (en)</small></sup>

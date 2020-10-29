@@ -23,4 +23,4 @@ floor('zero') ? NaN
 
 ## Ссылки
 
-- [floor()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/floor) на MDN
+- [floor()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/floor) <sup><small>MDN (рус.)</small></sup>

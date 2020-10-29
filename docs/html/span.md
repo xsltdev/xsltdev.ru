@@ -53,4 +53,4 @@ description: Тег span (от англ. span — интервал) предна
 
 ## Ссылки
 
-- [`<span>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/span) на MDN
+- Тег [`<span>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/span) <sup><small>MDN (рус.)</small></sup>

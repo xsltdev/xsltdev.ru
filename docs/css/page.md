@@ -181,4 +181,4 @@ bleed: 1cm;
 
 ## Ссылки
 
-- [`@page`](https://developer.mozilla.org/ru/docs/Web/CSS/@page) на MDN
+- [`@page`](https://developer.mozilla.org/ru/docs/Web/CSS/@page) <sup><small>MDN (рус.)</small></sup>

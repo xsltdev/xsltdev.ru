@@ -95,4 +95,4 @@ description: Тег param (от англ. parameter — параметр) пре
 
 ## Ссылки
 
-- [`<param>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/param) на MDN
+- Тег [`<param>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/param) <sup><small>MDN (рус.)</small></sup>

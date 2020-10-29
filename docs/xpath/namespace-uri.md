@@ -80,4 +80,4 @@ string namespace-uri( node-set? )
 
 ## Ссылки
 
-- [namespace-uri()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/namespace-uri) на MDN
+- [namespace-uri()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/namespace-uri) <sup><small>MDN (рус.)</small></sup>

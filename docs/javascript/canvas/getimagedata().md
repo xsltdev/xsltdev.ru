@@ -131,4 +131,4 @@ ctx.putImageData(imgData, 0, 0)
 
 ## Ссылки
 
-- [getImageData()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/getImageData) на MDN
+- [getImageData()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/getImageData) <sup><small>MDN (рус.)</small></sup>

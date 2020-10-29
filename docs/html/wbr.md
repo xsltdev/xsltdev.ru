@@ -69,4 +69,4 @@ description: Тег wbr (от англ. word break — разрыв слова) 
 
 ## Ссылки
 
-- [`<wbr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/wbr) на MDN
+- Тег [`<wbr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/wbr) <sup><small>MDN (рус.)</small></sup>

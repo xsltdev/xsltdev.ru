@@ -993,5 +993,5 @@ My heart is not here
 
 ## Ссылки
 
-- [`xsl:output`](https://developer.mozilla.org/en/XSLT/output) на MDN
-- [`xsl:output`](https://msdn.microsoft.com/en-us/library/ms256187.aspx) на MSDN
+- [`xsl:output`](https://developer.mozilla.org/en/XSLT/output) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:output`](https://msdn.microsoft.com/en-us/library/ms256187.aspx) <sup><small>MSDN (en)</small></sup>

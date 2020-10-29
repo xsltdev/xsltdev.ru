@@ -277,5 +277,5 @@ Albert, Terrance, Will, Sylvia, Timothy, Gordon, James, Robert, Dan, Sasha
 
 ## Ссылки
 
-- [`xsl:if`](https://developer.mozilla.org/en-US/docs/Web/XSLT/if) на MDN
-- [`xsl:if`](https://msdn.microsoft.com/en-us/library/ms256209.aspx) на MSDN
+- [`xsl:if`](https://developer.mozilla.org/en-US/docs/Web/XSLT/if) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:if`](https://msdn.microsoft.com/en-us/library/ms256209.aspx) <sup><small>MSDN (en)</small></sup>

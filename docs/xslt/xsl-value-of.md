@@ -136,5 +136,5 @@ description: Элемент xsl:value-of служит для вычислени�
 
 ## Ссылки
 
-- [`xsl:value-of`](https://developer.mozilla.org/en/XSLT/value-of) на MDN
-- [`xsl:value-of`](https://msdn.microsoft.com/en-us/library/ms256181.aspx) на MSDN
+- [`xsl:value-of`](https://developer.mozilla.org/en/XSLT/value-of) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:value-of`](https://msdn.microsoft.com/en-us/library/ms256181.aspx) <sup><small>MSDN (en)</small></sup>

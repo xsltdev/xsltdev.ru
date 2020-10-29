@@ -54,4 +54,4 @@ description: Тег p (от англ. paragraph — параграф) опред
 
 ## Ссылки
 
-- [`<p>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/p) на MDN
+- Тег [`<p>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/p) <sup><small>MDN (рус.)</small></sup>

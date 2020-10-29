@@ -66,4 +66,4 @@ ctx.fillRect(80, 80, 75, 50)
 
 ## Ссылки
 
-- [globalAlpha](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/globalAlpha) на MDN
+- [globalAlpha](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/globalAlpha) <sup><small>MDN (рус.)</small></sup>

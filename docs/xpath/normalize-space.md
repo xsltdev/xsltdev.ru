@@ -27,4 +27,4 @@ normalize-space('А &amp;#x9; В &amp;#x9; С') = 'A B C'
 
 ## Ссылки
 
-- [normalize-space()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/normalize-space) на MDN
+- [normalize-space()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/normalize-space) <sup><small>MDN (рус.)</small></sup>

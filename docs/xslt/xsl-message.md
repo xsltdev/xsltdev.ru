@@ -129,5 +129,5 @@ Processing terminated using xsl:message
 
 ## Ссылки
 
-- [`xsl:message`](https://developer.mozilla.org/en-US/docs/Web/XSLT/import) на MDN
-- [`xsl:message`](https://msdn.microsoft.com/en-us/library/ms256441.aspx) на MSDN
+- [`xsl:message`](https://developer.mozilla.org/en-US/docs/Web/XSLT/import) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:message`](https://msdn.microsoft.com/en-us/library/ms256441.aspx) <sup><small>MSDN (en)</small></sup>

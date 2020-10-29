@@ -56,4 +56,4 @@ description: Тег legend (от англ. legend - легенда, надпис
 
 ## Ссылки
 
-- [`<legend>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/legend) на MDN
+- Тег [`<legend>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/legend) <sup><small>MDN (рус.)</small></sup>

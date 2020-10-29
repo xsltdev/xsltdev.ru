@@ -77,4 +77,4 @@ description: Псевдокласс valid применяется к полям �
 
 ## Ссылки
 
-- [`:valid`](https://developer.mozilla.org/ru/docs/Web/CSS/:valid) на MDN
+- [`:valid`](https://developer.mozilla.org/ru/docs/Web/CSS/:valid) <sup><small>MDN (рус.)</small></sup>

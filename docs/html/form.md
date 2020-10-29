@@ -288,4 +288,4 @@ http://www.htmlbook.ru/handler.php?nick=%C2%E0%ED%FF+%D8%E0%EF%EE%F7%EA%E8%ED&pa
 
 ## Ссылки
 
-- [`<form>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/form) на MDN
+- Тег [`<form>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/form) <sup><small>MDN (рус.)</small></sup>

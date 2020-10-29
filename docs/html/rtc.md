@@ -48,4 +48,4 @@ description: Тег rtc (от англ. ruby text container) обозначае�
 
 ## Ссылки
 
-- [`<rtc>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rtc) на MDN
+- Тег [`<rtc>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rtc) <sup><small>MDN (рус.)</small></sup>

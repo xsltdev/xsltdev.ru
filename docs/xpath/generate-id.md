@@ -73,4 +73,4 @@ string generate-id( node-set? )
 
 ## Ссылки
 
-- [generate-id()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/generate-id) на MDN
+- [generate-id()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/generate-id) <sup><small>MDN (рус.)</small></sup>

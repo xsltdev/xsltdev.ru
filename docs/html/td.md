@@ -124,4 +124,4 @@ description: Тег td (от англ. table data — данные таблиц�
 
 ## Ссылки
 
-- [`<td>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/td) на MDN
+- Тег [`<td>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/td) <sup><small>MDN (рус.)</small></sup>

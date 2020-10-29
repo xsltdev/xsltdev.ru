@@ -184,4 +184,4 @@ description: Тег embed (от англ. embed - встраивать) испо
 
 ## Ссылки
 
-- [`<embed>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/embed) на MDN
+- Тег [`<embed>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/embed) <sup><small>MDN (рус.)</small></sup>

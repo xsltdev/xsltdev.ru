@@ -62,4 +62,4 @@ input:read-only {
 
 ## Ссылки
 
-- [:read-write](https://developer.mozilla.org/ru/docs/Web/CSS/:read-only) на MDN
+- [:read-write](https://developer.mozilla.org/ru/docs/Web/CSS/:read-only) <sup><small>MDN (рус.)</small></sup>

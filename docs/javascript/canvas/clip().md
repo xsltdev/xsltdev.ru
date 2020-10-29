@@ -75,4 +75,4 @@ ctx.fillRect(0, 0, 150, 100)
 
 ## Ссылки
 
-- [clip()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/clip) на MDN
+- [clip()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/clip) <sup><small>MDN (рус.)</small></sup>

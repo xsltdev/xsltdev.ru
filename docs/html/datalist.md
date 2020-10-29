@@ -58,4 +58,4 @@ description: Тег datalist (от англ. list of data - список дан�
 
 ## Ссылки
 
-- [`<datalist>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/datalist) на MDN
+- Тег [`<datalist>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/datalist) <sup><small>MDN (рус.)</small></sup>

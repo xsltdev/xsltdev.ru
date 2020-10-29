@@ -29,4 +29,4 @@ substring-after('aa-bb','q') = (empty string)
 
 ## Ссылки
 
-- [substring-after](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/substring-after) на MDN
+- [substring-after](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/substring-after) <sup><small>MDN (рус.)</small></sup>

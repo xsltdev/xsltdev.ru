@@ -28,4 +28,4 @@ node-set key( string, object )
 
 ## Ссылки
 
-- [key()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/key) на MDN
+- [key()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/key) <sup><small>MDN (рус.)</small></sup>

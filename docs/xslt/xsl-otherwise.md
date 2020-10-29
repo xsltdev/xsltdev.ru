@@ -35,5 +35,5 @@ description: При обработке xsl:choose процессор пооче�
 
 ## Ссылки
 
-- [`xsl:otherwise`](https://developer.mozilla.org/en/XSLT/otherwise) на MDN
-- [`xsl:otherwise`](https://msdn.microsoft.com/en-us/library/ms256147.aspx) на MSDN
+- [`xsl:otherwise`](https://developer.mozilla.org/en/XSLT/otherwise) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:otherwise`](https://msdn.microsoft.com/en-us/library/ms256147.aspx) <sup><small>MSDN (en)</small></sup>

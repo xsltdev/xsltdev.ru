@@ -372,4 +372,4 @@ description: Тег textarea (от англ. text area — область тек
 
 ## Ссылки
 
-- [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) на MDN
+- Тег [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) <sup><small>MDN (рус.)</small></sup>

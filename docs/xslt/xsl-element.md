@@ -424,5 +424,5 @@ Transformation failed: Run-time errors were reported
 
 ## Ссылки
 
-- [`xsl:element`](https://developer.mozilla.org/en/XSLT/element) на MDN
-- [`xsl:element`](https://msdn.microsoft.com/en-us/library/ms256047.aspx) на MSDN
+- [`xsl:element`](https://developer.mozilla.org/en/XSLT/element) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:element`](https://msdn.microsoft.com/en-us/library/ms256047.aspx) <sup><small>MSDN (en)</small></sup>

@@ -138,4 +138,4 @@ ctx.fillRect(20,20,150,100);
 
 ## Ссылки
 
-- [createLinearGradient()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createLinearGradient) на MDN
+- [createLinearGradient()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createLinearGradient) <sup><small>MDN (рус.)</small></sup>

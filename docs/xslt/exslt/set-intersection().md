@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [set​:intersection()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/intersection) на MDN
+- [set​:intersection()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/intersection) <sup><small>MDN (рус.)</small></sup>

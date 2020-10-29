@@ -162,4 +162,4 @@ description: Тег th (от англ. table heading — заголовок та
 
 ## Ссылки
 
-- [`<th>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/th) на MDN
+- Тег [`<th>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/th) <sup><small>MDN (рус.)</small></sup>

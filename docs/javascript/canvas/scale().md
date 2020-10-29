@@ -92,4 +92,4 @@ ctx.strokeRect(5, 5, 25, 15)
 
 ## Ссылки
 
-- [scale()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/scale) на MDN
+- [scale()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/scale) <sup><small>MDN (рус.)</small></sup>

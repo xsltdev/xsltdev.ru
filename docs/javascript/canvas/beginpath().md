@@ -69,4 +69,4 @@ ctx.stroke() // Нарисуем его
 
 ## Ссылки
 
-- [beginPath()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/beginPath) на MDN
+- [beginPath()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/beginPath) <sup><small>MDN (рус.)</small></sup>

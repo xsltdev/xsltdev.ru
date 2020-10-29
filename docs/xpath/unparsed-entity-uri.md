@@ -104,4 +104,4 @@ string unparsed-entity-uri( string )
 
 ## Ссылки
 
-- [unparsed-entity-uri()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/unparsed-entity-url) на MDN
+- [unparsed-entity-uri()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/unparsed-entity-url) <sup><small>MDN (рус.)</small></sup>

@@ -366,4 +366,4 @@ perspective-origin: unset;
 
 ## Ссылки
 
-- [`perspective-origin`](https://developer.mozilla.org/ru/docs/Web/CSS/perspective-origin) на MDN
+- [`perspective-origin`](https://developer.mozilla.org/ru/docs/Web/CSS/perspective-origin) <sup><small>MDN (рус.)</small></sup>

@@ -36,7 +36,7 @@ text-size-adjust: unset;
 
 ## Ссылки
 
-- [text-size-adjust](https://developer.mozilla.org/ru/docs/Web/CSS/text-size-adjust) на MDN
+- [text-size-adjust](https://developer.mozilla.org/ru/docs/Web/CSS/text-size-adjust) <sup><small>MDN (рус.)</small></sup>
 - [Документация](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/AdjustingtheTextSize/AdjustingtheTextSize.html) от Apple
 - [Описание поведения](https://dbaron.org/log/20111126-font-inflation) Gecko от L. David Baron.
 - [Документация](<https://docs.microsoft.com/en-us/previous-versions/windows/apps/ff462082(v=vs.105)?redirectedfrom=MSDN>) от Microsoft

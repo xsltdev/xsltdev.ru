@@ -81,5 +81,5 @@ description: Элемент xsl:strip-space удаляет текстовые у
 
 ## Ссылки
 
-- [`xsl:strip-space`](https://developer.mozilla.org/en/XSLT/strip-space) на MDN
-- [`xsl:strip-space`](https://msdn.microsoft.com/en-us/library/ms256473.aspx) на MSDN
+- [`xsl:strip-space`](https://developer.mozilla.org/en/XSLT/strip-space) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:strip-space`](https://msdn.microsoft.com/en-us/library/ms256473.aspx) <sup><small>MSDN (en)</small></sup>

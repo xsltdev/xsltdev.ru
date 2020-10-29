@@ -67,4 +67,4 @@ description: Псевдокласс :focus-visible применяется, в т
 
 ## Ссылки
 
-- [:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) на MDN
+- [:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) <sup><small>MDN (рус.)</small></sup>

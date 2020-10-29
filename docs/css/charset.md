@@ -33,4 +33,4 @@ description: Правило @charset задает кодировку табли�
 
 ## Ссылки
 
-- [@charset](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset) на MDN
+- [@charset](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset) <sup><small>MDN (рус.)</small></sup>

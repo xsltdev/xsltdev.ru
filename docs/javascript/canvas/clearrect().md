@@ -61,4 +61,4 @@ ctx.clearRect(20, 20, 100, 50)
 
 ## Ссылки
 
-- [clearRect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/clearRect) на MDN
+- [clearRect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/clearRect) <sup><small>MDN (рус.)</small></sup>

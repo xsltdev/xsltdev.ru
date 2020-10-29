@@ -185,4 +185,4 @@ grid-template-areas: none;
 
 ## Ссылки
 
-- [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) на MDN
+- [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) <sup><small>MDN (рус.)</small></sup>

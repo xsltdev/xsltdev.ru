@@ -67,4 +67,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [lineCap](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap) на MDN
+- [lineCap](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap) <sup><small>MDN (рус.)</small></sup>

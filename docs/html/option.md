@@ -141,4 +141,4 @@ description: Тег option (от англ. option — пункт, парамет
 
 ## Ссылки
 
-- [`<option>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/option) на MDN
+- Тег [`<option>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/option) <sup><small>MDN (рус.)</small></sup>

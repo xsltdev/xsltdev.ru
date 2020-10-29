@@ -34,3 +34,7 @@ description: Элемент rb (Ruby Base) используется для ра�
 Результат:
 
 <ruby><rb>漢<rb>字<rp>(</rp><rt>kan<rt>ji<rp>)</rp></ruby>
+
+## Ссылки
+
+- Тег [`<rb>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rb) <sup><small>MDN (рус.)</small></sup>

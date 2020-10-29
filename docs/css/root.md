@@ -28,4 +28,4 @@
 
 ## Ссылки
 
-- [:root](https://developer.mozilla.org/ru/docs/Web/CSS/:root) на MDN
+- [:root](https://developer.mozilla.org/ru/docs/Web/CSS/:root) <sup><small>MDN (рус.)</small></sup>

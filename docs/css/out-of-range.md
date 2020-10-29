@@ -118,4 +118,4 @@ description: Псевдокласс :out-of-range применяется к по
 
 ## Ссылки
 
-- [`:out-of-range`](https://developer.mozilla.org/ru/docs/Web/CSS/:out-of-range) на MDN
+- [`:out-of-range`](https://developer.mozilla.org/ru/docs/Web/CSS/:out-of-range) <sup><small>MDN (рус.)</small></sup>

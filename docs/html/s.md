@@ -45,4 +45,4 @@ description: Тег s (от англ. strikethrough — зачеркнутый) 
 
 ## Ссылки
 
-- [`<s>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/s) на MDN
+- Тег [`<s>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/s) <sup><small>MDN (рус.)</small></sup>

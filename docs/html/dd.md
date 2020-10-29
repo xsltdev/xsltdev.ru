@@ -78,4 +78,4 @@ description: Тег dd (от англ. definition description - описание
 
 ## Ссылки
 
-- [`<dd>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dd) на MDN
+- Тег [`<dd>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dd) <sup><small>MDN (рус.)</small></sup>

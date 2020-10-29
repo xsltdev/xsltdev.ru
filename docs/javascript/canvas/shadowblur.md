@@ -62,4 +62,4 @@ ctx.fillRect(20,20,100,80); }
 
 ## Ссылки
 
-- [shadowBlur](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur) на MDN
+- [shadowBlur](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur) <sup><small>MDN (рус.)</small></sup>

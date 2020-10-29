@@ -54,4 +54,4 @@ description: Тег noscript (от англ. no script — без скрипто
 
 ## Ссылки
 
-- [`<noscript>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/noscript) на MDN
+- Тег [`<noscript>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/noscript) <sup><small>MDN (рус.)</small></sup>

@@ -184,4 +184,4 @@ description: Тег table (от англ. table — таблица) служит
 
 ## Ссылки
 
-- [`<table>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/table) на MDN
+- Тег [`<table>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/table) <sup><small>MDN (рус.)</small></sup>

@@ -85,6 +85,10 @@ description: Тег canvas (от англ. canvas - холст) создаёт �
 </html>
 ```
 
+## См. также
+
+- [Свойства и методы Canvas 2D](/javascript/canvas/)
+
 ## Ссылки
 
-- [`<canvas>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/canvas) на MDN
+- Тег [`<canvas>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/canvas) <sup><small>MDN (рус.)</small></sup>

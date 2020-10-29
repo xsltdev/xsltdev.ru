@@ -48,4 +48,4 @@ description: Тег strong (от англ. strong — сильный) предн
 
 ## Ссылки
 
-- [`<strong>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/strong) на MDN
+- Тег [`<strong>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/strong) <sup><small>MDN (рус.)</small></sup>

@@ -59,4 +59,4 @@ function copy() {
 
 ## Ссылки
 
-- [putImageData()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/putImageData) на MDN
+- [putImageData()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/putImageData) <sup><small>MDN (рус.)</small></sup>

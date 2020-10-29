@@ -48,4 +48,4 @@ description: Тег em (от англ. emphasis - акцентирование) 
 
 ## Ссылки
 
-- [`<em>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/em) на MDN
+- Тег [`<em>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/em) <sup><small>MDN (рус.)</small></sup>

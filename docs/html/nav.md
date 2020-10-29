@@ -53,4 +53,4 @@ description: Тег nav (от англ. navigation — навигация) за�
 
 ## Ссылки
 
-- [`<nav>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav) на MDN
+- Тег [`<nav>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav) <sup><small>MDN (рус.)</small></sup>

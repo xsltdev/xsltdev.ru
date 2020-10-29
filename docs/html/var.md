@@ -86,4 +86,4 @@ description: Тег var (от англ. variable — переменная) ис�
 
 ## Ссылки
 
-- [`<var>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/var) на MDN
+- Тег [`<var>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/var) <sup><small>MDN (рус.)</small></sup>

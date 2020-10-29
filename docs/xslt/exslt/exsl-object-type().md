@@ -90,5 +90,5 @@ exsl:object-type(object)
 
 ## Ссылки
 
-- [exsl​:object-type()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/object-type) на MDN
+- [exsl​:object-type()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/object-type) <sup><small>MDN (рус.)</small></sup>
 - [Спецификация exsl​:object-type()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/object-type)

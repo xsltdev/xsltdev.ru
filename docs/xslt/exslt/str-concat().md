@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [str​:concat()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/str/concat) на MDN
+- [str​:concat()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/str/concat) <sup><small>MDN (рус.)</small></sup>

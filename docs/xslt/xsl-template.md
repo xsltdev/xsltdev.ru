@@ -67,5 +67,5 @@ description: Элемент верхнего уровня xsl:template опре�
 
 ### Ссылки
 
-- [`xsl:template`](https://developer.mozilla.org/en/XSLT/template) на MDN
-- [`xsl:template`](https://msdn.microsoft.com/en-us/library/ms256110.aspx) на MSDN
+- [`xsl:template`](https://developer.mozilla.org/en/XSLT/template) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:template`](https://msdn.microsoft.com/en-us/library/ms256110.aspx) <sup><small>MSDN (en)</small></sup>

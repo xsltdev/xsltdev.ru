@@ -97,4 +97,4 @@ string name( node-set? )
 
 ## Ссылки
 
-- [name()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/name) на MDN
+- [name()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/name) <sup><small>MDN (рус.)</small></sup>

@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [math​:min()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/min) на MDN
+- [math​:min()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/min) <sup><small>MDN (рус.)</small></sup>

@@ -132,4 +132,4 @@ overflow-wrap: unset;
 
 ## Ссылки
 
-- [`overflow-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap) на MDN
+- [`overflow-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap) <sup><small>MDN (рус.)</small></sup>

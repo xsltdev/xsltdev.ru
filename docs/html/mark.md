@@ -51,4 +51,4 @@ description: Тег mark (от англ. mark - отметка) помечает
 
 ## Ссылки
 
-- [`<mark>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/mark) на MDN
+- Тег [`<mark>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/mark) <sup><small>MDN (рус.)</small></sup>

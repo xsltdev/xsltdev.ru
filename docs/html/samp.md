@@ -70,4 +70,4 @@ description: Тег samp (от англ. sample — пример) использ
 
 ## Ссылки
 
-- [`<samp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/samp) на MDN
+- Тег [`<samp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/samp) <sup><small>MDN (рус.)</small></sup>

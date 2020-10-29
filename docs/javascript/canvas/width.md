@@ -28,4 +28,4 @@ alert('Ширина imgData - ' + imgData.width)
 
 ## Ссылки
 
-- [width](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/width) на MDN
+- [width](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/width) <sup><small>MDN (рус.)</small></sup>

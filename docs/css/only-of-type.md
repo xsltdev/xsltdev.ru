@@ -130,4 +130,4 @@ article p:only-of-type {
 
 ## Ссылки
 
-- [`:only-of-type`](https://developer.mozilla.org/ru/docs/Web/CSS/:only-of-type) на MDN
+- [`:only-of-type`](https://developer.mozilla.org/ru/docs/Web/CSS/:only-of-type) <sup><small>MDN (рус.)</small></sup>

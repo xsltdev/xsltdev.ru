@@ -94,4 +94,4 @@ description: Тег figcaption (от англ. figure caption - подпись �
 
 ## Ссылки
 
-- [`<figcaption>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/figcaption) на MDN
+- Тег [`<figcaption>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/figcaption) <sup><small>MDN (рус.)</small></sup>

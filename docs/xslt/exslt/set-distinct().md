@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [set​:distinct()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/distinct) на MDN
+- [set​:distinct()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/distinct) <sup><small>MDN (рус.)</small></sup>

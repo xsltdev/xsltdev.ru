@@ -298,5 +298,5 @@ description: Элемент xsl:call-template вызывает шаблон по
 
 ## Ссылки
 
-- [`xsl:call-template`](https://developer.mozilla.org/en/XSLT/call-template) на MDN
-- [`xsl:call-template`](https://msdn.microsoft.com/en-us/library/ms256487.aspx) на MSDN
+- [`xsl:call-template`](https://developer.mozilla.org/en/XSLT/call-template) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:call-template`](https://msdn.microsoft.com/en-us/library/ms256487.aspx) <sup><small>MSDN (en)</small></sup>

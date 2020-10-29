@@ -240,4 +240,4 @@ description: Псевдокласс :nth-child используется для �
 
 ## Ссылки
 
-- [`:nth-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child) на MDN
+- [`:nth-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child) <sup><small>MDN (рус.)</small></sup>

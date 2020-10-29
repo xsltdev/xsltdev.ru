@@ -77,4 +77,4 @@ ctx.fill()
 
 ## Ссылки
 
-- [createPattern()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createPattern) на MDN
+- [createPattern()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createPattern) <sup><small>MDN (рус.)</small></sup>

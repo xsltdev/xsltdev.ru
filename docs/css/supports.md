@@ -177,4 +177,4 @@ description: Правило @supports позволяет проверить, п�
 
 ## Ссылки
 
-- [@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) на MDN
+- [@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) <sup><small>MDN (рус.)</small></sup>

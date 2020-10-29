@@ -77,5 +77,5 @@ description: Элемент xsl:processing-instruction создает в рез�
 
 ## Ссылки
 
-- [`xsl:processing-instruction`](https://developer.mozilla.org/en/XSLT/processing-instruction) на MDN
-- [`xsl:processing-instruction`](https://msdn.microsoft.com/en-us/library/ms256461.aspx) на MSDN
+- [`xsl:processing-instruction`](https://developer.mozilla.org/en/XSLT/processing-instruction) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:processing-instruction`](https://msdn.microsoft.com/en-us/library/ms256461.aspx) <sup><small>MSDN (en)</small></sup>

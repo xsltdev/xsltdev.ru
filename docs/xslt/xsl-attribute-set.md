@@ -221,5 +221,5 @@ description: Элемент xsl:attribute-set определяет именов�
 
 ## Ссылки
 
-- [`xsl:attribute-set`](https://developer.mozilla.org/en/XSLT/attribute-set) на MDN
-- [`xsl:attribute-set`](https://msdn.microsoft.com/en-us/library/ms256163.aspx) на MSDN
+- [`xsl:attribute-set`](https://developer.mozilla.org/en/XSLT/attribute-set) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:attribute-set`](https://msdn.microsoft.com/en-us/library/ms256163.aspx) <sup><small>MSDN (en)</small></sup>

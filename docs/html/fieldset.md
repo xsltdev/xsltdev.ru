@@ -104,4 +104,4 @@ description: Тег fieldset (от англ. field set - набор полей) 
 
 ## Ссылки
 
-- [`<fieldset>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/fieldset) на MDN
+- Тег [`<fieldset>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/fieldset) <sup><small>MDN (рус.)</small></sup>

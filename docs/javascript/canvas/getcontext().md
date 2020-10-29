@@ -70,4 +70,4 @@ console.log(ctx) // CanvasRenderingContext2D { ... }
 ## Ссылки
 
 - [getContext()
-  ](https://developer.mozilla.org/ru/docs/Web/API/HTMLCanvasElement/getContext) на MDN
+  ](https://developer.mozilla.org/ru/docs/Web/API/HTMLCanvasElement/getContext) <sup><small>MDN (рус.)</small></sup>

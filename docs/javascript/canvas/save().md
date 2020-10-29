@@ -38,4 +38,4 @@ ctx.fillRect(150, 40, 100, 100)
 
 ## Ссылки
 
-- [save()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/save) на MDN
+- [save()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/save) <sup><small>MDN (рус.)</small></sup>

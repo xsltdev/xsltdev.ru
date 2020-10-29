@@ -49,4 +49,4 @@ description: Тег b (от англ. bold - жирный) задаёт жирн
 
 ## Ссылки
 
-- [`<b>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/b) на MDN
+- Тег [`<b>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/b) <sup><small>MDN (рус.)</small></sup>

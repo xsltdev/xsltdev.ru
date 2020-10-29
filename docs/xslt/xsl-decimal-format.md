@@ -155,5 +155,5 @@ format-number(12345.06789, '#.#####', 'format3') ? '23456.1789:'
 
 ## Ссылки
 
-- [`xsl:decimal-format`](https://developer.mozilla.org/en/XSLT/decimal-format) на MDN
-- [`xsl:decimal-format`](https://msdn.microsoft.com/en-us/library/ms256092.aspx) на MSDN
+- [`xsl:decimal-format`](https://developer.mozilla.org/en/XSLT/decimal-format) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:decimal-format`](https://msdn.microsoft.com/en-us/library/ms256092.aspx) <sup><small>MSDN (en)</small></sup>

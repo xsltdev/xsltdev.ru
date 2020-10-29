@@ -61,4 +61,4 @@ description: Правило @font-feature-values позволяет исполь
 
 ## Ссылки
 
-- [`font-variant-alternates`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates) на MDN
+- [`font-variant-alternates`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates) <sup><small>MDN (рус.)</small></sup>

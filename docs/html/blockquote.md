@@ -72,4 +72,4 @@ description: Тег blockquote (от англ. block quotation - блок цит
 
 ## Ссылки
 
-- [`<blockquote>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote) на MDN
+- Тег [`<blockquote>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote) <sup><small>MDN (рус.)</small></sup>

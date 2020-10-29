@@ -54,4 +54,4 @@ description: Тег address (от англ. address - адрес) предназ
 
 ## Ссылки
 
-- [`<address>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/address) на MDN
+- Тег [`<address>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/address) <sup><small>MDN (рус.)</small></sup>

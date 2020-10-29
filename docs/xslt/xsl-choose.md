@@ -114,5 +114,5 @@ description: Элемент xsl:choose содержит один или неск
 
 ## Ссылки
 
-- [`xsl:choose`](https://developer.mozilla.org/en/XSLT/choose) на MDN
-- [`xsl:choose`](https://msdn.microsoft.com/en-us/library/ms256169.aspx) на MSDN
+- [`xsl:choose`](https://developer.mozilla.org/en/XSLT/choose) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:choose`](https://msdn.microsoft.com/en-us/library/ms256169.aspx) <sup><small>MSDN (en)</small></sup>

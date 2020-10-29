@@ -68,4 +68,4 @@ description:
 
 ## Ссылки
 
-- [`:dir()`](https://developer.mozilla.org/ru/docs/Web/CSS/:dir) на MDN
+- [`:dir()`](https://developer.mozilla.org/ru/docs/Web/CSS/:dir) <sup><small>MDN (рус.)</small></sup>

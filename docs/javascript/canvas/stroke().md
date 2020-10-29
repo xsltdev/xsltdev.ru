@@ -61,4 +61,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [stroke()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke) на MDN
+- [stroke()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke) <sup><small>MDN (рус.)</small></sup>

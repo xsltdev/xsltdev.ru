@@ -195,4 +195,4 @@ perspective: unset;
 
 ## Ссылки
 
-- [`perspective`](https://developer.mozilla.org/ru/docs/Web/CSS/perspective) на MDN
+- [`perspective`](https://developer.mozilla.org/ru/docs/Web/CSS/perspective) <sup><small>MDN (рус.)</small></sup>

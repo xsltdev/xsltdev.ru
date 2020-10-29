@@ -315,4 +315,4 @@ description: Тег button (от англ. button - кнопка) создаёт
 
 ## Ссылки
 
-- [`<button>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/button) на MDN
+- Тег [`<button>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/button) <sup><small>MDN (рус.)</small></sup>

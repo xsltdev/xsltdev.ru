@@ -60,4 +60,4 @@ description: Тег pre (от англ. preformatted — предварител�
 
 ## Ссылки
 
-- [`<pre>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/pre) на MDN
+- Тег [`<pre>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/pre) <sup><small>MDN (рус.)</small></sup>

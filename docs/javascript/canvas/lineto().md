@@ -90,4 +90,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [lineTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/lineTo) на MDN
+- [lineTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/lineTo) <sup><small>MDN (рус.)</small></sup>

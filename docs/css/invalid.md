@@ -106,4 +106,4 @@ description: Псевдо-класс :invalid находит любые input и
 
 ## Ссылки
 
-- [`:invalid`](https://developer.mozilla.org/ru/docs/Web/CSS/:invalid) на MDN
+- [`:invalid`](https://developer.mozilla.org/ru/docs/Web/CSS/:invalid) <sup><small>MDN (рус.)</small></sup>

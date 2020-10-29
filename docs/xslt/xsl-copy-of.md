@@ -154,5 +154,5 @@ Copy-of tree:<root>
 
 ## Ссылки
 
-- [`xsl:copy-of`](https://developer.mozilla.org/en/XSLT/copy-of) на MDN
-- [`xsl:copy-of`](https://msdn.microsoft.com/en-us/library/ms256183.aspx) на MSDN
+- [`xsl:copy-of`](https://developer.mozilla.org/en/XSLT/copy-of) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:copy-of`](https://msdn.microsoft.com/en-us/library/ms256183.aspx) <sup><small>MSDN (en)</small></sup>

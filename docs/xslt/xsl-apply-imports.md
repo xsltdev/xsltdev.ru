@@ -447,6 +447,6 @@ description: Элемент xsl:apply-imports используется в шаб
 
 ## Ссылки
 
-- [`xsl:apply-imports`](https://developer.mozilla.org/en/XSLT/apply-imports) на MDN
-- [`xsl:apply-imports`](https://msdn.microsoft.com/en-us/library/ms256178.aspx) на MSDN
+- [`xsl:apply-imports`](https://developer.mozilla.org/en/XSLT/apply-imports) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:apply-imports`](https://msdn.microsoft.com/en-us/library/ms256178.aspx) <sup><small>MSDN (en)</small></sup>
 - [`xsl:apply-imports`](http://www.saxonica.com/documentation/index.html#!xsl-elements/apply-imports) на Saxon

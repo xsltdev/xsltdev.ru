@@ -102,5 +102,5 @@ description: Корневым элементом XSLT-документа все�
 
 ## Ссылки
 
-- [`xsl:stylesheet`](https://developer.mozilla.org/en/XSLT/stylesheet) на MDN
-- [`xsl:stylesheet`](https://msdn.microsoft.com/en-us/library/ms256204.aspx) на MSDN
+- [`xsl:stylesheet`](https://developer.mozilla.org/en/XSLT/stylesheet) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:stylesheet`](https://msdn.microsoft.com/en-us/library/ms256204.aspx) <sup><small>MSDN (en)</small></sup>

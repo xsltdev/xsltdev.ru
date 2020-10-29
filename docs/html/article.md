@@ -51,4 +51,4 @@ description: Тег article (от англ. article - статья) задаёт
 
 ## Ссылки
 
-- [`<article>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/article) на MDN
+- Тег [`<article>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/article) <sup><small>MDN (рус.)</small></sup>

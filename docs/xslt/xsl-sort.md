@@ -106,5 +106,5 @@ description: Элементы xsl:for-each и xsl:apply-templates могут с�
 
 ## Ссылки
 
-- [`xsl:sort`](https://developer.mozilla.org/en/XSLT/sort) на MDN
-- [`xsl:sort`](https://msdn.microsoft.com/en-us/library/ms256196.aspx) на MSDN
+- [`xsl:sort`](https://developer.mozilla.org/en/XSLT/sort) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:sort`](https://msdn.microsoft.com/en-us/library/ms256196.aspx) <sup><small>MSDN (en)</small></sup>

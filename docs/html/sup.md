@@ -48,4 +48,4 @@ description: Тег sup (от англ. superscript — надстрочный �
 
 ## Ссылки
 
-- [`<sup>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/sup) на MDN
+- Тег [`<sup>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/sup) <sup><small>MDN (рус.)</small></sup>

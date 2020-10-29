@@ -181,4 +181,4 @@ element:nth-last-child(an + b) {
 
 ## Ссылки
 
-- [`:nth-last-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child) на MDN
+- [`:nth-last-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child) <sup><small>MDN (рус.)</small></sup>

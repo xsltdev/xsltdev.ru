@@ -72,4 +72,4 @@ description: Тег div (от англ. division - раздел) являетс�
 
 ## Ссылки
 
-- [`<div>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/div) на MDN
+- Тег [`<div>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/div) <sup><small>MDN (рус.)</small></sup>

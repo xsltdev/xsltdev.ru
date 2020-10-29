@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [str​:split()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/str/split) на MDN
+- [str​:split()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/str/split) <sup><small>MDN (рус.)</small></sup>

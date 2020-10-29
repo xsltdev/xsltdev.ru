@@ -115,5 +115,5 @@ description: Элемент xsl:comment используется для созд
 
 ## Ссылки
 
-- [`xsl:comment`](https://developer.mozilla.org/en/XSLT/comment) на MDN
-- [`xsl:comment`](https://msdn.microsoft.com/en-us/library/ms256145.aspx) на MSDN
+- [`xsl:comment`](https://developer.mozilla.org/en/XSLT/comment) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:comment`](https://msdn.microsoft.com/en-us/library/ms256145.aspx) <sup><small>MSDN (en)</small></sup>

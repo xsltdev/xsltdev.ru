@@ -180,4 +180,4 @@ mix-blend-mode: normal;
 
 ## Ссылки
 
-- [`mix-blend-mode`](https://developer.mozilla.org/ru/docs/Web/CSS/mix-blend-mode) на MDN
+- [`mix-blend-mode`](https://developer.mozilla.org/ru/docs/Web/CSS/mix-blend-mode) <sup><small>MDN (рус.)</small></sup>

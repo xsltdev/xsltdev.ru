@@ -62,4 +62,4 @@ object system-property( string )
 
 ## Ссылки
 
-- [system-property()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/system-property) на MDN
+- [system-property()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/system-property) <sup><small>MDN (рус.)</small></sup>

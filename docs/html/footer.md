@@ -47,4 +47,4 @@ description: Тег footer (от англ. footer - нижний колонти�
 
 ## Ссылки
 
-- [`<footer>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/footer) на MDN
+- Тег [`<footer>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/footer) <sup><small>MDN (рус.)</small></sup>

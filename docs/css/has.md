@@ -57,4 +57,4 @@ section: has(: not(h1, h2, h3, h4, h5, h6));
 
 ## Ссылки
 
-- [`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) на MDN
+- [`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) <sup><small>MDN (рус.)</small></sup>

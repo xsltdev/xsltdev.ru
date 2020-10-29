@@ -66,4 +66,4 @@ text-emphasis-color: unset;
 
 ## Ссылки
 
-- [`text-emphasis-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color) на MDN
+- [`text-emphasis-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color) <sup><small>MDN (рус.)</small></sup>

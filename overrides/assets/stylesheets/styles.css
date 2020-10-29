@@ -7,16 +7,40 @@
 	margin-bottom: 1rem;
 }
 
+.md-typeset .admonition .col2,
+.md-typeset .admonition .col3,
+.md-typeset .admonition .col4,
+.md-typeset details .col2,
+.md-typeset details .col3,
+.md-typeset details .col4 {
+	margin: 0.8rem 1.4rem;
+}
+
 .md-typeset .col2 ul {
-	columns: 14rem;
+	columns: 2 14rem;
 }
 
 .md-typeset .col3 ul {
-	columns: 10rem;
+	columns: 3 10rem;
 }
 
 .md-typeset .col4 ul {
-	columns: 7rem;
+	columns: 4 7rem;
+}
+
+.md-typeset .admonition .col2 ul,
+.md-typeset details .col2 ul {
+	columns: 2 12rem;
+}
+
+.md-typeset .admonition .col3 ul,
+.md-typeset details .col3 ul {
+	columns: 3 7rem;
+}
+
+.md-typeset .admonition .col4 ul,
+.md-typeset details .col4 ul {
+	columns: 4 6rem;
 }
 
 .md-typeset .col2 ul,

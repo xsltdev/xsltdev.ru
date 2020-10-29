@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [set​:difference()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/difference) на MDN
+- [set​:difference()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/difference) <sup><small>MDN (рус.)</small></sup>

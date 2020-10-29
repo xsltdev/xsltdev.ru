@@ -59,4 +59,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [moveTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/moveTo) на MDN
+- [moveTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/moveTo) <sup><small>MDN (рус.)</small></sup>

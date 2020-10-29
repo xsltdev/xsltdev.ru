@@ -85,4 +85,4 @@ ctx.strokeText('Big smile!', 10, 90)
 
 ## Ссылки
 
-- [strokeText()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeText) на MDN
+- [strokeText()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeText) <sup><small>MDN (рус.)</small></sup>

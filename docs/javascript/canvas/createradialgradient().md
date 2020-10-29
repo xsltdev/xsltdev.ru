@@ -79,4 +79,4 @@ ctx.fillRect(10, 10, 150, 100)
 
 ## Ссылки
 
-- [createRadialGradient()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createRadialGradient) на MDN
+- [createRadialGradient()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createRadialGradient) <sup><small>MDN (рус.)</small></sup>

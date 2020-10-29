@@ -83,4 +83,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [bezierCurveTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo) на MDN
+- [bezierCurveTo()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo) <sup><small>MDN (рус.)</small></sup>

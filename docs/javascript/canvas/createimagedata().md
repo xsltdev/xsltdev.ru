@@ -116,4 +116,4 @@ ctx.putImageData(imgData, 10, 10)
 
 ## Ссылки
 
-- [createImageData()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/createImageData) на MDN
+- [createImageData()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/createImageData) <sup><small>MDN (рус.)</small></sup>

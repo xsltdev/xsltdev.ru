@@ -285,4 +285,4 @@ h1 {
 
 ## Ссылки
 
-- [`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) на MDN
+- [`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) <sup><small>MDN (рус.)</small></sup>

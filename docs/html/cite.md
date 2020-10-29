@@ -50,4 +50,4 @@ description: Тег cite (от англ. cite - цитировать) предс
 
 ## Ссылки
 
-- [`<cite>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/cite) на MDN
+- Тег [`<cite>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/cite) <sup><small>MDN (рус.)</small></sup>

@@ -166,4 +166,4 @@ grid-template-rows: none;
 
 ## Ссылки
 
-- [grid-template-rows](https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-rows) на MDN
+- [grid-template-rows](https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-rows) <sup><small>MDN (рус.)</small></sup>

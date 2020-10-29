@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [set​:has-same-node()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/has-same-node) на MDN
+- [set​:has-same-node()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/has-same-node) <sup><small>MDN (рус.)</small></sup>

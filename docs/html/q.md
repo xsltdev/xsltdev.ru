@@ -73,4 +73,4 @@ description: Тег q (от англ. quote — цитата) используе
 
 ## Ссылки
 
-- [`<q>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/q) на MDN
+- Тег [`<q>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/q) <sup><small>MDN (рус.)</small></sup>

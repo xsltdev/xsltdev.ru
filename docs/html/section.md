@@ -60,4 +60,4 @@ description: Тег section (от англ. section — раздел) задаё
 
 ## Ссылки
 
-- [`<section>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/section) на MDN
+- Тег [`<section>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/section) <sup><small>MDN (рус.)</small></sup>

@@ -29,4 +29,4 @@ false() and $var ? false
 
 ## Ссылки
 
-- [false()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/false) на MDN
+- [false()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/false) <sup><small>MDN (рус.)</small></sup>

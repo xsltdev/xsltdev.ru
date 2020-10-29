@@ -107,4 +107,4 @@ description: С помощью псевдоэлемента ::placeholder зад
 
 ## Ссылки
 
-- [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) на MDN
+- [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) <sup><small>MDN (рус.)</small></sup>

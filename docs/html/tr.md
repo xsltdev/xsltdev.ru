@@ -60,4 +60,4 @@ description: Тег tr (от англ. table row — строка таблицы
 
 ## Ссылки
 
-- [`<tr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tr) на MDN
+- Тег [`<tr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tr) <sup><small>MDN (рус.)</small></sup>

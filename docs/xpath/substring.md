@@ -46,4 +46,4 @@ substring('123456', (1 div 0)) ? ''
 
 ## Ссылки
 
-- [substring()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/substring) на MDN
+- [substring()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/substring) <sup><small>MDN (рус.)</small></sup>

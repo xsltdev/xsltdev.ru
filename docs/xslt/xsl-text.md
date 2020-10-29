@@ -43,5 +43,5 @@ description: Элемент xsl:text служит для того, чтобы с
 
 ## Ссылки
 
-- [`xsl:text`](https://developer.mozilla.org/en/XSLT/text) на MDN
-- [`xsl:text`](https://msdn.microsoft.com/en-us/library/ms256107.aspx) на MSDN
+- [`xsl:text`](https://developer.mozilla.org/en/XSLT/text) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:text`](https://msdn.microsoft.com/en-us/library/ms256107.aspx) <sup><small>MSDN (en)</small></sup>

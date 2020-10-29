@@ -162,4 +162,4 @@ id(@connects)|id(id(@connects)/@connects)
 
 ## Ссылки
 
-- [id()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/id) на MDN
+- [id()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/id) <sup><small>MDN (рус.)</small></sup>

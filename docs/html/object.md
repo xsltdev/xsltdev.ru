@@ -125,4 +125,4 @@ description: Тег object (от англ. object — объект) сообща
 
 ## Ссылки
 
-- [`<object>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/object) на MDN
+- Тег [`<object>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/object) <sup><small>MDN (рус.)</small></sup>

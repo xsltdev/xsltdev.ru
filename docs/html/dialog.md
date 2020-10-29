@@ -163,4 +163,4 @@ color: black;
 
 ## Ссылки
 
-- [`<dialog>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dialog) на MDN
+- Тег [`<dialog>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dialog) <sup><small>MDN (рус.)</small></sup>

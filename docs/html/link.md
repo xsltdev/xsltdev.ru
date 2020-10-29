@@ -208,4 +208,4 @@ description: Тег link (от англ. link - ссылка, связь) уст
 
 ## Ссылки
 
-- [`<link>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/link) на MDN
+- Тег [`<link>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/link) <sup><small>MDN (рус.)</small></sup>

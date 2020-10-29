@@ -177,7 +177,7 @@ v.addEventListener(
 
 ## Ссылки
 
-- [drawImage()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/drawImage) на MDN
+- [drawImage()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/drawImage) <sup><small>MDN (рус.)</small></sup>
 
 <script>
 if (window.addEventListener) {

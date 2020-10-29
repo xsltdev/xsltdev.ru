@@ -104,4 +104,4 @@ node-set current()
 
 ## Ссылки
 
-- [current()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/current) на MDN
+- [current()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/current) <sup><small>MDN (рус.)</small></sup>

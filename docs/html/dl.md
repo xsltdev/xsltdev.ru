@@ -76,4 +76,4 @@ description: Тег dl (от англ. definition list - список опред
 
 ## Ссылки
 
-- [`<dl>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dl) на MDN
+- Тег [`<dl>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/dl) <sup><small>MDN (рус.)</small></sup>

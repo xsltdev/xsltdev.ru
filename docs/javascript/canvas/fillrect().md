@@ -59,4 +59,4 @@ ctx.fillRect(20, 20, 150, 100)
 
 ## Ссылки
 
-- [fillRect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillRect) на MDN
+- [fillRect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillRect) <sup><small>MDN (рус.)</small></sup>

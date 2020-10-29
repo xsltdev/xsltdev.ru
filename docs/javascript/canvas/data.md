@@ -91,4 +91,4 @@ ctx.putImageData(imgData, 10, 10)
 
 ## Ссылки
 
-- [data](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data) на MDN
+- [data](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data) <sup><small>MDN (рус.)</small></sup>

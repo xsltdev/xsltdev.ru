@@ -228,5 +228,5 @@ http://www.xsltdev.ru/stylesheets/identity.xsl
 
 ## Ссылки
 
-- [`xsl:include`](https://developer.mozilla.org/en/XSLT/include) на MDN
-- [`xsl:include`](https://msdn.microsoft.com/en-us/library/ms256094.aspx) на MSDN
+- [`xsl:include`](https://developer.mozilla.org/en/XSLT/include) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:include`](https://msdn.microsoft.com/en-us/library/ms256094.aspx) <sup><small>MSDN (en)</small></sup>

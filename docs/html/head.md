@@ -12,6 +12,16 @@ description: Тег head (от англ. head - голова) предназна
 
 Внутри контейнера `<head>` допускается размещать следующие элементы: [`<base>`](/html/base/), [`<link>`](/html/link/), [`<meta>`](/html/meta/), [`<script>`](/html/script/), [`<style>`](/html/style/), [`<title>`](/html/title/).
 
+??? info "Основные элементы"
+
+    <div class="col3" markdown="1">
+
+    - [html](html.md)
+    - **head**
+    - [body](body.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html
@@ -38,15 +48,17 @@ description: Тег head (от англ. head - голова) предназна
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Этот раздел предназначен для заголовка страницы и технической информации. -->
+    <!-- Этот раздел предназначен для заголовка страницы
+	     и технической информации. -->
   </head>
 
   <body>
-    <!-- А здесь надо размещать всё, что хочется увидеть на странице. -->
+    <!-- А здесь надо размещать всё,
+	     что хочется увидеть на странице. -->
   </body>
 </html>
 ```
 
 ## Ссылки
 
-- [`<head>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/head) на MDN
+- Тег [`<head>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/head) <sup><small>MDN (рус.)</small></sup>

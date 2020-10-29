@@ -85,4 +85,4 @@ h2 {
 
 ## Ссылки
 
-- [text-emphasis-style](https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style) на MDN
+- [text-emphasis-style](https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style) <sup><small>MDN (рус.)</small></sup>

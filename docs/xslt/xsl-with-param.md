@@ -240,5 +240,5 @@ H1 {
 
 ## Ссылки
 
-- [`xsl:with-param`](https://developer.mozilla.org/en-US/docs/Web/XSLT/with-param) на MDN
-- [`xsl:with-param`](https://msdn.microsoft.com/en-us/library/ms256091.aspx) на MSDN
+- [`xsl:with-param`](https://developer.mozilla.org/en-US/docs/Web/XSLT/with-param) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:with-param`](https://msdn.microsoft.com/en-us/library/ms256091.aspx) <sup><small>MSDN (en)</small></sup>

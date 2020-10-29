@@ -66,4 +66,4 @@ description: Тег abbr (от англ. abbreviation - аббревиатура
 
 ## Ссылки
 
-- [`<abbr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/abbr) на MDN
+- Тег [`<abbr>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/abbr) <sup><small>MDN (рус.)</small></sup>

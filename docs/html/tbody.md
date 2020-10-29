@@ -61,4 +61,4 @@
 
 ## Ссылки
 
-- [`<tbody>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tbody) на MDN
+- Тег [`<tbody>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tbody) <sup><small>MDN (рус.)</small></sup>

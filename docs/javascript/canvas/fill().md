@@ -77,4 +77,4 @@ ctx.fill()
 
 ## Ссылки
 
-- [fill()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fill) на MDN
+- [fill()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fill) <sup><small>MDN (рус.)</small></sup>

@@ -53,4 +53,4 @@ svg|a {
 
 ## Ссылки
 
-- [@namespace](https://developer.mozilla.org/ru/docs/Web/CSS/@namespace) на MDN
+- [@namespace](https://developer.mozilla.org/ru/docs/Web/CSS/@namespace) <sup><small>MDN (рус.)</small></sup>

@@ -37,4 +37,4 @@ round('one') ? NaN
 
 ## Ссылки
 
-- [round()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/round) на MDN
+- [round()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/round) <sup><small>MDN (рус.)</small></sup>

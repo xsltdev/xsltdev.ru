@@ -49,4 +49,4 @@
 
 ## Ссылки
 
-- [:optional](https://developer.mozilla.org/ru/docs/Web/CSS/:optional) на MDN
+- [:optional](https://developer.mozilla.org/ru/docs/Web/CSS/:optional) <sup><small>MDN (рус.)</small></sup>

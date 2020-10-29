@@ -74,5 +74,5 @@ description: Элемент xsl:fallback включается в критиче�
 
 ## Ссылки
 
-- [`xsl:fallback`](https://developer.mozilla.org/en/XSLT/fallback) на MDN
-- [`xsl:fallback`](https://msdn.microsoft.com/en-us/library/ms256234.aspx) на MSDN
+- [`xsl:fallback`](https://developer.mozilla.org/en/XSLT/fallback) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:fallback`](https://msdn.microsoft.com/en-us/library/ms256234.aspx) <sup><small>MSDN (en)</small></sup>

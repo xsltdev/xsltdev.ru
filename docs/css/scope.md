@@ -101,4 +101,4 @@ description: Псевдокласс scope представляет собой э
 
 ## Ссылки
 
-- [`:scope`](https://developer.mozilla.org/en-US/docs/Web/CSS/:scope) на MDN
+- [`:scope`](https://developer.mozilla.org/en-US/docs/Web/CSS/:scope) <sup><small>MDN (рус.)</small></sup>

@@ -83,4 +83,4 @@ ctx.fillText('Big smile!', 10, 90)
 
 ## Ссылки
 
-- [fillText()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillText) на MDN
+- [fillText()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillText) <sup><small>MDN (рус.)</small></sup>

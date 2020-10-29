@@ -91,4 +91,4 @@ function-available('rot:X')
 
 ## Ссылки
 
-- [function-available()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/function-available) на MDN
+- [function-available()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/function-available) <sup><small>MDN (рус.)</small></sup>

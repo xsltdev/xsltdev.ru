@@ -44,4 +44,4 @@ transform-box: unset;
 
 ## Ссылки
 
-- [transform-box](https://developer.mozilla.org/ru/docs/Web/CSS/transform-box) на MDN
+- [transform-box](https://developer.mozilla.org/ru/docs/Web/CSS/transform-box) <sup><small>MDN (рус.)</small></sup>

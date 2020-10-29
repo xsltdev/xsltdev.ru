@@ -77,4 +77,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [arc()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/arc) на MDN
+- [arc()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/arc) <sup><small>MDN (рус.)</small></sup>

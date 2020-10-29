@@ -134,4 +134,4 @@ description: Тег ul (от англ. unordered list — неупорядоче
 
 ## Ссылки
 
-- [`<ul>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul) на MDN
+- Тег [`<ul>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul) <sup><small>MDN (рус.)</small></sup>

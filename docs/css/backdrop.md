@@ -92,4 +92,4 @@ dialog::backdrop {
 
 ## Ссылки
 
-- [`::backdrop`](https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop) на MDN
+- [`::backdrop`](https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop) <sup><small>MDN (рус.)</small></sup>

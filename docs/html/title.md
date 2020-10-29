@@ -53,4 +53,4 @@ description: Тег title (от англ. title — заголовок) опре
 
 ## Ссылки
 
-- [`<title>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/title) на MDN
+- Тег [`<title>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/title) <sup><small>MDN (рус.)</small></sup>

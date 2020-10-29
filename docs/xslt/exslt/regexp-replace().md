@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [regexp​:replace()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/regexp/replace) на MDN
+- [regexp​:replace()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/regexp/replace) <sup><small>MDN (рус.)</small></sup>

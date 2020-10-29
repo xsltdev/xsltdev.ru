@@ -66,5 +66,5 @@ inline-size: unset;
 
 ## Ссылки
 
-- [`inline-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size) на MDN
+- [`inline-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size) <sup><small>MDN (рус.)</small></sup>
 - [Новые логические свойства в CSS!](https://medium.com/web-standards/logical-css-props-c5046c563640)

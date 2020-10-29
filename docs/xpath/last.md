@@ -88,4 +88,4 @@ number last()
 
 ## Ссылки
 
-- [last()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/last) на MDN
+- [last()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/last) <sup><small>MDN (рус.)</small></sup>

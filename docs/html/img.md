@@ -267,4 +267,4 @@ sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)")
 
 ## Ссылки
 
-- [`<img>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/img) на MDN
+- Тег [`<img>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/img) <sup><small>MDN (рус.)</small></sup>

@@ -79,4 +79,4 @@ string local-name( node-set? )
 
 ## Ссылки
 
-- [local-name()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/local-name) на MDN
+- [local-name()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/local-name) <sup><small>MDN (рус.)</small></sup>

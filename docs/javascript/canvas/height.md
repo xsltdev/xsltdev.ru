@@ -28,4 +28,4 @@ alert('Высота imgData - ' + imgData.height)
 
 ## Ссылки
 
-- [height](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/height) на MDN
+- [height](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/height) <sup><small>MDN (рус.)</small></sup>

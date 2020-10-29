@@ -64,4 +64,4 @@ description: Тег figure (от англ. figure - рисунок) исполь
 
 ## Ссылки
 
-- [`<figure>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/figure) на MDN
+- Тег [`<figure>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/figure) <sup><small>MDN (рус.)</small></sup>

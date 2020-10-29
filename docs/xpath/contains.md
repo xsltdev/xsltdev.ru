@@ -26,5 +26,5 @@ contains('address@host.com', '@') ? true
 
 ## Ссылки
 
-- [contains()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/contains) на MDN
-- [contains()](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256195(v%3dvs.100)>) на MSDN
+- [contains()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/contains) <sup><small>MDN (рус.)</small></sup>
+- [contains()](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256195(v%3dvs.100)>) <sup><small>MSDN (en)</small></sup>

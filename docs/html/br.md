@@ -50,4 +50,4 @@ description: Тег br (от англ. break - разрыв) устанавли�
 
 ## Ссылки
 
-- [`<br>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/br) на MDN
+- Тег [`<br>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/br) <sup><small>MDN (рус.)</small></sup>

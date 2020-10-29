@@ -51,4 +51,4 @@ pre {
 
 ## Ссылки
 
-- [tab-size](https://developer.mozilla.org/ru/docs/Web/CSS/tab-size) на MDN
+- [tab-size](https://developer.mozilla.org/ru/docs/Web/CSS/tab-size) <sup><small>MDN (рус.)</small></sup>

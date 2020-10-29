@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [math​:max()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/max) на MDN
+- [math​:max()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/max) <sup><small>MDN (рус.)</small></sup>

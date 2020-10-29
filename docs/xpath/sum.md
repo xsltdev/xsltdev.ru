@@ -92,4 +92,4 @@ number sum( node-set )
 
 ## Ссылки
 
-- [sum()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/sum) на MDN
+- [sum()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/sum) <sup><small>MDN (рус.)</small></sup>

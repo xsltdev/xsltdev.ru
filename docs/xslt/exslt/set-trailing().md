@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [set​:trailing()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/trailing) на MDN
+- [set​:trailing()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/trailing) <sup><small>MDN (рус.)</small></sup>

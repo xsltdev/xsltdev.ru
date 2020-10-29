@@ -110,4 +110,4 @@ appearance: progress-bar;
 
 ## Ссылки
 
-- [appearance](https://developer.mozilla.org/ru/docs/Web/CSS/appearance) на MDN
+- [appearance](https://developer.mozilla.org/ru/docs/Web/CSS/appearance) <sup><small>MDN (рус.)</small></sup>

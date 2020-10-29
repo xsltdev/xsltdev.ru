@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [math​:lowest()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/lowest) на MDN
+- [math​:lowest()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/lowest) <sup><small>MDN (рус.)</small></sup>

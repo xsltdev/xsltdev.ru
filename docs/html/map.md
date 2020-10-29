@@ -132,4 +132,4 @@ description: Тег map (от англ. map - карта) служит конт�
 
 ## Ссылки
 
-- [`<map>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/map) на MDN
+- Тег [`<map>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/map) <sup><small>MDN (рус.)</small></sup>

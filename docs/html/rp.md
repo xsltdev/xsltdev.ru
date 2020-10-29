@@ -55,4 +55,4 @@ description: Тег rp используется для вывода текста
 
 ## Ссылки
 
-- [`<rp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rp) на MDN
+- Тег [`<rp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rp) <sup><small>MDN (рус.)</small></sup>

@@ -29,4 +29,4 @@ substring-before('aa-bb','q') = (empty string)
 
 ## Ссылки
 
-- [substring-before()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/substring-before) на MDN
+- [substring-before()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/substring-before) <sup><small>MDN (рус.)</small></sup>

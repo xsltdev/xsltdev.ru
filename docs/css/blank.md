@@ -44,4 +44,4 @@ description: Псевдокласс :blank представляет пустые
 
 ## Ссылки
 
-- [:blank](https://developer.mozilla.org/en-US/docs/Web/CSS/:blank) на MDN
+- [:blank](https://developer.mozilla.org/en-US/docs/Web/CSS/:blank) <sup><small>MDN (рус.)</small></sup>

@@ -61,5 +61,5 @@ description: При обработке xsl:choose процессор пооче�
 
 ## Ссылки
 
-- [`xsl:when`](https://developer.mozilla.org/en/XSLT/when) на MDN
-- [`xsl:when`](https://msdn.microsoft.com/en-us/library/ms256164.aspx) на MSDN
+- [`xsl:when`](https://developer.mozilla.org/en/XSLT/when) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:when`](https://msdn.microsoft.com/en-us/library/ms256164.aspx) <sup><small>MSDN (en)</small></sup>

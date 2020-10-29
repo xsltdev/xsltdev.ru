@@ -54,4 +54,4 @@ boolean lang( string )
 
 ## Ссылки
 
-- [lang()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/lang) на MDN
+- [lang()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/lang) <sup><small>MDN (рус.)</small></sup>

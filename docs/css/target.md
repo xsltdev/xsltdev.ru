@@ -219,4 +219,4 @@
 
 ## Ссылки
 
-- [`:target`](https://developer.mozilla.org/en-US/docs/Web/CSS/:target) на MDN
+- [`:target`](https://developer.mozilla.org/en-US/docs/Web/CSS/:target) <sup><small>MDN (рус.)</small></sup>

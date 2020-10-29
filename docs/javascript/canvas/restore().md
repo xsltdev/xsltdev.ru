@@ -36,4 +36,4 @@ ctx.fillRect(150, 40, 100, 100)
 
 ## Ссылки
 
-- [restore()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/restore) на MDN
+- [restore()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/restore) <sup><small>MDN (рус.)</small></sup>

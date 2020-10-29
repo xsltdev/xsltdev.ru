@@ -143,4 +143,4 @@ description: Тег template (от англ. template — шаблон) пред
 
 ## Ссылки
 
-- [`<template>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/template) на MDN
+- Тег [`<template>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/template) <sup><small>MDN (рус.)</small></sup>

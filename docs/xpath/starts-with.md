@@ -23,4 +23,4 @@ starts-with('Title', 'ti') ? false
 
 ## Ссылки
 
-- [starts-with()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/starts-with) на MDN
+- [starts-with()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/starts-with) <sup><small>MDN (рус.)</small></sup>

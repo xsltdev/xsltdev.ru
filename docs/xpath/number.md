@@ -40,4 +40,4 @@ number('-5') ? -5
 
 ## Ссылки
 
-- [number()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/number) на MDN
+- [number()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/number) <sup><small>MDN (рус.)</small></sup>

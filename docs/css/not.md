@@ -93,4 +93,4 @@ description: Псевдокласс :not задаёт правила стиле�
 
 ## Ссылки
 
-- [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not) на MDN
+- [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not) <sup><small>MDN (рус.)</small></sup>

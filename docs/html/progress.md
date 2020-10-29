@@ -61,4 +61,4 @@ description: Тег progress (от англ. progress — прогрес) исп
 
 ## Ссылки
 
-- [`<progress>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/progress) на MDN
+- Тег [`<progress>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/progress) <sup><small>MDN (рус.)</small></sup>

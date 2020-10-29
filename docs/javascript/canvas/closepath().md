@@ -92,4 +92,4 @@ ctx.fill()
 
 ## Ссылки
 
-- [closePath()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/closePath) на MDN
+- [closePath()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/closePath) <sup><small>MDN (рус.)</small></sup>

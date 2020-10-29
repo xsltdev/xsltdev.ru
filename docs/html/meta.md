@@ -185,4 +185,4 @@ description: Тег meta (от англ. meta information — мета инфо�
 
 ## Ссылки
 
-- [`<meta>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta) на MDN
+- Тег [`<meta>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta) <sup><small>MDN (рус.)</small></sup>

@@ -76,4 +76,4 @@ math:highest(nodeSet)
 
 ## Ссылки
 
-- [`math​:highest()`](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/highest) на MDN
+- [`math​:highest()`](https://developer.mozilla.org/en-US/docs/Web/EXSLT/math/highest) <sup><small>MDN (рус.)</small></sup>

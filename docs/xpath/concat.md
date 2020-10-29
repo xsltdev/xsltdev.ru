@@ -20,5 +20,5 @@ concat('not','with','standing',' problem') ? 'notwithstanding problem'
 
 ## Ссылки
 
-- [concat()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/concat) на MDN
-- [concat()](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256123%28v%3dvs.100%29) на MSDN
+- [concat()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/concat) <sup><small>MDN (рус.)</small></sup>
+- [concat()](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256123%28v%3dvs.100%29) <sup><small>MSDN (en)</small></sup>

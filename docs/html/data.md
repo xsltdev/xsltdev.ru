@@ -55,4 +55,4 @@ description: Тег data (от англ. data - данные) представл
 
 ## Ссылки
 
-- [`<data>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/data) на MDN
+- Тег [`<data>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/data) <sup><small>MDN (рус.)</small></sup>

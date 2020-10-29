@@ -59,4 +59,4 @@ ctx.fillRect(10, 10, 100, 50)
 
 ## Ссылки
 
-- [translate()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate) на MDN
+- [translate()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate) <sup><small>MDN (рус.)</small></sup>

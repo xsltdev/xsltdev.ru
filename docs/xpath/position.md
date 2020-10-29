@@ -82,4 +82,4 @@ number position()
 
 ## Ссылки
 
-- [position()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/position) на MDN
+- [position()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/position) <sup><small>MDN (рус.)</small></sup>

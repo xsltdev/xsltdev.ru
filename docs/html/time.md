@@ -110,4 +110,4 @@ description: Тег time (от англ. time — время) помечает �
 
 ## Ссылки
 
-- [`<time>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/time) на MDN
+- Тег [`<time>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/time) <sup><small>MDN (рус.)</small></sup>

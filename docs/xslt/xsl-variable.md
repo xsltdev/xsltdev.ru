@@ -544,5 +544,5 @@ document('http://www.xmlhost.com/docs/а.xml')/page/request/param
 
 ## Ссылки
 
-- [`xsl:variable`](https://developer.mozilla.org/en-US/docs/Web/XSLT/variable) на MDN
-- [`xsl:variable`](https://msdn.microsoft.com/en-us/library/ms256447.aspx) на MSDN
+- [`xsl:variable`](https://developer.mozilla.org/en-US/docs/Web/XSLT/variable) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:variable`](https://msdn.microsoft.com/en-us/library/ms256447.aspx) <sup><small>MSDN (en)</small></sup>

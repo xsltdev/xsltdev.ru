@@ -56,4 +56,4 @@ description: Тег code (от англ. code - код) предназначен
 
 ## Ссылки
 
-- [`<code>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/code) на MDN
+- Тег [`<code>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/code) <sup><small>MDN (рус.)</small></sup>

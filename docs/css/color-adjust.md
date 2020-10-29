@@ -64,4 +64,4 @@ color-adjust: exact;
 
 ## Ссылки
 
-- [color-adjust](https://developer.mozilla.org/ru/docs/Web/CSS/color-adjust) на MDN
+- [color-adjust](https://developer.mozilla.org/ru/docs/Web/CSS/color-adjust) <sup><small>MDN (рус.)</small></sup>

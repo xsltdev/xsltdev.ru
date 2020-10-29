@@ -59,4 +59,4 @@ description: Тег output (от англ. output — вывод) определ
 
 ## Ссылки
 
-- [`<output>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/output) на MDN
+- Тег [`<output>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/output) <sup><small>MDN (рус.)</small></sup>

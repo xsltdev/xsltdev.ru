@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [regexp​:match()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/regexp/match) на MDN
+- [regexp​:match()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/regexp/match) <sup><small>MDN (рус.)</small></sup>

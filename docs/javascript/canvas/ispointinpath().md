@@ -68,4 +68,4 @@ if (ctx.isPointInPath(20, 50)) {
 
 ## Ссылки
 
-- [isPointInPath()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/isPointInPath) на MDN
+- [isPointInPath()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/isPointInPath) <sup><small>MDN (рус.)</small></sup>

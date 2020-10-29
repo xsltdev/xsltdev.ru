@@ -147,4 +147,4 @@ format-number(1234.567,'#.0000') ? '1234.5670'
 
 ## Ссылки
 
-- [format-number()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/format-number) на MDN
+- [format-number()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/format-number) <sup><small>MDN (рус.)</small></sup>

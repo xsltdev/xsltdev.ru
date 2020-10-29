@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [regexp​:test()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/regexp/test) на MDN
+- [regexp​:test()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/regexp/test) <sup><small>MDN (рус.)</small></sup>

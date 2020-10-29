@@ -125,4 +125,4 @@ description: Тег ol (от англ. ordered list — упорядоченны
 
 ## Ссылки
 
-- [`<ol>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol) на MDN
+- Тег [`<ol>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol) <sup><small>MDN (рус.)</small></sup>

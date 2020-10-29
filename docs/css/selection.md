@@ -120,4 +120,4 @@ Firefox до версии 62 использует нестандартный п�
 
 ## Ссылки
 
-- [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) на MDN
+- [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) <sup><small>MDN (рус.)</small></sup>

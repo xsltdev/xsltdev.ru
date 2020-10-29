@@ -88,4 +88,4 @@ description: Тег caption (от англ. caption - заголовок, под
 
 ## Ссылки
 
-- [`<caption>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/caption) на MDN
+- Тег [`<caption>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/caption) <sup><small>MDN (рус.)</small></sup>

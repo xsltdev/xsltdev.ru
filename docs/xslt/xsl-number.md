@@ -848,5 +848,5 @@ seventeen - Quantum
 
 ## Ссылки
 
-- [`xsl:number`](https://developer.mozilla.org/en/XSLT/number) на MDN
-- [`xsl:number`](https://msdn.microsoft.com/en-us/library/ms256084.aspx) на MSDN
+- [`xsl:number`](https://developer.mozilla.org/en/XSLT/number) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:number`](https://msdn.microsoft.com/en-us/library/ms256084.aspx) <sup><small>MSDN (en)</small></sup>

@@ -29,4 +29,4 @@ not(/) ? false
 
 ## Ссылки
 
-- [not()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/not) на MDN
+- [not()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/not) <sup><small>MDN (рус.)</small></sup>

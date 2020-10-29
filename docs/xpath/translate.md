@@ -101,4 +101,4 @@ translate('Дом', $lowercase, $uppercase) ? 'ДОМ'
 
 ## Ссылки
 
-- [translate()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/translate) на MDN
+- [translate()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/translate) <sup><small>MDN (рус.)</small></sup>

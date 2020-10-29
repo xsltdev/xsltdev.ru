@@ -199,4 +199,4 @@ grid-template-columns: none;
 
 ## Ссылки
 
-- [`grid-template-columns`](https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-columns) на MDN
+- [`grid-template-columns`](https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-columns) <sup><small>MDN (рус.)</small></sup>

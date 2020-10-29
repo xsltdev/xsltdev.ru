@@ -65,4 +65,4 @@ ctx.fillRect(20,20,100,80);
 
 ## Ссылки
 
-- [shadowOffsetX](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX) на MDN
+- [shadowOffsetX](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX) <sup><small>MDN (рус.)</small></sup>

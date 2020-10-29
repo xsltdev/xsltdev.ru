@@ -188,4 +188,4 @@ description: Тег meter (от англ. meter — счетчик, измери
 
 ## Ссылки
 
-- [`<meter>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/meter) на MDN
+- Тег [`<meter>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/meter) <sup><small>MDN (рус.)</small></sup>

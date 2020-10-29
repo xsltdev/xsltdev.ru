@@ -198,4 +198,4 @@ URI, которые передаются функции `document`, могут �
 
 ## Ссылки
 
-- [document()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/document) на MDN
+- [document()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/document) <sup><small>MDN (рус.)</small></sup>

@@ -43,4 +43,4 @@ line-break: unset;
 
 ## Ссылки
 
-- [line-break](https://developer.mozilla.org/ru/docs/Web/CSS/line-break) на MDN
+- [line-break](https://developer.mozilla.org/ru/docs/Web/CSS/line-break) <sup><small>MDN (рус.)</small></sup>

@@ -59,5 +59,5 @@ exsl:node-set(object)
 
 ## Ссылки
 
-- [`exsl​:node-set()`](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/node-set) на MDN
+- [`exsl​:node-set()`](https://developer.mozilla.org/en-US/docs/Web/EXSLT/exsl/node-set) <sup><small>MDN (рус.)</small></sup>
 - [Спецификация exsl​:node-set()](http://exslt.org/exsl/functions/node-set/index.html)

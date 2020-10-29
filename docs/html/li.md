@@ -63,4 +63,4 @@ description: Тег li (от англ. list item - пункт списка) оп
 
 ## Ссылки
 
-- [`<li>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/li) на MDN
+- Тег [`<li>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/li) <sup><small>MDN (рус.)</small></sup>

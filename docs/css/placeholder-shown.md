@@ -124,4 +124,4 @@
 
 ## Ссылки
 
-- [`:placeholder-shown`](https://developer.mozilla.org/ru/docs/Web/CSS/:placeholder-shown) на MDN
+- [`:placeholder-shown`](https://developer.mozilla.org/ru/docs/Web/CSS/:placeholder-shown) <sup><small>MDN (рус.)</small></sup>

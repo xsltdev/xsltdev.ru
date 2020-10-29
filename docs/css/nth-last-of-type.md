@@ -176,4 +176,4 @@ p:nth-last-of-type(4n) {
 
 ## Ссылки
 
-- [`:nth-last-of-type()`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-of-type) на MDN
+- [`:nth-last-of-type()`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-of-type) <sup><small>MDN (рус.)</small></sup>

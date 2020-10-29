@@ -52,4 +52,4 @@ ctx.strokeRect(20, 20, 80, 100)
 
 ## Ссылки
 
-- [lineWidth](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth) на MDN
+- [lineWidth](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth) <sup><small>MDN (рус.)</small></sup>

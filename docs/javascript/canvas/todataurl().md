@@ -124,4 +124,4 @@ function removeColors() {
 
 ## Ссылки
 
-- [toDataURL()](https://developer.mozilla.org/ru/docs/Web/API/HTMLCanvasElement/toDataURL) на MDN
+- [toDataURL()](https://developer.mozilla.org/ru/docs/Web/API/HTMLCanvasElement/toDataURL) <sup><small>MDN (рус.)</small></sup>

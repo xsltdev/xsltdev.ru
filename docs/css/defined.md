@@ -98,4 +98,4 @@ simple-custom:defined {
 
 ## Ссылки
 
-- [`:defined`](https://developer.mozilla.org/ru/docs/Web/CSS/:defined) на MDN
+- [`:defined`](https://developer.mozilla.org/ru/docs/Web/CSS/:defined) <sup><small>MDN (рус.)</small></sup>

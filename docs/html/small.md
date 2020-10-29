@@ -57,4 +57,4 @@ description: Тег small (от англ. small — маленький) испо
 
 ## Ссылки
 
-- [`<small>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/small) на MDN
+- Тег [`<small>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/small) <sup><small>MDN (рус.)</small></sup>

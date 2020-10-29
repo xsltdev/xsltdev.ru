@@ -14,6 +14,16 @@ description: Тег body (от англ. body - тело) предназначе
 
 Открывающий и закрывающий теги `<body>` на веб-странице не являются обязательными, однако хорошим стилем считается их использование, чтобы определить начало и конец HTML-документа.
 
+??? info "Основные элементы"
+
+    <div class="col3" markdown="1">
+
+    - [html](html.md)
+    - [head](head.md)
+    - **body**
+
+    </div>
+
 ## Синтаксис
 
 ```html
@@ -56,4 +66,4 @@ description: Тег body (от англ. body - тело) предназначе
 
 ## Ссылки
 
-- [`<body>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/body) на MDN
+- Тег [`<body>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/body) <sup><small>MDN (рус.)</small></sup>

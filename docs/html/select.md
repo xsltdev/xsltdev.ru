@@ -229,4 +229,4 @@ description: Тег select (от англ. select — выбрать) позво
 
 ## Ссылки
 
-- [`<select>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/select) на MDN
+- Тег [`<select>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/select) <sup><small>MDN (рус.)</small></sup>

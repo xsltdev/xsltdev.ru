@@ -76,4 +76,4 @@ p {
 
 ## Ссылки
 
-- [text-align](https://developer.mozilla.org/ru/docs/Web/CSS/text-justify) на MDN
+- [text-align](https://developer.mozilla.org/ru/docs/Web/CSS/text-justify) <sup><small>MDN (рус.)</small></sup>

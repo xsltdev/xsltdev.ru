@@ -119,4 +119,4 @@ description: Тег ins (от англ. insert - вставка) предназ�
 
 ## Ссылки
 
-- [`<ins>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ins) на MDN
+- Тег [`<ins>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ins) <sup><small>MDN (рус.)</small></sup>

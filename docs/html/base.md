@@ -105,4 +105,4 @@ description: Тег base (от англ. base - основа) определен
 
 ## Ссылки
 
-- [`<base>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/base) на MDN
+- Тег [`<base>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/base) <sup><small>MDN (рус.)</small></sup>

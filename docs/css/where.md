@@ -42,4 +42,4 @@ nav a {
 
 ## Ссылки
 
-- [:where()](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) на MDN
+- [:where()](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) <sup><small>MDN (рус.)</small></sup>

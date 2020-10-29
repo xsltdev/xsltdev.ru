@@ -106,4 +106,4 @@ ctx.fillText('Hanging', 290, 100)
 
 ## Ссылки
 
-- [textBaseline](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textBaseline) на MDN
+- [textBaseline](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textBaseline) <sup><small>MDN (рус.)</small></sup>

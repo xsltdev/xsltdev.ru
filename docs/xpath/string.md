@@ -51,4 +51,4 @@ string(number(00500.)) = 500
 
 ## Ссылки
 
-- [string()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/string) на MDN
+- [string()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/string) <sup><small>MDN (рус.)</small></sup>

@@ -75,5 +75,5 @@ description: Элемент xsl:preserve-space сохраняет текстов
 
 ## Ссылки
 
-- [`xsl:preserve-space`](https://developer.mozilla.org/en/XSLT/preserve-space) на MDN
-- [`xsl:preserve-space`](https://msdn.microsoft.com/en-us/library/ms256144.aspx) на MSDN
+- [`xsl:preserve-space`](https://developer.mozilla.org/en/XSLT/preserve-space) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:preserve-space`](https://msdn.microsoft.com/en-us/library/ms256144.aspx) <sup><small>MSDN (en)</small></sup>

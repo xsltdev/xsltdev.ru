@@ -63,4 +63,4 @@ a:visited {
 
 ## Ссылки
 
-- [:visited](https://developer.mozilla.org/ru/docs/Web/CSS/:visited) на MDN
+- [:visited](https://developer.mozilla.org/ru/docs/Web/CSS/:visited) <sup><small>MDN (рус.)</small></sup>

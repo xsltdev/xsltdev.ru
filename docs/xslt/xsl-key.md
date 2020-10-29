@@ -614,5 +614,5 @@ key('src', sources/source/@name)
 
 ### Ссылки
 
-- [`xsl:key`](https://developer.mozilla.org/en/XSLT/key) на MDN
-- [`xsl:key`](https://msdn.microsoft.com/en-us/library/ms256203.aspx) на MSDN
+- [`xsl:key`](https://developer.mozilla.org/en/XSLT/key) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:key`](https://msdn.microsoft.com/en-us/library/ms256203.aspx) <sup><small>MSDN (en)</small></sup>

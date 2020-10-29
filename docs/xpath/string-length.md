@@ -26,4 +26,4 @@ string-length('Barnes &amp; Noble') = 14
 
 ## Ссылки
 
-- [string-length()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/string-length) на MDN
+- [string-length()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/string-length) <sup><small>MDN (рус.)</small></sup>

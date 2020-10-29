@@ -10,4 +10,4 @@
 
 ## Ссылки
 
-- [set​:leading()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/leading) на MDN
+- [set​:leading()](https://developer.mozilla.org/en-US/docs/Web/EXSLT/set/leading) <sup><small>MDN (рус.)</small></sup>

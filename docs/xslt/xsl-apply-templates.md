@@ -332,5 +332,5 @@ description: Элемент xsl:apply-templates применяет шаблон�
 
 ## Ссылки
 
-- [`xsl:apply-templates`](https://developer.mozilla.org/en/XSLT/apply-templates) на MDN
-- [`xsl:apply-templates`](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256184(v=vs.100)>) на MSDN
+- [`xsl:apply-templates`](https://developer.mozilla.org/en/XSLT/apply-templates) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:apply-templates`](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256184(v=vs.100)>) <sup><small>MSDN (en)</small></sup>

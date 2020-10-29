@@ -44,4 +44,4 @@ description: Тег sub (от англ. subscript — подстрочный и�
 
 ## Ссылки
 
-- [`<sub>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/sub) на MDN
+- Тег [`<sub>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/sub) <sup><small>MDN (рус.)</small></sup>

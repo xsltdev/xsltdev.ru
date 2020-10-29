@@ -52,4 +52,4 @@ description: Тег main (от англ. main - основной) предназ
 
 ## Ссылки
 
-- [`<main>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/main) на MDN
+- Тег [`<main>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/main) <sup><small>MDN (рус.)</small></sup>

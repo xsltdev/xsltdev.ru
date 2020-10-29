@@ -126,4 +126,4 @@ article h1:only-child {
 
 ## Ссылки
 
-- [`:only-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:only-child) на MDN
+- [`:only-child`](https://developer.mozilla.org/ru/docs/Web/CSS/:only-child) <sup><small>MDN (рус.)</small></sup>

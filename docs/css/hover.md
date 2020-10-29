@@ -235,4 +235,4 @@ a:hover {
 
 ## Ссылки
 
-- [`:hover`](https://developer.mozilla.org/ru/docs/Web/CSS/:hover) на MDN
+- [`:hover`](https://developer.mozilla.org/ru/docs/Web/CSS/:hover) <sup><small>MDN (рус.)</small></sup>

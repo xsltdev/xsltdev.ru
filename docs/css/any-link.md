@@ -58,4 +58,4 @@ description: Псевдокласс :any-link представляет собо�
 
 ## Ссылки
 
-- [:any-link](https://developer.mozilla.org/ru/docs/Web/CSS/:any-link) на MDN
+- [:any-link](https://developer.mozilla.org/ru/docs/Web/CSS/:any-link) <sup><small>MDN (рус.)</small></sup>

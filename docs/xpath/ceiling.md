@@ -118,5 +118,5 @@ ceiling('blue') = NaN
 
 ## Ссылки
 
-- [ceiling()](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256087%28v%3dvs.100%29) на MDN
-- [ceiling()](https://developer.mozilla.org/en/XPath/Functions/ceiling) на MSDN
+- [ceiling()](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256087%28v%3dvs.100%29) <sup><small>MDN (рус.)</small></sup>
+- [ceiling()](https://developer.mozilla.org/en/XPath/Functions/ceiling) <sup><small>MSDN (en)</small></sup>

@@ -52,4 +52,4 @@ ctx.fillRect(50, 20, 100, 50)
 
 ## Ссылки
 
-- [rotate()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/rotate) на MDN
+- [rotate()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/rotate) <sup><small>MDN (рус.)</small></sup>

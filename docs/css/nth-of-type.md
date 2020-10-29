@@ -144,4 +144,4 @@ p:nth-of-type(4n) {
 
 ## Ссылки
 
-- [`:nth-of-type()`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-of-type) на MDN
+- [`:nth-of-type()`](https://developer.mozilla.org/ru/docs/Web/CSS/:nth-of-type) <sup><small>MDN (рус.)</small></sup>

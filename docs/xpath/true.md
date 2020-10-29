@@ -26,4 +26,4 @@ true() or $var ? true
 
 ## Ссылки
 
-- [true()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/true) на MDN
+- [true()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/true) <sup><small>MDN (рус.)</small></sup>

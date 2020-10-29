@@ -58,4 +58,4 @@ description: Тег kbd (от англ. keyboard - клавиатура) исп�
 
 ## Ссылки
 
-- [`<kbd>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/kbd) на MDN
+- Тег [`<kbd>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/kbd) <sup><small>MDN (рус.)</small></sup>

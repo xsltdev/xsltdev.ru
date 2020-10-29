@@ -111,4 +111,4 @@ ctx.fillRect(20,20,150,100);
 
 ## Ссылки
 
-- [addColorStop()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient/addColorStop) на MDN
+- [addColorStop()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient/addColorStop) <sup><small>MDN (рус.)</small></sup>

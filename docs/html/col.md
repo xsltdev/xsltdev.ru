@@ -90,4 +90,4 @@ description: Тег col (от англ. column - столбец, колонка)
 
 ## Ссылки
 
-- [`<col>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/col) на MDN
+- Тег [`<col>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/col) <sup><small>MDN (рус.)</small></sup>

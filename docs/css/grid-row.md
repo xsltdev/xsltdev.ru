@@ -303,4 +303,4 @@ grid-row-end: `auto`;
 
 ## Ссылки
 
-- [grid-row](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row) на MDN
+- [grid-row](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row) <sup><small>MDN (рус.)</small></sup>

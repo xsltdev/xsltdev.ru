@@ -97,5 +97,5 @@ description: Элемент xsl:template, задающий в преобразо
 
 ## Ссылки
 
-- [`xsl:param`](https://developer.mozilla.org/en/XSLT/param) на MDN
-- [`xsl:param`](https://msdn.microsoft.com/en-us/library/ms256096.aspx) на MSDN
+- [`xsl:param`](https://developer.mozilla.org/en/XSLT/param) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:param`](https://msdn.microsoft.com/en-us/library/ms256096.aspx) <sup><small>MSDN (en)</small></sup>

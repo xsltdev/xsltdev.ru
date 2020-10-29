@@ -362,5 +362,5 @@ description: Элемент xsl:namespace-alias назначает простр�
 
 ## Ссылки
 
-- [`xsl:namespace-alias`](https://developer.mozilla.org/en-US/docs/Web/XSLT/namespace-alias) на MDN
-- [`xsl:namespace-alias`](https://msdn.microsoft.com/en-us/library/ms256448.aspx) на MSDN
+- [`xsl:namespace-alias`](https://developer.mozilla.org/en-US/docs/Web/XSLT/namespace-alias) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:namespace-alias`](https://msdn.microsoft.com/en-us/library/ms256448.aspx) <sup><small>MSDN (en)</small></sup>

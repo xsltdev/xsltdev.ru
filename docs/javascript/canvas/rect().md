@@ -121,4 +121,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [rect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/rect) на MDN
+- [rect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/rect) <sup><small>MDN (рус.)</small></sup>

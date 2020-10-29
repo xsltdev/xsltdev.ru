@@ -78,4 +78,4 @@ description: Элемент slot является частью набора те
 
 ## Ссылки
 
-- [`<slot>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/slot) на MDN
+- Тег [`<slot>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/slot) <sup><small>MDN (рус.)</small></sup>

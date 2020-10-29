@@ -271,4 +271,4 @@ description: Тег audio (от англ. audio - звук, аудио) доба
 
 ## Ссылки
 
-- [`<audio>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/audio) на MDN
+- Тег [`<audio>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/audio) <sup><small>MDN (рус.)</small></sup>

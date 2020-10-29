@@ -67,4 +67,4 @@ description: Тег thead (от англ. table head — голова, верх 
 
 ## Ссылки
 
-- [`<thead>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/thead) на MDN
+- Тег [`<thead>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/thead) <sup><small>MDN (рус.)</small></sup>

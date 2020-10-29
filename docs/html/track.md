@@ -103,4 +103,4 @@ description: Тег track (от англ. track — след, дорожка) п
 
 ## Ссылки
 
-- [`<track>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/track) на MDN
+- Тег [`<track>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/track) <sup><small>MDN (рус.)</small></sup>

@@ -304,5 +304,5 @@ b
 
 ## Ссылки
 
-- [`xsl:attribute`](https://developer.mozilla.org/en/XSLT/attribute) на MDN
-- [`xsl:attribute`](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256165(v=vs.100)>) на MSDN
+- [`xsl:attribute`](https://developer.mozilla.org/en/XSLT/attribute) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:attribute`](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256165(v=vs.100)>) <sup><small>MSDN (en)</small></sup>

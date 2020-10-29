@@ -61,4 +61,4 @@ description: Тег rt добавляет аннотацию сверху или
 
 ## Ссылки
 
-- [`<rt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rt) на MDN
+- Тег [`<rt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/rt) <sup><small>MDN (рус.)</small></sup>

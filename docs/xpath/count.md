@@ -84,5 +84,5 @@ node-set count(node-set)
 
 ## Ссылки
 
-- [count()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/count) на MDN
-- [count()](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256103(v%3dvs.100)>) на MSDN
+- [count()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/count) <sup><small>MDN (рус.)</small></sup>
+- [count()](<https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256103(v%3dvs.100)>) <sup><small>MSDN (en)</small></sup>

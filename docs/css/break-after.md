@@ -125,4 +125,4 @@ break-after: unset;
 
 ## Ссылки
 
-- [`break-after`](https://developer.mozilla.org/en-US/docs/Web/CSS/break-after) на MDN
+- [`break-after`](https://developer.mozilla.org/en-US/docs/Web/CSS/break-after) <sup><small>MDN (рус.)</small></sup>

@@ -85,4 +85,4 @@ description: Тег label (от англ. label - метка, ярлык) уст
 
 ## Ссылки
 
-- [`<label>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/label) на MDN
+- Тег [`<label>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/label) <sup><small>MDN (рус.)</small></sup>

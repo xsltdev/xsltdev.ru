@@ -107,4 +107,4 @@ description: Правило @document ограничивает правила с
 
 ## Ссылки
 
-- [@document](https://developer.mozilla.org/ru/docs/Web/CSS/@document) на MDN
+- [@document](https://developer.mozilla.org/ru/docs/Web/CSS/@document) <sup><small>MDN (рус.)</small></sup>

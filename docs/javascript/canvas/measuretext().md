@@ -56,4 +56,4 @@ ctx.fillText(txt, 10, 100)
 
 ## Ссылки
 
-- [measureText()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/measureText) на MDN
+- [measureText()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/measureText) <sup><small>MDN (рус.)</small></sup>

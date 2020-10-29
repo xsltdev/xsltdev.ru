@@ -47,4 +47,4 @@ boolean element-available( string )
 
 ## Ссылки
 
-- [element-available()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/element-available) на MDN
+- [element-available()](https://developer.mozilla.org/en-US/docs/Web/XPath/Functions/element-available) <sup><small>MDN (рус.)</small></sup>

@@ -102,4 +102,4 @@ hanging-punctuation: unset;
 
 ## Ссылки
 
-- [`hanging-punctuation`](https://developer.mozilla.org/ru/docs/Web/CSS/hanging-punctuation) на MDN
+- [`hanging-punctuation`](https://developer.mozilla.org/ru/docs/Web/CSS/hanging-punctuation) <sup><small>MDN (рус.)</small></sup>

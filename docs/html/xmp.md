@@ -16,4 +16,4 @@ description: Элемент xmp отображает текст между на�
 
 ## Ссылки
 
-- [`<xmp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/xmp) на MDN
+- Тег [`<xmp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/xmp) <sup><small>MDN (рус.)</small></sup>

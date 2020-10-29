@@ -59,4 +59,4 @@ ctx.strokeRect(20, 20, 150, 100)
 
 ## Ссылки
 
-- [strokeRect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeRect) на MDN
+- [strokeRect()](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeRect) <sup><small>MDN (рус.)</small></sup>

@@ -87,4 +87,4 @@ ctx.fillRect(0, 0, 250, 100)
 
 ## Ссылки
 
-- [setTransform()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setTransform) на MDN
+- [setTransform()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setTransform) <sup><small>MDN (рус.)</small></sup>

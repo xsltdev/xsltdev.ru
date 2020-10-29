@@ -71,4 +71,4 @@ input:read-write {
 
 ## Ссылки
 
-- [:read-write](https://developer.mozilla.org/ru/docs/Web/CSS/:read-write) на MDN
+- [:read-write](https://developer.mozilla.org/ru/docs/Web/CSS/:read-write) <sup><small>MDN (рус.)</small></sup>

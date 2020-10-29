@@ -69,4 +69,4 @@ description: Тег aside (от англ. aside - в стороне) опред�
 
 ## Ссылки
 
-- [`<aside>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/aside) на MDN
+- Тег [`<aside>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/aside) <sup><small>MDN (рус.)</small></sup>

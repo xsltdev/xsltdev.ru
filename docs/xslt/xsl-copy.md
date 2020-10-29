@@ -199,5 +199,5 @@ description: Элемент xsl:copy создает копию текущего 
 
 ## Ссылки
 
-- [`xsl:copy`](https://developer.mozilla.org/en/XSLT/copy) на MDN
-- [`xsl:copy`](https://msdn.microsoft.com/en-us/library/ms256128.aspx) на MSDN
+- [`xsl:copy`](https://developer.mozilla.org/en/XSLT/copy) <sup><small>MDN (рус.)</small></sup>
+- [`xsl:copy`](https://msdn.microsoft.com/en-us/library/ms256128.aspx) <sup><small>MSDN (en)</small></sup>
