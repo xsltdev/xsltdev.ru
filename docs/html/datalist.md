@@ -6,6 +6,27 @@ description: Тег datalist (от англ. list of data - список дан�
 
 Тег **`<datalist>`** _(от англ. **list** of **data** - список данных)_ создаёт список вариантов, которые можно выбирать при наборе в текстовом поле. Изначально этот список скрыт и становится доступным при получении полем фокуса или при наборе текста.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - **datalist**
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="datalist" data-periods="future_1,current,past_1,past_2">

@@ -64,4 +64,4 @@ a:active {
 
 ## Ссылки
 
-- [:active](https://developer.mozilla.org/ru/docs/Web/CSS/:active) <sup><small>MDN (рус.)</small></sup>
+- Псевдо-класс [`:active`](https://developer.mozilla.org/ru/docs/Web/CSS/:active) <sup><small>MDN (рус.)</small></sup>

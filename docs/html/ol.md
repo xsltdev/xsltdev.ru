@@ -8,6 +8,24 @@ description: Тег ol (от англ. ordered list — упорядоченны
 
 Каждый элемент списка должен начинаться с [`<li>`](li.md). Если к `<ol>` применяется таблица стилей, то элементы `<li>` наследуют эти свойства.
 
+??? info "Текстовые блоки"
+
+    <div class="col3" markdown="1">
+
+    - [blockquote](blockquote.md)
+    - [dd](dd.md)
+    - [div](div.md)
+    - [dl](dl.md)
+    - [dt](dt.md)
+    - [hr](hr.md)
+    - [li](li.md)
+    - **ol**
+    - [p](p.md)
+    - [pre](pre.md)
+    - [ul](ul.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

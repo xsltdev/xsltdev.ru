@@ -6,6 +6,23 @@
 
 Допускается применять несколько элементов `<tbody>` внутри контейнера [`<table>`](table.md). Доступны и другие виды группировок строк — [`<tfoot>`](tfoot.md) и [`<thead>`](thead.md), ни один из них не должен перекрываться с элементом `<tbody>`.
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - [col](col.md)
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - **tbody**
+    - [td](td.md)
+    - [tfoot](tfoot.md)
+    - [th](th.md)
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -10,6 +10,27 @@ description: Тег meter (от англ. meter — счетчик, измери
 
 Браузеры, которые поддерживают элемент `<meter>`, отображают значение в виде рисунка, на котором цветом помечается текущее значение в указанном диапазоне. Остальные браузеры выводят текст, написанный внутри `<meter>`.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - **meter**
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="meter" data-periods="future_1,current,past_1,past_2">

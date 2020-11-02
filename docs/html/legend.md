@@ -8,6 +8,27 @@ description: Тег legend (от англ. legend - легенда, надпис
 
 Группа элементов обозначается в браузере с помощью рамки, а текст, который располагается внутри контейнера `<legend>`, встраивается в эту рамку.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - **legend**
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

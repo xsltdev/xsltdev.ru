@@ -22,6 +22,27 @@ http://www.htmlbook.ru/handler.php?nick=%C2%E0%ED%FF+%D8%E0%EF%EE%F7%EA%E8%ED&pa
 
 Допускается внутрь контейнера `<form>` помещать другие элементы, при этом сама форма никак не отображается на веб-странице, видны только элементы внутри неё.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - **form**
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -6,6 +6,46 @@ description: Тег wbr (от англ. word break — разрыв слова) 
 
 Тег **`<wbr>`** _(от англ. **w**ord **br**eak — разрыв слова)_ указывает браузеру место, где допускается делать перенос строки в тексте, если этого требует ширина родительского элемента.
 
+??? info "Текстовые элементы"
+
+    <div class="col4" markdown="1">
+
+    - [a](a.md)
+    - [abbr](abbr.md)
+    - [b](b.md)
+    - [bdi](bdi.md)
+    - [bdo](bdo.md)
+    - [br](br.md)
+    - [cite](cite.md)
+    - [code](code.md)
+    - [data](data.md)
+    - [del](del.md)
+    - [dfn](dfn.md)
+    - [em](em.md)
+    - [i](i.md)
+    - [ins](ins.md)
+    - [kbd](kbd.md)
+    - [mark](mark.md)
+    - [q](q.md)
+    - [ruby](ruby.md)
+    - [rtc](rtc.md)
+    - [rb](rb.md)
+    - [rp](rp.md)
+    - [rt](rt.md)
+    - [s](s.md)
+    - [samp](samp.md)
+    - [small](small.md)
+    - [span](span.md)
+    - [strong](strong.md)
+    - [sub](sub.md)
+    - [sup](sup.md)
+    - [time](time.md)
+    - [u](u.md)
+    - [var](var.md)
+    - **wbr**
+
+    </div>
+
 ## Синтаксис
 
 ```html
@@ -63,9 +103,9 @@ description: Тег wbr (от англ. word break — разрыв слова) 
 
 ## См. также
 
-- [overflow-wrap](../css/overflow-wrap.md)
-- [word-break](../css/word-break.md)
-- [hyphens](../css/hyphens.md)
+- [overflow-wrap](/css/overflow-wrap/)
+- [word-break](/css/word-break/)
+- [hyphens](/css/hyphens/)
 
 ## Ссылки
 

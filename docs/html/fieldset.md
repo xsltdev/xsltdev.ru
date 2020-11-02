@@ -10,6 +10,27 @@ description: Тег fieldset (от англ. field set - набор полей) 
 
 Браузеры для повышения наглядности отображают результат использования элемента `<fieldset>` в виде рамки. Её вид зависит от операционной системы, а также используемого браузера.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - **fieldset**
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

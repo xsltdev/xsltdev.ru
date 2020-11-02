@@ -8,6 +8,27 @@ description: Тег select (от англ. select — выбрать) позво
 
 Конечный вид зависит от использования атрибута `size`, который устанавливает высоту списка. Ширина списка определяется самым широким текстом, указанным в элементе [`<option>`](option.md), а также может изменяться с помощью стилей. Каждый пункт создаётся с помощью элемента `<option>`, который должен быть вложен в контейнер `<select>`. Если планируется отправлять данные списка на сервер, то требуется поместить `<select>` внутрь формы. Это также необходимо, когда к данным списка идёт обращение через скрипты.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - **select**
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

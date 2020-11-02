@@ -13,6 +13,27 @@ description: Тег picture (от англ. picture — картина, изоб
 - отображать изображения разных пропорций, учитывающих ориентацию устройства;
 - выводить изображение в векторном формате SVG, а для браузеров, его не поддерживающих, показывать PNG.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - [param](param.md)
+    - **picture**
+    - [source](source.md)
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="picture" data-periods="future_1,current,past_1,past_2">

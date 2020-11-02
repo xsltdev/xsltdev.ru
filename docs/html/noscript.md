@@ -8,6 +8,16 @@ description: Тег noscript (от англ. no script — без скрипто
 
 В остальных случаях браузер игнорирует этот элемент и всё, что располагается внутри него.
 
+??? info "Скрипты"
+
+    <div class="col3" markdown="1">
+
+    - [canvas](canvas.md)
+    - **noscript**
+    - [script](script.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

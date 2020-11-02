@@ -8,6 +8,18 @@ description: Тег style (от англ. style — стиль) применяе
 
 Элемент `<style>` необходимо использовать внутри контейнера [`<head>`](head.md). Можно задавать несколько `<style>`.
 
+??? info "Метаданные документа"
+
+    <div class="col3" markdown="1">
+
+    - [base](base.md)
+    - [link](link.md)
+    - [meta](meta.md)
+    - **style**
+    - [title](title.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -8,6 +8,16 @@ description: Тег details (от англ. details - детали) исполь
 
 Исходно содержимое `<details>` скрыто, вместо него выводится текст «Подробнее», щелчок по которому прячет или показывает содержимое элемента.
 
+??? info "Интерактивные элементы"
+
+    <div class="col3" markdown="1">
+
+    - **details**
+    - [dialog](dialog.md)
+    - [summary](summary.md)
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="details" data-periods="future_1,current,past_1,past_2">

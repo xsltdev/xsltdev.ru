@@ -8,6 +8,23 @@ description: Тег th (от англ. table heading — заголовок та
 
 Текст в такой ячейке отображается браузером обычно жирным шрифтом и выравнивается по центру. Элемент `<th>` должен размещаться внутри контейнера [`<tr>`](tr.md), который в свою очередь располагается внутри [`<table>`](table.md).
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - [col](col.md)
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - [td](td.md)
+    - [tfoot](tfoot.md)
+    - **th**
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

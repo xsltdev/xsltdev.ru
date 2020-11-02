@@ -125,4 +125,4 @@ element::after {
 
 ## Ссылки
 
-- Псевдо-элемент [`::after (:after)`](https://developer.mozilla.org/ru/docs/Web/CSS/::after) <sup><small>MDN (рус.)</small></sup>
+- Псевдо-элемент [`::after`](https://developer.mozilla.org/ru/docs/Web/CSS/::after) <sup><small>MDN (рус.)</small></sup>

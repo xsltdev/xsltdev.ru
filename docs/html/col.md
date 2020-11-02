@@ -10,6 +10,23 @@ description: Тег col (от англ. column - столбец, колонка)
 
 Для `<col>` допустимо использовать следующие стилевые свойства: `border`, `background`, `width`, `visibility`. Остальные свойства не оказывают никакого эффекта на элемент.
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - **col**
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - [td](td.md)
+    - [tfoot](tfoot.md)
+    - [th](th.md)
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -6,6 +6,46 @@ description: Тег sup (от англ. superscript — надстрочный �
 
 Тег **`<sup>`** _(от англ. **sup**erscript — надстрочный индекс)_ отображает шрифт в виде верхнего индекса. Шрифт при этом отображается выше базовой линии текста и уменьшенного размера.
 
+??? info "Текстовые элементы"
+
+    <div class="col4" markdown="1">
+
+    - [a](a.md)
+    - [abbr](abbr.md)
+    - [b](b.md)
+    - [bdi](bdi.md)
+    - [bdo](bdo.md)
+    - [br](br.md)
+    - [cite](cite.md)
+    - [code](code.md)
+    - [data](data.md)
+    - [del](del.md)
+    - [dfn](dfn.md)
+    - [em](em.md)
+    - [i](i.md)
+    - [ins](ins.md)
+    - [kbd](kbd.md)
+    - [mark](mark.md)
+    - [q](q.md)
+    - [ruby](ruby.md)
+    - [rtc](rtc.md)
+    - [rb](rb.md)
+    - [rp](rp.md)
+    - [rt](rt.md)
+    - [s](s.md)
+    - [samp](samp.md)
+    - [small](small.md)
+    - [span](span.md)
+    - [strong](strong.md)
+    - [sub](sub.md)
+    - **sup**
+    - [time](time.md)
+    - [u](u.md)
+    - [var](var.md)
+    - [wbr](wbr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

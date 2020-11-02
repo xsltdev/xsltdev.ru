@@ -14,6 +14,23 @@ description: Тег colgroup (от англ. group of columns - группа к�
 
 Для `<colgroup>` допустимо использовать следующие стилевые свойства: `border`, `background`, `width`, `visibility`. Остальные свойства не оказывают никакого эффекта на элемент.
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - [col](col.md)
+    - **colgroup**
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - [td](td.md)
+    - [tfoot](tfoot.md)
+    - [th](th.md)
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

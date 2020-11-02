@@ -8,6 +8,27 @@ description: Тег optgroup (от англ. option group — группа па�
 
 Особенностью `<optgroup>` является то, что он не выделяется как обычный элемент списка, акцентируется с помощью жирного начертания, а все элементы, входящие в этот контейнер, смещаются вправо от своего исходного положения.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - **optgroup**
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

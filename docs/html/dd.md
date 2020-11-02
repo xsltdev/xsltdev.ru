@@ -8,6 +8,24 @@ description: Тег dd (от англ. definition description - описание
 
 Каждый такой список начинается с контейнера [`<dl>`](dl.md), куда входит элемент [`<dt>`](dt.md) создающий термин и элемент `<dd>` задающий описание этого термина.
 
+??? info "Текстовые блоки"
+
+    <div class="col3" markdown="1">
+
+    - [blockquote](blockquote.md)
+    - **dd**
+    - [div](div.md)
+    - [dl](dl.md)
+    - [dt](dt.md)
+    - [hr](hr.md)
+    - [li](li.md)
+    - [ol](ol.md)
+    - [p](p.md)
+    - [pre](pre.md)
+    - [ul](ul.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -12,6 +12,27 @@ description: Тег audio (от англ. audio - звук, аудио) доба
 
 Управление воспроизведением аудио различается между браузерами по своему виду, но основные элементы совпадают. Это кнопка воспроизведения/паузы, длина трека, прошедшее и суммарное время звучания, а также уровень громкости.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - **audio**
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - [param](param.md)
+    - [picture](picture.md)
+    - [source](source.md)
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="audio" data-periods="future_1,current,past_1,past_2">

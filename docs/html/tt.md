@@ -28,4 +28,4 @@ description: Элемент tt создает встроенный текст, �
 
 ## Ссылки
 
-- Тег [`<xmp>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/xmp) <sup><small>MDN (рус.)</small></sup>
+- Тег [`<tt>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/tt) <sup><small>MDN (рус.)</small></sup>

@@ -8,6 +8,27 @@ description: Тег embed (от англ. embed - встраивать) испо
 
 Как правило, такие объекты требуют подключения к браузеру специального модуля, который называется плагин, или запуска вспомогательной программы. Вид внедрённого объекта зависит от установленных в браузере плагинов, типа загружаемого файла, а также от атрибутов элемента `<embed>`.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - **embed**
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - [param](param.md)
+    - [picture](picture.md)
+    - [source](source.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

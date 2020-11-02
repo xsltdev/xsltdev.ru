@@ -8,6 +8,27 @@ description: Тег source (от англ. source — источник) вста
 
 Когда располагается внутри `<audio>` или `<video>`, элемент `<source>` должен идти после медийных файлов, но до [`<track>`](track.md). Внутри `<picture>` он должен идти перед [`<img>`](img.md).
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - [param](param.md)
+    - [picture](picture.md)
+    - **source**
+
+    </div>
+
 ## Синтаксис
 
 ```html

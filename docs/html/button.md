@@ -8,6 +8,27 @@ description: Тег button (от англ. button - кнопка) создаёт
 
 В отличие от этого элемента, `<button>` предлагает расширенные возможности по созданию кнопок. Например, на подобной кнопке можно размещать любые элементы HTML, в том числе изображения. Используя стили можно определить вид кнопки путём изменения шрифта, цвета фона, размеров и других параметров.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - **button**
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

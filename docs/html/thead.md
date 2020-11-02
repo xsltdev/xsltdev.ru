@@ -8,6 +8,23 @@ description: Тег thead (от англ. table head — голова, верх 
 
 Допустимо использовать не более одного элемента `<thead>` в пределах одной таблицы, и он должен идти в исходном коде сразу после элемента [`<table>`](table.md).
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - [col](col.md)
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - [td](td.md)
+    - [tfoot](tfoot.md)
+    - [th](th.md)
+    - **thead**
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -8,6 +8,27 @@ description: Тег option (от англ. option — пункт, парамет
 
 Ширина списка определяется самым широким текстом, указанным в `<option>`, а также может изменяться с помощью стилей. Если планируется отправлять данные списка на сервер, то требуется поместить элемент `<select>` внутрь формы. Это также необходимо, когда к данным списка идёт обращение через скрипты.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - **option**
+    - [output](output.md)
+    - [progress](progress.md)
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

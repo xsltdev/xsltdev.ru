@@ -10,6 +10,27 @@ description: Тег main (от англ. main - основной) предназ
 
 Элемент `<main>` включает в себя содержимое, которое является уникальным для данного документа, и не должен включать повторяющиеся разделы сайта, такие как навигация, название сайта, логотип, поисковая форма, баннеры и др.
 
+??? info "Секции и заголовки"
+
+    <div class="col3" markdown="1">
+
+    - [address](address.md)
+    - [article](article.md)
+    - [aside](aside.md)
+    - [footer](footer.md)
+    - [header](header.md)
+    - [h1](h1.md)
+    - [h2](h2.md)
+    - [h3](h3.md)
+    - [h4](h4.md)
+    - [h5](h5.md)
+    - [h6](h6.md)
+    - **main**
+    - [nav](nav.md)
+    - [section](section.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

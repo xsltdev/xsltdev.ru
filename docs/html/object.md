@@ -10,6 +10,27 @@ description: Тег object (от англ. object — объект) сообща
 
 Дополнительно внутрь контейнера `<object>` можно поместить элемент [`<param>`](param.md), который передаёт дополнительные параметры для отображения объекта.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - **object**
+    - [param](param.md)
+    - [picture](picture.md)
+    - [source](source.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

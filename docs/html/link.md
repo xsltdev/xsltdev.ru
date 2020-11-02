@@ -8,6 +8,18 @@ description: Тег link (от англ. link - ссылка, связь) уст
 
 Элемент `<link>` обычно размещается внутри контейнера [`<head>`](head.md) и не создаёт ссылку, в отличие от элемента [`<a>`](a.md).
 
+??? info "Метаданные документа"
+
+    <div class="col3" markdown="1">
+
+    - [base](base.md)
+    - **link**
+    - [meta](meta.md)
+    - [style](style.md)
+    - [title](title.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

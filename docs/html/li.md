@@ -6,6 +6,24 @@ description: Тег li (от англ. list item - пункт списка) оп
 
 Тег **`<li>`** _(от англ. **l**ist **i**tem — пункт списка)_ определяет отдельный пункт списка. Внешний элемент [`<ul>`](ul.md) или [`<ol>`](ol.md) устанавливает тип списка — маркированный или нумерованный.
 
+??? info "Текстовые блоки"
+
+    <div class="col3" markdown="1">
+
+    - [blockquote](blockquote.md)
+    - [dd](dd.md)
+    - [div](div.md)
+    - [dl](dl.md)
+    - [dt](dt.md)
+    - [hr](hr.md)
+    - **li**
+    - [ol](ol.md)
+    - [p](p.md)
+    - [pre](pre.md)
+    - [ul](ul.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

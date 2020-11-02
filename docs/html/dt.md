@@ -8,6 +8,24 @@ description: Тег dt (от англ. definition term - определение 
 
 Каждый такой список начинается с контейнера [`<dl>`](dl.md), куда входит элемент `<dt>` создающий термин и элемент [`<dd>`](dd.md) задающий описание этого термина.
 
+??? info "Текстовые блоки"
+
+    <div class="col3" markdown="1">
+
+    - [blockquote](blockquote.md)
+    - [dd](dd.md)
+    - [div](div.md)
+    - [dl](dl.md)
+    - **dt**
+    - [hr](hr.md)
+    - [li](li.md)
+    - [ol](ol.md)
+    - [p](p.md)
+    - [pre](pre.md)
+    - [ul](ul.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

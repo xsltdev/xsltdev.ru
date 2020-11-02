@@ -83,7 +83,7 @@ align-content: unset;
 <p class="ciu_embed" data-feature="flexbox" data-periods="future_1,current,past_1,past_2"><a href="http://caniuse.com/#feat=flexbox">Can I Use flexbox?</a> Data on support for the flexbox feature across the major browsers from caniuse.com.
 </p>
 
-## Описание и примеры
+## Пример
 
 ```html
 <!DOCTYPE html>
@@ -127,6 +127,10 @@ align-content: unset;
 </html>
 ```
 
-### Примечание
+## Примечание
 
 Safari до версии 9 поддерживает свойство `-webkit-align-content`.
+
+## Ссылки
+
+- Свойство [`align-content`](https://developer.mozilla.org/ru/docs/Web/CSS/align-content) <sup><small>MDN (рус.)</small></sup>

@@ -8,6 +8,46 @@ description: Тег small (от англ. small — маленький) испо
 
 В HTML4 `<small>` уменьшает размер шрифта на единицу по сравнению с обычным текстом. В HTML4 размер шрифта измеряется в условных единицах от 1 до 7, средний размер текста, используемый по умолчанию, принят 3. Таким образом, добавление `<small>` уменьшает текст на одну условную единицу. Допускается применение вложенных элементов `<small>`, при этом размер шрифта будет меньше с каждым вложенным уровнем, но не может быть меньше, чем 1.
 
+??? info "Текстовые элементы"
+
+    <div class="col4" markdown="1">
+
+    - [a](a.md)
+    - [abbr](abbr.md)
+    - [b](b.md)
+    - [bdi](bdi.md)
+    - [bdo](bdo.md)
+    - [br](br.md)
+    - [cite](cite.md)
+    - [code](code.md)
+    - [data](data.md)
+    - [del](del.md)
+    - [dfn](dfn.md)
+    - [em](em.md)
+    - [i](i.md)
+    - [ins](ins.md)
+    - [kbd](kbd.md)
+    - [mark](mark.md)
+    - [q](q.md)
+    - [ruby](ruby.md)
+    - [rtc](rtc.md)
+    - [rb](rb.md)
+    - [rp](rp.md)
+    - [rt](rt.md)
+    - [s](s.md)
+    - [samp](samp.md)
+    - **small**
+    - [span](span.md)
+    - [strong](strong.md)
+    - [sub](sub.md)
+    - [sup](sup.md)
+    - [time](time.md)
+    - [u](u.md)
+    - [var](var.md)
+    - [wbr](wbr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

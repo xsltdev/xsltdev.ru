@@ -10,6 +10,27 @@ description: Тег progress (от англ. progress — прогрес) исп
 
 Вид элемента зависит от браузера и операционной системы и может довольно сильно различаться между собой.
 
+??? info "Формы"
+
+    <div class="col4" markdown="1">
+
+    - [button](button.md)
+    - [datalist](datalist.md)
+    - [fieldset](fieldset.md)
+    - [form](form.md)
+    - [input](input.md)
+    - [label](label.md)
+    - [legend](legend.md)
+    - [meter](meter.md)
+    - [optgroup](optgroup.md)
+    - [option](option.md)
+    - [output](output.md)
+    - **progress**
+    - [select](select.md)
+    - [textarea](textarea.md)
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="progress" data-periods="future_1,current,past_1,past_2">

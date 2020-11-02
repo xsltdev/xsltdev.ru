@@ -10,6 +10,23 @@ description: Тег tfoot (от англ. table foot — подвал табли
 
 В пределах таблицы разрешается использовать только один элемент `<tfoot>`.
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - [col](col.md)
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - [td](td.md)
+    - **tfoot**
+    - [th](th.md)
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

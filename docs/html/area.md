@@ -10,6 +10,27 @@ description: Тег area (от англ. **area** - область) опреде
 
 Несколько областей могут перекрывать друг друга, сверху будет та, которая в коде HTML располагается выше.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - **area**
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - [param](param.md)
+    - [picture](picture.md)
+    - [source](source.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -8,6 +8,23 @@ description: Тег td (от англ. table data — данные таблиц�
 
 Элемент `<td>` должен размещаться внутри контейнера [`<tr>`](tr.md), который в свою очередь располагается внутри [`<table>`](table.md).
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [caption](caption.md)
+    - [col](col.md)
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - **td**
+    - [tfoot](tfoot.md)
+    - [th](th.md)
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

@@ -8,6 +8,27 @@ description: Тег figure (от англ. figure - рисунок) исполь
 
 `<figure>` не должен быть связан непосредственно с основным содержимым документа и при его перемещении в другое место смысл текста не должен меняться. Обычно применяется для иллюстраций, фрагментов кода, схем, графиков, диаграмм и др.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - **figure**
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - [param](param.md)
+    - [picture](picture.md)
+    - [source](source.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

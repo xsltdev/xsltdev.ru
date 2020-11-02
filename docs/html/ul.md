@@ -8,6 +8,24 @@ description: Тег ul (от англ. unordered list — неупорядоче
 
 Каждый пункт списка должен начинаться с элемента [`<li>`](li.md).
 
+??? info "Текстовые блоки"
+
+    <div class="col3" markdown="1">
+
+    - [blockquote](blockquote.md)
+    - [dd](dd.md)
+    - [div](div.md)
+    - [dl](dl.md)
+    - [dt](dt.md)
+    - [hr](hr.md)
+    - [li](li.md)
+    - [ol](ol.md)
+    - [p](p.md)
+    - [pre](pre.md)
+    - **ul**
+
+    </div>
+
 ## Синтаксис
 
 ```html
@@ -23,12 +41,12 @@ description: Тег ul (от англ. unordered list — неупорядоче
 Для этого элемента доступны [универсальные атрибуты](uni-attr.md).
 
 `compact`
-: **Не используйте этот атрибут**, так как он устарел: вместо этого используйте CSS. Чтобы получить эффект, аналогичный атрибуту `compact`, можно использовать свойство [`line-height`](../css/line-height.md) со значением `80%`.
+: **Не используйте этот атрибут**, так как он устарел: вместо этого используйте CSS. Чтобы получить эффект, аналогичный атрибуту `compact`, можно использовать свойство [`line-height`](/css/line-height/) со значением `80%`.
 
 : Этот логический атрибут означает, что список должен отображаться в компактном стиле. Интерпретация этого атрибута зависит от пользовательского агента, и он работает не во всех браузерах.
 
 `type`
-: **Не используйте этот атрибут**, так как он устарел; вместо этого используйте свойство CSS [`list-style-type`](../css/list-style-type.md).
+: **Не используйте этот атрибут**, так как он устарел; вместо этого используйте свойство CSS [`list-style-type`](/css/list-style-type/).
 
 : Этот атрибут устанавливает стиль маркера для списка. Значения, определенные в HTML 3.2 и HTML 4.0 / 4.01:
 
@@ -129,9 +147,9 @@ description: Тег ul (от англ. unordered list — неупорядоче
 
 - [`<ol>`](ol.md)
 - [`<li>`](li.md)
-- [list-style](../css/list-style.md)
-- [line-height](../css/line-height.md)
+- [`list-style`](/css/list-style/)
+- [`line-height`](/css/line-height/)
 
 ## Ссылки
 
-- Тег [`<ul>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul) <sup><small>MDN (рус.)</small></sup>
+- Тег [`<ul>`](https://developer.mozilla.org/ru/docs/Web/HTML/Element/ul) <sup><small>MDN (рус.)</small></sup>

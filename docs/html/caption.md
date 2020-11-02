@@ -8,6 +8,23 @@ description: Тег caption (от англ. caption - заголовок, под
 
 Такой заголовок представляет собой текст, по умолчанию отображаемый перед таблицей и описывающий её содержание.
 
+??? info "Таблицы"
+
+    <div class="col3" markdown="1">
+
+    - **caption**
+    - [col](col.md)
+    - [colgroup](colgroup.md)
+    - [table](table.md)
+    - [tbody](tbody.md)
+    - [td](td.md)
+    - [tfoot](tfoot.md)
+    - [th](th.md)
+    - [thead](thead.md)
+    - [tr](tr.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

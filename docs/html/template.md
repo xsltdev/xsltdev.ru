@@ -8,6 +8,15 @@ description: Тег template (от англ. template — шаблон) пред
 
 Содержимое `<template>` — это шаблон для фрагмента HTML, который может быть клонирован и вставлен в документ через скрипты. Обычно применяется для элементов с повторяющейся структурой, вроде списков, таблиц, списков [`<select>`](select.md) и др.
 
+??? info "Веб-компоненты"
+
+    <div class="col3" markdown="1">
+
+    - [slot](slot.md)
+    - **template**
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="template" data-periods="future_1,current,past_1,past_2">

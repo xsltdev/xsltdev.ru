@@ -8,6 +8,27 @@ description: Тег param (от англ. parameter — параметр) пре
 
 Такой подход позволяет прямо в коде HTML-документа изменять характеристики объекта без его дополнительной компиляции. Количество одновременно используемых элементов `<param>` может быть больше одного и для каждого из них задаётся пара «`имя=значение`» через атрибуты `name` и `value`.
 
+??? info "Изображения и мультимедиа"
+
+    <div class="col3" markdown="1">
+
+    - [area](area.md)
+    - [audio](audio.md)
+    - [img](img.md)
+    - [figcaption](figcaption.md)
+    - [figure](figure.md)
+    - [map](map.md)
+    - [track](track.md)
+    - [video](video.md)
+    - [embed](embed.md)
+    - [iframe](iframe.md)
+    - [object](object.md)
+    - **param**
+    - [picture](picture.md)
+    - [source](source.md)
+
+    </div>
+
 ## Синтаксис
 
 ```html

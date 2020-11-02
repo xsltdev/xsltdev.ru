@@ -8,6 +8,16 @@ description: Тег summary (от англ. summary — резюме, сводк
 
 Элемент `<summary>` должен идти первым внутри `<details>`.
 
+??? info "Интерактивные элементы"
+
+    <div class="col3" markdown="1">
+
+    - [details](details.md)
+    - [dialog](dialog.md)
+    - **summary**
+
+    </div>
+
 ## Поддержка браузерами
 
 <p class="ciu_embed" data-feature="details" data-periods="future_1,current,past_1,past_2">
