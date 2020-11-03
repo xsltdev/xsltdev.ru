@@ -10,7 +10,7 @@ description: Тег html (от англ. HyperText Markup Language — «язы�
 
 ??? info "Основные элементы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **html**
     - [head](head.md)

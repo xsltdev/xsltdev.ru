@@ -10,7 +10,7 @@ description: Тег thead (от англ. table head — голова, верх 
 
 ??? info "Таблицы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [caption](caption.md)
     - [col](col.md)

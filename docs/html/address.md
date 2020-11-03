@@ -17,7 +17,7 @@ description: Тег address (от англ. address - адрес) предназ
 
 ??? info "Секции и заголовки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **address**
     - [article](article.md)

@@ -10,7 +10,7 @@ description: Тег ol (от англ. ordered list — упорядоченны
 
 ??? info "Текстовые блоки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [blockquote](blockquote.md)
     - [dd](dd.md)

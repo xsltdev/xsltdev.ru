@@ -10,7 +10,7 @@ description: Тег blockquote (от англ. block quotation - блок цит
 
 ??? info "Текстовые блоки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **blockquote**
     - [dd](dd.md)

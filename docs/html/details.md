@@ -10,7 +10,7 @@ description: Тег details (от англ. details - детали) исполь
 
 ??? info "Интерактивные элементы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **details**
     - [dialog](dialog.md)

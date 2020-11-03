@@ -10,7 +10,7 @@ description: Тег param (от англ. parameter — параметр) пре
 
 ??? info "Изображения и мультимедиа"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [area](area.md)
     - [audio](audio.md)

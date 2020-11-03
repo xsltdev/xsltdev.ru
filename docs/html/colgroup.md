@@ -16,7 +16,7 @@ description: Тег colgroup (от англ. group of columns - группа к�
 
 ??? info "Таблицы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [caption](caption.md)
     - [col](col.md)

@@ -25,7 +25,7 @@ color: black;
 
 ??? info "Интерактивные элементы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [details](details.md)
     - **dialog**

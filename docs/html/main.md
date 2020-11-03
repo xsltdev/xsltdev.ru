@@ -12,7 +12,7 @@ description: Тег main (от англ. main - основной) предназ
 
 ??? info "Секции и заголовки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [address](address.md)
     - [article](article.md)

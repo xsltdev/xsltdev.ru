@@ -8,7 +8,7 @@ description: Тег li (от англ. list item - пункт списка) оп
 
 ??? info "Текстовые блоки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [blockquote](blockquote.md)
     - [dd](dd.md)

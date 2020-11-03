@@ -10,7 +10,7 @@ description: Тег caption (от англ. caption - заголовок, под
 
 ??? info "Таблицы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **caption**
     - [col](col.md)

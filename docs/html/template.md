@@ -10,7 +10,7 @@ description: Тег template (от англ. template — шаблон) пред
 
 ??? info "Веб-компоненты"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [slot](slot.md)
     - **template**

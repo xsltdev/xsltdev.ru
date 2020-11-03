@@ -16,7 +16,7 @@ description: Тег body (от англ. body - тело) предназначе
 
 ??? info "Основные элементы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [html](html.md)
     - [head](head.md)

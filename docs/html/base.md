@@ -14,7 +14,7 @@ description: Тег base (от англ. base - основа) определен
 
 ??? info "Метаданные документа"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **base**
     - [link](link.md)

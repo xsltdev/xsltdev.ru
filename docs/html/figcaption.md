@@ -10,7 +10,7 @@ description: Тег figcaption (от англ. figure caption - подпись �
 
 ??? info "Изображения и мультимедиа"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [area](area.md)
     - [audio](audio.md)

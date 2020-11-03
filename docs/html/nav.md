@@ -10,7 +10,7 @@ description: Тег nav (от англ. navigation — навигация) за�
 
 ??? info "Секции и заголовки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [address](address.md)
     - [article](article.md)

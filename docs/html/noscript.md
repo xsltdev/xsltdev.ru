@@ -10,7 +10,7 @@ description: Тег noscript (от англ. no script — без скрипто
 
 ??? info "Скрипты"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [canvas](canvas.md)
     - **noscript**

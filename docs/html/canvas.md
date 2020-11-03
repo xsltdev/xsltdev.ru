@@ -10,7 +10,7 @@ description: Тег canvas (от англ. canvas - холст) создаёт �
 
 ??? info "Скрипты"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **canvas**
     - [noscript](noscript.md)

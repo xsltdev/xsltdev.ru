@@ -10,7 +10,7 @@ description: Тег aside (от англ. aside - в стороне) опред�
 
 ??? info "Секции и заголовки"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [address](address.md)
     - [article](article.md)

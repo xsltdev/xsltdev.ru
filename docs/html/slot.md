@@ -8,7 +8,7 @@ description: Элемент slot является частью набора те
 
 ??? info "Веб-компоненты"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - **slot**
     - [template](template.md)

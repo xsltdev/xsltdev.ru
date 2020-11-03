@@ -10,7 +10,7 @@ description: Тег style (от англ. style — стиль) применяе
 
 ??? info "Метаданные документа"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [base](base.md)
     - [link](link.md)

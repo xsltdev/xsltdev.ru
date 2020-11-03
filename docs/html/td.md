@@ -10,7 +10,7 @@ description: Тег td (от англ. table data — данные таблиц�
 
 ??? info "Таблицы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [caption](caption.md)
     - [col](col.md)

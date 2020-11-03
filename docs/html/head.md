@@ -14,7 +14,7 @@ description: Тег head (от англ. head - голова) предназна
 
 ??? info "Основные элементы"
 
-    <div class="col3" markdown="1">
+    <div class="col4" markdown="1">
 
     - [html](html.md)
     - **head**
