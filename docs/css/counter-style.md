@@ -8,6 +8,25 @@ description: Правило @counter-style позволяет определят
 
 Изначально в CSS определен набор полезных стилей счетчиков. Однако, несмотря на то, что с течением времени к этому набору предопределенных стилей было добавлено больше стилей, эта система оказалась слишком ограничительной. Правило `@counter-style` устраняет этот недостаток открытым способом, позволяя авторам определять свои собственные стили счетчика, когда предопределенные стили не соответствуют их потребностям.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - **@counter-style**
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

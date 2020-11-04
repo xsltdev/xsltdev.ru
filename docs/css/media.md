@@ -6,6 +6,25 @@ description: Правило @media в CSS связывает набор опер
 
 Правило **`@media`** в CSS связывает набор операторов, в CSS блок, ограниченный фигурными скобками, с условием, определенным запросом СМИ. Правило `@media` может быть использовано не только на верхнем уровне CSS, но и внутри любого фрагмента условной группы-правил.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - **@media**
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```

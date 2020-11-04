@@ -8,6 +8,25 @@ description: Правило @font-feature-values позволяет исполь
 
 Правило `@font-feature-values` может использоваться как на вернем уровне вашего CSS так и внутри любого условного CSS правила.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - **@font-feature-values**
+
+    </div>
+
 ## Синтаксис
 
 ```css

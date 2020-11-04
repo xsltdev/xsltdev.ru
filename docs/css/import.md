@@ -8,6 +8,25 @@ description: Правило @import используется для импорт
 
 Эти правила должны предшествовать всем другим типам правил, кроме правил [`@charset`](charset.md) поскольку это не вложенный оператор, `@import` не может использоваться внутри условных групповых at-правил.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - **@import**
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

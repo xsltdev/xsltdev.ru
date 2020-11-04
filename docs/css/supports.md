@@ -6,6 +6,25 @@ description: Правило @supports позволяет проверить, п�
 
 Правило **`@supports`** позволяет проверить, поддерживает браузер ту или иную возможность, и на основе этого применить стили. Можно создавать составные условия с помощью логических операторов `not`, `and`, `or`.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - **@supports**
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

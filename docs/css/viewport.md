@@ -6,6 +6,25 @@ description: Правило @viewport позволяет оптимизиров�
 
 Правило **`@viewport`** позволяет оптимизировать макет веб-страницы в зависимости от различных устройств и их размеров. Является аналогом `<meta name="viewport">`, но переносит параметры из HTML в правила CSS.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - **@viewport**
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

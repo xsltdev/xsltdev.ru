@@ -8,6 +8,25 @@ description: Правило @keyframes управляет промежуточн
 
 Это дает больший контроль над промежуточными этапами анимационной последовательности, чем [переходы](transition.md).
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - **@keyframes**
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

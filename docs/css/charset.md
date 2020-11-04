@@ -8,6 +8,25 @@ description: Правило @charset задает кодировку табли�
 
 Это правило должно быть первым с таблице, ему не должны предшествовать никакие другие правила или стили. Если правил `@charset` задано несколько, используется только первое.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - **@charset**
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -33,4 +52,4 @@ description: Правило @charset задает кодировку табли�
 
 ## Ссылки
 
-- [@charset](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset) <sup><small>MDN (рус.)</small></sup>
+- Правило [@charset](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset) <sup><small>MDN (рус.)</small></sup>

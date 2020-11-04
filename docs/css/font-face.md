@@ -8,6 +8,25 @@ description: Правило @font-face позволяет авторам ука�
 
 Позволяя авторам предоставлять свои собственные шрифты, `@font-face` устраняет необходимость зависеть от ограниченного количества шрифтов, установленных пользователями на их компьютерах.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - [@namespace](namespace.md)
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - **@font-face**
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -6,6 +6,25 @@ description: namespace - это правила определяющие прос
 
 **`@namespace`** - это правила определяющие пространства имён XML, которые будут использованы в таблице стилей. Они применяются чтобы ограничить CSS селекторы только элементами принадлежащими конкретному пространству имён. Namespace'ы полезны, в основном, когда идёт взаимодействие с документами содержащими множество неймспейсов, такими как HTML5 со встроенным SVG, MathML или XML.
 
+??? info "@-правила"
+
+    <div class="col3" markdown="1">
+
+    - [@charset](charset.md)
+    - [@import](import.md)
+    - **@namespace**
+    - [@media](media.md)
+    - [@supports](supports.md)
+    - [@document](document.md)
+    - [@page](page.md)
+    - [@font-face](font-face.md)
+    - [@keyframes](keyframes.md)
+    - [@viewport](viewport.md)
+    - [@counter-style](counter-style.md)
+    - [@font-feature-values](font-feature-values.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
