@@ -4,6 +4,7 @@ nav:
     - angular-cli.md
     - application-structure.md
     - angular-compilation.md
+    - angular-ivy.md
     - angular-templates.md
     - events-handling.md
     - two-way-data-binding.md

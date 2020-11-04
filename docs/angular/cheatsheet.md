@@ -1,6 +1,6 @@
 ---
 title: Шпаргалка
-description: Шпаркалка Angular 8+
+description: Шпаркалка Angular
 ---
 
 # Шпаргалка
