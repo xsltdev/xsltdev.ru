@@ -1,5 +1,5 @@
 title: Базы данных в PHP
-arrange:
+nav:
     - index.md
     - sql.md
     - mysql.md

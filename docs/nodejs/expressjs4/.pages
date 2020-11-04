@@ -1,5 +1,5 @@
 title: Express.js 4.x
-arrange:
+nav:
     - installing.md
     - hello-world.md
     - generator.md
@@ -18,4 +18,3 @@ arrange:
     - pm.md
     - best-practice-security.md
     - best-practice-performance.md
-    

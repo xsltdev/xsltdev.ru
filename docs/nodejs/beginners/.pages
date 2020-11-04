@@ -1,5 +1,5 @@
 title: Node.js для начинающих
-arrange:
+nav:
     - index.md
     - js.md
     - webapp.md

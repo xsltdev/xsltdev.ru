@@ -1,5 +1,5 @@
 title: Функции
-arrange:
+nav:
     - general.md
     - this.md
     - closures.md

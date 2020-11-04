@@ -1,5 +1,5 @@
 title: Директивы
-arrange:
+nav:
     - index.md
     - ngclass-ngstyle.md
     - attr-directive.md

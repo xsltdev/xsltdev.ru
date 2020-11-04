@@ -1,5 +1,5 @@
 title: Сборник рецептов XSLT
-arrange:
+nav:
     - index.md
     - primenenie-osey.md
     - filtraciya-uzlov.md

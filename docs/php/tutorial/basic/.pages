@@ -1,5 +1,5 @@
 title: Знакомство с языком PHP
-arrange:
+nav:
     - index.md
     - syntax.md
     - arrays.md

@@ -1,5 +1,5 @@
 title: Объекты
-arrange:
+nav:
     - general.md
     - prototype.md
     - hasownproperty.md

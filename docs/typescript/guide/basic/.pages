@@ -1,5 +1,5 @@
 title: Основы TypeScript
-arrange:
+nav:
     - let-const.md
     - types.md
     - types-2.md

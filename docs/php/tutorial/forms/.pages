@@ -1,5 +1,5 @@
 title: Протокол HTTP и формы в PHP
-arrange:
+nav:
     - index.md
     - forms.md
     - vulnerability.md

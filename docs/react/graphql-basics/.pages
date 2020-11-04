@@ -1,5 +1,5 @@
 title: Основы GraphQL
-arrange:
+nav:
     - index.md
     - how-it-works.md
     - terms.md

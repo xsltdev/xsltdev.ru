@@ -1,5 +1,5 @@
 title: GraphQL
-arrange:
+nav:
     - index.md
     - queries-and-mutations.md
     - schemas-and-types.md

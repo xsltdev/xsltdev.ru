@@ -1,5 +1,5 @@
 title: Введение в Angular
-arrange:
+nav:
     - start.md
     - first-app.md
     - first-app-js.md

@@ -1,5 +1,5 @@
 title: Typescript 1.8
-arrange:
+nav:
     - basic-types.md
     - variable-declarations.md
     - interfaces.md

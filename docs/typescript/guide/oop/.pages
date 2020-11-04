@@ -1,5 +1,5 @@
 title: ООП в Typescript
-arrange:
+nav:
     - classes.md
     - modificators.md
     - get-set.md

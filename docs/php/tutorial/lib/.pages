@@ -1,5 +1,5 @@
 title: Объекты и использование библиотек PHP
-arrange:
+nav:
     - index.md
     - libs.md
     - composer.md

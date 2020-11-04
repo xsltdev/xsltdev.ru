@@ -1,5 +1,5 @@
 title: Справочник по Node.js
-arrange:
+nav:
     - about.md
     - setup.md
     - npm.md

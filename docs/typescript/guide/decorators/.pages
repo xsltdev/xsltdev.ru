@@ -1,5 +1,5 @@
 title: Декораторы Typescript
-arrange:
+nav:
     - decor-classes.md
     - decor-method.md
     - decor-props.md

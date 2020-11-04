@@ -1,5 +1,5 @@
 title: Модули Typescript
-arrange:
+nav:
     - namespaces.md
     - modules.md
     - mod-load.md

@@ -1,5 +1,5 @@
 title: Pipes
-arrange:
+nav:
     - pipes.md
     - create-pipes.md
     - pure-pipes.md

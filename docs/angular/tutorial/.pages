@@ -1,5 +1,5 @@
 title: Руководство Angular 8
-arrange:
+nav:
     - setup-and-configuration.md
     - angular-cli.md
     - application-structure.md

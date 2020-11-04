@@ -1,5 +1,5 @@
 title: Сервисы
-arrange:
+nav:
     - services.md
     - injections.md
     - optional.md

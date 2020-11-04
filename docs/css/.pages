@@ -1,5 +1,5 @@
 title: CSS
-arrange:
+nav:
     - index.md
     - flex-guide
     - grid-guide

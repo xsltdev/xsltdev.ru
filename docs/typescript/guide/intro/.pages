@@ -1,5 +1,5 @@
 title: Введение в TypeScript
-arrange:
+nav:
     - about-ts.md
     - install.md
     - first-app.md

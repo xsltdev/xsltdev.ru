@@ -1,5 +1,5 @@
 title: RxJS
-arrange:
+nav:
     - about.md
     - observable.md
     - subject.md

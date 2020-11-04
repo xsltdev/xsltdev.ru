@@ -1,4 +1,4 @@
 title: Шаблонизация и подключение файлов в PHP
-arrange:
+nav:
     - index.md
     - templates.md

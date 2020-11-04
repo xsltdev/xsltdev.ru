@@ -1,5 +1,5 @@
 title: Нативности
-arrange:
+nav:
     - eval.md
     - undefined.md
     - semicolon.md

@@ -1,5 +1,5 @@
 title: Руководство по Node.js
-arrange:
+nav:
     - intro.md
     - first-app.md
     - modules.md

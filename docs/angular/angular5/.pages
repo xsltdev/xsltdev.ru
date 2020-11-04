@@ -1,5 +1,5 @@
 title: Руководство Angular 5
-arrange:
+nav:
     - index.md
     - vvedenie-v-angular.md
     - testirovanie-vozmozhnostey.md

@@ -1,5 +1,5 @@
 title: NgRx
-arrange:
+nav:
     - about.md
     - actions.md
     - reducers.md

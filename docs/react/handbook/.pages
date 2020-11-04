@@ -1,5 +1,5 @@
 title: Документация по React
-arrange:
+nav:
     - tutorial.md
     - getting-started.md
     - add-react-to-a-website.md

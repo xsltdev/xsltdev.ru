@@ -1,5 +1,5 @@
 title: Учебник по PHP
-arrange:
+nav:
     - index.md
     - basic
     - include
