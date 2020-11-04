@@ -1,3 +1,7 @@
+---
+description: Реактивные формы (Angular reactive forms) построены на основе механизма, использующего реактивный подход к программированию
+---
+
 # Реактивные формы
 
 **Реактивные формы** (Angular reactive forms) построены на основе механизма, использующего реактивный подход к программированию.
@@ -8,65 +12,65 @@
 
 ## FormGroup и FormControl
 
-Реактивная форма Angular - объединение взаимосвязанных полей (группа), которое может содержать дочерние группы.
+Реактивная форма Angular — объединение взаимосвязанных полей (группа), которое может содержать дочерние группы.
 
-Группа представляет собой объект [`FormGroup`](https://angular.io/api/forms/FormGroup), а поле - объект [`FormControl`](https://angular.io/api/forms/FormControl). Оба класса импортируются из `@angular/forms`.
+Группа представляет собой объект [`FormGroup`](https://angular.io/api/forms/FormGroup), а поле — объект [`FormControl`](https://angular.io/api/forms/FormControl). Оба класса импортируются из `@angular/forms`.
 
-_reactive-form-example.component.ts_
+=== "reactive-form-example.component.ts"
 
-```ts
-@Component({
-  selector: 'reactive-form-example',
-  templateUrl: './reactive-form-example.component.html',
-})
-export class ReactiveFormExampleComponent {
-  buyTicketForm: FormGroup
-
-  constructor() {
-    this._createForm()
-  }
-
-  private _createForm() {
-    this.buyTicketForm = new FormGroup({
-      passenger: new FormControl(null),
-      passengerAge: new FormControl(null),
-
-      passengerContacts: new FormGroup({
-        telegram: new FormControl(null),
-        whatsapp: new FormControl(null),
-      }),
+    ```ts
+    @Component({
+      selector: 'reactive-form-example',
+      templateUrl: './reactive-form-example.component.html',
     })
-  }
-}
-```
+    export class ReactiveFormExampleComponent {
+      buyTicketForm: FormGroup
 
-_reactive-form-example.component.html_
+      constructor() {
+        this._createForm()
+      }
 
-```html
-<form [formGroup]="buyTicketForm" novalidate>
-  <div>
-    <label>Passenger</label>
-    <input type="text" formControlName="passenger" />
-  </div>
+      private _createForm() {
+        this.buyTicketForm = new FormGroup({
+          passenger: new FormControl(null),
+          passengerAge: new FormControl(null),
 
-  <div>
-    <label>Age</label>
-    <input type="number" formControlName="passengerAge" />
-  </div>
+          passengerContacts: new FormGroup({
+            telegram: new FormControl(null),
+            whatsapp: new FormControl(null),
+          }),
+        })
+      }
+    }
+    ```
 
-  <div formGroupName="passengerContacts">
-    <div>
-      <label>Telegram</label>
-      <input type="text" formControlName="telegram" />
-    </div>
+=== "reactive-form-example.component.html"
 
-    <div>
-      <label>Whatsapp</label>
-      <input type="text" formControlName="whatsapp" />
-    </div>
-  </div>
-</form>
-```
+    ```html
+    <form [formGroup]="buyTicketForm" novalidate>
+      <div>
+        <label>Passenger</label>
+        <input type="text" formControlName="passenger" />
+      </div>
+
+      <div>
+        <label>Age</label>
+        <input type="number" formControlName="passengerAge" />
+      </div>
+
+      <div formGroupName="passengerContacts">
+        <div>
+          <label>Telegram</label>
+          <input type="text" formControlName="telegram" />
+        </div>
+
+        <div>
+          <label>Whatsapp</label>
+          <input type="text" formControlName="whatsapp" />
+        </div>
+      </div>
+    </form>
+    ```
 
 При определении поля конструктору `FormControl` первым параметром передается начальное значение поля. Но если помимо значения необходимо задать другие параметры, например, сделать поле неактивным, используйте объект.
 
@@ -76,7 +80,7 @@ new FormControl({ value: null, disabled: true })
 
 С полным перечнем возможных параметров можно ознакомиться в документации.
 
-В шаблоне главная группа обозначается директивой `formGroup`, которой передается переменная одноименного типа, содержащая описание модели формы. Вложенные группы обозначаются директивой [`formGroupName`](https://angular.io/api/forms/FormGroupName), а поля группы - директивой [`formControlName`](https://angular.io/api/forms/FormControlName).
+В шаблоне главная группа обозначается директивой `formGroup`, которой передается переменная одноименного типа, содержащая описание модели формы. Вложенные группы обозначаются директивой [`formGroupName`](https://angular.io/api/forms/FormGroupName), а поля группы — директивой [`formControlName`](https://angular.io/api/forms/FormControlName).
 
 Если значение директив реактивной формы Angular задается вручную, то директива пишется без квадратных скобок.
 
@@ -97,23 +101,23 @@ fieldName: string = 'MOBILE_PHONE' //в контроллере
 
 Основные поля объекта реактивной формы Angular:
 
-- `controls` - поля, включая вложенные `FormGroup`;
-- `errors` - содержит ошибки валидации;
-- `status` - строка, определяющая правильность заполнения формы, значение либо "VALID", либо "INVALID";
-- `valid` - true, если форма валидна;
-- `invalid` - true, если форма невалидна;
-- `pristine` - true, если не было взаимодействия с полями;
-- `touched` - true, если одно из полей становилось активным (получало фокус);
-- `dirty` - true, если пользователь заполнил хотя бы одно из полей;
-- `value` - значение формы в виде объекта;
-- `statusChanges` - позволяет отслеживать изменение статуса валидности;
-- `valueChanges` - позволяет отслеживать изменение значения.
+- `controls` — поля, включая вложенные `FormGroup`;
+- `errors` — содержит ошибки валидации;
+- `status` — строка, определяющая правильность заполнения формы, значение либо `VALID`, либо `INVALID`;
+- `valid` — `true`, если форма валидна;
+- `invalid` — `true`, если форма невалидна;
+- `pristine` — `true`, если не было взаимодействия с полями;
+- `touched` — `true`, если одно из полей становилось активным (получало фокус);
+- `dirty` — `true`, если пользователь заполнил хотя бы одно из полей;
+- `value` — значение формы в виде объекта;
+- `statusChanges` — позволяет отслеживать изменение статуса валидности;
+- `valueChanges` — позволяет отслеживать изменение значения.
 
-!!! note ""
+!!! note "Важно"
 
     Неактивные (`disabled`) поля формы не входят в ее значение и будут отсутствовать в поле `value`. Для получения полной модели имеется `getRawValue()`.
 
-Angular reactive forms позволяют обращаться к отдельному полю используя метод `get()`, которому передается в виде строки наименование поля.
+Реактивные формы позволяют обращаться к отдельному полю используя метод `get()`, которому передается в виде строки наименование поля.
 
 ```ts
 this.loginForm.get('login') //поле
@@ -157,15 +161,15 @@ this.loginForm.reset({ login: 'default_login' })
 
 Для динамического изменения структуры Angular reactive forms предусмотрен ряд методов:
 
-- `addControl(name: string, value: any)` - добавляет новое поле соответствующей группе;
-- `setControl(name: string, value: any)` - заменяет уже существующее поле соответствующей группы;
-- `removeControl(name: string)` - удаляет поле из группы.
+- `addControl(name: string, value: any)` — добавляет новое поле соответствующей группе;
+- `setControl(name: string, value: any)` — заменяет уже существующее поле соответствующей группы;
+- `removeControl(name: string)` — удаляет поле из группы.
 
 ## patchValue() и setValue()
 
 Для задания форме значений, например, при редактировании данных, полученных от сервера, используются методы `patchValue()` и `setValue()`.
 
-Методу `setValue()` должен передаваться объект, полностью совпадающий по строению с описанной моделью формы, а `patchValue()` - лишь часть этой структуры.
+Методу `setValue()` должен передаваться объект, полностью совпадающий по строению с описанной моделью формы, а `patchValue()` — лишь часть этой структуры.
 
 ```ts
 this.loginForm.patchValue({ login: 'user123' })
@@ -194,61 +198,69 @@ this.loginForm.patchValue(
 
 Пример с полем.
 
-```ts
-userForm: FormGroup = new FormGroup({
-  fullName: new FormControl(''),
-  numbers: new FormArray([
-    new FormControl(''),
-    new FormControl(''),
-  ]),
-})
-```
+=== "TS"
 
-```html
-<div
-  formArrayName="numbers"
-  *ngFor="let item of userForm.get('numbers').controls; let i = index;"
->
-  <input type="text" [formControlName]="i" />
-</div>
-```
+    ```ts
+    userForm: FormGroup = new FormGroup({
+      fullName: new FormControl(''),
+      numbers: new FormArray([
+        new FormControl(''),
+        new FormControl(''),
+      ]),
+    })
+    ```
+
+=== "HTML"
+
+    ```html
+    <div
+      formArrayName="numbers"
+      *ngFor="let item of userForm.get('numbers').controls; let i = index;"
+    >
+      <input type="text" [formControlName]="i" />
+    </div>
+    ```
 
 Пример с группой.
 
-```ts
-userForm: FormGroup = new FormGroup({
-  fullName: new FormControl(''),
-  children: new FormArray([
-    new FormGroup({
-      fullName: new FormControl(''),
-      age: new FormControl(''),
-    }),
-    new FormGroup({
-      fullName: new FormControl(''),
-      age: new FormControl(''),
-    }),
-  ]),
-})
-```
+=== "TS"
 
-```html
-<div
-  formArrayName="numbers"
-  *ngFor="let item of userForm.get('children').controls; let i = index;"
->
-  <div [formGroupName]="i">
-    <div>
-      <label>Name</label>
-      <input type="text" formControlName="fullName" />
-    </div>
+    ```ts
+    userForm: FormGroup = new FormGroup({
+      fullName: new FormControl(''),
+      children: new FormArray([
+        new FormGroup({
+          fullName: new FormControl(''),
+          age: new FormControl(''),
+        }),
+        new FormGroup({
+          fullName: new FormControl(''),
+          age: new FormControl(''),
+        }),
+      ]),
+    })
+    ```
 
-    <div>
-      <label>Age</label>
-      <input type="text" formControlName="age" />
+=== "HTML"
+
+    ```html
+    <div
+      formArrayName="numbers"
+      *ngFor="let item of userForm.get('children').controls; let i = index;"
+    >
+      <div [formGroupName]="i">
+        <div>
+          <label>Name</label>
+          <input type="text" formControlName="fullName" />
+        </div>
+
+        <div>
+          <label>Age</label>
+          <input type="text" formControlName="age" />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-```
+    ```
 
 ## Angular Form Builder
 

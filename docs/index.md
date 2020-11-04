@@ -54,10 +54,11 @@ template: home.html
 
 <div class="cell" markdown="1">
 
-[![Angular 2+](angular.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/angular/)
+[![Angular](angular.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/angular/)
 
-### [Angular 2+](/angular/)
+### [Angular](/angular/)
 
+- [Руководство](/angular/tutorial/setup-and-configuration/)
 - [NgRx](/angular/ngrx/about/)
 - [RxJS](/angular/rxjs/about/)
 
@@ -137,7 +138,7 @@ template: home.html
 : JavaScript Гарден **не** имеет цели научить вас языку JavaScript. Вам понадобится реальный опыт работы с языком чтобы понимать темы, рассматриваемые в этом руководстве.
 
 [Руководство по регулярным выражениям в JavaScript](/javascript/regexp/)
-: Регулярные выражения (RegExp) - это очень эффективный способ работы со строками.
+: Регулярные выражения (RegExp) — это очень эффективный способ работы со строками.
 
 [Документация Typescript 3.8](/typescript/ts38/)
 : Typescript 3.8 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>

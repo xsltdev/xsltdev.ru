@@ -37,7 +37,7 @@ export class AppComponent {
 - `DecimalPipe`: задает формат числа
 - `SlicePipe`: обрезает строку
 
-При применении классов суффикс `Pipe` отбрасывается (за исключением `DecimalPipe` - для его применения используется название `number`):
+При применении классов суффикс `Pipe` отбрасывается (за исключением `DecimalPipe` — для его применения используется название `number`):
 
 ```typescript
 import { Component } from '@angular/core'
@@ -110,9 +110,9 @@ export class AppComponent {
 
 - `value`: само выводимое значение
 - `digitsInfo`: строка в формате "minIntegerDigits.minFractionDigits-maxFractionDigits", где
-  - `minIntegerDigits` - минимальное количество цифр в целой части
-  - `minFractionDigits` - минимальное количество цифр в дробной части
-  - `maxFractionDigits` - максимальное количество цифр в дробной части
+  - `minIntegerDigits` — минимальное количество цифр в целой части
+  - `minFractionDigits` — минимальное количество цифр в дробной части
+  - `maxFractionDigits` — максимальное количество цифр в дробной части
 - `locale`: код применяемой культуры
 
 ```typescript

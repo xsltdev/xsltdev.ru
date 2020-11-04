@@ -10,9 +10,9 @@ description: Использование селектора компонента,
 
 Он работает так же как и css селекторы:
 
-- `selector: 'app-servers'` - элемент
-- `selector: '.app-servers'` - класс
-- `selector: '[app-servers]'` - data атрибут
+- `selector: 'app-servers'` — элемент
+- `selector: '.app-servers'` — класс
+- `selector: '[app-servers]'` — data атрибут
 
 В шалоне должно быть соответственно:
 
@@ -24,7 +24,7 @@ description: Использование селектора компонента,
 
 ## Databinding
 
-_Датабиндинг (Databinding, связывание данных)_ - это коммуникация между TypeScript (бизнес логикой) и шаблоном (html).
+_Датабиндинг (Databinding, связывание данных)_ — это коммуникация между TypeScript (бизнес логикой) и шаблоном (html).
 
 ## Строковая интерполяция
 
@@ -37,7 +37,7 @@ export class ServerComponent {
 }
 ```
 
-Возможность указать тип переменной - особенность TypeScript, это не обязательно делать всегда.
+Возможность указать тип переменной — особенность TypeScript, это не обязательно делать всегда.
 
 `app\server\server.component.html`:
 
@@ -46,7 +46,7 @@ export class ServerComponent {
 serverStatus }}
 ```
 
-`{{ 'Server' }}`, `{{serverId}}`, `{{ serverStatus }}` - будут интерполированы в строки.
+`{{ 'Server' }}`, `{{serverId}}`, `{{ serverStatus }}` — будут интерполированы в строки.
 
 ## Интерполяция функции
 

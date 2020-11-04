@@ -186,7 +186,7 @@ module.exports = {
     app: './src/main.ts',
   },
   output: {
-    path: path.resolve(__dirname, './public'), // путь к каталогу выходных файлов - папка public
+    path: path.resolve(__dirname, './public'), // путь к каталогу выходных файлов — папка public
     publicPath: '/public/',
     filename: '[name].js', // название создаваемого файла
   },

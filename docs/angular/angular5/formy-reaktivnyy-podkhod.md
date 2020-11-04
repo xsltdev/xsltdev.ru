@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
 ## Валидация реактивной формы
 
-Реактивная форма конфигурируется из компонента. Для того, чтобы добавить валидацию, в конструктор объекта `FormControl` добавляется второй параметр - объект или массив объектов статичного класса `Validators`.
+Реактивная форма конфигурируется из компонента. Для того, чтобы добавить валидацию, в конструктор объекта `FormControl` добавляется второй параметр — объект или массив объектов статичного класса `Validators`.
 
 `app.component.ts`:
 
@@ -205,7 +205,7 @@ import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 forbiddenNames = ['Test', 'Hacker', 'Spammer']
 ```
 
-Валидатор - это функция. Создадим кастомный валидатор:
+Валидатор — это функция. Создадим кастомный валидатор:
 
 ```typescript
 validateName(control: FormControl): {[s: string]: boolean} {

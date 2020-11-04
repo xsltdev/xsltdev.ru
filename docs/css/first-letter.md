@@ -25,13 +25,13 @@ p::first-letter {
 
 Только малый поднабор свойств CSS можно использовать с псевдоэлементом `::first-letter`:
 
-- Свойства шрифта: [`font`](font.md), [`font-style`](font-style.md), [`font-feature-settings`](font-feature-settings.md), [`font-kerning`](font-kerning.md), [`font-language-override`](font-language-override.md), [`font-stretch`](font-stretch.md), [`font-synthesis`](font-synthesis.md), [`font-variant`](font-variant.md), [`font-variant-alternates`](font-variant-alternates.md), [`font-variant-caps`](font-variant-caps.md), [`font-variant-east-asian`](font-variant-east-asian.md), [`font-variant-ligatures`](font-variant-ligatures.md), [`font-variant-numeric`](font-variant-numeric.md), [`font-variant-position`](font-variant-position.md), [`font-weight`](font-weight.md), [`font-size`](font-size.md), [`font-size-adjust`](font-size-adjust.md), [`line-height`](line-height.md) и [`font-family`](font-family.md)
-- Свойства фона: [`background`](background.md), [`background-color`](background-color.md), [`background-image`](background-image.md), [`background-clip`](background-clip.md), [`background-origin`](background-origin.md), [`background-position`](background-position.md), [`background-repeat`](background-repeat.md), [`background-size`](background-size.md), [`background-attachment`](background-attachment.md) и [`background-blend-mode`](background-blend-mode.md)
-- Свойства отступов: [`margin`](margin.md), [`margin-top`](margin-top.md), [`margin-right`](margin-right.md), [`margin-bottom`](margin-bottom.md), [`margin-left`](margin-left.md)
-- Свойства полей: [`padding`](padding.md), [`padding-top`](padding-top.md), [`padding-right`](padding-right.md), [`padding-bottom`](padding-bottom.md), [`padding-left`](padding-left.md)
-- Свойства рамок: [`border`](border.md), [`border-style`](border-style.md), [`border-color`](border-color.md), [`border-width`](border-width.md), [`border-radius`](border-radius.md), [`border-image`](border-image.md)
-- Цвет [`color`](color.md)
-- Свойства [`text-decoration`](text-decoration.md), [`text-shadow`](text-shadow.md), [`text-transform`](text-transform.md), [`letter-spacing`](letter-spacing.md), [`word-spacing`](word-spacing.md), [`line-height`](line-height.md), [`text-decoration-color`](text-decoration-color.md), [`text-decoration-line`](text-decoration-line.md), [`text-decoration-style`](text-decoration-style.md), [`box-shadow`](box-shadow.md), [`float`](float.md), [`vertical-align`](vertical-align.md)
+- Свойства шрифта: `font`, `font-style`, `font-feature-settings`, `font-kerning`, `font-language-override`, `font-stretch`, `font-synthesis`, `font-variant`, `font-variant-alternates`, `font-variant-caps`, `font-variant-east-asian`, `font-variant-ligatures`, `font-variant-numeric`, `font-variant-position`, `font-weight`, `font-size`, `font-size-adjust`, `line-height` и `font-family`
+- Свойства фона: `background`, `background-color`, `background-image`, `background-clip`, `background-origin`, `background-position`, `background-repeat`, `background-size`, `background-attachment` и `background-blend-mode`
+- Свойства отступов: `margin`, `margin-top`, `margin-right`, `margin-bottom`, `margin-left`
+- Свойства полей: `padding`, `padding-top`, `padding-right`, `padding-bottom`, `padding-left`
+- Свойства рамок: `border`, `border-style`, `border-color`, `border-width`, `border-radius`, `border-image`
+- Цвет `color`
+- Свойства `text-decoration`, `text-shadow`, `text-transform`, `letter-spacing`, `word-spacing`, `line-height`, `text-decoration-color`, `text-decoration-line`, `text-decoration-style`, `box-shadow`, `float`, `vertical-align`
 
 ## Спецификации
 

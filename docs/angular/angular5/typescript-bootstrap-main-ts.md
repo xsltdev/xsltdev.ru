@@ -25,9 +25,9 @@ description: Использование TypeScript, подключение Boots
 
 _Angular_ используется для создания _SPA (Single page application)_.
 
-`index.html` - базовая страница.
+`index.html` — базовая страница.
 
-`main.ts` - скрипт, который выполняется после загрузки страницы. В этом скрипте главное:
+`main.ts` — скрипт, который выполняется после загрузки страницы. В этом скрипте главное:
 
 ```js
 import { AppModule } from './app/app.module'

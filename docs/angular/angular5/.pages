@@ -1,4 +1,5 @@
 title: Руководство Angular 5
+hide: true
 nav:
     - index.md
     - vvedenie-v-angular.md

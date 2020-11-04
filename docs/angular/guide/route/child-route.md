@@ -146,7 +146,7 @@ import { Component } from '@angular/core'
 export class AppComponent {}
 ```
 
-При переходе по подобным ссылкам будет срабатывать маршрутизация к компоненту `ItemComponent` и ему будет передаваться параметр маршрута - `id`. И также будет срабатывать маршрутизация к `ItemDetailsComponent` или `ItemStatComponent`, если после `id` идет какой-нибудь сегмент `details` или `stat`:
+При переходе по подобным ссылкам будет срабатывать маршрутизация к компоненту `ItemComponent` и ему будет передаваться параметр маршрута — `id`. И также будет срабатывать маршрутизация к `ItemDetailsComponent` или `ItemStatComponent`, если после `id` идет какой-нибудь сегмент `details` или `stat`:
 
 ![Скриншот](child-route-2.png)
 

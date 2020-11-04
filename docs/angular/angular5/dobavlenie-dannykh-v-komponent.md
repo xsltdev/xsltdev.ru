@@ -23,7 +23,7 @@ export class RecipeListComponent implements OnInit {
 }
 ```
 
-`recipes: Recipe[]` - переменная `recipes` с типом _массив объектов класса_ `Recipe` (_Typescript_ синтаксис).
+`recipes: Recipe[]` — переменная `recipes` с типом _массив объектов класса_ `Recipe` (_Typescript_ синтаксис).
 
 `\app\recipes\recipe-list\recipe-list.component.html`:
 
