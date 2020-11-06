@@ -6,6 +6,33 @@ description: Свойство grid-row-start определяет местопо
 
 Свойство **`grid-row-start`** определяет местоположение в сетке ссылаясь на конкретные линии. `grid-column-start` / `grid-row-start` — это линия с которой начинается элемент.
 
+??? info "Grid Layout"
+
+    **Руководство по [Grid Layout](grid-guide/grid-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - [grid](grid.md)
+    - [grid-area](grid-area.md)
+    - [grid-auto-columns](grid-auto-columns.md)
+    - [grid-auto-flow](grid-auto-flow.md)
+    - [grid-auto-rows](grid-auto-rows.md)
+    - [grid-column](grid-column.md)
+    - [grid-column-end](grid-column-end.md)
+    - [grid-column-gap](grid-column-gap.md)
+    - [grid-column-start](grid-column-start.md)
+    - [grid-gap](grid-gap.md)
+    - [grid-row](grid-row.md)
+    - [grid-row-end](grid-row-end.md)
+    - [grid-row-gap](grid-row-gap.md)
+    - **grid-row-start**
+    - [grid-template](grid-template.md)
+    - [grid-template-areas](grid-template-areas.md)
+    - [grid-template-columns](grid-template-columns.md)
+    - [grid-template-rows](grid-template-rows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

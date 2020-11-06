@@ -6,6 +6,33 @@ description: Свойство grid-template — сокращение для grid
 
 Свойство **`grid-template`** — сокращение для [`grid-template-rows`](grid-template-rows.md), [`grid-template-columns`](grid-template-columns.md), и [`grid-template-areas`](grid-template-areas.md).
 
+??? info "Grid Layout"
+
+    **Руководство по [Grid Layout](grid-guide/grid-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - [grid](grid.md)
+    - [grid-area](grid-area.md)
+    - [grid-auto-columns](grid-auto-columns.md)
+    - [grid-auto-flow](grid-auto-flow.md)
+    - [grid-auto-rows](grid-auto-rows.md)
+    - [grid-column](grid-column.md)
+    - [grid-column-end](grid-column-end.md)
+    - [grid-column-gap](grid-column-gap.md)
+    - [grid-column-start](grid-column-start.md)
+    - [grid-gap](grid-gap.md)
+    - [grid-row](grid-row.md)
+    - [grid-row-end](grid-row-end.md)
+    - [grid-row-gap](grid-row-gap.md)
+    - [grid-row-start](grid-row-start.md)
+    - **grid-template**
+    - [grid-template-areas](grid-template-areas.md)
+    - [grid-template-columns](grid-template-columns.md)
+    - [grid-template-rows](grid-template-rows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -90,55 +117,55 @@ grid-template: unset;
 
 ## Описание и примеры
 
-CSS
+=== "CSS"
 
-```css
-#page {
-  display: grid;
-  width: 100%;
-  height: 200px;
-  grid-template:
-    [header-left] 'head head' 30px [header-right]
-    [main-left] 'nav  main' 1fr [main-right]
-    [footer-left] 'nav  foot' 30px [footer-right]
-    / 120px 1fr;
-}
+    ```css
+    #page {
+      display: grid;
+      width: 100%;
+      height: 200px;
+      grid-template:
+        [header-left] 'head head' 30px [header-right]
+        [main-left] 'nav  main' 1fr [main-right]
+        [footer-left] 'nav  foot' 30px [footer-right]
+        / 120px 1fr;
+    }
 
-header {
-  background-color: lime;
-  grid-area: head;
-}
+    header {
+      background-color: lime;
+      grid-area: head;
+    }
 
-nav {
-  background-color: lightblue;
-  grid-area: nav;
-}
+    nav {
+      background-color: lightblue;
+      grid-area: nav;
+    }
 
-main {
-  background-color: yellow;
-  grid-area: main;
-}
+    main {
+      background-color: yellow;
+      grid-area: main;
+    }
 
-footer {
-  background-color: red;
-  grid-column: foot;
-}
-```
+    footer {
+      background-color: red;
+      grid-column: foot;
+    }
+    ```
 
-HTML
+=== "HTML"
 
-```html
-<section id="page">
-  <header>Header</header>
-  <nav>Navigation</nav>
-  <main>Main area</main>
-  <footer>Footer</footer>
-</section>
-```
+    ```html
+    <section id="page">
+      <header>Header</header>
+      <nav>Navigation</nav>
+      <main>Main area</main>
+      <footer>Footer</footer>
+    </section>
+    ```
 
-Результат:
+=== "Результат"
 
-![Пример использования свойства grid-template](grid-template.png)
+    ![Пример использования свойства grid-template](grid-template.png)
 
 ## См. также
 

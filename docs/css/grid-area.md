@@ -8,6 +8,33 @@ description: Свойство grid-area даёт название элемент
 
 Свойство **`grid-area`** является сокращенным свойством для [`grid-row-start`](grid-row-start.md), [`grid-column-start`](grid-column-start.md), [`grid-row-end`](grid-row-end.md) и [`grid-column-end`](grid-column-end.md), определяя размер и расположение элемента сетки.
 
+??? info "Grid Layout"
+
+    **Руководство по [Grid Layout](grid-guide/grid-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - [grid](grid.md)
+    - **grid-area**
+    - [grid-auto-columns](grid-auto-columns.md)
+    - [grid-auto-flow](grid-auto-flow.md)
+    - [grid-auto-rows](grid-auto-rows.md)
+    - [grid-column](grid-column.md)
+    - [grid-column-end](grid-column-end.md)
+    - [grid-column-gap](grid-column-gap.md)
+    - [grid-column-start](grid-column-start.md)
+    - [grid-gap](grid-gap.md)
+    - [grid-row](grid-row.md)
+    - [grid-row-end](grid-row-end.md)
+    - [grid-row-gap](grid-row-gap.md)
+    - [grid-row-start](grid-row-start.md)
+    - [grid-template](grid-template.md)
+    - [grid-template-areas](grid-template-areas.md)
+    - [grid-template-columns](grid-template-columns.md)
+    - [grid-template-rows](grid-template-rows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

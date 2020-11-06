@@ -8,6 +8,33 @@ description: Свойство grid является сокращенной фо�
 
 В одной строке `grid` могут быть описаны свойства только одного вида: явные или неявные. Подсвойства, которые не были описаны, принимают, как и в других сокращенных формах записи свойств, значения по умолчанию. Кроме того, при помощи сокращенной формы записи значения свойств для промежутков между рядами и столбцами сетки по умолчанию сбрасываются, не смотря на то, что они не могут быть установленны в сокращенной форме записи.
 
+??? info "Grid Layout"
+
+    **Руководство по [Grid Layout](grid-guide/grid-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - **grid**
+    - [grid-area](grid-area.md)
+    - [grid-auto-columns](grid-auto-columns.md)
+    - [grid-auto-flow](grid-auto-flow.md)
+    - [grid-auto-rows](grid-auto-rows.md)
+    - [grid-column](grid-column.md)
+    - [grid-column-end](grid-column-end.md)
+    - [grid-column-gap](grid-column-gap.md)
+    - [grid-column-start](grid-column-start.md)
+    - [grid-gap](grid-gap.md)
+    - [grid-row](grid-row.md)
+    - [grid-row-end](grid-row-end.md)
+    - [grid-row-gap](grid-row-gap.md)
+    - [grid-row-start](grid-row-start.md)
+    - [grid-template](grid-template.md)
+    - [grid-template-areas](grid-template-areas.md)
+    - [grid-template-columns](grid-template-columns.md)
+    - [grid-template-rows](grid-template-rows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -25,10 +52,9 @@ grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
 grid: 200px / auto-flow;
 grid: 30% / auto-flow dense;
 grid: repeat(3, [line1 line2 line3] 200px) / auto-flow 300px;
-grid: [line1] minmax(
-    20em,
-    max-content
-  ) / auto-flow dense 40%;
+grid:
+  [line1] minmax(20em, max-content)
+  / auto-flow dense 40%;
 
 /* [ auto-flow && dense? ] <'grid-auto-rows'>? /
 	<'grid-template-columns'> values */

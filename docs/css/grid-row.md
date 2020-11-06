@@ -6,6 +6,33 @@ description: CSS свойство grid-row определяет с какой с
 
 CSS свойство **`grid-row`** определяет с какой строки в макете сетки будет начинаться элемент, сколько строк будет занимать элемент, или на какой строке завершится элемент в макете сетки. Является сокращенным свойством для свойств [`grid-row-start`](grid-row-start.md) и [`grid-row-end`](grid-row-end.md).
 
+??? info "Grid Layout"
+
+    **Руководство по [Grid Layout](grid-guide/grid-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - [grid](grid.md)
+    - [grid-area](grid-area.md)
+    - [grid-auto-columns](grid-auto-columns.md)
+    - [grid-auto-flow](grid-auto-flow.md)
+    - [grid-auto-rows](grid-auto-rows.md)
+    - [grid-column](grid-column.md)
+    - [grid-column-end](grid-column-end.md)
+    - [grid-column-gap](grid-column-gap.md)
+    - [grid-column-start](grid-column-start.md)
+    - [grid-gap](grid-gap.md)
+    - **grid-row**
+    - [grid-row-end](grid-row-end.md)
+    - [grid-row-gap](grid-row-gap.md)
+    - [grid-row-start](grid-row-start.md)
+    - [grid-template](grid-template.md)
+    - [grid-template-areas](grid-template-areas.md)
+    - [grid-template-columns](grid-template-columns.md)
+    - [grid-template-rows](grid-template-rows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -303,4 +330,4 @@ grid-row-end: `auto`;
 
 ## Ссылки
 
-- [grid-row](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row) <sup><small>MDN (рус.)</small></sup>
