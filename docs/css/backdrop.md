@@ -8,6 +8,26 @@ description: Псевдоэлемент ::backdrop отображается ни
 
 В настоящее время работает только с модальными окнами, созданными с помощью элемента [`<dialog>`](/html/dialog/).
 
+??? info "Псевдо-элементы"
+
+    <div class="col3" markdown="1">
+
+    - [::after](after.md)
+    - **::backdrop**
+    - [::before](before.md)
+    - `::cue`
+    - [::first-letter](first-letter.md)
+    - [::first-line](first-line.md)
+    - `::grammar-error`
+    - `::marker`
+    - `::part()`
+    - [::placeholder](placeholder.md)
+    - [::selection](selection.md)
+    - `::slotted()`
+    - `::spelling-error`
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -87,9 +107,9 @@ dialog::backdrop {
 
 ## См. также
 
-- [`:fullscreen`](fullscreen.md)
-- [`<dialog>`](/html/dialog/)
+- Псевдо-класс [`:fullscreen`](fullscreen.md)
+- Элемент [`<dialog>`](/html/dialog/)
 
 ## Ссылки
 
-- [`::backdrop`](https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop) <sup><small>MDN (рус.)</small></sup>
+- Псевдо-элемент [`::backdrop`](https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop) <sup><small>MDN (рус.)</small></sup>

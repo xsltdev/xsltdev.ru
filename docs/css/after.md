@@ -8,6 +8,26 @@ description: Псевдо-элемент ::after соответствует ви
 
 Он обычно используется для добавления косметического контента к элементу с использованием свойства CSS содержимого. По умолчанию этот элемент [`inline`](display.md).
 
+??? info "Псевдо-элементы"
+
+    <div class="col3" markdown="1">
+
+    - **::after**
+    - [::backdrop](backdrop.md)
+    - [::before](before.md)
+    - `::cue`
+    - [::first-letter](first-letter.md)
+    - [::first-line](first-line.md)
+    - `::grammar-error`
+    - `::marker`
+    - `::part()`
+    - [::placeholder](placeholder.md)
+    - [::selection](selection.md)
+    - `::slotted()`
+    - `::spelling-error`
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -120,8 +140,8 @@ element::after {
 
 ## См. также
 
-- [`::before`](before.md)
-- [`content`](content.md)
+- Псевдо-элемент [`::before`](before.md)
+- Свойство [`content`](content.md)
 
 ## Ссылки
 

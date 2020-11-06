@@ -6,6 +6,26 @@ description: С помощью псевдоэлемента ::placeholder зад
 
 С помощью псевдоэлемента **`::placeholder`** задаётся стилевое оформление подсказывающего текста, созданного атрибутом `placeholder`. Допускается использовать свойства для изменения вида текста, например, задать шрифт и цвет.
 
+??? info "Псевдо-элементы"
+
+    <div class="col3" markdown="1">
+
+    - [::after](after.md)
+    - [::backdrop](backdrop.md)
+    - [::before](before.md)
+    - `::cue`
+    - [::first-letter](first-letter.md)
+    - [::first-line](first-line.md)
+    - `::grammar-error`
+    - `::marker`
+    - `::part()`
+    - **::placeholder**
+    - [::selection](selection.md)
+    - `::slotted()`
+    - `::spelling-error`
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -107,4 +127,4 @@ description: С помощью псевдоэлемента ::placeholder зад
 
 ## Ссылки
 
-- [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) <sup><small>MDN (рус.)</small></sup>
+- Псевдо-элемент [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) <sup><small>MDN (рус.)</small></sup>

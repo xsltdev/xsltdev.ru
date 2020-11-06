@@ -8,17 +8,43 @@ description: Псевдо-элемент ::before является первым 
 
 Часто применяется для оформления дополнительным контентом [`content`](content.md) родительского элемента. Этот элемент по умолчанию [строковый](display.md).
 
+??? info "Псевдо-элементы"
+
+    <div class="col3" markdown="1">
+
+    - [::after](after.md)
+    - [::backdrop](backdrop.md)
+    - **::before**
+    - `::cue`
+    - [::first-letter](first-letter.md)
+    - [::first-line](first-line.md)
+    - `::grammar-error`
+    - `::marker`
+    - `::part()`
+    - [::placeholder](placeholder.md)
+    - [::selection](selection.md)
+    - `::slotted()`
+    - `::spelling-error`
+
+    </div>
+
 ## Синтаксис
 
 ```css
 /* CSS3 синтаксис */
-element::before { свойства }
+element::before {
+  /* свойства */
+}
 
 /* CSS2 устаревший синтаксис (нужен только для поддержки IE8) */
-element:before  { свойства }
+element:before {
+  /* свойства */
+}
 
 /* добавляет контент "Hello world!" перед каждым элементом <p> */
-p::before { content: "Hello world!"; }
+p::before {
+  content: 'Hello world!';
+}
 ```
 
 Запись `::before` (с двумя двоеточиями) была введена в CSS3 для разделения между псевдо-классами и псевдо-элементами. Браузеры также поддерживают устаревшую запись `:before` (с одним двоеточием) из стандарта CSS 2.

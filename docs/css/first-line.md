@@ -8,6 +8,26 @@ description: Псевдокласс ::first-line применяет стили �
 
 Обратите внимание, что длина первой строки зависит от многих факторов, включая ширину элемента, ширину документа и размер шрифта текста.
 
+??? info "Псевдо-элементы"
+
+    <div class="col3" markdown="1">
+
+    - [::after](after.md)
+    - [::backdrop](backdrop.md)
+    - [::before](before.md)
+    - `::cue`
+    - [::first-letter](first-letter.md)
+    - **::first-line**
+    - `::grammar-error`
+    - `::marker`
+    - `::part()`
+    - [::placeholder](placeholder.md)
+    - [::selection](selection.md)
+    - `::slotted()`
+    - `::spelling-error`
+
+    </div>
+
 ## Синтаксис
 
 ```css
