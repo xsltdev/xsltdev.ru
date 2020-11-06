@@ -14,6 +14,22 @@ description: Свойство bottom устанавливает положени
 
 ![Рис. 2. Значение bottom относительно родителя](css_bottom_2.png)
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - **bottom**
+    - [clear](clear.md)
+    - [display](display.md)
+    - [float](float.md)
+    - [left](left.md)
+    - [position](position.md)
+    - [right](right.md)
+    - [top](top.md)
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

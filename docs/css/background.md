@@ -6,6 +6,25 @@ description: Универсальное свойство background позвол
 
 Универсальное свойство **`background`** позволяет установить одновременно до пяти характеристик фона. Значения могут идти в любом порядке, браузер сам определит, какое из них соответствует нужному свойству. Для подробного ознакомления смотрите информацию о каждом свойстве отдельно. Допустимо также указывать параметры сразу нескольких фонов, перечисляя их через запятую.
 
+??? info "Фон"
+
+    <div class="col3" markdown="1">
+
+    - **background**
+    - [background-attachment](background-attachment.md)
+    - [background-blend-mode](background-blend-mode.md)
+    - [background-clip](background-clip.md)
+    - [background-color](background-color.md)
+    - [background-image](background-image.md)
+    - [background-origin](background-origin.md)
+    - [background-position](background-position.md)
+    - [background-position-x](background-position-x.md)
+    - [background-position-y](background-position-y.md)
+    - [background-repeat](background-repeat.md)
+    - [background-size](background-size.md)
+
+    </div>
+
 ## Синтаксис
 
 ```

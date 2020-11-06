@@ -18,6 +18,22 @@ description: Свойство left для позиционированного �
 
 ![Рис. 3. Значение свойства left относительно родителя](css_left_3.png)
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - [clear](clear.md)
+    - [display](display.md)
+    - [float](float.md)
+    - **left**
+    - [position](position.md)
+    - [right](right.md)
+    - [top](top.md)
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

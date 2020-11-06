@@ -14,6 +14,22 @@ description: Свойство right для позиционированного 
 
 [Рис. 2. Значение свойства right относительно родителя](css_right_2.png)
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - [clear](clear.md)
+    - [display](display.md)
+    - [float](float.md)
+    - [left](left.md)
+    - [position](position.md)
+    - **right**
+    - [top](top.md)
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

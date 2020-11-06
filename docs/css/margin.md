@@ -10,9 +10,52 @@ description: Свойство margin устанавливает величину
 
 ![Рис. 1. Отступ от левого края элемента](css_margin_1.png)
 
-Если у элемента нет родителя, отступом будет расстояние от края элемента до края окна браузера с учетом того, что у самого окна по умолчанию тоже установлены отступы. Чтобы от них избавиться, следует устанавливать значение margin для селектора [`<body>`](../html/body.md) равное нулю.
+Если у элемента нет родителя, отступом будет расстояние от края элемента до края окна браузера с учетом того, что у самого окна по умолчанию тоже установлены отступы. Чтобы от них избавиться, следует устанавливать значение margin для селектора [`<body>`](/html/body/) равное нулю.
 
 Свойство `margin` позволяет задать величину отступа сразу для всех сторон элемента или определить её только для указанных сторон.
+
+??? info "Блоки"
+
+    <div class="col3" markdown="1">
+
+    - [height](height.md)
+    - [width](width.md)
+    - [max-height](max-height.md)
+    - [max-width](max-width.md)
+    - [min-height](min-height.md)
+    - [min-width](min-width.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - **margin**
+    - [margin-bottom](margin-bottom.md)
+    - [margin-left](margin-left.md)
+    - [margin-right](margin-right.md)
+    - [margin-top](margin-top.md)
+    - [margin-trim](margin-trim.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [padding](padding.md)
+    - [padding-bottom](padding-bottom.md)
+    - [padding-left](padding-left.md)
+    - [padding-right](padding-right.md)
+    - [padding-top](padding-top.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [overflow](overflow.md)
+    - [overflow-x](overflow-x.md)
+    - [overflow-y](overflow-y.md)
+    - [visibility](visibility.md)
+
+    </div>
 
 ## Синтаксис
 

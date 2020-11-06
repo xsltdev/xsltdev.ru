@@ -8,6 +8,25 @@ description: Свойство background-origin определяет облас�
 
 Это свойство не применяется, когда значение [`background-attachment`](background-attachment.md) задано как `fixed`.
 
+??? info "Фон"
+
+    <div class="col3" markdown="1">
+
+    - [background](background.md)
+    - [background-attachment](background-attachment.md)
+    - [background-blend-mode](background-blend-mode.md)
+    - [background-clip](background-clip.md)
+    - [background-color](background-color.md)
+    - [background-image](background-image.md)
+    - **background-origin**
+    - [background-position](background-position.md)
+    - [background-position-x](background-position-x.md)
+    - [background-position-y](background-position-y.md)
+    - [background-repeat](background-repeat.md)
+    - [background-size](background-size.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

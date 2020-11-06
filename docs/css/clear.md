@@ -8,6 +8,22 @@ description: Свойство clear устанавливает, с какой с
 
 Если задано обтекание элемента с помощью свойства [`float`](float.md), то `clear` отменяет его действие для указанных сторон.
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - **clear**
+    - [display](display.md)
+    - [float](float.md)
+    - [left](left.md)
+    - [position](position.md)
+    - [right](right.md)
+    - [top](top.md)
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

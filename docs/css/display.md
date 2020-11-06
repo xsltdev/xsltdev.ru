@@ -6,6 +6,22 @@ direction: Свойство display, которое определяет, как
 
 Свойство **`display`**, которое определяет, как элемент должен быть показан в документе.
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - [clear](clear.md)
+    - **display**
+    - [float](float.md)
+    - [left](left.md)
+    - [position](position.md)
+    - [right](right.md)
+    - [top](top.md)
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -8,6 +8,25 @@ description: Свойство background-image устанавливает фон
 
 Если одновременно для элемента задан цвет фона, он будет показан, пока фоновая картинка не загрузится полностью. То же произойдет, если изображения не доступны или их показ в браузере отключен. В случае наличия в рисунке прозрачных областей, через них будет проглядывать фоновый цвет. Допустимо указывать несколько фоновых изображений, перечисляя их параметры через запятую.
 
+??? info "Фон"
+
+    <div class="col3" markdown="1">
+
+    - [background](background.md)
+    - [background-attachment](background-attachment.md)
+    - [background-blend-mode](background-blend-mode.md)
+    - [background-clip](background-clip.md)
+    - [background-color](background-color.md)
+    - **background-image**
+    - [background-origin](background-origin.md)
+    - [background-position](background-position.md)
+    - [background-position-x](background-position-x.md)
+    - [background-position-y](background-position-y.md)
+    - [background-repeat](background-repeat.md)
+    - [background-size](background-size.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

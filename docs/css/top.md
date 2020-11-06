@@ -12,6 +12,22 @@ description: Свойство top для позиционированного э
 
 ![Рис. 2. Значение top относительно родителя](css_top_2.png)
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - [clear](clear.md)
+    - [display](display.md)
+    - [float](float.md)
+    - [left](left.md)
+    - [position](position.md)
+    - [right](right.md)
+    - **top**
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -46,7 +62,7 @@ top: unset;
 
 - [CSS Level 2 (Revision 1)](http://www.w3.org/TR/CSS2/visuren.html#propdef-top)
 
-## Описание и примеры
+## Пример
 
 ```html
 <!DOCTYPE html>

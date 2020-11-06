@@ -8,6 +8,22 @@ description: Свойство float определяет, по какой сто
 
 Когда значение свойства `float` равно `none`, элемент выводится на странице как обычно, при этом допускается, что одна строка обтекающего текста может быть на той же линии, что и сам элемент.
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - [clear](clear.md)
+    - [display](display.md)
+    - **float**
+    - [left](left.md)
+    - [position](position.md)
+    - [right](right.md)
+    - [top](top.md)
+    - [z-index](z-index.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

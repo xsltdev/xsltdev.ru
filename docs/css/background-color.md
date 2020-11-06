@@ -8,6 +8,25 @@ description: Свойство background-color определяет цвет ф�
 
 Хотя это свойство не наследует свойства своего родителя, из-за того, что начальное значение устанавливается прозрачным, цвет фона дочерних элементов совпадает с цветом фона родительского элемента.
 
+??? info "Фон"
+
+    <div class="col3" markdown="1">
+
+    - [background](background.md)
+    - [background-attachment](background-attachment.md)
+    - [background-blend-mode](background-blend-mode.md)
+    - [background-clip](background-clip.md)
+    - **background-color**
+    - [background-image](background-image.md)
+    - [background-origin](background-origin.md)
+    - [background-position](background-position.md)
+    - [background-position-x](background-position-x.md)
+    - [background-position-y](background-position-y.md)
+    - [background-repeat](background-repeat.md)
+    - [background-size](background-size.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -11,6 +11,22 @@ description: Свойство z-index определяет положение э
 - порядок наложения в текущем контексте наложения;
 - создаёт ли контейнер локальный контекст наложения.
 
+??? info "Позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [bottom](bottom.md)
+    - [clear](clear.md)
+    - [display](display.md)
+    - [float](float.md)
+    - [left](left.md)
+    - [position](position.md)
+    - [right](right.md)
+    - [top](top.md)
+    - **z-index**
+
+    </div>
+
 ## Синтаксис
 
 ```css
@@ -49,7 +65,7 @@ z-index: unset;
 
 - [CSS Level 2 (Revision 1)](http://www.w3.org/TR/CSS2/visuren.html#z-index)
 
-## Описание и примеры
+## Пример
 
 ```html
 <!DOCTYPE html>
