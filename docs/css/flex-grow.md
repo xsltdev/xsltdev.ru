@@ -8,6 +8,40 @@ description: Свойство flex-grow определяет, сколько п�
 
 В качестве значения принимаются числа, они задают пропорции каждого флекса. К примеру, если для всех элементов установлено значение 1, то они получатся равного размера. Если какой-то элемент получил значение 2, то его размер будет в два раза больше остальных.
 
+??? info "Flexbox и выравнивание"
+
+    **Руководство по [Flexbox](flex-guide/flex-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - [flex](flex.md)
+    - [flex-basis](flex-basis.md)
+    - [flex-direction](flex-direction.md)
+    - [flex-flow](flex-flow.md)
+    - **flex-grow**
+    - [flex-shrink](flex-shrink.md)
+    - [flex-wrap](flex-wrap.md)
+    - [order](order.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [justify-content](justify-content.md)
+    - [align-content](align-content.md)
+    - [place-content](place-content.md)
+    - [justify-items](justify-items.md)
+    - [align-items](align-items.md)
+    - [place-items](place-items.md)
+    - [justify-self](justify-self.md)
+    - [align-self](align-self.md)
+    - [place-self](place-self.md)
+    - [row-gap](row-gap.md)
+    - [column-gap](column-gap.md)
+    - [gap](gap.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

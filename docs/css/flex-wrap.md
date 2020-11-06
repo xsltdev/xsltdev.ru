@@ -8,6 +8,40 @@ description: Свойство flex-wrap указывает, следует ли 
 
 Если перенос строк допускается, то свойство также позволяет контролировать направление, в котором выкладываются строки.
 
+??? info "Flexbox и выравнивание"
+
+    **Руководство по [Flexbox](flex-guide/flex-1.md)**
+
+    <div class="col3" markdown="1">
+
+    - [flex](flex.md)
+    - [flex-basis](flex-basis.md)
+    - [flex-direction](flex-direction.md)
+    - [flex-flow](flex-flow.md)
+    - [flex-grow](flex-grow.md)
+    - [flex-shrink](flex-shrink.md)
+    - **flex-wrap**
+    - [order](order.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [justify-content](justify-content.md)
+    - [align-content](align-content.md)
+    - [place-content](place-content.md)
+    - [justify-items](justify-items.md)
+    - [align-items](align-items.md)
+    - [place-items](place-items.md)
+    - [justify-self](justify-self.md)
+    - [align-self](align-self.md)
+    - [place-self](place-self.md)
+    - [row-gap](row-gap.md)
+    - [column-gap](column-gap.md)
+    - [gap](gap.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
