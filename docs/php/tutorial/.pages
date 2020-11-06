@@ -1,9 +1,0 @@
-title: Учебник по PHP
-nav:
-    - index.md
-    - basic
-    - include
-    - forms
-    - identity
-    - db
-    - lib

@@ -1,7 +1,0 @@
-title: Знакомство с языком PHP
-nav:
-    - index.md
-    - syntax.md
-    - arrays.md
-    - loops.md
-    - functions.md

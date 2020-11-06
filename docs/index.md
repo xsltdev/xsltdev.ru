@@ -88,10 +88,6 @@ template: home.html
 
 <div class="cell" markdown="1">
 
-[![php](php.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/php/)
-
-### [PHP](/php/)
-
 </div>
 
 </div>

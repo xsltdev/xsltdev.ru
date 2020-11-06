@@ -1,6 +1,0 @@
-title: Базы данных в PHP
-nav:
-    - index.md
-    - sql.md
-    - mysql.md
-    - injections.md
