@@ -6,6 +6,38 @@ description: Свойство transition-property устанавливает и�
 
 Свойство **`transition-property`** устанавливает имя стилевого свойства, значение которого будет отслеживаться для создания эффекта перехода.
 
+??? info "Переходы и Анимации"
+
+    <div class="col3" markdown="1">
+
+    - [@keyframes](keyframes.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [animation](animation.md)
+    - [animation-delay](animation-delay.md)
+    - [animation-direction](animation-direction.md)
+    - [animation-duration](animation-duration.md)
+    - [animation-fill-mode](animation-fill-mode.md)
+    - [animation-iteration-count](animation-iteration-count.md)
+    - [animation-name](animation-name.md)
+    - [animation-play-state](animation-play-state.md)
+    - [animation-timing-function](animation-timing-function.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [transition](transition.md)
+    - [transition-delay](transition-delay.md)
+    - [transition-duration](transition-duration.md)
+    - **transition-property**
+    - [transition-timing-function](transition-timing-function.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

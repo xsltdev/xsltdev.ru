@@ -8,6 +8,20 @@ description: Свойство perspective-origin определяет позиц
 
 Свойства `perspective-origin` и `perspective` прикрепляются к родительскому элементу дочернего элемента, преобразованного в трехмерном пространстве, в отличие от функции преобразования `perspective()`, которая размещается на преобразованном элементе.
 
+??? info "Трансформации"
+
+    <div class="col3" markdown="1">
+
+    - [backface-visibility](backface-visibility.md)
+    - [perspective](perspective.md)
+    - **perspective-origin**
+    - [transform](transform.md)
+    - [transform-box](transform-box.md)
+    - [transform-origin](transform-origin.md)
+    - [transform-style](transform-style.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

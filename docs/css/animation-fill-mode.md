@@ -10,6 +10,38 @@ description: Свойство animation-fill-mode определяет, каки
 
 К примеру, если вы делаете выезжающее из-за края окна браузера сообщение, то после окончания анимации сообщение вернётся обратно за край экрана. Значение `forwards` свойства `animation-fill-mode` изменяет это поведение и оставляет стили на момент завершения движения. Таким образом, сообщение плавно выдвинется из-за края окна и останется на месте.
 
+??? info "Переходы и Анимации"
+
+    <div class="col3" markdown="1">
+
+    - [@keyframes](keyframes.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [animation](animation.md)
+    - [animation-delay](animation-delay.md)
+    - [animation-direction](animation-direction.md)
+    - [animation-duration](animation-duration.md)
+    - **animation-fill-mode**
+    - [animation-iteration-count](animation-iteration-count.md)
+    - [animation-name](animation-name.md)
+    - [animation-play-state](animation-play-state.md)
+    - [animation-timing-function](animation-timing-function.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [transition](transition.md)
+    - [transition-delay](transition-delay.md)
+    - [transition-duration](transition-duration.md)
+    - [transition-property](transition-property.md)
+    - [transition-timing-function](transition-timing-function.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

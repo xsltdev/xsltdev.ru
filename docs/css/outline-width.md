@@ -10,6 +10,25 @@ description: Свойство outline-width определяет толщину 
 
 Чтобы `outline-width` работал, необходимо установить у свойства [`outline-style`](outline-style.md) любое значение кроме `none`.
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - [box-sizing](box-sizing.md)
+    - [caret-color](caret-color.md)
+    - [cursor](cursor.md)
+    - [outline](outline.md)
+    - **outline-width**
+    - [outline-style](outline-style.md)
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - [text-overflow](text-overflow.md)
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -8,6 +8,25 @@ description: Свойство box-sizing применяется для изме�
 
 Согласно спецификации CSS ширина блока складывается из ширины контента ([`width`](width.md)), значений отступов ([`margin`](margin.md)), полей ([`padding`](padding.md)) и границ ([`border`](border.md)). Аналогично обстоит и с высотой блока. Свойство `box-sizing` позволяет изменить этот алгоритм, чтобы свойства `width` и `height` задавали размеры не контента, а размеры блока.
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - **box-sizing**
+    - [caret-color](caret-color.md)
+    - [cursor](cursor.md)
+    - [outline](outline.md)
+    - [outline-width](outline-width.md)
+    - [outline-style](outline-style.md)
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - [text-overflow](text-overflow.md)
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

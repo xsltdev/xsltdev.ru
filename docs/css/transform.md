@@ -6,6 +6,20 @@ description: Свойство transform трансформирует элеме�
 
 Свойство **`transform`** трансформирует элемент, в частности, позволяет его масштабировать, вращать, сдвигать, наклонять, а также комбинировать виды трансформаций.
 
+??? info "Трансформации"
+
+    <div class="col3" markdown="1">
+
+    - [backface-visibility](backface-visibility.md)
+    - [perspective](perspective.md)
+    - [perspective-origin](perspective-origin.md)
+    - **transform**
+    - [transform-box](transform-box.md)
+    - [transform-origin](transform-origin.md)
+    - [transform-style](transform-style.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

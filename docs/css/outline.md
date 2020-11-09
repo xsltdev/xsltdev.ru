@@ -8,6 +8,25 @@ description: Универсальное свойство outline, одновре
 
 В отличие от линии, задаваемой через [`border`](border.md), свойство `outline` не влияет на положение блока и его ширину. Также нельзя задать параметры линии на отдельных сторонах элемента, `outline` применяется сразу ко всем четырём сторонам.
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - [box-sizing](box-sizing.md)
+    - [caret-color](caret-color.md)
+    - [cursor](cursor.md)
+    - **outline**
+    - [outline-width](outline-width.md)
+    - [outline-style](outline-style.md)
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - [text-overflow](text-overflow.md)
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

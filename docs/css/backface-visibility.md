@@ -6,6 +6,20 @@ description: Свойство backface-visibility определяет, пока
 
 Свойство **`backface-visibility`** определяет, показывать обратную сторону элемента или нет. Как правило, обратная сторона становится видна при трансформации элемента, например, при его вращении относительно горизонтальной или вертикальной оси в трёхмерном пространстве. В обычной ситуации свойство `backface-visibility` не оказывает влияния на отображение элемента.
 
+??? info "Трансформации"
+
+    <div class="col3" markdown="1">
+
+    - **backface-visibility**
+    - [perspective](perspective.md)
+    - [perspective-origin](perspective-origin.md)
+    - [transform](transform.md)
+    - [transform-box](transform-box.md)
+    - [transform-origin](transform-origin.md)
+    - [transform-style](transform-style.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -6,6 +6,25 @@ description: Свойство caret-color задает цвет текстово
 
 Свойство **`caret-color`** задает цвет текстового курсора в полях ввода, например, [`input`](/html/input/) или [`textarea`](/html/textarea/).
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - [box-sizing](box-sizing.md)
+    - **caret-color**
+    - [cursor](cursor.md)
+    - [outline](outline.md)
+    - [outline-width](outline-width.md)
+    - [outline-style](outline-style.md)
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - [text-overflow](text-overflow.md)
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

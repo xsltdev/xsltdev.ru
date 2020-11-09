@@ -6,6 +6,20 @@ description: Свойство transform-origin устанавливает коо
 
 Свойство **`transform-origin`** устанавливает координаты точки, относительно которой будет происходить трансформация элемента.
 
+??? info "Трансформации"
+
+    <div class="col3" markdown="1">
+
+    - [backface-visibility](backface-visibility.md)
+    - [perspective](perspective.md)
+    - [perspective-origin](perspective-origin.md)
+    - [transform](transform.md)
+    - [transform-box](transform-box.md)
+    - **transform-origin**
+    - [transform-style](transform-style.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

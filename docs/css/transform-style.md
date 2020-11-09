@@ -6,6 +6,20 @@ description: Свойство transform-style определяет, как до�
 
 Свойство **`transform-style`** определяет, как дочерние элементы будут отображаться в 3D-пространстве. Это свойство должно использоваться совместно с [`transform`](transform.md).
 
+??? info "Трансформации"
+
+    <div class="col3" markdown="1">
+
+    - [backface-visibility](backface-visibility.md)
+    - [perspective](perspective.md)
+    - [perspective-origin](perspective-origin.md)
+    - [transform](transform.md)
+    - [transform-box](transform-box.md)
+    - [transform-origin](transform-origin.md)
+    - **transform-style**
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -8,6 +8,25 @@ description: Свойство text-overflow определяет парамет�
 
 Возможны два варианта: текст обрезается; текст обрезается и к концу строки добавляется многоточие. `text-overflow` работает в том случае, если для блока значение свойства [`overflow`](overflow.md) установлено как `auto`, `scroll` или `hidden`.
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - [box-sizing](box-sizing.md)
+    - [caret-color](caret-color.md)
+    - [cursor](cursor.md)
+    - [outline](outline.md)
+    - [outline-width](outline-width.md)
+    - [outline-style](outline-style.md)
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - **text-overflow**
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

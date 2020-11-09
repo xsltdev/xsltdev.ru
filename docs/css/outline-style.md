@@ -8,6 +8,25 @@ description: Свойство outline-style устанавливает стил�
 
 В отличие от линии, задаваемой через [`border`](border.md), линия через `outline` отображается вокруг элемента, не влияя на ширину блока или его положение.
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - [box-sizing](box-sizing.md)
+    - [caret-color](caret-color.md)
+    - [cursor](cursor.md)
+    - [outline](outline.md)
+    - [outline-width](outline-width.md)
+    - **outline-style**
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - [text-overflow](text-overflow.md)
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -8,6 +8,25 @@ description: Свойство cursor устанавливает форму ку�
 
 Вид курсора зависит от операционной системы и установленных параметров.
 
+??? info "Интерфейс"
+
+    <div class="col3" markdown="1">
+
+    - [appearance](appearance.md)
+    - [box-sizing](box-sizing.md)
+    - [caret-color](caret-color.md)
+    - **cursor**
+    - [outline](outline.md)
+    - [outline-width](outline-width.md)
+    - [outline-style](outline-style.md)
+    - [outline-color](outline-color.md)
+    - [outline-offset](outline-offset.md)
+    - [resize](resize.md)
+    - [text-overflow](text-overflow.md)
+    - [user-select](user-select.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
