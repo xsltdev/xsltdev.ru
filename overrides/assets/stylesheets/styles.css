@@ -108,3 +108,14 @@ h2 {
 	min-width: 13px;
 	min-height: 13px;
 }
+
+/* MDN examples */
+.interactive {
+	box-sizing: border-box;
+	background-color: #f5f9fa;
+	color: #333;
+	padding: 10px;
+	border: 1px solid #eaf2f4;
+	height: 390px;
+	width: 100%;
+}
