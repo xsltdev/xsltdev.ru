@@ -401,7 +401,7 @@ description: Справочник свойств CSS с примерами ко�
 - `text-decoration-line`
 - `text-decoration-style`
 - `text-decoration-thickness`
-- `text-decoration-skip`
+- [text-decoration-skip](text-decoration-skip.md)
 - `text-decoration-skip-ink`
 - [text-emphasis](text-emphasis.md)
 - [text-emphasis-color](text-emphasis-color.md)

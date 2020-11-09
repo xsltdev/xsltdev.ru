@@ -37,7 +37,7 @@ description: Свойство text-decoration добавляет оформле�
     - `text-decoration-line`
     - `text-decoration-style`
     - `text-decoration-thickness`
-    - `text-decoration-skip`
+    - [text-decoration-skip](text-decoration-skip.md)
     - `text-decoration-skip-ink`
     - [text-emphasis](text-emphasis.md)
     - [text-emphasis-color](text-emphasis-color.md)
@@ -179,6 +179,7 @@ text-decoration: unset;
 
 ## См. также
 
+- Элемент [`a`](/html/a/) — текст <a href="#">ссылки</a>
 - Элемент [`u`](/html/u/) — <u>подчеркнутый</u> текст
 - Элемент [`s`](/html/s/) — <s>зачеркнутый</s> текст
 
