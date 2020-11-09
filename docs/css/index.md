@@ -397,12 +397,12 @@ description: Справочник свойств CSS с примерами ко�
 
 - [letter-spacing](letter-spacing.md)
 - [text-decoration](text-decoration.md)
-- `text-decoration-color`
-- `text-decoration-line`
-- `text-decoration-style`
-- `text-decoration-thickness`
+- [text-decoration-color](text-decoration-color.md)
+- [text-decoration-line](text-decoration-line.md)
+- [text-decoration-style](text-decoration-style.md)
+- [text-decoration-thickness](text-decoration-thickness.md)
 - [text-decoration-skip](text-decoration-skip.md)
-- `text-decoration-skip-ink`
+- [text-decoration-skip-ink](text-decoration-skip-ink.md)
 - [text-emphasis](text-emphasis.md)
 - [text-emphasis-color](text-emphasis-color.md)
 - [text-emphasis-position](text-emphasis-position.md)
@@ -410,7 +410,7 @@ description: Справочник свойств CSS с примерами ко�
 - [text-indent](text-indent.md)
 - [text-rendering](text-rendering.md)
 - [text-shadow](text-shadow.md)
-- `text-underline-position`
+- [text-underline-position](text-underline-position.md)
 - [text-transform](text-transform.md)
 - [white-space](white-space.md)
 - [word-spacing](word-spacing.md)
