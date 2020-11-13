@@ -17,6 +17,19 @@ direction: Свойство direction предназначено для сайт
 
 Для использования со встроенными элементами, значение свойства [`unicode-bidi`](unicode-bidi.md) должно быть задано как `embed` или `override`.
 
+??? info "Режимы письма"
+
+    <div class="col3" markdown="1">
+
+    - **direction**
+    - [glyph-orientation-horizontal](glyph-orientation-horizontal.md)
+    - [text-combine-upright](text-combine-upright.md)
+    - [text-orientation](text-orientation.md)
+    - [unicode-bidi](unicode-bidi.md)
+    - [writing-mode](writing-mode.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
