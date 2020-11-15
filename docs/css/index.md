@@ -539,7 +539,6 @@ description: Справочник свойств CSS с примерами ко�
 - [pad](.md)
 - [speak-as](.md)
 - [fallback](.md)
-  {: .col-14 }
 -->
 
 <div class="col3" markdown="1">
