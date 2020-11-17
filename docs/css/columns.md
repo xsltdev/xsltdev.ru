@@ -6,6 +6,34 @@ description: Универсальное свойство columns позволя�
 
 Универсальное свойство **`columns`** позволяет одновременно задать ширину и количество колонок многоколоночного текста.
 
+??? info "Колонки и таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [column-count](column-count.md)
+    - [column-fill](column-fill.md)
+    - [column-gap](column-gap.md)
+    - [column-rule](column-rule.md)
+    - [column-rule-color](column-rule-color.md)
+    - [column-rule-style](column-rule-style.md)
+    - [column-rule-width](column-rule-width.md)
+    - [column-span](column-span.md)
+    - [column-width](column-width.md)
+    - **columns**
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [border-collapse](border-collapse.md)
+    - [border-spacing](border-spacing.md)
+    - [caption-side](caption-side.md)
+    - [empty-cells](empty-cells.md)
+    - [table-layout](table-layout.md)
+    - [vertical-align](vertical-align.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -6,7 +6,27 @@ description: Свойство list-style-type изменяет вид марке
 
 Свойство **`list-style-type`** изменяет вид маркера для каждого элемента списка.
 
-Это свойство используется только в случае, когда значение `list-style-image` установлено как none. Маркеры различаются для маркированного списка (элемент [`<ul>`](../html/ul.md)) и нумерованного (элемент [`<ol>`](../html/ol.md)).
+Это свойство используется только в случае, когда значение `list-style-image` установлено как none. Маркеры различаются для маркированного списка (элемент [`<ul>`](/html/ul/)) и нумерованного (элемент [`<ol>`](/html/ol/)).
+
+??? info "Списки, счетчики, генерируемый контент"
+
+    <div class="col3" markdown="1">
+
+    - [counter-increment](counter-increment.md)
+    - [counter-reset](counter-reset.md)
+    - [list-style-image](list-style-image.md)
+    - **list-style-type**
+    - [list-style-position](list-style-position.md)
+    - [list-style](list-style.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [content](content.md)
+    - [quotes](quotes.md)
+
+    </div>
 
 ## Синтаксис
 

@@ -4,9 +4,51 @@ description: Свойство object-fit управляет соотношени
 
 # object-fit
 
-Свойство **`object-fit`** управляет соотношением сторон заменяемых элементов, таких как [`<img>`](../html/img.md) и [`<video>`](../html/video.md), когда у них задана ширина или высота, а также способом масштабирования.
+Свойство **`object-fit`** управляет соотношением сторон заменяемых элементов, таких как [`<img>`](/html/img/) и [`<video>`](/html/video/), когда у них задана ширина или высота, а также способом масштабирования.
 
 Свойство `object-fit` может сохранять исходные пропорции элемента или наоборот, искажать пропорции, в угоду соблюдения размеров.
+
+??? info "Изображения, фильтры, композиция"
+
+    <div class="col3" markdown="1">
+
+    - [image-orientation](image-orientation.md)
+    - [image-rendering](image-rendering.md)
+    - [image-resolution](image-resolution.md)
+    - **object-fit**
+    - [object-position](object-position.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [linear-gradient()](linear-gradient.md)
+    - [radial-gradient()](radial-gradient.md)
+    - [repeating-linear-gradient()](repeating-linear-gradient.md)
+    - [repeating-radial-gradient()](repeating-radial-gradient.md)
+    - [conic-gradient()](conic-gradient.md)
+    - [repeating-conic-gradient()](repeating-conic-gradient.md)
+    - [url()](url.md)
+    - [element()](element.md)
+    - [image()](image.md)
+    - [cross-fade()](cross-fade.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [backdrop-filter](backdrop-filter.md)
+    - [filter](filter.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [background-blend-mode](background-blend-mode.md)
+    - [isolation](isolation.md)
+    - [mix-blend-mode](mix-blend-mode.md)
+
+    </div>
 
 ## Синтаксис
 

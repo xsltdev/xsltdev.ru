@@ -6,6 +6,34 @@ description: Свойство vertical-align выравнивает элемен
 
 Свойство **`vertical-align`** выравнивает элемент по вертикали относительно своего родителя, окружающего текста или ячейки таблицы.
 
+??? info "Колонки и таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [column-count](column-count.md)
+    - [column-fill](column-fill.md)
+    - [column-gap](column-gap.md)
+    - [column-rule](column-rule.md)
+    - [column-rule-color](column-rule-color.md)
+    - [column-rule-style](column-rule-style.md)
+    - [column-rule-width](column-rule-width.md)
+    - [column-span](column-span.md)
+    - [column-width](column-width.md)
+    - [columns](columns.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [border-collapse](border-collapse.md)
+    - [border-spacing](border-spacing.md)
+    - [caption-side](caption-side.md)
+    - [empty-cells](empty-cells.md)
+    - [table-layout](table-layout.md)
+    - **vertical-align**
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -476,32 +476,32 @@ description: Справочник свойств CSS с примерами ко�
 
 <div class="col3" markdown="1">
 
-- `image-orientation`
+- [image-orientation](image-orientation.md)
 - [image-rendering](image-rendering.md)
-- `image-resolution`
+- [image-resolution](image-resolution.md)
 - [object-fit](object-fit.md)
-- `object-position`
+- [object-position](object-position.md)
 
 </div>
 
 <div class="col3" markdown="1">
 
-- `linear-gradient()`
-- `radial-gradient()`
-- `repeating-linear-gradient()`
-- `repeating-radial-gradient()`
-- `conic-gradient()`
-- `repeating-conic-gradient()`
-- `url()`
-- `element()`
-- `image()`
-- `cross-fade()`
+- [linear-gradient()](linear-gradient.md)
+- [radial-gradient()](radial-gradient.md)
+- [repeating-linear-gradient()](repeating-linear-gradient.md)
+- [repeating-radial-gradient()](repeating-radial-gradient.md)
+- [conic-gradient()](conic-gradient.md)
+- [repeating-conic-gradient()](repeating-conic-gradient.md)
+- [url()](url.md)
+- [element()](element.md)
+- [image()](image.md)
+- [cross-fade()](cross-fade.md)
 
 </div>
 
 <div class="col3" markdown="1">
 
-- `backdrop-filter`
+- [backdrop-filter](backdrop-filter.md)
 - [filter](filter.md)
 
 </div>
@@ -526,20 +526,6 @@ description: Справочник свойств CSS с примерами ко�
 - [list-style](list-style.md)
 
 </div>
-
-<!--
-
-- [@counter-style](.md)
-- [system](.md)
-- [additive-symbols](.md)
-- [negative](.md)
-- [prefix](.md)
-- [suffix](.md)
-- [range](.md)
-- [pad](.md)
-- [speak-as](.md)
-- [fallback](.md)
--->
 
 <div class="col3" markdown="1">
 

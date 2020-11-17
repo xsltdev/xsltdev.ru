@@ -10,6 +10,26 @@ description: Свойство list-style-position определяет, как �
 
 ![Рис. 2. Значение inside](css_list-style-position_2.png)
 
+??? info "Списки, счетчики, генерируемый контент"
+
+    <div class="col3" markdown="1">
+
+    - [counter-increment](counter-increment.md)
+    - [counter-reset](counter-reset.md)
+    - [list-style-image](list-style-image.md)
+    - [list-style-type](list-style-type.md)
+    - **list-style-position**
+    - [list-style](list-style.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [content](content.md)
+    - [quotes](quotes.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

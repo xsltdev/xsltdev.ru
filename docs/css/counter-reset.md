@@ -8,6 +8,26 @@ description: Свойство counter-reset устанавливает пере�
 
 Такой счётчик может выводиться с помощью свойства [`content`](content.md) и псевдоэлементов `::after` и `::before`.
 
+??? info "Списки, счетчики, генерируемый контент"
+
+    <div class="col3" markdown="1">
+
+    - [counter-increment](counter-increment.md)
+    - **counter-reset**
+    - [list-style-image](list-style-image.md)
+    - [list-style-type](list-style-type.md)
+    - [list-style-position](list-style-position.md)
+    - [list-style](list-style.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [content](content.md)
+    - [quotes](quotes.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

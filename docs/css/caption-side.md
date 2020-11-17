@@ -4,9 +4,37 @@ description: Свойство caption-side определяет положени
 
 # caption-side
 
-Свойство **`caption-side`** определяет положение заголовка таблицы, который задается с помощью элемента [`<caption>`](../html/caption.md), относительно самой таблицы.
+Свойство **`caption-side`** определяет положение заголовка таблицы, который задается с помощью элемента [`<caption>`](/html/caption/), относительно самой таблицы.
 
 Свойство `caption-side` выводит заголовок до или после таблицы, а выравнивание текста по правому или левому краю устанавливается через свойство [`text-align`](text-align.md).
+
+??? info "Колонки и таблицы"
+
+    <div class="col3" markdown="1">
+
+    - [column-count](column-count.md)
+    - [column-fill](column-fill.md)
+    - [column-gap](column-gap.md)
+    - [column-rule](column-rule.md)
+    - [column-rule-color](column-rule-color.md)
+    - [column-rule-style](column-rule-style.md)
+    - [column-rule-width](column-rule-width.md)
+    - [column-span](column-span.md)
+    - [column-width](column-width.md)
+    - [columns](columns.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [border-collapse](border-collapse.md)
+    - [border-spacing](border-spacing.md)
+    - **caption-side**
+    - [empty-cells](empty-cells.md)
+    - [table-layout](table-layout.md)
+    - [vertical-align](vertical-align.md)
+
+    </div>
 
 ## Синтаксис
 

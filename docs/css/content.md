@@ -8,6 +8,26 @@ description: Свойство content позволяет вставлять ге
 
 Применяется совместно с псевдоэлементами `::after` и `::before`, они соответственно указывают отображать новое содержимое после или до элемента, к которому добавляются.
 
+??? info "Списки, счетчики, генерируемый контент"
+
+    <div class="col3" markdown="1">
+
+    - [counter-increment](counter-increment.md)
+    - [counter-reset](counter-reset.md)
+    - [list-style-image](list-style-image.md)
+    - [list-style-type](list-style-type.md)
+    - [list-style-position](list-style-position.md)
+    - [list-style](list-style.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - **content**
+    - [quotes](quotes.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
