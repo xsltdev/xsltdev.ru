@@ -72,6 +72,26 @@ description: Псевдокласс :blank представляет пустые
 
     </div>
 
+??? info "Страницы"
+
+    <div class="col3" markdown="1">
+
+    - [page-break-after](page-break-after.md)
+    - [page-break-before](page-break-before.md)
+    - [page-break-inside](page-break-inside.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [@page](page.md)
+    - **:blank**
+    - [:first](first.md)
+    - [:left](left-pseudo-class.md)
+    - [:right](right-pseudo-class.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

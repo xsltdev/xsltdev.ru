@@ -13,6 +13,19 @@ description:
 1. Если любое из трех рассматриваемых значений является значением принудительного разрыва (`always`, `left`, `right`, `page`, `column` или `region`), оно имеет приоритет. Если более одного из них является таким разрывом, берется один из элементов, который появляется последним в потоке (т. е. значение `break-before` имеет приоритет над значением `break-after`, которое само по себе имеет приоритет над значением `break-inside`).
 2. Если какое-либо из трех рассматриваемых значений является значением избегания разрыва (`avoid`, `avoid-page`, `avoid-region` или `avoid-column`), такой разрыв не будет применен в этой точке.
 
+??? info "Фрагментация"
+
+    <div class="col3" markdown="1">
+
+    - [box-decoration-break](box-decoration-break.md)
+    - **break-after**
+    - [break-before](break-before.md)
+    - [break-inside](break-inside.md)
+    - [orphans](orphans.md)
+    - [widows](widows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

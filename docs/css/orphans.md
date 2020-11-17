@@ -8,6 +8,19 @@ description: Свойство orphans задает минимальное чис
 
 Это свойство работает в том случае, если весь текст размещается на двух и более печатных страницах.
 
+??? info "Фрагментация"
+
+    <div class="col3" markdown="1">
+
+    - [box-decoration-break](box-decoration-break.md)
+    - [break-after](break-after.md)
+    - [break-before](break-before.md)
+    - [break-inside](break-inside.md)
+    - **orphans**
+    - [widows](widows.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

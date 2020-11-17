@@ -6,6 +6,26 @@ description: Свойство page-break-after добавляет разрыв �
 
 Свойство **`page-break-after`** добавляет разрыв страницы при печати документа после заданного элемента.
 
+??? info "Страницы"
+
+    <div class="col3" markdown="1">
+
+    - **page-break-after**
+    - [page-break-before](page-break-before.md)
+    - [page-break-inside](page-break-inside.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [@page](page.md)
+    - [:blank](blank.md)
+    - [:first](first.md)
+    - [:left](left-pseudo-class.md)
+    - [:right](right-pseudo-class.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

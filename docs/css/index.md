@@ -572,50 +572,47 @@ description: Справочник свойств CSS с примерами ко�
 
 </div>
 
-<!--
+<div class="col3" markdown="1">
 
-- [@page](@page.md)
-  {: .col-14 }
+- [@page](page.md)
+- [:blank](blank.md)
+- [:first](first.md)
+- [:left](left-pseudo-class.md)
+- [:right](right-pseudo-class.md)
 
-- [:blank](.md)
-- [:first](.md)
-- [:left](.md)
-- [:right](.md)
-  {: .col-14 }
-
--->
+</div>
 
 ## Маски и фигуры
 
 <div class="col3" markdown="1">
 
 - [clip-path](clip-path.md)
-- `clip-rule`
+- [clip-rule](clip-rule.md)
 - [mask](mask.md)
-- `mask-border`
-- `mask-border-mode`
-- `mask-border-outset`
-- `mask-border-repeat`
-- `mask-border-slice`
-- `mask-border-source`
-- `mask-border-width`
+- [mask-border](mask-border.md)
+- [mask-border-mode](mask-border-mode.md)
+- [mask-border-outset](mask-border-outset.md)
+- [mask-border-repeat](mask-border-repeat.md)
+- [mask-border-slice](mask-border-slice.md)
+- [mask-border-source](mask-border-source.md)
+- [mask-border-width](mask-border-width.md)
 - [mask-clip](mask-clip.md)
 - [mask-composite](mask-composite.md)
 - [mask-image](mask-image.md)
-- `mask-mode`
-- `mask-origin`
-- `mask-position`
-- `mask-repeat`
-- `mask-size`
-- `mask-type`
+- [mask-mode](mask-mode.md)
+- [mask-origin](mask-origin.md)
+- [mask-position](mask-position.md)
+- [mask-repeat](mask-repeat.md)
+- [mask-size](mask-size.md)
+- [mask-type](mask-type.md)
 
 </div>
 
 <div class="col3" markdown="1">
 
-- `shape-image-threshold`
-- `shape-margin`
-- `shape-outside`
+- [shape-image-threshold](shape-image-threshold.md)
+- [shape-margin](shape-margin.md)
+- [shape-outside](shape-outside.md)
 
 </div>
 
@@ -623,10 +620,10 @@ description: Справочник свойств CSS с примерами ко�
 
 <div class="col3" markdown="1">
 
-- `box-decoration-break`
-- `break-after`
-- `break-before`
-- `break-inside`
+- [box-decoration-break](box-decoration-break.md)
+- [break-after](break-after.md)
+- [break-before](break-before.md)
+- [break-inside](break-inside.md)
 - [orphans](orphans.md)
 - [widows](widows.md)
 

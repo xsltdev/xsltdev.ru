@@ -6,6 +6,26 @@ description: Свойство page-break-inside разрешает или зап
 
 Свойство **`page-break-inside`** разрешает или запрещает разрыв страницы внутри элемента при печати.
 
+??? info "Страницы"
+
+    <div class="col3" markdown="1">
+
+    - [page-break-after](page-break-after.md)
+    - [page-break-before](page-break-before.md)
+    - **page-break-inside**
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [@page](page.md)
+    - [:blank](blank.md)
+    - [:first](first.md)
+    - [:left](left-pseudo-class.md)
+    - [:right](right-pseudo-class.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

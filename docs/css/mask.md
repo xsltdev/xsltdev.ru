@@ -10,6 +10,40 @@ description: Свойство mask изменяет видимость элем�
 
 Сокращенное свойство `mask` также сбрасывает `mask-border` до ее начального значения. Поэтому рекомендуется использовать `mask` до остальных свойств, чтобы переопределить любые настройки маски ранее в каскаде. Это гарантирует, что `mask-border` также была сброшено, чтобы позволить новым стилям вступить в силу.
 
+??? info "Маски и Фигуры"
+
+    <div class="col3" markdown="1">
+
+    - [clip-path](clip-path.md)
+    - [clip-rule](clip-rule.md)
+    - **mask**
+    - [mask-border](mask-border.md)
+    - [mask-border-mode](mask-border-mode.md)
+    - [mask-border-outset](mask-border-outset.md)
+    - [mask-border-repeat](mask-border-repeat.md)
+    - [mask-border-slice](mask-border-slice.md)
+    - [mask-border-source](mask-border-source.md)
+    - [mask-border-width](mask-border-width.md)
+    - [mask-clip](mask-clip.md)
+    - [mask-composite](mask-composite.md)
+    - [mask-image](mask-image.md)
+    - [mask-mode](mask-mode.md)
+    - [mask-origin](mask-origin.md)
+    - [mask-position](mask-position.md)
+    - [mask-repeat](mask-repeat.md)
+    - [mask-size](mask-size.md)
+    - [mask-type](mask-type.md)
+
+    </div>
+
+    <div class="col3" markdown="1">
+
+    - [shape-image-threshold](shape-image-threshold.md)
+    - [shape-margin](shape-margin.md)
+    - [shape-outside](shape-outside.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
