@@ -8,6 +8,16 @@ description: Свойство pointer-events позволяет управлят
 
 Часто применяется для того, чтобы в сложной компоновке можно было взаимодействовать с нижележащими элементами, игнорируя вышележащие.
 
+??? info "Pointer Events"
+
+    <div class="col3" markdown="1">
+
+    - **pointer-events**
+    - [touch-action](touch-action.md)
+    - [scroll-behavior](scroll-behavior.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

@@ -8,6 +8,19 @@ description: Свойство max-block-size определяет максима
 
 Максимальная длина другого размера указывается с помощью свойства `max-inline-size`.
 
+??? info "Логические размеры"
+
+    <div class="col3" markdown="1">
+
+    - [block-size](block-size.md)
+    - [inline-size](inline-size.md)
+    - **max-block-size**
+    - [max-inline-size](max-inline-size.md)
+    - [min-block-size](min-block-size.md)
+    - [min-inline-size](min-inline-size.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css

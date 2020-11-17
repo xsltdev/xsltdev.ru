@@ -634,98 +634,102 @@ description: Справочник свойств CSS с примерами ко�
 <div class="col3" markdown="1">
 
 - [pointer-events](pointer-events.md)
-- `touch-action`
-- `scroll-behavior`
+- [touch-action](touch-action.md)
+- [scroll-behavior](scroll-behavior.md)
 
 </div>
 
----
-
-## Логические свойства и значения
+## Логические размеры
 
 <div class="col3" markdown="1">
 
 - [block-size](block-size.md)
 - [inline-size](inline-size.md)
 - [max-block-size](max-block-size.md)
-- `max-inline-size`
-- `min-block-size`
-- `min-inline-size`
+- [max-inline-size](max-inline-size.md)
+- [min-block-size](min-block-size.md)
+- [min-inline-size](min-inline-size.md)
 
 </div>
 
-<!--
+## Логические границы
 
-- [border-block](.md)
-- [border-block-color](.md)
-- [border-block-end](.md)
-- [border-block-end-color](.md)
-- [border-block-end-style](.md)
-- [border-block-end-width](.md)
-- [border-block-start](.md)
-- [border-block-start-color](.md)
-- [border-block-start-style](.md)
-- [border-block-start-width](.md)
-- [border-block-style](.md)
-- [border-block-width](.md)
-- [border-color (logical keyword)](.md)
-- [border-inline](.md)
-- [border-inline-color](.md)
-- [border-inline-end](.md)
-- [border-inline-end-color](.md)
-- [border-inline-end-style](.md)
-- [border-inline-end-width](.md)
-- [border-inline-start](.md)
-- [border-inline-start-color](.md)
-- [border-inline-start-style](.md)
-- [border-inline-start-width](.md)
-- [border-inline-style](.md)
-- [border-inline-width](.md)
-- [border-start-start-radius](.md)
-- [border-start-end-radius](.md)
-- [border-end-start-radius](.md)
-- [border-end-end-radius](.md)
-- [border-style (logical keyword)](.md)
-- [border-width (logical keyword)](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
 
-- [margin (logical keyword)](.md)
-- [margin-block](.md)
-- [margin-block-end](.md)
-- [margin-block-start](.md)
-- [margin-inline](.md)
-- [margin-inline-end](.md)
-- [margin-inline-start](.md)
-  {: .col-14 }
+- [border-block](border-block.md)
+- [border-block-color](border-block-color.md)
+- [border-block-end](border-block-end.md)
+- [border-block-end-color](border-block-end-color.md)
+- [border-block-end-style](border-block-end-style.md)
+- [border-block-end-width](border-block-end-width.md)
+- [border-block-start](border-block-start.md)
+- [border-block-start-color](border-block-start-color.md)
+- [border-block-start-style](border-block-start-style.md)
+- [border-block-start-width](border-block-start-width.md)
+- [border-block-style](border-block-style.md)
+- [border-block-width](border-block-width.md)
+- [border-inline](border-inline.md)
+- [border-inline-color](border-inline-color.md)
+- [border-inline-end](border-inline-end.md)
+- [border-inline-end-color](border-inline-end-color.md)
+- [border-inline-end-style](border-inline-end-style.md)
+- [border-inline-end-width](border-inline-end-width.md)
+- [border-inline-start](border-inline-start.md)
+- [border-inline-start-color](border-inline-start-color.md)
+- [border-inline-start-style](border-inline-start-style.md)
+- [border-inline-start-width](border-inline-start-width.md)
+- [border-inline-style](border-inline-style.md)
+- [border-inline-width](border-inline-width.md)
+- [border-start-start-radius](border-start-start-radius.md)
+- [border-start-end-radius](border-start-end-radius.md)
+- [border-end-start-radius](border-end-start-radius.md)
+- [border-end-end-radius](border-end-end-radius.md)
 
-- [overflow-block](.md)
-- [overflow-inline](.md)
-  {: .col-14 }
+</div>
 
-- [padding (logical keyword)](.md)
-- [padding-block](.md)
-- [padding-block-end](.md)
-- [padding-block-start](.md)
-- [padding-inline](.md)
-- [padding-inline-end](.md)
-- [padding-inline-start](.md)
-  {: .col-14 }
+## Логические блоки
 
-- [clear (inline-end and inline-start keywords)](.md)
-- [float (inline-end and inline-start keywords)](.md)
-- [inset](.md)
-- [inset-block](.md)
-- [inset-block-end](.md)
-- [inset-block-start](.md)
-- [inset-inline](.md)
-- [inset-inline-end](.md)
-- [inset-inline-start](.md)
-  {: .col-14 }
+<div class="col3" markdown="1">
 
-- [caption-side (inline-end and inline-start keywords)](.md)
-- [resize (block and inline keywords)](.md)
-- [text-align (end and start keywords)](.md)
-  {: .col-14 }
-  -->
+- [margin-block](margin-block.md)
+- [margin-block-end](margin-block-end.md)
+- [margin-block-start](margin-block-start.md)
+- [margin-inline](margin-inline.md)
+- [margin-inline-end](margin-inline-end.md)
+- [margin-inline-start](margin-inline-start.md)
+
+</div>
+
+<div class="col3" markdown="1">
+
+- [overflow-block](overflow-block.md)
+- [overflow-inline](overflow-inline.md)
+
+</div>
+
+<div class="col3" markdown="1">
+
+- [padding-block](padding-block.md)
+- [padding-block-end](padding-block-end.md)
+- [padding-block-start](padding-block-start.md)
+- [padding-inline](padding-inline.md)
+- [padding-inline-end](padding-inline-end.md)
+- [padding-inline-start](padding-inline-start.md)
+
+</div>
+
+## Логическое позиционирование
+
+<div class="col3" markdown="1">
+
+- [inset](inset.md)
+- [inset-block](inset-block.md)
+- [inset-block-end](inset-block-end.md)
+- [inset-block-start](inset-block-start.md)
+- [inset-inline](inset-inline.md)
+- [inset-inline-end](inset-inline-end.md)
+- [inset-inline-start](inset-inline-start.md)
+
+</div>
 
 <!-- prettier-ignore-end -->

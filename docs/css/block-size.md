@@ -8,6 +8,19 @@ description: Свойство block-size определяет горизонта
 
 Если режим записи ориентирован вертикально, значение `block-size` относится к ширине элемента; в противном случае это относится к высоте элемента. Связанным свойством является [`inline-size`](inline-size.md), который определяет другой размер элемента.
 
+??? info "Логические размеры"
+
+    <div class="col3" markdown="1">
+
+    - **block-size**
+    - [inline-size](inline-size.md)
+    - [max-block-size](max-block-size.md)
+    - [max-inline-size](max-inline-size.md)
+    - [min-block-size](min-block-size.md)
+    - [min-inline-size](min-inline-size.md)
+
+    </div>
+
 ## Синтаксис
 
 ```css
