@@ -4,7 +4,19 @@ description:
 
 # inset-block-end
 
-??? info "Шрифт и Цвет"
+??? info "Логическое позиционирование"
+
+    <div class="col3" markdown="1">
+
+    - [inset](inset.md)
+    - [inset-block](inset-block.md)
+    - **inset-block-end**
+    - [inset-block-start](inset-block-start.md)
+    - [inset-inline](inset-inline.md)
+    - [inset-inline-end](inset-inline-end.md)
+    - [inset-inline-start](inset-inline-start.md)
+
+    </div>
 
 ## Синтаксис
 
