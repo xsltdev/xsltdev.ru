@@ -1,6 +1,7 @@
 title: CSS
 nav:
-    - index.md
+    - Справочник:
+        - ...
     - flex-guide
     - grid-guide
     - less-guide
