@@ -3,8 +3,4 @@ nav:
     - index.md
     - uni-attr.md
     - list-mime-types.md
-    - Основные элементы:
-        - html.md
-        - head.md
-        - body.md
     - ...
