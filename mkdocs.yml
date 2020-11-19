@@ -48,7 +48,9 @@ markdown_extensions:
           permalink: true
     - pymdownx.extra
     - pymdownx.details
-    - pymdownx.emoji
+    - pymdownx.emoji:
+          emoji_index: !!python/name:materialx.emoji.twemoji
+          emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.tabbed
     - pymdownx.superfences
 
