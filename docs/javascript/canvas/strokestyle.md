@@ -105,4 +105,4 @@ ctx.strokeRect(20,20,150,100);
 
 ## Ссылки
 
-- [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) <sup><small>MDN (рус.)</small></sup>

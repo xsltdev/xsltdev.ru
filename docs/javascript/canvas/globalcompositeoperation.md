@@ -215,4 +215,4 @@ document.write('</div>');}
 
 ## Ссылки
 
-- [globalCompositeOperation](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`globalCompositeOperation`](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) <sup><small>MDN (рус.)</small></sup>

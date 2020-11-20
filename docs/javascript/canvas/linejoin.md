@@ -69,4 +69,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [lineJoin](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin) <sup><small>MDN (рус.)</small></sup>

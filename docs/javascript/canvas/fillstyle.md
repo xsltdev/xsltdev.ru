@@ -91,4 +91,4 @@ ctx.fillRect(20, 20, 150, 100)
 
 ## Ссылки
 
-- [fillStyle](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillStyle) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`fillStyle`](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillStyle) <sup><small>MDN (рус.)</small></sup>

@@ -12,7 +12,7 @@ description: Свойство textBaseline устанавливает/возвр
 
 ![Базовые линии свойства textBaseline](textbaseline.gif)
 
-Примечание: Методы [`fillText()`](<filltext().md>) и [`strokeText()`](<stroketext().md>) будут использовать заданное значение `textBaseline` для позиционирования текста на холсте.
+Примечание: Методы [`fillText()`](filltext.md) и [`strokeText()`](stroketext.md) будут использовать заданное значение `textBaseline` для позиционирования текста на холсте.
 
 ## Синтаксис
 
@@ -106,4 +106,4 @@ ctx.fillText('Hanging', 290, 100)
 
 ## Ссылки
 
-- [textBaseline](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textBaseline) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`textBaseline`](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textBaseline) <sup><small>MDN (рус.)</small></sup>
