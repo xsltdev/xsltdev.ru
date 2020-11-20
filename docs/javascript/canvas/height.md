@@ -6,7 +6,7 @@ description: Свойство height возвращает высоту объе�
 
 Свойство **`height`** возвращает высоту объекта `ImageData` в пикселях.
 
-Примечание: Чтобы больше узнать об объекте `ImageData`, см. справку по методам [`createImageData()`](<createimagedata().md>), [`getImageData()`](<getimagedata().md>) и [`putImageData()`](<putimagedata().md>).
+Примечание: Чтобы больше узнать об объекте `ImageData`, см. справку по методам [`createImageData()`](createimagedata.md), [`getImageData()`](getimagedata.md) и [`putImageData()`](putimagedata.md).
 
 ## Синтаксис
 
@@ -28,4 +28,4 @@ alert('Высота imgData - ' + imgData.height)
 
 ## Ссылки
 
-- [height](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/height) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`height`](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/height) <sup><small>MDN (рус.)</small></sup>

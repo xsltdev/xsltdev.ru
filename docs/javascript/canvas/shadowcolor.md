@@ -61,4 +61,4 @@ ctx.fillRect(20,20,100,80);
 
 ## Ссылки
 
-- [shadowColor](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor) <sup><small>MDN (рус.)</small></sup>

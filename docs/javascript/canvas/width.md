@@ -6,7 +6,7 @@ description: Свойство width возвращает ширину объек
 
 Свойство **`width`** возвращает ширину объекта `ImageData` в пикселях.
 
-Примечание: Чтобы больше узнать об объекте `ImageData`, см. справку по методам [`createImageData()`](<createimagedata().md>), [`getImageData()`](<getimagedata().md>) и [`putImageData()`](<putimagedata().md>).
+Примечание: Чтобы больше узнать об объекте `ImageData`, см. справку по методам [`createImageData()`](createimagedata.md), [`getImageData()`](getimagedata.md) и [`putImageData()`](putimagedata.md).
 
 ## Синтаксис
 
@@ -28,4 +28,4 @@ alert('Ширина imgData - ' + imgData.width)
 
 ## Ссылки
 
-- [width](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/width) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`width`](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/width) <sup><small>MDN (рус.)</small></sup>

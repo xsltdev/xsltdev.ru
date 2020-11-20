@@ -85,4 +85,4 @@ ctx.fillText('Hello World', 10, 50)
 
 ## Ссылки
 
-- [font](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/font) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`font`](https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/font) <sup><small>MDN (рус.)</small></sup>

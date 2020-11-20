@@ -13,7 +13,7 @@ description: Свойство data возвращает объект, содер
 - `B` - Синий цвет (0-255)
 - `A` - Альфа-канал (0-255; 0 - прозрачный, 255 - полностью видимый)
 
-Примечание: Чтобы больше узнать об объекте `ImageData`, см. справку по методам [`createImageData()`](<createimagedata().md>), [`getImageData()`](<getimagedata().md>) и [`putImageData()`](<putimagedata().md>).
+Примечание: Чтобы больше узнать об объекте `ImageData`, см. справку по методам [`createImageData()`](createimagedata.md), [`getImageData()`](getimagedata.md) и [`putImageData()`](putimagedata.md).
 
 ## Синтаксис
 
@@ -91,4 +91,4 @@ ctx.putImageData(imgData, 10, 10)
 
 ## Ссылки
 
-- [data](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`data`](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data) <sup><small>MDN (рус.)</small></sup>

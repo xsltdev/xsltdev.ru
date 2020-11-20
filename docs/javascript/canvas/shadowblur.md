@@ -58,8 +58,8 @@ ctx.fillRect(20,20,100,80); }
 
 ## См. также
 
-- [shadowColor](shadowcolor.md)
+- Свойство [`shadowColor`](shadowcolor.md)
 
 ## Ссылки
 
-- [shadowBlur](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur) <sup><small>MDN (рус.)</small></sup>

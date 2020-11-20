@@ -75,7 +75,6 @@ block-size: unset;
 ## См. также
 
 - [width](width.md) и [height](height.md)
-<!-- - [writing-mode](writing-mode.md) -->
 
 ## Ссылки
 

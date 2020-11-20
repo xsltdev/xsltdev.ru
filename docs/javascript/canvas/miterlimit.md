@@ -72,4 +72,4 @@ ctx.stroke()
 
 ## Ссылки
 
-- [miterLimit](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/miterLimit) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/miterLimit) <sup><small>MDN (рус.)</small></sup>
