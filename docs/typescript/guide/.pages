@@ -1,8 +1,0 @@
-title: Руководство по Typescript
-nav:
-    - intro
-    - basic
-    - oop
-    - modules
-    - dts
-    - decorators
