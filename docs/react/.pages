@@ -2,6 +2,7 @@ title: React
 nav:
     - index.md
     - handbook
+    - types
     - router
     - redux
     - graphql-basics

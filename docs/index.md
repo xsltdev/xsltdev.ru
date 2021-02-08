@@ -130,14 +130,11 @@ template: home.html
 
 Новое на сайте:
 
+[Типизированный React](/react/types/)
+: Типизированный React
+
 [Документация Typescript 4.1](/typescript/)
 : Typescript 4.1 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
-
-[Углубленный Javascript](/javascript/garden/)
-: JavaScript Гарден **не** имеет цели научить вас языку JavaScript. Вам понадобится реальный опыт работы с языком чтобы понимать темы, рассматриваемые в этом руководстве.
-
-[Руководство по регулярным выражениям в JavaScript](/javascript/regexp/)
-: Регулярные выражения (RegExp) — это очень эффективный способ работы со строками.
 
 </div>
 
