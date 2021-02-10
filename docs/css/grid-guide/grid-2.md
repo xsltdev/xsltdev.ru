@@ -1,21 +1,23 @@
 # Строки и столбцы
 
-<small markdown="1">
+??? info "Содержание"
 
-1. [Что такое Grid Layout. Grid Container](grid-1.md)
-2. **Строки и столбцы**
-3. [Функция repeat и свойство grid](grid-3.md)
-4. [Размеры строк и столбцов](grid-4.md)
-5. [Отступы между столбцами и строками](grid-5.md)
-6. [Позиционирование элементов](grid-6.md)
-7. [Наложение элементов](grid-7.md)
-8. [Направление и порядок элементов](grid-8.md)
-9. [Именованные grid-линии](grid-9.md)
-10. [Именованные grid-линии и функция repeat](grid-10.md)
-11. [Области грида](grid-11.md)
-12. [Макет страницы в Grid Layout](grid-12.md)
+    <small markdown="1">
 
-</small>
+    1. [Что такое Grid Layout. Grid Container](grid-1.md)
+    2. **Строки и столбцы**
+    3. [Функция repeat и свойство grid](grid-3.md)
+    4. [Размеры строк и столбцов](grid-4.md)
+    5. [Отступы между столбцами и строками](grid-5.md)
+    6. [Позиционирование элементов](grid-6.md)
+    7. [Наложение элементов](grid-7.md)
+    8. [Направление и порядок элементов](grid-8.md)
+    9. [Именованные grid-линии](grid-9.md)
+    10. [Именованные grid-линии и функция repeat](grid-10.md)
+    11. [Области грида](grid-11.md)
+    12. [Макет страницы в Grid Layout](grid-12.md)
+
+    </small>
 
 Грид образует сетку из строк и столбцов, на пересечении которых образуются ячейки. И для установки строк и столбцов в Grid Layout использовать следующие свойства CSS3:
 
@@ -162,22 +164,5 @@ grid-template-columns: 8em 7em 8em;
 
 ## См. также
 
-- [grid-template-columns](../grid-template-columns.md)
-- [grid-template-rows](../grid-template-rows.md)
-
-<small markdown="1">
-
-1. [Что такое Grid Layout. Grid Container](grid-1.md)
-2. **Строки и столбцы**
-3. [Функция repeat и свойство grid](grid-3.md)
-4. [Размеры строк и столбцов](grid-4.md)
-5. [Отступы между столбцами и строками](grid-5.md)
-6. [Позиционирование элементов](grid-6.md)
-7. [Наложение элементов](grid-7.md)
-8. [Направление и порядок элементов](grid-8.md)
-9. [Именованные grid-линии](grid-9.md)
-10. [Именованные grid-линии и функция repeat](grid-10.md)
-11. [Области грида](grid-11.md)
-12. [Макет страницы в Grid Layout](grid-12.md)
-
-</small>
+- [grid-template-columns](/css/grid-template-columns/)
+- [grid-template-rows](/css/grid-template-rows/)

@@ -1,19 +1,21 @@
 # Выравнивание элементов. justify-content
 
-<small markdown="1">
+??? info "Содержание"
 
-1. [Что такое Flexbox. Flex Container](flex-1.md)
-2. [Макет страницы на Flexbox](flex-2.md)
-3. [Направление flex-direction](flex-3.md)
-4. [flex-wrap](flex-4.md)
-5. **flex-flow. Порядок элементов**
-6. [Выравнивание элементов. justify-content](flex-6.md)
-7. [Выравнивание элементов. align-items и align-self](flex-7.md)
-8. [Выравнивание строк и столбцов. align-content](flex-8.md)
-9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
-10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+    <small markdown="1">
 
-</small>
+    1. [Что такое Flexbox. Flex Container](flex-1.md)
+    2. [Макет страницы на Flexbox](flex-2.md)
+    3. [Направление flex-direction](flex-3.md)
+    4. [flex-wrap](flex-4.md)
+    5. **flex-flow. Порядок элементов**
+    6. [Выравнивание элементов. justify-content](flex-6.md)
+    7. [Выравнивание элементов. align-items и align-self](flex-7.md)
+    8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+    9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
+    10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+
+    </small>
 
 Иногда мы можем сталкиваться с тем, что пространство flex-контейнеров по размеру отличается от пространства, необходимого для flex-элементов. Например:
 
@@ -118,18 +120,3 @@
 ## См. также
 
 - [justify-content](../justify-content.md)
-
-<small markdown="1">
-
-1. [Что такое Flexbox. Flex Container](flex-1.md)
-2. [Макет страницы на Flexbox](flex-2.md)
-3. [Направление flex-direction](flex-3.md)
-4. [flex-wrap](flex-4.md)
-5. **flex-flow. Порядок элементов**
-6. [Выравнивание элементов. justify-content](flex-6.md)
-7. [Выравнивание элементов. align-items и align-self](flex-7.md)
-8. [Выравнивание строк и столбцов. align-content](flex-8.md)
-9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
-10. [Многоколоночный дизайн на Flexbox](flex-10.md)
-
-</small>

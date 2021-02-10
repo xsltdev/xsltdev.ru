@@ -1,19 +1,21 @@
 # Выравнивание строк и столбцов. align-content
 
-<small markdown="1">
+??? info "Содержание"
 
-1. [Что такое Flexbox. Flex Container](flex-1.md)
-2. [Макет страницы на Flexbox](flex-2.md)
-3. [Направление flex-direction](flex-3.md)
-4. [flex-wrap](flex-4.md)
-5. [flex-flow. Порядок элементов](flex-5.md)
-6. [Выравнивание элементов. justify-content](flex-6.md)
-7. **Выравнивание элементов. align-items и align-self**
-8. [Выравнивание строк и столбцов. align-content](flex-8.md)
-9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
-10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+    <small markdown="1">
 
-</small>
+    1. [Что такое Flexbox. Flex Container](flex-1.md)
+    2. [Макет страницы на Flexbox](flex-2.md)
+    3. [Направление flex-direction](flex-3.md)
+    4. [flex-wrap](flex-4.md)
+    5. [flex-flow. Порядок элементов](flex-5.md)
+    6. [Выравнивание элементов. justify-content](flex-6.md)
+    7. **Выравнивание элементов. align-items и align-self**
+    8. [Выравнивание строк и столбцов. align-content](flex-8.md)
+    9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
+    10. [Многоколоночный дизайн на Flexbox](flex-10.md)
+
+    </small>
 
 Свойство [`align-content`](../align-content.md) управляет выравниванием рядов (строк и столбцов) во flex-контейнере и поэтому применяется, если свойство [`flex-wrap`](../flex-wrap.md) имеет значение `wrap` или `wrap-reverse`. Свойство `align-content` может иметь следующие значения:
 
@@ -102,18 +104,3 @@
 ## См. также
 
 - [align-content](../align-content.md)
-
-<small markdown="1">
-
-1. [Что такое Flexbox. Flex Container](flex-1.md)
-2. [Макет страницы на Flexbox](flex-2.md)
-3. [Направление flex-direction](flex-3.md)
-4. [flex-wrap](flex-4.md)
-5. [flex-flow. Порядок элементов](flex-5.md)
-6. [Выравнивание элементов. justify-content](flex-6.md)
-7. **Выравнивание элементов. align-items и align-self**
-8. [Выравнивание строк и столбцов. align-content](flex-8.md)
-9. [Управление элементами. flex-basis, flex-shrink и flex-grow](flex-9.md)
-10. [Многоколоночный дизайн на Flexbox](flex-10.md)
-
-</small>

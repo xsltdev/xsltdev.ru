@@ -1,21 +1,23 @@
 # Отступы между столбцами и строками
 
-<small markdown="1">
+??? info "Содержание"
 
-1. [Что такое Grid Layout. Grid Container](grid-1.md)
-2. [Строки и столбцы](grid-2.md)
-3. [Функция repeat и свойство grid](grid-3.md)
-4. [Размеры строк и столбцов](grid-4.md)
-5. **Отступы между столбцами и строками**
-6. [Позиционирование элементов](grid-6.md)
-7. [Наложение элементов](grid-7.md)
-8. [Направление и порядок элементов](grid-8.md)
-9. [Именованные grid-линии](grid-9.md)
-10. [Именованные grid-линии и функция repeat](grid-10.md)
-11. [Области грида](grid-11.md)
-12. [Макет страницы в Grid Layout](grid-12.md)
+    <small markdown="1">
 
-</small>
+    1. [Что такое Grid Layout. Grid Container](grid-1.md)
+    2. [Строки и столбцы](grid-2.md)
+    3. [Функция repeat и свойство grid](grid-3.md)
+    4. [Размеры строк и столбцов](grid-4.md)
+    5. **Отступы между столбцами и строками**
+    6. [Позиционирование элементов](grid-6.md)
+    7. [Наложение элементов](grid-7.md)
+    8. [Направление и порядок элементов](grid-8.md)
+    9. [Именованные grid-линии](grid-9.md)
+    10. [Именованные grid-линии и функция repeat](grid-10.md)
+    11. [Области грида](grid-11.md)
+    12. [Макет страницы в Grid Layout](grid-12.md)
+
+    </small>
 
 Для создания отступов между столбцами и строками применяются свойства `grid-column-gap` и `grid-row-gap` соответственно.
 
@@ -96,23 +98,6 @@
 
 ## См. также
 
-- [grid-gap](../grid-gap.md)
-- [grid-column-gap](../grid-column-gap.md)
-- [grid-row-gap](../grid-row-gap.md)
-
-<small markdown="1">
-
-1. [Что такое Grid Layout. Grid Container](grid-1.md)
-2. [Строки и столбцы](grid-2.md)
-3. [Функция repeat и свойство grid](grid-3.md)
-4. [Размеры строк и столбцов](grid-4.md)
-5. **Отступы между столбцами и строками**
-6. [Позиционирование элементов](grid-6.md)
-7. [Наложение элементов](grid-7.md)
-8. [Направление и порядок элементов](grid-8.md)
-9. [Именованные grid-линии](grid-9.md)
-10. [Именованные grid-линии и функция repeat](grid-10.md)
-11. [Области грида](grid-11.md)
-12. [Макет страницы в Grid Layout](grid-12.md)
-
-</small>
+- [grid-gap](/css/grid-gap/)
+- [grid-column-gap](/css/grid-column-gap/)
+- [grid-row-gap](/css/grid-row-gap/)

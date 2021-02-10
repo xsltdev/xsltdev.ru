@@ -1,21 +1,23 @@
 # Позиционирование элементов
 
-<small markdown="1">
+??? info "Содержание"
 
-1. [Что такое Grid Layout. Grid Container](grid-1.md)
-2. [Строки и столбцы](grid-2.md)
-3. [Функция repeat и свойство grid](grid-3.md)
-4. [Размеры строк и столбцов](grid-4.md)
-5. [Отступы между столбцами и строками](grid-5.md)
-6. **Позиционирование элементов**
-7. [Наложение элементов](grid-7.md)
-8. [Направление и порядок элементов](grid-8.md)
-9. [Именованные grid-линии](grid-9.md)
-10. [Именованные grid-линии и функция repeat](grid-10.md)
-11. [Области грида](grid-11.md)
-12. [Макет страницы в Grid Layout](grid-12.md)
+    <small markdown="1">
 
-</small>
+    1. [Что такое Grid Layout. Grid Container](grid-1.md)
+    2. [Строки и столбцы](grid-2.md)
+    3. [Функция repeat и свойство grid](grid-3.md)
+    4. [Размеры строк и столбцов](grid-4.md)
+    5. [Отступы между столбцами и строками](grid-5.md)
+    6. **Позиционирование элементов**
+    7. [Наложение элементов](grid-7.md)
+    8. [Направление и порядок элементов](grid-8.md)
+    9. [Именованные grid-линии](grid-9.md)
+    10. [Именованные grid-линии и функция repeat](grid-10.md)
+    11. [Области грида](grid-11.md)
+    12. [Макет страницы в Grid Layout](grid-12.md)
+
+    </small>
 
 Грид представляет собой набор ячеек, которые образуются на пересечении столбцов и строк. Но сами строки и столбцы образуются с помощью grid-линий, которые рассекают грид по вертикали и горизонтали:
 
@@ -180,27 +182,10 @@ grid-area: row-start / column-start / row-end / column-end;
 
 ## См. также
 
-- [grid-row](../grid-row.md)
-- [grid-column](../grid-column.md)
-- [grid-area](../grid-area.md)
-- [grid-row-start](../grid-row-start.md)
-- [grid-row-end](../grid-row-end.md)
-- [grid-column-start](../grid-column-start.md)
-- [grid-column-end](../grid-column-end.md)
-
-<small markdown="1">
-
-1. [Что такое Grid Layout. Grid Container](grid-1.md)
-2. [Строки и столбцы](grid-2.md)
-3. [Функция repeat и свойство grid](grid-3.md)
-4. [Размеры строк и столбцов](grid-4.md)
-5. [Отступы между столбцами и строками](grid-5.md)
-6. **Позиционирование элементов**
-7. [Наложение элементов](grid-7.md)
-8. [Направление и порядок элементов](grid-8.md)
-9. [Именованные grid-линии](grid-9.md)
-10. [Именованные grid-линии и функция repeat](grid-10.md)
-11. [Области грида](grid-11.md)
-12. [Макет страницы в Grid Layout](grid-12.md)
-
-</small>
+- [grid-row](/css/grid-row/)
+- [grid-column](/css/grid-column/)
+- [grid-area](/css/grid-area/)
+- [grid-row-start](/css/grid-row-start/)
+- [grid-row-end](/css/grid-row-end/)
+- [grid-column-start](/css/grid-column-start/)
+- [grid-column-end](/css/grid-column-end/)
