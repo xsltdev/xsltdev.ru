@@ -5,7 +5,16 @@
 ## Перенаправление рефов в DOM-компоненты {#forwarding-refs-to-dom-components}
 
 Допустим, у нас есть компонент `FancyButton`, который рендерит нативный DOM-элемент `button`:
-`embed:forwarding-refs/fancy-button-simple.js`
+
+```jsx
+function FancyButton(props) {
+  return (
+    <button className="FancyButton">
+      {props.children}
+    </button>
+  );
+}
+```
 
 React-компоненты скрывают свои детали реализации, в том числе результат рендеринга. Реф элемента `button` из `FancyButton` **обычно и не требуется** другим компонентам. Это хорошо, поскольку такой подход не даёт компонентам излишне полагаться на структуру DOM друг друга.
 
@@ -15,7 +24,18 @@ React-компоненты скрывают свои детали реализа
 
 В данном примере мы используем `React.forwardRef` в компоненте `FancyButton`, чтобы получить реф и передать его в дочерний DOM-элемент `button`.
 
-`embed:forwarding-refs/fancy-button-simple-ref.js`
+```jsx
+// highlight-range{1-2}
+const FancyButton = React.forwardRef((props, ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+));
+
+// Теперь реф будет указывать непосредственно на DOM-узел button:
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
+```
 
 Таким образом, когда мы будем применять `FancyButton` в других компонентах, мы сможем получить реф находящегося в нём DOM-узла `button` и использовать его так же, как если бы мы рендерили непосредственно `button`.
 
@@ -42,18 +62,94 @@ React-компоненты скрывают свои детали реализа
 ## Перенаправление рефов в компонентах высшего порядка {#forwarding-refs-in-higher-order-components}
 
 Особенно полезным перенаправление может оказаться в [компонентах высшего порядка](higher-order-components.md) (также известных как HOC). Начнём с примера, в котором HOC выводит пропсы компонента в консоль:
-`embed:forwarding-refs/log-props-before.js`
+
+```jsx
+// highlight-next-line
+function logProps(WrappedComponent) {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('старые пропсы:', prevProps);
+      console.log('новые пропсы:', this.props);
+    }
+
+    render() {
+      // highlight-next-line
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+
+  return LogProps;
+}
+```
 
 Компонент высшего порядка `logProps` передаёт все пропсы в компонент, который он оборачивает, так что рендерить они будут одно и то же. С его помощью мы будем выводить в консоль все пропсы, переданные в наш компонент с кнопкой:
-`embed:forwarding-refs/fancy-button.js`
+
+```jsx
+class FancyButton extends React.Component {
+  focus() {
+    // ...
+  }
+
+  // ...
+}
+
+// Вместо экспорта FancyButton, мы экспортируем LogProps.
+// Рендериться при этом будет FancyButton.
+// highlight-next-line
+export default logProps(FancyButton);
+```
 
 Обратите внимание, что в этом примере не будут передаваться рефы. Так происходит, потому что `ref` это не проп. Подобно `key`, React обрабатывает `ref` особым образом. Если вы укажите реф для HOC, он привяжется к ближайшему к корню контейнера, а не к переданному в HOC компоненту.
 
 Следовательно, рефы, предназначенные для компонента `FancyButton`, окажутся привязанными к компоненту `LogProps`:
-`embed:forwarding-refs/fancy-button-ref.js`
+
+```jsx
+import FancyButton from './FancyButton';
+
+// highlight-next-line
+const ref = React.createRef();
+
+// Компонент FancyButton, который мы импортировали — это HOC LogProps.
+// Несмотря на то, что рендерят они одно и то же,
+// реф в данном случае будет указывать на LogProps, а не на сам FancyButton!
+// Это значит, что мы не сможем, например, вызвать ref.current.focus()
+// highlight-range{4}
+<FancyButton
+  label="Click Me"
+  handleClick={handleClick}
+  ref={ref}
+/>;
+```
 
 К счастью, мы можем явно перенаправить рефы на компонент `FancyButton` внутри HOC при помощи API `React.forwardRef`. В `React.forwardRef` передаётся функция рендеринга, которая принимает аргументы `props` и `ref`, а возвращает узел React. Например:
-`embed:forwarding-refs/log-props-after.js`
+
+```jsx
+function logProps(Component) {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('old props:', prevProps);
+      console.log('new props:', this.props);
+    }
+
+    render() {
+      // highlight-next-line
+      const { forwardedRef, ...rest } = this.props;
+
+      // Передаём в качестве рефа проп "forwardedRef"
+      // highlight-next-line
+      return <Component ref={forwardedRef} {...rest} />;
+    }
+  }
+
+  // Обратите внимание, что React.forwardRef передает "ref" вторым аргументом.
+  // Мы можем передать его дальше как проп, например, "forwardedRef",
+  // а потом привязать его к компоненту.
+  // highlight-range{1-3}
+  return React.forwardRef((props, ref) => {
+    return <LogProps {...props} forwardedRef={ref} />;
+  });
+}
+```
 
 ## Изменение названия в инструментах разработки {#displaying-a-custom-name-in-devtools}
 
@@ -61,12 +157,40 @@ React-компоненты скрывают свои детали реализа
 
 Например, вот этот компонент будет называться «_ForwardRef_»:
 
-`embed:forwarding-refs/wrapped-component.js`
+```jsx
+const WrappedComponent = React.forwardRef((props, ref) => {
+  return <LogProps {...props} forwardedRef={ref} />;
+});
+```
 
 Если присвоить имя функции рендеринга, то оно появится в названии компонента в инструментах разработки (например, «_ForwardRef(myFunction)_»):
 
-`embed:forwarding-refs/wrapped-component-with-function-name.js`
+```jsx
+const WrappedComponent = React.forwardRef(
+  function myFunction(props, ref) {
+    return <LogProps {...props} forwardedRef={ref} />;
+  }
+);
+```
 
 Можно даже назначить функции свойство `displayName` и указать в нём, какой именно компонент обёрнут в HOC:
 
-`embed:forwarding-refs/customized-display-name.js`
+```jsx
+function logProps(Component) {
+  class LogProps extends React.Component {
+    // ...
+  }
+
+  function forwardRef(props, ref) {
+    return <LogProps {...props} forwardedRef={ref} />;
+  }
+
+  // Дадим компоненту более понятное имя в инструментах разработки.
+  // Например, "ForwardRef(logProps(MyComponent))"
+  // highlight-range{1-2}
+  const name = Component.displayName || Component.name;
+  forwardRef.displayName = `logProps(${name})`;
+
+  return React.forwardRef(forwardRef);
+}
+```

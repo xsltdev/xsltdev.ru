@@ -9,14 +9,14 @@
 ```javascript
 class NameForm extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.input = React.createRef()
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.input = React.createRef();
   }
 
   handleSubmit(event) {
-    alert('Отправленное имя: ' + this.input.current.value)
-    event.preventDefault()
+    alert('Отправленное имя: ' + this.input.current.value);
+    event.preventDefault();
   }
 
   render() {
@@ -28,7 +28,7 @@ class NameForm extends React.Component {
         </label>
         <input type="submit" value="Отправить" />
       </form>
-    )
+    );
   }
 }
 ```
@@ -74,4 +74,39 @@ HTML-тег `<input type="file">` позволяет пользователю в
 
 Для взаимодействия с файлами следует использовать File API. В следующем примере показано, как создать [реф на DOM-узел](refs-and-the-dom.md), чтобы затем получить доступ к файлам в обработчике отправки формы:
 
-`embed:uncontrolled-components/input-type-file.js`
+```jsx
+class FileInput extends React.Component {
+  constructor(props) {
+    // highlight-range{3}
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = React.createRef();
+  }
+  handleSubmit(event) {
+    // highlight-range{3}
+    event.preventDefault();
+    alert(
+      `Selected file - ${this.fileInput.current.files[0].name}`
+    );
+  }
+
+  render() {
+    // highlight-range{5}
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Upload file:
+          <input type="file" ref={this.fileInput} />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(
+  <FileInput />,
+  document.getElementById('root')
+);
+```

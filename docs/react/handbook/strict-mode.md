@@ -7,7 +7,27 @@
 > Проверки строгого режима работают только в режиме разработки; _они не оказывают никакого эффекта в продакшен-сборке_.
 
 Строгий режим может быть включён для любой части приложения. Например:
-`embed:strict-mode/enabling-strict-mode.js`
+
+```jsx
+import React from 'react';
+
+function ExampleApplication() {
+  return (
+    <div>
+      <Header />
+      {/* highlight-next-line */}
+      <React.StrictMode>
+        <div>
+          <ComponentOne />
+          <ComponentTwo />
+        </div>
+        {/* highlight-next-line */}
+      </React.StrictMode>
+      <Footer />
+    </div>
+  );
+}
+```
 
 В примере выше проверки строгого режима _не_ будут выполняться для компонентов `Header` и `Footer`. Однако будут выполнены для `ComponentOne` и `ComponentTwo`, а также для всех их потомков.
 
@@ -36,7 +56,27 @@
 Ранее React предоставлял два способа управления рефами: устаревшие строковые рефы и колбэк API. Хотя строковые рефы и были более удобным способом, они имели [несколько недостатков](https://github.com/facebook/react/issues/1373). Поэтому мы рекомендовали [использовать колбэки вместо них](refs-and-the-dom.md#legacy-api-string-refs).
 
 В React 16.3 добавлен третий способ, который предлагает удобство строковых рефов и лишён каких-либо недостатков:
-`embed:16-3-release-blog-post/create-ref-example.js`
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // highlight-next-line
+    this.inputRef = React.createRef();
+  }
+
+  render() {
+    // highlight-next-line
+    return <input type="text" ref={this.inputRef} />;
+  }
+
+  componentDidMount() {
+    // highlight-next-line
+    this.inputRef.current.focus();
+  }
+}
+```
 
 Поскольку объекты-рефы стали заменой строковых реф, строгий режим теперь предупреждает об использовании строковых реф.
 
@@ -61,13 +101,13 @@
 ```javascript
 class MyComponent extends React.Component {
   constructor(props) {
-    super(props)
-    this.wrapper = React.createRef()
+    super(props);
+    this.wrapper = React.createRef();
   }
   render() {
     return (
       <div ref={this.wrapper}>{this.props.children}</div>
-    )
+    );
   }
 }
 ```
@@ -110,7 +150,16 @@ React работает в два этапа:
 > Это применимо только в режиме разработки. _Методы жизненного цикла не вызываются дважды в продакшен-режиме._
 
 Рассмотрим следующий пример:
-`embed:strict-mode/side-effects-in-constructor.js`
+
+```jsx
+class TopLevelRoute extends React.Component {
+  constructor(props) {
+    super(props);
+
+    SharedApplicationState.recordEvent('ExampleComponent');
+  }
+}
+```
 
 На первый взгляд данный пример не кажется проблемным. Но если метод `SharedApplicationState.recordEvent` не является [идемпотентным](https://ru.wikipedia.org/wiki/%D0%98%D0%B4%D0%B5%D0%BC%D0%BF%D0%BE%D1%82%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C#%D0%92_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5), тогда создание этого компонента несколько раз может привести к недопустимому состоянию приложения. Такие труднонаходимые ошибки могут никак не проявить себя во время разработки или быть настолько редкими, что останутся незамеченными.
 

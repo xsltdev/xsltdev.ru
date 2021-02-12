@@ -5,7 +5,7 @@
 Элемент описывает то, что вы хотите увидеть на экране:
 
 ```js
-const element = <h1>Hello, world</h1>
+const element = <h1>Hello, world</h1>;
 ```
 
 В отличие от DOM-элементов, элементы React — это простые объекты, не отнимающие много ресурсов. React DOM обновляет DOM, чтобы он соответствовал переданным React-элементам.
@@ -28,7 +28,10 @@ const element = <h1>Hello, world</h1>
 
 Для рендеринга React-элемента в корневой узел DOM, вызовите `ReactDOM.render()` с React-элементом и корневым DOM узлом в качестве аргументов:
 
-`embed:rendering-elements/render-an-element.js`
+```jsx
+const element = <h1>Hello, world</h1>;
+ReactDOM.render(element, document.getElementById('root'));
+```
 
 На странице будет написано "Hello, world".
 
@@ -40,7 +43,20 @@ const element = <h1>Hello, world</h1>
 
 Рассмотрим пример с часами:
 
-`embed:rendering-elements/update-rendered-element.js`
+```jsx
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  // highlight-next-line
+  ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
+```
 
 В этом примере `ReactDOM.render()` вызывается каждую секунду с помощью колбэка [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval).
 
