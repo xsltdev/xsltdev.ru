@@ -12,26 +12,26 @@ npm i redux react-redux --save
 
 _src/index.js_
 
-```jsx
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import App from './App'
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import App from './App';
 
-import registerServiceWorker from './registerServiceWorker'
+import registerServiceWorker from './registerServiceWorker';
 
-import './index.css'
+import './index.css';
 
-const store = createStore(() => {}, {}) // [1]
+const store = createStore(() => {}, {}); // [1]
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
-)
-registerServiceWorker()
+);
+registerServiceWorker();
 ```
 
 Итак, первый компонент из мира Redux - `<Provider />`.
@@ -41,7 +41,7 @@ registerServiceWorker()
 Давайте подробнее посмотрим на строку 1:
 
 ```js
-const store = createStore(() => {}, {})
+const store = createStore(() => {}, {});
 ```
 
 Во-первых, если вам трудно читать ES2015 код, то переводите его в привычный ES5, с помощью [babel-playground](https://babeljs.io/repl/).
@@ -61,42 +61,42 @@ const store = createStore(() => {}, {})
 _src/store/configureStore.js_
 
 ```js
-import { createStore } from 'redux'
+import { createStore } from 'redux';
 
-export const store = createStore(() => {}, {})
+export const store = createStore(() => {}, {});
 ```
 
 Поправить импорт в индексе:
 
 _src/index.js_
 
-```jsx
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { store } from './store/configureStore' // исправлено
-import App from './App'
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/configureStore'; // исправлено
+import App from './App';
 
-import registerServiceWorker from './registerServiceWorker'
+import registerServiceWorker from './registerServiceWorker';
 
-import './index.css'
+import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
-)
-registerServiceWorker()
+);
+registerServiceWorker();
 ```
 
 Усилители - это middleware функции. Если читатель знаком с [express.js](http://expressjs.com/), то он знаком с усилителями в redux. Для остальных: типичный усилитель - логгер (`logger`), который просто пишет в консоль все что происходит с наблюдаемым объектом.
 
 Давайте так же исправим `App.js`, чтобы обозначить чем мы тут с вами занимаемся:
 
-```jsx
-import React, { Component } from 'react'
-import './App.css'
+```js
+import React, { Component } from 'react';
+import './App.css';
 
 class App extends Component {
   render() {
@@ -109,11 +109,11 @@ class App extends Component {
           Здесь будут мои самые залайканые фото
         </p>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
 ```
 
 ![Консоль с Provider](app-inside-provider.jpg)

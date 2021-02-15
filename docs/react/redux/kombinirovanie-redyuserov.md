@@ -14,10 +14,10 @@ _src/reducers/user.js_
 ```js
 const initialState = {
   name: 'Аноним',
-}
+};
 
 export function userReducer(state = initialState) {
-  return state
+  return state;
 }
 ```
 
@@ -27,10 +27,10 @@ _src/reducers/page.js_
 const initialState = {
   year: 2018,
   photos: [],
-}
+};
 
 export function pageReducer(state = initialState) {
-  return state
+  return state;
 }
 ```
 
@@ -38,15 +38,15 @@ export function pageReducer(state = initialState) {
 
 _src/reducers/index.js_
 
-```jsx
-import { combineReducers } from 'redux'
-import { pageReducer } from './page'
-import { userReducer } from './user'
+```js
+import { combineReducers } from 'redux';
+import { pageReducer } from './page';
+import { userReducer } from './user';
 
 export const rootReducer = combineReducers({
   page: pageReducer,
   user: userReducer,
-})
+});
 ```
 
 Обновим `configureStore`:
@@ -54,14 +54,14 @@ export const rootReducer = combineReducers({
 _src/store/configureStore.js_
 
 ```js
-import { createStore } from 'redux'
-import { rootReducer } from '../reducers'
+import { createStore } from 'redux';
+import { rootReducer } from '../reducers';
 
 // удалили "начальное состояние = initial state"
 // так как теперь наш редьюсер составной,
 // и нам нужны initialState каждого редьюсера.
 // Это будет сделано автоматически.
-export const store = createStore(rootReducer)
+export const store = createStore(rootReducer);
 ```
 
 Посмотрим что у нас теперь "консолится" в компоненте `<App />`, а так же в React dev tools.
@@ -74,11 +74,11 @@ export const store = createStore(rootReducer)
 
 ```js
 const mapStateToProps = (store) => {
-  console.log(store)
+  console.log(store);
   return {
     user: store.user,
-  }
-}
+  };
+};
 ```
 
 Что можно перевести так: возьми полностью "стор" приложения и присоедини его в переменную `user`, дабы она была доступна из компонета `App.js` как `this.props.user`
@@ -91,10 +91,10 @@ const mapStateToProps = (store) => {
 
 _src/containers/App.js_
 
-```jsx
+```js
 class App extends Component {
   render() {
-    const { user, page } = this.props
+    const { user, page } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -106,17 +106,17 @@ class App extends Component {
           год
         </p>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (store) => {
-  console.log(store)
+  console.log(store);
   return {
     user: store.user,
     page: store.page,
-  }
-}
+  };
+};
 ```
 
 Работа функции `mapStateToProps` многих вводит в ступор. В данной функции, мы хотим отрезать от нашего общего пирога (Store) только те кусочки (редьюсеры), которые нам нужны.

@@ -23,7 +23,7 @@
 
 _src/components/User.js_
 
-```jsx
+```js
 render() {
   console.log('<User/> render')
   return <div className="ib user">{this.renderTemplate()}</div>
@@ -53,32 +53,32 @@ render() {
 
 _src/index.js_
 
-```jsx
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { store } from './store/configureStore'
-import App from './components/App' // изменили путь
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/configureStore';
+import App from './components/App'; // изменили путь
 
-import registerServiceWorker from './registerServiceWorker'
+import registerServiceWorker from './registerServiceWorker';
 
-import './index.css'
+import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
-)
-registerServiceWorker()
+);
+registerServiceWorker();
 ```
 
 _src/components/App.js_
 
-```jsx
-import React, { Component } from 'react'
-import UserContainer from '../containers/UserContainer' // изменили импорт
-import PageContainer from '../containers/PageContainer' // изменили импорт
+```js
+import React, { Component } from 'react';
+import UserContainer from '../containers/UserContainer'; // изменили импорт
+import PageContainer from '../containers/PageContainer'; // изменили импорт
 
 class App extends Component {
   render() {
@@ -87,24 +87,24 @@ class App extends Component {
         <PageContainer />
         <UserContainer />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
 ```
 
 _src/containers/PageContainer.js_
 
-```jsx
-import React from 'react'
-import { connect } from 'react-redux'
-import { Page } from '../components/Page'
-import { getPhotos } from '../actions/PageActions'
+```js
+import React from 'react';
+import { connect } from 'react-redux';
+import { Page } from '../components/Page';
+import { getPhotos } from '../actions/PageActions';
 
 class PageContainer extends React.Component {
   render() {
-    const { page, getPhotos } = this.props
+    const { page, getPhotos } = this.props;
     return (
       <Page
         photos={page.photos}
@@ -113,26 +113,26 @@ class PageContainer extends React.Component {
         error={page.error}
         getPhotos={getPhotos}
       />
-    )
+    );
   }
 }
 
 const mapStateToProps = (store) => {
   return {
     page: store.page,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getPhotos: (year) => dispatch(getPhotos(year)),
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PageContainer)
+)(PageContainer);
 ```
 
 Как вы могли заметить, все что касалось `<Page />` хранится в отдельном контейнере: подписка на часть стора, экшен, пропсы...
@@ -141,15 +141,15 @@ export default connect(
 
 _src/containers/UserContainer.js_
 
-```jsx
-import React from 'react'
-import { connect } from 'react-redux'
-import { User } from '../components/User'
-import { handleLogin } from '../actions/UserActions'
+```js
+import React from 'react';
+import { connect } from 'react-redux';
+import { User } from '../components/User';
+import { handleLogin } from '../actions/UserActions';
 
 class UserContainer extends React.Component {
   render() {
-    const { user, handleLogin } = this.props
+    const { user, handleLogin } = this.props;
     return (
       <User
         name={user.name}
@@ -157,26 +157,26 @@ class UserContainer extends React.Component {
         isFetching={user.isFetching}
         handleLogin={handleLogin}
       />
-    )
+    );
   }
 }
 
 const mapStateToProps = (store) => {
   return {
     user: store.user,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleLogin: () => dispatch(handleLogin()),
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserContainer)
+)(UserContainer);
 ```
 
 Теперь внимание: в компоненте `App` есть два "независимых компонента". Сейчас при изменении данных в редьюсере для `Page` - `User` перерисовываться не будет. `App` тоже, само собой. `App` у нас вообще не будет перерисовываться более при таком раскладе.
@@ -191,7 +191,7 @@ export default connect(
 
 _src/components/Page.js_
 
-```jsx
+```js
 export class Page extends React.Component {
   onBtnClick = e => {
     ...

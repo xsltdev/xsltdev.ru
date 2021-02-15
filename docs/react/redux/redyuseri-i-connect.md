@@ -7,10 +7,10 @@ _src/reducers/index.js_
 ```js
 export const initialState = {
   user: 'Unknown User',
-}
+};
 
 export function rootReducer(state = initialState) {
-  return state
+  return state;
 }
 ```
 
@@ -25,10 +25,10 @@ export function rootReducer(state = initialState) {
 _src/store/configureStore.js_
 
 ```js
-import { createStore } from 'redux'
-import { rootReducer, initialState } from '../reducers'
+import { createStore } from 'redux';
+import { rootReducer, initialState } from '../reducers';
 
-export const store = createStore(rootReducer, initialState)
+export const store = createStore(rootReducer, initialState);
 ```
 
 Не забывайте, синтаксис функции `createStore`:
@@ -42,10 +42,10 @@ export const store = createStore(rootReducer, initialState)
 
 _src/App.js_
 
-```jsx
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import './App.css'
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import './App.css';
 
 class App extends Component {
   render() {
@@ -60,20 +60,20 @@ class App extends Component {
         <p>Меня зовут: {this.props.user}</p>{' '}
         {/* добавлен вывод из props */}
       </div>
-    )
+    );
   }
 }
 
 // приклеиваем данные из store
 const mapStateToProps = (store) => {
-  console.log(store) // посмотрим, что же у нас в store?
+  console.log(store); // посмотрим, что же у нас в store?
   return {
     user: store.user,
-  }
-}
+  };
+};
 
 // в наш компонент App, с помощью connect(mapStateToProps)
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);
 ```
 
 Назначение функции `connect` вытекает из названия: подключи React компонент к Redux store.
@@ -98,10 +98,10 @@ export const initialState = {
     surname: 'Реактов',
     age: 27,
   },
-}
+};
 
 export function rootReducer(state = initialState) {
-  return state
+  return state;
 }
 ```
 
@@ -109,12 +109,12 @@ export function rootReducer(state = initialState) {
 
 _src/containers/App.js_
 
-```jsx
+```js
 // ... (импорты)
 
 class App extends Component {
   render() {
-    const { name, surname, age } = this.props.user
+    const { name, surname, age } = this.props.user;
     return (
       <div className="App">
         <header className="App-header">
@@ -125,7 +125,7 @@ class App extends Component {
         </p>
         <p>Тебе уже {age} ?</p>
       </div>
-    )
+    );
   }
 }
 

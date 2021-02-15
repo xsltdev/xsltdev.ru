@@ -4,7 +4,7 @@
 
 Компонент с рендер-пропом берёт функцию, которая возвращает React-элемент, и вызывает её вместо реализации собственного рендера.
 
-```jsx
+```js
 <DataProvider
   render={(data) => <h1>Привет, {data.target}</h1>}
 />
@@ -23,16 +23,16 @@
 ```js
 class MouseTracker extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleMouseMove = this.handleMouseMove.bind(this)
-    this.state = { x: 0, y: 0 }
+    super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.state = { x: 0, y: 0 };
   }
 
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
       y: event.clientY,
-    })
+    });
   }
 
   render() {
@@ -47,7 +47,7 @@ class MouseTracker extends React.Component {
           {this.state.y})
         </p>
       </div>
-    )
+    );
   }
 }
 ```
@@ -62,16 +62,16 @@ class MouseTracker extends React.Component {
 // Компонент <Mouse> инкапсулирует поведение, которое нам необходимо...
 class Mouse extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleMouseMove = this.handleMouseMove.bind(this)
-    this.state = { x: 0, y: 0 }
+    super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.state = { x: 0, y: 0 };
   }
 
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
       y: event.clientY,
-    })
+    });
   }
 
   render() {
@@ -86,7 +86,7 @@ class Mouse extends React.Component {
           {this.state.y})
         </p>
       </div>
-    )
+    );
   }
 }
 
@@ -97,7 +97,7 @@ class MouseTracker extends React.Component {
         <h1>Перемещайте курсор мыши!</h1>
         <Mouse />
       </div>
-    )
+    );
   }
 }
 ```
@@ -111,7 +111,7 @@ class MouseTracker extends React.Component {
 ```js
 class Cat extends React.Component {
   render() {
-    const mouse = this.props.mouse
+    const mouse = this.props.mouse;
     return (
       <img
         src="/cat.jpg"
@@ -121,22 +121,22 @@ class Cat extends React.Component {
           top: mouse.y,
         }}
       />
-    )
+    );
   }
 }
 
 class MouseWithCat extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleMouseMove = this.handleMouseMove.bind(this)
-    this.state = { x: 0, y: 0 }
+    super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.state = { x: 0, y: 0 };
   }
 
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
       y: event.clientY,
-    })
+    });
   }
 
   render() {
@@ -153,7 +153,7 @@ class MouseWithCat extends React.Component {
         */}
         <Cat mouse={this.state} />
       </div>
-    )
+    );
   }
 }
 
@@ -164,7 +164,7 @@ class MouseTracker extends React.Component {
         <h1>Перемещайте курсор мыши!</h1>
         <MouseWithCat />
       </div>
-    )
+    );
   }
 }
 ```
@@ -176,7 +176,7 @@ class MouseTracker extends React.Component {
 ```js
 class Cat extends React.Component {
   render() {
-    const mouse = this.props.mouse
+    const mouse = this.props.mouse;
     return (
       <img
         src="/cat.jpg"
@@ -186,22 +186,22 @@ class Cat extends React.Component {
           top: mouse.y,
         }}
       />
-    )
+    );
   }
 }
 
 class Mouse extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleMouseMove = this.handleMouseMove.bind(this)
-    this.state = { x: 0, y: 0 }
+    super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.state = { x: 0, y: 0 };
   }
 
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
       y: event.clientY,
-    })
+    });
   }
 
   render() {
@@ -216,7 +216,7 @@ class Mouse extends React.Component {
         */}
         {this.props.render(this.state)}
       </div>
-    )
+    );
   }
 }
 
@@ -227,7 +227,7 @@ class MouseTracker extends React.Component {
         <h1>Перемещайте курсор мыши!</h1>
         <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
-    )
+    );
   }
 }
 ```
@@ -252,9 +252,9 @@ function withMouse(Component) {
             <Component {...this.props} mouse={mouse} />
           )}
         />
-      )
+      );
     }
-  }
+  };
 }
 ```
 
@@ -295,7 +295,7 @@ function withMouse(Component) {
 ```js
 Mouse.propTypes = {
   children: PropTypes.func.isRequired,
-}
+};
 ```
 
 ## Предостережения {#caveats}
@@ -323,7 +323,7 @@ class MouseTracker extends React.Component {
         */}
         <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
-    )
+    );
   }
 }
 ```
@@ -337,7 +337,7 @@ class MouseTracker extends React.Component {
   // Определяем как метод экземпляра, `this.renderTheCat` всегда
   // ссылается на *ту же самую* функцию, когда мы используем её в рендере
   renderTheCat(mouse) {
-    return <Cat mouse={mouse} />
+    return <Cat mouse={mouse} />;
   }
 
   render() {
@@ -346,7 +346,7 @@ class MouseTracker extends React.Component {
         <h1>Перемещайте курсор мыши!</h1>
         <Mouse render={this.renderTheCat} />
       </div>
-    )
+    );
   }
 }
 ```

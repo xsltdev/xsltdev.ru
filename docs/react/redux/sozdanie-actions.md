@@ -26,7 +26,7 @@ export function setYear(year) {
   return {
     type: 'SET_YEAR',
     payload: year,
-  }
+  };
 }
 ```
 
@@ -40,15 +40,15 @@ _src/reducers/page.js_
 const initialState = {
   year: 2018,
   photos: [],
-}
+};
 
 export function pageReducer(state = initialState, action) {
   switch (action.type) {
     case 'SET_YEAR':
-      return { ...state, year: action.payload }
+      return { ...state, year: action.payload };
 
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -71,18 +71,18 @@ export function pageReducer(state = initialState, action) {
 
 _src/containers/App.js_
 
-```jsx
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { User } from '../components/User'
-import { Page } from '../components/Page'
-import { setYear } from '../actions/PageActions'
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { User } from '../components/User';
+import { Page } from '../components/Page';
+import { setYear } from '../actions/PageActions';
 
-import './App.css'
+import './App.css';
 
 class App extends Component {
   render() {
-    const { user, page, setYearAction } = this.props
+    const { user, page, setYearAction } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -95,7 +95,7 @@ class App extends Component {
           setYear={setYearAction}
         />
       </div>
-    )
+    );
   }
 }
 
@@ -103,19 +103,19 @@ const mapStateToProps = (store) => {
   return {
     user: store.user,
     page: store.page,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setYearAction: (year) => dispatch(setYear(year)), // [1]
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(App);
 ```
 
 Начнем с разбора `mapDispatchToProps`. Данная функция, первым аргументом получает `dispatch`, а значит мы можем теперь "диспатчить" экшены, которые будут пойманы редьюсером. Еще раз:только те экшены, которые были отправлены с помощью "диспетчера" будут пойманы редьюсером.
@@ -131,7 +131,7 @@ export default connect(
 ```js
 const mapDispatchToProps = (dispatch) => ({
   setYearAction: (year) => dispatch(setYear(year)),
-})
+});
 ```
 
 После выполнения `connect(mapStateToProps, mapDispatchToProps)(App)`, мы получили в `<App />` новые свойства (`props`), что наглядно демонстрирует вкладка "React" в chrome dev tools.
@@ -144,17 +144,17 @@ const mapDispatchToProps = (dispatch) => ({
 
 _src/components/Page.js_
 
-```jsx
-import React from 'react'
-import PropTypes from 'prop-types'
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Page extends React.Component {
   onBtnClick = (e) => {
-    const year = +e.currentTarget.innerText
-    this.props.setYear(year)
-  }
+    const year = +e.currentTarget.innerText;
+    this.props.setYear(year);
+  };
   render() {
-    const { year, photos } = this.props
+    const { year, photos } = this.props;
     return (
       <div>
         <div>
@@ -168,7 +168,7 @@ export class Page extends React.Component {
           У тебя {photos.length} фото за {year} год
         </p>
       </div>
-    )
+    );
   }
 }
 
@@ -176,7 +176,7 @@ Page.propTypes = {
   year: PropTypes.number.isRequired,
   photos: PropTypes.array.isRequired,
   setYear: PropTypes.func.isRequired, // добавили новое свойство в propTypes
-}
+};
 ```
 
 Сейчас если кликнуть на кнопку с годом, то в приложении год будет изменяться. Вау?)
@@ -196,12 +196,12 @@ p.p.s. можете добавить `console.log(store)` в `mapStateToProps` �
 
 ```js
 const mapStateToProps = (store) => {
-  console.log(store)
+  console.log(store);
   return {
     user: store.user,
     page: store.page,
-  }
-}
+  };
+};
 ```
 
 ![Actions](change-year-action.jpg)

@@ -39,7 +39,7 @@
     <script language="javascript">
       VK.init({
         apiId: XXXXXX, <!-- ваш номер -->
-      })
+      });
     </script>
   </body>
 </html>
@@ -56,34 +56,34 @@
 _src/actions/UserActions.js_
 
 ```js
-export const LOGIN_REQUEST = 'LOGIN_REQUEST'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
-export const LOGIN_FAIL = 'LOGIN_FAIL'
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
 
 export function handleLogin() {
   return function (dispatch) {
     dispatch({
       type: LOGIN_REQUEST,
-    })
+    });
 
     //eslint-disable-next-line no-undef
     VK.Auth.login((r) => {
       if (r.session) {
-        let username = r.session.user.first_name
+        let username = r.session.user.first_name;
 
         dispatch({
           type: LOGIN_SUCCESS,
           payload: username,
-        })
+        });
       } else {
         dispatch({
           type: LOGIN_FAIL,
           error: true,
           payload: new Error('Ошибка авторизации'),
-        })
+        });
       }
-    }, 4) // запрос прав на доступ к photo
-  }
+    }, 4); // запрос прав на доступ к photo
+  };
 }
 ```
 
@@ -101,13 +101,13 @@ export function handleLogin() {
 
 _src/containers/App.js_
 
-```jsx
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { User } from '../components/User'
-import { Page } from '../components/Page'
-import { getPhotos } from '../actions/PageActions'
-import { handleLogin } from '../actions/UserActions'
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { User } from '../components/User';
+import { Page } from '../components/Page';
+import { getPhotos } from '../actions/PageActions';
+import { handleLogin } from '../actions/UserActions';
 
 class App extends Component {
   render() {
@@ -117,7 +117,7 @@ class App extends Component {
       page,
       getPhotosAction,
       handleLoginAction,
-    } = this.props
+    } = this.props;
     return (
       <div className="app">
         <Page
@@ -134,7 +134,7 @@ class App extends Component {
           handleLogin={handleLoginAction}
         />
       </div>
-    )
+    );
   }
 }
 
@@ -142,21 +142,21 @@ const mapStateToProps = (store) => {
   return {
     user: store.user, // вытащили из стора (из редьюсера user все в переменную thid.props.user)
     page: store.page,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getPhotosAction: (year) => dispatch(getPhotos(year)),
     // "приклеили" в this.props.handleLoginAction функцию, которая умеет диспатчить handleLogin
     handleLoginAction: () => dispatch(handleLogin()),
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(App);
 ```
 
 Здесь мы поступили так же, как когда-то для page:
@@ -175,35 +175,35 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-} from '../actions/UserActions'
+} from '../actions/UserActions';
 
 const initialState = {
   name: '',
   error: '', // добавили для сохранения текста ошибки
   isFetching: false, // добавили для реакции на статус "загружаю" или нет
-}
+};
 
 export function userReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN_REQUEST:
-      return { ...state, isFetching: true, error: '' }
+      return { ...state, isFetching: true, error: '' };
 
     case LOGIN_SUCCESS:
       return {
         ...state,
         isFetching: false,
         name: action.payload,
-      }
+      };
 
     case LOGIN_FAIL:
       return {
         ...state,
         isFetching: false,
         error: action.payload.message,
-      }
+      };
 
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -218,13 +218,13 @@ export function userReducer(state = initialState, action) {
 
 _src/components/User.js_
 
-```jsx
-import React from 'react'
-import PropTypes from 'prop-types'
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class User extends React.Component {
   renderTemplate = () => {
-    const { name, error, isFetching } = this.props
+    const { name, error, isFetching } = this.props;
 
     if (error) {
       return (
@@ -232,15 +232,15 @@ export class User extends React.Component {
           Во время запроса произошла ошибка, обновите
           страницу
         </p>
-      )
+      );
     }
 
     if (isFetching) {
-      return <p>Загружаю...</p>
+      return <p>Загружаю...</p>;
     }
 
     if (name) {
-      return <p>Привет, {name}!</p>
+      return <p>Привет, {name}!</p>;
     } else {
       return (
         <button
@@ -249,13 +249,13 @@ export class User extends React.Component {
         >
           Войти
         </button>
-      )
+      );
     }
-  }
+  };
   render() {
     return (
       <div className="ib user">{this.renderTemplate()}</div>
-    )
+    );
   }
 }
 
@@ -264,7 +264,7 @@ User.propTypes = {
   error: PropTypes.string,
   isFetching: PropTypes.bool.isRequired,
   handleLogin: PropTypes.func.isRequired,
-}
+};
 ```
 
 В коде компонента `<User />` ничего необычного нет. Рендерим шаблончик (в зависимости от `props`).
@@ -291,23 +291,23 @@ User.propTypes = {
 Подсказка: функция для загрузки фото
 
 ```js
-let photosArr = []
-let cached = false
+let photosArr = [];
+let cached = false;
 
 function makeYearPhotos(photos, selectedYear) {
   let createdYear,
-    yearPhotos = []
+    yearPhotos = [];
 
   photos.forEach((item) => {
-    createdYear = new Date(item.date * 1000).getFullYear()
+    createdYear = new Date(item.date * 1000).getFullYear();
     if (createdYear === selectedYear) {
-      yearPhotos.push(item)
+      yearPhotos.push(item);
     }
-  })
+  });
 
-  yearPhotos.sort((a, b) => b.likes.count - a.likes.count)
+  yearPhotos.sort((a, b) => b.likes.count - a.likes.count);
 
-  return yearPhotos
+  return yearPhotos;
 }
 
 function getMorePhotos(offset, count, year, dispatch) {
@@ -322,27 +322,27 @@ function getMorePhotos(offset, count, year, dispatch) {
     },
     (r) => {
       try {
-        photosArr = photosArr.concat(r.response.items)
+        photosArr = photosArr.concat(r.response.items);
         if (offset <= r.response.count) {
-          offset += 200 // максимальное количество фото которое можно получить за 1 запрос
-          getMorePhotos(offset, count, year, dispatch)
+          offset += 200; // максимальное количество фото которое можно получить за 1 запрос
+          getMorePhotos(offset, count, year, dispatch);
         } else {
-          let photos = makeYearPhotos(photosArr, year)
-          cached = true
+          let photos = makeYearPhotos(photosArr, year);
+          cached = true;
           dispatch({
             type: GET_PHOTOS_SUCCESS,
             payload: photos,
-          })
+          });
         }
       } catch (e) {
         dispatch({
           type: GET_PHOTOS_FAIL,
           error: true,
           payload: new Error(e),
-        })
+        });
       }
     }
-  )
+  );
 }
 ```
 
@@ -352,28 +352,28 @@ function getMorePhotos(offset, count, year, dispatch) {
 
 _src/actions/PageActions.js_
 
-```jsx
-export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST'
-export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS'
-export const GET_PHOTOS_FAIL = 'GET_PHOTOS_FAIL'
+```js
+export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST';
+export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS';
+export const GET_PHOTOS_FAIL = 'GET_PHOTOS_FAIL';
 
-let photosArr = []
-let cached = false
+let photosArr = [];
+let cached = false;
 
 function makeYearPhotos(photos, selectedYear) {
   let createdYear,
-    yearPhotos = []
+    yearPhotos = [];
 
   photos.forEach((item) => {
-    createdYear = new Date(item.date * 1000).getFullYear()
+    createdYear = new Date(item.date * 1000).getFullYear();
     if (createdYear === selectedYear) {
-      yearPhotos.push(item)
+      yearPhotos.push(item);
     }
-  })
+  });
 
-  yearPhotos.sort((a, b) => b.likes.count - a.likes.count)
+  yearPhotos.sort((a, b) => b.likes.count - a.likes.count);
 
-  return yearPhotos
+  return yearPhotos;
 }
 
 function getMorePhotos(offset, count, year, dispatch) {
@@ -388,27 +388,27 @@ function getMorePhotos(offset, count, year, dispatch) {
     },
     (r) => {
       try {
-        photosArr = photosArr.concat(r.response.items)
+        photosArr = photosArr.concat(r.response.items);
         if (offset <= r.response.count) {
-          offset += 200 // максимальное количество фото которое можно получить за 1 запрос
-          getMorePhotos(offset, count, year, dispatch)
+          offset += 200; // максимальное количество фото которое можно получить за 1 запрос
+          getMorePhotos(offset, count, year, dispatch);
         } else {
-          let photos = makeYearPhotos(photosArr, year)
-          cached = true
+          let photos = makeYearPhotos(photosArr, year);
+          cached = true;
           dispatch({
             type: GET_PHOTOS_SUCCESS,
             payload: photos,
-          })
+          });
         }
       } catch (e) {
         dispatch({
           type: GET_PHOTOS_FAIL,
           error: true,
           payload: new Error(e),
-        })
+        });
       }
     }
-  )
+  );
 }
 
 export function getPhotos(year) {
@@ -416,18 +416,18 @@ export function getPhotos(year) {
     dispatch({
       type: GET_PHOTOS_REQUEST,
       payload: year,
-    })
+    });
 
     if (cached) {
-      let photos = makeYearPhotos(photosArr, year)
+      let photos = makeYearPhotos(photosArr, year);
       dispatch({
         type: GET_PHOTOS_SUCCESS,
         payload: photos,
-      })
+      });
     } else {
-      getMorePhotos(0, 200, year, dispatch)
+      getMorePhotos(0, 200, year, dispatch);
     }
-  }
+  };
 }
 ```
 
@@ -444,14 +444,14 @@ import {
   GET_PHOTOS_REQUEST,
   GET_PHOTOS_SUCCESS,
   GET_PHOTOS_FAIL,
-} from '../actions/PageActions'
+} from '../actions/PageActions';
 
 const initialState = {
   year: 2018,
   photos: [],
   isFetching: false,
   error: '',
-}
+};
 
 export function pageReducer(state = initialState, action) {
   switch (action.type) {
@@ -461,7 +461,7 @@ export function pageReducer(state = initialState, action) {
         year: action.payload,
         isFetching: true,
         error: '',
-      }
+      };
 
     case GET_PHOTOS_SUCCESS:
       return {
@@ -469,45 +469,45 @@ export function pageReducer(state = initialState, action) {
         photos: action.payload,
         isFetching: false,
         error: '',
-      }
+      };
 
     case GET_PHOTOS_FAIL:
       return {
         ...state,
         error: action.payload.message,
         isFetching: false,
-      }
+      };
 
     default:
-      return state
+      return state;
   }
 }
 ```
 
 _src/components/Page.js_
 
-```jsx
-import React from 'react'
-import PropTypes from 'prop-types'
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Page extends React.Component {
   onBtnClick = (e) => {
-    const year = +e.currentTarget.innerText
-    this.props.getPhotos(year) // setYear -> getPhotos
-  }
+    const year = +e.currentTarget.innerText;
+    this.props.getPhotos(year); // setYear -> getPhotos
+  };
   renderTemplate = () => {
-    const { photos, isFetching, error } = this.props
+    const { photos, isFetching, error } = this.props;
 
     if (error) {
       return (
         <p className="error">
           Во время загрузки фото произошла ошибка
         </p>
-      )
+      );
     }
 
     if (isFetching) {
-      return <p>Загрузка...</p>
+      return <p>Загрузка...</p>;
     } else {
       return photos.map((
         entry,
@@ -519,12 +519,12 @@ export class Page extends React.Component {
           </p>
           <p>{entry.likes.count} ❤</p>
         </div>
-      ))
+      ));
     }
-  }
+  };
 
   render() {
-    const { year, photos } = this.props
+    const { year, photos } = this.props;
     return (
       <div className="ib page">
         <p>
@@ -549,7 +549,7 @@ export class Page extends React.Component {
         </h3>
         {this.renderTemplate()}
       </div>
-    )
+    );
   }
 }
 
@@ -559,16 +559,16 @@ Page.propTypes = {
   getPhotos: PropTypes.func.isRequired,
   error: PropTypes.string,
   isFetching: PropTypes.bool.isRequired,
-}
+};
 ```
 
 Как вы заметили, мы использовали `index` в качестве ключа для наших div'ов. Запустите пример, попробуйте поменять года. Возможно, вы словите баг, когда у элементов с одинаковым индексом изображение меняется с задержкой. Проблема в том, что мы использовали индекс для элементов, которые изменяются (а индекс-то остается прежним! Ключ в итоге не изменяется, итого реакт "путается").
 
 Чтобы этого избежать, сделайте ключ уникальным (например, для этого у нас есть `id` в ответе от VK API):
 
-```jsx
+```js
 if (isFetching) {
-  return <p>Загрузка...</p>
+  return <p>Загрузка...</p>;
 } else {
   return photos.map((entry) => (
     <div key={entry.id} className="photo">
@@ -577,7 +577,7 @@ if (isFetching) {
       </p>
       <p>{entry.likes.count} ❤</p>
     </div>
-  ))
+  ));
 }
 ```
 

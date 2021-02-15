@@ -22,66 +22,66 @@ npm install --save prop-types
 
 _src/components/User.js_
 
-```jsx
-import React from 'react'
-import PropTypes from 'prop-types'
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class User extends React.Component {
   render() {
-    const { name } = this.props
+    const { name } = this.props;
     return (
       <div>
         <p>Привет, {name}!</p>
       </div>
-    )
+    );
   }
 }
 
 User.propTypes = {
   name: PropTypes.string.isRequired,
-}
+};
 ```
 
 _src/components/Page.js_
 
-```jsx
-import React from 'react'
-import PropTypes from 'prop-types'
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Page extends React.Component {
   render() {
-    const { year, photos } = this.props
+    const { year, photos } = this.props;
     return (
       <div>
         <p>
           У тебя {photos.length} фото за {year} год
         </p>
       </div>
-    )
+    );
   }
 }
 
 Page.propTypes = {
   year: PropTypes.number.isRequired,
   photos: PropTypes.array.isRequired,
-}
+};
 ```
 
 Наш файл `App.js` - это контейнер (так как подключен к redux). Изменим-с...
 
 _src/containers/App.js_
 
-```jsx
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { User } from '../components/User'
-import { Page } from '../components/Page'
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { User } from '../components/User';
+import { Page } from '../components/Page';
 
-import './App.css'
+import './App.css';
 
 class App extends Component {
   render() {
-    const { user, page } = this.props
+    const { user, page } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -90,7 +90,7 @@ class App extends Component {
         <User name={user.name} />
         <Page photos={page.photos} year={page.year} />
       </div>
-    )
+    );
   }
 }
 
@@ -98,16 +98,16 @@ const mapStateToProps = (store) => {
   return {
     user: store.user,
     page: store.page,
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);
 ```
 
 Не забудьте так же перенести `App.css` в `src/containers` и поменять подключение `<App />` в `index.js`:
 
 ```js
-import App from './containers/App' // изменили путь
+import App from './containers/App'; // изменили путь
 ```
 
 Так же удалите файл с тестом - `App.test.js`, так как тесты в данный момент не входят в нашу программу, но возможно, будут добавлены в конце в раздел рецептов.

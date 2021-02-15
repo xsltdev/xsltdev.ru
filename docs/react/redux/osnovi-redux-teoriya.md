@@ -60,8 +60,8 @@ payload: [массив фото]
 Например, константы нашего проекта:
 
 ```js
-const GET_PHOTO_REQUEST = 'GET_PHOTO_REQUEST'
-const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS'
+const GET_PHOTO_REQUEST = 'GET_PHOTO_REQUEST';
+const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS';
 ```
 
 Не все любят данный подход с константами, но он был родоначальником, плюс его легко объяснить. К тому же, я до сих пор сторонник этого подхода.
@@ -73,7 +73,7 @@ function getPhotos(year) {
   return {
     type: GET_PHOTOS,
     payload: year,
-  }
+  };
 }
 
 // я буду использовать синтаксис function внутри actions, так как не вижу смысла
@@ -82,7 +82,7 @@ function getPhotos(year) {
 const getPhotos = (year) => ({
   type: GET_PHOTOS,
   payload: year,
-})
+});
 ```
 
 Итого: actions сообщает нашему приложению - "Эй, что-то произошло! И я знаю, что именно!"
@@ -114,9 +114,9 @@ function page(state = initialState, action) {
     case GET_PHOTO_SUCCESS:
       return Object.assign({}, state, {
         photos: action.payload,
-      })
+      });
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -129,16 +129,16 @@ function page(state = initialState, action) {
 function page(state = initialState, action) {
   switch (action.type) {
     case GET_PHOTO_SUCCESS:
-      return { ...state, photos: action.payload } //Object spread syntax
+      return { ...state, photos: action.payload }; //Object spread syntax
     default:
-      return state
+      return state;
   }
 }
 ```
 
 Объект, который мы возвращаем в редьюсере, далее с помощью функции `connect`, превратится в свойства для компонентов. Таким образом, если продолжить пример с фото, то можно написать такой псевдо-код:
 
-```jsx
+```js
 <Page photos={reducerPage.photos} />
 ```
 

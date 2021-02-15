@@ -28,7 +28,7 @@ const element = <h1>Hello, world</h1>;
 
 Для рендеринга React-элемента в корневой узел DOM, вызовите `ReactDOM.render()` с React-элементом и корневым DOM узлом в качестве аргументов:
 
-```jsx
+```js
 const element = <h1>Hello, world</h1>;
 ReactDOM.render(element, document.getElementById('root'));
 ```
@@ -43,7 +43,7 @@ ReactDOM.render(element, document.getElementById('root'));
 
 Рассмотрим пример с часами:
 
-```jsx
+```js
 function tick() {
   const element = (
     <div>

@@ -34,13 +34,13 @@ switch(тип_действия)
 _src/actions/PageActions.js_
 
 ```js
-export const SET_YEAR = 'SET_YEAR'
+export const SET_YEAR = 'SET_YEAR';
 
 export function setYear(year) {
   return {
     type: SET_YEAR,
     payload: year,
-  }
+  };
 }
 ```
 
@@ -51,7 +51,7 @@ export function getPhotos(year) {
   return (dispatch) => {
     dispatch({
       type: GET_PHOTOS_REQUEST,
-    })
+    });
 
     $.ajax(url)
       .success(
@@ -66,8 +66,8 @@ export function getPhotos(year) {
           payload: response.error,
           error: true,
         })
-      )
-  }
+      );
+  };
 }
 ```
 
@@ -81,17 +81,17 @@ export function getPhotos(year) {
 function createThunkMiddleware(extraArgument) {
   return ({ dispatch, getState }) => (next) => (action) => {
     if (typeof action === 'function') {
-      return action(dispatch, getState, extraArgument)
+      return action(dispatch, getState, extraArgument);
     }
 
-    return next(action)
-  }
+    return next(action);
+  };
 }
 
-const thunk = createThunkMiddleware()
-thunk.withExtraArgument = createThunkMiddleware
+const thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
 
-export default thunk
+export default thunk;
 ```
 
 Нам остается лишь добавить зависимость в наш проект.
@@ -103,15 +103,15 @@ npm install redux-thunk --save
 И добавить redux-thunk в цепочку усилителей перед логгером, так как логгер должен быть последним усилителем в цепочке.
 
 ```js
-import { createStore, applyMiddleware } from 'redux'
-import { rootReducer } from '../reducers'
-import logger from 'redux-logger'
-import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux';
+import { rootReducer } from '../reducers';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 
 export const store = createStore(
   rootReducer,
   applyMiddleware(thunk, logger)
-)
+);
 ```
 
 Для практики, предлагаю написать следующее:
@@ -134,7 +134,7 @@ const initialState = {
   year: 2016,
   photos: [],
   isFetching: false,
-}
+};
 ```
 
 Решение ниже.
@@ -142,8 +142,8 @@ const initialState = {
 Изменим action creator: `src/actions/PageActions.js`
 
 ```js
-export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST'
-export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS'
+export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST';
+export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS';
 export function getPhotos(year) {
   return (dispatch) => {
     // экшен с типом REQUEST (запрос начался)
@@ -151,7 +151,7 @@ export function getPhotos(year) {
     dispatch({
       type: GET_PHOTOS_REQUEST,
       payload: year,
-    })
+    });
 
     // а экшен внутри setTimeout
     // диспатчится через секунду
@@ -161,9 +161,9 @@ export function getPhotos(year) {
       dispatch({
         type: GET_PHOTOS_SUCCESS,
         payload: [1, 2, 3, 4, 5],
-      })
-    }, 1000)
-  }
+      });
+    }, 1000);
+  };
 }
 ```
 
@@ -173,14 +173,14 @@ export function getPhotos(year) {
 import {
   GET_PHOTOS_REQUEST,
   GET_PHOTOS_SUCCESS,
-} from '../actions/PageActions'
+} from '../actions/PageActions';
 
 const initialState = {
   year: 2018,
   photos: [],
   isFetching: false, // изначально статус загрузки - ложь
   // так как он станет true, когда запрос начнет выполнение
-}
+};
 
 export function pageReducer(state = initialState, action) {
   switch (action.type) {
@@ -189,17 +189,17 @@ export function pageReducer(state = initialState, action) {
         ...state,
         year: action.payload,
         isFetching: true,
-      }
+      };
 
     case GET_PHOTOS_SUCCESS:
       return {
         ...state,
         photos: action.payload,
         isFetching: false,
-      }
+      };
 
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -210,16 +210,16 @@ export function pageReducer(state = initialState, action) {
 
 _src/containers/App.js_
 
-```jsx
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { User } from '../components/User'
-import { Page } from '../components/Page'
-import { getPhotos } from '../actions/PageActions'
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { User } from '../components/User';
+import { Page } from '../components/Page';
+import { getPhotos } from '../actions/PageActions';
 
 class App extends Component {
   render() {
-    const { user, page, getPhotosAction } = this.props
+    const { user, page, getPhotosAction } = this.props;
     return (
       <div className="app">
         <Page
@@ -230,7 +230,7 @@ class App extends Component {
         />
         <User name={user.name} />
       </div>
-    )
+    );
   }
 }
 
@@ -238,36 +238,36 @@ const mapStateToProps = (store) => {
   return {
     user: store.user,
     page: store.page,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getPhotosAction: (year) => dispatch(getPhotos(year)),
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(App);
 ```
 
 Обновим соответствующий компонент:
 
 _src/components/Page.js_
 
-```jsx
-import React from 'react'
-import PropTypes from 'prop-types'
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Page extends React.Component {
   onBtnClick = (e) => {
-    const year = +e.currentTarget.innerText
-    this.props.getPhotos(year) // setYear -> getPhotos
-  }
+    const year = +e.currentTarget.innerText;
+    this.props.getPhotos(year); // setYear -> getPhotos
+  };
   render() {
-    const { year, photos, isFetching } = this.props // вытащили isFetching
+    const { year, photos, isFetching } = this.props; // вытащили isFetching
     return (
       <div className="ib page">
         <p>
@@ -295,7 +295,7 @@ export class Page extends React.Component {
           <p>У тебя {photos.length} фото.</p>
         )}
       </div>
-    )
+    );
   }
 }
 
@@ -305,7 +305,7 @@ Page.propTypes = {
   getPhotos: PropTypes.func.isRequired, // setYear -> getPhotos
   // добавили новое свойство - isFetching, причем в propTypes нет boolean, есть bool
   isFetching: PropTypes.bool.isRequired,
-}
+};
 ```
 
 Когда будете проверять работу в браузере, обратите внимание на логгер. Он все так же работает и информативен.

@@ -8,7 +8,7 @@
 
 Строгий режим может быть включён для любой части приложения. Например:
 
-```jsx
+```js
 import React from 'react';
 
 function ExampleApplication() {
@@ -57,7 +57,7 @@ function ExampleApplication() {
 
 В React 16.3 добавлен третий способ, который предлагает удобство строковых рефов и лишён каких-либо недостатков:
 
-```jsx
+```js
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -151,7 +151,7 @@ React работает в два этапа:
 
 Рассмотрим следующий пример:
 
-```jsx
+```js
 class TopLevelRoute extends React.Component {
   constructor(props) {
     super(props);

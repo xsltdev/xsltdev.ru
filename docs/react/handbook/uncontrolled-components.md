@@ -74,7 +74,7 @@ HTML-тег `<input type="file">` позволяет пользователю в
 
 Для взаимодействия с файлами следует использовать File API. В следующем примере показано, как создать [реф на DOM-узел](refs-and-the-dom.md), чтобы затем получить доступ к файлам в обработчике отправки формы:
 
-```jsx
+```js
 class FileInput extends React.Component {
   constructor(props) {
     // highlight-range{3}

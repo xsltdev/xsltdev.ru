@@ -6,7 +6,7 @@
 
 Допустим, у нас есть компонент `FancyButton`, который рендерит нативный DOM-элемент `button`:
 
-```jsx
+```js
 function FancyButton(props) {
   return (
     <button className="FancyButton">
@@ -24,7 +24,7 @@ React-компоненты скрывают свои детали реализа
 
 В данном примере мы используем `React.forwardRef` в компоненте `FancyButton`, чтобы получить реф и передать его в дочерний DOM-элемент `button`.
 
-```jsx
+```js
 // highlight-range{1-2}
 const FancyButton = React.forwardRef((props, ref) => (
   <button ref={ref} className="FancyButton">
@@ -63,7 +63,7 @@ const ref = React.createRef();
 
 Особенно полезным перенаправление может оказаться в [компонентах высшего порядка](higher-order-components.md) (также известных как HOC). Начнём с примера, в котором HOC выводит пропсы компонента в консоль:
 
-```jsx
+```js
 // highlight-next-line
 function logProps(WrappedComponent) {
   class LogProps extends React.Component {
@@ -84,7 +84,7 @@ function logProps(WrappedComponent) {
 
 Компонент высшего порядка `logProps` передаёт все пропсы в компонент, который он оборачивает, так что рендерить они будут одно и то же. С его помощью мы будем выводить в консоль все пропсы, переданные в наш компонент с кнопкой:
 
-```jsx
+```js
 class FancyButton extends React.Component {
   focus() {
     // ...
@@ -103,7 +103,7 @@ export default logProps(FancyButton);
 
 Следовательно, рефы, предназначенные для компонента `FancyButton`, окажутся привязанными к компоненту `LogProps`:
 
-```jsx
+```js
 import FancyButton from './FancyButton';
 
 // highlight-next-line
@@ -123,7 +123,7 @@ const ref = React.createRef();
 
 К счастью, мы можем явно перенаправить рефы на компонент `FancyButton` внутри HOC при помощи API `React.forwardRef`. В `React.forwardRef` передаётся функция рендеринга, которая принимает аргументы `props` и `ref`, а возвращает узел React. Например:
 
-```jsx
+```js
 function logProps(Component) {
   class LogProps extends React.Component {
     componentDidUpdate(prevProps) {
@@ -157,7 +157,7 @@ function logProps(Component) {
 
 Например, вот этот компонент будет называться «_ForwardRef_»:
 
-```jsx
+```js
 const WrappedComponent = React.forwardRef((props, ref) => {
   return <LogProps {...props} forwardedRef={ref} />;
 });
@@ -165,7 +165,7 @@ const WrappedComponent = React.forwardRef((props, ref) => {
 
 Если присвоить имя функции рендеринга, то оно появится в названии компонента в инструментах разработки (например, «_ForwardRef(myFunction)_»):
 
-```jsx
+```js
 const WrappedComponent = React.forwardRef(
   function myFunction(props, ref) {
     return <LogProps {...props} forwardedRef={ref} />;
@@ -175,7 +175,7 @@ const WrappedComponent = React.forwardRef(
 
 Можно даже назначить функции свойство `displayName` и указать в нём, какой именно компонент обёрнут в HOC:
 
-```jsx
+```js
 function logProps(Component) {
   class LogProps extends React.Component {
     // ...

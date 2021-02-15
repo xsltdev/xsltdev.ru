@@ -22,7 +22,7 @@
 
 Контекст разработан для передачи данных, которые можно назвать «глобальными» для всего дерева React-компонентов (например, текущий аутентифицированный пользователь, UI-тема или выбранный язык). В примере ниже мы вручную передаём проп `theme`, чтобы стилизовать компонент Button:
 
-```jsx
+```js
 class App extends React.Component {
   render() {
     return <Toolbar theme="dark" />;
@@ -52,7 +52,7 @@ class ThemedButton extends React.Component {
 
 Контекст позволяет избежать передачи пропсов в промежуточные компоненты:
 
-```jsx
+```js
 // highlight-range{1-5}
 // Контекст позволяет передавать значение глубоко
 // в дерево компонентов без явной передачи пропсов
@@ -265,7 +265,7 @@ class MyClass extends React.Component {
 
 **theme-context.js**
 
-```jsx
+```js
 export const themes = {
   light: {
     foreground: '#000000',
@@ -285,7 +285,7 @@ export const ThemeContext = React.createContext(
 
 **themed-button.js**
 
-```jsx
+```js
 import { ThemeContext } from './theme-context';
 
 class ThemedButton extends React.Component {
@@ -308,7 +308,7 @@ export default ThemedButton;
 
 **app.js**
 
-```jsx
+```js
 import { ThemeContext, themes } from './theme-context';
 import ThemedButton from './themed-button';
 
@@ -367,7 +367,7 @@ ReactDOM.render(<App />, document.root);
 
 **theme-context.js**
 
-```jsx
+```js
 // Убедитесь, что форма значения по умолчанию,
 // передаваемого в createContext, совпадает с формой объекта,
 // которую ожидают потребители контекста.
@@ -380,7 +380,7 @@ export const ThemeContext = React.createContext({
 
 **theme-toggler-button.js**
 
-```jsx
+```js
 import { ThemeContext } from './theme-context';
 
 function ThemeTogglerButton() {
@@ -406,7 +406,7 @@ export default ThemeTogglerButton;
 
 **app.js**
 
-```jsx
+```js
 import { ThemeContext, themes } from './theme-context';
 import ThemeTogglerButton from './theme-toggler-button';
 
@@ -458,7 +458,7 @@ ReactDOM.render(<App />, document.root);
 
 Чтобы последующие рендеры (связанные с контекстом) были быстрыми, React делает каждого потребителя контекста отдельным компонентом в дереве.
 
-```jsx
+```js
 // Контекст UI-темы, со светлым значением по умолчанию
 const ThemeContext = React.createContext('light');
 
@@ -515,7 +515,7 @@ function Content() {
 
 Контекст использует сравнение по ссылкам, чтобы определить, когда запускать последующий рендер. Из-за этого существуют некоторые подводные камни, например, случайные повторные рендеры потребителей, при перерендере родителя Provider-компонента. В следующем примере будет происходить повторный рендер потребителя каждый повторный рендер Provider-компонента, потому что новый объект, передаваемый в `value`, будет создаваться каждый раз:
 
-```jsx
+```js
 class App extends React.Component {
   render() {
     // highlight-range{2}
@@ -532,7 +532,7 @@ class App extends React.Component {
 
 Один из вариантов решения этой проблемы — хранение этого объекта в состоянии родительского компонента:
 
-```jsx
+```js
 class App extends React.Component {
   constructor(props) {
     super(props);

@@ -27,8 +27,8 @@ Refs являются запасным выходом, который позво
 ```js
 class UnControlledForm extends Component {
   handleSubmit = () => {
-    console.log('Input Value: ', this.input.value)
-  }
+    console.log('Input Value: ', this.input.value);
+  };
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -38,7 +38,7 @@ class UnControlledForm extends Component {
         />
         <button type="submit">Submit</button>
       </form>
-    )
+    );
   }
 }
 ```
@@ -49,7 +49,7 @@ class UnControlledForm extends Component {
 
 ```js
 function CustomForm({ handleSubmit }) {
-  let inputElement
+  let inputElement;
   return (
     <form onSubmit={() => handleSubmit(inputElement.value)}>
       <input
@@ -58,7 +58,7 @@ function CustomForm({ handleSubmit }) {
       />
       <button type="submit">Submit</button>
     </form>
-  )
+  );
 }
 ```
 
@@ -82,14 +82,14 @@ render () {
 
 ## Если вы создали в React элемент Twitter как в примере ниже, то как бы он выглядел?
 
-```jsx
-;<Twitter username="tylermcginnis33">
+```js
+<Twitter username="tylermcginnis33">
   {(user) =>
     user === null ? <Loading /> : <Badge info={user} />
   }
-</Twitter>
-import React, { Component, PropTypes } from 'react'
-import fetchUser from 'twitter'
+</Twitter>;
+import React, { Component, PropTypes } from 'react';
+import fetchUser from 'twitter';
 // fetchUser принимает имя пользователя и возвращает promise
 // который резолвится с данными пользователя
 class Twitter extends Component {
@@ -102,22 +102,22 @@ class Twitter extends Component {
 Вот как я вижу это решение:
 
 ```js
-import React, { Component, PropTypes } from 'react'
-import fetchUser from 'twitter'
+import React, { Component, PropTypes } from 'react';
+import fetchUser from 'twitter';
 class Twitter extends Component {
   state = {
     user: null,
-  }
+  };
   static propTypes = {
     username: PropTypes.string.isRequired,
-  }
+  };
   componentDidMount() {
     fetchUser(this.props.username).then((user) =>
       this.setState({ user })
-    )
+    );
   }
   render() {
-    return this.props.children(this.state.user)
+    return this.props.children(this.state.user);
   }
 }
 ```
@@ -128,7 +128,7 @@ class Twitter extends Component {
 
 Чтобы продемонстрировать это, давайте примем, что в другом файле мы хотим отрисовать Profile вместо Badge, и так как мы используем шаблон render callback, мы можем менять окружение интерфейса без изменения нашей реализации родительского компонента `Twitter`.
 
-```jsx
+```js
 <Twitter username="tylermcginnis33">
   {(user) =>
     user === null ? <Loading /> : <Profile info={user} />
@@ -142,17 +142,17 @@ class Twitter extends Component {
 
 Контролируемый компонент — это такой компонент, где React осуществляет контроль и является единственным источником правды для данных формы. Как вы можете видеть ниже, `username` существует не в DOM, а нашем состоянии компонента. Всякий раз, когда хотим обновить `username`, мы вызываем `setState`, как мы уже привыкли.
 
-```jsx
+```js
 class ControlledForm extends Component {
   state = {
     username: '',
-  }
+  };
   updateUsername = (e) => {
     this.setState({
       username: e.target.value,
-    })
-  }
-  handleSubmit = () => {}
+    });
+  };
+  handleSubmit = () => {};
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -163,18 +163,18 @@ class ControlledForm extends Component {
         />
         <button type="submit">Submit</button>
       </form>
-    )
+    );
   }
 }
 ```
 
 Некотролируемый компонент — это такой компонент, где ваши данные формы обрабатываются в DOM, а не внутри вашего компонента.
 
-```jsx
+```js
 class UnControlledForm extends Component {
   handleSubmit = () => {
-    console.log('Input Value: ', this.input.value)
-  }
+    console.log('Input Value: ', this.input.value);
+  };
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -184,7 +184,7 @@ class UnControlledForm extends Component {
         />
         <button type="submit">Submit</button>
       </form>
-    )
+    );
   }
 }
 ```
@@ -216,7 +216,7 @@ AJAX запросы должны идти в момент события `compon
 
 Взгляните на код:
 
-```jsx
+```js
 <Parent>
   <h1>Welcome.</h1>
 </Parent>
@@ -226,7 +226,7 @@ AJAX запросы должны идти в момент события `compon
 
 React отработает с `props.children` только в том случае, если родитель имеет более одного дочернего элемента, как здесь:
 
-```jsx
+```js
 <Parent>
   <h1>Welcome.</h1>
   <h2>props.children will now be an array</h2>
@@ -254,7 +254,7 @@ this.setState({ username: 'tylermcginnis33' }, () =>
   console.log(
     'setState has finished and the component has re-rendered.'
   )
-)
+);
 ```
 
 ## Что не так с этим кодом?
@@ -263,8 +263,8 @@ this.setState({ username: 'tylermcginnis33' }, () =>
 this.setState((prevState, props) => {
   return {
     streak: prevState.streak + props.count,
-  }
-})
+  };
+});
 ```
 
 С кодом все отлично :-) Такой вариант редко используется и не достаточно хорошо известен, но вы можете отправить функцию в `setState`, которая получает предыдущее состояние и параметры `props` и возвращает новое состояние, также как мы делали выше. И это не только не плохой код, а, более того, является рекомендуемым если вы получаете новое состояние на основании предыдущего.
