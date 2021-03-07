@@ -133,8 +133,8 @@ template: home.html
 [Типизированный React](/react/types/)
 : Типизированный React
 
-[Документация Typescript 4.1](/typescript/)
-: Typescript 4.1 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
+[Документация Typescript 4.2](/typescript/)
+: Typescript 4.2 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
 
 </div>
 
