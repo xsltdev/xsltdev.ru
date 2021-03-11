@@ -1,5 +1,7 @@
 ---
-template: home.html
+hide:
+  - navigation # Hide navigation
+  - toc # Hide table of contents
 ---
 
 # Справочники

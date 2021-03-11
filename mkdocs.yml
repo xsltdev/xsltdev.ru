@@ -19,6 +19,7 @@ theme:
     #    favicon: 'assets/images/favicon.ico'
     features:
         - navigation.tabs
+        - toc.integrate
     font:
         text: Roboto
         code: Roboto Mono
