@@ -3,4 +3,5 @@ nav:
     - index.md
     - uni-attr.md
     - list-mime-types.md
+    - manifest
     - ...

@@ -174,4 +174,6 @@ template: home.html
 - [Git](https://github.com/progit/progit2-ru)
 
 - [Angular и прочее](http://www.coldfox.ru/)
+
+- [MDN](https://github.com/mdn/translated-content/tree/main/files/ru/web)
 -->
