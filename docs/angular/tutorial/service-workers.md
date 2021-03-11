@@ -20,7 +20,7 @@ Angular **Service Worker** - это скрипт, который исполня�
 
 Но что, если версия приложения обновится? Пользователь будет продолжать получать старую версию? Конечно же, нет. Angular обо всем позаботится за вас.
 
-При загрузке приложения из кэша Angular Service Worker запрашивает с сервера файл `manifest.json`, который формируется Angular CLI в момент сборки приложения.
+При загрузке приложения из кэша Angular Service Worker запрашивает с сервера файл [`manifest.json`](/html/manifest/), который формируется Angular CLI в момент сборки приложения.
 
 В `manifest.json` указаны контрольные суммы файлов текущей версии приложения. Service Worker сравнивает значения из файла загруженного в браузер приложения со значениями файла, полученного с сервера. Если контрольная сумма изменилась хотя бы для одного из файлов приложения, ServiceWorker загружает себе новую версию приложения, но не обновляет ее для пользователя. Пользователь продолжает работать с той версией, которая была загружена изначально.
 
@@ -93,13 +93,13 @@ http-server -p 8080 -c-1 dist/<project-name>
 export class AppService {
   constructor(sw: SwUpdate) {
     this.sw.available.subscribe((ev) => {
-      console.log('Current version: ', ev.current)
-      console.log('Available version :', ev.available)
-    })
+      console.log('Current version: ', ev.current);
+      console.log('Available version :', ev.available);
+    });
     this.sw.activated.subscribe((ev) => {
-      console.log('Previous version: ', ev.previous)
-      console.log('Current version: ', ev.current)
-    })
+      console.log('Previous version: ', ev.previous);
+      console.log('Current version: ', ev.current);
+    });
   }
 }
 ```
@@ -128,25 +128,25 @@ export class AppService {
 Пример использования.
 
 ```ts
-import { interval } from 'rxjs/index'
+import { interval } from 'rxjs/index';
 
 @Injectable()
 export class AppService {
   constructor(sw: SwUpdate) {
     interval(3600).subscribe(() => {
-      this.sw.checkForUpdate()
-    })
+      this.sw.checkForUpdate();
+    });
 
     this.sw.available.subscribe((event) => {
       this.sw
         .activateUpdate()
-        .then(() => document.location.reload())
-    })
+        .then(() => document.location.reload());
+    });
 
     this.sw.activated.subscribe((ev) => {
-      console.log('Previous version: ', ev.previous)
-      console.log('Current version: ', ev.current)
-    })
+      console.log('Previous version: ', ev.previous);
+      console.log('Current version: ', ev.current);
+    });
   }
 }
 ```
