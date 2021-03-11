@@ -119,3 +119,30 @@ h2 {
 	height: 390px;
 	width: 100%;
 }
+
+.layout {
+	display: grid;
+	align-items: flex-start;
+	grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 60rem) {
+	.layout4 {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	.layout2 {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.layout .cell {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-size: 85%;
+	grid-column-gap: 2rem;
+}
+.layout .cell h3 {
+	margin: 0;
+}
+.layout .cell h3 .headerlink {
+	display: none;
+}
