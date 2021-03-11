@@ -1,0 +1,20 @@
+title: Web App Manifest
+nav:
+    - index.md
+    - background_color.md
+    - categories.md
+    - description.md
+    - dir.md
+    - display.md
+    - iarc_rating_id.md
+    - icons.md
+    - lang.md
+    - name.md
+    - orientation.md
+    - prefer_related_applications.md
+    - related_applications.md
+    - scope.md
+    - screenshots.md
+    - short_name.md
+    - start_url.md
+    - theme_color.md
