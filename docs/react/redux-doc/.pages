@@ -1,7 +1,6 @@
 title: Документация Redux
 nav:
     - index.md
-    - introduction
     - basics
     - advanced
     - recipes
