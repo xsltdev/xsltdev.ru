@@ -20,7 +20,6 @@ theme:
     features:
         - navigation.tabs
         - navigation.tracking
-        - toc.integrate
     font:
         text: Roboto
         code: Roboto Mono
