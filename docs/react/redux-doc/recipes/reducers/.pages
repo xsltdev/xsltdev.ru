@@ -1,0 +1,14 @@
+title: Структурирование редьюсеров
+nav:
+    - index.md
+    - PrerequisiteConcepts.md
+    - BasicReducerStructure.md
+    - SplittingReducerLogic.md
+    - RefactoringReducersExample.md
+    - UsingCombineReducers.md
+    - BeyondCombineReducers.md
+    - NormalizingStateShape.md
+    - UpdatingNormalizedData.md
+    - ReusingReducerLogic.md
+    - ImmutableUpdatePatterns.md
+    - InitializingState.md

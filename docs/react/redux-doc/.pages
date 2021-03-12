@@ -1,0 +1,9 @@
+title: Документация Redux
+nav:
+    - index.md
+    - basics
+    - advanced
+    - recipes
+    - faq
+    - Glossary.md
+    - api
