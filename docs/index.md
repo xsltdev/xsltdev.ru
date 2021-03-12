@@ -14,6 +14,9 @@ hide:
 
 ### [HTML](/html/)
 
+- [Manifest](/html/manifest/)
+- [MIME-типы](/html/list-mime-types/)
+
 </div>
 
 <div class="cell" markdown="1">
@@ -131,6 +134,9 @@ hide:
 <div class="cell" markdown="1">
 
 Новое на сайте:
+
+[Web App Manifest](/html/manifest/)
+: Манифесты веб-приложений являются частью набора веб-технологий, называемых прогрессивными веб-приложениями (PWA, progressive web apps), представляющими собой веб-сайты, которые можно установить на домашний экран устройства без магазина приложений.
 
 [Типизированный React](/react/types/)
 : Типизированный React

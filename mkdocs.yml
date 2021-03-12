@@ -19,6 +19,7 @@ theme:
     #    favicon: 'assets/images/favicon.ico'
     features:
         - navigation.tabs
+        - navigation.tracking
         - toc.integrate
     font:
         text: Roboto
@@ -58,6 +59,7 @@ markdown_extensions:
 plugins:
     #- search
     - awesome-pages
+    - section-index
 
 extra_javascript:
     - 'https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js'
