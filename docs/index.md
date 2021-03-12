@@ -166,15 +166,7 @@ hide:
 <!--
 Планы
 
-- http://www.lib4dev.in/info/Dmitriy-8-Kireev/Frontend_information-master/136959376
-
-- CSS
-
 - [SCSS](https://github.com/mikaspell/sass-site-rus/blob/rus-version/source/guide.html.haml)
-
-- [Руководство Javascript](https://metanit.com/web/javascript/)
-
-- [Redux на русском](https://rajdee.gitbooks.io/redux-in-russian/content/)
 
 - [MongoDB](https://github.com/jsmarkus/the-little-mongodb-book/blob/master/ru/mongodb.markdown)
 - [MariaDB](https://oracleplsql.ru/mariadb-manual.html)
