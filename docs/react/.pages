@@ -4,6 +4,7 @@ nav:
     - handbook
     - types
     - router
+    - redux-doc
     - redux
     - graphql-basics
     - graphql

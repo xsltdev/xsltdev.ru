@@ -1,10 +1,10 @@
-# Ссылка на API
+# API Redux
 
-Redux имеет скромный API. Он определяет лишь набор соглашений по использованию, например, [редьюсеры](../Glossary.md#reducer) и предлагает несколько вспомогательных функций для того, чтобы объединить эти соглашения.
+Redux имеет скромный **API**. Он определяет лишь набор соглашений по использованию, например, [редьюсеры](../Glossary.md#reducer) и предлагает несколько вспомогательных функций для того, чтобы объединить эти соглашения.
 
 В этом разделе полностью будет описан Redux API. Имейте в виду, что Redux ориентирован только на управление состоянием (state). В реальном приложении, вы будете использовать UI-биндинги, такие как [react-redux](https://github.com/gaearon/react-redux).
 
-### Высокоуровневые экспорты
+## Высокоуровневые экспорты
 
 - [createStore(reducer, [preloadedState], [enhancer])](createStore.md)
 - [combineReducers(reducers)](combineReducers.md)
@@ -12,31 +12,32 @@ Redux имеет скромный API. Он определяет лишь наб
 - [bindActionCreators(actionCreators, dispatch)](bindActionCreators.md)
 - [compose(...functions)](compose.md)
 
-### API стора
+## API стора
 
-- [Store](Store.md)
-  - [getState()](Store.md#getState)
-  - [dispatch(action)](Store.md#dispatch)
-  - [subscribe(listener)](Store.md#subscribe)
-  - [replaceReducer(nextReducer)](Store.md#replaceReducer)
+[Store](Store.md)
 
-### Импорты
+- [getState()](Store.md#getState)
+- [dispatch(action)](Store.md#dispatch)
+- [subscribe(listener)](Store.md#subscribe)
+- [replaceReducer(nextReducer)](Store.md#replaceReducer)
+
+## Импорты
 
 Каждая функция описана, как экспорт верхнего уровня. Вы можете импортировать любые из них, например:
 
-#### ES6
+**ES6**
 
 ```js
 import { createStore } from 'redux';
 ```
 
-#### ES5 (CommonJS)
+**ES5 (CommonJS)**
 
 ```js
 var createStore = require('redux').createStore;
 ```
 
-#### ES5 (UMD build)
+**ES5 (UMD build)**
 
 ```js
 var createStore = Redux.createStore;

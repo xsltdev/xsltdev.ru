@@ -6,11 +6,11 @@ This means that implementing Undo and Redo in an MVC application usually forces 
 
 With Redux, however, implementing undo history is a breeze. There are three reasons for this:
 
-* There are no multiple models—just a state subtree that you want to keep track of.
-* The state is already immutable, and mutations are already described as discrete actions, which is close to the undo stack mental model.
-* The reducer `(state, action) => state` signature makes it natural to implement generic “reducer enhancers” or “higher order reducers”. They are functions that take your reducer and enhance it with some additional functionality while preserving its signature. Undo history is exactly such a case.
+- There are no multiple models—just a state subtree that you want to keep track of.
+- The state is already immutable, and mutations are already described as discrete actions, which is close to the undo stack mental model.
+- The reducer `(state, action) => state` signature makes it natural to implement generic “reducer enhancers” or “higher order reducers”. They are functions that take your reducer and enhance it with some additional functionality while preserving its signature. Undo history is exactly such a case.
 
-Before proceeding, make sure you have worked through the [basics tutorial](../basics/README.md) and understand [reducer composition](../basics/Reducers.md) well. This recipe will build on top of the example described in the [basics tutorial](../basics/README.md).
+Before proceeding, make sure you have worked through the [basics tutorial](../basics/index.md) and understand [reducer composition](../basics/Reducers.md) well. This recipe will build on top of the example described in the [basics tutorial](../basics/index.md).
 
 In the first part of this recipe, we will explain the underlying concepts that make Undo and Redo possible to implement in a generic way.
 
@@ -18,26 +18,25 @@ In the second part of this recipe, we will show how to use [Redux Undo](https://
 
 [![demo of todos-with-undo](http://i.imgur.com/lvDFHkH.gif)](https://twitter.com/dan_abramov/status/647038407286390784)
 
-
 ## Understanding Undo History
 
 ### Designing the State Shape
 
-Undo history is also part of your app's state, and there is no reason why we should approach it differently. Regardless of the type of the state changing over time, when you implement Undo and Redo, you want to keep track of the *history* of this state at different points in time.
+Undo history is also part of your app's state, and there is no reason why we should approach it differently. Regardless of the type of the state changing over time, when you implement Undo and Redo, you want to keep track of the _history_ of this state at different points in time.
 
 For example, the state shape of a counter app might look like this:
 
 ```js
 {
-  counter: 10
+  counter: 10;
 }
 ```
 
 If we wanted to implement Undo and Redo in such an app, we'd need to store more state so we can answer the following questions:
 
-* Is there anything left to undo or redo?
-* What is the current state?
-* What are the past (and future) states in the undo stack?
+- Is there anything left to undo or redo?
+- What is the current state?
+- What are the past (and future) states in the undo stack?
 
 It is reasonable to suggest that our state shape should change to answer these questions:
 
@@ -186,21 +185,21 @@ Let's talk through the algorithm to manipulate the state shape described above. 
 
 #### Handling Undo
 
-* Remove the *last* element from the `past`.
-* Set the `present` to the element we removed in the previous step.
-* Insert the old `present` state at the *beginning* of the `future`.
+- Remove the _last_ element from the `past`.
+- Set the `present` to the element we removed in the previous step.
+- Insert the old `present` state at the _beginning_ of the `future`.
 
 #### Handling Redo
 
-* Remove the *first* element from the `future`.
-* Set the `present` to the element we removed in the previous step.
-* Insert the old `present` state at the *end* of the `past`.
+- Remove the _first_ element from the `future`.
+- Set the `present` to the element we removed in the previous step.
+- Insert the old `present` state at the _end_ of the `past`.
 
 #### Handling Other Actions
 
-* Insert the `present` at the end of the `past`.
-* Set the `present` to the new state after handling the action.
-* Clear the `future`.
+- Insert the `present` at the end of the `past`.
+- Set the `present` to the new state after handling the action.
+- Clear the `future`.
 
 ### First Attempt: Writing a Reducer
 
@@ -208,41 +207,41 @@ Let's talk through the algorithm to manipulate the state shape described above. 
 const initialState = {
   past: [],
   present: null, // (?) How do we initialize the present?
-  future: []
-}
+  future: [],
+};
 
 function undoable(state = initialState, action) {
-  const { past, present, future } = state
+  const { past, present, future } = state;
 
   switch (action.type) {
     case 'UNDO':
-      const previous = past[past.length - 1]
-      const newPast = past.slice(0, past.length - 1)
+      const previous = past[past.length - 1];
+      const newPast = past.slice(0, past.length - 1);
       return {
         past: newPast,
         present: previous,
-        future: [ present, ...future ]
-      }
+        future: [present, ...future],
+      };
     case 'REDO':
-      const next = future[0]
-      const newFuture = future.slice(1)
+      const next = future[0];
+      const newFuture = future.slice(1);
       return {
-        past: [ ...past, present ],
+        past: [...past, present],
         present: next,
-        future: newFuture
-      }
+        future: newFuture,
+      };
     default:
       // (?) How do we handle other actions?
-      return state
+      return state;
   }
 }
 ```
 
 This implementation isn't usable because it leaves out three important questions:
 
-* Where do we get the initial `present` state from? We don't seem to know it beforehand.
-* Where do we react to the external actions to save the `present` to the `past`?
-* How do we actually delegate the control over the `present` state to a custom reducer?
+- Where do we get the initial `present` state from? We don't seem to know it beforehand.
+- Where do we react to the external actions to save the `present` to the `past`?
+- How do we actually delegate the control over the `present` state to a custom reducer?
 
 It seems that reducer isn't the right abstraction, but we're very close.
 
@@ -250,7 +249,7 @@ It seems that reducer isn't the right abstraction, but we're very close.
 
 You might be familiar with [higher order functions](https://en.wikipedia.org/wiki/Higher-order_function). If you use React, you might be familiar with [higher order components](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750). Here is a variation on the same pattern, applied to reducers.
 
-A *reducer enhancer* (or a *higher order reducer*) is a function that takes a reducer, and returns a new reducer that is able to handle new actions, or to hold more state, delegating control to the inner reducer for the actions it doesn't understand. This isn't a new pattern—technically, [`combineReducers()`](../api/combineReducers.md) is also a reducer enhancer because it takes reducers and returns a new reducer.
+A _reducer enhancer_ (or a _higher order reducer_) is a function that takes a reducer, and returns a new reducer that is able to handle new actions, or to hold more state, delegating control to the inner reducer for the actions it doesn't understand. This isn't a new pattern—technically, [`combineReducers()`](../api/combineReducers.md) is also a reducer enhancer because it takes reducers and returns a new reducer.
 
 A reducer enhancer that doesn't do anything looks like this:
 
@@ -258,8 +257,8 @@ A reducer enhancer that doesn't do anything looks like this:
 function doNothingWith(reducer) {
   return function (state, action) {
     // Just call the passed reducer
-    return reducer(state, action)
-  }
+    return reducer(state, action);
+  };
 }
 ```
 
@@ -268,12 +267,15 @@ A reducer enhancer that combines other reducers might look like this:
 ```js
 function combineReducers(reducers) {
   return function (state = {}, action) {
-    return Object.keys(reducers).reduce((nextState, key) => {
-      // Call every reducer with the part of the state it manages
-      nextState[key] = reducers[key](state[key], action)
-      return nextState
-    }, {})
-  }
+    return Object.keys(reducers).reduce(
+      (nextState, key) => {
+        // Call every reducer with the part of the state it manages
+        nextState[key] = reducers[key](state[key], action);
+        return nextState;
+      },
+      {}
+    );
+  };
 }
 ```
 
@@ -287,43 +289,43 @@ function undoable(reducer) {
   const initialState = {
     past: [],
     present: reducer(undefined, {}),
-    future: []
-  }
+    future: [],
+  };
 
   // Return a reducer that handles undo and redo
   return function (state = initialState, action) {
-    const { past, present, future } = state
+    const { past, present, future } = state;
 
     switch (action.type) {
       case 'UNDO':
-        const previous = past[past.length - 1]
-        const newPast = past.slice(0, past.length - 1)
+        const previous = past[past.length - 1];
+        const newPast = past.slice(0, past.length - 1);
         return {
           past: newPast,
           present: previous,
-          future: [ present, ...future ]
-        }
+          future: [present, ...future],
+        };
       case 'REDO':
-        const next = future[0]
-        const newFuture = future.slice(1)
+        const next = future[0];
+        const newFuture = future.slice(1);
         return {
-          past: [ ...past, present ],
+          past: [...past, present],
           present: next,
-          future: newFuture
-        }
+          future: newFuture,
+        };
       default:
         // Delegate handling the action to the passed reducer
-        const newPresent = reducer(present, action)
+        const newPresent = reducer(present, action);
         if (present === newPresent) {
-          return state
+          return state;
         }
         return {
-          past: [ ...past, present ],
+          past: [...past, present],
           present: newPresent,
-          future: []
-        }
+          future: [],
+        };
     }
-  }
+  };
 }
 ```
 
@@ -336,24 +338,24 @@ function todos(state = [], action) {
 }
 
 // This is also a reducer!
-const undoableTodos = undoable(todos)
+const undoableTodos = undoable(todos);
 
-import { createStore } from 'redux'
-const store = createStore(undoableTodos)
-
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Use Redux'
-})
+import { createStore } from 'redux';
+const store = createStore(undoableTodos);
 
 store.dispatch({
   type: 'ADD_TODO',
-  text: 'Implement Undo'
-})
+  text: 'Use Redux',
+});
 
 store.dispatch({
-  type: 'UNDO'
-})
+  type: 'ADD_TODO',
+  text: 'Implement Undo',
+});
+
+store.dispatch({
+  type: 'UNDO',
+});
 ```
 
 There is an important gotcha: you need to remember to append `.present` to the current state when you retrieve it. You may also check `.past.length` and `.future.length` to determine whether to enable or to disable the Undo and Redo buttons, respectively.
@@ -383,19 +385,19 @@ You will need to wrap the reducer you wish to enhance with `undoable` function. 
 #### `reducers/todos.js`
 
 ```js
-import undoable, { distinctState } from 'redux-undo'
+import undoable, { distinctState } from 'redux-undo';
 
 /* ... */
 
 const todos = (state = [], action) => {
   /* ... */
-}
+};
 
 const undoableTodos = undoable(todos, {
-  filter: distinctState()
-})
+  filter: distinctState(),
+});
 
-export default undoableTodos
+export default undoableTodos;
 ```
 
 The `distinctState()` filter serves to ignore the actions that didn't result in a state change. There are [many other options](https://github.com/omnidan/redux-undo#configuration) to configure your undoable reducer, like setting the action type for Undo and Redo actions.
@@ -405,16 +407,16 @@ Note that your `combineReducers()` call will stay exactly as it was, but the `to
 #### `reducers/index.js`
 
 ```js
-import { combineReducers } from 'redux'
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
+import { combineReducers } from 'redux';
+import todos from './todos';
+import visibilityFilter from './visibilityFilter';
 
 const todoApp = combineReducers({
   todos,
-  visibilityFilter
-})
+  visibilityFilter,
+});
 
-export default todoApp
+export default todoApp;
 ```
 
 You may wrap one or more reducers in `undoable` at any level of the reducer composition hierarchy. We choose to wrap `todos` instead of the top-level combined reducer so that changes to `visibilityFilter` are not reflected in the undo history.
@@ -448,9 +450,12 @@ just `state.todos`:
 ```js
 const mapStateToProps = (state) => {
   return {
-    todos: getVisibleTodos(state.todos.present, state.visibilityFilter)
-  }
-}
+    todos: getVisibleTodos(
+      state.todos.present,
+      state.visibilityFilter
+    ),
+  };
+};
 ```
 
 ### Adding the Buttons
@@ -462,7 +467,7 @@ First, create a new container component called `UndoRedo` for these buttons. We 
 #### `containers/UndoRedo.js`
 
 ```js
-import React from 'react'
+import React from 'react';
 
 /* ... */
 
@@ -475,7 +480,7 @@ let UndoRedo = ({ canUndo, canRedo, onUndo, onRedo }) => (
       Redo
     </button>
   </p>
-)
+);
 ```
 
 You will use `connect()` from [React Redux](https://github.com/reactjs/react-redux) to generate a container component. To determine whether to enable Undo and Redo buttons, you can check `state.todos.past.length` and `state.todos.future.length`. You won't need to write action creators for performing undo and redo because Redux Undo already provides them:
@@ -485,31 +490,31 @@ You will use `connect()` from [React Redux](https://github.com/reactjs/react-red
 ```js
 /* ... */
 
-import { ActionCreators as UndoActionCreators } from 'redux-undo'
-import { connect } from 'react-redux'
+import { ActionCreators as UndoActionCreators } from 'redux-undo';
+import { connect } from 'react-redux';
 
 /* ... */
 
 const mapStateToProps = (state) => {
   return {
     canUndo: state.todos.past.length > 0,
-    canRedo: state.todos.future.length > 0
-  }
-}
+    canRedo: state.todos.future.length > 0,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onUndo: () => dispatch(UndoActionCreators.undo()),
-    onRedo: () => dispatch(UndoActionCreators.redo())
-  }
-}
+    onRedo: () => dispatch(UndoActionCreators.redo()),
+  };
+};
 
 UndoRedo = connect(
   mapStateToProps,
   mapDispatchToProps
-)(UndoRedo)
+)(UndoRedo);
 
-export default UndoRedo
+export default UndoRedo;
 ```
 
 Now you can add `UndoRedo` component to the `App` component:
@@ -517,11 +522,11 @@ Now you can add `UndoRedo` component to the `App` component:
 #### `components/App.js`
 
 ```js
-import React from 'react'
-import Footer from './Footer'
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
-import UndoRedo from '../containers/UndoRedo'
+import React from 'react';
+import Footer from './Footer';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
+import UndoRedo from '../containers/UndoRedo';
 
 const App = () => (
   <div>
@@ -530,9 +535,9 @@ const App = () => (
     <Footer />
     <UndoRedo />
   </div>
-)
+);
 
-export default App
+export default App;
 ```
 
 This is it! Run `npm install` and `npm start` in the [example folder](https://github.com/reactjs/redux/tree/master/examples/todos-with-undo) and try it out!

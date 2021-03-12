@@ -1,19 +1,19 @@
 # Пример: Reddit API
 
-Это полный исходный код примера выборки заголовков Reddit, который мы строили в [продвинутом руководстве](README.md).
+Это полный исходный код примера выборки заголовков Reddit, который мы строили в [продвинутом руководстве](index.md).
 
 ## Точка Входа (Entry Point)
 
 #### `index.js`
 
 ```js
-import 'babel-polyfill'
+import 'babel-polyfill';
 
-import React from 'react'
-import { render } from 'react-dom'
-import Root from './containers/Root'
+import React from 'react';
+import { render } from 'react-dom';
+import Root from './containers/Root';
 
-render(<Root />, document.getElementById('root'))
+render(<Root />, document.getElementById('root'));
 ```
 
 ## Генераторы экшенов и константы (Action Creators and Constants)
@@ -21,69 +21,73 @@ render(<Root />, document.getElementById('root'))
 #### `actions.js`
 
 ```js
-import fetch from 'cross-fetch'
+import fetch from 'cross-fetch';
 
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
-export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT'
+export const REQUEST_POSTS = 'REQUEST_POSTS';
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT';
+export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT';
 
 export function selectSubreddit(subreddit) {
   return {
     type: SELECT_SUBREDDIT,
-    subreddit
-  }
+    subreddit,
+  };
 }
 
 export function invalidateSubreddit(subreddit) {
   return {
     type: INVALIDATE_SUBREDDIT,
-    subreddit
-  }
+    subreddit,
+  };
 }
 
 function requestPosts(subreddit) {
   return {
     type: REQUEST_POSTS,
-    subreddit
-  }
+    subreddit,
+  };
 }
 
 function receivePosts(subreddit, json) {
   return {
     type: RECEIVE_POSTS,
     subreddit,
-    posts: json.data.children.map(child => child.data),
-    receivedAt: Date.now()
-  }
+    posts: json.data.children.map((child) => child.data),
+    receivedAt: Date.now(),
+  };
 }
 
 function fetchPosts(subreddit) {
-  return dispatch => {
-    dispatch(requestPosts(subreddit))
-    return fetch(`https://www.reddit.com/r/${subreddit}.json`)
-      .then(response => response.json())
-      .then(json => dispatch(receivePosts(subreddit, json)))
-  }
+  return (dispatch) => {
+    dispatch(requestPosts(subreddit));
+    return fetch(
+      `https://www.reddit.com/r/${subreddit}.json`
+    )
+      .then((response) => response.json())
+      .then((json) =>
+        dispatch(receivePosts(subreddit, json))
+      );
+  };
 }
 
 function shouldFetchPosts(state, subreddit) {
-  const posts = state.postsBySubreddit[subreddit]
+  const posts = state.postsBySubreddit[subreddit];
   if (!posts) {
-    return true
+    return true;
   } else if (posts.isFetching) {
-    return false
+    return false;
   } else {
-    return posts.didInvalidate
+    return posts.didInvalidate;
   }
 }
 
 export function fetchPostsIfNeeded(subreddit) {
   return (dispatch, getState) => {
     if (shouldFetchPosts(getState(), subreddit)) {
-      return dispatch(fetchPosts(subreddit))
+      return dispatch(fetchPosts(subreddit));
     }
-  }
+  };
 }
 ```
 
@@ -92,20 +96,20 @@ export function fetchPostsIfNeeded(subreddit) {
 #### `reducers.js`
 
 ```js
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import {
   SELECT_SUBREDDIT,
   INVALIDATE_SUBREDDIT,
   REQUEST_POSTS,
-  RECEIVE_POSTS
-} from './actions'
+  RECEIVE_POSTS,
+} from './actions';
 
 function selectedSubreddit(state = 'reactjs', action) {
   switch (action.type) {
     case SELECT_SUBREDDIT:
-      return action.subreddit
+      return action.subreddit;
     default:
-      return state
+      return state;
   }
 }
 
@@ -113,29 +117,29 @@ function posts(
   state = {
     isFetching: false,
     didInvalidate: false,
-    items: []
+    items: [],
   },
   action
 ) {
   switch (action.type) {
     case INVALIDATE_SUBREDDIT:
       return Object.assign({}, state, {
-        didInvalidate: true
-      })
+        didInvalidate: true,
+      });
     case REQUEST_POSTS:
       return Object.assign({}, state, {
         isFetching: true,
-        didInvalidate: false
-      })
+        didInvalidate: false,
+      });
     case RECEIVE_POSTS:
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
         items: action.posts,
-        lastUpdated: action.receivedAt
-      })
+        lastUpdated: action.receivedAt,
+      });
     default:
-      return state
+      return state;
   }
 }
 
@@ -145,19 +149,22 @@ function postsBySubreddit(state = {}, action) {
     case RECEIVE_POSTS:
     case REQUEST_POSTS:
       return Object.assign({}, state, {
-        [action.subreddit]: posts(state[action.subreddit], action)
-      })
+        [action.subreddit]: posts(
+          state[action.subreddit],
+          action
+        ),
+      });
     default:
-      return state
+      return state;
   }
 }
 
 const rootReducer = combineReducers({
   postsBySubreddit,
-  selectedSubreddit
-})
+  selectedSubreddit,
+});
 
-export default rootReducer
+export default rootReducer;
 ```
 
 ## Стор (Store)
@@ -165,19 +172,19 @@ export default rootReducer
 #### `configureStore.js`
 
 ```js
-import { createStore, applyMiddleware } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
-import rootReducer from './reducers'
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import rootReducer from './reducers';
 
-const loggerMiddleware = createLogger()
+const loggerMiddleware = createLogger();
 
 export default function configureStore(preloadedState) {
   return createStore(
     rootReducer,
     preloadedState,
     applyMiddleware(thunkMiddleware, loggerMiddleware)
-  )
+  );
 }
 ```
 
@@ -186,12 +193,12 @@ export default function configureStore(preloadedState) {
 #### `containers/Root.js`
 
 ```js
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import configureStore from '../configureStore'
-import AsyncApp from './AsyncApp'
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import configureStore from '../configureStore';
+import AsyncApp from './AsyncApp';
 
-const store = configureStore()
+const store = configureStore();
 
 export default class Root extends Component {
   render() {
@@ -199,7 +206,7 @@ export default class Root extends Component {
       <Provider store={store}>
         <AsyncApp />
       </Provider>
-    )
+    );
   }
 }
 ```
@@ -207,51 +214,61 @@ export default class Root extends Component {
 #### `containers/AsyncApp.js`
 
 ```js
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
   selectSubreddit,
   fetchPostsIfNeeded,
-  invalidateSubreddit
-} from '../actions'
-import Picker from '../components/Picker'
-import Posts from '../components/Posts'
+  invalidateSubreddit,
+} from '../actions';
+import Picker from '../components/Picker';
+import Posts from '../components/Posts';
 
 class AsyncApp extends Component {
   constructor(props) {
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleRefreshClick = this.handleRefreshClick.bind(this)
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleRefreshClick = this.handleRefreshClick.bind(
+      this
+    );
   }
 
   componentDidMount() {
-    const { dispatch, selectedSubreddit } = this.props
-    dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    const { dispatch, selectedSubreddit } = this.props;
+    dispatch(fetchPostsIfNeeded(selectedSubreddit));
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.selectedSubreddit !== prevProps.selectedSubreddit) {
-      const { dispatch, selectedSubreddit } = this.props
-      dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    if (
+      this.props.selectedSubreddit !==
+      prevProps.selectedSubreddit
+    ) {
+      const { dispatch, selectedSubreddit } = this.props;
+      dispatch(fetchPostsIfNeeded(selectedSubreddit));
     }
   }
 
   handleChange(nextSubreddit) {
-    this.props.dispatch(selectSubreddit(nextSubreddit))
-    this.props.dispatch(fetchPostsIfNeeded(nextSubreddit))
+    this.props.dispatch(selectSubreddit(nextSubreddit));
+    this.props.dispatch(fetchPostsIfNeeded(nextSubreddit));
   }
 
   handleRefreshClick(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    const { dispatch, selectedSubreddit } = this.props
-    dispatch(invalidateSubreddit(selectedSubreddit))
-    dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    const { dispatch, selectedSubreddit } = this.props;
+    dispatch(invalidateSubreddit(selectedSubreddit));
+    dispatch(fetchPostsIfNeeded(selectedSubreddit));
   }
 
   render() {
-    const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
+    const {
+      selectedSubreddit,
+      posts,
+      isFetching,
+      lastUpdated,
+    } = this.props;
     return (
       <div>
         <Picker
@@ -262,22 +279,29 @@ class AsyncApp extends Component {
         <p>
           {lastUpdated && (
             <span>
-              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
+              Last updated at{' '}
+              {new Date(lastUpdated).toLocaleTimeString()}.{' '}
             </span>
           )}
           {!isFetching && (
-            <button onClick={this.handleRefreshClick}>Refresh</button>
+            <button onClick={this.handleRefreshClick}>
+              Refresh
+            </button>
           )}
         </p>
-        {isFetching && posts.length === 0 && <h2>Loading...</h2>}
-        {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
+        {isFetching && posts.length === 0 && (
+          <h2>Loading...</h2>
+        )}
+        {!isFetching && posts.length === 0 && (
+          <h2>Empty.</h2>
+        )}
         {posts.length > 0 && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <Posts posts={posts} />
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
@@ -286,27 +310,29 @@ AsyncApp.propTypes = {
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
-  dispatch: PropTypes.func.isRequired
-}
+  dispatch: PropTypes.func.isRequired,
+};
 
 function mapStateToProps(state) {
-  const { selectedSubreddit, postsBySubreddit } = state
-  const { isFetching, lastUpdated, items: posts } = postsBySubreddit[
-    selectedSubreddit
-  ] || {
+  const { selectedSubreddit, postsBySubreddit } = state;
+  const {
+    isFetching,
+    lastUpdated,
+    items: posts,
+  } = postsBySubreddit[selectedSubreddit] || {
     isFetching: true,
-    items: []
-  }
+    items: [],
+  };
 
   return {
     selectedSubreddit,
     posts,
     isFetching,
-    lastUpdated
-  }
+    lastUpdated,
+  };
 }
 
-export default connect(mapStateToProps)(AsyncApp)
+export default connect(mapStateToProps)(AsyncApp);
 ```
 
 ## Компоненты представления (Presentational Components)
@@ -314,40 +340,44 @@ export default connect(mapStateToProps)(AsyncApp)
 #### `components/Picker.js`
 
 ```js
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Picker extends Component {
   render() {
-    const { value, onChange, options } = this.props
+    const { value, onChange, options } = this.props;
 
     return (
       <span>
         <h1>{value}</h1>
-        <select onChange={e => onChange(e.target.value)} value={value}>
-          {options.map(option => (
+        <select
+          onChange={(e) => onChange(e.target.value)}
+          value={value}
+        >
+          {options.map((option) => (
             <option value={option} key={option}>
               {option}
             </option>
           ))}
         </select>
       </span>
-    )
+    );
   }
 }
 
 Picker.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  options: PropTypes.arrayOf(PropTypes.string.isRequired)
+    .isRequired,
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
-}
+  onChange: PropTypes.func.isRequired,
+};
 ```
 
 #### `components/Posts.js`
 
 ```js
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Posts extends Component {
   render() {
@@ -357,11 +387,11 @@ export default class Posts extends Component {
           <li key={i}>{post.title}</li>
         ))}
       </ul>
-    )
+    );
   }
 }
 
 Posts.propTypes = {
-  posts: PropTypes.array.isRequired
-}
+  posts: PropTypes.array.isRequired,
+};
 ```

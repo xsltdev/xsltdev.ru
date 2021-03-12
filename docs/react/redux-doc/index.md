@@ -1,20 +1,8 @@
 # Документация Redux
 
-Документация redux на русском
+Документация redux на русском языке.
 
-[Памятка](../README.md)
-
-[Введение](introduction/README.md)
-
-- [Мотивация](introduction/Motivation.md)
-- [Начало работы с Redux](introduction/GettingStarted.md)
-- [Основные понятия ](introduction/CoreConcepts.md)
-- [Три принципа](introduction/ThreePrinciples.md)
-- [Предшественники](introduction/PriorArt.md)
-- [Экосистема](introduction/Ecosystem.md)
-- [Примеры](introduction/Examples.md)
-
-[Основы](basics/README.md)
+[Основы](basics/index.md)
 
 - [Экшены](basics/Actions.md)
 - [Редьюсеры](basics/Reducers.md)
@@ -23,7 +11,7 @@
 - [Использование с React](basics/UsageWithReact.md)
 - [Пример: Todo List](basics/ExampleTodoList.md)
 
-[Продвинутое использование](advanced/README.md)
+[Продвинутое использование](advanced/index.md)
 
 - [Асинхронные экшены](advanced/AsyncActions.md)
 - [Асинхронные потоки](advanced/AsyncFlow.md)
@@ -31,7 +19,7 @@
 - [Использование с React Router](advanced/UsageWithReactRouter.md)
 - [Пример: Reddit API](advanced/ExampleRedditAPI.md)
 
-[Рецепты](recipes/README.md)
+[Рецепты](recipes/index.md)
 
 - [Мигрирование на Redux](recipes/MigratingToRedux.md)
 - [Использование оператора расширения](recipes/UsingObjectSpreadOperator.md)
@@ -43,7 +31,7 @@
 - [Изолирование саб-приложений](recipes/IsolatingSubapps.md)
 - [Использование Immutable.JS с Redux](recipes/UsingImmutableJS.md)
 
-[Структурирование редьюсеров](recipes/StructuringReducers.md)
+[Структурирование редьюсеров](recipes/reducers/index.md)
 
 - [Предварительные концепциии](recipes/reducers/PrerequisiteConcepts.md)
 - [Базовая структура редьюсера](recipes/reducers/BasicReducerStructure.md)
@@ -56,8 +44,6 @@
 - [Переиспользование логики редьюсера](recipes/reducers/ReusingReducerLogic.md)
 - [Паттерны иммутабельного обновления](recipes/reducers/ImmutableUpdatePatterns.md)
 - [Инициализирование состояния](recipes/reducers/InitializingState.md)
-
-[Учебные пособия](tutorials/tutorials-index.md)
 
 FAQ
 
@@ -73,7 +59,7 @@ FAQ
 
 [Глоссарий](Glossary.md)
 
-[Справочник по API](api/README.md)
+[Справочник по API](api/index.md)
 
 - [createStore](api/createStore.md)
 - [Store](api/Store.md)
