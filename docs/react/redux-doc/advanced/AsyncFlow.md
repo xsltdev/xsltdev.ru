@@ -1,6 +1,6 @@
 # Асинхронный поток
 
-Без [мидлвара (middleware)](Middleware.md)  Redux стор поддерживает только [синхронный поток данных](../basics/DataFlow.md). Это то, что вы получаете по умолчанию с [`createStore()`](../api/createStore.md).
+Без [мидлвара (middleware)](Middleware.md) Redux стор поддерживает только [синхронный поток данных](../basics/DataFlow.md). Это то, что вы получаете по умолчанию с [`createStore()`](../api/createStore.md).
 
 Вы можете расширить [`createStore()`](../api/createStore.md) с помощью [`applyMiddleware()`](../api/applyMiddleware.md). Это не обязательно, но это позволит вам [выразить асинхронные экшены в удобном виде](AsyncActions.md).
 

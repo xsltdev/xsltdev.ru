@@ -1,10 +1,10 @@
-# Пример: Список дел (Todo List)
+# Пример: Список дел
 
-Это полный исходный код простенького приложения - списка дел, которое мы создали, изучая [базовое руководство](./index.md). Этот код так же представлен в [нашем репозитории примеров](https://github.com/reduxjs/redux/tree/master/examples/todos/src) и может быть [запущен в вашем браузере в CodeSandbox](https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos).
+Это полный исходный код простенького приложения — списка дел, которое мы создали, изучая [базовое руководство](./index.md). Этот код так же представлен в [нашем репозитории примеров](https://github.com/reduxjs/redux/tree/master/examples/todos/src) и может быть [запущен в вашем браузере в CodeSandbox](https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos).
 
-## Точка входа (Entry Point)
+## Точка входа
 
-#### `index.js`
+_index.js_
 
 ```js
 import React from 'react';
@@ -24,9 +24,9 @@ render(
 );
 ```
 
-## Генераторы экшенов (Action Creators)
+## Генераторы экшенов
 
-#### `actions/index.js`
+_actions/index.js_
 
 ```js
 let nextTodoId = 0;
@@ -53,9 +53,9 @@ export const VisibilityFilters = {
 };
 ```
 
-## Редьюсеры (Reducers)
+## Редьюсеры
 
-#### `reducers/todos.js`
+_reducers/todos.js_
 
 ```js
 const todos = (state = [], action) => {
@@ -83,7 +83,7 @@ const todos = (state = [], action) => {
 export default todos;
 ```
 
-#### `reducers/visibilityFilter.js`
+_reducers/visibilityFilter.js_
 
 ```js
 import { VisibilityFilters } from '../actions';
@@ -103,7 +103,7 @@ const visibilityFilter = (
 export default visibilityFilter;
 ```
 
-#### `reducers/index.js`
+_reducers/index.js_
 
 ```js
 import { combineReducers } from 'redux';
@@ -116,9 +116,9 @@ export default combineReducers({
 });
 ```
 
-## Презентационные компоненты (Presentational Components)
+## Презентационные компоненты
 
-#### `components/Todo.js`
+_components/Todo.js_
 
 ```js
 import React from 'react';
@@ -144,7 +144,7 @@ Todo.propTypes = {
 export default Todo;
 ```
 
-#### `components/TodoList.js`
+_components/TodoList.js_
 
 ```js
 import React from 'react';
@@ -177,7 +177,7 @@ TodoList.propTypes = {
 export default TodoList;
 ```
 
-#### `components/Link.js`
+_components/Link.js_
 
 ```js
 import React from 'react';
@@ -204,7 +204,7 @@ Link.propTypes = {
 export default Link;
 ```
 
-#### `components/Footer.js`
+_components/Footer.js_
 
 ```js
 import React from 'react';
@@ -229,7 +229,7 @@ const Footer = () => (
 export default Footer;
 ```
 
-#### `components/App.js`
+_components/App.js_
 
 ```js
 import React from 'react';
@@ -248,9 +248,9 @@ const App = () => (
 export default App;
 ```
 
-## Компоненты-контейнеры (Container Components)
+## Компоненты-контейнеры
 
-#### `containers/VisibleTodoList.js`
+_containers/VisibleTodoList.js_
 
 ```js
 import { connect } from 'react-redux';
@@ -288,7 +288,7 @@ export default connect(
 )(TodoList);
 ```
 
-#### `containers/FilterLink.js`
+_containers/FilterLink.js_
 
 ```js
 import { connect } from 'react-redux';
@@ -310,9 +310,9 @@ export default connect(
 )(Link);
 ```
 
-### Остальные компоненты (Other Components)
+## Остальные компоненты
 
-#### `containers/AddTodo.js`
+_containers/AddTodo.js_
 
 ```js
 import React from 'react';

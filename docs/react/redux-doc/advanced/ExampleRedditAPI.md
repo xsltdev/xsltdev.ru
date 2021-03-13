@@ -2,9 +2,9 @@
 
 Это полный исходный код примера выборки заголовков Reddit, который мы строили в [продвинутом руководстве](index.md).
 
-## Точка Входа (Entry Point)
+## Точка Входа
 
-#### `index.js`
+_index.js_
 
 ```js
 import 'babel-polyfill';
@@ -16,9 +16,9 @@ import Root from './containers/Root';
 render(<Root />, document.getElementById('root'));
 ```
 
-## Генераторы экшенов и константы (Action Creators and Constants)
+## Генераторы экшенов и константы
 
-#### `actions.js`
+_actions.js_
 
 ```js
 import fetch from 'cross-fetch';
@@ -91,9 +91,9 @@ export function fetchPostsIfNeeded(subreddit) {
 }
 ```
 
-## Редьюсеры (Reducers)
+## Редьюсеры
 
-#### `reducers.js`
+_reducers.js_
 
 ```js
 import { combineReducers } from 'redux';
@@ -167,9 +167,9 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
-## Стор (Store)
+## Стор
 
-#### `configureStore.js`
+_configureStore.js_
 
 ```js
 import { createStore, applyMiddleware } from 'redux';
@@ -188,9 +188,9 @@ export default function configureStore(preloadedState) {
 }
 ```
 
-## Компоненты контейнеры (Container Components)
+## Компоненты контейнеры
 
-#### `containers/Root.js`
+_containers/Root.js_
 
 ```js
 import React, { Component } from 'react';
@@ -211,7 +211,7 @@ export default class Root extends Component {
 }
 ```
 
-#### `containers/AsyncApp.js`
+_containers/AsyncApp.js_
 
 ```js
 import React, { Component } from 'react';
@@ -335,9 +335,9 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps)(AsyncApp);
 ```
 
-## Компоненты представления (Presentational Components)
+## Компоненты представления
 
-#### `components/Picker.js`
+_components/Picker.js_
 
 ```js
 import React, { Component } from 'react';
@@ -373,7 +373,7 @@ Picker.propTypes = {
 };
 ```
 
-#### `components/Posts.js`
+_components/Posts.js_
 
 ```js
 import React, { Component } from 'react';

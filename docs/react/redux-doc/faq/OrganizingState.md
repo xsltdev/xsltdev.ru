@@ -1,4 +1,4 @@
-# Redux FAQ: Организация состояния
+# Организация состояния
 
 ## Могу ли я хранить все мое состояние в Redux? Должен ли я всегда использовать setState() из React?
 
@@ -15,8 +15,6 @@
 - Требуется ли кэшировать данные, т.е. использовать то, что уже хранится в состоянии вместо повторного запроса?
 
 Существует несколько пакетов, реализующих различные подходы к хранению данных в Redux-сторе вместо состояния компонента, таких как: [redux-ui](https://github.com/tonyhb/redux-ui), [redux-component](https://github.com/tomchentw/redux-component), [redux-react-local](https://github.com/threepointone/redux-react-local) и другие. Они также позволяют применять принципы Redux и концепцию редьюсера к задачам обновления локального состояни компонента, поддерживая идею `this.setState( (previousState) => reducer(previousState, someAction))`.
-
-### Дополнительная информация
 
 **Статьи**
 
@@ -50,8 +48,6 @@
 
 Если Вы смиритесь с тем, что эти функции возможно не будут работать как положено, то Вы можете спокойно использовать несериализуемые данные в Redux-сторе. В конечном счете, это _Ваше_ приложение, и как оно будет реализовано — решать Вам. Как и со многими другими вещами в Redux, Вы должны четко понимать, на какие компромиссы идете.
 
-### Дополнительная информация
-
 **Обсуждения**
 
 - [#1248: Is it ok and possible to store a react component in a reducer?](https://github.com/reactjs/redux/issues/1248)
@@ -66,14 +62,9 @@
 
 Это помогает думать о частях приложения как о базе данных с отдельными “таблицами” на каждый элемент. Такие библиотеки, как [normalizr](https://github.com/gaearon/normalizr) и [redux-orm](https://github.com/tommikaikkonen/redux-orm) могут помочь и облегчить управление нормализированными данными.
 
-### Дополнительная информация
-
 **Документация**
 
-- [Продвинутое использование: Асинхронные экшены](/docs/advanced/AsyncActions.md)
-- [Примеры: Real World](/docs/introduction/Examples.html#real-world)
-- [Рецепты: Структурирование редьюсеров — Предварительные концепциии](/docs/recipes/reducers/PrerequisiteConcepts.md#normalizing-data)
-- [Рецепты: Структурирование редьюсеров — Нормализация состояния](/docs/recipes/reducers/NormalizingStateShape.md)
+- [Продвинутое использование: Асинхронные экшены](../advanced/AsyncActions.md)
 - [Примеры: Tree View](https://github.com/reactjs/redux/tree/master/examples/tree-view)
 
 **Статьи**

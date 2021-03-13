@@ -1,4 +1,4 @@
-# Redux FAQ: Экшены
+# Экшены
 
 ## Почему `type` должен быть строкой или по крайней мере сериализуемым? Почему мои типы экшенов должны быть константами?
 
@@ -8,11 +8,9 @@
 
 Инкапсуляция и централизация частоиспользуемых кусков кода является ключевым понятием в программировании. Конечно, пока возможно вручную создавать объекты экшенов где угодно и вручную писать каждый тип значения, но определение многоразовых констант делает поддержку кода легче. Если Вы вынесите константы в отдельный файл, то сможете [проверять Ваш `import` на опечатки](https://www.npmjs.com/package/eslint-plugin-import), таким образом вы не сможете случайно использовать неправильные строки.
 
-### Дополнительная информация
-
 **Документация**
 
-- [Рецепты: Упрощенный шаблон](/docs/recipes/ReducingBoilerplate.md#actions)
+- [Рецепты: Упрощенный шаблон](../recipes/ReducingBoilerplate.md#actions)
 
 **Обсуждения**
 
@@ -27,12 +25,9 @@
 
 Нет. Мы предлагаем вам писать маленькие независимые функции-редьюсеры, которые отвечают за обновление отдельных частей состояния. Мы называем этот подход “композиция редьюсеров”. При этом экшен может быть обработано всеми, какими-то или ни одним из них. Это позволяет компонентам существовать отдельно от фактического изменения данных, так один экшен может затрагивать разные части дерева состояния, и компоненту не нужно знать об этом. Некоторые пользователи предпочитают связывать их вместе, как в принципе “ducks”, но, скорее всего, не "один к одному". Вы должны прекратить использовать эту парадигму, как только чувствуете, что хотите обрабатывать экшен в нескольких редьюсерах.
 
-### Дополнительная информация
-
 **Документация**
 
-- [Основы: Редьюсеры](/docs/basics/Reducers.md)
-- [Рецепты: Структурирование редьюсеров](/docs/recipes/StructuringReducers.md)
+- [Основы: Редьюсеры](../basics/Reducers.md)
 
 **Обсуждения**
 
@@ -59,13 +54,11 @@ Redux вдохновлен функциональным программиров
 
 Кроме того, _много_ других разработанных сообществом библиотек и идей, каждая со своим видинием того, как побочные эффекты должны быть обработаны.
 
-### Дополнительная информация
-
 **Документация**
 
-- [Продвинутое использование: Асинхронные экшены](/docs/advanced/AsyncActions.md)
-- [Продвинутое использование: Асинхронные потоки](/docs/advanced/AsyncFlow.md)
-- [Продвинутое использование: Мидлвары](/docs/advanced/Middleware.md)
+- [Продвинутое использование: Асинхронные экшены](../advanced/AsyncActions.md)
+- [Продвинутое использование: Асинхронные потоки](../advanced/AsyncFlow.md)
+- [Продвинутое использование: Мидлвары](../advanced/Middleware.md)
 
 **Статьи**
 
@@ -78,29 +71,17 @@ Redux вдохновлен функциональным программиров
 **Обсуждения**
 
 - [#291: Trying to put API calls in the right place](https://github.com/reactjs/redux/issues/291)
-
 - [#455: Modeling side effects](https://github.com/reactjs/redux/issues/455)
-
 - [#533: Simpler introduction to async action creators](https://github.com/reactjs/redux/issues/533)
-
 - [#569: Proposal: API for explicit side effects](https://github.com/reactjs/redux/pull/569)
-
 - [#1139: An alternative side effect model based on generators and sagas](https://github.com/reactjs/redux/issues/1139)
-
 - [Stack Overflow: Why do we need middleware for async flow in Redux?](http://stackoverflow.com/questions/34570758/why-do-we-need-middleware-for-async-flow-in-redux)
-
 - [Stack Overflow: How to dispatch a Redux action with a timeout?](http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559)
-
 - [Stack Overflow: Where should I put synchronous side effects linked to actions in redux?](http://stackoverflow.com/questions/32982237/where-should-i-put-synchronous-side-effects-linked-to-actions-in-redux/33036344)
-
 - [Stack Overflow: How to handle complex side-effects in Redux?](http://stackoverflow.com/questions/32925837/how-to-handle-complex-side-effects-in-redux/33036594)
-
 - [Stack Overflow: How to unit test async Redux actions to mock ajax response](http://stackoverflow.com/questions/33011729/how-to-unit-test-async-redux-actions-to-mock-ajax-response/33053465)
-
 - [Stack Overflow: How to fire AJAX calls in response to the state changes with Redux?](http://stackoverflow.com/questions/35262692/how-to-fire-ajax-calls-in-response-to-the-state-changes-with-redux/35675447)
-
 - [Reddit: Help performing Async API calls with Redux-Promise Middleware.](https://www.reddit.com/r/reactjs/comments/469iyc/help_performing_async_api_calls_with_reduxpromise/)
-
 - [Twitter: possible comparison between sagas, loops, and other approaches](https://twitter.com/dan_abramov/status/689639582120415232)
 
 ## Какой асинхронный мидлвар должен я использовать? Как вы выбираете между thunks, sagas, observables или что-то еще?
@@ -143,11 +124,9 @@ Redux вдохновлен функциональным программиров
 
 Старайтесь избегать отправки нескольких синхронных экшенов за раз в тех местах, где вы беспокоитесь о производительности. Есть несколько дополнений и подходов, которые также могут дозировать отправку.
 
-### Дополнительная информация
-
 **Документация**
 
-- [FAQ: Производительность - Уменьшение количество обновлений стора](/docs/faq/Performance.md#performance-update-events)
+- [FAQ: Производительность - Уменьшение количество обновлений стора](Performance.md#performance-update-events)
 
 **Статьи**
 

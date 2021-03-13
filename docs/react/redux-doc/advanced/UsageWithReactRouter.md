@@ -1,27 +1,24 @@
 # Использование с React Router
 
-Итак, вы хотите использовать маршрутизацию с
-Вашим Redux-приложением. Для этого вы можете использовать
-[React Router](https://github.com/reactjs/react-router).
-Тогда Redux будет источником правдивых данных, а React
-Router — единственным источником URL. В большинстве случаев,
-**_правильно_** разделять эти понятия, но до тех пор, пока
-вам не понадобится путешествовать во времени (Time Travel)
-и перематывать экшены, которые изменяют URL.
+Итак, вы хотите использовать маршрутизацию с Вашим Redux-приложением. Для этого вы можете использовать [React Router](https://github.com/reactjs/react-router).
+
+Тогда Redux будет источником правдивых данных, а React Router — единственным источником URL. В большинстве случаев, **_правильно_** разделять эти понятия, но до тех пор, пока вам не понадобится путешествовать во времени (Time Travel) и перематывать экшены, которые изменяют URL.
 
 ## Установка React Router DOM
 
 `react-router-dom` доступно в npm. В этом руководстве преполагается использование версии `react-router-dom@^4.1.1`.
 
-`npm install --save react-router-dom`
+```
+npm install --save react-router-dom`
+```
 
 ## Настройка запасного URL
 
 Перед внедрением React Router нам требуется настроить наш сервер разработки. Конечно, наш сервер может не знать о роутах, заявленных в настройках React Router. Например, если вы переходите по ссылке `/todos`, то Ваш сервер должен возвращать `index.html`, так как это одностраничное приложение. Далее идут примеры настройки популярных серверов.
 
-> ### Важно при использовании Create React App
+!!!note "Важно при использовании Create React App"
 
-> Если вы используете Create React App, то вам не требуется настраивать запасной URL. Это уже сделано автоматически.
+    Если вы используете Create React App, то вам не требуется настраивать запасной URL. Это уже сделано автоматически.
 
 ### Настройка Express
 
@@ -35,13 +32,12 @@ app.get('/*', (req, res) => {
 
 ### Настройка WebpackDevServer
 
-Если вы получаете `index.html` из WebpackDevServer:
-Добавьте в webpack.config.dev.js:
+Если вы получаете `index.html` из `WebpackDevServer`, добавьте в `webpack.config.dev.js`:
 
 ```js
-  devServer: {
-    historyApiFallback: true,
-  }
+devServer: {
+  historyApiFallback: true,
+}
 ```
 
 ## Подключение React Router к Redux-приложению
@@ -95,7 +91,7 @@ const Root = ({ store }) => (
 
 Полный код компонента
 
-#### `components/Root.js`
+_components/Root.js_
 
 ```js
 import React from 'react';
@@ -124,7 +120,7 @@ export default Root;
 
 Нам также надо отрефакторить `index.js`, для того, чтобы рендерить `<Root />` компонент в DOM.
 
-#### `index.js`
+_index.js_
 
 ```js
 import React from 'react';
@@ -145,7 +141,7 @@ render(
 
 React Router поставляется с компонентом [`<Link />`](https://reacttraining.com/react-router/web/api/Link) который позволяет перемещаться по приложению. Если вы захотите добавить некоторые стили, `react-router-dom` предоставляет специальный`<Link />` называемый [`<NavLink />`](https://reacttraining.com/react-router/web/api/NavLink), который принимает параметры стилизации. Параметр `activeStyle` позволяет применить стиль активного состояния.
 
-#### `containers/FilterLink.js`
+_containers/FilterLink.js_
 
 ```js
 import React from 'react';
@@ -167,7 +163,7 @@ const FilterLink = ({ filter, children }) => (
 export default FilterLink;
 ```
 
-#### `components/Footer.js`
+_components/Footer.js_
 
 ```js
 import React from 'react';
@@ -200,7 +196,7 @@ export default Footer;
 
 Сейчас todo list не фильтруется после изменения URL. Это происходит потому, что фильтрация описана в функции `mapStateToProps()` компонента `<VisibleTodoList />`, которая в свою очередь связана с `состоянием`, а не с URL. `mapStateToProps` имеет второй необязательный аргумент `ownProps` — объект, содержащий все параметры, переданные в `<VisibleTodoList />`.
 
-#### `containers/VisibleTodoList.js`
+_containers/VisibleTodoList.js_
 
 ```js
 const mapStateToProps = (state, ownProps) => {
@@ -219,7 +215,7 @@ const mapStateToProps = (state, ownProps) => {
 
 Важно помнить, что мы используем [ES6-деструкцию](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) на параметрах, чтобы передать их в `params` в `<VisibleTodoList />`.
 
-#### `components/App.js`
+_components/App.js_
 
 ```js
 const App = ({ match: { params } }) => {
@@ -239,8 +235,8 @@ const App = ({ match: { params } }) => {
 
 Теперь, когда мы знаем основы создания простой навигации, мы можем перейти к изучению [React Router API](https://reacttraining.com/react-router/).
 
-> ##### Помните, что существуют и другие библиотеки для навигации по приложению
+!!!note "Помните, что существуют и другие библиотеки для навигации по приложению"
 
-> _Redux Router_ — экспериментальная библиотека, она позволяет Вам хранить все состояние Вашего URL в redux сторе. У нее то же самое API, что и у React Router, но сообщество и поддержка меньше, чем у React Router.
+    _Redux Router_ — экспериментальная библиотека, она позволяет Вам хранить все состояние Вашего URL в redux сторе. У нее то же самое API, что и у React Router, но сообщество и поддержка меньше, чем у React Router.
 
-> _React Router Redux_ создает связь между Вашим Redux-приложением и React Router и позволяет их синхронизировать. Без этой связи у Вас не будет возможности перемещаться по экшенам при помощи Time Travel. Пока Вам это не требуется, React-router и Redux могут работать совершенно независимо.
+    _React Router Redux_ создает связь между Вашим Redux-приложением и React Router и позволяет их синхронизировать. Без этой связи у Вас не будет возможности перемещаться по экшенам при помощи Time Travel. Пока Вам это не требуется, React-router и Redux могут работать совершенно независимо.

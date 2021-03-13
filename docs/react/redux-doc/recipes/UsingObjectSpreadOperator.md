@@ -7,10 +7,10 @@ function todoApp(state = initialState, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return Object.assign({}, state, {
-        visibilityFilter: action.filter
-      })
+        visibilityFilter: action.filter,
+      });
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -23,9 +23,9 @@ function todoApp(state = initialState, action) {
 function todoApp(state = initialState, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return { ...state, visibilityFilter: action.filter }
+      return { ...state, visibilityFilter: action.filter };
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -33,22 +33,20 @@ function todoApp(state = initialState, action) {
 Преимущество использования оператора расширения становится более очевидно при составлении сложных объектов. В примере ниже `getAddedIds` сопоставляет массив с `ids` массиву объектов со значениями, которые возвращает `getProduct` и `getQuantity`.
 
 ```js
-return getAddedIds(state.cart).map(id => Object.assign(
-  {},
-  getProduct(state.products, id),
-  {
-    quantity: getQuantity(state.cart, id)
-  }
-))
+return getAddedIds(state.cart).map((id) =>
+  Object.assign({}, getProduct(state.products, id), {
+    quantity: getQuantity(state.cart, id),
+  })
+);
 ```
 
 Оператор расширения позволяет нам упрощать вызов `map`:
 
 ```js
-return getAddedIds(state.cart).map(id => ({
+return getAddedIds(state.cart).map((id) => ({
   ...getProduct(state.products, id),
-  quantity: getQuantity(state.cart, id)
-}))
+  quantity: getQuantity(state.cart, id),
+}));
 ```
 
 Пока оператор расширения все еще на стадии предложения в ECMAScript, вам требуется использовать транспилер, такой как [Babel](http://babeljs.io/), для использования оператора в продакшн-версии. Вы можете использовать существующий пресет `es2015`, установить [`babel-plugin-transform-object-rest-spread`](http://babeljs.io/docs/plugins/transform-object-rest-spread/) и добавить его отдельно в массив `plugins` в вашем файле `.babelrc`.

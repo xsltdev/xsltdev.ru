@@ -51,7 +51,7 @@ dispatch({
 
 Вы можете написать генератор экшенов в отдельном файле и импортировать его в Ваш компонент:
 
-#### `actionCreators.js`
+_actionCreators.js_
 
 ```js
 export function addTodo(text) {
@@ -62,7 +62,7 @@ export function addTodo(text) {
 }
 ```
 
-#### `AddTodo.js`
+_AddTodo.js_
 
 ```js
 import { addTodo } from './actionCreators';
@@ -166,7 +166,7 @@ export const removeTodo = makeActionCreator(
 
 Без мидлвара, [`dispatch`](../api/Store.md#dispatch) принимает только простой объект, поэтому нам приходится выполнять AJAX-запросы внутри компонентов:
 
-#### `actionCreators.js`
+_actionCreators.js_
 
 ```js
 export function loadPostsSuccess(userId, response) {
@@ -193,7 +193,7 @@ export function loadPostsRequest(userId) {
 }
 ```
 
-#### `UserInfo.js`
+_UserInfo.js_
 
 ```js
 import { Component } from 'react';
@@ -260,13 +260,13 @@ export default connect((state) => ({
 
 Простейший пример мидлвара — [redux-thunk](https://github.com/gaearon/redux-thunk). **“Thunk” мидлвар позволяет нам писать генераторы экшенов как “thunks” — функции, возвращающие функции.** Это переворачивает управление: Вы будете получать `dispatch` в качестве аргумента, так Вы сможете писать генератор экшенов, который отправляется несколько раз.
 
-> ##### Запомните
+!!!note "Запомните"
 
-> Thunk мидлвар — всего лишь один пример мидлваров. Мидлвар не несет в себе смысл “предоставлять отправку функций”. Он предоставляет Вам возможность отправлять что угодно, что Вы сможете обработать. Thunk мидлвар добавляет специфическое поведение, когда Вы отправляете функции, но это зависит от используемого мидлвара.
+    Thunk мидлвар — всего лишь один пример мидлваров. Мидлвар не несет в себе смысл “предоставлять отправку функций”. Он предоставляет Вам возможность отправлять что угодно, что Вы сможете обработать. Thunk мидлвар добавляет специфическое поведение, когда Вы отправляете функции, но это зависит от используемого мидлвара.
 
 Рассмотрим приведенный выше код, переписанный с использованием [redux-thunk](https://github.com/gaearon/redux-thunk):
 
-#### `actionCreators.js`
+_actionCreators.js_
 
 ```js
 export function loadPosts(userId) {
@@ -302,7 +302,7 @@ export function loadPosts(userId) {
 }
 ```
 
-#### `UserInfo.js`
+_UserInfo.js_
 
 ```js
 import { Component } from 'react';

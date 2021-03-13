@@ -1,13 +1,8 @@
 title: Рецепты Redux
 nav:
     - index.md
-    - reducers
     - MigratingToRedux.md
     - UsingObjectSpreadOperator.md
     - ReducingBoilerplate.md
-    - ServerRendering.md
-    - WritingTests.md
     - ComputingDerivedData.md
-    - ImplementingUndoHistory.md
     - IsolatingSubapps.md
-    - UsingImmutableJS.md

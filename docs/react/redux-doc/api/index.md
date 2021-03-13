@@ -6,20 +6,20 @@ Redux имеет скромный **API**. Он определяет лишь н
 
 ## Высокоуровневые экспорты
 
-- [createStore(reducer, [preloadedState], [enhancer])](createStore.md)
-- [combineReducers(reducers)](combineReducers.md)
-- [applyMiddleware(...middlewares)](applyMiddleware.md)
-- [bindActionCreators(actionCreators, dispatch)](bindActionCreators.md)
-- [compose(...functions)](compose.md)
+- [`createStore(reducer, [preloadedState], [enhancer])`](createStore.md)
+- [`combineReducers(reducers)`](combineReducers.md)
+- [`applyMiddleware(...middlewares)`](applyMiddleware.md)
+- [`bindActionCreators(actionCreators, dispatch)`](bindActionCreators.md)
+- [`compose(...functions)`](compose.md)
 
 ## API стора
 
 [Store](Store.md)
 
-- [getState()](Store.md#getState)
-- [dispatch(action)](Store.md#dispatch)
-- [subscribe(listener)](Store.md#subscribe)
-- [replaceReducer(nextReducer)](Store.md#replaceReducer)
+- [`getState()`](Store.md#getState)
+- [`dispatch(action)`](Store.md#dispatch)
+- [`subscribe(listener)`](Store.md#subscribe)
+- [`replaceReducer(nextReducer)`](Store.md#replaceReducer)
 
 ## Импорты
 
