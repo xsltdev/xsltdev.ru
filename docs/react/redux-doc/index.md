@@ -24,26 +24,8 @@
 - [Мигрирование на Redux](recipes/MigratingToRedux.md)
 - [Использование оператора расширения](recipes/UsingObjectSpreadOperator.md)
 - [Упрощение шаблона](recipes/ReducingBoilerplate.md)
-- [Серверный рендеринг](recipes/ServerRendering.md)
-- [Написание тестов](recipes/WritingTests.md)
 - [Оперирование полученными данными](recipes/ComputingDerivedData.md)
-- [Реализация истории отмен](recipes/ImplementingUndoHistory.md)
 - [Изолирование саб-приложений](recipes/IsolatingSubapps.md)
-- [Использование Immutable.JS с Redux](recipes/UsingImmutableJS.md)
-
-[Структурирование редьюсеров](recipes/reducers/index.md)
-
-- [Предварительные концепциии](recipes/reducers/PrerequisiteConcepts.md)
-- [Базовая структура редьюсера](recipes/reducers/BasicReducerStructure.md)
-- [Разделение логики редьюсера](recipes/reducers/SplittingReducerLogic.md)
-- [Рефакторинг примера редьюсеров](recipes/reducers/RefactoringReducersExample.md)
-- [Использование `combineReducers`](recipes/reducers/UsingCombineReducers.md)
-- [За пределами `combineReducers`](recipes/reducers/BeyondCombineReducers.md)
-- [Нормализация состояния](recipes/reducers/NormalizingStateShape.md)
-- [Обновление нормализованных данных](recipes/reducers/UpdatingNormalizedData.md)
-- [Переиспользование логики редьюсера](recipes/reducers/ReusingReducerLogic.md)
-- [Паттерны иммутабельного обновления](recipes/reducers/ImmutableUpdatePatterns.md)
-- [Инициализирование состояния](recipes/reducers/InitializingState.md)
 
 FAQ
 
