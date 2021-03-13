@@ -1,9 +1,9 @@
 ---
-title: Типизированный React
+title: React и Typescript
 description: Типизированный React
 ---
 
-# ![TS](../../ts.svg){: style="height:32px;width:32px;vertical-align:middle;"} + ![React](../../react.svg){: style="height:32px;width:32px;vertical-align:middle;"} Типизированный React
+# ![TS](../../ts.svg){: style="height:32px;width:32px;vertical-align:middle;"} + ![React](../../react.svg){: style="height:32px;width:32px;vertical-align:middle;"} React и Typescript
 
 - [Типизированный React](048.md)
 - [Функциональные компоненты](049.md)

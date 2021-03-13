@@ -1,6 +1,7 @@
-title: Руководство LESS
+title: LESS
 nav:
     - index.md
+    - book
     - introduction.md
     - audience.md
     - preprocessors.md

@@ -27,8 +27,7 @@ hide:
 
 - [Flexbox](/css/flex-guide/flex-1/)
 - [Grid Layout](/css/grid-guide/grid-1/)
-- [Руководство LESS](/css/less-guide/)
-- [Учебник LESS](/css/less-book/)
+- [LESS](/css/less/)
 
 </div>
 
@@ -76,7 +75,7 @@ hide:
 ### [React](/react/)
 
 - [Роутинг](/react/router/intro/)
-- [React Redux](/react/redux/intro/)
+- [React Redux](/react/redux/)
 - [GraphQL](/react/graphql/)
 
 </div>
@@ -135,17 +134,11 @@ hide:
 
 Новое на сайте:
 
-[Документация Redux](/react/redux-doc/)
+[Redux](/react/redux/)
 : Документация redux на русском языке.
 
 [Web App Manifest](/html/manifest/)
 : Манифесты веб-приложений являются частью набора веб-технологий, называемых прогрессивными веб-приложениями (PWA, progressive web apps), представляющими собой веб-сайты, которые можно установить на домашний экран устройства без магазина приложений.
-
-[Типизированный React](/react/types/)
-: Типизированный React
-
-[Документация Typescript 4.2](/typescript/)
-: Typescript 4.2 Definition Guide. Перевод на русский язык официальной документации.<br /><small>Источник: [nauchikus.github.io](https://nauchikus.github.io/typescript-definitive-guide/)</small>
 
 </div>
 

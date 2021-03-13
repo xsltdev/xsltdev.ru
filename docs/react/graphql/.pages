@@ -1,6 +1,7 @@
 title: GraphQL
 nav:
     - index.md
+    - basics
     - queries-and-mutations.md
     - schemas-and-types.md
     - validation.md
