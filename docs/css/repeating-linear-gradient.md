@@ -1,7 +1,7 @@
 ---
 description:
 ---
-
+<!-- TODO: -->
 # repeating-linear-gradient()
 
 ??? info "Изображения, фильтры, композиция"
@@ -72,5 +72,5 @@ https://caniuse.bitsofco.de/
 
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`repeating-linear-gradient()`](https://developer.mozilla.org/ru/docs/Web/CSS/repeating-linear-gradient()) <sup><small>MDN (рус.)</small></sup>
 - []() <sup><small>Spec (англ.)</small></sup>

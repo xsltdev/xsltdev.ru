@@ -1,7 +1,7 @@
 ---
 description:
 ---
-
+<!-- TODO: -->
 # box-decoration-break
 
 ??? info "Фрагментация"
@@ -43,5 +43,5 @@ https://caniuse.bitsofco.de/
 
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`box-decoration-break`](https://developer.mozilla.org/ru/docs/Web/CSS/box-decoration-break) <sup><small>MDN (рус.)</small></sup>
 - []() <sup><small>Spec (англ.)</small></sup>

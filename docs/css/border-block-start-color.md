@@ -1,7 +1,7 @@
 ---
 description:
 ---
-
+<!-- TODO: -->
 # border-block-start-color
 
 ??? info "Логические границы"
@@ -65,5 +65,5 @@ https://caniuse.bitsofco.de/
 
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`border-block-start-color`](https://developer.mozilla.org/ru/docs/Web/CSS/border-block-start-color) <sup><small>MDN (рус.)</small></sup>
 - []() <sup><small>Spec (англ.)</small></sup>

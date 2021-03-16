@@ -1,7 +1,7 @@
 ---
 description:
 ---
-
+<!-- TODO: -->
 # mask-type
 
 ??? info "Маски и Фигуры"
@@ -64,5 +64,5 @@ https://caniuse.bitsofco.de/
 
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`mask-type`](https://developer.mozilla.org/ru/docs/Web/CSS/mask-type) <sup><small>MDN (рус.)</small></sup>
 - []() <sup><small>Spec (англ.)</small></sup>

@@ -1,7 +1,7 @@
 ---
 description:
 ---
-
+<!-- TODO: -->
 # scroll-behavior
 
 ??? info "Pointer Events"
@@ -40,5 +40,5 @@ https://caniuse.bitsofco.de/
 
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`scroll-behavior`](https://developer.mozilla.org/ru/docs/Web/CSS/scroll-behavior) <sup><small>MDN (рус.)</small></sup>
 - []() <sup><small>Spec (англ.)</small></sup>
