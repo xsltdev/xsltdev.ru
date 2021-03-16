@@ -1,8 +1,12 @@
 ---
-description:
+description: Свойство border-block-color определяет цвет границ логического блока элемента, который отображается на физический цвет границы в зависимости от режима письма элемента, направленности и ориентации текста
 ---
 
 # border-block-color
+
+Свойство **`border-block-color`** определяет цвет границ логического блока элемента, который отображается на физический цвет границы в зависимости от режима письма элемента, направленности и ориентации текста.
+
+Он соответствует свойству [border-top-color](border-top-color.md) и [border-bottom-color](border-bottom-color.md) или [border-right-color](border-right-color.md) и [border-left-color](border-left-color.md) в зависимости от значений, определенных для [режима письма](writing-mode.md), [направления](direction.md) и [ориентации текста](text-orientation.md).
 
 ??? info "Логические границы"
 
@@ -42,28 +46,60 @@ description:
 ## Синтаксис
 
 ```css
-
+border-block-color: yellow;
+border-block-color: #F5F6F7;
 ```
 
 ## Значения
 
+`цвет`
+: Цвет границы
+
 ## Определение
 
-|                      |                |
+|                      |                | 
 | -------------------- | -------------- |
-| Начальное значение   | ``             |
+| Начальное значение   | `currentcolor`             |
 | Применяется ко       | всем элементам |
-| Наследуется          | да             |
+| Наследуется          | нет             |
 | Вычисленное значение | как определено |
 | Тип анимации         | дискретный     |
 
 ## Поддержка браузерами
 
-https://caniuse.bitsofco.de/
+<p class="ciu_embed" data-feature="mdn-css__properties__border-block-color" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
 
 ## Примеры
 
+=== "HTML"
+
+    ```html
+    <div>
+      <p class="exampleText">Example text</p>
+    </div>
+    ```
+
+=== "CSS"
+
+    ```css
+    div {
+      background-color: yellow;
+      width: 120px;
+      height: 120px;
+    }
+    
+    .exampleText {
+      writing-mode: vertical-lr;
+      border: 10px solid blue;
+      border-block-color: red;
+    }
+    ```
+
+=== "Результат"
+
+    ![border-block-color](border-block-color.png)
+
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
-- []() <sup><small>Spec (англ.)</small></sup>
+- Свойство [`border-block-color`](https://developer.mozilla.org/ru/docs/Web/CSS/border-block-color) <sup><small>MDN (рус.)</small></sup>
+- [CSS Logical Properties and Values Level 1](https://drafts.csswg.org/css-logical/#propdef-border-block-color) <sup><small>Spec (англ.)</small></sup>
