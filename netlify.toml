@@ -5,5 +5,3 @@ publish = "site/"
 [[redirects]]
   from = "/angular"
   to = "https://angdev.ru"
-  status = 200
-  force = true
