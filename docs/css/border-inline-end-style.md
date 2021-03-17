@@ -59,7 +59,7 @@ description:
 
 ## Поддержка браузерами
 
-https://caniuse.bitsofco.de/
+<p class="ciu_embed" data-feature="mdn-css__properties__border-inline-end-style" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
 
 ## Примеры
 

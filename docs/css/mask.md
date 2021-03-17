@@ -15,7 +15,6 @@ description: Свойство mask изменяет видимость элем�
     <div class="col3" markdown="1">
 
     - [clip-path](clip-path.md)
-    - [clip-rule](clip-rule.md)
     - **mask**
     - [mask-border](mask-border.md)
     - [mask-border-mode](mask-border-mode.md)

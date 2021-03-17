@@ -66,7 +66,13 @@ description:
 
 ## Поддержка браузерами
 
-https://caniuse.bitsofco.de/
+<p class="ciu_embed" data-feature="css-conic-gradients" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false">
+<picture>
+<source type="image/webp" srcset="https://caniuse.bitsofco.de/image/css-conic-gradients.webp">
+<source type="image/png" srcset="https://caniuse.bitsofco.de/image/css-conic-gradients.png">
+<img src="https://caniuse.bitsofco.de/image/css-conic-gradients.jpg" alt="Data on support for the css-conic-gradients feature across the major browsers from caniuse.com">
+</picture>
+</p>
 
 ## Примеры
 

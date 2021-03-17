@@ -37,7 +37,13 @@ description:
 
 ## Поддержка браузерами
 
-https://caniuse.bitsofco.de/
+Для страниц:
+
+<p class="ciu_embed" data-feature="mdn-css__properties__break-before__paged_context" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
+
+Для колонок:
+
+<p class="ciu_embed" data-feature="mdn-css__properties__break-before__multicol_context" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
 
 ## Примеры
 

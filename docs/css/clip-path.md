@@ -15,7 +15,6 @@ description: Свойство clip-path создает ограниченную 
     <div class="col3" markdown="1">
 
     - **clip-path**
-    - [clip-rule](clip-rule.md)
     - [mask](mask.md)
     - [mask-border](mask-border.md)
     - [mask-border-mode](mask-border-mode.md)

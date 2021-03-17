@@ -11,7 +11,6 @@ description: Свойство mask-image устанавливает изобра
     <div class="col3" markdown="1">
 
     - [clip-path](clip-path.md)
-    - [clip-rule](clip-rule.md)
     - [mask](mask.md)
     - [mask-border](mask-border.md)
     - [mask-border-mode](mask-border-mode.md)

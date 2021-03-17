@@ -1,8 +1,12 @@
 ---
-description:
+description: Свойство border-block-end-color определяет цвет границы логического конца блока элемента, который отображается на физический цвет границы в зависимости от режима письма элемента, направленности и ориентации текста
 ---
 <!-- TODO: -->
 # border-block-end-color
+
+Свойство **`border-block-end-color`** определяет цвет границы логического конца блока элемента, который отображается на физический цвет границы в зависимости от режима письма элемента, направленности и ориентации текста.
+
+Он соответствует свойству [`border-top-color`](border-top-color.md), [`border-right-color`](border-right-color.md), [`border-bottom-color`](border-bottom-color.md) или [`border-left-color`](border-left-color.md) в зависимости от значений, определенных для [режима письма](writing-mode.md), [направления](direction.md) и [ориентации текста](text-orientation.md).
 
 ??? info "Логические границы"
 
@@ -42,7 +46,8 @@ description:
 ## Синтаксис
 
 ```css
-
+border-block-end-color: yellow;
+border-block-end-color: #F5F6F7;
 ```
 
 ## Значения
@@ -51,19 +56,19 @@ description:
 
 |                      |                |
 | -------------------- | -------------- |
-| Начальное значение   | ``             |
+| Начальное значение   | `currentcolor`             |
 | Применяется ко       | всем элементам |
-| Наследуется          | да             |
+| Наследуется          | нет             |
 | Вычисленное значение | как определено |
-| Тип анимации         | дискретный     |
+| Тип анимации         | как цвет     |
 
 ## Поддержка браузерами
 
-https://caniuse.bitsofco.de/
+<p class="ciu_embed" data-feature="mdn-css__properties__border-block-end-color" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
 
 ## Примеры
 
 ## Ссылки
 
 - Свойство [`border-block-end-color`](https://developer.mozilla.org/ru/docs/Web/CSS/border-block-end-color) <sup><small>MDN (рус.)</small></sup>
-- []() <sup><small>Spec (англ.)</small></sup>
+- [CSS Logical Properties and Values Level 1](https://drafts.csswg.org/css-logical/#propdef-border-block-end-color) <sup><small>Spec (англ.)</small></sup>

@@ -9,7 +9,6 @@ description:
     <div class="col3" markdown="1">
 
     - [clip-path](clip-path.md)
-    - [clip-rule](clip-rule.md)
     - [mask](mask.md)
     - [mask-border](mask-border.md)
     - [mask-border-mode](mask-border-mode.md)
@@ -64,5 +63,5 @@ https://caniuse.bitsofco.de/
 
 ## Ссылки
 
-- Свойство [``](https://developer.mozilla.org/ru/docs/Web/CSS/) <sup><small>MDN (рус.)</small></sup>
+- Свойство [`shape-outside`](https://developer.mozilla.org/ru/docs/Web/CSS/shape-outside) <sup><small>MDN (рус.)</small></sup>
 - []() <sup><small>Spec (англ.)</small></sup>

@@ -66,7 +66,13 @@ description:
 
 ## Поддержка браузерами
 
-https://caniuse.bitsofco.de/
+<p class="ciu_embed" data-feature="css-cross-fade" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false">
+<picture>
+<source type="image/webp" srcset="https://caniuse.bitsofco.de/image/css-cross-fade.webp">
+<source type="image/png" srcset="https://caniuse.bitsofco.de/image/css-cross-fade.png">
+<img src="https://caniuse.bitsofco.de/image/css-cross-fade.jpg" alt="Data on support for the css-cross-fade feature across the major browsers from caniuse.com">
+</picture>
+</p>
 
 ## Примеры
 
