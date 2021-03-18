@@ -29,12 +29,12 @@ theme:
 
 extra:
     social:
-        - icon: fontawesome/brands/github-alt
-          link: 'https://github.com/xsltdev'
-#        - type: 'linkedin'
-#          link: 'https://www.linkedin.com/in/bndby/'
-#search:
-#    language: 'en, ru'
+        - icon: fontawesome/solid/code
+          link: 'https://xsltdev.ru/'
+          name: XSLT docs
+        - icon: fontawesome/brands/angular
+          link: 'https://angdev.ru/'
+          name: Angular docs
 
 google_analytics:
     - UA-34215161-1

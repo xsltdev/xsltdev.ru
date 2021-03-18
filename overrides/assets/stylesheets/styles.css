@@ -146,7 +146,3 @@ h2 {
 .layout .cell h3 .headerlink {
 	display: none;
 }
-
-.md-grid {
-	max-width: initial;
-}
