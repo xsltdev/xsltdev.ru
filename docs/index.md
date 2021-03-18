@@ -58,13 +58,13 @@ hide:
 
 <div class="cell" markdown="1">
 
-[![Angular](angular.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/angular/)
+[![Angular](angular.svg){: style="height:64px;width:64px;vertical-align:middle;"}](https://angdev.ru/)
 
-### [Angular](/angular/)
+### [Angular](https://angdev.ru/)
 
-- [Руководство](/angular/tutorial/setup-and-configuration/)
-- [NgRx](/angular/ngrx/about/)
-- [RxJS](/angular/rxjs/about/)
+- [Руководство](https://angdev.ru/doc/setup-and-configuration/)
+- [NgRx](https://angdev.ru/ngrx/about/)
+- [RxJS](https://angdev.ru/rxjs/about/)
 
 </div>
 
@@ -168,8 +168,6 @@ hide:
 - [MariaDB](https://oracleplsql.ru/mariadb-manual.html)
 
 - [Git](https://github.com/progit/progit2-ru)
-
-- [Angular и прочее](http://www.coldfox.ru/)
 
 - [MDN](https://github.com/mdn/translated-content/tree/main/files/ru/web)
 -->

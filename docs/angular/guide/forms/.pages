@@ -1,7 +1,0 @@
-title: Работа с формами
-nav:
-    - formsmodule.md
-    - model.md
-    - state.md
-    - ngform.md
-    - reactive.md

@@ -1,9 +1,0 @@
-title: Директивы
-nav:
-    - index.md
-    - ngclass-ngstyle.md
-    - attr-directive.md
-    - user-interaction.md
-    - params.md
-    - structure-directive.md
-    - create-structure-directive.md

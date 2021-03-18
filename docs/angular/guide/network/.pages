@@ -1,7 +1,0 @@
-title: HTTP и взаимодействие с сервером
-nav:
-    - httpclient.md
-    - observable.md
-    - errors.md
-    - send-data.md
-    - post-request.md

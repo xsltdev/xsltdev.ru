@@ -1,8 +1,1 @@
 title: Angular
-nav:
-    - index.md
-    - tutorial
-    - guide
-    - cheatsheet.md
-    - ngrx
-    - rxjs

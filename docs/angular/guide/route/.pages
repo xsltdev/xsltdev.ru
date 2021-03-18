@@ -1,9 +1,0 @@
-title: Маршрутизация
-nav:
-    - define.md
-    - links.md
-    - param-route.md
-    - param-request.md
-    - nav.md
-    - child-route.md
-    - guards.md

@@ -3,7 +3,7 @@ command = "mkdocs build"
 publish = "site/"
 
 [[redirects]]
-  from = "/angular2/*"
+  from = "/angular/*"
   to = "https://angdev.ru/:splat"
   status = 301
   force = true
