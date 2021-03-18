@@ -82,11 +82,9 @@ hide:
 
 <div class="cell" markdown="1">
 
-[![Node.js](nodejs.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/nodejs/)
+[![Node.js](nodejs.svg){: style="height:64px;width:64px;vertical-align:middle;"}](https://nodejsdev.ru/)
 
-### [Node.js](/nodejs/)
-
-- [Express.js](/nodejs/expressjs4/installing/)
+### [Node.js](https://nodejsdev.ru/)
 
 </div>
 

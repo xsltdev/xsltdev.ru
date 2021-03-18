@@ -35,6 +35,9 @@ extra:
         - icon: fontawesome/brands/angular
           link: 'https://angdev.ru/'
           name: Angular docs
+        - icon: fontawesome/brands/node-js
+          link: 'https://nodejsdev.ru/'
+          name: Node.js docs
 
 google_analytics:
     - UA-34215161-1
