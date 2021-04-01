@@ -52,48 +52,6 @@ hide:
 
 </div>
 
-<!-- ------------------------------------------------------------ -->
-
-<div class="layout layout4" markdown="1">
-
-<div class="cell" markdown="1">
-
-[![Angular](angular.svg){: style="height:64px;width:64px;vertical-align:middle;"}](https://angdev.ru/)
-
-### [Angular](https://angdev.ru/)
-
-- [Руководство](https://angdev.ru/doc/setup-and-configuration/)
-- [NgRx](https://angdev.ru/ngrx/about/)
-- [RxJS](https://angdev.ru/rxjs/about/)
-
-</div>
-
-<div class="cell" markdown="1">
-
-[![React](react.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/react/)
-
-### [React](/react/)
-
-- [Роутинг](/react/router/intro/)
-- [React Redux](/react/redux/)
-- [GraphQL](/react/graphql/)
-
-</div>
-
-<div class="cell" markdown="1">
-
-[![Node.js](nodejs.svg){: style="height:64px;width:64px;vertical-align:middle;"}](https://nodejsdev.ru/)
-
-### [Node.js](https://nodejsdev.ru/)
-
-</div>
-
-<div class="cell" markdown="1">
-
-</div>
-
-</div>
-
 ---
 
 <div class="layout layout4" markdown="1">
@@ -126,36 +84,15 @@ hide:
 
 ---
 
-<div class="layout layout2" markdown="1">
+!!!note ""
 
-<div class="cell" markdown="1">
+    [![Angular](angular.svg){: style="height:16px;width:16px;vertical-align:middle;"} Angular](https://angdev.ru/) &nbsp;&nbsp;&nbsp;
+    [![React](react.svg){: style="height:16px;width:16px;vertical-align:middle;"} React](https://reactdev.ru/) &nbsp;&nbsp;&nbsp;
+    [![Node.js](nodejs.svg){: style="height:16px;width:16px;vertical-align:middle;"} Node.js](https://nodejsdev.ru/)
 
-Новое на сайте:
+Полезные ссылки: [MkDocs](https://www.mkdocs.org) • [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) • [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) • [Emoji](https://www.joypixels.com/emoji#all)
 
-[Redux](/react/redux/)
-: Документация redux на русском языке.
-
-[Web App Manifest](/html/manifest/)
-: Манифесты веб-приложений являются частью набора веб-технологий, называемых прогрессивными веб-приложениями (PWA, progressive web apps), представляющими собой веб-сайты, которые можно установить на домашний экран устройства без магазина приложений.
-
-</div>
-
-<div class="cell" markdown="1">
-
-Полезные ссылки
-
-- [MkDocs](https://www.mkdocs.org)
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-- [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
-- [Emoji](https://www.joypixels.com/emoji#all)
-
-Статус сборки:
-
-![Статус сборки справочника](https://api.netlify.com/api/v1/badges/5ccd2adf-fce9-45cf-b232-4a2534616ebc/deploy-status)
-
-</div>
-
-</div>
+Статус сборки: ![Статус сборки справочника](https://api.netlify.com/api/v1/badges/5ccd2adf-fce9-45cf-b232-4a2534616ebc/deploy-status)
 
 <!--
 Планы

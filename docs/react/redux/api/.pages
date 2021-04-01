@@ -1,9 +1,0 @@
-title: API Redux
-nav:
-    - index.md
-    - createStore.md
-    - combineReducers.md
-    - applyMiddleware.md
-    - bindActionCreators.md
-    - compose.md
-    - Store.md

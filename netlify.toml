@@ -13,7 +13,7 @@ publish = "site/"
   to = "https://angdev.ru/:splat"
   status = 301
   force = true
-  
+
 [[redirects]]
   from = "/nodejs/tutorial/*"
   to = "https://nodejsdev.ru/doc/:splat"
@@ -23,5 +23,11 @@ publish = "site/"
 [[redirects]]
   from = "/nodejs/*"
   to = "https://nodejsdev.ru/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/react/*"
+  to = "https://reactdev.ru/:splat"
   status = 301
   force = true
