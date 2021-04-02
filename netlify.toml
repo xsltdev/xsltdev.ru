@@ -31,3 +31,27 @@ publish = "site/"
   to = "https://reactdev.ru/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/html/*"
+  to = "https://hcdev.ru/html/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/css/flex-guide/*"
+  to = "https://hcdev.ru/flex/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/css/grid-guide/*"
+  to = "https://hcdev.ru/grid/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/css/*"
+  to = "https://hcdev.ru/css/:splat"
+  status = 301
+  force = true

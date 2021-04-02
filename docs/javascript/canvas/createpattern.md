@@ -6,7 +6,7 @@ description: Метод createPattern() размножает заданный э
 
 Метод **`createPattern()`** размножает заданный элемент в заданном направлении.
 
-В качестве размножаемого элемента можно использовать изображение, видео или другой элемент [`<canvas>`](../../html/canvas.md).
+В качестве размножаемого элемента можно использовать изображение, видео или другой элемент [`<canvas>`](https://hcdev.ru/html/canvas/).
 
 Размножаемый элемент может использоваться для рисования/заливки прямоугольников, окружностей, линий и т. д.
 
@@ -66,13 +66,13 @@ ctx.fill();}}
 JavaScript:
 
 ```js
-var c = document.getElementById('myCanvas')
-var ctx = c.getContext('2d')
-var img = document.getElementById('lamp')
-var pat = ctx.createPattern(img, 'repeat')
-ctx.rect(0, 0, 150, 100)
-ctx.fillStyle = pat
-ctx.fill()
+var c = document.getElementById('myCanvas');
+var ctx = c.getContext('2d');
+var img = document.getElementById('lamp');
+var pat = ctx.createPattern(img, 'repeat');
+ctx.rect(0, 0, 150, 100);
+ctx.fillStyle = pat;
+ctx.fill();
 ```
 
 ## Ссылки

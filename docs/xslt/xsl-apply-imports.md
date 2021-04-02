@@ -64,7 +64,7 @@ description: Элемент xsl:apply-imports используется в шаб
 </xsl:template>
 ```
 
-При необходимости этот шаблон может быть переопределен. К примеру, [ссылка](../html/a.md) может выглядеть так: `Visit <a href="https://www.xsltdev.ru/">www.xsltdev.ru</a>`. Соответственно, шаблон будет иметь вид:
+При необходимости этот шаблон может быть переопределен. К примеру, [ссылка](https://hcdev.ru/html/a/) может выглядеть так: `Visit <a href="https://www.xsltdev.ru/">www.xsltdev.ru</a>`. Соответственно, шаблон будет иметь вид:
 
 ```xml
 <xsl:template match="home">

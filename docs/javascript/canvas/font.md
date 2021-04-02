@@ -6,7 +6,7 @@ description: Свойство font устанавливает или возвр�
 
 Свойство **`font`** устанавливает или возвращает свойства шрифта для текстового содержимого на холсте.
 
-Свойство `font` объекта `canvas` использует тот же синтаксис, что и CSS свойство [`font`](../../css/font.md).
+Свойство `font` объекта `canvas` использует тот же синтаксис, что и CSS свойство [`font`](https://hcdev.ru/css/font/).
 
 ## Синтаксис
 
@@ -77,10 +77,10 @@ ctx.fillText("Hello World",10,50);}
 JavaScript:
 
 ```js
-var c = document.getElementById('myCanvas')
-var ctx = c.getContext('2d')
-ctx.font = '30px Arial'
-ctx.fillText('Hello World', 10, 50)
+var c = document.getElementById('myCanvas');
+var ctx = c.getContext('2d');
+ctx.font = '30px Arial';
+ctx.fillText('Hello World', 10, 50);
 ```
 
 ## Ссылки

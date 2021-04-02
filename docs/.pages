@@ -1,7 +1,5 @@
 nav:
     - index.md
-    - html
-    - css
     - javascript
     - typescript
     - xslt

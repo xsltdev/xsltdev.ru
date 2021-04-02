@@ -11,24 +11,17 @@ hide:
 
 <div class="cell" markdown="1">
 
-[![HTML](html.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/html/)
+### [XSLT](/xslt/)
 
-### [HTML](/html/)
-
-- [Manifest](/html/manifest/)
-- [MIME-типы](/html/list-mime-types/)
+- [Спецификация](/xslt/tr/)
+- [EXSLT](/xslt/exslt/)
+- [Рецепты](/xslt/recipes/)
 
 </div>
 
 <div class="cell" markdown="1">
 
-[![CSS](css.svg){: style="height:64px;width:64px;vertical-align:middle;"}](/css/)
-
-### [CSS](/css/)
-
-- [Flexbox](/css/flex-guide/flex-1/)
-- [Grid Layout](/css/grid-guide/grid-1/)
-- [LESS](/css/less/)
+### [XPath](/xpath/)
 
 </div>
 
@@ -53,42 +46,14 @@ hide:
 
 </div>
 
----
-
-<div class="layout layout4" markdown="1">
-
-<div class="cell" markdown="1">
-
-### [XSLT](/xslt/)
-
-- [Спецификация](/xslt/tr/)
-- [EXSLT](/xslt/exslt/)
-- [Рецепты](/xslt/recipes/)
-
-</div>
-
-<div class="cell" markdown="1">
-
-### [XPath](/xpath/)
-
-</div>
-
-<div class="cell" markdown="1">
-
-</div>
-
-<div class="cell" markdown="1">
-
-</div>
-
-</div>
-
 !!!abstract "Справочники"
 
-    **[XSLT](https://xsltdev.ru)** &nbsp;&nbsp;&nbsp;
+    [![HTML](html.svg){: style="height:16px;width:16px;vertical-align:middle;"} HTML](https://hcdev.ru/html/) &nbsp;&nbsp;&nbsp;
+    [![CSS](css.svg){: style="height:16px;width:16px;vertical-align:middle;"} CSS](https://hcdev.ru/css/) &nbsp;&nbsp;&nbsp;
     [![Angular](angular.svg){: style="height:16px;width:16px;vertical-align:middle;"} Angular](https://angdev.ru/) &nbsp;&nbsp;&nbsp;
     [![React](react.svg){: style="height:16px;width:16px;vertical-align:middle;"} React](https://reactdev.ru/) &nbsp;&nbsp;&nbsp;
-    [![Node.js](nodejs.svg){: style="height:16px;width:16px;vertical-align:middle;"} Node.js](https://nodejsdev.ru/)
+    [![Node.js](nodejs.svg){: style="height:16px;width:16px;vertical-align:middle;"} Node.js](https://nodejsdev.ru/) &nbsp;&nbsp;&nbsp;
+    **[XSLT](https://xsltdev.ru/)**
 
 Полезные ссылки: [MkDocs](https://www.mkdocs.org) • [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) • [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) • [Emoji](https://www.joypixels.com/emoji#all)
 

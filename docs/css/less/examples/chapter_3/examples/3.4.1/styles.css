@@ -1,8 +1,0 @@
-.navbar:before,
-.navbar:after {
-  display: table;
-  content: "";
-}
-.navbar:after {
-  clear: both;
-}

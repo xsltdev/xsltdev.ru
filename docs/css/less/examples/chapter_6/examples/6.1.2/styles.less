@@ -1,9 +1,0 @@
-.mixin(...) {
-  @js: ~`(function(args){ return args; })('@{arguments}')`;
-
-  content: @js;
-}
-
-.test-js {
-  .mixin(3, 123);
-}
