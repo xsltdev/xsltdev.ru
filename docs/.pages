@@ -1,6 +1,7 @@
 nav:
     - index.md
-    - javascript
-    - typescript
     - xslt
     - xpath
+    - exslt
+    - recipes
+    - tr.md

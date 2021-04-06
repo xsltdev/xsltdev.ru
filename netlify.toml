@@ -55,3 +55,39 @@ publish = "site/"
   to = "https://hcdev.ru/css/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/typescript/*"
+  to = "https://scriptdev.ru/ts/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/javascript/canvas/*"
+  to = "https://scriptdev.ru/webapi/canvas/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/javascript/garden/*"
+  to = "https://scriptdev.ru/js/garden/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/javascript/xhr/*"
+  to = "https://scriptdev.ru/webapi/xhr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/javascript/json/*"
+  to = "https://scriptdev.ru/json/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/javascript/*"
+  to = "https://scriptdev.ru/js/:splat"
+  status = 301
+  force = true

@@ -1,8 +1,8 @@
-site_name: Справочник
+site_name: XSLT
 site_url: https://xsltdev.ru/
-site_description: Справочник web-разработчика с примерами кода - HTML, CSS, Javascript, Typescript, Angular, React, Node.js, XSLT, XPath
+site_description: Справочник XSLT-разработчика с примерами кода
 site_author: xsltdev.ru
-copyright: (C) 2012-2020, Справочник web-разработчика с примерами кода
+copyright: (C) 2012-2021, Справочник web-разработчика с примерами кода
 
 repo_name: 'Справочник на Github'
 repo_url: 'https://github.com/xsltdev/xsltdev.ru'
@@ -20,18 +20,18 @@ theme:
     features:
         - navigation.tabs
         - navigation.tracking
-    font:
-        text: Roboto
-        code: Roboto Mono
-    # icon:
-    # logo: material/code
-    # repo: material/code
+        - navigation.instant
+    favicon: xslt.svg
+    logo: xslt.svg
 
 extra:
     social:
-        - icon: fontawesome/solid/code
-          link: 'https://xsltdev.ru/'
-          name: XSLT docs
+        - icon: fontawesome/brands/html5
+          link: 'https://hcdev.ru/'
+          name: HTML and CSS docs
+        - icon: fontawesome/brands/js
+          link: 'https://scriptdev.ru/'
+          name: Javascript
         - icon: fontawesome/brands/angular
           link: 'https://angdev.ru/'
           name: Angular docs
@@ -41,6 +41,9 @@ extra:
         - icon: fontawesome/brands/node-js
           link: 'https://nodejsdev.ru/'
           name: Node.js docs
+        - icon: fontawesome/solid/code
+          link: 'https://xsltdev.ru/'
+          name: XSLT docs
 
 google_analytics:
     - UA-34215161-1
@@ -62,12 +65,14 @@ markdown_extensions:
     - pymdownx.superfences
 
 plugins:
-    #- search
+    - search:
+          separator: '[\s\-\:]+'
+          prebuild_index: true
+          lang:
+              - ru
+              - en
     - awesome-pages
     - section-index
-
-extra_javascript:
-    - 'https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js'
 
 extra_css:
     - '/assets/stylesheets/styles.css'

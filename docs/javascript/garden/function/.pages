@@ -1,8 +1,0 @@
-title: Функции
-nav:
-    - general.md
-    - this.md
-    - closures.md
-    - arguments.md
-    - constructors.md
-    - scopes.md

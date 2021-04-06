@@ -1,6 +1,0 @@
-title: Типы
-nav:
-    - equality.md
-    - typeof.md
-    - instanceof.md
-    - casting.md
