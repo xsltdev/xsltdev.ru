@@ -10,13 +10,10 @@ repo_url: 'https://github.com/xsltdev/xsltdev.ru'
 theme:
     name: material
     custom_dir: overrides
-    # name: null
-    # custom_dir: 'theme/material'
     palette:
         primary: black
         accent: teal
     language: ru
-    #    favicon: 'assets/images/favicon.ico'
     features:
         - navigation.tabs
         - navigation.tracking
