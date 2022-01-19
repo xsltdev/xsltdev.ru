@@ -43,5 +43,3 @@ hide:
     [![Node.js](nodejs.svg){: style="height:16px;width:16px;vertical-align:middle;"} Node.js](https://nodejsdev.ru/) &nbsp;&nbsp;&nbsp;
 	[![Python 3](python.svg){: style="height:16px;width:16px;vertical-align:middle;"} Python 3](https://py3dev.ru/) &nbsp;&nbsp;&nbsp;
     **[![XSLT](xslt.svg){: style="height:16px;width:16px;vertical-align:middle;"} XSLT](https://xsltdev.ru/)**
-
-Статус сборки: ![Статус сборки справочника](https://api.netlify.com/api/v1/badges/5ccd2adf-fce9-45cf-b232-4a2534616ebc/deploy-status)
