@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Clean-param: query
 
 Host: https://xsltdev.ru/
 Sitemap: https://xsltdev.ru/sitemap.xml
