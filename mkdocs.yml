@@ -45,10 +45,6 @@ extra:
           link: 'https://xsltdev.ru/'
           name: XSLT docs
 
-google_analytics:
-    - UA-34215161-1
-    - auto
-
 markdown_extensions:
     - admonition
     - codehilite:
