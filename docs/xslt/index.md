@@ -1,5 +1,5 @@
 ---
-title: Справочник
+title: Справочник XSLT
 description: Справочник по элементам XSLT 1.0 на русском языке
 hide:
   - toc
