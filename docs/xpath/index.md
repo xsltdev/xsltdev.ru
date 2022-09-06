@@ -1,5 +1,5 @@
 ---
-title: Справочник
+title: Справочник XPath
 description: Справочник по функциям XPath 1.0 на русском языке
 hide:
   - toc
