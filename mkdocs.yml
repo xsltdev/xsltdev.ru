@@ -35,6 +35,8 @@ markdown_extensions:
           emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.tabbed
     - pymdownx.superfences
+    - attr_list
+    - md_in_html
 
 plugins:
     - search:
