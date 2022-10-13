@@ -1,7 +1,7 @@
 Click
 Jinja2
 livereload
-Markdown
+Markdown==3.3.7
 MarkupSafe
 mkdocs
 pymdown-extensions
