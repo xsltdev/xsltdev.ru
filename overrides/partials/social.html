@@ -17,7 +17,21 @@
   IN THE SOFTWARE.
 -->
 
-<div class="md-copyright">
+<!-- Social links in footer -->
+{% if config.extra.social %}
+<div class="md-social">
+	{% for social in config.extra.social %} {% set title = social.name %} {% if
+	not title and "//" in social.link %} {% set _,url = social.link.split("//")
+	%} {% set title = url.split("/")[0] %} {% endif %}
+	<a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ title }}" class="md-social__link">
+		{% include ".icons/" ~ social.icon ~ ".svg" %}
+	</a>
+	{% endfor %}
+</div>
+
+{% endif %}
+
+<div class="md-copyright" style="width: 100%; padding-top: 0;">
 	<!-- Yandex.Metrika informer -->
     <a href="https://metrika.yandex.ru/stat/?id=54884653&amp;from=informer"
       target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/54884653/3_0_FFFFFFFF_EFEFEFFF_0_pageviews"
@@ -38,17 +52,3 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/54884653" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </div>
-
-<!-- Social links in footer -->
-{% if config.extra.social %}
-<div class="md-social">
-	{% for social in config.extra.social %} {% set title = social.name %} {% if
-	not title and "//" in social.link %} {% set _,url = social.link.split("//")
-	%} {% set title = url.split("/")[0] %} {% endif %}
-	<a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ title }}" class="md-social__link">
-		{% include ".icons/" ~ social.icon ~ ".svg" %}
-	</a>
-	{% endfor %}
-</div>
-
-{% endif %}
