@@ -47,7 +47,8 @@ plugins:
               - en
     - awesome-pages
     - section-index
-    
+    - social
+
 extra:
     generator: false
     social:
