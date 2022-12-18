@@ -3,11 +3,11 @@
 <!-- Page title -->
 {% block htmltitle %} {% if page and page.meta and page.meta.title %}
 <title>
-	{{ page.meta.title }} | XSLT с примерами кода
+	{{ page.meta.title }} ⚡️ XSLT с примерами кода
 </title>
 {% elif page and page.title and not page.is_homepage %}
 <title>
-	{{ page.title }} | XSLT с примерами кода
+	{{ page.title }} ⚡️ XSLT с примерами кода
 </title>
 {% else %}
 <title>Справочник XSLT-разработчика с примерами кода</title>
@@ -49,7 +49,7 @@
     var palette = __md_get("__palette")
     if (palette && typeof palette.color === "object") {
       var theme = palette.color.scheme === "slate" ? "dark" : "light"
-      giscus.setAttribute("data-theme", theme) 
+      giscus.setAttribute("data-theme", theme)
     }
 
     /* Register event handlers after documented loaded */

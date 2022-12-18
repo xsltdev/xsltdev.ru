@@ -2,7 +2,7 @@ site_name: XSLT
 site_url: https://xsltdev.ru/
 site_description: Справочник XSLT-разработчика с примерами кода
 site_author: xsltdev.ru
-copyright: (C) 2012-2021, Справочник XSLT и XPath с примерами кода
+copyright: (C) 2012-2023, Справочник XSLT и XPath с примерами кода
 
 repo_name: 'Справочник на Github'
 repo_url: 'https://github.com/xsltdev/xsltdev.ru'
