@@ -5,22 +5,43 @@ hide:
   - toc # Hide table of contents
 ---
 
-# Справочники
+# ![XSLT](xslt.svg){: style="height:42px;width:42px;vertical-align:middle;"} Справочник XSLT
 
-[XSLT](/xslt/)
-: Справочник по элементам XSLT 1.0 на русском языке.
+**XSLT** &mdash; языка преобразований XML документов в другие XML документы.
 
-[XPath](/xpath/)
-: Справочник по функциям XPath 1.0 на русском языке
+<div class="grid cards" style="margin-top: 1.6em" markdown>
 
-[Спецификация](/tr/)
-: Перевод рекомендации W3C на русский язык
+-   :material-xml:{ .lg .middle } **XSLT**
 
-[EXSLT](/exslt/)
-: Общественная инициатива по созданию расширений для XSLT, придающих бо́льшую функциональность языку трансформаций
+    ***
 
-[Рецепты](/recipes/)
-: Сборник рецептов XSLT
+    Документация по XSLT
+
+    **[:octicons-arrow-right-24: XSLT](/xslt/)** <small>1.0</small>
+
+    [:octicons-arrow-right-24: Спецификация XSLT](/tr/) <small>1.0</small>
+
+	[:octicons-arrow-right-24: EXSLT](/exslt/) &mdash; <small>расширение XSLT</small>
+
+-   :octicons-rel-file-path-24:{ .lg .middle } **XPath**
+
+	***
+
+	Справочник по функциям XPath
+
+	[:octicons-arrow-right-24: XPath](/xpath/) <small>1.0</small>
+
+-   :material-file-document-outline:{ .lg .middle } **Гайды**
+
+	***
+
+	Сборник рецептов XSLT
+
+	[:octicons-arrow-right-24: Рецепты](/recipes/)
+
+</div>
+
+***
 
 !!!abstract "Справочники"
 

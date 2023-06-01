@@ -1,8 +1,7 @@
 nav:
-    - index.md
+    - 🏠: index.md
     - xslt
     - xpath
     - exslt
     - recipes
-    - tr.md
     - Спасибо: https://boosty.to/bndby

@@ -10,7 +10,7 @@
   "scripts": {
     "build": "mkdocs build",
     "serve": "mkdocs serve --dirtyreload",
-	"upgrade": "pip3 install --upgrade -r ./requirements.txt"
+    "upgrade": "pip3 install --upgrade -r ./requirements.txt"
   },
   "repository": {
     "type": "git",
