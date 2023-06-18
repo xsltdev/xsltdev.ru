@@ -100,6 +100,9 @@ extra:
         - icon: fontawesome/solid/code
           link: 'https://xsltdev.ru/'
           name: XSLT docs
+        - icon: fontawesome/solid/database
+          link: 'https://dbasedev.ru/'
+          name: Базы данных
 
 extra_css:
     - '/assets/stylesheets/styles.css?4'
