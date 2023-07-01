@@ -1,22 +1,29 @@
 title: Рецепты
 nav:
     - index.md
-    - primenenie-osey.md
-    - filtraciya-uzlov.md
-    - rabota-s-posledovatelnostyami.md
-    - vklyuchenie-usloviy-v-vyrazheniya-if.md
-    - iskluchenie-rekursii.md
-    - kvantory.md
-    - operacii-nad-mnozhestvami.md
-    - sravnenie-uzlov.md
-    - zavershaetsya-li-stroka-podstrokoy.md
-    - nahozhdenie-pozicii-nachala-podstroki.md
-    - udalenie-simvolov-iz-stroki.md
-    - poisk-podstroki-s-konca-stroki.md
-    - povtorenie-stroki-n-raz.md
-    - obraschenie-stroki.md
-    - zamena-teksta.md
-    - preobrazovanie-registra.md
-    - razbienie-stroki-na-leksemy.md
-    - ispolzovanie-regularnyh-vyrazheniy.md
-    - rasshireniya-exslt-dlya-raboty-so-strokami.md
+    - Язык XPath:
+        - primenenie-osey.md
+        - filtraciya-uzlov.md
+        - rabota-s-posledovatelnostyami.md
+        - vklyuchenie-usloviy-v-vyrazheniya-if.md
+        - iskluchenie-rekursii.md
+        - kvantory.md
+        - operacii-nad-mnozhestvami.md
+        - sravnenie-uzlov.md
+    - Строки:
+        - zavershaetsya-li-stroka-podstrokoy.md
+        - nahozhdenie-pozicii-nachala-podstroki.md
+        - udalenie-simvolov-iz-stroki.md
+        - poisk-podstroki-s-konca-stroki.md
+        - povtorenie-stroki-n-raz.md
+        - obraschenie-stroki.md
+        - zamena-teksta.md
+        - preobrazovanie-registra.md
+        - razbienie-stroki-na-leksemy.md
+        - ispolzovanie-regularnyh-vyrazheniy.md
+        - rasshireniya-exslt-dlya-raboty-so-strokami.md
+    - Математические операции:
+        - okruglenie-chisel-s-zadannoy-tochnostyu.md
+        - preobrazovanie-rimskih-chisel.md
+        - preobrazovanie-sistemy-schisleniya.md
+        - realizaciya-standartnyh-matematicheskih-funkciy.md
