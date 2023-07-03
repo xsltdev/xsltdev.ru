@@ -1,4 +1,49 @@
 title: XSLT
 nav:
     - index.md
-    - ...
+    - XSLT 1.0:
+        - ...
+    - XSLT 2.0:
+        -   xsl-analyze-string.md
+        -   xsl-for-each-group.md
+        -   xsl-function.md
+        -   xsl-import-schema.md
+        -   xsl-matching-substring.md
+        -   xsl-namespace.md
+        -   xsl-next-match.md
+        -   xsl-non-matching-substring.md
+        -   xsl-output-character.md
+        -   xsl-perform-sort.md
+        -   xsl-result-document.md
+        -   xsl-sequence.md
+    - XSLT 3.0:
+        -   xsl-accept.md
+        -   xsl-accumulator.md
+        -   xsl-accumulator-rule.md
+        -   xsl-assert.md
+        -   xsl-break.md
+        -   xsl-catch.md
+        -   xsl-context-item.md
+        -   xsl-evaluate.md
+        -   xsl-expose.md
+        -   xsl-fork.md
+        -   xsl-global-context-item.md
+        -   xsl-iterate.md
+        -   xsl-map.md
+        -   xsl-map-entry.md
+        -   xsl-merge.md
+        -   xsl-merge-action.md
+        -   xsl-merge-key.md
+        -   xsl-merge-source.md
+        -   xsl-mode.md
+        -   xsl-next-iteration.md
+        -   xsl-on-completion.md
+        -   xsl-on-empty.md
+        -   xsl-on-non-empty.md
+        -   xsl-override.md
+        -   xsl-package.md
+        -   xsl-source-document.md
+        -   xsl-stream.md
+        -   xsl-try.md
+        -   xsl-use-package.md
+        -   xsl-where-populated.md
