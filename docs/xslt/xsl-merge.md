@@ -8,10 +8,10 @@ description: Цель инструкции - позволить объедини
 
 _Доступна в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех изданиях. Реализовано в Saxon-PE и Saxon-EE начиная с Saxon 9.4._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:merge-source`](xsl-merge-source.md)+, [`xsl:merge-action`](xsl-merge-action.md), [`xsl:fallback`](xsl-fallback.md)\* )
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
--   **Element has no attributes**
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
+-   **Элемент не имеет атрибутов**
 
 ## Заметки по реализации Saxon
 

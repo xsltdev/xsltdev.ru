@@ -1,32 +1,32 @@
 ---
-description: Creates a namespace node
+description: Создает узел пространства имен
 ---
 
 # xsl:namespace
 
-Creates a namespace node.
+Создает узел пространства имен.
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+_Доступен в XSLT 2.0 и более поздних версиях. Доступно во всех редакциях Saxon._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
 **`name`**
 : _{ ncname }_
-: Defines the name of the namespace node (that is, the namespace prefix).
+: Определяет имя узла пространства имен (то есть префикс пространства имен).
 
 `select?`
 : _expression_
-: The string value of the namespace node (that is, the namespace URI) may be given either by a `select` attribute, or by an enclosed sequence constructor.
+: Строковое значение узла пространства имен (то есть URI пространства имен) может быть задано либо атрибутом `select`, либо вложенным конструктором последовательности.
 
 ## Подробности
 
-The semantics parallel [`xsl:attribute`](xsl-attribute.md) which creates attribute nodes.
+Семантика, параллельная [`xsl:attribute`](xsl-attribute.md), которая создает узлы атрибутов.
 
-It is rarely necessary to use this instruction explicitly. The only cases it is needed are where the namespaces to be included in the result document are not known statically, and are not present in the source document.
+Редко возникает необходимость использовать эту инструкцию в явном виде. Единственные случаи, когда она необходима, это когда пространства имен, которые должны быть включены в итоговый документ, не известны статически и отсутствуют в исходном документе.
 
 ## Ссылки to W3C specifications
 

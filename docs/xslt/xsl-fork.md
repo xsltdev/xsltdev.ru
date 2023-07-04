@@ -8,10 +8,10 @@ description: Результатом инструкции xsl fork являетс
 
 _Доступно в XSLT 3.0. Начиная с версии Saxon 9.8, доступна во всех редакциях. Реализована в Saxon-PE и Saxon-EE начиная с Saxon 9.7._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:fallback`](xsl-fallback.md)\*, ( ( [`xsl:sequence`](xsl-sequence.md), [`xsl:fallback`](xsl-fallback.md)\* )\* | ( [`xsl:for-each-group`](xsl-for-each-group.md), [`xsl:fallback`](xsl-fallback.md)\* ) ) )
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
--   **Element has no attributes**
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
+-   **Элемент не имеет атрибутов**
 
 ## Заметки по реализации Saxon
 

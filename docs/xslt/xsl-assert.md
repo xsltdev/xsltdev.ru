@@ -8,9 +8,9 @@ description: Используется для создания утвержден
 
 _Доступно в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех изданиях. Реализовано в Saxon-PE и Saxon-EE начиная с Saxon 9.5._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 

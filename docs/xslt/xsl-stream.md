@@ -1,30 +1,30 @@
 ---
-description: Used to initiate streamed processing of a source document
+description: Используется для инициирования потоковой обработки исходного документа
 ---
 
 # xsl:stream
 
-Used to initiate streamed processing of a source document. (In later drafts of the XSLT 3.0 specification, the instruction is renamed [`xsl:source-document`](xsl-source-document.md), which is available since Saxon 9.7.0.8, while `xsl:stream` is retained for the time being as a synonym.)
+Используется для инициирования потоковой обработки исходного документа. (В более поздних проектах спецификации XSLT 3.0 инструкция переименована в [`xsl:source-document`](xsl-source-document.md), что доступно с версии Saxon 9.7.0.8, а `xsl:stream` пока сохранен как синоним).
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-EE since Saxon 9.6._
+_Доступно в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех редакциях. Реализовано в Saxon-EE начиная с Saxon 9.6._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
 **`href`**
 : _{ uri }_
-: The URI of a source document. It can be written as an attribute value template if the URI is not known statically.
+: URI исходного документа. Он может быть записан как шаблон значения атрибута, если URI не известен статически.
 
 `streamable?`
 : _boolean_
-: Allowed since 9.7.0.8. Used to specifically request streamed processing. The default is `yes`.
+: Разрешено с версии 9.7.0.8. Используется для специального запроса потоковой обработки. По умолчанию используется `yes`.
 
 `use-accumulators?`
 : _tokens_
-: Defines the set of accumulators that are applicable to the document.
+: Определяет набор аккумуляторов, которые применимы к данному документу.
 
 `validation?`
 : `"strict" | "lax" | "preserve" | "strip"`
@@ -34,26 +34,26 @@ _Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented i
 
 ## Заметки по реализации Saxon
 
-In later drafts of the XSLT 3.0 specification, the `xsl:stream` instruction is replaced by [`xsl:source-document`](xsl-source-document.md), which is available since Saxon 9.7.0.8. The `xsl:stream` instruction is retained as a synonym.
+В более поздних проектах спецификации XSLT 3.0 инструкция `xsl:stream` заменяется инструкцией [`xsl:source-document`](xsl-source-document.md), которая доступна начиная с Saxon 9.7.0.8. Инструкция `xsl:stream` сохраняется в качестве синонима.
 
-The instruction is obsolete and will be dropped after Saxon 9.8.
+Эта инструкция устарела и будет удалена после Saxon 9.8.
 
 ## Подробности
 
-The body of the instruction is a sequence constructor, which is evaluated with the root node of the selected document as the context node. For streaming to work, this must be written as a streamable sequence constructor. Expressed very informally, this means it must only make downward selections in the document, and no instruction or expression may make more than one downward selection. The [examples](http://www.w3.org/TR/xslt-30/#stream-examples) in the W3C specification illustrate some of the possibilities; these examples all work with Saxon.
+Тело инструкции представляет собой конструктор последовательности, который оценивается с корневым узлом выбранного документа в качестве контекстного узла. Чтобы потоковая передача работала, эта инструкция должна быть написана как потоковый конструктор последовательности. Выражаясь очень неформально, это означает, что он должен делать выборки в документе только вниз, и ни одна инструкция или выражение не могут делать более одной выборки вниз. Примеры [examples](http://www.w3.org/TR/xslt-30/#stream-examples) в спецификации W3C иллюстрируют некоторые из возможностей; все эти примеры работают с Saxon.
 
-Some of the things that the instruction might do are:
+Инструкция может выполнять следующие действия:
 
--   Compute an aggregate such as a total or average (see the example below).
--   Initiate processing of the document using template rules, by calling [`xsl:apply-templates`](xsl-apply-templates.md) using a streamable mode.
--   Iterate over the contents of the document using [`xsl:for-each`](xsl-for-each.md) or (if there is a need to "remember" information from one element to the next) using [`xsl:iterate`](xsl-iterate.md).
--   Perform grouping of the document contents using [`xsl:for-each-group`](xsl-for-each-group.md). Saxon only has limited ability to do streamed grouping, but simple cases should work. It is necessary to use one of the attributes `group-adjacent`, `group-starting-with`, or `group-ending-with`, and to use the new XSLT 3.0 binding variables for current group and current-grouping-key, rather than the XSLT 2.0 function.
+-   Вычислить совокупность, например, общее или среднее значение (см. пример ниже).
+-   Инициировать обработку документа с использованием правил шаблонов, вызывая [`xsl:apply-templates`](xsl-apply-templates.md) с использованием потокового режима.
+-   Итерация содержимого документа с помощью [`xsl:for-each`](xsl-for-each.md) или (если необходимо "запомнить" информацию от одного элемента к другому) с помощью [`xsl:iterate`](xsl-iterate.md).
+-   Выполнить группировку содержимого документа с помощью [`xsl:for-each-group`](xsl-for-each-group.md). Saxon имеет лишь ограниченную возможность выполнять потоковую группировку, но простые случаи должны работать. Необходимо использовать один из атрибутов `group-adjacent`, `group-starting-with` или `group-ending-with`, а также использовать новые переменные привязки XSLT 3.0 для current group и current-grouping-key, а не функции XSLT 2.0.
 
 ## Примеры
 
 ### Пример 1
 
-A simple example:
+Простой пример:
 
 ```xslt
 <xsl:stream href="transactions.xml">
@@ -63,7 +63,7 @@ A simple example:
 
 ### Пример 2
 
-See further [examples](http://www.w3.org/TR/xslt-30/#stream-examples) in the W3C specification; these examples all work with Saxon 9.5 onwards.
+См. далее [примеры](http://www.w3.org/TR/xslt-30/#stream-examples) в спецификации W3C; все эти примеры работают с Saxon 9.5 и далее.
 
 ## Ссылки
 

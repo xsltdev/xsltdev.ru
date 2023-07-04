@@ -1,38 +1,38 @@
 ---
-description: Used to construct arbitrary sequences. It may select any sequence of nodes and/or atomic values, and essentially adds these to the result sequence
+description: Используется для построения произвольных последовательностей. Он может выбирать любую последовательность узлов и/или атомарных значений и, по сути, добавляет их к результирующей последовательности
 ---
 
 # xsl:sequence
 
-Used to construct arbitrary sequences. It may select any sequence of nodes and/or atomic values, and essentially adds these to the result sequence.
+Используется для построения произвольных последовательностей. Он может выбирать любую последовательность узлов и/или атомарных значений и, по сути, добавляет их к результирующей последовательности.
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+_Доступен в XSLT 2.0 и более поздних версиях. Доступен во всех изданиях Saxon._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
 `select?`
 : _expression_
-: Specifies the input. Mandatory attribute in XSLT 2.0, but in XSLT 3.0 (and implemented since Saxon 9.5) the input may be specified either by a `select` attribute, or by the enclosed sequence constructor.
+: Определяет вход. Обязательный атрибут в XSLT 2.0, но в XSLT 3.0 (и реализованном начиная с Saxon 9.5) вход может быть указан либо атрибутом `select`, либо вложенным конструктором последовательности.
 
 ## Подробности
 
-The `xsl:sequence` element may be used to produce any sequence of nodes and/or atomic values. These are included in the result sequence directly. Unlike [`xsl:copy-of`](xsl-copy-of.md), no copy is made.
+Элемент `xsl:sequence` может использоваться для создания любой последовательности узлов и/или атомарных значений. Они включаются в последовательность результатов напрямую. В отличие от [`xsl:copy-of`](xsl-copy-of.md), копирование не производится.
 
-The most common use is to return a result from a function (see Example 1).
+Наиболее распространенное использование - возврат результата из функции (см. пример 1).
 
-There are two other interesting usage scenarios. The first is copying atomic values into a tree (see Example 2). The second, more important, is constructing a sequence-valued variable (see Example 3). A variable is sequence-valued if the variable binding element (e.g. [`xsl:variable`](xsl-variable.md)) has non-empty content, an as attribute, and no `select` attribute.
+Есть еще два интересных сценария использования. Первый - это копирование атомарных значений в дерево (см. пример 2). Второй, более важный, - построение переменной с порядковым значением (см. пример 3). Переменная является последовательно-оценочной, если элемент привязки переменной (например, [`xsl:variable`](xsl-variable.md)) имеет непустое содержимое, атрибут as и не имеет атрибута `select`.
 
-If nodes are constructed within a sequence-valued variable, they will be _parentless_. See Example 4 for an example of a sequence-valued variable containing parentless nodes.
+Если узлы строятся внутри переменной с порядковым значением, они будут _без_ родителей. Пример переменной с последовательным значением, содержащей узлы без родителей, приведен в примере 4.
 
 ## Примеры
 
 ### Пример 1
 
-Returning a result from a function:
+Возвращение результата из функции:
 
 ```xslt
 <xsl:function name="f:increment" as="xs:integer">
@@ -43,7 +43,7 @@ Returning a result from a function:
 
 ### Пример 2
 
-Copying atomic values into a tree:
+Копирование атомарных значений в дерево:
 
 ```xslt
 <e>
@@ -53,11 +53,11 @@ Copying atomic values into a tree:
 </e>
 ```
 
-This produces the output `<e>1 2 3 4 5<br/>6 7 8 9 10</e>`.
+Это приводит к выводу `<e>1 2 3 4 5<br/>6 7 8 9 10</e>`.
 
 ### Пример 3
 
-Constructing a sequence-valued variable:
+Конструирование переменной с последовательным значением:
 
 ```xslt
 <xsl:variable name="seq" as="xs:integer *">
@@ -67,11 +67,11 @@ Constructing a sequence-valued variable:
 </xsl:variable>
 ```
 
-This produces the sequence (`1, 4, 9, 16, 25`) as the value of the variable.
+В качестве значения переменной получается последовательность (`1, 4, 9, 16, 25`).
 
 ### Пример 4
 
-Creating a variable whose value is a sequence of three parentless attributes:
+Создание переменной, значением которой является последовательность из трех атрибутов без родителей:
 
 ```xslt
 <xsl:variable name="seq" as="attribute() *">
@@ -81,7 +81,7 @@ Creating a variable whose value is a sequence of three parentless attributes:
 </xsl:variable>
 ```
 
-It is quite legitimate to have two attributes in the sequence with the same name; there is no conflict until an attempt is made to add them both to the same element. The attributes can be added to an element by using `<xsl:copy-of select="$seq"/>` within an [`xsl:element`](xsl-element.md) instruction or within a literal result element. At this stage the usual rule applies: if there are duplicate attributes, the last one wins.
+Вполне законно иметь два атрибута в последовательности с одинаковыми именами; конфликта не возникает до тех пор, пока не будет сделана попытка добавить их оба в один и тот же элемент. Атрибуты могут быть добавлены в элемент с помощью `<xsl:copy-of select="$seq"/>` в инструкции [`xsl:element`](xsl-element.md) или в буквальном элементе результата. На этом этапе действует обычное правило: если атрибуты дублируются, побеждает последний.
 
 ## Ссылки
 

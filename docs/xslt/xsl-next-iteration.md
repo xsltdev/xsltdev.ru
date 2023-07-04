@@ -1,23 +1,23 @@
 ---
-description: The xsl next-iteration instruction occurs within xsl iterate
+description: Инструкция xsl next-iteration выполняется внутри xsl iterate
 ---
 
 # xsl:next-iteration
 
-The **`xsl:next-iteration`** instruction occurs within [`xsl:iterate`](xsl-iterate.md). The contents are a set of [`xsl:with-param`](xsl-with-param.md) elements defining the values of the iteration parameters to be used on the next iteration.
+Инструкция **`xsl:next-iteration`** встречается внутри [`xsl:iterate`](xsl-iterate.md). Ее содержимое представляет собой набор элементов [`xsl:with-param`](xsl-with-param.md), определяющих значения параметров итерации, которые будут использоваться на следующей итерации.
 
-The `xsl:next-iteration` instruction must not be followed by further instructions, though it can occur as the last thing in a branch of a conditional. It must appear lexically within the `xsl:iterate` instruction (and not, for example, in a called template or function).
+За инструкцией `xsl:next-iteration` не должны следовать дальнейшие инструкции, хотя она может встречаться как последняя в ветви условного элемента. Она должна лексически появляться внутри инструкции `xsl:iterate` (а не, например, в вызываемом шаблоне или функции).
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-PE and Saxon-EE since Saxon 9.6._
+_Доступно в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех изданиях. Реализовано в Saxon-PE и Saxon-EE начиная с Saxon 9.6._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:with-param`](xsl-with-param.md)\* )
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
--   **Element has no attributes**
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
+-   **Элемент не имеет атрибутов**
 
 ## Подробности
 
-For details see [`xsl:iterate`](xsl-iterate.md).
+Подробности смотрите в [`xsl:iterate`](xsl-iterate.md).
 
 ## Ссылки
 

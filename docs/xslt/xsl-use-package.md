@@ -1,12 +1,12 @@
 ---
-description: Used to allow components of one package to be referenced within another
+description: Используется для того, чтобы на компоненты одного пакета можно было ссылаться внутри другого
 ---
 
 # xsl:use-package
 
-Used to allow components of one package to be referenced within another.
+Используется для того, чтобы на компоненты одного пакета можно было ссылаться внутри другого.
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-PE and Saxon-EE since Saxon 9.7._
+_Доступно в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех редакциях. Реализовано в Saxon-PE и Saxon-EE начиная с Saxon 9.7._
 
 -   **Категория**: declaration
 -   **Содержимое**: ( [`xsl:accept`](xsl-accept.md) | [`xsl:override`](xsl-override.md) )\*
@@ -16,19 +16,19 @@ _Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented i
 
 **`name`**
 : _uri_
-: The name of the package to be used, as an absolute URI.
+: Имя пакета, который будет использоваться, в виде абсолютного URI.
 
 `package-version?`
 : _string_
-: The version of the named package to be used. The default is `*`, which matches any version.
+: Версия именованного пакета, которая будет использоваться. По умолчанию используется `*`, которая соответствует любой версии.
 
 ## Заметки по реализации Saxon
 
-New in XSLT 3.0, and first fully implemented in Saxon 9.7.
+Новое в XSLT 3.0 и впервые полностью реализовано в Saxon 9.7.
 
-The rules for matching of package version numbers are more completely implemented in Saxon 9.8. If the configuration file defines multiple versions of the same package, the first one that satisfied the required version specified in the `xsl:use-package` declaration is chosen.
+Правила согласования номеров версий пакетов более полно реализованы в Saxon 9.8. Если в конфигурационном файле определено несколько версий одного и того же пакета, выбирается первая, удовлетворяющая требуемой версии, указанной в объявлении `xsl:use-package`.
 
-In Saxon-HE, the requested package must already exist in compiled form in memory. With Saxon-PE and Saxon-EE it can be loaded from a SEF file in filestore (or accessible from the web via a URI).
+В Saxon-HE запрашиваемый пакет должен уже существовать в памяти в скомпилированном виде. В Saxon-PE и Saxon-EE он может быть загружен из SEF-файла в хранилище файлов (или доступен из Интернета через URI).
 
 ## Ссылки
 

@@ -8,9 +8,9 @@ description: Используется для итерации последова
 
 _Доступен в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех редакциях. Реализован в Saxon-PE и Saxon-EE начиная с Saxon 9.6._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:param`](xsl-param.md)\* , [`xsl:on-completion`](xsl-on-completion.md)? , _sequence-constructor_ )
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 

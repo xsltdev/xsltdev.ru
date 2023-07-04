@@ -1,162 +1,162 @@
 ---
-description: Used to direct output to a secondary output destination
+description: Используется для направления вывода на вторичное место назначения вывода
 ---
 
 # xsl:result-document
 
-Used to direct output to a secondary output destination.
+Используется для направления вывода на вторичное место назначения вывода.
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+_Доступен в XSLT 2.0 и более поздних версиях. Доступно во всех редакциях Saxon._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
 `format?`
 : _{ eqname }_
-: If present, it gives the name of an [`xsl:output`](xsl-output.md) element that describes the serialization format for this output document; if absent, the unnamed `xsl:output` declaration is used.
+: Если присутствует, то указывает имя элемента [`xsl:output`](xsl-output.md), который описывает формат сериализации для данного выходного документа; если отсутствует, то используется неименованное объявление `xsl:output`.
 
 `href?`
 : _{ uri }_
-: The URI for the result document. If this is a relative URI, it is interpreted relative to the base output URI. The base output URI is the systemID of the result object supplied as the destination for the transformation, or if you are using the command line, the value of the -o flag. If the href attribute is omitted, the document is written to the location identified by the base output URI: this will only work if all the output produced by the stylesheet is within the scope of an `xsl:result-document` instruction.
+: URI для результирующего документа. Если это относительный URI, он интерпретируется относительно базового выходного URI. Базовый выходной URI - это системный идентификатор объекта результата, указанный в качестве назначения для преобразования, или, если вы используете командную строку, значение флага -o. Если атрибут href опущен, документ записывается в местоположение, определенное базовым URI вывода: это работает только в том случае, если все выходные данные, созданные таблицей стилей, находятся в области действия инструкции `xsl:result-document`.
 
-: If the base output URI is not known, and the supplied `href` is not absolute, then this results in a failure.
+: Если базовый выходной URI неизвестен, а заданный `href` не является абсолютным, то это приводит к ошибке.
 
-: This base output URI must be a writable location. Usually it will therefore be a URI that uses the "file:" scheme. However, Saxon attempts to open a connection whatever URI scheme is used, and it should therefore work with any URI where the Java VM has the capability to open a writable connection. Users have reported success in using "ftp:" and "mailto:" URIs.
+: Базовый выходной URI должен быть доступным для записи местом. Обычно это URI, использующий схему "file:". Однако Saxon пытается открыть соединение, какая бы схема URI ни использовалась, и поэтому он должен работать с любым URI, где Java VM имеет возможность открыть записываемое соединение. Пользователи сообщали об успешном использовании URI "ftp:" и "mailto:".
 
-: If the configuration option `Feature.ALLOW-EXTERNAL-FUNCTIONS` is set, then for security reasons use of the `xsl:result-document` instruction with the `href` attribute is disallowed.
+: Если установлен параметр конфигурации `Feature.ALLOW-EXTERNAL-FUNCTIONS`, то в целях безопасности использование инструкции `xsl:result-document` с атрибутом `href` запрещено.
 
 `validation?`
 : `"strict" | "lax" | "preserve" | "strip"`
-: Requires Saxon-PE or Saxon-EE.
+: Требуется Saxon-PE или Saxon-EE.
 
 `type?`
 : _eqname_
-: Determines what happens to any type annotations on element or attribute nodes. Requires Saxon-PE or Saxon-EE.
+: Определяет, что происходит с любыми аннотациями типов на узлах элементов или атрибутов. Требуется Saxon-PE или Saxon-EE.
 
 `method?`
 : `{ "xml" | "html" | "xhtml" | "text" | "json" | "adaptive" | eqname }`
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `allow-duplicate-names?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `build-tree?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `byte-order-mark?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `cdata-section-elements?`
 : _{ eqnames }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `doctype-public?`
 : _{ string }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `doctype-system?`
 : _{ string }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `encoding?`
 : _{ string }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `escape-uri-attributes?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `html-version?`
 : _{ decimal }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `include-content-type?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `indent?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `item-separator?`
 : _{ string }_
-: Not available in XSLT.
+: Недоступно в XSLT.
 
 `json-node-output-method?`
 : `{ "xml" | "html" | "xhtml" | "text" | eqname }`
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `media-type?`
 : _{ string }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `normalization-form?`
 : `{ "NFC" | "NFD" | "NFKC" | "NFKD" | "fully-normalized" | "none" | nmtoken }`
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `omit-xml-declaration?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `parameter-document?`
 : _{ uri }_
-: New in XSLT 3.0. Not implemented in Saxon 9.7. Allows serialization to be configured in an external document.
+: Новое в XSLT 3.0. Не реализовано в Saxon 9.7. Позволяет настраивать сериализацию во внешнем документе.
 
 `standalone?`
 : `{ boolean | "omit" }`
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `suppress-indentation?`
 : _{ eqnames }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `undeclare-prefixes?`
 : _{ boolean }_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `use-character-maps?`
 : _eqnames_
-: Serialization attribute, see Details for more information.
+: Атрибут сериализации, для получения дополнительной информации см. раздел Подробности.
 
 `output-version?`
 : _{ nmtoken }_
-: Overrides the `version` attribute specified on the output definition. Serialization attribute, see Details for more information.
+: Переопределяет атрибут `version`, указанный в определении вывода. Атрибут сериализации, более подробную информацию смотрите в разделе Подробности.
 
 `saxon:asynchronous?`
 : _boolean_
-: The default for Saxon-EE is `yes`, which causes the instruction to be evaluated in a separate thread, if there is a spare thread available (the maximum number of threads used is configurable using `Feature.RESULT_DOCUMENT_THREADS`). Use `no` to suppress multi-threading. Asynchronous processing of `xsl:result-document` is automatically suppressed if tracing (using a `TraceListener`) is enabled. For details see `saxon:asynchronous` and notes below.
+: По умолчанию для Saxon-EE используется `yes`, что заставляет инструкцию оцениваться в отдельном потоке, если есть свободный поток (максимальное количество используемых потоков настраивается с помощью `Feature.RESULT_DOCUMENT_THREADS`). Используйте `no` для подавления многопоточности. Асинхронная обработка `xsl:result-document` автоматически подавляется, если включена трассировка (с помощью `TraceListener`). Подробности см. в `saxon:asynchronous` и примечаниях ниже.
 
 ## Заметки по реализации Saxon
 
-Since Saxon 9.5, the `xsl:result-document` instruction in Saxon-EE is asynchronous. That is, the code to output the result document runs in a separate thread, in parallel with other processing. The maximum number of threads used by `xsl:result-document` instructions is limited by the configuration option `Feature.RESULT_DOCUMENT_THREADS` which defaults to the number of processors available to the Java VM; setting this to zero or one will suppress multithreading. Setting `Feature.ALLOW_MULTITHREADING` to false has the same effect. (This can be useful when debugging, because otherwise the output from `xsl:message` and `fn:trace()` can be very confusing).
+Начиная с версии Saxon 9.5, инструкция `xsl:result-document` в Saxon-EE является асинхронной. То есть код для вывода результирующего документа выполняется в отдельном потоке, параллельно с другими процессами. Максимальное количество потоков, используемых инструкциями `xsl:result-document`, ограничено параметром конфигурации `Feature.RESULT_DOCUMENT_THREADS`, который по умолчанию равен количеству процессоров, доступных Java VM; установка этого параметра в ноль или единицу подавляет многопоточность. Установка `Feature.ALLOW_MULTITHREADING` в false имеет тот же эффект. (Это может быть полезно при отладке, поскольку в противном случае вывод `xsl:message` и `fn:trace()` может быть очень запутанным).
 
-Asynchrony can also potentially cause problems if the code calls extension functions that have side-effects. Multi-threading can therefore be controlled, if required, using the `saxon:asynchronous` attribute on the `xsl:result-document` instruction: use `saxon:asynchronous="no"` to suppress multi-threading. Asynchronous processing of `xsl:result-document` is automatically suppressed if tracing (using a `TraceListener`) is enabled.
+Асинхронность также потенциально может вызвать проблемы, если код вызывает функции расширения, которые имеют побочные эффекты. Поэтому при необходимости многопоточность можно контролировать с помощью атрибута `saxon:asynchronous` инструкции `xsl:result-document`: используйте `saxon:asynchronous="no"` для подавления многопоточности. Асинхронная обработка `xsl:result-document` автоматически подавляется, если включена трассировка (с помощью `TraceListener`).
 
-The `xsl:result-document` instruction may also take the extension serialization parameter `saxon:indent-spaces`. This attribute may be an AVT, so the values can be decided at run-time. Any values specified on the `xsl:result-document` instruction override the values specified on the `xsl:output` declaration.
+Инструкция `xsl:result-document` может также принимать параметр сериализации расширения `saxon:indent-spaces`. Этот атрибут может быть AVT, так что значения могут быть определены во время выполнения. Любые значения, указанные в инструкции `xsl:result-document`, переопределяют значения, указанные в объявлении `xsl:output`.
 
-The new XSLT 3.0 attribute `parameter-document` is first implemented in Saxon 9.8.
+Новый атрибут XSLT 3.0 `parameter-document` впервые реализован в Saxon 9.8.
 
-There is a change in Saxon 9.9 regarding the way in which an `xsl:result-document` instruction with no `href` attribute is handled. In previous releases Saxon attempted to reuse the output stream established for the primary output of the transformation. The new XSLT 3.0 options (such as raw output) make this difficult, and possibly non-conformant. The new model is therefore that the `href` attribute simply defaults to the base output URI, and is otherwise handled in the same way as any other call on `xsl:result-document`. This means that when no base output URI is supplied, this case will now cause a failure. It also means that when a user written result document resolver is in use, it will be called to handle this case with the base output URI supplied as the URI argument. For more information, see Resolving the URIs of Output Files.
+В Saxon 9.9 есть изменение в том, как обрабатывается инструкция `xsl:result-document` без атрибута `href`. В предыдущих выпусках Saxon пытался повторно использовать поток вывода, созданный для первичного вывода трансформации. Новые опции XSLT 3.0 (такие как необработанный вывод) делают это сложным и, возможно, несоответствующим требованиям. Поэтому новая модель заключается в том, что атрибут `href` просто устанавливается по умолчанию на базовый выходной URI, а в остальном обрабатывается так же, как и любой другой вызов `xsl:result-document`. Это означает, что если не указан базовый выходной URI, то в этом случае произойдет сбой. Это также означает, что если используется пользовательский преобразователь результирующего документа, он будет вызван для обработки этого случая с базовым выходным URI, предоставленным в качестве аргумента URI. Для получения дополнительной информации см. раздел Разрешение URI выходных файлов.
 
 ## Подробности
 
-The `xsl:result-document` element was introduced in XSLT 2.0, obsoleting the previous extension element `saxon6:output` (which is reinstated in Saxon 9.9 as a synonym for `xsl:result-document` since legacy stylesheets still use it).
+Элемент `xsl:result-document` был введен в XSLT 2.0, заменив предыдущий элемент расширения `saxon6:output` (который был восстановлен в Saxon 9.9 как синоним `xsl:result-document`, поскольку устаревшие таблицы стилей все еще используют его).
 
-The destination of the result document can be altered programmatically as described in Resolving the URIs of Output Files. In other cases the document is serialized and written to the file identified by the URI in the `href` attribute, resolved if it is relative against the base output URI for the transformation (which defaults to the destination of the principal output document). The destination must use the `file:/` URI scheme. Any previous file at this location is overwritten. If the transformation fails with a dynamic error, the content of any output files is undefined (no attempt is made to reset them to their original state).
+Назначение результирующего документа может быть изменено программно, как описано в разделе Разрешение URI выходных файлов. В других случаях документ сериализуется и записывается в файл, идентифицированный URI в атрибуте `href`, разрешенный, если он является относительным по отношению к базовому выходному URI для трансформации (который по умолчанию является местом назначения основного выходного документа). Место назначения должно использовать схему URI `file:/`. Любой предыдущий файл в этом месте перезаписывается. Если преобразование завершается с динамической ошибкой, содержимое всех выходных файлов не определяется (не предпринимается попыток вернуть их в исходное состояние).
 
-The serialization attributes `method`, `allow-duplicate-names`, `build-tree`, `byte-order-mark`, `cdata-section-elements`, `doctype-public`, `doctype-system`, `encoding`, `escape-uri-attributes`, `html-version`, `include-content-type`, `indent`, `item-separator`, `json-node-output-method`, `media-type`, `normalization-form`, `omit-xml-declaration`, `standalone`, `suppress-indentation`, `undeclare-prefixes`, `use-character-maps`, and `output-version` may be used to override attributes defined in an output definition. For full definitions of these attributes, see the corresponding [`xsl:output`](xsl-output.md) element documentation.
+Атрибуты сериализации `method`, `allow-duplicate-names`, `build-tree`, `byte-order-mark`, `cdata-section-elements`, `doctype-public`, `doctype-system`, `encoding`, `escape-uri-attributes`, `html-version`, `include-content-type`, `indent`, `item-separator`, `json-node-output-method`, `media-type`, `normalization-form`, `omit-xml-declaration`, `standalone`, `uppress-indentation`, `undeclare-prefixes`, `use-character-maps` и `output-version` могут быть использованы для переопределения атрибутов, определенных в определении вывода. Полные определения этих атрибутов см. в документации к соответствующему элементу [`xsl:output`](xsl-output.md).
 
-Except for `use-character-maps`, any of these serialization attributes may be an AVT, so the values can be decided at run-time. For any of these attributes that is present on the `xsl:result-document` instruction, the effective value of the attribute overrides or supplements the corresponding value from the output definition. In the case of `cdata-section-elements` and `suppress-indentation`, the value of the serialization parameter is the union of the expanded names of the elements named in this instruction and the elements named in the selected output definition. In the case of `use-character-maps`, the character maps referenced in this instruction supplement and take precedence over those defined in the output definition. In all other cases, values of serialization attributes on the `xsl:result-document` instruction take precedence.
+За исключением `use-character-maps`, любой из этих атрибутов сериализации может быть AVT, так что значения могут быть определены во время выполнения. Для любого из этих атрибутов, который присутствует в инструкции `xsl:result-document`, эффективное значение атрибута переопределяет или дополняет соответствующее значение из определения вывода. В случае `cdata-section-elements` и `uppress-indentation`, значение параметра сериализации является объединением расширенных имен элементов, названных в этой инструкции, и элементов, названных в выбранном определении вывода. В случае `use-character-maps`, карты символов, на которые ссылается эта инструкция, дополняют и имеют приоритет над картами, определенными в определении вывода. Во всех остальных случаях приоритет имеют значения атрибутов сериализации в инструкции `xsl:result-document`.
 
 ## Примеры
 
-In the following, the body of the preface is directed to a file called `preface.html` (prefixed by a constant that supplies the directory name). Output then reverts to the previous destination, where an HTML hyperlink to the newly created file is inserted.
+В следующем примере тело предисловия направляется в файл под названием `preface.html` (с префиксом в виде константы, задающей имя каталога). Затем вывод возвращается к предыдущему месту назначения, где вставляется гиперссылка HTML на вновь созданный файл.
 
 ```xslt
 <xsl:template match="preface">

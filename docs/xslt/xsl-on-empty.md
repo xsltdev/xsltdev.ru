@@ -1,20 +1,20 @@
 ---
-description: Used to allow conditional content construction to be made streamable
+description: Используется для того, чтобы условное построение контента можно было сделать потоковым
 ---
 
 # xsl:on-empty
 
-Used to allow conditional content construction to be made streamable. Outputs the enclosed content only if the containing sequence generates no "ordinary" content.
+Используется для того, чтобы сделать потоковой конструкцию условного содержимого. Выводит вложенное содержимое только в том случае, если содержащая последовательность не генерирует "обычного" содержимого.
 
-If the instruction appears in a sequence constructor, it must come after all other instructions.
+Если эта инструкция появляется в конструкторе последовательности, она должна идти после всех остальных инструкций.
 
-Although intended primarily to make streaming applications easier to write, the instruction can also be handy irrespective of streaming to avoid evaluating complex conditions more than once.
+Хотя эта инструкция предназначена в первую очередь для облегчения написания потоковых приложений, она может быть полезна и независимо от потоковой обработки, чтобы избежать неоднократной оценки сложных условий.
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-PE and Saxon-EE since Saxon 9.7._
+_Доступна в XSLT 3.0. Начиная с версии Saxon 9.8, доступна во всех изданиях. Реализована в Saxon-PE и Saxon-EE начиная с Saxon 9.7._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
@@ -23,11 +23,11 @@ _Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented i
 
 ## Заметки по реализации Saxon
 
-New in XSLT 3.0, and implemented since Saxon 9.7.
+Новый в XSLT 3.0 и реализованный начиная с Saxon 9.7.
 
 ## Примеры
 
-The following code generates substitute text when there is no content, however it is not guaranteed-streamable because it processes child `item-for-sale` elements more than once:
+Следующий код генерирует замещающий текст при отсутствии содержимого, однако он не является гарантированно-потоковым, поскольку обрабатывает дочерние элементы `item-for-sale` более одного раза:
 
 ```xslt
 <xsl:apply-templates select="item-for-sale"/>
@@ -36,7 +36,7 @@ The following code generates substitute text when there is no content, however i
 </xsl:if>
 ```
 
-To make this streamable, it can be rewritten using the `xsl:on-empty` instruction:
+Чтобы сделать его потоковым, его можно переписать с помощью инструкции `xsl:on-empty`:
 
 ```xslt
 <xsl:sequence>

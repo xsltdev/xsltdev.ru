@@ -1,12 +1,12 @@
 ---
-description: Defines a set of stylesheet modules that can be compiled as a unit, independently of other packages
+description: Определяет набор модулей таблиц стилей, которые могут быть скомпилированы как единое целое, независимо от других пакетов
 ---
 
 # xsl:package
 
-Defines a set of stylesheet modules that can be compiled as a unit, independently of other packages.
+Определяет набор модулей таблиц стилей, которые могут быть скомпилированы как единое целое, независимо от других пакетов.
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-PE and Saxon-EE since Saxon 9.7._
+_Доступно в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех редакциях. Реализовано в Saxon-PE и Saxon-EE начиная с Saxon 9.7._
 
 -   **Содержимое**: ( ( [`xsl:expose`](xsl-expose.md) | _declarations_ )\* )
 -   **Допустимые родительские элементы**: None
@@ -18,23 +18,23 @@ _Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented i
 
 `name?`
 : _uri_
-: The name of the package, as an absolute URI, to be used by [`xsl:use-package`](xsl-use-package.md) declarations.
+: Имя пакета в виде абсолютного URI, которое будет использоваться в объявлениях [`xsl:use-package`](xsl-use-package.md).
 
 `package-version?`
 : _string_
-: Version identifier, used to distinguish between different versions of a package.
+: Идентификатор версии, используемый для различения разных версий пакета.
 
 **`version`**
 : _decimal_
-: Indicates the version of XSLT to which the package manifest conforms.
+: Указывает версию XSLT, которой соответствует манифест пакета.
 
 `input-type-annotations?`
 : `"preserve" | "strip" | "unspecified"`
-: Used to request stripping of type annotations. The default is `unspecified`.
+: Используется для запроса удаления аннотаций типов. По умолчанию используется `unspecified`.
 
 `declared-modes?`
 : _boolean_
-: Determines whether of not modes that are referenced within the package must be explicitly declared. The default is `yes`.
+: Определяет, должны ли режимы, на которые ссылаются внутри пакета, быть явно объявлены. По умолчанию это `yes`.
 
 `default-mode?`
 : _eqname_ | `"#unnamed"`
@@ -62,13 +62,13 @@ _Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented i
 
 ## Заметки по реализации Saxon
 
-Packages are new in XSLT 3.0, and first fully implemented in Saxon 9.7.
+Пакеты появились в XSLT 3.0 и впервые были полностью реализованы в Saxon 9.7.
 
-Saxon 9.8 introduces new capabilities for defining packages in the configuration file. The configuration file acts as a catalog, mapping package names and versions to the actual locations of source XSLT code for the package, or exported SEF files containing the compiled package.
+В Saxon 9.8 появились новые возможности для определения пакетов в конфигурационном файле. Конфигурационный файл действует как каталог, сопоставляя имена и версии пакетов с фактическим расположением исходного кода XSLT для пакета или экспортированных SEF-файлов, содержащих скомпилированный пакет.
 
-Alternatively, it is possible to resolve package names and versions programmatically by setting up a `PackageLibrary`.
+В качестве альтернативы можно программно определить имена и версии пакетов, создав библиотеку `PackageLibrary`.
 
-Packages are available in all Saxon editions. However, only Saxon-EE can be used to export a package in compiled (SEF) form to filestore, and only Saxon-PE or -EE can be used to load a compiled package from filestore. With Saxon-HE, packages must be compiled from source code every time they are used.
+Пакеты доступны во всех редакциях Saxon. Однако, только Saxon-EE может быть использован для экспорта пакета в скомпилированном виде (SEF) в хранилище файлов, и только Saxon-PE или -EE может быть использован для загрузки скомпилированного пакета из хранилища. В Saxon-HE пакеты должны компилироваться из исходного кода каждый раз, когда они используются.
 
 ## Ссылки
 

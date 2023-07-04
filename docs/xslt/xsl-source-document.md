@@ -1,14 +1,14 @@
 ---
-description: Used to initiate streamed or unstreamed processing of a source document
+description: Используется для инициирования потоковой или непотоковой обработки исходного документа
 ---
 
 # xsl:source-document
 
-Used to initiate streamed or unstreamed processing of a source document.
+Используется для инициирования потоковой или непотоковой обработки исходного документа.
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-EE since Saxon 9.7._
+Доступен в XSLT 3.0. Начиная с Saxon 9.8, доступен во всех редакциях. Реализована в Saxon-EE начиная с Saxon 9.7.\_
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: _sequence-constructor_
 -   _Permitted parent elements_: any XSLT element whose content model is _sequence-constructor_; any literal result element
 
@@ -16,56 +16,56 @@ _Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented i
 
 **`href`**
 : _{ uri }_
-: The URI of a source document. It can be written as an attribute value template if the URI is not known statically.
+: URI исходного документа. Он может быть записан как шаблон значения атрибута, если URI не известен статически.
 
 `streamable?`
 : _boolean_
-: Used to request streamed processing (the default is `no`).
+: Используется для запроса потоковой обработки (по умолчанию `no`).
 
 `use-accumulators?`
 : _tokens_
-: Defines the set of accumulators that are applicable to the document.
+: Определяет набор аккумуляторов, которые применимы к данному документу.
 
 `validation?`
 : `"strict" | "lax" | "preserve" | "strip"`
-: Requests strict or lax validation of the contents of the document against the element declaration of its top-level element.
+: Запрашивает строгую или нестрогую проверку содержимого документа на соответствие декларации элемента его верхнего уровня.
 
 `type?`
 : _eqname_
-: Requests validation of the source document against a specified XSD type. The value will typically be a user-defined complex type defined in an imported schema.
+: Запрашивает проверку исходного документа на соответствие указанному типу XSD. Значение обычно представляет собой определяемый пользователем сложный тип, определенный в импортированной схеме.
 
 `saxon:line-numbering?`
 : _boolean_
-: Used to enable line numbering for the document being read. For details see `saxon:line-numbering`.
+: Используется для включения нумерации строк для читаемого документа. Подробнее см. в `saxon:line-numbering`.
 
 `saxon:strip-space?`
 : `"#all" | "#none" | "#ignorable" | "#default"`
-: Used to specify whitespace stripping: `#all` strips all whitespace text nodes; `#none` means no whitespace stripping; `#ignorable` strips whitespace in elements declared as having element-only content; and `#default` follows the rules in `xsl:strip-space/xsl:preserve-space` declarations.
+: Используется для указания удаления пробелов: `#all` удаляет все пробелы в текстовых узлах; `#none` означает отсутствие удаления пробелов; `#ignorable` удаляет пробелы в элементах, объявленных как имеющие содержимое только для элементов; и `#default` следует правилам в объявлениях `xsl:strip-space/xsl:preserve-space`.
 
 ## Заметки по реализации Saxon
 
-The `xsl:source-document` instruction (used with the attribute `streamable="yes"`) replaces the [`xsl:stream`](xsl-stream.md) instruction from earlier drafts of the XSLT 3.0 specification. It first became available since Saxon 9.7.0.8, in Saxon-EE only (with XSLT 3.0 enabled), and becomes fully available in all Saxon editions from 9.8 (but streaming requires Saxon-EE).
+Инструкция `xsl:source-document` (используется с атрибутом `streamable="yes"`) заменяет инструкцию [`xsl:stream`](xsl-stream.md) из ранних проектов спецификации XSLT 3.0. Впервые она стала доступна с версии Saxon 9.7.0.8, только в Saxon-EE (с включенным XSLT 3.0), и становится полностью доступной во всех редакциях Saxon начиная с версии 9.8 (но для потоковой передачи требуется Saxon-EE).
 
-If streaming is requested and the expression cannot be evaluated in streaming mode, execution fails, unless the configuration option `Feature.STREAMING_FALLBACK` is set, in which case it is executed in non-streaming mode, after issuing a warning.
+Если запрошена потоковая передача, а выражение не может быть оценено в потоковом режиме, выполнение завершается неудачей, если только не установлен параметр конфигурации `Feature.STREAMING_FALLBACK`, в этом случае оно выполняется в непотоковом режиме, после выдачи предупреждения.
 
 ## Подробности
 
-The body of the instruction is a sequence constructor, which is evaluated with the root node of the selected document as the context node. For streaming to work, this must be written as a streamable sequence constructor. Expressed very informally, this means it must only make downward selections in the document, and no instruction or expression may make more than one downward selection. The [examples](http://www.w3.org/TR/xslt-30/#stream-examples) in the W3C specification illustrate some of the possibilities; these examples all work with Saxon.
+Тело инструкции представляет собой конструктор последовательности, который оценивается с корневым узлом выбранного документа в качестве контекстного узла. Чтобы потоковая передача работала, эта инструкция должна быть написана как потоковый конструктор последовательности. Выражаясь очень неформально, это означает, что он должен делать выборки в документе только вниз, и ни одна инструкция или выражение не могут делать более одной выборки вниз. Примеры [examples](http://www.w3.org/TR/xslt-30/#stream-examples) в спецификации W3C иллюстрируют некоторые из возможностей; все эти примеры работают с Saxon.
 
-Quite apart from its use with streaming, in comparison with the `doc` and `document` functions, the instruction gives more control, for example over schema validation and the use of accumulators.
+Помимо использования в потоковой передаче, по сравнению с функциями `doc` и `document`, инструкция дает больше контроля, например, над проверкой схемы и использованием аккумуляторов.
 
-Some of the things that the instruction might do are:
+Инструкция может выполнять следующие действия:
 
--   Compute an aggregate such as a total or average (see the example below).
--   Initiate processing of the document using template rules, by calling [`xsl:apply-templates`](xsl-apply-templates.md) using a streamable mode.
--   Iterate over the contents of the document using [`xsl:for-each`](xsl-for-each.md) or (if there is a need to "remember" information from one element to the next) using [`xsl:iterate`](xsl-iterate.md).
--   Perform grouping of the document contents using [`xsl:for-each-group`](xsl-for-each-group.md). Saxon only has limited ability to do streamed grouping, but simple cases should work. It is necessary to use one of the attributes `group-adjacent`, `group-starting-with`, or `group-ending-with`, and to use the new XSLT 3.0 binding variables for current group and current-grouping-key, rather than the XSLT 2.0 function.
+-   Вычислить агрегат, например, общее или среднее значение (см. пример ниже).
+-   Инициировать обработку документа с использованием правил шаблонов, вызывая [`xsl:apply-templates`](xsl-apply-templates.md) с использованием потокового режима.
+-   Итерация содержимого документа с помощью [`xsl:for-each`](xsl-for-each.md) или (если необходимо "запомнить" информацию от одного элемента к другому) с помощью [`xsl:iterate`](xsl-iterate.md).
+-   Выполнить группировку содержимого документа с помощью [`xsl:for-each-group`](xsl-for-each-group.md). Saxon имеет лишь ограниченную возможность выполнять потоковую группировку, но простые случаи должны работать. Необходимо использовать один из атрибутов `group-adjacent`, `group-starting-with` или `group-ending-with`, а также использовать новые переменные привязки XSLT 3.0 для current group и current-grouping-key, а не функции XSLT 2.0.
 
 ## Примеры
 
 ### Пример 1
 
-A simple example:
+Простой пример:
 
 ```xslt
 <xsl:source-document streamable="yes" href="transactions.xml">
@@ -75,7 +75,7 @@ A simple example:
 
 ### Пример 2
 
-See further [examples](http://www.w3.org/TR/xslt-30/#stream-examples) in the W3C specification; these examples all work with Saxon 9.5 onwards.
+См. далее [примеры](http://www.w3.org/TR/xslt-30/#stream-examples) в спецификации W3C; все эти примеры работают с Saxon 9.5 и далее.
 
 ## Ссылки
 

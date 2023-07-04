@@ -1,23 +1,23 @@
 ---
-description: Chooses the next template to execute
+description: Выбирает следующий шаблон для выполнения
 ---
 
 # xsl:next-match
 
-Chooses the next template to execute.
+Выбирает следующий шаблон для выполнения.
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+_Доступен в XSLT 2.0 и более поздних версиях. Доступен во всех изданиях Saxon._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:with-param`](xsl-with-param.md) | [`xsl:fallback`](xsl-fallback.md) )\*
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
--   **Element has no attributes**
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
+-   **Элемент не имеет атрибутов**
 
 ## Подробности
 
-The `xsl:next-match` instruction was introduced in XSLT 2.0. It is very similar to [`xsl:apply-imports`](xsl-apply-imports.md), but with a different algorithm for choosing the next template to execute. It chooses the template rule that matches the current node and that would have been chosen if the current template rule and all higher precedence/priority rules were not there.
+Инструкция `xsl:next-match` была введена в XSLT 2.0. Она очень похожа на [`xsl:apply-imports`](xsl-apply-imports.md), но с другим алгоритмом выбора следующего шаблона для выполнения. Он выбирает правило шаблона, которое соответствует текущему узлу и которое было бы выбрано, если бы не было текущего правила шаблона и всех правил с более высоким приоритетом/приоритетом.
 
-In practice `xsl:next-match` is nearly always preferable to `xsl:apply-imports` since the rules for using it are much more flexible and more intuitive.
+На практике `xsl:next-match` почти всегда предпочтительнее `xsl:apply-imports`, поскольку правила его использования гораздо более гибкие и интуитивно понятные.
 
 ## Ссылки
 

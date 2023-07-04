@@ -1,51 +1,51 @@
 ---
-description: In conjunction with xsl catch, the xsl try instruction allows recovery from dynamic errors occurring within the expression it wraps
+description: В сочетании с xsl catch инструкция xsl try позволяет восстанавливать динамические ошибки, возникающие в выражении, которое она оборачивает.
 ---
 
 # xsl:try
 
-In conjunction with [`xsl:catch`](xsl-catch.md), the **`xsl:try`** instruction allows recovery from dynamic errors occurring within the expression it wraps.
+В сочетании с [`xsl:catch`](xsl-catch.md) инструкция **`xsl:try`** позволяет восстанавливать динамические ошибки, возникающие в выражении, которое она оборачивает.
 
-_Available in XSLT 3.0. From Saxon 9.8, available in all editions. Implemented in Saxon-PE and Saxon-EE since Saxon 9.6._
+_Доступно в XSLT 3.0. Начиная с версии Saxon 9.8, доступна во всех редакциях. Реализована в Saxon-PE и Saxon-EE начиная с Saxon 9.6._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( _sequence-constructor_ , [`xsl:catch`](xsl-catch.md), ( [`xsl:catch`](xsl-catch.md) | [`xsl:fallback`](xsl-fallback.md) )\* )
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
 `select?`
 : _expression_
-: The expression to be evaluated by the instruction may be defined either by a `select` attribute, or by an enclosed sequence constructor.
+: Выражение, которое должно быть оценено инструкцией, может быть определено либо атрибутом `select`, либо вложенным конструктором последовательности.
 
 `rollback-output?`
 : _boolean_
-: The value `no` is used to relax the requirement to recover result trees when failures occur in the course of evaluating the `xsl:try` instruction. The default is `yes`. (This attribute had no effect prior to Saxon 9.9.)
+: Значение `no` используется для ослабления требования восстанавливать деревья результатов, когда происходят сбои в процессе оценки инструкции `xsl:try`. По умолчанию используется значение `yes`. (Этот атрибут не имел никакого значения до версии Saxon 9.9).
 
 ## Заметки по реализации Saxon
 
-Saxon 9.9 no longer ignores the value of the `rollback-output` attribute. If set to "`no`", when the instruction is evaluated in "push" mode, the output of `xsl:try` is not buffered, but is written directly to the result destination. If a dynamic error occurs, the relevant [`xsl:catch`](xsl-catch.md) is effective only if no output has yet been written to that destination.
+Saxon 9.9 больше не игнорирует значение атрибута `rollback-output`. Если установлено значение "`no`", то при оценке инструкции в режиме "push" вывод `xsl:try` не буферизируется, а записывается непосредственно в место назначения результата. Если возникает динамическая ошибка, то соответствующая [`xsl:catch`](xsl-catch.md) действует только в том случае, если вывод еще не был записан в это место назначения.
 
 ## Подробности
 
-It is possible to have more than one `xsl:catch` within an `xsl:try`; the first one that matches the error is used.
+Можно иметь более одного `xsl:catch` внутри `xsl:try`; используется первый, который соответствует ошибке.
 
-Within the `xsl:catch`, a number of variables are available in the namespace `http://www.w3.org/2005/xqt-errors`:
+Внутри `xsl:catch` доступен ряд переменных в пространстве имен `http://www.w3.org/2005/xqt-errors`:
 
--   `err:code` - the error code as a QName
--   `err:description` - the error description (error message)
--   `err:value` - the error object (if available)
--   `err:module` - the URI of the stylesheet module in which the error occurred
--   `err:line-number` - the line-number of the source stylesheet where the error occurred
--   `err:column-number` - for Saxon this will generally be unknown (-1)
+-   `err:code` - код ошибки в виде QName
+-   `err:description` - описание ошибки (сообщение об ошибке)
+-   `err:value` - объект ошибки (если доступен)
+-   `err:module` - URI модуля таблицы стилей, в котором произошла ошибка
+-   `err:line-number` - номер строки исходной таблицы стилей, в которой произошла ошибка
+-   `err:column-number` - для Saxon это обычно будет неизвестно (-1).
 
-The error can be re-thrown by using the `error()` function.
+Ошибка может быть повторно отброшена с помощью функции `error()`.
 
 ## Примеры
 
 ### Пример 1
 
-The following example shows how to recover from an error in evaluating an XPath expression (in this case, divide-by-zero):
+В следующем примере показано восстановление после ошибки при оценке выражения XPath (в данном случае деление на ноль):
 
 ```xslt
 <xsl:try select="salary div length-of-service">
@@ -55,7 +55,7 @@ The following example shows how to recover from an error in evaluating an XPath 
 
 ### Пример 2
 
-The following example shows how to recover from an error in evaluating a sequence of XSLT instructions (in this case, a validation error):
+Следующий пример показывает, как восстановиться после ошибки при оценке последовательности инструкций XSLT (в данном случае ошибка валидации):
 
 ```xslt
 <xsl:try>

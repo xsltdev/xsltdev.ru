@@ -1,16 +1,16 @@
 ---
-description: Used within an xsl analyze-string element to indicate the default action to be taken with substrings that do not match a regular expression
+description: Используется в элементе xsl analyze-string для указания действия по умолчанию, которое должно быть предпринято с подстроками, не соответствующими регулярному выражению.
 ---
 
 # xsl:non-matching-substring
 
-Used within an `xsl:analyze-string` element to indicate the default action to be taken with substrings that do not match a regular expression.
+Используется в элементе `xsl:analyze-string` для указания действия по умолчанию, которое будет выполняться с подстроками, не соответствующими регулярному выражению.
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+_Доступно в XSLT 2.0 и более поздних версиях. Доступно во всех изданиях Saxon._
 
 -   **Содержимое**: _sequence-constructor_
 -   **Допустимые родительские элементы**: [`xsl:analyze-string`](xsl-analyze-string.md)
--   **Element has no attributes**
+-   **Элемент не имеет атрибутов**
 
 ## Ссылки
 

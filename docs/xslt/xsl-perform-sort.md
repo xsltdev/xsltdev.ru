@@ -1,14 +1,14 @@
 ---
-description: Takes a sequence as its input and produces a sorted sequence as its output
+description: Принимает последовательность в качестве входа и производит отсортированную последовательность в качестве выхода
 ---
 
 # xsl:perform-sort
 
-Takes a sequence as its input and produces a sorted sequence as its output.
+Принимает последовательность в качестве входных данных и выдает отсортированную последовательность в качестве выходной.
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+_Доступен в XSLT 2.0 и более поздних версиях. Доступен во всех изданиях Saxon._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:sort`](xsl-sort.md)+ , _sequence-constructor_ )
 -   **Допустимые родительские элементы**: any XSLT element whose content model is sequence-constructor; any literal result element
 
@@ -16,13 +16,13 @@ _Available in XSLT 2.0 and later versions. Available in all Saxon editions._
 
 `select?`
 : _expression_
-: The input sequence may be defined either by an expression within the optional `select` attribute, or by the enclosed sequence constructor.
+: Входная последовательность может быть определена либо выражением в необязательном атрибуте `select`, либо вложенным конструктором последовательности.
 
 ## Подробности
 
-The sort criteria are specified using [`xsl:sort`](xsl-sort.md) elements as children of `xsl:perform-sort`, in the usual way.
+Критерии сортировки задаются с помощью элементов [`xsl:sort`](xsl-sort.md) как дочерних элементов `xsl:perform-sort`, обычным способом.
 
-It's often useful to use `xsl:perform-sort` inside a stylesheet function; the function can return the sorted sequence as its result, and can be invoked directly from an XPath expression.
+Часто полезно использовать `xsl:perform-sort` внутри функции таблицы стилей; функция может возвращать отсортированную последовательность в качестве своего результата и может быть вызвана непосредственно из выражения XPath.
 
 ## Примеры
 

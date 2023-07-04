@@ -1,12 +1,12 @@
 ---
-description: Used to define the output representation of a given Unicode character, in an xsl character-map
+description: Используется для определения выходного представления данного символа Unicode в карте символов xsl.
 ---
 
 # xsl:output-character
 
-Used to define the output representation of a given Unicode character, in an [`xsl:character-map`](xsl-character-map.md).
+Используется для определения выходного представления данного символа Unicode в [`xsl:character-map`](xsl-character-map.md).
 
-_Available in XSLT 2.0 and later versions. Available in all Saxon editions._
+Доступно в XSLT 2.0 и более поздних версиях. Доступно во всех изданиях Saxon.\_
 
 -   **Содержимое**: нет
 -   **Допустимые родительские элементы**: [`xsl:character-map`](xsl-character-map.md)
@@ -15,15 +15,15 @@ _Available in XSLT 2.0 and later versions. Available in all Saxon editions._
 
 **`character`**
 : _char_
-: A single XML character, to be replaced during serialization.
+: Один символ XML, который будет заменен во время сериализации.
 
 **`string`**
 : _string_
-: Any string, that replaces the specified character during serialization.
+: Любая строка, которая заменяет указанный символ при сериализации.
 
 ## Подробности
 
-See [`xsl:character-map`](xsl-character-map.md) for further details.
+Более подробную информацию смотрите в [`xsl:character-map`](xsl-character-map.md).
 
 ## Ссылки
 

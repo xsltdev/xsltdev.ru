@@ -8,9 +8,9 @@ description: Выбирает последовательность узлов и
 
 _Доступен в XSLT 2.0 и более поздних версиях. Доступен во всех изданиях Saxon._
 
--   **Категория**: instruction
+-   **Категория**: инструкция
 -   **Содержимое**: ( [`xsl:sort`](xsl-sort.md)\* , _sequence-constructor_ )
--   **Допустимые родительские элементы**: any XSLT element whose content model is _sequence-constructor_; any literal result element
+-   **Допустимые родительские элементы**: любой элемент XSLT, модель содержимого которого - _sequence-constructor_; любой литеральный элемент результата
 
 ## Атрибуты
 
