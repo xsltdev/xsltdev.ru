@@ -1,8 +1,8 @@
 ---
 title: Главная
 hide:
-  - navigation # Hide navigation
-  - toc # Hide table of contents
+    - navigation # Hide navigation
+    - toc # Hide table of contents
 ---
 
 # ![XSLT](xslt.svg){: style="height:42px;width:42px;vertical-align:middle;"} Справочник XSLT
@@ -17,31 +17,31 @@ hide:
 
     Документация по XSLT
 
-    **[:octicons-arrow-right-24: XSLT](/xslt/)** <small>1.0</small>
+    **[:octicons-arrow-right-24: XSLT](/xslt/)** <small>1.0, 2.0, 3.0</small>
 
     [:octicons-arrow-right-24: Спецификация XSLT](/tr/) <small>1.0</small>
 
-	[:octicons-arrow-right-24: EXSLT](/exslt/) &mdash; <small>расширение XSLT</small>
+    [:octicons-arrow-right-24: EXSLT](/exslt/) &mdash; <small>расширение XSLT</small>
 
 -   :octicons-rel-file-path-24:{ .lg .middle } **XPath**
 
-	***
+    ***
 
-	Справочник по функциям XPath
+    Справочник по функциям XPath
 
-	[:octicons-arrow-right-24: XPath](/xpath/) <small>1.0</small>
+    [:octicons-arrow-right-24: XPath](/xpath/) <small>1.0</small>
 
 -   :material-file-document-outline:{ .lg .middle } **Гайды**
 
-	***
+    ***
 
-	Сборник рецептов XSLT
+    Сборник рецептов XSLT
 
-	[:octicons-arrow-right-24: Рецепты](/recipes/)
+    [:octicons-arrow-right-24: Рецепты](/recipes/)
 
 </div>
 
-***
+---
 
 !!!abstract "Справочники"
 
@@ -49,8 +49,8 @@ hide:
     [![Typescript](ts.svg){: style="height:16px;width:16px;vertical-align:middle;"} Typescript](https://scriptdev.ru/) &nbsp;&nbsp;&nbsp;
     [![Angular](angular.svg){: style="height:16px;width:16px;vertical-align:middle;"} Angular](https://angdev.ru/) &nbsp;&nbsp;&nbsp;
     [![React](react.svg){: style="height:16px;width:16px;vertical-align:middle;"} React](https://reactdev.ru/) &nbsp;&nbsp;&nbsp;
-	[![React Native](rn.svg){: style="height:16px;width:16px;vertical-align:middle;"} React Native](https://reactnativedev.ru/) &nbsp;&nbsp;&nbsp;
+    [![React Native](rn.svg){: style="height:16px;width:16px;vertical-align:middle;"} React Native](https://reactnativedev.ru/) &nbsp;&nbsp;&nbsp;
     [![Node.js](nodejs.svg){: style="height:16px;width:16px;vertical-align:middle;"} Node.js](https://nodejsdev.ru/) &nbsp;&nbsp;&nbsp;
-	[![Python 3](python.svg){: style="height:16px;width:16px;vertical-align:middle;"} Python 3](https://py3dev.ru/) &nbsp;&nbsp;&nbsp;
+    [![Python 3](python.svg){: style="height:16px;width:16px;vertical-align:middle;"} Python 3](https://py3dev.ru/) &nbsp;&nbsp;&nbsp;
     **[![XSLT](xslt.svg){: style="height:16px;width:16px;vertical-align:middle;"} XSLT](https://xsltdev.ru/)** &nbsp;&nbsp;&nbsp;
-	[![БД](db.svg){: style="height:16px;width:16px;vertical-align:middle;"} Базы данных](https://dbasedev.ru/) &nbsp;&nbsp;&nbsp;
+    [![БД](db.svg){: style="height:16px;width:16px;vertical-align:middle;"} Базы данных](https://dbasedev.ru/) &nbsp;&nbsp;&nbsp;
