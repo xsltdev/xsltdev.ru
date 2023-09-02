@@ -27,6 +27,7 @@ theme:
               name: Светлая тема
     language: ru
     features:
+        - navigation.prune
         - navigation.tabs
         - navigation.tracking
         - navigation.top
@@ -87,6 +88,9 @@ extra:
         - icon: fontawesome/brands/react
           link: 'https://reactdev.ru/'
           name: React docs
+        - icon: simple/solid
+          link: 'https://soliddev.ru/'
+          name: Solid sdocs
         - icon: fontawesome/solid/mobile-screen
           link: 'https://reactnativedev.ru/'
           name: React Native docs
